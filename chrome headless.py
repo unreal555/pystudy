@@ -229,7 +229,7 @@ def init():
     Browser = webdriver.Chrome('./chromedriver.exe', chrome_options=options)
     # Browser.minimize_window()
     Browser.set_window_size(50,700)
-    Browser.set_window_position(12000,70)
+    # Browser.set_window_position(12000,70)
     Browser.set_page_load_timeout(30)
     Browser.set_script_timeout(30)
     random_wait()
@@ -259,9 +259,9 @@ def set_baolihou_js(str):
         js = 'document.querySelector("body > div > div > div.edit.frame.flex.flex-col.fixed-full > div.flex.flex-wrap.edit-header.mx-1.my-1 > div.flex-auto.flex > div.edit-buttons > button:nth-child(2)").click()'
         Browser.execute_script(js)
         random_wait()
-        get_page('chrome-extension://fkhcifjengaaiefnnhaaoenbeclmeakd/options/index.html#scripts/1')
+        get_page('chrome-extension://fkhcifjengaaiefnnhaaoenbeclmeakd/options/index.html')
         random_wait()
-        get_page('chrome-extension://fkhcifjengaaiefnnhaaoenbeclmeakd/options/index.html#scripts/1')
+        get_page('chrome-extension://fkhcifjengaaiefnnhaaoenbeclmeakd/options/index.html')
         random_wait()
         if (Browser.page_source).find('网页限制解除')>-1:
             print('暴力猴脚本已设置')
@@ -415,7 +415,7 @@ def start(url):
         book[1].append(chapter_content)
         # print(book)
     print(all)
-    with open('d:/a/{}.txt'.format(book[0]),'w',encoding='utf-8') as f:
+    with open('e:/a/{}.txt'.format(book[0]),'w',encoding='utf-8') as f:
         f.write(book[0])
         f.write('\n\r')
         f.write('\n\r')
