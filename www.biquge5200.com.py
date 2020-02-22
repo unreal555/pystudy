@@ -2,7 +2,7 @@
 #  -*-coding:utf-8-*-
 ____author____='zl'
 
-import requests
+import 学习requests
 import re
 import pymysql
 
@@ -17,14 +17,14 @@ conn = pymysql.connect(
 cursor=conn.cursor()
 
 def getNovelList():
-    response=requests.get('http://www.biquge5200.com/xiaoshuodaquan/')
+    response=学习requests.get('http://www.biquge5200.com/xiaoshuodaquan/')
     page=response.text
     reg=r'<li><a href="(.*?)">.*?</a></li>'
     novelList=re.findall(reg,page)
     return novelList
 
 def getInfo(url):
-    response=requests.get(url)
+    response=学习requests.get(url)
     page=response.text
     reg = r'<meta property="og:novel:book_name" content="(.*?)"/>'
     novelName=re.findall(reg,page)[0]
@@ -50,7 +50,7 @@ for novelUrl in getNovelList():
 
 
        for charterUrl,novelName in chapterList:
-           response=requests.get(charterUrl)
+           response=学习requests.get(charterUrl)
            page=response.text
            reg='<div id="content">(.*?)</div>'
            chapterContent=re.findall(reg,page,re.S)

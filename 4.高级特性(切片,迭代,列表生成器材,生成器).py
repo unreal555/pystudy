@@ -91,6 +91,11 @@ a={'a':2,"b":3,"c":4}
 for x,y in a.items():
     print("{}={}".format(x,y))
 
+#直接提取的tuple队列内的部分信息
+test=[('zhangsan',45,'gongchengshi'),('lisi',22,'xuesheng')]
+a=[xingming for xingming,nianling,gongzuo in test]
+print(a)
+# ['zhangsan', 'lisi']
 
 #generator.表生成式，我们可以直接创建一个列表。但是，受到内存限制，列表容量肯定是有限的。
 # 而且，创建一个包含100万个元素的列表，不仅占用很大的存储空间，如果我们仅仅需要访问前面
