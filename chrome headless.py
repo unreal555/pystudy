@@ -10,7 +10,6 @@ import win32con
 import win32clipboard  as w
 import random
 
-
 str = '''
     // ==UserScript==
 // @namespace         https://www.github.com/Cat7373/
@@ -228,8 +227,8 @@ def init():
     # options.add_argument('--headless')
     Browser = webdriver.Chrome('./chromedriver.exe', chrome_options=options)
     # Browser.minimize_window()
-    Browser.set_window_size(50,700)
-    # Browser.set_window_position(12000,70)
+    Browser.set_window_size(1024,768)
+    Browser.set_window_position(12000,70)
     Browser.set_page_load_timeout(30)
     Browser.set_script_timeout(30)
     random_wait()
@@ -259,9 +258,9 @@ def set_baolihou_js(str):
         js = 'document.querySelector("body > div > div > div.edit.frame.flex.flex-col.fixed-full > div.flex.flex-wrap.edit-header.mx-1.my-1 > div.flex-auto.flex > div.edit-buttons > button:nth-child(2)").click()'
         Browser.execute_script(js)
         random_wait()
-        get_page('chrome-extension://fkhcifjengaaiefnnhaaoenbeclmeakd/options/index.html')
+        get_page('chrome-extension://fkhcifjengaaiefnnhaaoenbeclmeakd/options/index.html#scripts/1')
         random_wait()
-        get_page('chrome-extension://fkhcifjengaaiefnnhaaoenbeclmeakd/options/index.html')
+        get_page('chrome-extension://fkhcifjengaaiefnnhaaoenbeclmeakd/options/index.html#scripts/1')
         random_wait()
         if (Browser.page_source).find('网页限制解除')>-1:
             print('暴力猴脚本已设置')
@@ -271,9 +270,15 @@ def set_baolihou_js(str):
         else:
             count -= 1
             print('重新设置暴力猴 ，还有{}次'.format(count))
-    while count>0:
-        do(str)
+    while 1:
+        if count>0:
+            do(str)
+            break
+        else:
+            print('baolihoushezhishibai,chengxutuichu')
+            exit()
     return
+
 
 def readclip():
     str=''
@@ -336,13 +341,19 @@ def get_text(clip):
     return str
 
 def get_page(url):
+    global Browser
     while 1:
-
         try:
             Browser.get(url)
+            time.sleep(5)
             break
         except:
-            Browser.get(url)
+            print(Browser)
+            print('{}page open time out,retry '.format(url))
+            Browser.close()
+            print(Browser)
+            Browser=init()
+            set_baolihou_js(str)
 
 def get_chapter_content(url):
     url = url
@@ -397,11 +408,9 @@ def get_start_chapter_url(url):
     print(novel_name)
     return novel_name,start_chapter_url
 # try:
-Browser = init()
-set_baolihou_js(str)
-# except:
-#     print("初始化出错")
-#     Browser.close()
+
+
+
 def start(url):
     book_url=url
     book=[[],[]]
@@ -435,28 +444,31 @@ def start(url):
                 f.write('    '+line+'\n\r')
             f.write('\n\r')
 
-
-
-for i in range(1,1000):
+Browser = init()
+set_baolihou_js(str)
+# except:
+#     print("初始化出错")
+#     Browser.close()
+for i in range(2,1000):
     start('http://www.skwen.me/1/{}/'.format(i))
 
 # start('http://www.skwen.me/1/13434/')
 
 
-try:
-    'http://skwen.me/2/2107/'
-
-    get_page('chrome://settings/clearBrowserData')
-    random_wait()
-    ActionChains(Browser).send_keys(Keys.ENTER).perform()
-    time.sleep(5)
-    Browser.close()
-except:
-    get_page('chrome://settings/clearBrowserData')
-    random_wait()
-    ActionChains(Browser).send_keys(Keys.ENTER).perform()
-    time.sleep(5)
-    Browser.close()
+# try:
+#     'http://skwen.me/2/2107/'
+#
+#     get_page('chrome://settings/clearBrowserData')
+#     random_wait()
+#     ActionChains(Browser).send_keys(Keys.ENTER).perform()
+#     time.sleep(5)
+#     Browser.close()
+# except:
+#     get_page('chrome://settings/clearBrowserData')
+#     random_wait()
+#     ActionChains(Browser).send_keys(Keys.ENTER).perform()
+#     time.sleep(5)
+#     Browser.close()
 # chrome_options.add_argument('--headless') # 无头模式
 # chrome_options.add_argument('--disable-gpu') # 禁用GPU加速
 # chrome_options.add_argument('--start-maximized')#浏览器最大化
