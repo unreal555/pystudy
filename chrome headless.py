@@ -325,19 +325,19 @@ def get_clip():
     ActionChains(Browser).send_keys(Keys.CONTROL + 'c').perform()
     ActionChains(Browser).send_keys(Keys.CONTROL + 'c').perform()
     ActionChains(Browser).send_keys(Keys.CONTROL + 'c').perform()
-    str=readclip().replace(' ', '')
+    str=readclip()
     return str
 
 def get_text(clip):
+    # print(clip)
     temp = re.findall('上一章下一章>(.*?)【1】', clip, re.S)
-    result = []
-    for i in temp:
-        for j in i.split('\r\n'):
-            if j != '':
-                result.append(j)
+    # print(temp)
+    result = re.findall('    (.*?)\n', temp[0], re.S)
+    print(result)
     str=''
-    for i in range(0, len(result), 2):
-        str+=result[i]
+    for i in result:
+        str+=i
+    # print(str)
     return str
 
 def get_page(url):
@@ -398,6 +398,8 @@ def get_chapter_content(url):
         for i in all[1]:
             content=content+i
         all.pop()
+        content = content.replace('”','」')
+        content = content.replace('“','「')
         content = content.replace(' ', '').replace('\r', '').replace('\n', '')
         content = content.replace('。」', '」。')
         content = content.replace('。', '。~!@#$')

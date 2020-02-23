@@ -62,6 +62,29 @@ class Mzitu_Spider(scrapy.Spider):
     def get_pic_url(self,response):
         url=re.findall('<img src="(.*?)" alt=',response.text)
         path=response.meta['path']
+        print(response.headers.getlist['Set-Cookie'])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         item=PicItem(image_urls=url,image_path=path)
 
         yield item
