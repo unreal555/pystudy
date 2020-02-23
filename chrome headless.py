@@ -394,7 +394,16 @@ def get_chapter_content(url):
         select=Browser.find_element_by_xpath('//*[@id="ChapterView"]/div[2]/div/a[2]')
         next_chapter_url=select.get_attribute('href')
         print(next_chapter_url)
-
+        content=''
+        for i in all[1]:
+            content=content+i
+        all.pop()
+        content = content.replace(' ', '').replace('\r', '').replace('\n', '')
+        content = content.replace('。」', '」。')
+        content = content.replace('。', '。~!@#$')
+        content = content.replace('」。', '。」')
+        content = content.split('~!@#$')
+        all.append(content)
         return all,next_chapter_url
 
 def get_start_chapter_url(url):
@@ -424,7 +433,7 @@ def start(url):
         book[1].append(chapter_content)
         # print(book)
     print(all)
-    with open('e:/a/{}.txt'.format(book[0]),'w',encoding='utf-8') as f:
+    with open('d:/a/{}.txt'.format(book[0]),'w',encoding='utf-8') as f:
         f.write(book[0])
         f.write('\n\r')
         f.write('\n\r')
@@ -449,7 +458,7 @@ set_baolihou_js(str)
 # except:
 #     print("初始化出错")
 #     Browser.close()
-for i in range(2,1000):
+for i in range(3,1000):
     start('http://www.skwen.me/1/{}/'.format(i))
 
 # start('http://www.skwen.me/1/13434/')
