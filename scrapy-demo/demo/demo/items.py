@@ -7,7 +7,9 @@
 
 import scrapy
 
-
+class PicItem(scrapy.Item):
+    image_urls=scrapy.Field()
+    image_path=scrapy.Field()
 class DemoItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()

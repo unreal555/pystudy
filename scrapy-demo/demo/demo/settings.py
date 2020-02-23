@@ -42,15 +42,15 @@ USER_AGENT = random.choice(USER_AGENT_LIST)
 ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 16
+CONCURRENT_REQUESTS = 2
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 0.25
+DOWNLOAD_DELAY = 1
 # The download delay setting will honor only one of:
-CONCURRENT_REQUESTS_PER_DOMAIN = 8
-CONCURRENT_REQUESTS_PER_IP = 8
+CONCURRENT_REQUESTS_PER_DOMAIN = 2
+CONCURRENT_REQUESTS_PER_IP = 2
 
 # Disable cookies (enabled by default)
 COOKIES_ENABLED = True
@@ -85,10 +85,12 @@ COOKIES_ENABLED = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
+     'pipelines.PicPipeline':100,
      'pipelines.Normal_File_Pipeline': 200,
      'pipelines.Dianzishu_Pipeline':300
 }
 
+IMAGES_STORE = 'd:/a' #设置图片下载路径
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True

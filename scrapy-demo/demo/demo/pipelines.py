@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+from scrapy.pipelines.images import ImagesPipeline
 # Define your item pipelines here
 #
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
@@ -119,3 +119,7 @@ class Dianzishu_Pipeline(object):
                     print('{}储存完毕'.format(item['name']))
         else:
             return item
+class PicPipeline(ImagesPipeline):
+
+    def file_path(self, request, response=None, info=None):
+        return self.item['image_path']+'/'+(request.url.split('/'))[-1]
