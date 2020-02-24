@@ -3,21 +3,9 @@ import re
 import os
 from items import PicItem
 import base64
-
-header={
-':authority':'www.mzitu.com',
-':method':'GET',
-':path':'/',
-':scheme':'https',
-'accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-'accept-encoding':'gzip,deflat,br',
-'accept-language':'zh-CN,zh;q=0.9',
-'cache-control':'max-age=0',
-'upgrade-insecure-requests':'1',
-'User-Agent':'Mozilla/5.0(WindowsNT6.1;Win64;x64)AppleWebKit/537.36(KHTML,likeGecko)Chrome/66.0.3359.139Safari/537.36'}
-
-auth = base64.encodestring(bytes("test:594188", 'utf-8'))
-header['Proxy-Authorization'] = b'Basic ' + auth
+import time
+import random
+flag=0
 
 
 class Mzitu_Spider(scrapy.Spider):
@@ -26,65 +14,59 @@ class Mzitu_Spider(scrapy.Spider):
 
     def start_requests(self):
 
-        print(header)
-        yield scrapy.Request('https://www.mzitu.com/all/',headers=header,meta={'proxy':'https://58.59.25.122:1234'})
+        print('进入索引页https://www.mzitu.com/all/')
+        yield scrapy.Request('https://www.mzitu.com/all/')
 
     def parse(self,response):
+        print('获得索引页面，开始处理')
+        if flag==1:print(response.text)
         select=re.findall('<a href="(.*?)" target="_blank">(.*?)</a>',response.text)
-
+        print('获得相册连接')
         for i in select[1:]:
-            print(i[0])
-            yield scrapy.Request('https://www.mzitu.com/223294',headers=header,callback=self.get_page,dont_filter=True)
-            break
+            time.sleep(random.choice(range(10,1000)))
+            if flag==1:print(i[0])
+            print("提交相册{}".format(i[0]))
+            yield scrapy.Request(i[0],callback=self.get_page,dont_filter=True)
+
 
     def get_page(self,response):
+
+        
         select=re.findall('上一组</span></a><span>(.*?)<span>下一页',response.text)[0]
 
         urls=[]
         for i in range(1,int(max(re.findall(r'/(\d+)\'',select)))+1):
             urls.append('{}/{}'.format(response.url,i))
-        print(urls)
+        if flag==1:print(urls)
 
 
         select=re.findall(r'<div class="currentpath">当前位置: <a href=.*?">(.*?)</a> &raquo; <a href=".*?" rel="category tag">(.*?)</a> &raquo; (.*?)</div>',response.text)[0]
         a,b,c=select
-        print(a,b,b)
-        path=os.path.join('d:/a',a,b,c)
+        if flag==1:print(a,b,b)
+        basedir='d:/a'
+        subdir=os.path.join(a,b,c)
+        path=os.path.join(basedir,subdir)
         if os.path.exists(path):
             return
         else:
             os.makedirs(path)
 
-        for url in urls:
-            yield scrapy.Request(url, headers=header, callback=self.get_pic_url, dont_filter=True,meta={'path':path})
-            break
+
+        yield scrapy.Request(urls[-1],  callback=self.get_pic_url, dont_filter=True,meta={'path':subdir})
+
 
     def get_pic_url(self,response):
-        url=re.findall('<img src="(.*?)" alt=',response.text)
+        print(re.findall(r'<img src="https://(.*?)/(.*?)/(.*?)/(.*?)(\d+).(.*?)" alt=',response.text)[0])
+        a,b,c,d,e,f=re.findall(r'<img src="https://(.*?)/(.*?)/(.*?)/(.*?)(\d+)\.(.*?)" alt=',response.text)[0]
+        urls=[]
+        for i in range(1,int(e)+1):
+            urls.append('https://{}/{}/{}/{}{}.{}'.format(a,b,c,d,str(i).rjust(len(e),'0'),f))
         path=response.meta['path']
-        print(response.headers.getlist['Set-Cookie'])
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        item=PicItem(image_urls=url,image_path=path)
-
+        for i in urls:
+            print(i)
+        if flag==1:print(urls)
+        if flag==1:print(path)
+        item=PicItem()
+        item['image_urls']=urls
+        item['image_path']=path
         yield item

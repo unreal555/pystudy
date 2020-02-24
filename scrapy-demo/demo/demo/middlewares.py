@@ -5,6 +5,9 @@
 # See documentation in:
 # https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
+###cdn加速，必须在headres里加入headers['referer']='https://www.mzitu.com/'
+
+import base64
 from scrapy import signals
 
 
@@ -101,3 +104,35 @@ class DemoDownloaderMiddleware(object):
 
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
+
+
+class ProxyMiddleWare(object):
+
+    def process_request(self, request, spider):
+        request.headers['referer'] = 'https://www.mzitu.com/'
+        request.headers[ ':authority']= 'www.mzitu.com',
+        request.headers[':method']='GET',
+        request.headers[ ':path']= '/',
+        request.headers[':scheme']= 'https',
+        request.headers['accept']= 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+        request.headers['accept-encoding']= 'gzip,deflat,br',
+        request.headers['accept-language']= 'zh-CN,zh;q=0.9',
+        request.headers['cache-control']= 'max-age=0',
+        request.headers['upgrade-insecure-requests']= '1',
+        request.headers[ 'User-Agent']= 'Mozilla/5.0(WindowsNT6.1;Win64;x64)AppleWebKit/537.36(KHTML,likeGecko)Chrome/66.0.3359.139Safari/537.36'
+
+        # 随机选出代理信息
+        proxy = "58.59.25.122:1234"
+        # 设置代理的认证信息
+
+        auth = base64.b64encode(bytes("test:594188", 'utf-8'))
+        request.headers['Proxy-Authorization'] = b'Basic ' + auth
+        # 设置代理ip (http/https)
+        print(((request.url).split('://'))[0])
+        print('asassas',request.url)
+        if ((request.url).split('//'))[0]=='http':
+            request.meta['proxy']='http://{}'.format(proxy)
+        if ((request.url).split('//'))[0]=='https:':
+            request.meta['proxy']= 'http://{}'.format(proxy)
+        print(request.headers)
+        print(request.meta)

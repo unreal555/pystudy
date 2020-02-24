@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
 from scrapy.pipelines.images import ImagesPipeline
+from settings  import IMAGES_STORE
+import scrapy
+import shutil
+import os
 # Define your item pipelines here
 #
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
@@ -119,7 +123,28 @@ class Dianzishu_Pipeline(object):
                     print('{}储存完毕'.format(item['name']))
         else:
             return item
+
+
+
 class PicPipeline(ImagesPipeline):
+    def get_media_requests(self, item, info):
+
+        for image_url in item['image_urls']:
+
+            yield scrapy.Request(image_url)
 
     def file_path(self, request, response=None, info=None):
-        return self.item['image_path']+'/'+(request.url.split('/'))[-1]
+        print('aaaaaaaa',request.url)
+        filename=request.url.split('/')[-1]
+
+        print(filename)
+
+        return filename
+
+
+    def item_completed(self, results, item, info):
+
+        for url in  item['image_urls']:
+            filename=os.path.join(IMAGES_STORE,url.split('/')[-1])
+            path=os.path.join(IMAGES_STORE,item['image_path'])
+            shutil.move(filename,path)
