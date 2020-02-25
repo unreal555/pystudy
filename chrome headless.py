@@ -329,7 +329,7 @@ def get_clip():
     return str
 
 def get_text(clip):
-    nonlocal count
+    global count
     count=count+1
     print(count)
     # print(clip)
@@ -463,7 +463,7 @@ set_baolihou_js(str)
 # except:
 #     print("初始化出错")
 #     Browser.close()
-for i in range(17,1000):
+for i in range(23,1000):
     start('http://www.skwen.me/1/{}/'.format(i))
 
 # start('http://www.skwen.me/1/13434/')
