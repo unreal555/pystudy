@@ -5,6 +5,7 @@ from items import PicItem
 import base64
 import time
 import random
+from settings import IMAGES_STORE
 flag=0
 
 
@@ -12,26 +13,30 @@ class Mzitu_Spider(scrapy.Spider):
     name = 'mzitu'
     allowed_domains = 'mzitu.com'
 
+
+
     def start_requests(self):
 
         print('进入索引页https://www.mzitu.com/all/')
         yield scrapy.Request('https://www.mzitu.com/all/')
+        yield scrapy.Request('https://www.mzitu.com/old/')
 
     def parse(self,response):
+
         print('获得索引页面，开始处理')
         if flag==1:print(response.text)
         select=re.findall('<a href="(.*?)" target="_blank">(.*?)</a>',response.text)
         print('获得相册连接')
+        print(len(select))
         for i in select[1:]:
-            time.sleep(random.choice(range(10,1000)))
+            # time.sleep(random.choice(range(10,1000)))
             if flag==1:print(i[0])
-            print("提交相册{}".format(i[0]))
+            print("提交相册连接{}".format(i[0]))
+
             yield scrapy.Request(i[0],callback=self.get_page,dont_filter=True)
 
 
     def get_page(self,response):
-
-        
         select=re.findall('上一组</span></a><span>(.*?)<span>下一页',response.text)[0]
 
         urls=[]
@@ -42,10 +47,14 @@ class Mzitu_Spider(scrapy.Spider):
 
         select=re.findall(r'<div class="currentpath">当前位置: <a href=.*?">(.*?)</a> &raquo; <a href=".*?" rel="category tag">(.*?)</a> &raquo; (.*?)</div>',response.text)[0]
         a,b,c=select
-        if flag==1:print(a,b,b)
-        basedir='d:/a'
+        a=re.sub('[\/:*?"<>|]','-',a)
+        b = re.sub('[\/:*?"<>|]', '-', b)
+        c = re.sub('[\/:*?"<>|]', '-', c)
+
+        if flag==1:print(a,b,c)
+
         subdir=os.path.join(a,b,c)
-        path=os.path.join(basedir,subdir)
+        path=os.path.join(IMAGES_STORE,subdir)
         if os.path.exists(path):
             return
         else:
