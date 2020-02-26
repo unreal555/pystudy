@@ -65,7 +65,7 @@ class Mzitu_Spider(scrapy.Spider):
 
 
     def get_pic_url(self,response):
-        print(re.findall(r'<img src="https://(.*?)/(.*?)/(.*?)/(.*?)(\d+).(.*?)" alt=',response.text)[0])
+        print('',re.findall(r'<img src="https://(.*?)/(.*?)/(.*?)/(.*?)(\d+).(.*?)" alt=',response.text)[0])
         a,b,c,d,e,f=re.findall(r'<img src="https://(.*?)/(.*?)/(.*?)/(.*?)(\d+)\.(.*?)" alt=',response.text)[0]
         urls=[]
         for i in range(1,int(e)+1):
@@ -73,8 +73,7 @@ class Mzitu_Spider(scrapy.Spider):
         path=response.meta['path']
         for i in urls:
             print(i)
-        if flag==1:print(urls)
-        if flag==1:print(path)
+
         item=PicItem()
         item['image_urls']=urls
         item['image_path']=path
