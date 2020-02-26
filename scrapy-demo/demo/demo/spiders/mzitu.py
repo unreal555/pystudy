@@ -1,11 +1,15 @@
 import  scrapy
 import re
 import os
+import sys
+sys.path.append(r'D:\\pycharm-professional-2017.2.4\\pystudy\\scrapy-demo\\demo\demo')
+print(sys.path)
+
 from items import PicItem
-import base64
-import time
-import random
+
 from settings import IMAGES_STORE
+
+
 flag=0
 
 
@@ -25,16 +29,19 @@ class Mzitu_Spider(scrapy.Spider):
 
         print('获得索引页面，开始处理')
         if flag==1:print(response.text)
-        select=re.findall('<a href="(.*?)" target="_blank">(.*?)</a>',response.text)
+        select=re.findall('<a href="(https://www.mzitu.com/\d+)" target="_blank">(.*?)</a>',response.text)
         print('获得相册连接')
         print(len(select))
+        f=open('{}/index.txt'.format(IMAGES_STORE),'a',encoding='utf-8')
+        f.write(response.url)
+        for i in select:
+            f.write('{}'.format('\t'+str(i)+'\r\n'))
         for i in select[1:]:
             # time.sleep(random.choice(range(10,1000)))
             if flag==1:print(i[0])
             print("提交相册连接{}".format(i[0]))
 
             yield scrapy.Request(i[0],callback=self.get_page,dont_filter=True)
-
 
     def get_page(self,response):
         select=re.findall('上一组</span></a><span>(.*?)<span>下一页',response.text)[0]
@@ -65,16 +72,14 @@ class Mzitu_Spider(scrapy.Spider):
 
 
     def get_pic_url(self,response):
-        print('',re.findall(r'<img src="https://(.*?)/(.*?)/(.*?)/(.*?)(\d+).(.*?)" alt=',response.text)[0])
-        a,b,c,d,e,f=re.findall(r'<img src="https://(.*?)/(.*?)/(.*?)/(.*?)(\d+)\.(.*?)" alt=',response.text)[0]
-        urls=[]
-        for i in range(1,int(e)+1):
-            urls.append('https://{}/{}/{}/{}{}.{}'.format(a,b,c,d,str(i).rjust(len(e),'0'),f))
+
+        url=re.findall(r'<img src="(https://.*?\d+\..*?)" alt=',response.text)
+
         path=response.meta['path']
-        for i in urls:
-            print(i)
+
+        print('pic url =',url)
 
         item=PicItem()
-        item['image_urls']=urls
+        item['image_urls']=url
         item['image_path']=path
         yield item
