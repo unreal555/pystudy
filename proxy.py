@@ -17,8 +17,11 @@ header={
 
 def get_ip(url):
     page=requests.get(url,headers=header)
-    page_source=page.content.decode('gbk')
-    result=re.findall("<td>(\d+).(\d+).(\d+).(\d+)</td><td>(\d+)</td><td>(.*?)</td><td>(.*?)</td><td>(.*?)",page_source)
+
+    page_source=page.text.replace(' ','').replace('\n','').replace('\r ','')
+    print(page_source)
+    result=re.findall(r'</td><td>(\d+).(\d+).(\d+).(\d+)</td><td>(\d+)</td><td><ahref=".*?">(.*?)</a></td><tdclass=".*?">.*?</td><td>(.*?)</td>',page_source)
+    print(result)
     return result
 
 def test_proxy(i):
@@ -32,9 +35,9 @@ def test_proxy(i):
         return 0
     try:
         s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-        # print(s)
+        print(s)
         s.settimeout(5)
-        # print(s)
+        print(s)
         s.connect(('{}'.format(ip),int(port)))
         print('ok',s)
         return(ip,port,area,des)
@@ -43,15 +46,11 @@ def test_proxy(i):
         print('wrong',ip,port)
         return 0
 
-# except:
-    #     print('socket error',ip,port)
-    #     return 0
-    # if linker:
-    #     return (ip,port,area,des)
+
 f=open('./proxy.txt','w',encoding='utf-8')
 for i in range(1,1000):
     time.sleep(random.choice(range(3,10)))
-    for j in get_ip('http://www.66ip.cn/{}.html'.format(i)):
+    for j in get_ip('https://www.xicidaili.com/nn/{}'.format(i)):
         # a=['58','59','25','122','1234','yt','er']
         proxy=test_proxy(j)
         print(proxy)
