@@ -44,16 +44,11 @@ class Mzitu_Spider(scrapy.Spider):
             yield scrapy.Request(i[0],callback=self.get_page,dont_filter=True)
 
     def get_page(self,response):
-        select=re.findall('上一组</span></a><span>(.*?)<span>下一页',response.text)[0]
-
-        urls=[]
-        for i in range(1,int(max(re.findall(r'/(\d+)\'',select)))+1):
-            urls.append('{}/{}'.format(response.url,i))
-        if flag==1:print(urls)
+        urlst=re.findall('上一组</span></a><span>(.*?)<span>下一页',response.text)
 
 
-        select=re.findall(r'<div class="currentpath">当前位置: <a href=.*?">(.*?)</a> &raquo; <a href=".*?" rel="category tag">(.*?)</a> &raquo; (.*?)</div>',response.text)[0]
-        a,b,c=select
+        a,b,c=re.findall(r'<div class="currentpath">当前位置: <a href=.*?">(.*?)</a> &raquo; <a href=".*?" rel="category tag">(.*?)</a> &raquo; (.*?)</div>',response.text)[0]
+
         a=re.sub('[\/:*?"<>|]','-',a)
         b = re.sub('[\/:*?"<>|]', '-', b)
         c = re.sub('[\/:*?"<>|]', '-', c)
@@ -67,8 +62,8 @@ class Mzitu_Spider(scrapy.Spider):
         else:
             os.makedirs(path)
 
-
-        yield scrapy.Request(urls[-1],  callback=self.get_pic_url, dont_filter=True,meta={'path':subdir})
+        for url in urls:
+            yield scrapy.Request(urls[-1],  callback=self.get_pic_url, dont_filter=True,meta={'path':subdir})
 
 
     def get_pic_url(self,response):
