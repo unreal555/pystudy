@@ -146,5 +146,5 @@ class PicPipeline(ImagesPipeline):
 
         for url in  item['image_urls']:
             filename=os.path.join(IMAGES_STORE,url.split('/')[-1])
-            path=os.path.join(IMAGES_STORE,item['image_path'])
+            path=os.path.join(item['image_path'])
             shutil.move(filename,path)
