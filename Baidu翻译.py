@@ -4,6 +4,7 @@ import requests
 import hashlib
 import random
 import json
+import time
 
 APP_ID='20200227000389406'
 key='HuiaSVAxKxmWEhAOIdFx'
@@ -14,15 +15,20 @@ t='zh'
 def trans(q):
     sign=APP_ID+q+salt+key
     sign=hashlib.md5(sign.encode(encoding='utf-8')).hexdigest()
-    req='http://api.fanyi.baidu.com/api/trans/vip/translate?q={}&from={}&to={}&appid={}&salt={}&sign={}'.format(q,f,t,APP_ID,salt,sign)
-    print(req)
-    response=requests.get(req)
-    s=response.content.decode('unicode_escape')
-    s=json.loads(s)
-    s=s['trans_result'][0]['dst']
-    print(s,type(s))
-    print('输入{}翻译成{}'.format(q,s))
-    return s
+    while 1:
+        req='http://api.fanyi.baidu.com/api/trans/vip/translate?q={}&from={}&to={}&appid={}&salt={}&sign={}'.format(q,f,t,APP_ID,salt,sign)
+        print(req)
+        response=requests.get(req)
+        s=response.content.decode('unicode_escape')
+        print(s)
+        if 'error_code' in s:
+            time.sleep(1.5)
+            continue
+        s=json.loads(s)
+        s=s['trans_result'][0]['dst']
+        print(s,type(s))
+        print('输入{}翻译成{}'.format(q,s))
+        return s
 
 print(trans('수제화 스틸 굽 heel'))
 
