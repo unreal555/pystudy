@@ -3,8 +3,8 @@ import re
 import os
 import sys
 import time
-sys.path.append(r'D:\\pycharm-professional-2017.2.4\\pystudy\\scrapy-demo\\aitaotu\\aitaotu')
-from items import PicItem
+sys.path.append(r'e:\\pycharm-professional-2017.2.4\\pystudy\\scrapy-demo\\aitaotu\\aitaotu')
+from  items import PicItem
 from settings import IMAGES_STORE
 print(sys.path)
 flag=0
@@ -27,7 +27,7 @@ class AiTaoTu_Spider(scrapy.Spider):
     def start_requests(self):
         # for i in range(50000,50050):
         #     yield scrapy.Request('https://www.aitaotu.com/guonei/{}.html'.format(i))
-        for i in range(1,2):
+        for i in range(1,400):
             yield scrapy.Request('https://www.aitaotu.com/guonei/list_{}.html'.format(i))
 
 

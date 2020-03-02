@@ -4,6 +4,9 @@ from settings  import IMAGES_STORE
 import scrapy
 import shutil
 import os
+
+
+
 # Define your item pipelines here
 #
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
@@ -127,24 +130,29 @@ class Dianzishu_Pipeline(object):
 
 
 class PicPipeline(ImagesPipeline):
-    def get_media_requests(self, item, info):
 
+    def get_media_requests(self, item, info):
+        # print(item)
         for image_url in item['image_urls']:
 
             yield scrapy.Request(image_url)
 
-    def file_path(self, request, response=None, info=None):
-        print('aaaaaaaa',request.url)
-        filename=request.url.split('/')[-1]
-
-        print(filename)
-
-        return filename
+    # def file_path(self, request,response=None, info=None):
+    #     print(request,request.meta['image_num'])
+    #     filename=request.url.split('/')[-1]+'_'+request.meta['image_num']
+    #     print('获取下载文件名，避免和其他混淆，加入链接编号', request.url,filename)
+    #
+    #     return filename
 
 
     def item_completed(self, results, item, info):
+        print('info',results)
+        for i in  results:
+            if i[0]==True:
 
-        for url in  item['image_urls']:
-            filename=os.path.join(IMAGES_STORE,url.split('/')[-1])
-            path=os.path.join(item['image_path'])
-            shutil.move(filename,path)
+                url = i[1]['url']
+                # source=os.path.join(IMAGES_STORE,url.split('/')[-1]+'_'+item['image_num'])
+                source = os.path.join(IMAGES_STORE, i[1]['path'] )
+                des=os.path.join(IMAGES_STORE,item['image_path'],url.split('/')[-1])
+                print(url,source,des)
+                shutil.copy(source,des)

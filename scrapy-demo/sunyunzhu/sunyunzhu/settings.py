@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
-
+﻿# -*- coding: utf-8 -*-
+import os
 # Scrapy settings for demo project
 #
 # For simplicity, this file contains only settings considered important or
@@ -9,10 +9,35 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'demo'
+# # 是否启用日志
+# LOG_ENABLED=False
+#
+# # 日志使用的编码
+# LOG_ENCODING='utf-8'
+#
+# # 日志文件(文件名)
+# LOG_FILE='log'
+#
+# # 日志格式
+# LOG_FORMAT='%(asctime)s [%(name)s] %(levelname)s: %(message)s'
+#
+# # 日志时间格式
+# LOG_DATEFORMAT='%Y-%m-%d %H:%M:%S'
+#
+# # 日志级别 CRITICAL, ERROR, WARNING, INFO, DEBUG
+# LOG_LEVEL='INFO'
+#
+# # 如果等于True，所有的标准输出（包括错误）都会重定向到日志，例如：print('hello')
+# LOG_STDOUT=False
+#
+# # 如果等于True，日志仅仅包含根路径，False显示日志输出组件
+# LOG_SHORT_NAMES=False
 
-SPIDER_MODULES = ['demo.spiders']
-NEWSPIDER_MODULE = 'demo.spiders'
+
+BOT_NAME = 'sunyunzhu'
+
+SPIDER_MODULES = ['sunyunzhu.spiders']
+NEWSPIDER_MODULE = 'sunyunzhu.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -47,7 +72,7 @@ CONCURRENT_REQUESTS = 16
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 0.5
+DOWNLOAD_DELAY = 0.2
 # The download delay setting will honor only one of:
 CONCURRENT_REQUESTS_PER_DOMAIN = 3
 CONCURRENT_REQUESTS_PER_IP = 3
@@ -73,7 +98,7 @@ COOKIES_ENABLED = True
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-     'demo.middlewares.ProxyMiddleWare':100
+     'sunyunzhu.middlewares.ProxyMiddleWare':100
    # 'demo.middlewares.DemoDownloaderMiddleware': 543,
 }
 
@@ -91,7 +116,7 @@ ITEM_PIPELINES = {
      # 'pipelines.Dianzishu_Pipeline':300
 }
 
-IMAGES_STORE = 'd:/a' #设置图片下载路径
+IMAGES_STORE = ('e:\\a') #设置图片下载路径
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True

@@ -42,12 +42,12 @@ import random
 ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 16
+CONCURRENT_REQUESTS = 8
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 0.5
+DOWNLOAD_DELAY = 0.4
 # The download delay setting will honor only one of:
 CONCURRENT_REQUESTS_PER_DOMAIN = 2
 CONCURRENT_REQUESTS_PER_IP = 2
@@ -55,19 +55,19 @@ CONCURRENT_REQUESTS_PER_IP = 2
 # Disable cookies (enabled by default)
 COOKIES_ENABLED = True
 
-DOWNLOADER_MIDDLEWARES_BASE = {
-    'scrapy.contrib.downloadermiddleware.robotstxt.RobotsTxtMiddleware': 100,
-    'scrapy.contrib.downloadermiddleware.httpauth.HttpAuthMiddleware': 300,
-    'scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware': 400,
-    'scrapy.contrib.downloadermiddleware.retry.RetryMiddleware': 500,
-    'scrapy.contrib.downloadermiddleware.defaultheaders.DefaultHeadersMiddleware': 550,
-    'scrapy.contrib.downloadermiddleware.redirect.RedirectMiddleware': 600,
-    'scrapy.contrib.downloadermiddleware.cookies.CookiesMiddleware': 700,
-    'scrapy.contrib.downloadermiddleware.httpproxy.HttpProxyMiddleware': 750,
-    'scrapy.contrib.downloadermiddleware.httpcompression.HttpCompressionMiddleware': 800,
-    'scrapy.contrib.downloadermiddleware.stats.DownloaderStats': 850,
-    'scrapy.contrib.downloadermiddleware.httpcache.HttpCacheMiddleware': 900,
-}
+# DOWNLOADER_MIDDLEWARES_BASE = {
+#     'scrapy.contrib.downloadermiddleware.robotstxt.RobotsTxtMiddleware': 100,
+#     'scrapy.contrib.downloadermiddleware.httpauth.HttpAuthMiddleware': 300,
+#     'scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware': 400,
+#     'scrapy.contrib.downloadermiddleware.retry.RetryMiddleware': 500,
+#     'scrapy.contrib.downloadermiddleware.defaultheaders.DefaultHeadersMiddleware': 550,
+#     'scrapy.contrib.downloadermiddleware.redirect.RedirectMiddleware': 600,
+#     'scrapy.contrib.downloadermiddleware.cookies.CookiesMiddleware': 700,
+#     'scrapy.contrib.downloadermiddleware.httpproxy.HttpProxyMiddleware': 750,
+#     'scrapy.contrib.downloadermiddleware.httpcompression.HttpCompressionMiddleware': 800,
+#     'scrapy.contrib.downloadermiddleware.stats.DownloaderStats': 850,
+#     'scrapy.contrib.downloadermiddleware.httpcache.HttpCacheMiddleware': 900,
+# }
 
 # Disable Telnet Console (enabled by default)
 #TELNETCONSOLE_ENABLED = False
@@ -105,7 +105,7 @@ ITEM_PIPELINES = {
      # 'pipelines.Dianzishu_Pipeline':300
 }
 
-IMAGES_STORE = 'd:/a' #设置图片下载路径
+IMAGES_STORE = 'e:/a' #设置图片下载路径
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True

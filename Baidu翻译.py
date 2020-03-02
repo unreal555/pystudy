@@ -30,7 +30,7 @@ def trans(q):
         print('输入{}翻译成{}'.format(q,s))
         return s
 
-print(trans('수제화 스틸 굽 heel'))
+print(trans('아비노 시스루 원피스'))
 
 
 # 通用翻译API接入文档
