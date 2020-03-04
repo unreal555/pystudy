@@ -27,7 +27,7 @@ class AiTaoTu_Spider(scrapy.Spider):
     def start_requests(self):
         # for i in range(50000,50050):
         #     yield scrapy.Request('https://www.aitaotu.com/guonei/{}.html'.format(i))
-        for i in range(1,400):
+        for i in range(400,800):
             yield scrapy.Request('https://www.aitaotu.com/guonei/list_{}.html'.format(i))
 
 
