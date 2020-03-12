@@ -1,3 +1,4 @@
+#***coding=utf-8***
 import  scrapy
 import re
 import os
@@ -40,7 +41,7 @@ class MeiTuLu_Spider(scrapy.Spider):
 
         print('获得{}响应，开始处理'.format(response.url))
         print(response.url,response.status)
-        print(response.content.decode('utf-8'))
+        print(response.text)
 
         if response.status!=200:
             print('页面不存在,返回')
