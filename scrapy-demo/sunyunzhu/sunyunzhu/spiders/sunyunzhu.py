@@ -3,7 +3,7 @@ import re
 import os
 import sys
 
-sys.path.append(r'e:\\pycharm-professional-2017.2.4\\pystudy\\scrapy-demo\\sunyunzhu\sunyunzhu')
+sys.path.append(r'e:\\pycharm-professional-2017.2.4\\pystudy\\scrapy-demo\\sunyunzhu\\sunyunzhu')
 print(sys.path)
 from items import PicItem
 from settings import IMAGES_STORE
@@ -15,7 +15,7 @@ import time
 
 APP_ID = '20200227000389406'
 key = 'HuiaSVAxKxmWEhAOIdFx'
-salt = str(random.randint(1000000000, 9999999999))
+salt = str(random.randint(2000000,3000000))
 f = 'auto'
 t = 'zh'
 
@@ -62,7 +62,7 @@ class Sunyunzhu_Spider(scrapy.Spider):
     def start_requests(self):
         # for i in self.urls:
         #     yield scrapy.Request(i,dont_filter=True,callback=self.parse)
-        for i in range(1427830,1000000,-1):
+        for i in range(2000000,3000000):
             yield scrapy.Request('https://www.t-nani.co.kr/shop/shopdetail.html?branduid={}&'.format(i),dont_filter=True,callback=self.parse)
 
 

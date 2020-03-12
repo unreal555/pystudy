@@ -3,7 +3,7 @@ import re
 import os
 import sys
 import time
-sys.path.append(r'e:\\pycharm-professional-2017.2.4\\pystudy\\scrapy-demo\\aitaotu\\aitaotu')
+sys.path.append(r'e:\\pycharm-professional-2017.2.4\\pystudy\\scrapy-demo\\meitulu\meitulu')
 from  items import PicItem
 from settings import IMAGES_STORE
 print(sys.path)
@@ -11,9 +11,9 @@ flag=0
 
 
 
-class AiTaoTu_Spider(scrapy.Spider):
-    name = 'aitaotu'
-    allowed_domains = 'aitaotu.com'
+class MeiTuLu_Spider(scrapy.Spider):
+    name = 'meitulu'
+    allowed_domains = 'meitulu.com'
 
     path=os.path.join(IMAGES_STORE,name)
     log_name='log.txt'
@@ -25,22 +25,22 @@ class AiTaoTu_Spider(scrapy.Spider):
 
 
     def start_requests(self):
-        # for i in range(50000,50050):
-        #     yield scrapy.Request('https://www.aitaotu.com/guonei/{}.html'.format(i))
-        for i in range(1,100):
-            yield scrapy.Request('https://www.aitaotu.com/guonei/list_{}.html'.format(i))
+        yield scrapy.Request('https://www.meitulu.com/guochan/2.html')
+        # for i in range(0,2):
+        #     yield scrapy.Request('https://www.meitulu.com/guochan/{}.html'.format(i))
 
-        for i in range(1,100):
-            yield scrapy.Request('https://www.aitaotu.com/rihan/list_{}.html'.format(i))
-
-        for i in range(1,80):
-            yield scrapy.Request('https://www.aitaotu.com/gangtai/list_{}.html'.format(i))
+        # for i in range(1,300):
+        #     yield scrapy.Request('https://www.aitaotu.com/rihan/list_{}.html'.format(i))
+        #
+        # for i in range(1,80):
+        #     yield scrapy.Request('https://www.aitaotu.com/gangtai/list_{}.html'.format(i))
 
 
     def parse(self,response):
 
         print('获得{}响应，开始处理'.format(response.url))
         print(response.url,response.status)
+        print(response.content.decode('utf-8'))
 
         if response.status!=200:
             print('页面不存在,返回')
