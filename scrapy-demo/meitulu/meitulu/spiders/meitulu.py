@@ -26,15 +26,9 @@ class MeiTuLu_Spider(scrapy.Spider):
 
 
     def start_requests(self):
-        yield scrapy.Request('https://www.meitulu.com/guochan/2.html')
-        # for i in range(0,2):
-        #     yield scrapy.Request('https://www.meitulu.com/guochan/{}.html'.format(i))
-
-        # for i in range(1,300):
-        #     yield scrapy.Request('https://www.aitaotu.com/rihan/list_{}.html'.format(i))
-        #
-        # for i in range(1,80):
-        #     yield scrapy.Request('https://www.aitaotu.com/gangtai/list_{}.html'.format(i))
+        yield scrapy.Request('https://www.meitulu.com/guochan/')
+        for i in range(2,100):
+            yield scrapy.Request('https://www.meitulu.com/guochan/{}.html'.format(i))
 
 
     def parse(self,response):
@@ -58,13 +52,14 @@ class MeiTuLu_Spider(scrapy.Spider):
 
         with open(os.path.join(self.path, self.log_name), 'a', encoding='utf-8') as f:
             for i in select:
-                # if i[0] not in log:
-                #
-                #     print("写入log，新增相册{}".format(i[0],i[1]))
-                #     f.write('{}'.format(time.strftime( '%Y-%m-%d %H-%M') + '\t' +str(i[0])+'\t'+ str(i[1]) + '\r\n\r\n'))
-                #     print('提交新增加相册{}'.format(i[0],i[1]))
+                if i[0] not in log:
+
+                    print("写入log，新增相册{}".format(i[0],i[1]))
+                    f.write('{}'.format(time.strftime( '%Y-%m-%d %H-%M') + '\t' +str(i[0])+'\t'+ str(i[1]) + '\r\n\r\n'))
+                    print('提交新增加相册{}'.format(i[0],i[1]))
 
                     yield scrapy.Request(i[0], callback=self.get_page, dont_filter=True)
+                    break
 
 
 
@@ -81,8 +76,8 @@ class MeiTuLu_Spider(scrapy.Spider):
         c = re.sub('[\/:*?"<>|]', '-', c)
         if  '[' in c and ']' in c:
             c=os.path.join(*re.split('[\[\]]',c))
-        if flag==1:print(a,b,c)
-        subdir=os.path.join(a,b,c)
+        if flag==1:print(a,c)
+        subdir=os.path.join(a,c)
         xiangce_path=os.path.join(self.path,subdir)
 
         print(xiangce_path)

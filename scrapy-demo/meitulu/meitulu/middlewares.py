@@ -107,15 +107,6 @@ class ProxyMiddleWare(object):
 
     def process_request(self, request, spider):
 
-
-
-        # request.headers['host']='https://www.meitulu.com'
-        # request.headers['Sec-Fetch-Dest']='document'
-        # request.headers['Sec-Fetch-Mode']='navigate'
-        # request.headers['Sec-Fetch-User']='?1'
-        # request.headers['Sec-Fetch-Site']='none'
-
-        # request.headers['referer'] = 'https://www.meitulu.com'
         request.headers['accept']= 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
         request.headers['accept-encoding']= 'gzip,deflat,br',
         request.headers['accept-language']= 'zh-CN,zh;q=0.9'

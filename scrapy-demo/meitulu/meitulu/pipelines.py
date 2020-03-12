@@ -10,7 +10,7 @@ import os
 # See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 outHtml=0
 outTxt=1
-
+from settings import IMAGES_STORE
 
 import codecs
 import json
@@ -133,18 +133,25 @@ class PicPipeline(ImagesPipeline):
 
             yield scrapy.Request(image_url)
 
-    def file_path(self, request, response=None, info=None):
-        print('aaaaaaaa',request.url)
-        filename=request.url.split('/')[-1]
-
-        print(filename)
-
-        return filename
+    # def file_path(self, request, response=None, info=None):
+    #     print('aaaaaaaa',request.url)
+    #     filename=request.url.split('/')[-1]
+    #     print(filename)
+    #     return filename
 
 
     def item_completed(self, results, item, info):
 
-        for url in  item['image_urls']:
-            filename=os.path.join(IMAGES_STORE,url.split('/')[-1])
-            path=os.path.join(item['image_path'])
-            shutil.move(filename,path)
+        for i in results:  # (True, {'url': 'https://mtl.gzhuibei.com/images/img/20820/43.jpg', 'path': 'full/801c6da15aa68cebfc94be197b5880b28337d7e5.jpg', 'checksum': '48d4eb4a26c24b575852d012c352b261'})
+            print('               ', i[1]['url'], i[1]['path'],i[1]['url'].split('/')[-1])
+
+            source_file = os.path.join(IMAGES_STORE, i[1]['path'])
+            target_file = os.path.join(item['image_path'],i[1]['url'].split('/')[-1])
+            print (source_file,target_file)
+            shutil.move(source_file,target_file)
+
+
+                # for url in  item['image_urls']:
+        #     filename=os.path.join(IMAGES_STORE,url.split('/')[-1])
+        #     path=os.path.join(item['image_path'])
+        #     shutil.move(filename,path)
