@@ -47,19 +47,20 @@ RETRY_TIMES = 8  #重试次数
 DOWNLOAD_TIMEOUT = 5  #超时
 RETRY_HTTP_CODES = [429,404,403]  #重试
 
-HTTPERROR_ALLOWED_CODES = [429,403]   #上面报的是403，就把403加入。
+HTTPERROR_ALLOWED_CODES = [301, 302,403,429]     # 返回301, 302时, 按正常返回对待, 可以正常写入cookie
+
 
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 7
+CONCURRENT_REQUESTS = 16
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
 DOWNLOAD_DELAY = 0.2
 # The download delay setting will honor only one of:
-CONCURRENT_REQUESTS_PER_DOMAIN = 6
-CONCURRENT_REQUESTS_PER_IP = 6
+CONCURRENT_REQUESTS_PER_DOMAIN = 7
+CONCURRENT_REQUESTS_PER_IP = 7
 
 # Disable cookies (enabled by default)
 COOKIES_ENABLED = True
@@ -106,7 +107,7 @@ DOWNLOADER_MIDDLEWARES = {
 #    'scrapy.extensions.telnet.TelnetConsole': None,
 #}
 REDIRECT_ENABLED = False                  # 关掉重定向, 不会重定向到新的地址
-HTTPERROR_ALLOWED_CODES = [301, 302]     # 返回301, 302时, 按正常返回对待, 可以正常写入cookie
+
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
