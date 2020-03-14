@@ -6,6 +6,7 @@
 # https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 import base64
 from scrapy import signals
+import random
 
 
 class DemoSpiderMiddleware(object):
@@ -104,11 +105,26 @@ class DemoDownloaderMiddleware(object):
 
 
 class ProxyMiddleWare(object):
+    USER_AGENT_LIST = [
+        'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+        'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+        'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+        'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko'
+
+    ]
+
 
     def process_request(self, request, spider):
+
         if 'hywly.com'in request.url:
-            request.headers[ 'User-Agent'] = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
-            request.headers['Referer'] = request.url,
+            request.headers[':authority']='ii.hywly.com',
+            request.headers[':method']='GET',
+            request.headers[':scheme']='https',
+            request.headers[':path']=request.url.split('com')[1]
+            # request.headers['']='',
+            request.headers[ 'User-Agent'] = random.choice(self.USER_AGENT_LIST),
+            # request.headers['Referer'] = request.url,
+            request.headers['if-modified-since']='if-modified-since:Tue, 06 Jun 2017 11:59:14 GMT'
 
         else:
             request.headers[ 'Upgrade-Insecure-Requests']= '1',
@@ -124,17 +140,16 @@ class ProxyMiddleWare(object):
             request.headers['User-Agent']= 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'
 
 
-
         # 随机选出代理信息
         proxy = "58.59.25.122:1234"
         # 设置代理的认证信息
 
-        auth = base64.b64encode(bytes("test:594188", 'utf-8'))
-        request.headers['Proxy-Authorization'] = b'Basic ' + auth
+        # auth = base64.b64encode(bytes("test:594188", 'utf-8'))
+        # request.headers['Proxy-Authorization'] = b'Basic ' + auth
 
         # 设置代理ip (http/https)
 
-        if ((request.url).split('//'))[0]=='http':
-            request.meta['Proxy']='http://{}'.format(proxy)
-        if ((request.url).split('//'))[0]=='https:':
-            request.meta['Proxy']= 'https://{}'.format(proxy)
+        # if ((request.url).split('//'))[0]=='http':
+        #     request.meta['Proxy']='http://{}'.format(proxy)
+        # if ((request.url).split('//'))[0]=='https:':
+        #     request.meta['Proxy']= 'https://{}'.format(proxy)

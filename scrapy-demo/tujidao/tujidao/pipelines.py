@@ -140,28 +140,32 @@ class PicPipeline(ImagesPipeline):
 
 
     def item_completed(self, results, item, info):
-        print('sssss',info)
-        for i in results:
+        image_log=item['image_log']
 
+        for i in results:
+            if i[0]==False:
+                with open(os.path.join(image_log[2],'wrong'), 'a', encoding='utf-8') as f:
+                    f.write('{}'.format(time.strftime( '%Y-%m-%d %H-%M') + '\t' +str(image_log[0])+'\t'+ str(image_log[1]) + '\r\n\r\n\r\n\r\n'))
+
+        for i in results:
             print('               ', i[1]['url'], i[1]['path'],i[1]['url'].split('/')[-1])
             source_file = os.path.join(IMAGES_STORE, i[1]['path'])
             target_file = os.path.join(item['image_path'],i[1]['url'].split('/')[-1])
             print (source_file,target_file)
             shutil.move(source_file,target_file)
 
-        i=item['image_log']
-        print(i,type(i))
 
-        with open(os.path.join(i[2],i[3]), 'r', encoding='utf-8') as f:
+
+        with open(os.path.join(image_log[2],image_log[3]), 'r', encoding='utf-8') as f:
             log=f.read()
 
 
-        with open(os.path.join(i[2],i[3]), 'a', encoding='utf-8') as f:
+        with open(os.path.join(image_log[2],image_log[3]), 'a', encoding='utf-8') as f:
 
-            if i[0] not in log:
+            if image_log[0] not in log:
 
-                print("写入log，新增相册{}".format(i[0],i[1]))
-                f.write('{}'.format(time.strftime( '%Y-%m-%d %H-%M') + '\t' +str(i[0])+'\t'+ str(i[1]) + '\r\n\r\n\r\n\r\n'))
+                print("写入log，新增相册{}".format(image_log[0],image_log[1]))
+                f.write('{}'.format(time.strftime( '%Y-%m-%d %H-%M') + '\t' +str(image_log[0])+'\t'+ str(image_log[1]) + '\r\n\r\n\r\n\r\n'))
 
 
 

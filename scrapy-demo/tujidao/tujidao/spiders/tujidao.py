@@ -1,10 +1,13 @@
 # coding=utf-8
+
+
+#
 import  scrapy
 import re
 import os
 import sys
 import time
-sys.path.append(r'd:\\pycharm-professional-2017.2.4\\pystudy\\scrapy-demo\\tujidao\tujidao')
+sys.path.append(r'e:\\pycharm-professional-2017.2.4\\pystudy\\scrapy-demo\\tujidao\tujidao')
 from  items import PicItem
 from settings import IMAGES_STORE
 print(sys.path)
@@ -50,9 +53,8 @@ class MeiTuLu_Spider(scrapy.Spider):
     def after_login(self,response):
         print('传递过来的cookie',response.meta['cookies'])
 
-        for i in range(1,1630):
+        for i in range(1530,1430,-1):#1630-1530-1430
             yield scrapy.Request('http://www.tujidao.com/cat/?id=0&page={}'.format(i),callback=self.parse,dont_filter=True)
-            break
 
 
     def parse(self,response):
@@ -115,9 +117,11 @@ class MeiTuLu_Spider(scrapy.Spider):
 
             item = PicItem()
             item['image_urls'] = urls
+            # item['image_urls']=['https://ii.hywly.com/a/1/899/2.jpg','https://ii.hywly.com/a/1/899/7.jpg']
             item['image_path'] = xiangce_path
             item['image_log']=[bianhao,biaoti,self.log_path,self.log_name]
             yield item
+
 
 
 
