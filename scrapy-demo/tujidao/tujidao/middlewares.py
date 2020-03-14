@@ -9,6 +9,80 @@ from scrapy import signals
 import random
 
 
+
+
+class ProxyMiddleWare(object):
+    USER_AGENT_LIST = [
+        'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+        'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+        'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+        'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko'
+    ]
+
+    # 随机选出代理信息
+    proxy_list = [
+        {'proxy_ip':None},
+        {'proxy_ip':"58.59.25.122:1234",'auth':base64.b64encode(bytes("test:594188", 'utf-8'))}
+    ]
+
+    # request.headers['Proxy-Authorization'] = b'Basic ' + auth
+
+    # 设置代理ip (http/https)
+
+    # if ((request.url).split('//'))[0]=='http':
+    #     request.meta['Proxy']='http://{}'.format(proxy)
+    # if ((request.url).split('//'))[0]=='https:':
+    #     request.meta['Proxy']= 'https://{}'.format(proxy)
+
+
+    def process_request(self, request, spider):
+
+        if 'hywly.com'in request.url:
+            request.headers[':authority']='ii.hywly.com',
+            request.headers[':method']='GET',
+            request.headers[':scheme']='https',
+            request.headers[':path']=request.url.split('com')[1]
+            request.headers[ 'User-Agent'] = random.choice(self.USER_AGENT_LIST),
+            # request.headers['Referer'] = request.url,
+            request.headers['if-modified-since']='if-modified-since:Tue, 06 Jun 2017 11:59:14 GMT'
+
+            proxy=random.choice(self.proxy_list)
+
+            if proxy['proxy_ip']==None:  # No Proxy
+                print('No Proxy')
+
+            if prxoy['proxy_ip']!=None:         #Use Proxy
+                print('Use proxy:{}'.format(proxy['proxy_ip']))
+                if ((request.url).split('//'))[0]=='http':
+                    request.meta['Proxy']='http://{}'.format(proxy)
+                if ((request.url).split('//'))[0]=='https:':
+                    request.meta['Proxy']= 'https://{}'.format(proxy)
+
+            if 'auth' in proxy.keys():
+                request.headers['Proxy-Authorization'] = b'Basic ' + auth
+
+
+        else:
+            request.headers[ 'Upgrade-Insecure-Requests']= '1',
+            request.headers['Host']= 'www.tujidao.com',
+            request.headers['Accept']= 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+            request.headers[ 'Accept-Encoding']= 'gzip, deflate',
+            request.headers[ 'Accept-Language']= 'zh-CN,zh;q=0.9',
+            request.headers[ 'Cache-Control']= 'max-age=0',
+            request.headers['Connection']= 'keep-alive',
+            request.headers[ 'Content-Type']= 'application/x-www-form-urlencoded',
+            request.headers['Referer']= 'http://www.tujidao.com/u/?action=login',
+            request.headers['Origin'] ='http://www.tujidao.com',
+            request.headers['User-Agent']= 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'
+
+
+
+
+
+
+
+
+
 class DemoSpiderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the spider middleware does not modify the
@@ -102,54 +176,3 @@ class DemoDownloaderMiddleware(object):
 
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
-
-
-class ProxyMiddleWare(object):
-    USER_AGENT_LIST = [
-        'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
-        'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
-        'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
-        'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko'
-
-    ]
-
-
-    def process_request(self, request, spider):
-
-        if 'hywly.com'in request.url:
-            request.headers[':authority']='ii.hywly.com',
-            request.headers[':method']='GET',
-            request.headers[':scheme']='https',
-            request.headers[':path']=request.url.split('com')[1]
-            # request.headers['']='',
-            request.headers[ 'User-Agent'] = random.choice(self.USER_AGENT_LIST),
-            # request.headers['Referer'] = request.url,
-            request.headers['if-modified-since']='if-modified-since:Tue, 06 Jun 2017 11:59:14 GMT'
-
-        else:
-            request.headers[ 'Upgrade-Insecure-Requests']= '1',
-            request.headers['Host']= 'www.tujidao.com',
-            request.headers['Accept']= 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
-            request.headers[ 'Accept-Encoding']= 'gzip, deflate',
-            request.headers[ 'Accept-Language']= 'zh-CN,zh;q=0.9',
-            request.headers[ 'Cache-Control']= 'max-age=0',
-            request.headers['Connection']= 'keep-alive',
-            request.headers[ 'Content-Type']= 'application/x-www-form-urlencoded',
-            request.headers['Referer']= 'http://www.tujidao.com/u/?action=login',
-            request.headers['Origin'] ='http://www.tujidao.com',
-            request.headers['User-Agent']= 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'
-
-
-        # 随机选出代理信息
-        proxy = "58.59.25.122:1234"
-        # 设置代理的认证信息
-
-        # auth = base64.b64encode(bytes("test:594188", 'utf-8'))
-        # request.headers['Proxy-Authorization'] = b'Basic ' + auth
-
-        # 设置代理ip (http/https)
-
-        # if ((request.url).split('//'))[0]=='http':
-        #     request.meta['Proxy']='http://{}'.format(proxy)
-        # if ((request.url).split('//'))[0]=='https:':
-        #     request.meta['Proxy']= 'https://{}'.format(proxy)

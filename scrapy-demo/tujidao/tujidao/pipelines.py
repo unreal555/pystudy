@@ -144,7 +144,7 @@ class PicPipeline(ImagesPipeline):
 
         for i in results:
             if i[0]==False:
-                with open(os.path.join(image_log[2],'wrong'), 'a', encoding='utf-8') as f:
+                with open(os.path.join(image_log[2],'wrong.txt'), 'a', encoding='utf-8') as f:
                     f.write('{}'.format(time.strftime( '%Y-%m-%d %H-%M') + '\t' +str(image_log[0])+'\t'+ str(image_log[1]) + '\r\n\r\n\r\n\r\n'))
 
         for i in results:
