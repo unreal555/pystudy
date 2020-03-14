@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+#巨坑 request.meta['proxy']一定要用小写，首字母也不能用大写，不然代理不生效。。。坑爹
 # Define here the models for your spider middleware
 #
 # See documentation in:
@@ -51,15 +51,15 @@ class ProxyMiddleWare(object):
             if proxy['proxy_ip']==None:  # No Proxy
                 print('No Proxy')
 
-            if prxoy['proxy_ip']!=None:         #Use Proxy
+            if proxy['proxy_ip']!=None:         #Use Proxy
                 print('Use proxy:{}'.format(proxy['proxy_ip']))
                 if ((request.url).split('//'))[0]=='http':
-                    request.meta['Proxy']='http://{}'.format(proxy)
+                    request.meta['proxy']='http://{}'.format(proxy['proxy_ip'])   #巨坑 request.meta['proxy']一定要用小写，首字母也不能用大写，不然代理不生效。。。坑爹
                 if ((request.url).split('//'))[0]=='https:':
-                    request.meta['Proxy']= 'https://{}'.format(proxy)
+                    request.meta['proxy']= 'https://{}'.format(proxy['proxy_ip'])  #巨坑 request.meta['proxy']一定要用小写，首字母也不能用大写，不然代理不生效。。。坑爹
 
             if 'auth' in proxy.keys():
-                request.headers['Proxy-Authorization'] = b'Basic ' + auth
+                request.headers['Proxy-Authorization'] = b'Basic ' + proxy['auth']
 
 
         else:
@@ -75,6 +75,7 @@ class ProxyMiddleWare(object):
             request.headers['Origin'] ='http://www.tujidao.com',
             request.headers['User-Agent']= 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'
 
+        print(request.headers,request.meta)
 
 
 
