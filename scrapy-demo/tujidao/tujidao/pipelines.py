@@ -145,7 +145,8 @@ class PicPipeline(ImagesPipeline):
         for i in results:
             if i[0]==False:
                 with open(os.path.join(image_log[2],'wrong.txt'), 'a', encoding='utf-8') as f:
-                    f.write('{}'.format(time.strftime( '%Y-%m-%d %H-%M') + '\t' +str(image_log[0])+'\t'+ str(image_log[1]) + '\r\n\r\n\r\n\r\n'))
+                    f.write('{}'.format(time.strftime( '%Y-%m-%d %H-%M')+'\t' + '\t' +'######'+str(image_log[0])+'######'+'\t'+'\t'+ str(image_log[1]) + '\r\n\r\n\r\n\r\n'))
+
 
         for i in results:
             print('               ', i[1]['url'], i[1]['path'],i[1]['url'].split('/')[-1])
@@ -162,10 +163,10 @@ class PicPipeline(ImagesPipeline):
 
         with open(os.path.join(image_log[2],image_log[3]), 'a', encoding='utf-8') as f:
 
-            if image_log[0] not in log:
+            if  '######'+str(image_log[0])+'######' not in log:
 
                 print("写入log，新增相册{}".format(image_log[0],image_log[1]))
-                f.write('{}'.format(time.strftime( '%Y-%m-%d %H-%M') + '\t' +str(image_log[0])+'\t'+ str(image_log[1]) + '\r\n\r\n\r\n\r\n'))
+                f.write('{}'.format(time.strftime( '%Y-%m-%d %H-%M')+'\t' + '\t'+'######'+str(image_log[0])+'######'+'\t'+'\t'+ str(image_log[1]) + '\r\n\r\n\r\n\r\n'))
 
 
 

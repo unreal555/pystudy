@@ -53,7 +53,7 @@ class MeiTuLu_Spider(scrapy.Spider):
     def after_login(self,response):
         print('传递过来的cookie',response.meta['cookies'])
 
-        for i in range(1530,1430,-1):#1630-1530-1430
+        for i in range(1630,1620,-1):#1630-1530-1430
             yield scrapy.Request('http://www.tujidao.com/cat/?id=0&page={}'.format(i),callback=self.parse,dont_filter=True)
 
 
