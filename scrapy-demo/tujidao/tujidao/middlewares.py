@@ -75,7 +75,7 @@ class ProxyMiddleWare(object):
             request.headers['Origin'] ='http://www.tujidao.com',
             request.headers['User-Agent']= 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'
 
-        print(request.headers,request.meta)
+        print(request.url,request.meta)
 
 
 

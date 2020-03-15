@@ -142,31 +142,32 @@ class PicPipeline(ImagesPipeline):
     def item_completed(self, results, item, info):
         image_log=item['image_log']
 
+        count=0
         for i in results:
+            print(i)
             if i[0]==False:
-                with open(os.path.join(image_log[2],'wrong.txt'), 'a', encoding='utf-8') as f:
-                    f.write('{}'.format(time.strftime( '%Y-%m-%d %H-%M')+'\t' + '\t' +'######'+str(image_log[0])+'######'+'\t'+'\t'+ str(image_log[1]) + '\r\n\r\n\r\n\r\n'))
-
-
-        for i in results:
-            print('               ', i[1]['url'], i[1]['path'],i[1]['url'].split('/')[-1])
+                count+=1
+                continue
             source_file = os.path.join(IMAGES_STORE, i[1]['path'])
             target_file = os.path.join(item['image_path'],i[1]['url'].split('/')[-1])
             print (source_file,target_file)
             shutil.move(source_file,target_file)
 
+        if count>0:
+            with open(os.path.join(image_log[2],'wrong.txt'), 'a', encoding='utf-8') as f:
+                f.write('{}'.format(time.strftime( '%Y-%m-%d %H-%M')+'\t' + '\t' +'######'+str(image_log[0])+'######'+'\t'+'\t'+ str(image_log[1]) + '\t'+'lose {}张'.format(count)+'\r\n\r\n\r\n\r\n'))
+
+        else:
+            with open(os.path.join(image_log[2],image_log[3]), 'r', encoding='utf-8') as f:
+                log=f.read()
 
 
-        with open(os.path.join(image_log[2],image_log[3]), 'r', encoding='utf-8') as f:
-            log=f.read()
+            with open(os.path.join(image_log[2],image_log[3]), 'a', encoding='utf-8') as f:
 
+                if  '######'+str(image_log[0])+'######' not in log:
 
-        with open(os.path.join(image_log[2],image_log[3]), 'a', encoding='utf-8') as f:
-
-            if  '######'+str(image_log[0])+'######' not in log:
-
-                print("写入log，新增相册{}".format(image_log[0],image_log[1]))
-                f.write('{}'.format(time.strftime( '%Y-%m-%d %H-%M')+'\t' + '\t'+'######'+str(image_log[0])+'######'+'\t'+'\t'+ str(image_log[1]) + '\r\n\r\n\r\n\r\n'))
+                    print("写入log，新增相册{}".format(image_log[0],image_log[1]))
+                    f.write('{}'.format(time.strftime( '%Y-%m-%d %H-%M')+'\t' + '\t'+'######'+str(image_log[0])+'######'+'\t'+'\t'+ str(image_log[1]) + '\r\n\r\n\r\n\r\n'))
 
 
 
