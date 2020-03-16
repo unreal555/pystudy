@@ -128,7 +128,7 @@ class Dianzishu_Pipeline(object):
 
 class PicPipeline(ImagesPipeline):
     def get_media_requests(self, item, info):
-
+        print('start {} download'.format(item['image_log'][1]))
         for image_url in item['image_urls']:
             yield scrapy.Request(image_url)
 

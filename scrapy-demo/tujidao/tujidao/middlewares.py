@@ -22,7 +22,9 @@ class ProxyMiddleWare(object):
     # 随机选出代理信息
     proxy_list = [
         {'proxy_ip':None},
-        {'proxy_ip':"58.59.25.122:1234",'auth':base64.b64encode(bytes("test2:594188", 'utf-8'))}
+        {'proxy_ip':"58.59.25.122:1234",'auth':base64.b64encode(bytes("test2:594188", 'utf-8'))},
+        {'proxy_ip':"58.59.25.123:1234",'auth':base64.b64encode(bytes("test:594188", 'utf-8'))}
+
     ]
 
     # request.headers['Proxy-Authorization'] = b'Basic ' + auth
@@ -37,6 +39,19 @@ class ProxyMiddleWare(object):
 
     def process_request(self, request, spider):
 
+        proxy=random.choice(self.proxy_list)
+        if proxy['proxy_ip']==None:  # No Proxy
+            pass
+        if proxy['proxy_ip']!=None:         #Use Proxy
+            # print('Use proxy:{}'.format(proxy['proxy_ip']))
+            if ((request.url).split('//'))[0]=='http':
+                request.meta['proxy']='http://{}'.format(proxy['proxy_ip'])   #巨坑 request.meta['proxy']一定要用小写，首字母也不能用大写，不然代理不生效。。。坑爹
+            if ((request.url).split('//'))[0]=='https:':
+                request.meta['proxy']= 'https://{}'.format(proxy['proxy_ip'])  #巨坑 request.meta['proxy']一定要用小写，首字母也不能用大写，不然代理不生效。。。坑爹
+        if 'auth' in proxy.keys():
+            request.headers['Proxy-Authorization'] = b'Basic ' + proxy['auth']
+
+
         if 'hywly.com'in request.url:
             request.headers[':authority']='ii.hywly.com',
             request.headers[':method']='GET',
@@ -45,22 +60,6 @@ class ProxyMiddleWare(object):
             request.headers[ 'User-Agent'] = random.choice(self.USER_AGENT_LIST),
             # request.headers['Referer'] = request.url,
             request.headers['if-modified-since']='if-modified-since:Tue, 06 Jun 2017 11:59:14 GMT'
-
-            proxy=random.choice(self.proxy_list)
-
-            if proxy['proxy_ip']==None:  # No Proxy
-                print('No Proxy')
-
-            if proxy['proxy_ip']!=None:         #Use Proxy
-                print('Use proxy:{}'.format(proxy['proxy_ip']))
-                if ((request.url).split('//'))[0]=='http':
-                    request.meta['proxy']='http://{}'.format(proxy['proxy_ip'])   #巨坑 request.meta['proxy']一定要用小写，首字母也不能用大写，不然代理不生效。。。坑爹
-                if ((request.url).split('//'))[0]=='https:':
-                    request.meta['proxy']= 'https://{}'.format(proxy['proxy_ip'])  #巨坑 request.meta['proxy']一定要用小写，首字母也不能用大写，不然代理不生效。。。坑爹
-
-            if 'auth' in proxy.keys():
-                request.headers['Proxy-Authorization'] = b'Basic ' + proxy['auth']
-
 
         else:
             request.headers[ 'Upgrade-Insecure-Requests']= '1',

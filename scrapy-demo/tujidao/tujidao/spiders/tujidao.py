@@ -14,8 +14,6 @@ print(sys.path)
 flag=0
 
 
-
-
 class MeiTuLu_Spider(scrapy.Spider):
     name = 'tujidao'
     allowed_domains = 'tujidao.com'
@@ -48,27 +46,25 @@ class MeiTuLu_Spider(scrapy.Spider):
                 a,b=j.split('=')
                 cookies[a]=b
         print('cookies',cookies)
+
         yield scrapy.Request('http://www.tujidao.com/u/?', callback=self.after_login,dont_filter=True,cookies=cookies,meta={'cookies':cookies})
 
     def after_login(self,response):
         print('传递过来的cookie',response.meta['cookies'])
 
-        for i in range(1501,1300,-1):#1630-1620-1500-1300
+        for i in range(1601,1200,-1):#1630-1500-1200
             yield scrapy.Request('http://www.tujidao.com/cat/?id=0&page={}'.format(i),callback=self.parse,dont_filter=True)
 
 
     def parse(self,response):
 
         print('获得{}响应，开始处理'.format(response.url))
-        print(response.url,response.status)
 
-        print(response.text)
         if response.status!=200:
             print('页面不存在,返回')
             return
 
         page = re.sub('[\s]+', '', response.text)
-        print(page)
 
         select=re.findall('''(<li><ahref="/a/.*?</a></p></li>)''',page)
 
@@ -93,6 +89,7 @@ class MeiTuLu_Spider(scrapy.Spider):
             with open(os.path.join(self.log_path,self.log_name), 'a', encoding='utf-8') as f:
 
                 if bianhao  in log:
+                    print('{}{} 已经下载，跳过'.format(bianhao,biaoti))
                     continue
 
 
