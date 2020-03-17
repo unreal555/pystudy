@@ -2,10 +2,8 @@ import requests
 import re
 from time import sleep
 import random
-
-
-
-
+from mytools import random_wait
+from mytools import get_Proxy
 headers={
         'authority':'you.ctrip.com',
         'method':'POST',
@@ -18,13 +16,6 @@ headers={
         'user-agent':'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'
         }
 
-
-
-def wait():
-    temp = random.randint(2, 4)
-    sleep(temp)
-    print("wait {} second".format(temp))
-    return
 
 
 
@@ -58,20 +49,30 @@ url='https://you.ctrip.com/destinationsite/TTDSecond/SharedView/AsynCommentView'
 
 
 for i in range(1,int(numpage)):
-    form['pagenow']=str(i)
-    response=requests.post(url, data=form,headers=headers)
-    page = re.sub('\s+', '', response.text)
-    page=re.sub('&#x0A','',page)
-    result=re.split('<!--开始标注一条评论-->',page)
-    num=1
-    for j in result:
-        if 'userimg' not in j or 'author' not in j:
-            continue
-        username=re.findall('''<aitemprop="author"href=".*?title="(.*?)"target="_blank">(.*?)</a></span>''',j)[0][0]
-        comment = re.findall('''<liitemprop="description"class="main_con"><spanclass="heightbox">(.*?)</span><pclass="commenttoggle">''',j)[0]
-        time=re.findall('''<spanclass="time_line"><emitemprop="datePublished">(\d+-\d+-\d+)</em></span>''',j)[0]
+    proxies=get_Proxy('http://icanhazip.com')
+    print(proxies)
+    try:
+        response=requests.get('http://icanhazip.com', headers=headers,proxies=proxies)
+    except Exception as e:
+        print(e)
 
-        print('共{}页评论，第{}页第{}条评论:--时间：{}   评论者：{}    内容：{}'.format(numpage,i,num,time,username ,comment))
-        num+=1
-    wait()
+    print(response.text)
+    # form['pagenow']=str(i)
+    # response=requests.post(url, data=form,headers=headers,proxies=get_Proxy(url))
+    # page = re.sub('\s+', '', response.text)
+    #
+    # result=re.split('<!--开始标注一条评论-->',page)
+    # print(response.url,response.headers)
+    # num=1
+    # for j in result:
+    #     if 'userimg' not in j or 'author' not in j:
+    #         continue
+    #     username=re.findall('''<aitemprop="author"href=".*?title="(.*?)"target="_blank">(.*?)</a></span>''',j)[0][0]
+    #     comment = re.findall('''<liitemprop="description"class="main_con"><spanclass="heightbox">(.*?)</span><pclass="commenttoggle">''',j)[0]
+    #     comment=re.sub('[&#x0A|&#x20]','',comment)
+    #     time=re.findall('''<spanclass="time_line"><emitemprop="datePublished">(\d+-\d+-\d+)</em></span>''',j)[0]
+    #
+    #     print('共{}页评论，第{}页第{}条评论:--时间：{}   评论者：{}    内容：{}'.format(numpage,i,num,time,username ,comment))
+    #     num+=1
+    # random_wait()
 

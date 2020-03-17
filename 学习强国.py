@@ -41,7 +41,7 @@ class Spider:
             except Exception as e:
                 print(e)
                 continue
-            self.fp.write(f'第{i}章' + title + '\n' + ''.join(content_list) + '\n\n')
+            self.fp.write('第{i}章' + title + '\n' + ''.join(content_list) + '\n\n')
 
     def close_file(self):
         self.fp.close()
