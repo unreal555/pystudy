@@ -26,9 +26,7 @@ class MeiTuLu_Spider(scrapy.Spider):
     with open(os.path.join(log_path,log_name),'a',encoding='utf-8') as f:
         f.write(time.strftime('%Y-%m-%d %H-%M')+'\r\n\r\n')
 
-
     def start_requests(self):
-
         formdata = {
             't0': 'unreal555',
             't1': '594188'
@@ -52,7 +50,7 @@ class MeiTuLu_Spider(scrapy.Spider):
     def after_login(self,response):
         print('传递过来的cookie',response.meta['cookies'])
 
-        for i in range(1201,1000,-1):#1630-1500-1200-1000
+        for i in range(1231,1000,-1):#1630-1500-1200-1000
             yield scrapy.Request('http://www.tujidao.com/cat/?id=0&page={}'.format(i),callback=self.parse,dont_filter=True)
 
 
@@ -65,23 +63,24 @@ class MeiTuLu_Spider(scrapy.Spider):
             return
 
         page = re.sub('[\s]+', '', response.text)
-
+        # print(page)
         select=re.findall('''(<li><ahref="/a/.*?</a></p></li>)''',page)
 
         for i in select:
-            print('target', i)
+            # print('target', i)
             bianhao,biaoti=re.findall('<pclass="biaoti"><ahref="/a/\?id=(\d+)"target="_blank">(.*?)</a></p></li>',i)[0]
             urls=re.findall('''<imgclass="lazy"data-original="(.*?)"></a>''',i)
             max=re.findall('''<spanclass="shuliang">(\d+)P</''',i)[0]
+            jigou=re.findall('''<ahref=/x/\?id=\d+>(.*?)</a>''',i)[0]
             tag=''
             for s in re.findall('''<ahref=/s/\?id=\d+>(.*?)</a>''',i):
                 tag=tag+s+'-'
             tag=tag+str(max)
-
+            print(bianhao,'---',biaoti,'---',urls,'---',max,'---',tag,'---',jigou)
             biaoti=re.sub('[\/:*?"<>|]','-',biaoti)
             tag=re.sub('[\/:*?"<>|]','-',tag)
-
-            print(bianhao,biaoti,urls,max,tag)
+            jigou==re.sub('[\/:*?"<>|]','-',jigou)
+            # print(bianhao,'---',biaoti,'---',urls,'---',max,'---',tag,'---',jigou)
 
             with open(os.path.join(self.log_path,self.log_name), 'r', encoding='utf-8') as f:
                 log = f.read()
@@ -97,6 +96,9 @@ class MeiTuLu_Spider(scrapy.Spider):
                 a,b,c=re.split('[\[\]]',biaoti)
                 sub_path=os.path.join(b,c+'-tag-'+tag)
                 xiangce_path = os.path.join(self.log_path, sub_path)
+            else:
+                sub_path=os.path.join(jigou,biaoti+'-tag-'+tag)
+                xiangce_path = os.path.join(self.log_path, sub_path)
             print(xiangce_path)
 
             url_first,url_last=urls[0].split('0.')
@@ -108,8 +110,6 @@ class MeiTuLu_Spider(scrapy.Spider):
                 pass
             else:
                 os.makedirs(xiangce_path)
-
-
 
 
             item = PicItem()

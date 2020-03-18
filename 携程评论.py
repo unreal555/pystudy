@@ -35,11 +35,14 @@ page=re.sub('\s+','',response.text)
 # 'pagenow'    页码
 # 'usefulDataId'   是否有用
 
+print(page)
 
 keys=['resourceid','resourcetype','districtid','districtename','star','tourist','order','poiid','pagenow','usefulDataId']
 values=re.findall('varresourceid="(.*?)";varresourcetype="(.*?)";vardistrictid="(.*?)";vardistrictename="(.*?)";varstar="(.*?)";vartourist="(.*?)";varorder="(.*?)";varpoiid="(.*?)";varpagenow="(.*?)";varusefulDataId=""(.*?)',page)[0]
-form=dict(zip(keys,values))
 
+if values==[]:
+
+form=dict(zip(keys,values))
 numpage=re.findall('<bclass="numpage">(\d+)</b>页</span><aclass="gopage"',page)[0]
 
 print(form)
