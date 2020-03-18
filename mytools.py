@@ -5,6 +5,10 @@ import random
 from time import sleep
 import base64
 import re
+import sys
+import os
+import time
+
 
 USER_AGENT_LIST = [
     'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
@@ -101,6 +105,43 @@ def qu_te_shu_zi_fu(s):
         print('老兄，给字符串')
         return 0
 
+def ban_quan():   #思路，在三个目录下创建空文件，设置隐藏，只读属性，程序启动检查这三个文件的创建时间，任何一个存在，且创建时间超过n小时的，返回真值
+    debug=True
+    def get_path():
+        if debug:print(os.path.exists(os.getenv('windir')))
+        dirs=[os.path.join('c://','windows')]
+
+        for i in sys.path:
+            if 'administrator' in str.lower(i):
+                if os.path.isdir(i):
+                    dirs.append(i)
+        print(sys.path)
+        if debug:print(dirs)
+        return dirs
+    def creat_file(dirs):
+        for i in dirs:
+            try:
+                with open(os.path.join(i,'info.ini'),'a',encoding='utf-8'):
+                    f.write(' ')
+            except:
+                pass
+
+    def test(dirs):
+
+
+        for i in dirs:
+            print(i)
+            print(time.ctime(os.path.getmtime(i)),time.ctime(os.path.getctime(i)))
+            # if os.path.exists(os.path.join(i,'info.ini')):
+                # print(time.ctime(os.path.getmtime(os.path.join(i,'info.ini')),time.getctime(os.path.join(i,'info.ini')))
+
+
+    test(['c://windows'])
+
+
+
+
+
 
 if __name__ == '__main__':
 
@@ -122,3 +163,5 @@ if __name__ == '__main__':
     print(proxies)
 
     print(qu_kong_ge(111))
+
+    ban_quan()
