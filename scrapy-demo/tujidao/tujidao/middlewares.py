@@ -42,10 +42,12 @@ class ProxyMiddleWare(object):
         if proxy['proxy_ip']==None:  # No Proxy
             pass
         if proxy['proxy_ip']!=None:         #Use Proxy
-            # print('Use proxy:{}'.format(proxy['proxy_ip']))
-            if ((request.url).split('//'))[0]=='http':
+            # print('Use proxy:{}'.format(proxy['proxy_ip']),((request.url).split('://'))[0],((request.url).split('://'))[0]=='http',)
+            if ((request.url).split('://'))[0]=='http':
+                print('http')
                 request.meta['proxy']='http://{}'.format(proxy['proxy_ip'])   #巨坑 request.meta['proxy']一定要用小写，首字母也不能用大写，不然代理不生效。。。坑爹
-            if ((request.url).split('//'))[0]=='https:':
+            if ((request.url).split('://'))[0]=='https':
+                print('https')
                 request.meta['proxy']= 'https://{}'.format(proxy['proxy_ip'])  #巨坑 request.meta['proxy']一定要用小写，首字母也不能用大写，不然代理不生效。。。坑爹
         if 'auth' in proxy.keys():
             request.headers['Proxy-Authorization'] = b'Basic ' + proxy['auth']
@@ -74,13 +76,6 @@ class ProxyMiddleWare(object):
             request.headers['User-Agent']= 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'
 
         print(request.url,request.meta)
-
-
-
-
-
-
-
 
 class DemoSpiderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
