@@ -3,17 +3,13 @@ import re
 import random
 from selenium import webdriver
 from  time import sleep
-
-USER_AGENT_LIST = [
-    'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
-    'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
-    'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
-    'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko'
-]
+from mytools import  USER_AGENT_LIST
+from mytools import random_wait
+from mytools import qu_kong_ge
+from mytools import qu_te_shu_zi_fu
 
 headers={}
 headers['User-Agent']=random.choice(USER_AGENT_LIST)
-
 headers['DNT']='1'
 headers['Accept']='text/html,application/xhtml+xml, */*'
 headers['Referer']='https://u.faloo.com/unreal555.html'
@@ -23,11 +19,7 @@ headers['Accept-Encoding']='gzip, deflate'
 Browser = webdriver.Ie('.\IEDriverServer.exe')
 
 
-def wait():
-    temp = random.randint(1, 3)
-    sleep(temp)
-    print("wait {} second".format(temp))
-    return
+
 
 
 def login():
@@ -47,8 +39,7 @@ def login():
 
         finally:
             pass
-        sleep(1)
-    wait()
+        random_wait()
 
 def get_cookie():
     cookies={}
@@ -64,31 +55,32 @@ def get_cookie():
     print(cookies)
     return cookies
 
-login()
-cookies=get_cookie()
 
-Browser.quit()
+if __name__ == '__main__':
+    login()
+    cookies=get_cookie()
+    Browser.quit()
 
-response=requests.get('http://mm.faloo.com/xiaoshuo/518974.html',headers=headers)#,cookies=cookies
+    response=requests.get('http://mm.faloo.com/xiaoshuo/518974.html',headers=headers)#,cookies=cookies
 
-page=response.content.decode('gbk')
-print(response.url)
-
-for i in range(1,30):
-    response=requests.get('https://b.faloo.com/p/518974/{}.html'.format(i),headers=headers)
     page=response.content.decode('gbk')
-    page=re.sub('\s+','',page)
+    print(response.url)
 
-    title=re.findall('''<divclass="c_l_title">(.*?)&nbsp;&nbsp;&nbsp;(.*?)</div><divclass="c_l_info">''',page)
-    result=re.findall('<divclass="noveContent">(.*?)<!--',page)[0].split('<br><br>')
-    for i in result:
-        print(i)
-    print(title)
-    print('____________________________________')
-    wait()
+    for i in range(1,30):
+        response=requests.get('https://b.faloo.com/p/518974/{}.html'.format(i),headers=headers)
+        page=response.content.decode('gbk')
+        page=qu_kong_ge(page)
 
-response=requests.get('https://u.faloo.com/unreal555.html',headers=headers,cookies=cookies)#
+        title=re.findall('''<divclass="c_l_title">(.*?)&nbsp;&nbsp;&nbsp;(.*?)</div><divclass="c_l_info">''',page)
+        result=re.findall('<divclass="noveContent">(.*?)<!--',page)[0].split('<br><br>')
+        for i in result:
+            print(i)
+        print(title)
+        print('____________________________________')
+        random_wait()
 
-page=response.content.decode('gbk')
-print(page)
-print(response.url)
+    response=requests.get('https://u.faloo.com/unreal555.html',headers=headers,cookies=cookies)#
+
+    page=response.content.decode('gbk')
+    print(page)
+    print(response.url)

@@ -65,6 +65,7 @@ def random_wait(n=1,m=3,*args):
 
 def tras_header(s):
 
+
     temp=s.split('\n')
     # print(s)
     # print(strs)
@@ -86,6 +87,21 @@ def tras_header(s):
     return result
 
 
+def qu_kong_ge(s):
+    if isinstance(s, str):
+        return re.sub('\s+', '', s)
+    else:
+        print('老兄，给字符串')
+        return 0
+
+def qu_te_shu_zi_fu(s):
+    if isinstance(s, str):
+        return re.sub('[\/:*?"<>|]','-',)
+    else:
+        print('老兄，给字符串')
+        return 0
+
+
 if __name__ == '__main__':
 
     s=''':authority: you.ctrip.com
@@ -104,3 +120,5 @@ if __name__ == '__main__':
 
     proxies=get_Proxy('http://www.sohu.com')
     print(proxies)
+
+    print(qu_kong_ge(111))
