@@ -18,6 +18,8 @@ headers['Referer']='https://u.faloo.com/unreal555.html'
 headers['Accept-Encoding']='gzip, deflate'
 
 def login():
+    Browser = webdriver.Ie('.\IEDriverServer.exe')
+    random_wait()
     Browser.get('https://u.faloo.com/regist/Login.aspx?backurl=/unreal555.html')
     while 1:
         print('等待登录...')
@@ -30,12 +32,14 @@ def login():
 
         except:
 
-            raise '登录 异常 请 检查 重新 登录 '
+            print('登录 异常 请 检查 重新 登录 ')
             Browser.get('https://u.faloo.com/regist/Login.aspx?backurl=/unreal555.html')
 
         finally:
             pass
         random_wait()
+    Browser.quit()
+
 
 def get_cookie():
     cookies={}
@@ -68,11 +72,14 @@ def load_cookies():
 
 def check_login(cookies):
     page=requests.get('https://u.faloo.com',headers=headers,cookies=cookies)
-    print(page.text)
-    if '退出' in page:
-        print('已登录')
-    if '注册' in page and '登录' in page:
-        print('未登录,请登录')
+    # print(page.text)
+    # print('退出' in page.text,'注册' in page and '登录' in page.text)
+    if '退出' in page.text:
+        print('cookie有效，已登录')
+        return True
+    if '注册' in page.text and '登录' in page.text:
+        print('cookie无效，使用人工登录')
+        return False
 
 
 
@@ -81,34 +88,42 @@ def check_login(cookies):
 
 if __name__ == '__main__':
     cookies=load_cookies()
-    check_login(cookies)
-    # Browser = webdriver.Ie('.\IEDriverServer.exe')
-    # login()
-    # cookies=get_cookie()
-    # save_cookies(cookies)
-    # Browser.quit()
-    #
-    #
-    # response=requests.get('http://mm.faloo.com/xiaoshuo/518974.html',headers=headers)#,cookies=cookies
-    #
-    # page=response.content.decode('gbk')
-    # print(response.url)
-    #
-    # for i in range(1,30):
-    #     response=requests.get('https://b.faloo.com/p/518974/{}.html'.format(i),headers=headers)
-    #     page=response.content.decode('gbk')
-    #     page=qu_kong_ge(page)
-    #
-    #     title=re.findall('''<divclass="c_l_title">(.*?)&nbsp;&nbsp;&nbsp;(.*?)</div><divclass="c_l_info">''',page)
-    #     result=re.findall('<divclass="noveContent">(.*?)<!--',page)[0].split('<br><br>')
-    #     for i in result:
-    #         print(i)
-    #     print(title)
-    #     print('____________________________________')
-    #     random_wait()
-    #
-    # response=requests.get('https://u.faloo.com/unreal555.html',headers=headers,cookies=cookies)#
-    #
-    # page=response.content.decode('gbk')
-    # print(page)
-    # print(response.url)
+    if cookies!=0:
+        if check_login(cookies):
+            pass
+        else:
+            print('开始人工登录')
+            login()
+
+            while cookies==0:
+                cookies=get_cookie()
+            save_cookies(cookies)
+
+
+
+
+    response=requests.get('https://u.faloo.com/S/0/1.html',headers=headers,cookies=cookies)
+    print(response.text)
+
+
+
+    response=requests.get('http://mm.faloo.com/xiaoshuo/518974.html',headers=headers)#,cookies=cookies
+
+    page=response.content.decode('gbk')
+    print(response.url)
+
+    for i in range(1,30):
+
+        response=requests.get('https://b.faloo.com/p/518974/{}.html'.format(i),headers=headers)
+        page=response.content.decode('gbk')
+        page=qu_kong_ge(page)
+        title=re.findall('''<divclass="c_l_title">(.*?)&nbsp;&nbsp;&nbsp;(.*?)</div><divclass="c_l_info">''',page)
+        result=re.findall('<divclass="noveContent">(.*?)<!--',page)[0].split('<br><br>')
+        print('____________________________________')
+        print(response.url,title)
+        for i in result:
+            print(i)
+
+
+        random_wait()
+
