@@ -31,10 +31,8 @@ def login():
                 print('未登录,请登录')
 
         except:
-
             print('登录 异常 请 检查 重新 登录 ')
             Browser.get('https://u.faloo.com/regist/Login.aspx?backurl=/unreal555.html')
-
         finally:
             pass
         random_wait()
@@ -80,11 +78,6 @@ def check_login(cookies):
     if '注册' in page.text and '登录' in page.text:
         print('cookie无效，使用人工登录')
         return False
-
-
-
-
-
 
 if __name__ == '__main__':
     cookies=load_cookies()
