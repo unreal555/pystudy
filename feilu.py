@@ -7,6 +7,8 @@ from mytools import  USER_AGENT_LIST
 from mytools import random_wait
 from mytools import qu_kong_ge
 from mytools import qu_te_shu_zi_fu
+import json
+import os
 
 headers={}
 headers['User-Agent']=random.choice(USER_AGENT_LIST)
@@ -14,13 +16,6 @@ headers['DNT']='1'
 headers['Accept']='text/html,application/xhtml+xml, */*'
 headers['Referer']='https://u.faloo.com/unreal555.html'
 headers['Accept-Encoding']='gzip, deflate'
-
-
-Browser = webdriver.Ie('.\IEDriverServer.exe')
-
-
-
-
 
 def login():
     Browser.get('https://u.faloo.com/regist/Login.aspx?backurl=/unreal555.html')
@@ -34,8 +29,9 @@ def login():
                 print('未登录,请登录')
 
         except:
-            Browser.get('https://u.faloo.com/regist/Login.aspx?backurl=/unreal555.html')
+
             raise '登录 异常 请 检查 重新 登录 '
+            Browser.get('https://u.faloo.com/regist/Login.aspx?backurl=/unreal555.html')
 
         finally:
             pass
@@ -46,7 +42,6 @@ def get_cookie():
     print('获得cookie....')
     for i in Browser.get_cookies():
         print(i)
-
     for i in Browser.get_cookies():
         if  i['name'] in ['UU12345678','comment_reply', 'KeenFire','KeenFire', 'host4chongzhi']:
             cookies[i['name']]=i['value']
@@ -55,32 +50,65 @@ def get_cookie():
     print(cookies)
     return cookies
 
+def save_cookies(cookies):
+
+    with open('user_info.json', 'w', encoding='utf-8') as json_file:
+        json.dump(cookies, json_file, ensure_ascii=False)
+        print("write json file success!")
+
+def load_cookies():
+    if os.path.exists(os.path.join('.','user_info.json')):
+        with open('user_info.json', 'r', encoding='utf-8') as json_file:
+            cookies = json.load(json_file)
+        print(type(cookies),cookies)
+        return cookies
+    else:
+        print('无cookie信息')
+        return 0
+
+def check_login(cookies):
+    page=requests.get('https://u.faloo.com',headers=headers,cookies=cookies)
+    print(page.text)
+    if '退出' in page:
+        print('已登录')
+    if '注册' in page and '登录' in page:
+        print('未登录,请登录')
+
+
+
+
+
 
 if __name__ == '__main__':
-    login()
-    cookies=get_cookie()
-    Browser.quit()
-
-    response=requests.get('http://mm.faloo.com/xiaoshuo/518974.html',headers=headers)#,cookies=cookies
-
-    page=response.content.decode('gbk')
-    print(response.url)
-
-    for i in range(1,30):
-        response=requests.get('https://b.faloo.com/p/518974/{}.html'.format(i),headers=headers)
-        page=response.content.decode('gbk')
-        page=qu_kong_ge(page)
-
-        title=re.findall('''<divclass="c_l_title">(.*?)&nbsp;&nbsp;&nbsp;(.*?)</div><divclass="c_l_info">''',page)
-        result=re.findall('<divclass="noveContent">(.*?)<!--',page)[0].split('<br><br>')
-        for i in result:
-            print(i)
-        print(title)
-        print('____________________________________')
-        random_wait()
-
-    response=requests.get('https://u.faloo.com/unreal555.html',headers=headers,cookies=cookies)#
-
-    page=response.content.decode('gbk')
-    print(page)
-    print(response.url)
+    cookies=load_cookies()
+    check_login(cookies)
+    # Browser = webdriver.Ie('.\IEDriverServer.exe')
+    # login()
+    # cookies=get_cookie()
+    # save_cookies(cookies)
+    # Browser.quit()
+    #
+    #
+    # response=requests.get('http://mm.faloo.com/xiaoshuo/518974.html',headers=headers)#,cookies=cookies
+    #
+    # page=response.content.decode('gbk')
+    # print(response.url)
+    #
+    # for i in range(1,30):
+    #     response=requests.get('https://b.faloo.com/p/518974/{}.html'.format(i),headers=headers)
+    #     page=response.content.decode('gbk')
+    #     page=qu_kong_ge(page)
+    #
+    #     title=re.findall('''<divclass="c_l_title">(.*?)&nbsp;&nbsp;&nbsp;(.*?)</div><divclass="c_l_info">''',page)
+    #     result=re.findall('<divclass="noveContent">(.*?)<!--',page)[0].split('<br><br>')
+    #     for i in result:
+    #         print(i)
+    #     print(title)
+    #     print('____________________________________')
+    #     random_wait()
+    #
+    # response=requests.get('https://u.faloo.com/unreal555.html',headers=headers,cookies=cookies)#
+    #
+    # page=response.content.decode('gbk')
+    # print(page)
+    # print(response.url)
