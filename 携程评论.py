@@ -40,7 +40,7 @@ print(page)
 keys=['resourceid','resourcetype','districtid','districtename','star','tourist','order','poiid','pagenow','usefulDataId']
 values=re.findall('varresourceid="(.*?)";varresourcetype="(.*?)";vardistrictid="(.*?)";vardistrictename="(.*?)";varstar="(.*?)";vartourist="(.*?)";varorder="(.*?)";varpoiid="(.*?)";varpagenow="(.*?)";varusefulDataId=""(.*?)',page)[0]
 
-if values==[]:
+
 
 form=dict(zip(keys,values))
 numpage=re.findall('<bclass="numpage">(\d+)</b>页</span><aclass="gopage"',page)[0]

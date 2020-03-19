@@ -65,12 +65,13 @@ def random_wait(n=1,m=3,*args):
 def tras_header(s):
 
 
-    temp=s.split('\n')
+    temp=re.split('\n|,|;',s)
     # print(s)
     # print(strs)
     result={}
     for item in temp:
-        key,value=item.split(': ')
+        print(item)
+        key,value=item.split(':')
         # print(key,value)
         result[key]=str(value)
 
