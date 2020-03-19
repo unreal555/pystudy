@@ -9,6 +9,7 @@ from mytools import qu_kong_ge
 from mytools import qu_te_shu_zi_fu
 import json
 import os
+from mytools import check_ban_quan
 
 headers={}
 headers['User-Agent']=random.choice(USER_AGENT_LIST)
@@ -18,7 +19,7 @@ headers['Referer']='https://u.faloo.com/unreal555.html'
 headers['Accept-Encoding']='gzip, deflate'
 
 def login():
-    Browser = webdriver.Ie('.\IEDriverServer.exe')
+
     random_wait()
     Browser.get('https://u.faloo.com/regist/Login.aspx?backurl=/unreal555.html')
     while 1:
@@ -36,7 +37,6 @@ def login():
         finally:
             pass
         random_wait()
-    Browser.quit()
 
 
 def get_cookie():
@@ -66,7 +66,7 @@ def load_cookies():
         return cookies
     else:
         print('无cookie信息')
-        return 0
+        return False
 
 def check_login(cookies):
     page=requests.get('https://u.faloo.com',headers=headers,cookies=cookies)
@@ -80,18 +80,28 @@ def check_login(cookies):
         return False
 
 if __name__ == '__main__':
+    if check_ban_quan(48)==False:
+        exit()
+
     cookies=load_cookies()
-    if cookies!=0:
-        if check_login(cookies):
+
+    if cookies==False:
+        print('开始人工登录')
+        Browser = webdriver.Ie('.\IEDriverServer.exe')
+        login()
+        cookies=get_cookie()
+        save_cookies(cookies)
+        Browser.quit()
+    else:
+        if check_login(cookies)==True:
             pass
         else:
+            Browser = webdriver.Ie('.\IEDriverServer.exe')
             print('开始人工登录')
             login()
-
-            while cookies==0:
-                cookies=get_cookie()
+            cookies=get_cookie()
             save_cookies(cookies)
-
+            Browser.quit()
 
 
 
@@ -105,18 +115,27 @@ if __name__ == '__main__':
     page=response.content.decode('gbk')
     print(response.url)
 
-    for i in range(1,30):
 
-        response=requests.get('https://b.faloo.com/p/518974/{}.html'.format(i),headers=headers)
+    for i in range(1,30):
+        url='https://b.faloo.com/p/518974/{}.html'.format(i)
+        headers['Referer']=url
+        response=requests.get(url,headers=headers,cookies=cookies)
         page=response.content.decode('gbk')
         page=qu_kong_ge(page)
-        title=re.findall('''<divclass="c_l_title">(.*?)&nbsp;&nbsp;&nbsp;(.*?)</div><divclass="c_l_info">''',page)
+        novel,chapter=re.findall('''<divclass="c_l_title">(.*?)&nbsp;&nbsp;&nbsp;(.*?)</div><divclass="c_l_info">''',page)[0]
         result=re.findall('<divclass="noveContent">(.*?)<!--',page)[0].split('<br><br>')
+
         print('____________________________________')
-        print(response.url,title)
+        print(novel,chapter)
+        with open('./%s.txt'%novel,'a',encoding='utf-8') as f:
+            f.write(novel+'\t\t'+chapter+'\r\n\r\n')
         for i in result:
             print(i)
+            with open('./%s.txt'%novel,'a',encoding='utf-8') as f:
+                f.write('    '+i+'\r\n')
+        with open('./%s.txt'%novel,'a',encoding='utf-8') as f:
+            f.write('\r\n')
 
 
-        random_wait()
+        random_wait(1,5)
 

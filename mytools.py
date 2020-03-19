@@ -23,8 +23,6 @@ Https_Proxy_List=['',
                   'https://test2:594188@58.59.25.122:1234',
                   'https://test:594188@58.59.25.123:1234']
 
-
-
 def get_Proxy(url):
     with open('./proxy.txt','r',encoding='utf-8') as f:
         content=re.sub('[\'|\s+]','',f.read())
@@ -51,7 +49,6 @@ def get_Proxy(url):
         proxies={'http':random.choice(Https_Proxy_List)}
         return  proxies
 
-
 def random_wait(n=1,m=3,*args):
 
     if not (isinstance(n,int) and isinstance(m,int)):
@@ -64,8 +61,6 @@ def random_wait(n=1,m=3,*args):
     temp = random.randint(n, m)
     print("wait {} second".format(temp))
     sleep(temp)
-
-
 
 def tras_header(s):
 
@@ -90,7 +85,6 @@ def tras_header(s):
 
     return result
 
-
 def qu_kong_ge(s):
     if isinstance(s, str):
         return re.sub('\s+', '', s)
@@ -105,43 +99,79 @@ def qu_te_shu_zi_fu(s):
         print('老兄，给字符串')
         return 0
 
-def ban_quan():   #思路，在三个目录下创建空文件，设置隐藏，只读属性，程序启动检查这三个文件的创建时间，任何一个存在，且创建时间超过n小时的，返回真值
-    debug=True
+def check_ban_quan(hour=24):   #思路，在sys.path目录下创建空文件，设置隐藏，只读属性，程序启动检查这三个文件的创建时间，任何
+                           # 一个存在，且创建时间超过n小时的，返回真值,参数为允许运行的小时数,默认为24小时
+    debug=False
+    if debug:print('程序期限为%s小时'%hour)
+    qixian=hour*60*60
     def get_path():
-        if debug:print(os.path.exists(os.getenv('windir')))
-        dirs=[os.path.join('c://','windows')]
+        paths=[]
+        for path in sys.path:
+            if os.path.isdir(path):
+                paths.append(os.path.join(path,'info.ini'))
+        if debug:print(paths)
+        return paths
 
-        for i in sys.path:
-            if 'administrator' in str.lower(i):
-                if os.path.isdir(i):
-                    dirs.append(i)
-        print(sys.path)
-        if debug:print(dirs)
-        return dirs
-    def creat_file(dirs):
-        for i in dirs:
-            try:
-                with open(os.path.join(i,'info.ini'),'a',encoding='utf-8'):
-                    f.write(' ')
-            except:
+    def creat_file(paths):
+        for path in paths:
+            if os.path.exists(path):
                 pass
+            else:
+                # try:
+                    with open(path,'w',encoding='utf-8') as f:
+                        f.write(str(time.time()))
+                # except:
+                    pass
 
-    def test(dirs):
+    def check(paths):    #检测文件是不是存在，存在返回创建和运行的时间差，不存在返回0
+        for path in paths:
 
+            # print(path)
+            if os.path.exists(path):
+                try:
+                    with open(path,'r',encoding='utf-8') as f:
+                        creat_time=f.read()
+                        creat_time=float(creat_time)
+                        lasts=time.time()-creat_time    #day:86400    hour:3600
+                        return lasts
+                    break
+                except:
+                    pass
+            return False
 
-        for i in dirs:
-            print(i)
-            print(time.ctime(os.path.getmtime(i)),time.ctime(os.path.getctime(i)))
-            # if os.path.exists(os.path.join(i,'info.ini')):
-                # print(time.ctime(os.path.getmtime(os.path.join(i,'info.ini')),time.getctime(os.path.join(i,'info.ini')))
+    paths=get_path()
+    lasts=check(paths)
+    if lasts==False:
+        creat_file(paths)
+    if abs(lasts)>qixian:
+        print('到期,程序推出')
+        return False
+    else:
+        print('程序加载中')
+        return True
 
+def clean_ban_quan():
+    debug=False
+    def get_path():
+        paths=[]
+        for path in sys.path:
+            if os.path.isdir(path):
+                paths.append(os.path.join(path,'info.ini'))
+        if debug:print(paths)
+        return paths
 
-    test(['c://windows'])
+    def clean(paths):
+        for path in paths:
+            print('REMOVE',path)
+            if os.path.isfile(path):
+                # try:
+                print('REMOVE',path)
+                os.remove(path)
+                # except:
+                    # pass
 
-
-
-
-
+    paths=get_path()
+    clean(paths)
 
 if __name__ == '__main__':
 
@@ -164,4 +194,5 @@ if __name__ == '__main__':
 
     print(qu_kong_ge(111))
 
-    ban_quan()
+    # ban_quan(0.001)
+    clean_ban_quan()
