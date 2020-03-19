@@ -194,5 +194,5 @@ if __name__ == '__main__':
 
     print(qu_kong_ge(111))
 
-    # ban_quan(0.001)
+
     clean_ban_quan()
