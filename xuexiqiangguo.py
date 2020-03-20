@@ -38,7 +38,15 @@ def wait():
 
 
 def watch_page(url):
-    Browser.get(url)
+
+    try:
+        Browser.get(url)
+        print(Browser.page_source)
+        if 'notFound' in Browser.current_url:
+            return
+    except exception as e:
+        print(e)
+
     print('打开{}'.format(url))
     temp = 0
     Browser.execute_script("window.scrollBy(0,600)")
@@ -88,8 +96,8 @@ def login():
             if r'notFound' in Browser.current_url or '?' in Browser.current_url:
                 print('qingdaomadneglu')
         except:
+            print('登录 异常 请 检查 重新 登录 ')
             Browser.get('https://pc.xuexi.cn/points/my-points.html')
-            raise '登录 异常 请 检查 重新 登录 '
 
         finally:
             pass
@@ -122,7 +130,7 @@ def get_news_list():
         # else:
         #     news_list[a].append(i['url'])
         news_list.append(i['url'])
-
+    print(news_list)
 
 def get_video_list():
     global video_list
@@ -137,6 +145,7 @@ def get_video_list():
         # else:
         #     video_list[a].append(i['url'])
         video_list.append(i['url'])
+    print(video_list)
 
 
 def get_cookie():
