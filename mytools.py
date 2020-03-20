@@ -1,6 +1,6 @@
 #!/bin/py
 #   -*-coding:utf-8-*-
-
+import functools
 import random
 from time import sleep
 import base64
@@ -22,6 +22,17 @@ Http_Proxy_List= ['',
 Https_Proxy_List=['',
                   'https://test2:594188@58.59.25.122:1234',
                   'https://test:594188@58.59.25.123:1234']
+
+#装饰器,用于返回函数名和执行时间
+def execute_lasts_time(func):
+    def warpper(*args,**kwargs):
+        start_time=time.time()
+        func(*args,**kwargs)
+        lasts_time=time.time()-start_time
+        print('%s执行时间为:%s'%(func.__name__,lasts_time))
+    return warpper
+
+
 
 def get_Proxy(url):
     with open('./proxy.txt','r',encoding='utf-8') as f:
@@ -63,16 +74,13 @@ def random_wait(n=1,m=3,*args):
     sleep(temp)
 
 def tras_header(s):
-
-
-    temp=re.split('\n|,|;',s)
-    # print(s)
-    # print(strs)
+    s=re.split('\n',s)
+    print()
     result={}
-    for item in temp:
+    for item in s:
         print(item)
-        key,value=item.split(':')
-        # print(key,value)
+        key,value=re.split('\: ',item)
+        print(key,value)
         result[key]=str(value)
 
     print('返回字典：',result)
@@ -151,6 +159,7 @@ def check_ban_quan(hour=24):   #思路，在sys.path目录下创建空文件，�
         print('程序加载中')
         return True
 
+@execute_lasts_time
 def clean_ban_quan():
     debug=False
     def get_path():
@@ -174,26 +183,20 @@ def clean_ban_quan():
     paths=get_path()
     clean(paths)
 
+
 if __name__ == '__main__':
 
-    s=''':authority: you.ctrip.com
-    :method: POST
-    :path: /destinationsite/TTDSecond/SharedView/AsynCommentView
-    :scheme: https
-    accept: */*
-    accept-encoding: gzip, deflate, br
-    accept-language: zh-CN,zh;q=0.9
-    content-length: 119
-    content-type: application/x-www-form-urlencoded'''
-    tras_header(s)
+    # s=''':authority: you.ctrip.com
+    # :method: POST
+    # :path: /destinationsite/TTDSecond/SharedView/AsynCommentView
+    # :scheme: https
+    # accept: */*
+    # accept-encoding: gzip, deflate, br
+    # accept-language: zh-CN,zh;q=0.9
+    # content-length: 119
+    # content-type: application/x-www-form-urlencoded'''
+    # tras_header(s)
 
-    proxies=get_Proxy('https://www.sohu.com')
-    print(proxies)
-
-    proxies=get_Proxy('http://www.sohu.com')
-    print(proxies)
-
-    print(qu_kong_ge(111))
 
 
     clean_ban_quan()
