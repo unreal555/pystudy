@@ -32,8 +32,6 @@ def execute_lasts_time(func):
         print('%s执行时间为:%s'%(func.__name__,lasts_time))
     return warpper
 
-
-
 def get_Proxy(url):
     with open('./proxy.txt','r',encoding='utf-8') as f:
         content=re.sub('[\'|\s+]','',f.read())
@@ -59,6 +57,7 @@ def get_Proxy(url):
         print('选择https代理')
         proxies={'http':random.choice(Https_Proxy_List)}
         return  proxies
+
 
 def random_wait(n=1,m=3,*args):
 

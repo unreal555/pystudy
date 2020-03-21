@@ -50,7 +50,7 @@ class MeiTuLu_Spider(scrapy.Spider):
     def after_login(self,response):
         print('传递过来的cookie',response.meta['cookies'])
 
-        for i in range(1650,1380,-1):#1630-1500-1200-1000
+        for i in range(1650,1000,-1):#1630-1500-1200-1000
             yield scrapy.Request('http://www.tujidao.com/cat/?id=0&page={}'.format(i),callback=self.parse,dont_filter=True)
 
 
@@ -104,12 +104,17 @@ class MeiTuLu_Spider(scrapy.Spider):
             with open(os.path.join(self.log_path,self.log_name), 'r', encoding='utf-8') as f:
                 log = f.read()
 
+            with open(os.path.join(self.log_path, 'wrong.txt'), 'r', encoding='utf-8') as f:
+                wrong_log = f.read()
+
             with open(os.path.join(self.log_path,self.log_name), 'a', encoding='utf-8') as f:
 
                 if bianhao  in log:
                     print('{}{} 已经下载，跳过'.format(bianhao,biaoti))
                     continue
-
+                if bianhao in wrong_log:
+                    print('{}{} 已经在错误日志，跳过'.format(bianhao, biaoti))
+                    continue
 
 
             sub_path=os.path.join(jigou,biaoti+'-tag-'+tag)
