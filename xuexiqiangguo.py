@@ -11,7 +11,7 @@ import re
 import random
 import os
 import threading
-
+from send_qq_mail import send
 import json
 import requests
 
@@ -44,7 +44,7 @@ def watch_page(url):
         print(Browser.page_source)
         if 'notFound' in Browser.current_url:
             return
-    except exception as e:
+    except Exception as e:
         print(e)
 
     print('打开{}'.format(url))
@@ -90,18 +90,22 @@ def login():
     while 1:
         print('等待登录...')
         try:
-            if Browser.current_url == 'https://pc.xuexi.cn/points/my-points.html' or Browser.current_url == r'https://pc.xuexi.cn/points/my-study.html':
+            if Browser.current_url == 'https://pc.xuexi.cn/points/my-points.html' or Browser.current_url == 'https://pc.xuexi.cn/points/my-study.html':
                 print('已登录')
                 break
             if r'notFound' in Browser.current_url or '?' in Browser.current_url:
                 print('qingdaomadneglu')
+                valid_code=re.findall('<img src="(.*?)"></div><div id="swiper_valid">',Browser.page_source)[0]
+                print(Browser.page_source)
+                print(valid_code)
+                send(txt='学习强国登录',subject='学习强国登录',img_content=valid_code)
         except:
             print('登录 异常 请 检查 重新 登录 ')
             Browser.get('https://pc.xuexi.cn/points/my-points.html')
 
         finally:
             pass
-        sleep(3)
+        sleep(30)
     Browser.get('https://www.xuexi.cn')
     wait()
 
