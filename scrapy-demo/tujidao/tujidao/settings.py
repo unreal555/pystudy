@@ -43,7 +43,7 @@ ROBOTSTXT_OBEY = False
 
 
 RETRY_ENABLED = True  #打开重试开关
-RETRY_TIMES = 8  #重试次数
+RETRY_TIMES = 100  #重试次数
 DOWNLOAD_TIMEOUT = 3  #超时
 RETRY_HTTP_CODES = [429,404,403]  #重试
 
@@ -52,15 +52,15 @@ HTTPERROR_ALLOWED_CODES = [301, 302,403,429]     # 返回301, 302时, 按正常�
 
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 1
+CONCURRENT_REQUESTS = 2
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY =0.05
+DOWNLOAD_DELAY =0.125
 # The download delay setting will honor only one of:
-CONCURRENT_REQUESTS_PER_DOMAIN = 1
-CONCURRENT_REQUESTS_PER_IP = 1
+CONCURRENT_REQUESTS_PER_DOMAIN = 2
+CONCURRENT_REQUESTS_PER_IP = 2
 
 # Disable cookies (enabled by default)
 COOKIES_ENABLED = True
@@ -116,7 +116,7 @@ ITEM_PIPELINES = {
      # 'pipelines.Dianzishu_Pipeline':300
 }
 
-IMAGES_STORE = 'd:/a' #设置图片下载路径
+IMAGES_STORE = 'e:/a' #设置图片下载路径
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True

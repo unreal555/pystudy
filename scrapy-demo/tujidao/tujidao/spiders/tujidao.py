@@ -13,7 +13,7 @@ from settings import IMAGES_STORE
 print(sys.path)
 flag=0
 
-start=3
+start=200
 end=1
 step=-1
 
@@ -152,8 +152,8 @@ class MeiTuLu_Spider(scrapy.Spider):
 
 
         now=re.findall('id=0&page=(\d+)',response.url)[0]
-        next=now+step
-        if next!=end:
+        next=int(now)+step
+        if int(now)!=end:
             yield scrapy.Request('http://www.tujidao.com/cat/?id=0&page={}'.format(next), callback=self.parse,dont_filter=True)
         else:
             return
