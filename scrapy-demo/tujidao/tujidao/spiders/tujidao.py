@@ -7,6 +7,7 @@ import re
 import os
 import sys
 import time
+import mytools
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),"..")))
 from  items import PicItem
 from settings import IMAGES_STORE
@@ -50,8 +51,9 @@ class MeiTuLu_Spider(scrapy.Spider):
     def after_login(self,response):
         print('传递过来的cookie',response.meta['cookies'])
 
-        for i in range(1650,1000,-1):#1630-1500-1200-1000
+        for i in range(1650,1005,-1):#1630-1500-1200-1000
             yield scrapy.Request('http://www.tujidao.com/cat/?id=0&page={}'.format(i),callback=self.parse,dont_filter=True)
+
 
 
     def parse(self,response):

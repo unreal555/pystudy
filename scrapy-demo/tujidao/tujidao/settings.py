@@ -44,7 +44,7 @@ ROBOTSTXT_OBEY = False
 
 RETRY_ENABLED = True  #打开重试开关
 RETRY_TIMES = 8  #重试次数
-DOWNLOAD_TIMEOUT = 5  #超时
+DOWNLOAD_TIMEOUT = 3  #超时
 RETRY_HTTP_CODES = [429,404,403]  #重试
 
 HTTPERROR_ALLOWED_CODES = [301, 302,403,429]     # 返回301, 302时, 按正常返回对待, 可以正常写入cookie
@@ -57,7 +57,7 @@ CONCURRENT_REQUESTS = 1
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 8
+DOWNLOAD_DELAY =0.05
 # The download delay setting will honor only one of:
 CONCURRENT_REQUESTS_PER_DOMAIN = 1
 CONCURRENT_REQUESTS_PER_IP = 1
