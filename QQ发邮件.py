@@ -61,6 +61,5 @@ def send_qq_mail(txt,sender='47540479@qq.com',receiver='47540479@qq.com',subject
     except smtplib.SMTPException as e:
         print(e)
 
-requests('')
 if __name__=='__main__':
     send_qq_mail(txt='ekljflkajsldjfaljflajkljdfal',subject='xuexi')

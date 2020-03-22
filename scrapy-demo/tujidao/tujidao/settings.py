@@ -116,7 +116,7 @@ ITEM_PIPELINES = {
      # 'pipelines.Dianzishu_Pipeline':300
 }
 
-IMAGES_STORE = 'e:/a' #设置图片下载路径
+IMAGES_STORE = 'd:/a' #设置图片下载路径
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True
