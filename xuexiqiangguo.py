@@ -17,7 +17,11 @@ import requests
 
 global news_page_time, count, video_page_time, news_list, cookie, video_list, news_time_score, news_count_score, video_time_score, video_conut_score
 user_agent = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko'}
-Browser = webdriver.Ie('.\IEDriverServer.exe')
+# options.add_argument('--incognito')  # 隐身模式（无痕模式）
+# options = webdriver.ChromeOptions()
+# options.add_argument('--headless')
+# Browser = webdriver.Ie('.\IEDriverServer.exe')
+Browser = webdriver.Chrome('./chromedriver.exe')#,options=options)
 news_page_time = 180
 video_page_time = 180
 news_count_score = None
@@ -84,9 +88,15 @@ def check_point():
         sleep(10)
 
 
-
 def login():
-    Browser.get('https://pc.xuexi.cn/points/my-points.html')
+    try:
+        Browser.get('https://pc.xuexi.cn/points/my-points.html')
+    except Exception as e:
+        print(e)
+
+    Browser.execute_script("window.scrollBy(0,500)")
+    valid_code=Browser.get_screenshot_as_base64()
+
     while 1:
         print('等待登录...')
         try:
@@ -95,17 +105,16 @@ def login():
                 break
             if r'notFound' in Browser.current_url or '?' in Browser.current_url:
                 print('qingdaomadneglu')
-                valid_code=re.findall('<img src="(.*?)"></div><div id="swiper_valid">',Browser.page_source)[0]
-                print(Browser.page_source)
-                print(valid_code)
+                valid_code=Browser.get_screenshot_as_png()
+                print('发邮件 ')
                 send(txt='学习强国登录',subject='学习强国登录',img_content=valid_code)
         except:
             print('登录 异常 请 检查 重新 登录 ')
-            Browser.get('https://pc.xuexi.cn/points/my-points.html')
 
         finally:
             pass
-        sleep(30)
+        sleep(60)
+        Browser.refresh()
     Browser.get('https://www.xuexi.cn')
     wait()
 
@@ -138,6 +147,7 @@ def get_news_list():
 
 def get_video_list():
     global video_list
+
     page = requests.get('https://www.xuexi.cn/lgdata/1novbsbi47k.json')
     for i in json.loads(page.content, encoding='utf-8'):
         #
