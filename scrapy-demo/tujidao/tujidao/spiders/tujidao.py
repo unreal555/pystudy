@@ -13,8 +13,8 @@ from settings import IMAGES_STORE
 print(sys.path)
 flag=0
 
-start=200
-end=250
+start=250
+end=500
 step=1
 
 class MeiTuLu_Spider(scrapy.Spider):
@@ -93,14 +93,12 @@ class MeiTuLu_Spider(scrapy.Spider):
             urls=result
             max=re.findall('''<spanclass="shuliang">(\d+)P</''',i)[0]
 
-
             jigou=re.findall('''<ahref=/x/\?id=\d+>(.*?)</a>''',i)
             if len(jigou)==0:
                 print('没有提取到机构名 ，使用默认名‘无机构’')
                 jigou='无机构'
             else:
                 jigou=jigou[0]
-
 
             tag=''
             for s in re.findall('''<ahref=/s/\?id=\d+>(.*?)</a>''',i):
@@ -125,12 +123,6 @@ class MeiTuLu_Spider(scrapy.Spider):
                     print('{}{} 已经在错误日志，跳过'.format(bianhao, biaoti))
                     continue
 
-
-
-
-
-
-
             sub_path=os.path.join(jigou,biaoti+'-tag-'+tag)
             xiangce_path = os.path.join(self.log_path, sub_path)
 
@@ -146,15 +138,12 @@ class MeiTuLu_Spider(scrapy.Spider):
             else:
                 os.makedirs(xiangce_path)
 
-
             item = PicItem()
             item['image_urls'] = urls
             # item['image_urls']=['https://ii.hywly.com/a/1/899/2.jpg','https://ii.hywly.com/a/1/899/7.jpg']
             item['image_path'] = xiangce_path
             item['image_log']=[bianhao,biaoti,self.log_path,self.log_name]
             yield item
-
-
 
         now=re.findall('id=0&page=(\d+)',response.url)[0]
         next=int(now)+step
