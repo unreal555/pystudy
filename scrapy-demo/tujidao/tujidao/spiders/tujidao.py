@@ -13,9 +13,9 @@ from settings import IMAGES_STORE
 print(sys.path)
 flag=0
 
-start=200
-end=1
-step=-1
+start=0
+end=155
+step=1
 
 class MeiTuLu_Spider(scrapy.Spider):
     name = 'tujidao'
@@ -24,11 +24,13 @@ class MeiTuLu_Spider(scrapy.Spider):
     log_path=os.path.join(IMAGES_STORE,name)
     log_name='log.txt'
 
+    #日志文件
     if not os.path.exists(log_path):
         os.makedirs(os.path.join(log_path))
     with open(os.path.join(log_path,log_name),'a',encoding='utf-8') as f:
         f.write(time.strftime('%Y-%m-%d %H-%M')+'\r\n\r\n')
 
+    #登录
     def start_requests(self):
         formdata = {
             't0': 'unreal555',
@@ -36,8 +38,7 @@ class MeiTuLu_Spider(scrapy.Spider):
         }
         yield scrapy.FormRequest('http://www.tujidao.com/u/?action=loginsave', formdata=formdata,callback=self.login_check)
 
-
-
+    #检查登录状态，获得cookie传递
     def login_check(self,response):
 
         set_cookie=response.headers.getlist('Set-Cookie')
@@ -50,6 +51,7 @@ class MeiTuLu_Spider(scrapy.Spider):
 
         yield scrapy.Request('http://www.tujidao.com/u/?', callback=self.after_login,dont_filter=True,cookies=cookies,meta={'cookies':cookies})
 
+    #利用cookie访问相册索引页面,只传入首页，后续页面待本页面相册下载 完毕后提交
     def after_login(self,response):
         print('传递过来的cookie',response.meta['cookies'])
 
@@ -58,8 +60,6 @@ class MeiTuLu_Spider(scrapy.Spider):
 
         yield scrapy.Request('http://www.tujidao.com/cat/?id=0&page={}'.format(start), callback=self.parse,dont_filter=True)
 
-
-
     def parse(self,response):
 
         print('获得{}响应，开始处理'.format(response.url))
@@ -67,22 +67,23 @@ class MeiTuLu_Spider(scrapy.Spider):
         if response.status!=200:
             print('页面不存在,返回')
             return
-
         page = re.sub('[\s]+', '', response.text)
         # print(page)
+
+        #提取相册记录，总的
         select=re.findall('''(<li><ahref="/a/.*?</a></p></li>)''',page)
 
-        for i in select:
-            # print('target', i)
 
+        for i in select:
+            #如果没有提取到相册数字代码，写入错误日志
             result=re.findall('<pclass="biaoti"><ahref="/a/\?id=(\d+)"target="_blank">(.*?)</a></p></li>',i)
-            print(result)
             if len(result)==0:
                 with open(os.path.join(self.log_path,'wrong.txt'),'a',encoding='utf-8') as f:
                     f.write('{}'.format(time.strftime( '%Y-%m-%d %H-%M')+'\t' + response.url+'\r\n\r\n\r\n\r\n'))
                     return
             bianhao,biaoti=result[0]
 
+            #如果没有提取到第一张图片地址，写入错误日志
             result=re.findall('''<imgclass="lazy"data-original="(.*?)"></a>''',i)
             if len(result)==0:
                 with open(os.path.join(self.log_path,'wrong.txt'),'a',encoding='utf-8') as f:
@@ -90,11 +91,15 @@ class MeiTuLu_Spider(scrapy.Spider):
                     return
 
             urls=result
-
             max=re.findall('''<spanclass="shuliang">(\d+)P</''',i)[0]
 
-            jigou=re.findall('''<ahref=/x/\?id=\d+>(.*?)</a>''',i)[0]
 
+            jigou=re.findall('''<ahref=/x/\?id=\d+>(.*?)</a>''',i)
+            if len(jigou)==0:
+                print('没有提取到机构名 ，使用默认名‘无机构’')
+                jigou='无机构'
+            else:
+                jigou=jigou[0]
 
 
             tag=''

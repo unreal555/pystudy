@@ -44,7 +44,7 @@ ROBOTSTXT_OBEY = False
 
 RETRY_ENABLED = True  #打开重试开关
 RETRY_TIMES = 100  #重试次数
-DOWNLOAD_TIMEOUT = 3  #超时
+DOWNLOAD_TIMEOUT = 20  #超时
 RETRY_HTTP_CODES = [429,404,403]  #重试
 
 HTTPERROR_ALLOWED_CODES = [301, 302,403,429]     # 返回301, 302时, 按正常返回对待, 可以正常写入cookie
