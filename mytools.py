@@ -27,9 +27,10 @@ Https_Proxy_List=['',
 def execute_lasts_time(func):
     def warpper(*args,**kwargs):
         start_time=time.time()
-        func(*args,**kwargs)
+        result=func(*args,**kwargs)
         lasts_time=time.time()-start_time
         print('%s执行时间为:%s'%(func.__name__,lasts_time))
+        return result
     return warpper
 
 def get_Proxy(url):
