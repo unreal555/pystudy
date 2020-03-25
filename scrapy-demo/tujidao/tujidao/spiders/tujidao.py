@@ -8,13 +8,13 @@ import os
 import sys
 import time
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),"..")))
-from  items import PicItem
+from items import PicItem
 from settings import IMAGES_STORE
 print(sys.path)
 flag=0
 
-start=500
-end=1000
+start=1
+end=700
 step=1
 
 class MeiTuLu_Spider(scrapy.Spider):
