@@ -1,6 +1,94 @@
 #!/bin/py
 #   -*-coding:utf-8-*-
 js='''
+	_inlineRun(function(){
+		var page = $(".mod-page");
+		var isTouch = !!("ontouchstart" in window);
+		var isMouse = !!("onmousemove" in window);
+
+		var chapterView = $("#ChapterView"), body = $("body");
+		var pageContent = chapterView.find(".page-content"), saveFont = core.cookie("current-font"), currentFont = 1;
+
+		var font = function(){
+			//font size;
+			var sizes = ["font-normal", "font-large", "font-xlarge", "font-xxlarge", "font-xxxlarge"],
+				level = sizes.length;
+
+			return {
+				set: function(c){
+					console.log(sizes[currentFont])
+					pageContent.toggleClass( sizes[currentFont] + " " + sizes[c] );
+					currentFont = c;
+					core.cookie("current-font", c, { expires: 3600 });
+					core.cookie("currentFontString", sizes[c], { expires: 3600 });
+				},
+				increase: function(){
+					if( currentFont < level - 1 ) {
+						this.set(currentFont + 1)
+					}
+				},
+				descrease: function(){
+					if( currentFont > 0 ) {
+						this.set( currentFont - 1 );
+					}
+				},
+				day: function(){
+					isNight = false;
+					body.removeClass("night");
+					core.cookie.removeCookie("night-mode", {});
+				},
+				night: function(){
+					isNight = true;
+					body.addClass("night");
+					core.cookie("night-mode", true, { expires: 3600 });
+				}
+			}
+		}();
+
+		if( typeof saveFont !== "undefined" ){
+			font.set(saveFont * 1);
+		}
+
+		var isNight = !!core.cookie("night-mode");
+
+		if( isNight ){
+			font.night();
+		}
+
+		function action(){
+			var type = $(this).data("role");
+
+			if( type == "inc" ){
+				font.increase();
+			}else if( type == "des" ) {
+				font.descrease();
+			}else if( type == "mode" ){
+				if( isNight ){
+					font.day();
+				}else{
+					font.night();
+				}
+			}
+		}
+
+		core.Tabs( $(".chapter-recommend .tab-choose a"), $(".chapter-recommend ul") )
+
+		if( isTouch ){
+			chapterView
+				.on("touchstart MSPointerDown", ".config span", function(){
+					$(this).addClass("active");
+				})
+				.on("touchend MSPointerUp", ".config span", function(){
+					$(this).removeClass("active");
+				});
+
+			chapterView.on("touchend MSPointerUp", ".config span", action)
+		}else if( isMouse ){
+			chapterView.on("click", ".config span", action)
+		}
+	});
+'''
+js1='''
 function getid(a) {
 	return document.getElementById(a)
 };
@@ -244,8 +332,9 @@ function check() {
 from requests_html import HTMLSession
 session=HTMLSession()
 r=session.get('http://www.skwen.me/13/13577/185654.html')
-print(r.text)
+
 
 dom=r.html
-
 print(dom.render(script=js))
+
+
