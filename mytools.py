@@ -29,7 +29,7 @@ def execute_lasts_time(func):
         start_time=time.time()
         result=func(*args,**kwargs)
         lasts_time=time.time()-start_time
-        print('%s执行时间为:%s'%(func.__name__,lasts_time))
+        print('%s执行时间为:%s'%(func.__name__,lasts_time),'\r')
         return result
     return warpper
 
