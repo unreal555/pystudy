@@ -334,7 +334,7 @@ session=HTMLSession()
 r=session.get('http://www.skwen.me/13/13577/185654.html')
 
 
-dom=r.html
-print(dom.render(script=js))
+dom=r.html.render(script=js1, reload=False)
+print(dom)
 
 
