@@ -13,8 +13,8 @@ from settings import IMAGES_STORE
 print(sys.path)
 flag=0
 
-start=1
-end=700
+start=700
+end=1000
 step=1
 
 class MeiTuLu_Spider(scrapy.Spider):
