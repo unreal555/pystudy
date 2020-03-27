@@ -7,7 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/scrapy-demo/demo" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.7.0 (C:\Python37\python.exe)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.8.1 (C:\Users\Administrator\AppData\Local\Programs\Python\Python38\python.exe)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TestRunnerService">
