@@ -439,7 +439,7 @@ def start(url):
         book[1].append(chapter_content)
         # print(book)
     print(all)
-    with open('d:/a/{}.txt'.format(book[0]),'w',encoding='utf-8') as f:
+    with open('E:/a/{}.txt'.format(book[0]),'w',encoding='utf-8') as f:
         f.write(book[0])
         f.write('\n\r')
         f.write('\n\r')
@@ -464,7 +464,7 @@ set_baolihou_js(str)
 # except:
 #     print("初始化出错")
 #     Browser.close()
-for i in range(23,1000):
+for i in range(7,100):
     start('http://www.skwen.me/1/{}/'.format(i))
 
 # start('http://www.skwen.me/1/13434/')
