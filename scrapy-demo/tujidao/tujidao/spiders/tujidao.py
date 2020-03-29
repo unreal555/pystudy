@@ -15,6 +15,7 @@ flag=0
 
 start=1
 end=2000
+step=1
 
 class MeiTuLu_Spider(scrapy.Spider):
     name = 'tujidao'

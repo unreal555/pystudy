@@ -23,9 +23,16 @@ from pyppeteer.launcher import launch # 控制模拟浏览器用
 from retrying import retry #设置重试次数用的
 from mytools import qu_kong_ge,random_wait
 
-@retry
 async def goto(page,url):
-    await page.goto(url)
+    while 1:
+        try:
+            await page.goto(url)
+            break
+        except Exception as e:
+            print(e)
+            random_wait(5,20)
+
+
 
 async def get_chapter_content(page,chapter_start_url):
 
@@ -45,31 +52,67 @@ async def get_chapter_content(page,chapter_start_url):
     print(next_chapter_url)
 
 
-    content=''
+    result=''
     for i in chapter_page_list:
-        content=content+get_text(await get_chapter_page_content(page,i))
+        result=result+get_text(await get_chapter_page_content(page,i))
 
-    content = content.replace('”', '」')
-    content = content.replace('“', '「')
-    content = content.replace(' ', '').replace('\r', '').replace('\n', '')
-    content = content.replace('。」', '」。')
-    content = content.replace('。', '。~!@#$')
-    content = content.replace('」。', '。」')
-    content = content.split('~!@#$')
+    print(result)
+    result = result.replace('”', '」')
+    result = result.replace('“', '「')
+    result = result.replace(' ', '').replace('\r', '').replace('\n', '')
+    result = result.replace('。」', '。」\t\t\t\t\t')
+    result = result.replace('！」', '！」\t\t\t\t\t')
+    result = result.replace('……」', '……」\t\t\t\t\t')
+    result = result.replace('?」', '?」\t\t\t\t\t')
+    result = result.replace('.」', '.」\t\t\t\t\t')
+    result = result.replace('!」', '!」\t\t\t\t\t')
+    result = result.replace('？」', '？」\t\t\t\t\t')
+    result = result.split('\t\t\t\t\t')
 
-    for i in content:
+
+
+    # result = result.replace('。', '。~!@#$')
+    # result = result.replace('」。', '。」')
+    # result = result.split('~!@#$')
+    # content=[]
+    # s=''
+    # for i in result:
+    #
+    #     if '「' not in i and not '」' in i:
+    #         content.append(i)
+    #         continue
+    #
+    #     if '「' in i and '」' in i:
+    #         content.append(i)
+    #         continue
+    #
+    #     if '「'  in i:
+    #         s=s+i
+    #         continue
+    #
+    #     if  '」' in i:
+    #         s=s+i
+    #         content.append(s)
+    #         s=''
+    #         continue
+
+
+
+
+
+    for i in result:
         print(i)
     print(next_chapter_url)
 
-    return [chapter_name,content],next_chapter_url
+    return [chapter_name,result],next_chapter_url
 
 async def get_chapter_page_content(page,url):
 
     await goto(page,url)
 
-    random_wait(5,20)
+    random_wait(3,5)
     await page.evaluate('window.scrollBy(0, document.body.scrollHeight)')
-
+    random_wait(3,5)
     try:
         # s = await page.evaluate(pageFunction='document.body.textContent', force_expr=True)
         s=await page.evaluate('''() =>  document.querySelector("#content").innerText''')
@@ -107,9 +150,10 @@ async def main(url):# 定义main协程函数，
         content,chapter_start_url=await get_chapter_content(page,chapter_start_url)
         chapter_start_url=url+chapter_start_url
         book[1].append(content)
+    await browser.close()
 
 
-    with open('E:/a/{}.txt'.format(book[0]),'w',encoding='utf-8') as f:
+    with open('E:/a/a/{}.txt'.format(book[0]),'w',encoding='utf-8') as f:
         f.write(book[0])
         f.write('\n\r')
         f.write('\n\r')
@@ -125,17 +169,19 @@ async def main(url):# 定义main协程函数，
             f.write(chapter[0])
             f.write('\n\r')
             for line in chapter[1]:
+                f.write('\n\r')
                 line=line.replace(chapter[0].replace(' ',''),'').replace('努力加载中','')
-                f.write('    '+line+'\n\r')
+                f.write('\t'+line+'\n\r')
             f.write('\n\r')
 
 
 
 
 if __name__ == '__main__':
-    url = 'http://www.skwen.me/13/13577/'
     loop = asyncio.get_event_loop()  #协程，开启个无限循环的程序流程，把一些函数注册到事件循环上。当满足事件发生的时候，调用相应的协程函数。
-    loop.run_until_complete(main(url))
+    for i in range(41,100):
+        url = 'http://www.skwen.me/13/{}/'.format(i)
+        loop.run_until_complete(main(url))
 
 
 
