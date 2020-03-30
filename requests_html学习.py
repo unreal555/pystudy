@@ -32,8 +32,6 @@ async def goto(page,url):
             print(e)
             random_wait(5,20)
 
-
-
 async def get_chapter_content(page,chapter_start_url):
 
     await goto(page,chapter_start_url)
@@ -107,9 +105,7 @@ async def get_chapter_content(page,chapter_start_url):
     return [chapter_name,result],next_chapter_url
 
 async def get_chapter_page_content(page,url):
-
     await goto(page,url)
-
     random_wait(3,5)
     await page.evaluate('window.scrollBy(0, document.body.scrollHeight)')
     random_wait(3,5)
@@ -142,7 +138,6 @@ async def main(url):# 定义main协程函数，
     book_name=re.findall('<h1>(.*?)</h1>',await page.content())[0]
     print(book_name)
 
-
     chapter_start_url=url+re.findall('<a class="read start" href="(.*?)">.*?</a>',await page.content())[0]
     book=[book_name,[]]
     while 'html' in chapter_start_url:
@@ -151,7 +146,6 @@ async def main(url):# 定义main协程函数，
         chapter_start_url=url+chapter_start_url
         book[1].append(content)
     await browser.close()
-
 
     with open('E:/a/a/{}.txt'.format(book[0]),'w',encoding='utf-8') as f:
         f.write(book[0])
@@ -174,12 +168,9 @@ async def main(url):# 定义main协程函数，
                 f.write('\t'+line+'\n\r')
             f.write('\n\r')
 
-
-
-
 if __name__ == '__main__':
     loop = asyncio.get_event_loop()  #协程，开启个无限循环的程序流程，把一些函数注册到事件循环上。当满足事件发生的时候，调用相应的协程函数。
-    for i in range(41,100):
+    for i in range(53,100):
         url = 'http://www.skwen.me/13/{}/'.format(i)
         loop.run_until_complete(main(url))
 
