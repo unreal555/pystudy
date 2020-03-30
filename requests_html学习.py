@@ -31,6 +31,7 @@ async def goto(page,url):
         except Exception as e:
             print(e)
             random_wait(5,20)
+            continue
 
 async def get_chapter_content(page,chapter_start_url):
 
@@ -67,37 +68,6 @@ async def get_chapter_content(page,chapter_start_url):
     result = result.replace('？」', '？」\t\t\t\t\t')
     result = result.split('\t\t\t\t\t')
 
-
-
-    # result = result.replace('。', '。~!@#$')
-    # result = result.replace('」。', '。」')
-    # result = result.split('~!@#$')
-    # content=[]
-    # s=''
-    # for i in result:
-    #
-    #     if '「' not in i and not '」' in i:
-    #         content.append(i)
-    #         continue
-    #
-    #     if '「' in i and '」' in i:
-    #         content.append(i)
-    #         continue
-    #
-    #     if '「'  in i:
-    #         s=s+i
-    #         continue
-    #
-    #     if  '」' in i:
-    #         s=s+i
-    #         content.append(s)
-    #         s=''
-    #         continue
-
-
-
-
-
     for i in result:
         print(i)
     print(next_chapter_url)
@@ -105,19 +75,21 @@ async def get_chapter_content(page,chapter_start_url):
     return [chapter_name,result],next_chapter_url
 
 async def get_chapter_page_content(page,url):
-    await goto(page,url)
-    random_wait(3,5)
-    await page.evaluate('window.scrollBy(0, document.body.scrollHeight)')
-    random_wait(3,5)
-    try:
-        # s = await page.evaluate(pageFunction='document.body.textContent', force_expr=True)
-        s=await page.evaluate('''() =>  document.querySelector("#content").innerText''')
-    except Exception as e:
-        print(e)
-    return s
+    while 1:
+        await goto(page,url)
+        random_wait(2,5)
+        await page.evaluate('window.scrollBy(0, document.body.scrollHeight)')
+        random_wait(2,5)
+        try:
+            # s = await page.evaluate(pageFunction='document.body.textContent', force_expr=True)
+            s=await page.evaluate('''() =>  document.querySelector("#content").innerText''')
+            return s
+        except Exception as e:
+            print(e)
+            continue
+
 
 def get_text(s):
-
     result=''
     for i in re.split('\r|\n|\r\n',s):
         try:
