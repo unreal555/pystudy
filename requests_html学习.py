@@ -34,14 +34,16 @@ async def goto(page,url):
             continue
 
 async def get_chapter_content(page,chapter_start_url):
+    while 1:
+        try:
+            await goto(page,chapter_start_url)
+            txt=await page.content()
 
-    await goto(page,chapter_start_url)
-
-    txt=await page.content()
-
+            break
+        except Exception as e:
+            print(e)
+            continue
     chapter_name=re.findall('<h1 class="page-title">(.*?)</h1>',txt)[0]
-    print(chapter_name)
-
     chapter_page_list=[chapter_start_url]
     for i in re.findall('<a href="(\d+_\d+\.html)">【.*?】</a>',txt,re.S):
         chapter_page_list.append(url+i)
@@ -76,11 +78,11 @@ async def get_chapter_content(page,chapter_start_url):
 
 async def get_chapter_page_content(page,url):
     while 1:
-        await goto(page,url)
-        random_wait(2,5)
-        await page.evaluate('window.scrollBy(0, document.body.scrollHeight)')
-        random_wait(2,5)
         try:
+            await goto(page,url)
+            random_wait(2,5)
+            await page.evaluate('window.scrollBy(0, document.body.scrollHeight)')
+            random_wait(2,5)
             # s = await page.evaluate(pageFunction='document.body.textContent', force_expr=True)
             s=await page.evaluate('''() =>  document.querySelector("#content").innerText''')
             return s

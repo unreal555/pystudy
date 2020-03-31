@@ -1,18 +1,17 @@
 #!/bin/py
 #   -*-coding:utf-8-*-
 
-import 学习requests
+import requests
 from urllib import parse
 import re
 import time
 import os
 import random
 
-
 URL=r'http://www.022003.com/57_57619/'
 scheme,netloc,path,query,fragment=parse.urlsplit(URL)
 
-response=学习requests.get(URL)
+response= requests.get(URL)
 page=response.content.decode("utf-8")
 chapter_reg=r'<dd><a href="(.*/?)">(.*?)</a></dd>'
 title_reg=r'<script language="javascript" type="text/javascript">var bookid = ".*?"; var booktitle = "(.*?)";</script>'
@@ -36,7 +35,7 @@ for chapter in chapter_list:
     chapter_url,chapter_name=scheme+"://"+netloc+chapter[0],chapter[1]
     print (chapter_url)
 
-    response=学习requests.get(chapter_url)
+    response= requests.get(chapter_url)
     page =response.content.decode("utf-8")
     reg=r'&nbsp;&nbsp;&nbsp;&nbsp;(.*?)<br />'
     result=re.findall(reg,page)
@@ -70,7 +69,7 @@ for chapter in chapter_list:
     with open(os.path.join(path,filename),"a",encoding="utf-8") as f2:
         f2.write(text)
 
-    s=random.randint(1,10)
+    s=random.randint(1,3)
     print("停止{}秒".format(s))
     time.sleep(s)
 
