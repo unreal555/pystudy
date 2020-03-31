@@ -45,7 +45,7 @@ for chapter in chapter_list:
     print(result)
     for hang in result:
         text=text+"\t"+hang+"\r\n"
-
+        text=text+"\r"
     # for hang in result:
     #     if hang!="……" and flag==0:
     #         text=text+hang
