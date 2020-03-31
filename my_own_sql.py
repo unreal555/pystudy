@@ -4,7 +4,6 @@
 import pymysql
 from mytools import execute_lasts_time
 
-
 class My_sql():
     __conn=''
     __cursor=''

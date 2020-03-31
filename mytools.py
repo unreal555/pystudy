@@ -8,6 +8,8 @@ import re
 import sys
 import os
 import time
+import win32api
+import win32con
 
 
 USER_AGENT_LIST = [
@@ -109,10 +111,13 @@ def qu_te_shu_zi_fu(s):
         return 0
 
 def check_ban_quan(hour=24):   #思路，在sys.path目录下创建空文件，设置隐藏，只读属性，程序启动检查这三个文件的创建时间，任何
-                           # 一个存在，且创建时间超过n小时的，返回真值,参数为允许运行的小时数,默认为24小时
+                                # 一个存在，且创建时间超过n小时的，返回真值,参数为允许运行的小时数,默认为24小时
+                                 #返回为真，表示未到期，返回false，表示已到期
     debug=False
+
     if debug:print('程序期限为%s小时'%hour)
     qixian=hour*60*60
+
     def get_path():
         paths=[]
         for path in sys.path:
@@ -129,6 +134,8 @@ def check_ban_quan(hour=24):   #思路，在sys.path目录下创建空文件，�
                 # try:
                     with open(path,'w',encoding='utf-8') as f:
                         f.write(str(time.time()))
+                    win32api.SetFileAttributes(path, win32con.FILE_ATTRIBUTE_HIDDEN)
+                    win32api.SetFileAttributes(path, win32con.FILE_ATTRIBUTE_READONLY)
                 # except:
                     pass
 
@@ -153,20 +160,27 @@ def check_ban_quan(hour=24):   #思路，在sys.path目录下创建空文件，�
     if lasts==False:
         creat_file(paths)
     if abs(lasts)>qixian:
-        print('到期,程序推出')
+        print('到期,程序退出')
         return False
     else:
         print('程序加载中')
         return True
 
-@execute_lasts_time
+
+
+@execute_lasts_time             ###清除版权信息
 def clean_ban_quan():
     debug=False
     def get_path():
         paths=[]
         for path in sys.path:
             if os.path.isdir(path):
-                paths.append(os.path.join(path,'info.ini'))
+                try:
+                    win32api.SetFileAttributes(path, win32con.FILE_ATTRIBUTE_HIDDEN)
+                    win32api.SetFileAttributes(path, win32con.FILE_ATTRIBUTE_READONLY)
+                    paths.append(os.path.join(path,'info.ini'))
+                except Exception as e:
+                    if debug:print(e)
         if debug:print(paths)
         return paths
 
@@ -174,11 +188,13 @@ def clean_ban_quan():
         for path in paths:
             print('REMOVE',path)
             if os.path.isfile(path):
-                # try:
-                print('REMOVE',path)
-                os.remove(path)
-                # except:
-                    # pass
+                try:
+
+                    win32api.SetFileAttributes(path, win32con.FILE_ATTRIBUTE_NORMAL)
+                    os.remove(path)
+                    print('REMOVE',path)
+                except:
+                    pass
 
     paths=get_path()
     clean(paths)
