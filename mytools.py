@@ -13,14 +13,22 @@ from zhon.hanzi import punctuation as ZHONG_WEN_BIAO_DIAN
 
 from string import punctuation as YING_WEN_BIAO_DIAN
 
-ZHONG_WEN_ZI_FU='\u4e00-\u9fa5'
+from string import ascii_lowercase as XIAO_XIE_ZI_MU
 
-YING_WEN_ZI_FU='a-zA-Z0-9'
+from string import ascii_uppercase as DA_XIE_ZI_MU
+
+from string import digits as SHU_ZI
+
+ZHONG_WEN_ZI_FU_FOR_RE=r'\u4e00-\u9fa5'
+
+YING_WEN_ZI_FU_FOR_RE='a-zA-Z0-9'
+
+
 
 USER_AGENT_LIST = [
-    'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
-    'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
-    'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko'
+    'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.162 Safari/537.36',   #chrome
+    'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',     #fireFox
+    'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko'                                              #IE11
      ]
 
 Http_Proxy_List= ['',
@@ -218,3 +226,8 @@ if __name__ == '__main__':
 
 
     clean_ban_quan()
+    print(ZHONG_WEN_ZI_FU)
+    print(ZHONG_WEN_BIAO_DIAN)
+    print(YING_WEN_ZI_FU)
+    print(YING_WEN_BIAO_DIAN)
+
