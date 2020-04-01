@@ -36,20 +36,25 @@ class MeiTuLu_Spider(scrapy.Spider):
             't0': 'unreal555',
             't1': '594188'
         }
-        yield scrapy.FormRequest('http://www.tujidao.com/u/?action=loginsave', formdata=formdata,callback=self.login_check)
+        yield scrapy.FormRequest('https://www.tujidao.com/u/?action=loginsave', formdata=formdata,callback=self.login_check)
 
     #检查登录状态，获得cookie传递
     def login_check(self,response):
 
         set_cookie=response.headers.getlist('Set-Cookie')
+        print(set_cookie)
         cookies={}
         for i in set_cookie:
+            # print(i)
             for j in i.decode('utf-8').replace(' ','').split(';'):
+                if '=' not in j:
+                    continue
+                print(j)
                 a,b=j.split('=')
                 cookies[a]=b
         print('cookies',cookies)
 
-        yield scrapy.Request('http://www.tujidao.com/u/?', callback=self.after_login,dont_filter=True,cookies=cookies,meta={'cookies':cookies})
+        yield scrapy.Request('https://www.tujidao.com/u/?', callback=self.after_login,dont_filter=True,cookies=cookies,meta={'cookies':cookies})
 
     #利用cookie访问相册索引页面,只传入首页，后续页面待本页面相册下载 完毕后提交
     def after_login(self,response):
@@ -58,7 +63,7 @@ class MeiTuLu_Spider(scrapy.Spider):
         # for i in range(1650,1005,-1):#1630-1500-1200-1000
         #     yield scrapy.Request('http://www.tujidao.com/cat/?id=0&page={}'.format(i),callback=self.parse,dont_filter=True)
 
-        yield scrapy.Request('http://www.tujidao.com/cat/?id=0&page={}'.format(start), callback=self.parse,dont_filter=True)
+        yield scrapy.Request('https://www.tujidao.com/cat/?id=0&page={}'.format(start), callback=self.parse,dont_filter=True)
 
     def parse(self,response):
 
@@ -148,7 +153,7 @@ class MeiTuLu_Spider(scrapy.Spider):
         now=re.findall('id=0&page=(\d+)',response.url)[0]
         next=int(now)+step
         if int(now)!=end:
-            yield scrapy.Request('http://www.tujidao.com/cat/?id=0&page={}'.format(next), callback=self.parse,dont_filter=True)
+            yield scrapy.Request('https://www.tujidao.com/cat/?id=0&page={}'.format(next), callback=self.parse,dont_filter=True)
         else:
             return
 

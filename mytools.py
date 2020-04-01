@@ -1,9 +1,7 @@
 #!/bin/py
 #   -*-coding:utf-8-*-
-import functools
 import random
 from time import sleep
-import base64
 import re
 import sys
 import os
@@ -11,6 +9,13 @@ import time
 import win32api
 import win32con
 
+from zhon.hanzi import punctuation as ZHONG_WEN_BIAO_DIAN
+
+from string import punctuation as YING_WEN_BIAO_DIAN
+
+ZHONG_WEN_ZI_FU='\u4e00-\u9fa5'
+
+YING_WEN_ZI_FU='a-zA-Z0-9'
 
 USER_AGENT_LIST = [
     'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
@@ -21,6 +26,7 @@ USER_AGENT_LIST = [
 Http_Proxy_List= ['',
                   'http://test2:594188@58.59.25.122:1234',
                   'http://test:594188@58.59.25.123:1234']
+
 Https_Proxy_List=['',
                   'https://test2:594188@58.59.25.122:1234',
                   'https://test:594188@58.59.25.123:1234']
@@ -60,7 +66,6 @@ def get_Proxy(url):
         print('选择https代理')
         proxies={'http':random.choice(Https_Proxy_List)}
         return  proxies
-
 
 def random_wait(n=1,m=3,*args):
 
@@ -166,8 +171,6 @@ def check_ban_quan(hour=24):   #思路，在sys.path目录下创建空文件，�
         print('程序加载中')
         return True
 
-
-
 @execute_lasts_time             ###清除版权信息
 def clean_ban_quan():
     debug=False
@@ -198,7 +201,6 @@ def clean_ban_quan():
 
     paths=get_path()
     clean(paths)
-
 
 if __name__ == '__main__':
 

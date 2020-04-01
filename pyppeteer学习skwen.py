@@ -18,13 +18,26 @@ import pyppeteer.chromium_downloader
 print('默认版本是：{}'.format(pyppeteer.__chromium_revision__))
 print('可执行文件默认路径：{}'.format(pyppeteer.chromium_downloader.chromiumExecutable.get('win64')))
 print('win64平台下载链接为：{}'.format(pyppeteer.chromium_downloader.downloadURLs.get('win64')))
-import time,random
 from pyppeteer.launcher import launch # 控制模拟浏览器用
-from retrying import retry #设置重试次数用的
 from mytools import qu_kong_ge,random_wait
+from zhon.hanzi import punctuation as zhongwenbiaodian
+from string import punctuation as yingwenbiaodian
 
-async def goto(page,url):
+
+
+def createCounter():
+    s = 0
+    def counter():
+        nonlocal s
+        s = s+1
+        return s
+    return counter
+
+async def go(page,url):
     while 1:
+        num=count()
+        print(num)
+
         try:
             await page.goto(url)
             break
@@ -36,28 +49,26 @@ async def goto(page,url):
 async def get_chapter_content(page,chapter_start_url):
     while 1:
         try:
-            await goto(page,chapter_start_url)
+            await go(page,chapter_start_url)
             txt=await page.content()
+            chapter_name=re.findall('<h1 class="page-title">(.*?)</h1>',txt)[0]
+            chapter_page_list=[chapter_start_url]
+            for i in re.findall('<a href="(\d+_\d+\.html)">【.*?】</a>',txt,re.S):
+                chapter_page_list.append(url+i)
+            print(chapter_page_list)
 
+            next_chapter_url=qu_kong_ge(re.findall('''<a href=".*?" class="prev"><span>&lt;</span>上一章</a>.*?<a href="(.*?)" class="next">下一章<span>&gt;</span></a>''',txt,re.S)[0])
+            print(next_chapter_url)
             break
         except Exception as e:
             print(e)
             continue
-    chapter_name=re.findall('<h1 class="page-title">(.*?)</h1>',txt)[0]
-    chapter_page_list=[chapter_start_url]
-    for i in re.findall('<a href="(\d+_\d+\.html)">【.*?】</a>',txt,re.S):
-        chapter_page_list.append(url+i)
-    print(chapter_page_list)
-
-    next_chapter_url=qu_kong_ge(re.findall('''<a href=".*?" class="prev"><span>&lt;</span>上一章</a>.*?<a href="(.*?)" class="next">下一章<span>&gt;</span></a>''',txt,re.S)[0])
-    print(next_chapter_url)
 
 
     result=''
     for i in chapter_page_list:
         result=result+get_text(await get_chapter_page_content(page,i))
-
-    print(result)
+    # print(result)
     result = result.replace('”', '」')
     result = result.replace('“', '「')
     result = result.replace(' ', '').replace('\r', '').replace('\n', '')
@@ -79,10 +90,13 @@ async def get_chapter_content(page,chapter_start_url):
 async def get_chapter_page_content(page,url):
     while 1:
         try:
-            await goto(page,url)
-            random_wait(2,5)
+            await go(page,url)
+            random_wait(2,3)
             await page.evaluate('window.scrollBy(0, document.body.scrollHeight)')
-            random_wait(2,5)
+            random_wait(2,3)
+            await page.evaluate('window.scrollBy(0, document.body.scrollHeight)')
+            random_wait(2,3)
+            await page.evaluate('window.scrollBy(0, document.body.scrollHeight)')
             # s = await page.evaluate(pageFunction='document.body.textContent', force_expr=True)
             s=await page.evaluate('''() =>  document.querySelector("#content").innerText''')
             return s
@@ -90,36 +104,45 @@ async def get_chapter_page_content(page,url):
             print(e)
             continue
 
-
 def get_text(s):
     result=''
-    for i in re.split('\r|\n|\r\n',s):
-        try:
-            i.encode('utf-8')
-        except Exception as e:
-            # print(e)
-            continue
-        if '   ' in  i:
-            # print(i)
-            result=result+qu_kong_ge(i)
+    for i in re.split('\r|\n',s):
+        yuanshi=qu_kong_ge(i)
+        tiqu= re.findall('[{}{}\u4e00-\u9fa5a-zA-Z0-9]'.format(zhongwenbiaodian,yingwenbiaodian),yuanshi)
+        print(tiqu)
+        t=''.join(tiqu)
+        yuanshichangdu=len(yuanshi)
+        tiquchangdu=len(tiqu)
+        print(tiqu,yuanshichangdu-tiquchangdu)
+        if yuanshichangdu-tiquchangdu==0:
+            print(t)
+            result=result+t
     return result
 
-async def main(url):# 定义main协程函数，
-    browser = await launch({'headless':False ,'args':['--window-size=16,12']})#,'--no-sandbox'
+async def  init():
+    browser = await launch({'headless':False ,'dumpio':True,'args':['--window-size=16,12']})#,'--no-sandbox'
+    return browser
+
+async def main(url,count):# 定义main协程函数，
+    browser=await init()
     page = await browser.newPage()
     await page.setUserAgent( 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36')
-    await goto(page,url)
+    await go(page,url)
     book_name=re.findall('<h1>(.*?)</h1>',await page.content())[0]
     print(book_name)
-
     chapter_start_url=url+re.findall('<a class="read start" href="(.*?)">.*?</a>',await page.content())[0]
     book=[book_name,[]]
+    await page.close()
     while 'html' in chapter_start_url:
+        page = await browser.newPage()
+        await page.setUserAgent( 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36')
         print(chapter_start_url,url,chapter_start_url==url)
         content,chapter_start_url=await get_chapter_content(page,chapter_start_url)
         chapter_start_url=url+chapter_start_url
         book[1].append(content)
+        await  page.close()
     await browser.close()
+
 
     with open('E:/a/a/{}.txt'.format(book[0]),'w',encoding='utf-8') as f:
         f.write(book[0])
@@ -133,7 +156,6 @@ async def main(url):# 定义main协程函数，
         f.write('\n\r')
         f.write('\n\r')
         for chapter in book[1]:
-            print(chapter)
             f.write(chapter[0])
             f.write('\n\r')
             for line in chapter[1]:
@@ -142,11 +164,13 @@ async def main(url):# 定义main协程函数，
                 f.write('\t'+line+'\n\r')
             f.write('\n\r')
 
+
 if __name__ == '__main__':
+    count=createCounter()
     loop = asyncio.get_event_loop()  #协程，开启个无限循环的程序流程，把一些函数注册到事件循环上。当满足事件发生的时候，调用相应的协程函数。
-    for i in range(53,100):
+    for i in range(12,100):
         url = 'http://www.skwen.me/13/{}/'.format(i)
-        loop.run_until_complete(main(url))
+        loop.run_until_complete(main(url,count=createCounter()))
 
 
 
