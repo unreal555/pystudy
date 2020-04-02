@@ -124,23 +124,30 @@ async def  init():
     return browser
 
 async def main(url,count):# 定义main协程函数，
-    browser=await init()
-    page = await browser.newPage()
-    await page.setUserAgent( 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36')
-    await go(page,url)
-    book_name=re.findall('<h1>(.*?)</h1>',await page.content())[0]
-    print(book_name)
-    chapter_start_url=url+re.findall('<a class="read start" href="(.*?)">.*?</a>',await page.content())[0]
-    book=[book_name,[]]
-    await page.close()
-    while 'html' in chapter_start_url:
+
+    try:
+        browser=await init()
         page = await browser.newPage()
         await page.setUserAgent( 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36')
-        print(chapter_start_url,url,chapter_start_url==url)
-        content,chapter_start_url=await get_chapter_content(page,chapter_start_url)
-        chapter_start_url=url+chapter_start_url
-        book[1].append(content)
-        await  page.close()
+        await go(page,url)
+        book_name=re.findall('<h1>(.*?)</h1>',await page.content())[0]
+        print(book_name)
+        chapter_start_url=url+re.findall('<a class="read start" href="(.*?)">.*?</a>',await page.content())[0]
+        book=[book_name,[]]
+        await page.close()
+    except Exception as e:
+        print(e)
+    while 'html' in chapter_start_url:
+        try:
+            page = await browser.newPage()
+            await page.setUserAgent( 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36')
+            print(chapter_start_url,url,chapter_start_url==url)
+            content,chapter_start_url=await get_chapter_content(page,chapter_start_url)
+            chapter_start_url=url+chapter_start_url
+            book[1].append(content)
+            await  page.close()
+        except Exception as e:
+            print(e)
     await browser.close()
 
 
@@ -168,7 +175,7 @@ async def main(url,count):# 定义main协程函数，
 if __name__ == '__main__':
     count=createCounter()
     loop = asyncio.get_event_loop()  #协程，开启个无限循环的程序流程，把一些函数注册到事件循环上。当满足事件发生的时候，调用相应的协程函数。
-    for i in range(12,100):
+    for i in range(21,100):
         url = 'http://www.skwen.me/13/{}/'.format(i)
         loop.run_until_complete(main(url,count=createCounter()))
 
