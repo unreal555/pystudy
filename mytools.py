@@ -24,7 +24,6 @@ ZHONG_WEN_ZI_FU_FOR_RE=r'\u4e00-\u9fa5'
 YING_WEN_ZI_FU_FOR_RE='a-zA-Z0-9'
 
 
-
 USER_AGENT_LIST = [
     'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.162 Safari/537.36',   #chrome
     'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',     #fireFox
@@ -118,7 +117,7 @@ def qu_kong_ge(s):
 
 def qu_te_shu_zi_fu(s):
     if isinstance(s, str):
-        return re.sub('[\/:*?"<>|]','-',)
+        return re.sub(r'[\/:*?"<>|]','-',s)
     else:
         print('老兄，给字符串')
         return 0
@@ -226,8 +225,4 @@ if __name__ == '__main__':
 
 
     clean_ban_quan()
-    print(ZHONG_WEN_ZI_FU)
-    print(ZHONG_WEN_BIAO_DIAN)
-    print(YING_WEN_ZI_FU)
-    print(YING_WEN_BIAO_DIAN)
 
