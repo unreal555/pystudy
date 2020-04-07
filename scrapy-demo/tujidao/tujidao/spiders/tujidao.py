@@ -13,7 +13,7 @@ from settings import IMAGES_STORE
 print(sys.path)
 flag=0
 
-start=1
+start=0
 end=2000
 step=1
 
