@@ -146,9 +146,10 @@ async def main(url,count):# 定义main协程函数，
             chapter_start_url=url+chapter_start_url
             book[1].append(content)
             await  page.close()
+            await browser.close()
         except Exception as e:
             print(e)
-    await browser.close()
+
 
 
     with open('E:/a/a/{}.txt'.format(book[0]),'w',encoding='utf-8') as f:
