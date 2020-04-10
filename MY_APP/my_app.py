@@ -5,25 +5,43 @@
 from flask import Flask
 from flask import render_template
 from flask import url_for
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+app.config.from_object('config')
 
-name = 'GreyLi'
-movies = [
-    {'title': 'MyNeighborTotoro', 'year': '1988'},
-    {'title': 'DeadPoetsSociety', 'year': '1989'},
-    {'title': 'APerfectWorld', 'year': '1993'},
-    {'title': 'Leon', 'year': '1994'},
-    {'title': 'Mahjong', 'year': '1996'},
-    {'title': 'SwallowtailButterfly', 'year': '1996'},
-    {'title': 'KingofComedy', 'year': '1999'},
-    {'title': 'DevilsontheDoorstep', 'year': '1999'},
-    {'title': 'WALL-E', 'year': '2008'},
-    {'title': 'ThePorkofMusic', 'year': '2012'},
-]
+db = SQLAlchemy(app)
+
+
+class User(db.Model):  # 表名将会是 user（ 自动生成， 小写处理）
+    id = db.Column(db.Integer, primary_key=True)  # 主键
+    name = db.Column(db.String(20))
+
+
+class Movie(db.Model):  # 表名将会是 movie
+    id = db.Column(db.Integer, primary_key=True)  # 主键
+    title = db.Column(db.String(60))  # 电影标题
+    year = db.Column(db.String(4))  # 电影年份
 
 
 @app.route('/')
 @app.route('/home')
 def index():
-    return render_template('index.html', name=name, movies=movies)
+    return render_template('index.html')
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+
+@app.context_processor
+def inject_name():
+    name = User.query.first()
+    return dict(name=name.name)
+
+
+@app.context_processor
+def inject_movies():
+    movies = Movie.query.all()
+    return dict(movies=movies)
