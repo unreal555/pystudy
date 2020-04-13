@@ -9,9 +9,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config.from_object('config')
-
 db = SQLAlchemy(app)
-
 
 class User(db.Model):  # 表名将会是 user（ 自动生成， 小写处理）
     id = db.Column(db.Integer, primary_key=True)  # 主键
@@ -37,8 +35,8 @@ def page_not_found(e):
 
 @app.context_processor
 def inject_name():
-    name = User.query.first()
-    return dict(name=name.name)
+    user = User.query.first()
+    return dict(user=user)
 
 
 @app.context_processor
