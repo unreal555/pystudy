@@ -186,6 +186,6 @@ if __name__ == '__main__':
     count = createCounter()
     loop = asyncio.get_event_loop()  # 协程，开启个无限循环的程序流程，把一些函数注册到事件循环上。当满足事件发生的时候，调用相应的协程函数。
 
-    for i in range(100, 200):  # 53
+    for i in range(106, 200):  # 53
         url = 'http://www.skwen.me/13/{}/'.format(i)
         loop.run_until_complete(main(url, count=createCounter()))
