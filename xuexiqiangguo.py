@@ -22,8 +22,8 @@ user_agent = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv
 # options.add_argument('--headless')
 # Browser = webdriver.Ie('.\IEDriverServer.exe')
 Browser = webdriver.Chrome('./chromedriver.exe')#,options=options)
-news_page_time = 180
-video_page_time = 180
+news_page_time = 240
+video_page_time = 240
 news_count_score = None
 video_conut_score = None
 news_time_score = None
@@ -95,7 +95,7 @@ def login():
         print(e)
 
     Browser.execute_script("window.scrollBy(0,500)")
-    valid_code=Browser.get_screenshot_as_base64()
+    # valid_code=Browser.get_screenshot_as_base64()
 
     while 1:
         print('等待登录...')
@@ -185,6 +185,8 @@ def start():
             if video_time_score < 3:
                 print('新闻联播')
                 Browser.get('https://www.xuexi.cn/8e35a343fca20ee32c79d67e35dfca90/7f9f27c65e84e71e1b7189b7132b4710.html')
+                sleep(3)
+                Browser.find_element_by_xpath("*").send_keys(Keys.SPACE)
                 sleep(600)
                 Browser.execute_script("window.scrollBy(0,400)")
 
