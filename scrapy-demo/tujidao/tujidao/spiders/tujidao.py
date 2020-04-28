@@ -14,7 +14,7 @@ print(sys.path)
 flag=0
 
 start=0
-end=2000
+end = 200
 step=1
 
 class MeiTuLu_Spider(scrapy.Spider):
