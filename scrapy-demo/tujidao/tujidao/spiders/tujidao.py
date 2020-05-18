@@ -126,7 +126,6 @@ class MeiTuLu_Spider(scrapy.Spider):
                     wrong_log = f.read()
                 if bianhao in wrong_log:
                     print('{}{} 已经在错误日志，跳过'.format(bianhao, biaoti))
-                    continue
 
             sub_path=os.path.join(jigou,biaoti+'-tag-'+tag)
             xiangce_path = os.path.join(self.log_path, sub_path)

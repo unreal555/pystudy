@@ -14,10 +14,8 @@ file_size = 1 * 1024 * 1024 * 1024
 block_size=1*1024*1024
 disk_used = collections.OrderedDict()
 
-
 def get_filename():
     return ''.join(random.sample(string.ascii_letters + string.digits, 8))
-
 
 def get_disk_info():
     """
@@ -36,17 +34,17 @@ def get_disk_info():
                                 '{}GB'.format(disk_info.free // 1024 // 1024 // 1024)]
     return disk_used
 
-
 def work(disk,free_size=1024*1024*1024*1024,path='temp'):
+    print('开始覆盖{}盘空闲空间')
 
     work_path = os.path.join(disk, path)
+    print(work_path)
     if os.path.exists(work_path):
         pass
     else:
         os.makedirs(work_path)
     win32api.SetFileAttributes(work_path, win32con.FILE_ATTRIBUTE_NORMAL)
     win32api.SetFileAttributes(work_path, win32con.FILE_ATTRIBUTE_HIDDEN)
-
     while free_size > 0:
         try:
             f=open(os.path.join(work_path, get_filename()), 'wb')
@@ -55,14 +53,30 @@ def work(disk,free_size=1024*1024*1024*1024,path='temp'):
             free_size -= file_size
         except Exception as e:
             print(e)
+            free_size = -1
         finally:
             f.close()
-            free_size=-1
 
 
+print('读取分区信息 ')
 get_disk_info()
-print(disk_used)
-work('d:')
+
+for i in disk_used:
+    print(i)
+    work('%s' % i + ':')
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 '''linux版本，参考'''
 '''
