@@ -3,6 +3,7 @@
 import requests
 import re
 import mytools
+import os
 
 headers = {}
 
@@ -32,9 +33,12 @@ chap_list = re.findall('<a href="(.*?)" title=.*?>(.*?)</a>', response[0], re.S)
 
 print(chap_list)
 
-with open('./all.txt', 'a', encoding='utf-8') as f:
-    f.write('梦落千年爱上你')
-    f.write('\r\n\r\n')
+if os.path.exists('./all.txt'):
+    pass
+else:
+    with open('./all.txt', 'a', encoding='utf-8') as f:
+        f.write('梦落千年爱上你')
+        f.write('\r\n\r\n')
 
 with open('./all.txt', 'r', encoding='utf-8') as f:
     now = f.read()
