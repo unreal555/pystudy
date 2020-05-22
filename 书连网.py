@@ -38,6 +38,10 @@ with open('./all.txt', 'a', encoding='utf-8') as f:
 
 for i in chap_list:
 
+    with open('./all.txt', 'r', encoding='utf-8') as f:
+        if i[1] in f.read():
+            continue
+
     url = domain + i[0]
 
     print(url, i[1])
