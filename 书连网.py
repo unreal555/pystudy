@@ -36,11 +36,13 @@ with open('./all.txt', 'a', encoding='utf-8') as f:
     f.write('梦落千年爱上你')
     f.write('\r\n\r\n')
 
+with open('./all.txt', 'r', encoding='utf-8') as f:
+    now = f.read()
 for i in chap_list:
 
-    with open('./all.txt', 'r', encoding='utf-8') as f:
-        if i[1] in f.read():
-            continue
+    if i[1] in now:
+        print(i[1] + '已下载')
+        continue
 
     url = domain + i[0]
 
