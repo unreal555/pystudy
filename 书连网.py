@@ -68,6 +68,7 @@ for i in chap_list:
         print(i)
         with open('./all.txt', 'a', encoding='utf-8') as f:
             f.write('\t' + i + '\r\n\r\n')
+
     with open('./all.txt', 'a', encoding='utf-8') as f:
         f.write('\r\n\r\n')
         f.flush()
