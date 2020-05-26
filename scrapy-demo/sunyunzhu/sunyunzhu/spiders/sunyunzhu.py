@@ -62,7 +62,7 @@ class Sunyunzhu_Spider(scrapy.Spider):
     def start_requests(self):
         # for i in self.urls:
         #     yield scrapy.Request(i,dont_filter=True,callback=self.parse)
-        for i in range(2000000,3000000):
+        for i in range(1992600, 3000000):
             yield scrapy.Request('https://www.t-nani.co.kr/shop/shopdetail.html?branduid={}&'.format(i),dont_filter=True,callback=self.parse)
 
 
