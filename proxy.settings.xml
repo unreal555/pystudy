@@ -1,0 +1,7 @@
+<application>
+  <component name="HttpConfigurable">
+    <option name="PROXY_HOST" value="58.59.25.122" />
+    <option name="PROXY_PORT" value="808" />
+    <option name="PROXY_AUTHENTICATION" value="true" />
+  </component>
+</application>

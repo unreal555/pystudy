@@ -1,0 +1,5 @@
+<application>
+  <component name="NotificationConfiguration">
+    <notification groupId="平台和插件更新" displayType="STICKY_BALLOON" shouldLog="false" />
+  </component>
+</application>
