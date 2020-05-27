@@ -24,6 +24,7 @@ ZHONG_WEN_ZI_FU_FOR_RE=r'\u4e00-\u9fa5'
 YING_WEN_ZI_FU_FOR_RE='a-zA-Z0-9'
 
 
+
 USER_AGENT_LIST = [
     'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.162 Safari/537.36',   #chrome
     'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',     #fireFox
@@ -75,32 +76,42 @@ def get_Proxy(url):
         return  proxies
 
 def random_wait(n=1,m=3,*args):
-
-    if not (isinstance(n,int) and isinstance(m,int)):
-        print('参数输入错误，不是整数，采用默认值1，3')
+    if not (isinstance(n, (int, float)) and isinstance(m, (int, float))):
+        print('参数输入错误，不是整数或小数，采用默认值1，3')
         n=1
         m=3
 
     if n>m:
         n,m=m,n
-    temp = random.randint(n, m)
+    temp = random.uniform(n, m)
     print("wait {} second".format(temp))
     sleep(temp)
 
-def tras_header(s):
-    s=re.split('\n',s)
-    print()
+def tras_header(str):
+    '''定义返回值'''
     result={}
+
+    '''以换行符转成list'''
+    s=re.split('\n',str)
+    print('转换成的list为',s)
+
+
+
+    '''遍历每一行'''
     for item in s:
+        '''如为空行，跳过'''
         print(item)
-        key,value=re.split('\: ',item)
+        if item.replace(' ','')=='':
+            print('本行为空行，跳过')
+            continue
+
+        '''以冒号为分隔符分割元素'''
+        print(re.split(': ',item))
+        key,value=re.split(': ',item)
         print(key,value)
-        result[key]=str(value)
 
-    print('返回字典：',result)
+        result[key]=value
 
-
-    print
     print('{')
     for i in result:
         print('\'{}\':\'{}\','.format(i,result[i]))
@@ -115,9 +126,18 @@ def qu_kong_ge(s):
         print('老兄，给字符串')
         return 0
 
+
+def qu_html_lable(s):
+    reg = re.compile(r'<[^>]+>', re.S)
+    if isinstance(s, str):
+        return reg.sub('', s)
+    else:
+        print('老兄，给字符串')
+        return 0
+
 def qu_te_shu_zi_fu(s):
     if isinstance(s, str):
-        return re.sub(r'[\/:*?"<>|]','-',s)
+        return re.sub('[\/:*?"<>|]','-',)
     else:
         print('老兄，给字符串')
         return 0
@@ -211,18 +231,37 @@ def clean_ban_quan():
 
 if __name__ == '__main__':
 
-    # s=''':authority: you.ctrip.com
-    # :method: POST
-    # :path: /destinationsite/TTDSecond/SharedView/AsynCommentView
-    # :scheme: https
-    # accept: */*
-    # accept-encoding: gzip, deflate, br
-    # accept-language: zh-CN,zh;q=0.9
-    # content-length: 119
-    # content-type: application/x-www-form-urlencoded'''
-    # tras_header(s)
+    s='''
+accept-ranges: bytes
+access-control-allow-methods: GET
+access-control-allow-origin: *
+age: 294
+ali-swift-global-savetime: 1588878378
+content-length: 7979
+content-md5: UJMfxWiVhhfRcmnrdBQcPQ==
+content-type: text/css; charset=utf-8
+date: Sun, 24 May 2020 03:58:13 GMT
+eagleid: 2f66ea9c15902929872341717e
+etag: "50931FC568958617D17269EB74141C3D"
+last-modified: Wed, 15 Aug 2018 12:37:31 GMT
+server: Tengine
+status: 200
+timing-allow-origin: *
+vary: Accept-Encoding
+via: cache2.cn1806[0,200-0,H], cache8.cn1806[,0]
+x-alicdn-tsign-info: One slice success
+x-cache: HIT TCP_MEM_HIT dirn:0:163120335
+x-oss-cdn-auth: success
+x-oss-hash-crc64ecma: 10640200318906159902
+x-oss-object-type: Normal
+x-oss-request-id: 5EC9F0D58C697F70356EC4D7
+x-oss-server-time: 1
+x-oss-storage-class: Standard
+x-swift-cachetime: 900
+x-swift-savetime: Sun, 24 May 2020 03:58:13 GMT
+    '''
+    #
+    # s=tras_header(s)
+    # print(s)
 
-
-
-    clean_ban_quan()
-
+random_wait(1.9, 0.4)
