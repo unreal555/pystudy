@@ -76,15 +76,14 @@ def get_Proxy(url):
         return  proxies
 
 def random_wait(n=1,m=3,*args):
-
-    if not (isinstance(n,int) and isinstance(m,int)):
-        print('参数输入错误，不是整数，采用默认值1，3')
+    if not (isinstance(n, (int, float)) and isinstance(m, (int, float))):
+        print('参数输入错误，不是整数或小数，采用默认值1，3')
         n=1
         m=3
 
     if n>m:
         n,m=m,n
-    temp = random.randint(n, m)
+    temp = random.uniform(n, m)
     print("wait {} second".format(temp))
     sleep(temp)
 
@@ -123,6 +122,15 @@ def tras_header(str):
 def qu_kong_ge(s):
     if isinstance(s, str):
         return re.sub('\s+', '', s)
+    else:
+        print('老兄，给字符串')
+        return 0
+
+
+def qu_html_lable(s):
+    reg = re.compile(r'<[^>]+>', re.S)
+    if isinstance(s, str):
+        return reg.sub('', s)
     else:
         print('老兄，给字符串')
         return 0
@@ -252,10 +260,8 @@ x-oss-storage-class: Standard
 x-swift-cachetime: 900
 x-swift-savetime: Sun, 24 May 2020 03:58:13 GMT
     '''
+    #
+    # s=tras_header(s)
+    # print(s)
 
-    s=tras_header(s)
-    print(s)
-
-
-
-
+random_wait(1.9, 0.4)
