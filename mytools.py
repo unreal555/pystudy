@@ -264,4 +264,4 @@ x-swift-savetime: Sun, 24 May 2020 03:58:13 GMT
     # s=tras_header(s)
     # print(s)
 
-random_wait(1.9, 0.4)
+    random_wait(1.9, 0.4)
