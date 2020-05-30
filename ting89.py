@@ -2,7 +2,23 @@ import re
 import requests
 import mytools
 import  os
+import random
+from time import sleep
+import re
+import sys
+import os
+import time
 
+
+from zhon.hanzi import punctuation as ZHONG_WEN_BIAO_DIAN
+
+from string import punctuation as YING_WEN_BIAO_DIAN
+
+from string import ascii_lowercase as XIAO_XIE_ZI_MU
+
+from string import ascii_uppercase as DA_XIE_ZI_MU
+
+from string import digits as SHU_ZI
 
 domain='http://www.ting89.com'
 url='http://www.ting89.com/books/15633.html'
@@ -23,7 +39,7 @@ all=re.findall('''<li><ahref='(.*?)'target="_blank">(.*?)</a></li>''',page)
 
 count=0
 for i in all:
-    if count<10:
+    if count<30:
         print(domain+i[0])
         chapter=domain+i[0]
         response=requests.get(chapter)
