@@ -6,6 +6,7 @@ import re
 import sys
 import os
 import time
+import pywintypes
 import win32api
 import win32con
 

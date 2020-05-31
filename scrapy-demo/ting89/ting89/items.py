@@ -7,8 +7,9 @@
 
 import scrapy
 
-class PicItem(scrapy.Item):
-    chapter_urls=scrapy.Field()
-    book_path=scrapy.Field()
-    book_url = scrapy.Field()
+class FileItem(scrapy.Item):
+    file_urls=scrapy.Field()
+    file_path=scrapy.Field()
+    file=scrapy.Field()
+    file_down_log=scrapy.Field()
 

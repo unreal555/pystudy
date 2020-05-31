@@ -53,50 +53,50 @@ class ProxyMiddleWare(object):
             request.headers['Proxy-Authorization'] = b'Basic ' + proxy['auth']
 
 
-        if 'hywly.com'in request.url:
-            # request.headers[':authority']='img.hywly.com',
-            # request.headers[':method']='GET',
-            # request.headers[':scheme']='https',
-            # request.headers[':path']=request.url.split('com')[1]
-            # request.headers['User-Agent']= 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36'
-            # request.headers[ 'User-Agent'] = random.choice(self.USER_AGENT_LIST),
-            # request.headers[ 'accept'] = 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
-            # request.headers[ 'accept-encoding'] = 'gzip, deflate, br'
-            # request.headers[ 'accept-language'] = ' zh-CN,zh;q=0.9'
-            # request.headers[ 'cache-control'] = ' no-cache'
-            # request.headers[ 'pragma'] = ' no-cache'
-            # request.headers[ 'sec-fetch-dest'] = ' document'
-            # request.headers[ 'sec-fetch-mode'] = ' navigate'
-            # request.headers[ 'sec-fetch-site'] = ' none'
-            # request.headers[ 'sec-fetch-user'] = ' ?1'
-            # request.headers[ 'upgrade-insecure-requests'] = '1'
-            # request.headers[ 'Referrer Policy'] = ' no-referrer-when-downgrade'
-            # request.headers['Referer'] = request.url,
-            # request.headers['if-modified-since']='if-modified-since:Tue, 06 Jun 2017 11:59:14 GMT'
-            request.headers['host'] = 'img.hywly.com',
-            request.headers['DNT'] = '1',
-            request.headers['Accept'] = 'text/html, application/xhtml+xml, */*',
-            request.headers['Accept-Language'] = 'zh-CN'
-            request.headers['User-Agent'] = 'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko'
-            request.headers['Accept-Encoding'] = 'gzip, deflate'
-            request.headers['Connection'] = 'Keep-Alive'
-            request.headers['Cache-Control'] = 'no-cache'
-
-
-
-        else:
-            request.headers[ 'Upgrade-Insecure-Requests']= '1',
-            request.headers['Host']= 'www.tujidao.com',
-            request.headers['Accept']= 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
-            request.headers[ 'Accept-Encoding']= 'gzip, deflate',
-            request.headers[ 'Accept-Language']= 'zh-CN,zh;q=0.9',
-            request.headers[ 'Cache-Control']= 'max-age=0',
-            request.headers['Connection']= 'keep-alive',
-            request.headers[ 'Content-Type']= 'application/x-www-form-urlencoded',
-            request.headers['Referer']= 'http://www.tujidao.com/u/?action=login',
-            request.headers['Origin'] ='http://www.tujidao.com',
-            request.headers[
-                'User-Agent'] = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36'
+        # if 'hywly.com'in request.url:
+        #     # request.headers[':authority']='img.hywly.com',
+        #     # request.headers[':method']='GET',
+        #     # request.headers[':scheme']='https',
+        #     # request.headers[':path']=request.url.split('com')[1]
+        #     # request.headers['User-Agent']= 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36'
+        #     # request.headers[ 'User-Agent'] = random.choice(self.USER_AGENT_LIST),
+        #     # request.headers[ 'accept'] = 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+        #     # request.headers[ 'accept-encoding'] = 'gzip, deflate, br'
+        #     # request.headers[ 'accept-language'] = ' zh-CN,zh;q=0.9'
+        #     # request.headers[ 'cache-control'] = ' no-cache'
+        #     # request.headers[ 'pragma'] = ' no-cache'
+        #     # request.headers[ 'sec-fetch-dest'] = ' document'
+        #     # request.headers[ 'sec-fetch-mode'] = ' navigate'
+        #     # request.headers[ 'sec-fetch-site'] = ' none'
+        #     # request.headers[ 'sec-fetch-user'] = ' ?1'
+        #     # request.headers[ 'upgrade-insecure-requests'] = '1'
+        #     # request.headers[ 'Referrer Policy'] = ' no-referrer-when-downgrade'
+        #     # request.headers['Referer'] = request.url,
+        #     # request.headers['if-modified-since']='if-modified-since:Tue, 06 Jun 2017 11:59:14 GMT'
+        #     request.headers['host'] = 'img.hywly.com',
+        #     request.headers['DNT'] = '1',
+        #     request.headers['Accept'] = 'text/html, application/xhtml+xml, */*',
+        #     request.headers['Accept-Language'] = 'zh-CN'
+        #     request.headers['User-Agent'] = 'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko'
+        #     request.headers['Accept-Encoding'] = 'gzip, deflate'
+        #     request.headers['Connection'] = 'Keep-Alive'
+        #     request.headers['Cache-Control'] = 'no-cache'
+        #
+        #
+        #
+        # else:
+        #     request.headers[ 'Upgrade-Insecure-Requests']= '1',
+        #     request.headers['Host']= 'www.tujidao.com',
+        #     request.headers['Accept']= 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+        #     request.headers[ 'Accept-Encoding']= 'gzip, deflate',
+        #     request.headers[ 'Accept-Language']= 'zh-CN,zh;q=0.9',
+        #     request.headers[ 'Cache-Control']= 'max-age=0',
+        #     request.headers['Connection']= 'keep-alive',
+        #     request.headers[ 'Content-Type']= 'application/x-www-form-urlencoded',
+        #     request.headers['Referer']= 'http://www.tujidao.com/u/?action=login',
+        #     request.headers['Origin'] ='http://www.tujidao.com',
+        #     request.headers[
+        #         'User-Agent'] = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36'
 
         print(request.headers)
 

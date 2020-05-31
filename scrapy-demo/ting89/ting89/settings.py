@@ -52,12 +52,12 @@ HTTPERROR_ALLOWED_CODES = [301, 302,403,429]     # 返回301, 302时, 按正常�
 
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS =1
+CONCURRENT_REQUESTS =3
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY =0.5
+DOWNLOAD_DELAY =0.1
 # The download delay setting will honor only one of:
 CONCURRENT_REQUESTS_PER_DOMAIN = 3
 CONCURRENT_REQUESTS_PER_IP = 3
@@ -97,7 +97,7 @@ COOKIES_ENABLED = True
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-     # 'tujidao.middlewares.ProxyMiddleWare':100
+     'ting89.middlewares.ProxyMiddleWare':100
    # 'demo.middlewares.DemoDownloaderMiddleware': 543,
 }
 
@@ -107,11 +107,11 @@ DOWNLOADER_MIDDLEWARES = {
 #    'scrapy.extensions.telnet.TelnetConsole': None,
 #}
 REDIRECT_ENABLED = False                  # 关掉重定向, 不会重定向到新的地址
-
+FILES_STORE=  'e:/'
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-     # 'pipelines.PicPipeline':100,
+     'pipelines.LoPipeline':100,
      # 'pipelines.Normal_File_Pipeline': 200,
      # 'pipelines.Dianzishu_Pipeline':300
 }
