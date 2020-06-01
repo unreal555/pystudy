@@ -1,10 +1,10 @@
-# -*- mode: python -*-
+# -*- mode: python ; coding: utf-8 -*-
 
 block_cipher = None
 
 
 a = Analysis(['xuexiqiangguo.py'],
-             pathex=['E:\\pycharm-professional-2017.2.4\\pystudy'],
+             pathex=['D:\\PyCharm2018.3.3\\pystudy'],
              binaries=[],
              datas=[],
              hiddenimports=[],
@@ -28,5 +28,6 @@ exe = EXE(pyz,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
+          upx_exclude=[],
           runtime_tmpdir=None,
           console=True )
