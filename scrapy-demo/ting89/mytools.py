@@ -10,19 +10,7 @@ import pywintypes
 import win32api
 import win32con
 
-from zhon.hanzi import punctuation as ZHONG_WEN_BIAO_DIAN
 
-from string import punctuation as YING_WEN_BIAO_DIAN
-
-from string import ascii_lowercase as XIAO_XIE_ZI_MU
-
-from string import ascii_uppercase as DA_XIE_ZI_MU
-
-from string import digits as SHU_ZI
-
-ZHONG_WEN_ZI_FU_FOR_RE=r'\u4e00-\u9fa5'
-
-YING_WEN_ZI_FU_FOR_RE='a-zA-Z0-9'
 
 
 
