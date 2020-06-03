@@ -10,7 +10,7 @@ headers={
 }
 
 def get_ip(url):
-    page=requests.get(url,headers=headers,proxies={'https':'https://test:594188@58.59.25.123:1234'})
+    page=requests.get(url,headers=headers,)
     print(page.url)
     page_source=page.text.replace(' ','').replace('\n','').replace('\r ','')
     print(page_source)
@@ -21,10 +21,10 @@ def get_ip(url):
 def test_proxy(i):
     ip1, ip2, ip3, ip4, port, area, des=i[0],i[1],i[2],i[3],i[4],i[5],i[6]
     if int(port)>65535 or int(port)<0:
-        print('port wrong',ip,port)
+        print('port wrong',('{}.{}.{}.{}'.format(ip1,ip2,ip3,ip4),port))
         return 0
     if int(ip1)>255 or int(ip1)<1 or int(ip2)>255 or int(ip2)<1 or int(ip3)>255 or int(ip3)<1or  int(ip4)>255 or int(ip4)<1:
-        print('ip wrong',ip, port)
+        print('port wrong', ('{}.{}.{}.{}'.format(ip1, ip2, ip3, ip4), port))
         return 0
 
 
@@ -75,7 +75,7 @@ def save(obj):
             f.write('{}{}'.format(str(proxy),'\r\n'))
 
 if __name__ == '__main__':
-    pool = ThreadPoolExecutor(30)
+    pool = ThreadPoolExecutor(10)
     for i in range(1,1000):
         time.sleep(random.choice(range(15,25)))
         for j in get_ip('https://www.xicidaili.com/nn/{}'.format(i)):

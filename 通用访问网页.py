@@ -2,16 +2,13 @@
 
 '''
 知乎的大坑，'accept-encoding':'gzip, deflate ,br',一定要去掉br,否则乱码
-
-
 '''
 
+import json
+import re
 import requests
 import mytools
 
-
-url='https://www.zhihu.com'
-domain=''
 s='''
     cache-control: private, must-revalidate, no-store
     content-encoding: br
@@ -38,10 +35,10 @@ s='''
     x-udid: AJAaV47hWxGPTnuC0zeBvC_UMsSpB4hLczE=
     x-via: DIANXIN-SHANDONG_40(200:miss)
     x-xss-protection: 1; mode=block
-    authority: www.zhihu.com
-    method: GET
-    path: /
-    scheme: https
+    :authority: www.zhihu.com
+    :method: GET
+    :path: /
+    :scheme: https
     accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
     accept-encoding: gzip, deflate
     accept-language: zh-CN,zh;q=0.9
@@ -55,10 +52,21 @@ s='''
     upgrade-insecure-requests: 1
     user-agent: Mozilla/5.0 (Windows NT 6.1; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36
 '''
+url='https://www.zhihu.com/api/v3/feed/topstory/recommend?session_token=a09fe43ed401d4ed951fcc60974d4a1d&desktop=true&page_number=1&limit=10&action=down&after_id=1&ad_interval=-1'
+domain=''
 
-headers={}
-headers=mytools.tras_header(s)
+def get_headers(s):
+    headers=mytools.tras_header(s)
+    return headers
 
-response=requests.get(url,headers=headers)
+def get_page(url,headers=get_headers(s)):
+    return requests.get(url,headers=headers)
 
-print(response.text)
+
+response=get_page(url)
+
+s = json.loads(response.text)
+
+for i in s['data']:
+    print(i)
+    break

@@ -26,11 +26,11 @@ YING_WEN_ZI_FU_FOR_RE='a-zA-Z0-9'
 
 
 
-USER_AGENT_LIST = [
-    'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.162 Safari/537.36',   #chrome
-    'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',     #fireFox
-    'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko'                                              #IE11
-     ]
+USER_AGENT_LIST = {
+    'chrome':'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.162 Safari/537.36',   #chrome
+    'firefox':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',     #fireFox
+    'ie':'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko'                                              #IE11
+}
 
 Http_Proxy_List= ['',
                   'http://test2:594188@58.59.25.122:1234',
@@ -109,9 +109,11 @@ def tras_header(str):
         '''以冒号为分隔符分割元素'''
         print(re.split(': ',item))
         key,value=re.split(': ',item)
-        print(key,value)
+        key=qu_kong_ge(key)
+        if key[0]==':':
+            key=key[1:]
 
-        result[qu_kong_ge(key)]=value
+        result[key]=value
 
     print('{')
     for i in result:
@@ -126,7 +128,6 @@ def qu_kong_ge(s):
     else:
         print('老兄，给字符串')
         return 0
-
 
 def qu_html_lable(s):
     reg = re.compile(r'<[^>]+>', re.S)
