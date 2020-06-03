@@ -1,4 +1,4 @@
-#  -*-conding:gbk-*-
+# coding=gbk
 
 import time
 import re
@@ -11,7 +11,7 @@ h,m,s=re.findall(" (\d+:\d+:\d+) ",now)[0].split(':')
 print(h,m,s)
 h,m,s=int(h),int(m),int(s)
 
-flag=input('杈撳叆鍑犵偣鍏虫満锛孒H:MM,鍙栨秷璁惧畾鐨勬椂闂磋鎸塩:   ')
+flag=input('输入几点关机，HH:MM,取消设定的时间请按c:   ')
 
 if flag=='c':
    
@@ -25,13 +25,13 @@ print(result==[])
 
 
 if result==[]:
-    print('杈撳叆閿欒')
+    print('输入错误')
     exit(0)
 else:
     setH,setM=result[0].split(':')
     setH ,setM=int(setH),int(setM)
     if setH<0 or setH>24 or setM<0 or setM>60:
-        print('鏃堕棿涓嶅')
+        print('时间不对')
         exit(0)
 
 now=datetime.datetime(1970,1,1,h,m,s)
