@@ -70,18 +70,48 @@ def check_point():
         print('启动check point')
         page = requests.get(r'https://pc-api.xuexi.cn/open/api/score/today/queryrate', cookies=cookie)
         a = page.text
+        print(a)
         a = str.replace(a, '<html><head></head><body>', '')
         a = str.replace(a, '</body></html>', '')
         a = json.loads(a, encoding='utf-8')
         print("读取账户积分")
-        print(a['data']['dayScoreDtos'][0]['currentScore'], a['data']['dayScoreDtos'][0]['name'])
-        print(a['data']['dayScoreDtos'][1]['currentScore'], a['data']['dayScoreDtos'][1]['name'])
-        print(a['data']['dayScoreDtos'][9]['currentScore'], a['data']['dayScoreDtos'][9]['name'])
-        print(a['data']['dayScoreDtos'][11]['currentScore'], a['data']['dayScoreDtos'][11]['name'])
+
+        print('0',a['data']['dayScoreDtos'][0]['currentScore'], a['data']['dayScoreDtos'][0]['name'])
+        print('1',a['data']['dayScoreDtos'][1]['currentScore'], a['data']['dayScoreDtos'][1]['name'])
+        print('2',a['data']['dayScoreDtos'][2]['currentScore'], a['data']['dayScoreDtos'][2]['name'])
+        print('3',a['data']['dayScoreDtos'][3]['currentScore'], a['data']['dayScoreDtos'][3]['name'])
+        print('4',a['data']['dayScoreDtos'][4]['currentScore'], a['data']['dayScoreDtos'][4]['name'])
+        print('5',a['data']['dayScoreDtos'][5]['currentScore'], a['data']['dayScoreDtos'][5]['name'])
+        print('6',a['data']['dayScoreDtos'][6]['currentScore'], a['data']['dayScoreDtos'][6]['name'])
+        print('7',a['data']['dayScoreDtos'][7]['currentScore'], a['data']['dayScoreDtos'][7]['name'])
+        print('8',a['data']['dayScoreDtos'][8]['currentScore'], a['data']['dayScoreDtos'][8]['name'])
+
+
+        print('9',a['data']['dayScoreDtos'][9]['currentScore'], a['data']['dayScoreDtos'][9]['name'])
+
+        print('10',a['data']['dayScoreDtos'][10]['currentScore'], a['data']['dayScoreDtos'][10]['name'])
+
+        print('11',a['data']['dayScoreDtos'][11]['currentScore'], a['data']['dayScoreDtos'][11]['name'])
+        print('12',a['data']['dayScoreDtos'][11]['currentScore'], a['data']['dayScoreDtos'][12]['name'])
+        print('13',a['data']['dayScoreDtos'][11]['currentScore'], a['data']['dayScoreDtos'][13]['name'])
+        print('14',a['data']['dayScoreDtos'][11]['currentScore'], a['data']['dayScoreDtos'][14]['name'])
+        print('15',a['data']['dayScoreDtos'][11]['currentScore'], a['data']['dayScoreDtos'][15]['name'])
+        print('16',a['data']['dayScoreDtos'][11]['currentScore'], a['data']['dayScoreDtos'][16]['name'])
+        print('17',a['data']['dayScoreDtos'][11]['currentScore'], a['data']['dayScoreDtos'][17]['name'])
+        print('18',a['data']['dayScoreDtos'][11]['currentScore'], a['data']['dayScoreDtos'][18]['name'])
+
+
+
         news_count_score = a['data']['dayScoreDtos'][0]['currentScore']
         video_conut_score = a['data']['dayScoreDtos'][1]['currentScore']
+
+
         news_time_score = a['data']['dayScoreDtos'][9]['currentScore']
         video_time_score = a['data']['dayScoreDtos'][11]['currentScore']
+
+
+
+
         if news_count_score + news_time_score + video_conut_score + video_time_score >= 24:
             print('check_point线程退出')
             break
@@ -185,7 +215,7 @@ def start():
             if video_time_score < 3:
                 print('新闻联播')
                 Browser.get('https://www.xuexi.cn/8e35a343fca20ee32c79d67e35dfca90/7f9f27c65e84e71e1b7189b7132b4710.html')
-                sleep(3)
+                sleep(5)
                 Browser.find_element_by_xpath("*").send_keys(Keys.SPACE)
                 sleep(600)
                 Browser.execute_script("window.scrollBy(0,400)")

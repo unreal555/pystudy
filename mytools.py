@@ -111,13 +111,13 @@ def tras_header(str):
         key,value=re.split(': ',item)
         print(key,value)
 
-        result[key]=value
+        result[qu_kong_ge(key)]=value
 
     print('{')
     for i in result:
         print('\'{}\':\'{}\','.format(i,result[i]))
     print('}')
-
+    print(result)
     return result
 
 def qu_kong_ge(s):
@@ -264,5 +264,8 @@ x-swift-savetime: Sun, 24 May 2020 03:58:13 GMT
     #
     # s=tras_header(s)
     # print(s)
+if __name__ == '__main__':
 
     random_wait(1.9, 0.4)
+    a=tras_header(s)
+    print(a)
