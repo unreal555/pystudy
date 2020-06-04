@@ -56,6 +56,5 @@ process = CrawlerProcess(get_project_settings())
 process.crawl('ting89',domain='ting89.com')
 process.start()  # the script will block here until the crawling is finished
 
-# 'Books' is the name of one of the spiders of the project.
 
 
