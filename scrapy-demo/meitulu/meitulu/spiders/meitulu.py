@@ -4,9 +4,9 @@ import re
 import os
 import sys
 import time
-sys.path.append(r'd:\\pycharm-professional-2017.2.4\\pystudy\\scrapy-demo\\meitulu\meitulu')
-from  items import PicItem
-from settings import IMAGES_STORE
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),"..")))
+from  ..items import PicItem
+from ..settings import IMAGES_STORE
 print(sys.path)
 flag=0
 
