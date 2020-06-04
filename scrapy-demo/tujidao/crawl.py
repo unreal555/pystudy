@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 from scrapy.crawler import CrawlerProcess
 from scrapy.utils.project import get_project_settings
 
@@ -32,7 +33,7 @@ import scrapy.downloadermiddlewares.cookies
 import scrapy.downloadermiddlewares.useragent
 import scrapy.downloadermiddlewares.httpproxy
 import scrapy.downloadermiddlewares.ajaxcrawl
-import scrapy.downloadermiddlewares.chunked
+# import scrapy.downloadermiddlewares.chunked
 import scrapy.downloadermiddlewares.decompression
 import scrapy.downloadermiddlewares.defaultheaders
 import scrapy.downloadermiddlewares.downloadtimeout
