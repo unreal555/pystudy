@@ -19,13 +19,16 @@ def get_now_time():
     return now
 
 
+
 def get_shutdown_time():
     while 1:
         temp=input('输入几点关机，HH:MM,取消设定的时间请按c:   ')
         temp=mytools.qu_kong_ge(temp)
-        temp.replace('：',':')
+        temp=temp.replace('：',':')
+        print(temp)
 
         if temp=='c' or temp=='C':
+            print('1')
             return temp
 
 
@@ -40,6 +43,10 @@ def get_shutdown_time():
                 print('输入时间错误')
                 continue
             return datetime.datetime(1970,1,1,setH,setM,0)
+
+
+def check():
+    flag=os.system('oa')
 
 
 now=get_now_time()
