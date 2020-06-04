@@ -7,7 +7,9 @@ import re
 import os
 import sys
 import time
+path=os.path.join(os.path.dirname(__file__),"..")
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),"..")))
+print(path)
 from items import PicItem
 from settings import IMAGES_STORE
 print(sys.path)

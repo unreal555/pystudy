@@ -3,7 +3,7 @@ import re
 import os
 import sys
 
-sys.path.append(r'e:\\pycharm-professional-2017.2.4\\pystudy\\scrapy-demo\\sunyunzhu\\sunyunzhu')
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),"..")))
 print(sys.path)
 from items import PicItem
 from settings import IMAGES_STORE
