@@ -133,16 +133,16 @@ class ProxyMiddleWare(object):
         request.headers[ 'User-Agent']= random.choice(self.USER_AGENT_LIST)
 
         # 随机选出代理信息
-        proxy = "58.59.25.122:1234"
+        # proxy = "58.59.25.122:1234"
         # 设置代理的认证信息
 
         auth = base64.b64encode(bytes("test:594188", 'utf-8'))
         request.headers['Proxy-Authorization'] = b'Basic ' + auth
         # 设置代理ip (http/https)
 
-        if ((request.url).split('//'))[0]=='http':
-            request.meta['proxy']='http://{}'.format(proxy)
-        if ((request.url).split('//'))[0]=='https:':
-            request.meta['proxy']= 'http://{}'.format(proxy)
-        request.dont_filte=True
+        # if ((request.url).split('//'))[0]=='http':
+        #     request.meta['proxy']='http://{}'.format(proxy)
+        # if ((request.url).split('//'))[0]=='https:':
+        #     request.meta['proxy']= 'http://{}'.format(proxy)
+        # request.dont_filte=True
         # print(request.url,request.headers)

@@ -2,7 +2,7 @@
 '''
 打包单文件步骤
 
-1.带—F打包，删除所有dist,build,只保留crawl.spec
+1.不带—F打包，删除所有dist,build,只保留crawl.spec
 
 2.修改crawl.spec,在datas中增加('.','.')
 
@@ -18,6 +18,7 @@ from scrapy.utils.project import get_project_settings
 
 # import robotparser
 # 必加的依赖
+import requests
 import scrapy.spiderloader
 import scrapy.statscollectors
 import scrapy.logformatter
@@ -67,7 +68,7 @@ import scrapy.core.downloader.contextfactory
 process = CrawlerProcess(get_project_settings())
 
 
-process.crawl('tujidao')
+process.crawl('sunyunzhu')
 process.start()  # the script will block here until the crawling is finished
 
 
