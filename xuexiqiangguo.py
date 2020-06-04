@@ -28,6 +28,7 @@ news_count_score = None
 video_conut_score = None
 news_time_score = None
 video_time_score = None
+every_day_score=None
 news_list = []
 video_list = []
 count = 8
@@ -65,7 +66,7 @@ def watch_page(url):
 
 
 def check_point():
-    global cookie, news_count_score, news_time_score, video_conut_score, video_time_score
+    global cookie, news_count_score, news_time_score, video_conut_score, video_time_score,every_day_score
     while (1):
         print('启动check point')
         page = requests.get(r'https://pc-api.xuexi.cn/open/api/score/today/queryrate', cookies=cookie)
@@ -85,8 +86,6 @@ def check_point():
         print('6',a['data']['dayScoreDtos'][6]['currentScore'], a['data']['dayScoreDtos'][6]['name'])
         print('7',a['data']['dayScoreDtos'][7]['currentScore'], a['data']['dayScoreDtos'][7]['name'])
         print('8',a['data']['dayScoreDtos'][8]['currentScore'], a['data']['dayScoreDtos'][8]['name'])
-
-
         print('9',a['data']['dayScoreDtos'][9]['currentScore'], a['data']['dayScoreDtos'][9]['name'])
 
         print('10',a['data']['dayScoreDtos'][10]['currentScore'], a['data']['dayScoreDtos'][10]['name'])
@@ -105,9 +104,11 @@ def check_point():
         news_count_score = a['data']['dayScoreDtos'][0]['currentScore']
         video_conut_score = a['data']['dayScoreDtos'][1]['currentScore']
 
-
+        every_day_score=a['data']['dayScoreDtos'][4]['currentScore']
         news_time_score = a['data']['dayScoreDtos'][9]['currentScore']
         video_time_score = a['data']['dayScoreDtos'][11]['currentScore']
+
+
 
 
 
@@ -210,9 +211,12 @@ def start():
     while 1:
         wait()
         print(news_count_score,news_time_score,video_conut_score,video_time_score)
-        if news_time_score != None and news_count_score != None and video_time_score != None and video_conut_score != None:
+        if news_time_score != None and news_count_score != None and video_time_score != None \
+            and video_conut_score != None and every_day_score != None:
+
 
             if video_time_score < 3:
+
                 print('新闻联播')
                 Browser.get('https://www.xuexi.cn/8e35a343fca20ee32c79d67e35dfca90/7f9f27c65e84e71e1b7189b7132b4710.html')
                 sleep(5)
@@ -225,6 +229,9 @@ def start():
                 watch_page(random.choice(news_list))
             while video_time_score + video_conut_score < 12:
                 watch_page(random.choice(video_list))
+            while every_day_score<6:
+                wait()
+
         Browser.close()
         print('主线程退出')
         break
