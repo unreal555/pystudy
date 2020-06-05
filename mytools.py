@@ -296,6 +296,6 @@ x-swift-savetime: Sun, 24 May 2020 03:58:13 GMT
 if __name__ == '__main__':
 
     t=[
-       'ss','-',
+       'ss','-','9902'
        ]
     print(qu_str(s,t))
