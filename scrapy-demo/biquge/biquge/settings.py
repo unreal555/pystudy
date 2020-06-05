@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for demo project
+# Scrapy settings for biquge project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,51 +9,31 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'demo'
+BOT_NAME = 'biquge'
 
-SPIDER_MODULES = ['demo.spiders']
-NEWSPIDER_MODULE = 'demo.spiders'
+SPIDER_MODULES = ['biquge.spiders']
+NEWSPIDER_MODULE = 'biquge.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'demo (+http://www.yourdomain.com)'
-
-import random
-# user agent 列表
-# USER_AGENT_LIST = [
-#     'MSIE (MSIE 6.0; X11; Linux; i686) Opera 7.23',
-#     'Opera/9.20 (Macintosh; Intel Mac OS X; U; en)',
-#     'Opera/9.0 (Macintosh; PPC Mac OS X; U; en)',
-#     'iTunes/9.0.3 (Macintosh; U; Intel Mac OS X 10_6_2; en-ca)',
-#     'Mozilla/4.76 [en_jp] (X11; U; SunOS 5.8 sun4u)',
-#     'iTunes/4.2 (Macintosh; U; PPC Mac OS X 10.2)',
-#     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:5.0) Gecko/20100101 Firefox/5.0',
-#     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:9.0) Gecko/20100101 Firefox/9.0',
-#     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:16.0) Gecko/20120813 Firefox/16.0',
-#     'Mozilla/4.77 [en] (X11; I; IRIX;64 6.5 IP30)',
-#     'Mozilla/4.8 [en] (X11; U; SunOS; 5.7 sun4u)'
-#     'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36'
-# ]
-# # 随机生成user agent
-# USER_AGENT = random.choice(USER_AGENT_LIST)
-
+#USER_AGENT = 'biquge (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = False
+ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 16
+#CONCURRENT_REQUESTS = 32
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 0.5
+DOWNLOAD_DELAY = 0.9
 # The download delay setting will honor only one of:
-CONCURRENT_REQUESTS_PER_DOMAIN = 3
-CONCURRENT_REQUESTS_PER_IP = 3
+CONCURRENT_REQUESTS_PER_DOMAIN = 2
+CONCURRENT_REQUESTS_PER_IP = 2
 
 # Disable cookies (enabled by default)
-COOKIES_ENABLED = True
+#COOKIES_ENABLED = False
 
 # Disable Telnet Console (enabled by default)
 #TELNETCONSOLE_ENABLED = False
@@ -67,15 +47,14 @@ COOKIES_ENABLED = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'demo.middlewares.DemoSpiderMiddleware': 543,
+#    'biquge.middlewares.BiqugeSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-DOWNLOADER_MIDDLEWARES = {
-     'demo.middlewares.ProxyMiddleWare':100
-   # 'demo.middlewares.DemoDownloaderMiddleware': 543,
-}
+#DOWNLOADER_MIDDLEWARES = {
+#    'biquge.middlewares.BiqugeDownloaderMiddleware': 543,
+#}
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
@@ -86,12 +65,9 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-     'pipelines.PicPipeline':100,
-     # 'pipelines.Normal_File_Pipeline': 200,
-     # 'pipelines.Dianzishu_Pipeline':300
+   'biquge.pipelines.BiqugePipeline': 300,
 }
 
-IMAGES_STORE = 'd:/a' #设置图片下载路径
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True
