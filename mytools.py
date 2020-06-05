@@ -9,6 +9,7 @@ import time
 import pywintypes
 import win32api
 import win32con
+import string
 
 from zhon.hanzi import punctuation as ZHONG_WEN_BIAO_DIAN
 
@@ -39,6 +40,10 @@ Http_Proxy_List= ['',
 Https_Proxy_List=['',
                   'https://test2:594188@58.59.25.122:1234',
                   'https://test:594188@58.59.25.123:1234']
+
+def get_random_str(lenth=8):
+    return ''.join(random.sample(string.ascii_letters + string.digits, lenth))
+
 
 #装饰器,用于返回函数名和执行时间
 def execute_lasts_time(func):
@@ -128,6 +133,26 @@ def qu_kong_ge(s):
     else:
         print('老兄，给字符串')
         return 0
+
+
+def qu_str(source,grabage):
+    target=source
+    print(grabage)
+    if len(grabage)==0 :
+        print('要消除的字符串是什么？')
+        return 1
+
+    if not isinstance(grabage, list):
+        print('垃圾信息只接受队列')
+        return 1
+
+    if (not isinstance(source,str)) or source=='':
+        print('原始字符串错误')
+        return 2
+
+    for i in grabage:
+        target=target.replace(i,'')
+    return target
 
 def qu_html_lable(s):
     reg = re.compile(r'<[^>]+>', re.S)
@@ -231,6 +256,9 @@ def clean_ban_quan():
     paths=get_path()
     clean(paths)
 
+
+
+
 if __name__ == '__main__':
 
     s='''
@@ -257,8 +285,8 @@ x-oss-cdn-auth: success
 x-oss-hash-crc64ecma: 10640200318906159902
 x-oss-object-type: Normal
 x-oss-request-id: 5EC9F0D58C697F70356EC4D7
-x-oss-server-time: 1
-x-oss-storage-class: Standard
+x-oss-server-time: 1x
+-x-oss-storage-class: Standard
 x-swift-cachetime: 900
 x-swift-savetime: Sun, 24 May 2020 03:58:13 GMT
     '''
@@ -267,6 +295,7 @@ x-swift-savetime: Sun, 24 May 2020 03:58:13 GMT
     # print(s)
 if __name__ == '__main__':
 
-    random_wait(1.9, 0.4)
-    a=tras_header(s)
-    print(a)
+    t=[
+       'ss','-',
+       ]
+    print(qu_str(s,t))

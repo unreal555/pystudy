@@ -1,6 +1,13 @@
 #!/bin/py
 #   -*-coding:utf-8-*-
 # __auth__ = zl'
+'''
+全零覆盖硬盘的空闲空间
+删除文件后运行，确保无法使用恢复软件恢复文件
+执行后在每个分区建立temp文件夹，每个文件1G，知道覆盖完毕空闲空间
+手动删除temp下文件即可
+'''
+
 
 import os
 import random
@@ -9,13 +16,18 @@ import collections
 import win32api
 import win32con
 import string
+import re
+
 
 file_size = 1 * 1024 * 1024 * 1024
 block_size=1*1024*1024
 disk_used = collections.OrderedDict()
 
-def get_filename():
-    return ''.join(random.sample(string.ascii_letters + string.digits, 8))
+
+
+
+def get_random_str(lenth=8):
+    return ''.join(random.sample(string.ascii_letters + string.digits, lenth))
 
 def get_disk_info():
     """
@@ -47,7 +59,7 @@ def work(disk,free_size=1024*1024*1024*1024,path='temp'):
     win32api.SetFileAttributes(work_path, win32con.FILE_ATTRIBUTE_HIDDEN)
     while free_size > 0:
         try:
-            f=open(os.path.join(work_path, get_filename()), 'wb')
+            f=open(os.path.join(work_path, get_random_str(lenth=8)), 'wb')
             for i in range(0,1024):
                 f.write(b'0' * block_size)
             free_size -= file_size
