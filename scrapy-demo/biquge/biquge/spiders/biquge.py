@@ -8,6 +8,10 @@ from ..items import BiqugeItem
 import collections
 
 
+'''
+每部小说，生成一个item，通过meta在函数间传递，不要用全局变量
+'''
+
 
 
 
@@ -20,7 +24,7 @@ class Biquge_Spider(scrapy.Spider):
     def start_requests(self):
 
         urls=['https://www.biquge5200.cc/60_60852/',
-            'https://www.biquge5200.cc/0_860/',
+             'https://www.biquge5200.cc/0_860/',
              'https://www.biquge5200.cc/59_59734/',
              'https://www.biquge5200.cc/60_60363/',
              'https://www.biquge5200.cc/1_1523/',
@@ -38,7 +42,6 @@ class Biquge_Spider(scrapy.Spider):
 
         index = re.findall('<dd><a href="(.*?)">(.*?)</a></dd>', response.text)
 
-        global item
         item = BiqugeItem()
 
         item['title']=re.findall('''<meta property="og:title" content="(.*?)"/>''',response.text)[0]
@@ -47,7 +50,8 @@ class Biquge_Spider(scrapy.Spider):
         item['author'] = re.findall('''<meta property="og:novel:author" content="(.*?)"/>''',response.text)[0]
         item['count']=len(index)
 
-
+        meta={}
+        meta['item']=item
         for i in index:
             print(i)
         print(item['count'])
@@ -60,7 +64,7 @@ class Biquge_Spider(scrapy.Spider):
 
         for i in item['chapter']:
 
-            yield scrapy.Request(i,callback=self.get_content,dont_filter=True)
+            yield scrapy.Request(i,callback=self.get_content,dont_filter=True,meta=meta)
 
 
 
@@ -70,6 +74,7 @@ class Biquge_Spider(scrapy.Spider):
         print(response.url)
         content=response.xpath('//*[@id="content"]/p').extract()
         print(content)
+        item=response.meta['item']
         item['chapter'][response.url].append(content)
         item['count']-=1
         print(item['count'])
