@@ -19,8 +19,19 @@ class Biquge_Spider(scrapy.Spider):
 
     def start_requests(self):
 
-        url='https://www.biquge5200.cc/0_584/'
-        yield scrapy.Request(url,dont_filter=True,callback=self.get_novel_index)
+        urls=['https://www.biquge5200.cc/60_60852/',
+            'https://www.biquge5200.cc/0_860/',
+             'https://www.biquge5200.cc/59_59734/',
+             'https://www.biquge5200.cc/60_60363/',
+             'https://www.biquge5200.cc/1_1523/',
+             'https://www.biquge5200.cc/61_61727/',
+             'https://www.biquge5200.cc/60_60430/',
+             'https://www.biquge5200.cc/35_35723/',
+             'https://www.biquge5200.cc/60_60188/',
+             ]
+        for url in urls:
+
+            yield scrapy.Request(url,dont_filter=True,callback=self.get_novel_index)
 
 
     def get_novel_index(self,response):
