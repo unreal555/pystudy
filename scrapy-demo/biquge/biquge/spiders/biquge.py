@@ -63,8 +63,12 @@ class Biquge_Spider(scrapy.Spider):
         item['count']-=1
         print(item['count'])
 
-        if item['count']==0:
+        mytools.random_wait(0.2,0.4)
+
+        if item['count']<=0:
             yield item
+
+
 
 
 

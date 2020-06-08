@@ -22,15 +22,15 @@ NEWSPIDER_MODULE = 'biquge.spiders'
 ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-#CONCURRENT_REQUESTS = 32
+CONCURRENT_REQUESTS = 32
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 0.9
+DOWNLOAD_DELAY = 0.01
 # The download delay setting will honor only one of:
-CONCURRENT_REQUESTS_PER_DOMAIN = 2
-CONCURRENT_REQUESTS_PER_IP = 2
+CONCURRENT_REQUESTS_PER_DOMAIN = 12
+CONCURRENT_REQUESTS_PER_IP = 12
 
 # Disable cookies (enabled by default)
 #COOKIES_ENABLED = False
@@ -52,9 +52,9 @@ CONCURRENT_REQUESTS_PER_IP = 2
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    'biquge.middlewares.BiqugeDownloaderMiddleware': 543,
-#}
+DOWNLOADER_MIDDLEWARES = {
+   'biquge.middlewares.ProxyMiddleWare': 543,
+}
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
