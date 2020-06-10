@@ -10,6 +10,7 @@ import collections
 
 '''
 每部小说，生成一个item，通过meta在函数间传递，不要用全局变量
+
 '''
 
 
@@ -83,7 +84,6 @@ class Biquge_Spider(scrapy.Spider):
 
         if item['count']<=0:
             yield item
-
 
 
 

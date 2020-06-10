@@ -10,7 +10,7 @@ import random
 
 URL=r'http://www.022003.com/57_57619/'
 scheme,netloc,path,query,fragment=parse.urlsplit(URL)
-
+print(parse.urlsplit(URL))
 response= requests.get(URL)
 page=response.content.decode("utf-8")
 chapter_reg=r'<dd><a href="(.*/?)">(.*?)</a></dd>'

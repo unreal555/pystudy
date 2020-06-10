@@ -164,7 +164,7 @@ def qu_html_lable(s):
 
 def qu_te_shu_zi_fu(s):
     if isinstance(s, str):
-        return re.sub('[\/:*?"<>|]','-',)
+        return re.sub('[\/:*?"<>|]','-',s)
     else:
         print('老兄，给字符串')
         return 0
