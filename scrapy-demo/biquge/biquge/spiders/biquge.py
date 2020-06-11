@@ -3,7 +3,7 @@ import sys
 import re
 import  scrapy
 import mytools
-import collections
+
 from ..items import BiqugeItem
 import collections
 
@@ -12,8 +12,6 @@ import collections
 每部小说，生成一个item，通过meta在函数间传递，不要用全局变量
 
 '''
-
-
 
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),"..")))

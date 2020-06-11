@@ -22,8 +22,8 @@ class ProxyMiddleWare(object):
     # 随机选出代理信息
     proxy_list = [
         {'proxy_ip':None},
-        {'proxy_ip':"58.59.25.122:1234",'auth':base64.b64encode(bytes("test2:594188", 'utf-8'))},
-        # {'proxy_ip':"58.59.25.123:1234",'auth':base64.b64encode(bytes("test:594188", 'utf-8'))}
+        {'proxy_ip':"58.59.25.122:1234",'auth':base64.b64encode(bytes("test:594188", 'utf-8'))},
+        {'proxy_ip':"58.59.25.123:1234",'auth':base64.b64encode(bytes("test:594188", 'utf-8'))}
     ]
 
     # request.headers['Proxy-Authorization'] = b'Basic ' + auth
