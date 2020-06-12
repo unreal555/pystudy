@@ -137,8 +137,8 @@ def login():
             if r'notFound' in Browser.current_url or '?' in Browser.current_url:
                 print('qingdaomadneglu')
                 valid_code=Browser.get_screenshot_as_png()
-                # print('发邮件 ')
-                # send(txt='学习强国登录',subject='学习强国登录',img_content=valid_code)
+                print('发邮件 ')
+                send(txt='学习强国登录',subject='学习强国登录',img_content=valid_code)
         except:
             print('登录 异常 请 检查 重新 登录 ')
 
