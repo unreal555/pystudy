@@ -52,12 +52,12 @@ HTTPERROR_ALLOWED_CODES = [301, 302,403,429]     # 返回301, 302时, 按正常�
 
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS =1
+CONCURRENT_REQUESTS =3
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY =0.5
+DOWNLOAD_DELAY =0.2
 # The download delay setting will honor only one of:
 CONCURRENT_REQUESTS_PER_DOMAIN = 3
 CONCURRENT_REQUESTS_PER_IP = 3
