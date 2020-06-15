@@ -22,6 +22,7 @@ user_agent = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv
 # options.add_argument('--headless')
 # Browser = webdriver.Ie('.\IEDriverServer.exe')
 Browser = webdriver.Chrome('./chromedriver.exe')#,options=options)
+Browser.maximize_window()
 news_page_time = 240
 video_page_time = 240
 news_count_score = None
@@ -135,11 +136,18 @@ def login():
                 print('已登录')
                 break
             if r'notFound' in Browser.current_url or '?' in Browser.current_url:
-                print('qingdaomadneglu')
+                print('请扫码登录')
+
+                # valid_code=re.findall('''<img .*?="" src="(data:image/png;base64,.*?)">''',Browser.page_source)[0]
+                # print(valid_code)
                 valid_code=Browser.get_screenshot_as_png()
                 print('发邮件 ')
                 send(txt='学习强国登录',subject='学习强国登录',img_content=valid_code)
-        except:
+        except Exception as e:
+            print(e)
+            # print(Browser.page_source)
+            # valid_code = re.findall('''<img .*?="" src="(.*?")>''', Browser.page_source)[0]
+            # print(valid_code)
             print('登录 异常 请 检查 重新 登录 ')
 
         finally:
