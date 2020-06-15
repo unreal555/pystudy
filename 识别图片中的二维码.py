@@ -25,14 +25,13 @@ def qrcode_recongnize(file):
         result = decode(image)
 
         if len(result)>0:
+            print(dir(result[0]))
             rect=result[0].rect
             print(dir(rect))
-            left=rect.left
-            top=rect.top
-            height=rect.height
-            width=rect.width
+            print(type(rect))
+
             image_type.append('qrcode')
-            img=cv2.selectROI(image, rect(top,left,height,width))
+            img=cv2.selectROI(image, rect)
             cv2.imshow('11',img)
             cv2.waitKey(0)
 
