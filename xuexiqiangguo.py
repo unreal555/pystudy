@@ -76,7 +76,7 @@ def check_point():
         print(a)
         a = str.replace(a, '<html><head></head><body>', '')
         a = str.replace(a, '</body></html>', '')
-        a = json.loads(a, encode='utf-8')
+        a = json.loads(a, encoding='utf-8')
         print("读取账户积分")
 
         print('0',a['data']['dayScoreDtos'][0]['currentScore'], a['data']['dayScoreDtos'][0]['name'])
