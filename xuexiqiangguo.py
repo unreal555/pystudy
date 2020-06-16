@@ -23,7 +23,8 @@ user_agent = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv
 # options.add_argument('--headless')
 # Browser = webdriver.Ie('.\IEDriverServer.exe')
 Browser = webdriver.Chrome('./chromedriver.exe')#,options=options)
-Browser.maximize_window()
+Browser.set_window_size(1080,1024)
+# Browser.set_window_position(2000,2000)
 news_page_time = 240
 video_page_time = 240
 news_count_score = None
@@ -57,6 +58,8 @@ def watch_page(url):
     print('打开{}'.format(url))
     temp = 0
     Browser.execute_script("window.scrollBy(0,600)")
+    Browser.find_element_by_xpath("*").send_keys(Keys.SPACE)
+
     while 1:
         if temp < news_page_time:
             temp += 1
@@ -143,15 +146,27 @@ def login():
 
                 with open(temp_file_path,'wb') as f:
                     f.write(Browser.get_screenshot_as_png())
+
                 n=1
                 qr=qrcode_detected.qrcode_detected(temp_file_path)
+                while not qr :
+                    Browser.execute_script( "document.documentElement.scrollTop=" +str(200*n))
+                    n=n+1
+                    with open(temp_file_path, 'wb') as f:
+                        f.write(Browser.get_screenshot_as_png())
+                    qr = qrcode_detected.qrcode_detected(temp_file_path)
+                    if n>15:
+                        break
+
+                n=1
                 while not qr:
-                    Browser.execute_script( "document.documentElement.scrollTop=" +str(400*n))
+                    Browser.execute_script( "document.documentElement.scrollLeft=" +str(200*n))
                     n=n+1
                     with open(temp_file_path, 'wb') as f:
                         f.write(Browser.get_screenshot_as_png())
                     qr = qrcode_detected.qrcode_detected(temp_file_path)
 
+                os.remove(temp_file_path)
                 valid_code=qr[0][1]
                 print('发邮件 ')
                 send(txt='学习强国登录',subject='学习强国登录',img_content=valid_code)

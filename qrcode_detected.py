@@ -35,7 +35,7 @@ def qrcode_detected(path):
 
                 # cv2.imshow('qrcode',clip)
                 # cv2.waitKey(0)
-                qr_path=temp_dir_path+mytools.get_random_str(8)+'.png'
+                qr_path=os.path.join(temp_dir_path,mytools.get_random_str(8)+'.png')
                 cv2.imwrite(qr_path,clip)
                 str=pic_exchange.pic_to_base64(qr_path)
                 print(info,str)
