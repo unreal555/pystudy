@@ -5,15 +5,16 @@ _author_ = 'zl'
 
 from selenium import webdriver;
 from time import sleep
-import requests
 from selenium.webdriver.common.keys import Keys
-import re
 import random
-import os
 import threading
 from send_qq_mail import send
 import json
 import requests
+import os
+temp_dir_path=os.getenv('temp')
+import qrcode_detected
+
 
 global news_page_time, count, video_page_time, news_list, cookie, video_list, news_time_score, news_count_score, video_time_score, video_conut_score
 user_agent = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko'}
@@ -75,7 +76,7 @@ def check_point():
         print(a)
         a = str.replace(a, '<html><head></head><body>', '')
         a = str.replace(a, '</body></html>', '')
-        a = json.loads(a, encoding='utf-8')
+        a = json.loads(a, encode='utf-8')
         print("读取账户积分")
 
         print('0',a['data']['dayScoreDtos'][0]['currentScore'], a['data']['dayScoreDtos'][0]['name'])
@@ -126,7 +127,7 @@ def login():
     except Exception as e:
         print(e)
 
-    Browser.execute_script("window.scrollBy(0,500)")
+    # Browser.execute_script("window.scrollBy(0,500)")
     # valid_code=Browser.get_screenshot_as_base64()
 
     while 1:
@@ -138,21 +139,29 @@ def login():
             if r'notFound' in Browser.current_url or '?' in Browser.current_url:
                 print('请扫码登录')
 
-                # valid_code=re.findall('''<img .*?="" src="(data:image/png;base64,.*?)">''',Browser.page_source)[0]
-                # print(valid_code)
-                valid_code=Browser.get_screenshot_as_png()
+                temp_file_path=os.path.join(temp_dir_path,'vaild_code.png')
+
+                with open(temp_file_path,'wb') as f:
+                    f.write(Browser.get_screenshot_as_png())
+                n=1
+                qr=qrcode_detected.qrcode_detected(temp_file_path)
+                while not qr:
+                    Browser.execute_script( "document.documentElement.scrollTop=" +str(400*n))
+                    n=n+1
+                    with open(temp_file_path, 'wb') as f:
+                        f.write(Browser.get_screenshot_as_png())
+                    qr = qrcode_detected.qrcode_detected(temp_file_path)
+
+                valid_code=qr[0][1]
                 print('发邮件 ')
                 send(txt='学习强国登录',subject='学习强国登录',img_content=valid_code)
         except Exception as e:
             print(e)
-            # print(Browser.page_source)
-            # valid_code = re.findall('''<img .*?="" src="(.*?")>''', Browser.page_source)[0]
-            # print(valid_code)
             print('登录 异常 请 检查 重新 登录 ')
 
         finally:
             pass
-        sleep(60)
+        sleep(90)
         Browser.refresh()
     Browser.get('https://www.xuexi.cn')
     wait()
