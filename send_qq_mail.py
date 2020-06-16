@@ -30,7 +30,7 @@ def send(txt,sender='47540479@qq.com',receiver='47540479@qq.com',subject='python
         message.attach(content)
     else:
         print('有图邮件')
-        content = MIMEText('<html><body>{}<img src="cid:imageid" alt="imageid"></body></html>'.format(txt), 'html', 'utf-8')
+        content = MIMEText('<html><body>{}</br><img src="cid:imageid" alt="imageid"></body></html>'.format(txt), 'html', 'utf-8')
         message.attach(content)
 
         if img_content!=None :

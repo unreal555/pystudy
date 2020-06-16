@@ -4,9 +4,12 @@ from pyzbar.pyzbar import decode
 import cv2
 import pic_exchange
 import os
+import numpy
 temp_dir_path=os.getenv('temp')
 print(temp_dir_path)
 import mytools
+from io import BytesIO
+import base64
 
 """
 图片包含二维码检测
@@ -31,34 +34,24 @@ def qrcode_detected(path):
                 top,left,height,width= rect.top,rect.left,rect.height,rect.width
 
                 print(info, top,left,height,width)
-                clip=image[top:top+height,left:left+width]
+                clip=image[top-10:top+height+10,left-10:left+width+10]
 
                 # cv2.imshow('qrcode',clip)
                 # cv2.waitKey(0)
-                qr_path=os.path.join(temp_dir_path,mytools.get_random_str(8)+'.png')
-                cv2.imwrite(qr_path,clip)
-                str=pic_exchange.pic_to_base64(qr_path)
-                print(info,str)
-                os.remove(qr_path)
+                temp=cv2.imencode('.png',clip)[1]
+                temp=numpy.array(temp)
+                temp = temp.tostring()
 
+                str ="data:image/png;base64,"+ base64.b64encode(temp).decode()
                 qr[s]=[info,str]
 
-            print(qr)
-
         else:
-            print('1未检测出二维码')
+            print('图片中未检测出二维码')
             return 0
     except Exception as e:
         print(e)
-        print('2未检测出二维码')
+        print('异常错误，未检测出二维码')
         return 0
-
-
-
-
-
-
-
     return qr
 
 

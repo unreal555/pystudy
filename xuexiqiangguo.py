@@ -13,7 +13,7 @@ import json
 import requests
 import os
 temp_dir_path=os.getenv('temp')
-import qrcode_detected
+import detected_qrcode
 
 
 global news_page_time, count, video_page_time, news_list, cookie, video_list, news_time_score, news_count_score, video_time_score, video_conut_score
@@ -148,13 +148,13 @@ def login():
                     f.write(Browser.get_screenshot_as_png())
 
                 n=1
-                qr=qrcode_detected.qrcode_detected(temp_file_path)
+                qr=detected_qrcode.qrcode_detected(temp_file_path)
                 while not qr :
                     Browser.execute_script( "document.documentElement.scrollTop=" +str(200*n))
                     n=n+1
                     with open(temp_file_path, 'wb') as f:
                         f.write(Browser.get_screenshot_as_png())
-                    qr = qrcode_detected.qrcode_detected(temp_file_path)
+                    qr = detected_qrcode.qrcode_detected(temp_file_path)
                     if n>15:
                         break
 
@@ -164,7 +164,7 @@ def login():
                     n=n+1
                     with open(temp_file_path, 'wb') as f:
                         f.write(Browser.get_screenshot_as_png())
-                    qr = qrcode_detected.qrcode_detected(temp_file_path)
+                    qr = detected_qrcode.qrcode_detected(temp_file_path)
 
                 os.remove(temp_file_path)
                 valid_code=qr[0][1]
