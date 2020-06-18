@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2a29feb6-6947-483a-9da2-985463451c54" name="默认的" comment="默认的">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pywintypes38.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/read_write_config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Scripts/Activate.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Scripts/activate" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Scripts/activate.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Scripts/deactivate.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Scripts/python.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Scripts/pythonw.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/pyvenv.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/other.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pystudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pystudy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/config.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/save_read_config.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/pystudy$zhihu.coverage" NAME="zhihu Coverage Results" MODIFIED="1590581230841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$crawl__1_.coverage" NAME="crawl (1) Coverage Results" MODIFIED="1591940751506" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scrapy-demo/tujidao" />
+    <SUITE FILE_PATH="coverage/pystudy$30__.coverage" NAME="30.找质数-挨个除，效率差 Coverage Results" MODIFIED="1583635348555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$mytools.coverage" NAME="mytools Coverage Results" MODIFIED="1591349383704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$begin_biquge.coverage" NAME="begin-biquge Coverage Results" MODIFIED="1591328448641" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scrapy-demo/biquge" />
+    <SUITE FILE_PATH="coverage/pystudy$002003_com.coverage" NAME="笔趣阁下载002003.com Coverage Results" MODIFIED="1591753318354" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$headers.coverage" NAME="生成headers字典 Coverage Results" MODIFIED="1584358977396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$biquge.coverage" NAME="biquge Coverage Results" MODIFIED="1591316735618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scrapy-demo/biquge/biquge/spiders" />
+    <SUITE FILE_PATH="coverage/pystudy$proxy.coverage" NAME="proxy Coverage Results" MODIFIED="1591164280008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$dingshiguanji.coverage" NAME="dingshiguanji Coverage Results" MODIFIED="1591250105323" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$pyppeteerskwen.coverage" NAME="pyppeteer学习skwen Coverage Results" MODIFIED="1586219345473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$xuexiqiangguo.coverage" NAME="xuexiqiangguo Coverage Results" MODIFIED="1592357799075" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$begin_tujidao.coverage" NAME="begin_tujidao Coverage Results" MODIFIED="1591330114334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scrapy-demo/tujidao" />
+    <SUITE FILE_PATH="coverage/pystudy$gui.coverage" NAME="gui Coverage Results" MODIFIED="1583372075746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$feilu.coverage" NAME="feilu Coverage Results" MODIFIED="1584544498209" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$.coverage" NAME="识别图片中的二维码 Coverage Results" MODIFIED="1592273086936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$Ctrl.coverage" NAME="无头浏览器加载扩展Ctrl复制 Coverage Results" MODIFIED="1585207327958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$begin_mzitu.coverage" NAME="begin_mzitu Coverage Results" MODIFIED="1591254979421" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scrapy-demo/dianzishu" />
+    <SUITE FILE_PATH="coverage/pystudy$detected_qrcode.coverage" NAME="detected_qrcode Coverage Results" MODIFIED="1592299071029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$begin_sunyunzhu.coverage" NAME="begin_sunyunzhu Coverage Results" MODIFIED="1591262100252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scrapy-demo/sunyunzhu" />
+    <SUITE FILE_PATH="coverage/pystudy$requests_html.coverage" NAME="requests_html学习 Coverage Results" MODIFIED="1585315949258" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$31_.coverage" NAME="31.找质数 Coverage Results" MODIFIED="1583635398865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$save_read_config.coverage" NAME="save_read_config Coverage Results" MODIFIED="1592363094533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$taobao.coverage" NAME="taobao Coverage Results" MODIFIED="1585191007390" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$cxfreeze.coverage" NAME="cxfreeze Coverage Results" MODIFIED="1591604826442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$begin_dianzishu.coverage" NAME="begin-dianzishu Coverage Results" MODIFIED="1591254951341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scrapy-demo/dianzishu" />
+    <SUITE FILE_PATH="coverage/pystudy$begin_aitaotu.coverage" NAME="begin-aitaotu Coverage Results" MODIFIED="1591316718551" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scrapy-demo/biquge" />
+    <SUITE FILE_PATH="coverage/pystudy$begin_meitulu.coverage" NAME="begin_meitulu Coverage Results" MODIFIED="1591255120613" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scrapy-demo/meitulu" />
+    <SUITE FILE_PATH="coverage/pystudy$crawl.coverage" NAME="crawl Coverage Results" MODIFIED="1591839434700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scrapy-demo/biquge" />
+    <SUITE FILE_PATH="coverage/pystudy$send_qq_mail.coverage" NAME="send_qq_mail Coverage Results" MODIFIED="1592362925258" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="pystudy" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>ssssss</find>
+      <find>min</find>
+      <find>pre</find>
+      <find>exc</find>
+      <find>pr先</find>
+      <find>prx</find>
+      <find>济南的红叶谷景区作为4A景</find>
+      <find>cookie</find>
+      <find>gbk</find>
+      <find>headl</find>
+      <find>headle</find>
+      <find>headless</find>
+      <find>retr</find>
+      <find>page.goto</find>
+      <find>goto</find>
+      <find>random_wait</find>
+      <find>rand</find>
+      <find>shutdown_time</find>
+      <find>intp</find>
+      <find>sssssssssssss</find>
+      <find>https://www.biquge5200.cc/0_584/144386609.html&gt;</find>
+      <find>2</find>
+      <find>三六十八</find>
+      <find>'./all.txt'</find>
+      <find>3</find>
+      <find>clock</find>
+      <find>file</find>
+      <find>enco</find>
+      <find>encoding</find>
+      <find>json.load</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>goto</replace>
+      <replace>flag</replace>
+      <replace>filepath</replace>
+      <replace>process_time</replace>
+      <replace>path</replace>
+      <replace>encode</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>D:\PyCharm2018.3.3\pystudy</dir>
+      <dir>D:\PyCharm2018.3.3\pystudy\scrapy-demo\tujidao</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/read_write_config.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="D:\PyCharm2019.3.1\pystudy\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1dTo587vzNqcIC8YWETZMQ9PIVJ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="ToolWindowPython Console.ShowToolbar" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="pystudy" is-module-sdk="true">
+        <envs>
+          <env key="PATH" value="C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Local\Programs\Python\Python38-32;C:\Windows\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Windows Kits\8.1\Windows Performance Toolkit\;C:\Users\Administrator\AppData\Local\Programs\Python\Python38-32\Scripts\;C:\Users\Administrator\AppData\Local\Programs\Python\Python38-32\;d:\PyCharm2018.3.3\bin;  " />
+        </envs>
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="pystudy" />
+        <option name="myEnvs">
+          <map>
+            <entry key="PATH" value="C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Local\Programs\Python\Python38-32;C:\Windows\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Windows Kits\8.1\Windows Performance Toolkit\;C:\Users\Administrator\AppData\Local\Programs\Python\Python38-32\Scripts\;C:\Users\Administrator\AppData\Local\Programs\Python\Python38-32\;d:\PyCharm2018.3.3\bin;  " />
+          </map>
+        </option>
+      </console-settings>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PyCharm2018.3.3\pystudy" />
+      <recent name="D:\PyCharm2018.3.3\pystudy\scrapy-demo\biquge\biquge" />
+      <recent name="D:\PyCharm2018.3.3\pystudy\scrapy-demo\biquge" />
+      <recent name="D:\PyCharm2018.3.3\pystudy\scrapy-demo\tujidao\dist" />
+      <recent name="D:\PyCharm2018.3.3\pystudy\scrapy-demo" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.save_read_config">
+    <configuration name="27.目录选择待完善" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="pystudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/27.目录选择待完善.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="3.函数学习" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="pystudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/3.函数学习.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="detected_qrcode" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pystudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/detected_qrcode.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pyppeteer学习skwen" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="pystudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyppeteer学习skwen.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="save_read_config" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="pystudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="D:\PyCharm2019.3.1\pystudy\read_write_config.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.save_read_config" />
+      <item itemvalue="Python.27.目录选择待完善" />
+      <item itemvalue="Python.3.函数学习" />
+      <item itemvalue="Python.pyppeteer学习skwen" />
+      <item itemvalue="Python.detected_qrcode" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.save_read_config" />
+        <item itemvalue="Python.detected_qrcode" />
+        <item itemvalue="Python.pyppeteer学习skwen" />
+        <item itemvalue="Python.3.函数学习" />
+        <item itemvalue="Python.27.目录选择待完善" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2a29feb6-6947-483a-9da2-985463451c54" name="默认的" comment="" />
+      <created>1583320476678</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583320476678</updated>
+      <workItem from="1585731530707" duration="1839000" />
+      <workItem from="1585733510877" duration="581000" />
+      <workItem from="1586219230927" duration="134000" />
+      <workItem from="1586219389905" duration="36000" />
+      <workItem from="1590292964405" duration="2002000" />
+      <workItem from="1590307502228" duration="64000" />
+      <workItem from="1590483018741" duration="864000" />
+      <workItem from="1590558639150" duration="571000" />
+      <workItem from="1590580394671" duration="1304000" />
+      <workItem from="1590750167777" duration="446000" />
+      <workItem from="1590996532714" duration="234000" />
+      <workItem from="1590996920975" duration="22000" />
+      <workItem from="1590997076615" duration="51000" />
+      <workItem from="1590997241476" duration="22000" />
+      <workItem from="1591004970205" duration="81000" />
+      <workItem from="1591005100919" duration="7063000" />
+      <workItem from="1591086102784" duration="2462000" />
+      <workItem from="1591144161580" duration="3045000" />
+      <workItem from="1591147375148" duration="15620000" />
+      <workItem from="1591229508018" duration="5592000" />
+      <workItem from="1591243115913" duration="1148000" />
+      <workItem from="1591250520213" duration="7633000" />
+      <workItem from="1591262030239" duration="784000" />
+      <workItem from="1591315696649" duration="23288000" />
+      <workItem from="1591574490453" duration="8728000" />
+      <workItem from="1591662707750" duration="2752000" />
+      <workItem from="1591748331791" duration="578000" />
+      <workItem from="1591751342510" duration="12208000" />
+      <workItem from="1591838588990" duration="6227000" />
+      <workItem from="1591923051862" duration="7680000" />
+      <workItem from="1592181226619" duration="16101000" />
+      <workItem from="1592266539043" duration="20698000" />
+      <workItem from="1592357040511" duration="1039000" />
+      <workItem from="1592358234180" duration="3417000" />
+      <workItem from="1592364895689" duration="333000" />
+      <workItem from="1592365327646" duration="84000" />
+      <workItem from="1592366260409" duration="59000" />
+      <workItem from="1592372564810" duration="294000" />
+      <workItem from="1592372936468" duration="17000" />
+      <workItem from="1592444010335" duration="638000" />
+      <workItem from="1592445405805" duration="50000" />
+      <workItem from="1592445932271" duration="1862000" />
+      <workItem from="1592451725781" duration="662000" />
+      <workItem from="1592458301050" duration="7747000" />
+    </task>
+    <task id="LOCAL-00001" summary="1">
+      <created>1584005759649</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1584005759649</updated>
+    </task>
+    <task id="LOCAL-00002" summary="1">
+      <created>1584012379789</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1584012379789</updated>
+    </task>
+    <task id="LOCAL-00003" summary="1">
+      <created>1584082143934</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1584082143934</updated>
+    </task>
+    <task id="LOCAL-00004" summary="1">
+      <created>1584364755038</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1584364755038</updated>
+    </task>
+    <task id="LOCAL-00005" summary="1">
+      <created>1584535217410</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1584535217410</updated>
+    </task>
+    <task id="LOCAL-00006" summary="1">
+      <created>1584536939980</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1584536939980</updated>
+    </task>
+    <task id="LOCAL-00007" summary="1">
+      <created>1584543913901</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1584543913901</updated>
+    </task>
+    <task id="LOCAL-00008" summary="1">
+      <created>1584544026832</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1584544026832</updated>
+    </task>
+    <task id="LOCAL-00009" summary="1">
+      <created>1584546595764</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1584546595764</updated>
+    </task>
+    <task id="LOCAL-00010" summary="1">
+      <created>1585315639787</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1585315639788</updated>
+    </task>
+    <task id="LOCAL-00011" summary="1">
+      <created>1585316194156</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1585316194156</updated>
+    </task>
+    <task id="LOCAL-00012" summary="默认的">
+      <created>1585734075940</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1585734075940</updated>
+    </task>
+    <task id="LOCAL-00013" summary="默认的">
+      <created>1590297490956</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1590297490956</updated>
+    </task>
+    <task id="LOCAL-00014" summary="默认的">
+      <created>1590581291542</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1590581291542</updated>
+    </task>
+    <task id="LOCAL-00015" summary="默认的">
+      <created>1591005252520</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1591005252520</updated>
+    </task>
+    <task id="LOCAL-00016" summary="默认的">
+      <created>1591087479347</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1591087479347</updated>
+    </task>
+    <task id="LOCAL-00017" summary="默认的">
+      <created>1591147001457</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1591147001457</updated>
+    </task>
+    <task id="LOCAL-00018" summary="默认的">
+      <created>1591148284129</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1591148284129</updated>
+    </task>
+    <task id="LOCAL-00019" summary="默认的">
+      <created>1591156531394</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1591156531394</updated>
+    </task>
+    <task id="LOCAL-00020" summary="默认的">
+      <created>1591164591359</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1591164591359</updated>
+    </task>
+    <task id="LOCAL-00021" summary="默认的">
+      <created>1591166293965</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1591166293965</updated>
+    </task>
+    <task id="LOCAL-00022" summary="默认的">
+      <created>1591236000586</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1591236000586</updated>
+    </task>
+    <task id="LOCAL-00023" summary="默认的">
+      <created>1591250909321</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1591250909321</updated>
+    </task>
+    <task id="LOCAL-00024" summary="默认的">
+      <created>1591251066361</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1591251066361</updated>
+    </task>
+    <task id="LOCAL-00025" summary="默认的">
+      <created>1591254901125</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1591254901125</updated>
+    </task>
+    <task id="LOCAL-00026" summary="默认的">
+      <created>1591255262319</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1591255262319</updated>
+    </task>
+    <task id="LOCAL-00027" summary="默认的">
+      <created>1591256067514</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1591256067514</updated>
+    </task>
+    <task id="LOCAL-00028" summary="默认的">
+      <created>1591262391362</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1591262391362</updated>
+    </task>
+    <task id="LOCAL-00029" summary="默认的">
+      <created>1591329410752</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1591329410752</updated>
+    </task>
+    <task id="LOCAL-00030" summary="默认的">
+      <created>1591342750379</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1591342750379</updated>
+    </task>
+    <task id="LOCAL-00031" summary="默认的">
+      <created>1591580692228</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1591580692228</updated>
+    </task>
+    <task id="LOCAL-00032" summary="默认的">
+      <created>1591580996393</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1591580996393</updated>
+    </task>
+    <task id="LOCAL-00033" summary="默认的">
+      <created>1591581745343</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1591581745343</updated>
+    </task>
+    <task id="LOCAL-00034" summary="默认的">
+      <created>1591771579457</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1591771579457</updated>
+    </task>
+    <task id="LOCAL-00035" summary="默认的">
+      <created>1591775230642</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1591775230642</updated>
+    </task>
+    <task id="LOCAL-00036" summary="默认的">
+      <created>1591854350658</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1591854350674</updated>
+    </task>
+    <task id="LOCAL-00037" summary="默认的">
+      <created>1591923496410</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1591923496410</updated>
+    </task>
+    <task id="LOCAL-00038" summary="默认的">
+      <created>1591924262004</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1591924262004</updated>
+    </task>
+    <task id="LOCAL-00039" summary="默认的">
+      <created>1591941068487</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1591941068487</updated>
+    </task>
+    <task id="LOCAL-00040" summary="默认的">
+      <created>1592206562045</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1592206562045</updated>
+    </task>
+    <task id="LOCAL-00041" summary="默认的">
+      <created>1592209342747</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1592209342747</updated>
+    </task>
+    <task id="LOCAL-00042" summary="默认的">
+      <created>1592213396632</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1592213396632</updated>
+    </task>
+    <task id="LOCAL-00043" summary="默认的">
+      <created>1592213670734</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1592213670734</updated>
+    </task>
+    <task id="LOCAL-00044" summary="默认的">
+      <created>1592279948480</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1592279948481</updated>
+    </task>
+    <task id="LOCAL-00045" summary="默认的">
+      <created>1592280035127</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1592280035127</updated>
+    </task>
+    <task id="LOCAL-00046" summary="默认的">
+      <created>1592289362567</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1592289362567</updated>
+    </task>
+    <task id="LOCAL-00047" summary="默认的">
+      <created>1592299663968</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1592299663968</updated>
+    </task>
+    <task id="LOCAL-00048" summary="默认的">
+      <created>1592364978328</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1592364978328</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="1" />
+    <MESSAGE value="默认的" />
+    <option name="LAST_COMMIT_MESSAGE" value="默认的" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="94" y="149" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592459268178">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="94" y="149" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.984@0.0.1280.984" timestamp="1592459268178" />
+    <state width="1236" height="120" key="GridCell.Tab.0.bottom" timestamp="1592466193590">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="1236" height="120" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1592466193590" />
+    <state width="1236" height="120" key="GridCell.Tab.0.center" timestamp="1592466193590">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="1236" height="120" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1592466193590" />
+    <state width="1236" height="120" key="GridCell.Tab.0.left" timestamp="1592466193589">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="1236" height="120" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1592466193589" />
+    <state width="1236" height="120" key="GridCell.Tab.0.right" timestamp="1592466193590">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="1236" height="120" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1592466193590" />
+    <state x="48" y="210" key="SettingsEditor" timestamp="1592461235720">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="48" y="210" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1592461235720" />
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1592458303069">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1280.984@0.0.1280.984" timestamp="1592458303069" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/pystudy$detected_qrcode.coverage" NAME="detected_qrcode Coverage Results" MODIFIED="1592460776516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$save_read_config.coverage" NAME="save_read_config Coverage Results" MODIFIED="1592466193576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
