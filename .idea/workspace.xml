@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a29feb6-6947-483a-9da2-985463451c54" name="默认的" comment="默认的">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pywintypes38.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/read_write_config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Scripts/Activate.ps1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Scripts/activate" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Scripts/activate.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Scripts/deactivate.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Scripts/python.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Scripts/pythonw.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/pyvenv.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/other.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pystudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pystudy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/config.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/save_read_config.py" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/pic_count.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,29 +167,7 @@
       <recent name="D:\PyCharm2018.3.3\pystudy\scrapy-demo" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.save_read_config">
-    <configuration name="27.目录选择待完善" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="pystudy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/27.目录选择待完善.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.pic_count">
     <configuration name="3.函数学习" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -248,6 +212,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="pic_count" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pystudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pic_count.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="pyppeteer学习skwen" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -274,6 +260,9 @@
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -291,18 +280,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.save_read_config" />
-      <item itemvalue="Python.27.目录选择待完善" />
       <item itemvalue="Python.3.函数学习" />
       <item itemvalue="Python.pyppeteer学习skwen" />
       <item itemvalue="Python.detected_qrcode" />
+      <item itemvalue="Python.pic_count" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.pic_count" />
         <item itemvalue="Python.save_read_config" />
         <item itemvalue="Python.detected_qrcode" />
         <item itemvalue="Python.pyppeteer学习skwen" />
         <item itemvalue="Python.3.函数学习" />
-        <item itemvalue="Python.27.目录选择待完善" />
       </list>
     </recent_temporary>
   </component>
@@ -371,7 +360,8 @@
       <workItem from="1592445405805" duration="50000" />
       <workItem from="1592445932271" duration="1862000" />
       <workItem from="1592451725781" duration="662000" />
-      <workItem from="1592458301050" duration="7747000" />
+      <workItem from="1592458301050" duration="8464000" />
+      <workItem from="1592470442822" duration="2242000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1584005759649</created>
@@ -709,7 +699,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592364978328</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="默认的">
+      <created>1592466275640</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1592466275641</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -763,26 +760,34 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="94" y="149" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.984@0.0.1280.984" timestamp="1592459268178" />
-    <state width="1236" height="120" key="GridCell.Tab.0.bottom" timestamp="1592466193590">
+    <state x="288" y="88" key="CommitChangelistDialog2" timestamp="1592466271277">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1236" height="120" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1592466193590" />
-    <state width="1236" height="120" key="GridCell.Tab.0.center" timestamp="1592466193590">
+    <state x="288" y="88" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1592466271277" />
+    <state width="1236" height="241" key="GridCell.Tab.0.bottom" timestamp="1592472674426">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1236" height="120" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1592466193590" />
-    <state width="1236" height="120" key="GridCell.Tab.0.left" timestamp="1592466193589">
+    <state width="1236" height="241" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1592472674426" />
+    <state width="1236" height="241" key="GridCell.Tab.0.center" timestamp="1592472674426">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1236" height="120" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1592466193589" />
-    <state width="1236" height="120" key="GridCell.Tab.0.right" timestamp="1592466193590">
+    <state width="1236" height="241" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1592472674426" />
+    <state width="1236" height="241" key="GridCell.Tab.0.left" timestamp="1592472674426">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1236" height="120" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1592466193590" />
+    <state width="1236" height="241" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1592472674426" />
+    <state width="1236" height="241" key="GridCell.Tab.0.right" timestamp="1592472674426">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="1236" height="241" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1592472674426" />
     <state x="48" y="210" key="SettingsEditor" timestamp="1592461235720">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="48" y="210" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1592461235720" />
+    <state x="232" y="227" key="Vcs.Push.Dialog.v2" timestamp="1592466293691">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="232" y="227" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1592466293691" />
     <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1592458303069">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
@@ -790,6 +795,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/pystudy$detected_qrcode.coverage" NAME="detected_qrcode Coverage Results" MODIFIED="1592460776516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$save_read_config.coverage" NAME="save_read_config Coverage Results" MODIFIED="1592466193576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$pic_count.coverage" NAME="pic_count Coverage Results" MODIFIED="1592472674382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$save_read_config.coverage" NAME="save_read_config Coverage Results" MODIFIED="1592470627872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
