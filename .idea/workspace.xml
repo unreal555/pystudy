@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a29feb6-6947-483a-9da2-985463451c54" name="默认的" comment="默认的">
-      <change afterPath="$PROJECT_DIR$/pic_count.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logger.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pic_count.py" beforeDir="false" afterPath="$PROJECT_DIR$/pic_count.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,6 +116,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/unreal555/pystudy.git" />
+      </set>
+    </option>
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/read_write_config.py" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -140,7 +148,7 @@
     <property name="ToolWindowPython Console.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="application.passwordSafe" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -167,29 +175,7 @@
       <recent name="D:\PyCharm2018.3.3\pystudy\scrapy-demo" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.pic_count">
-    <configuration name="3.函数学习" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="pystudy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/3.函数学习.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.logger">
     <configuration name="detected_qrcode" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -204,6 +190,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/detected_qrcode.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="logger" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pystudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/logger.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -280,18 +288,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.save_read_config" />
-      <item itemvalue="Python.3.函数学习" />
       <item itemvalue="Python.pyppeteer学习skwen" />
       <item itemvalue="Python.detected_qrcode" />
       <item itemvalue="Python.pic_count" />
+      <item itemvalue="Python.logger" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.logger" />
         <item itemvalue="Python.pic_count" />
         <item itemvalue="Python.save_read_config" />
         <item itemvalue="Python.detected_qrcode" />
         <item itemvalue="Python.pyppeteer学习skwen" />
-        <item itemvalue="Python.3.函数学习" />
       </list>
     </recent_temporary>
   </component>
@@ -361,14 +369,10 @@
       <workItem from="1592445932271" duration="1862000" />
       <workItem from="1592451725781" duration="662000" />
       <workItem from="1592458301050" duration="8464000" />
-      <workItem from="1592470442822" duration="2242000" />
-    </task>
-    <task id="LOCAL-00001" summary="1">
-      <created>1584005759649</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1584005759649</updated>
+      <workItem from="1592470442822" duration="2314000" />
+      <workItem from="1592526977029" duration="3307000" />
+      <workItem from="1592537525661" duration="344000" />
+      <workItem from="1592538073433" duration="6203000" />
     </task>
     <task id="LOCAL-00002" summary="1">
       <created>1584012379789</created>
@@ -706,7 +710,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592466275641</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="默认的">
+      <created>1592472738426</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1592472738426</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -725,6 +736,31 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -760,42 +796,51 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="94" y="149" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.984@0.0.1280.984" timestamp="1592459268178" />
-    <state x="288" y="88" key="CommitChangelistDialog2" timestamp="1592466271277">
+    <state x="288" y="88" key="CommitChangelistDialog2" timestamp="1592472736209">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="288" y="88" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1592466271277" />
-    <state width="1236" height="241" key="GridCell.Tab.0.bottom" timestamp="1592472674426">
+    <state x="288" y="88" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1592472736209" />
+    <state width="1220" height="170" key="GridCell.Tab.0.bottom" timestamp="1592549167351">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1236" height="241" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1592472674426" />
-    <state width="1236" height="241" key="GridCell.Tab.0.center" timestamp="1592472674426">
+    <state width="1220" height="170" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1592549167351" />
+    <state width="1220" height="170" key="GridCell.Tab.0.center" timestamp="1592549167351">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1236" height="241" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1592472674426" />
-    <state width="1236" height="241" key="GridCell.Tab.0.left" timestamp="1592472674426">
+    <state width="1220" height="170" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1592549167351" />
+    <state width="1220" height="170" key="GridCell.Tab.0.left" timestamp="1592549167351">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1236" height="241" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1592472674426" />
-    <state width="1236" height="241" key="GridCell.Tab.0.right" timestamp="1592472674426">
+    <state width="1220" height="170" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1592549167351" />
+    <state width="1220" height="170" key="GridCell.Tab.0.right" timestamp="1592549167351">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1236" height="241" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1592472674426" />
-    <state x="48" y="210" key="SettingsEditor" timestamp="1592461235720">
+    <state width="1220" height="170" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1592549167351" />
+    <state x="477" y="215" key="RollbackChangesDialog" timestamp="1592549222965">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="48" y="210" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1592461235720" />
-    <state x="232" y="227" key="Vcs.Push.Dialog.v2" timestamp="1592466293691">
+    <state x="477" y="215" key="RollbackChangesDialog/0.0.1280.984@0.0.1280.984" timestamp="1592549222965" />
+    <state x="48" y="210" key="SettingsEditor" timestamp="1592472812759">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="232" y="227" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1592466293691" />
+    <state x="48" y="210" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1592472812759" />
+    <state x="232" y="227" key="Vcs.Push.Dialog.v2" timestamp="1592472787322">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="232" y="227" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1592472787322" />
     <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1592458303069">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1280.984@0.0.1280.984" timestamp="1592458303069" />
+    <state x="451" y="397" key="git4idea.ui.GitResetDialog" timestamp="1592549161697">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="451" y="397" key="git4idea.ui.GitResetDialog/0.0.1280.984@0.0.1280.984" timestamp="1592549161697" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/pystudy$detected_qrcode.coverage" NAME="detected_qrcode Coverage Results" MODIFIED="1592460776516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$pic_count.coverage" NAME="pic_count Coverage Results" MODIFIED="1592472674382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$logger.coverage" NAME="logger Coverage Results" MODIFIED="1592549011259" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$pic_count.coverage" NAME="pic_count Coverage Results" MODIFIED="1592544566892" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$save_read_config.coverage" NAME="save_read_config Coverage Results" MODIFIED="1592470627872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
