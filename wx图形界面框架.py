@@ -4,6 +4,7 @@
 """-----------------------------------------------------------------"""
 #请在这里添加你的事件函数要使用到的模块
 import wx
+import os
 #不能修改的内容 或调试内容
 
 #基本配置
@@ -11,10 +12,15 @@ title='Application'#输入你的顶级窗口名字
 size=(410,335)#顶级窗口尺寸（长，高）
 Button1='Open'#第一个按钮名字
 Button2='Save'#第二个按钮名字
+Button3='Open'
+
 
 def load(event):
     file=open(input1.GetValue())  #特别注意，从输入框这么得到的字符串是unicode
-    show.SetValue(file.read())
+
+    s=file.read()
+    show.SetValue(s)
+
     file.close()
 
 def save(event):
@@ -25,6 +31,35 @@ def save(event):
 def Quit(event):#菜单项绑定事件
     show.AppendText(">please\n")
     exit()
+
+
+def open_file(event):
+
+    # '''
+    # 打开开文件对话框
+    # '''
+    # file_wildcard = "Paint files(*.paint)|*.paint|All files(*.*)|*.*"
+    # dlg = wx.FileDialog("Open paint file...",
+    #                     # os.getcwd(),
+    #                     style = wx.FD_OPEN,
+    #                     wildcard = file_wildcard)
+    # if dlg.ShowModal() == wx.ID_OK:
+    #     filename = dlg.GetPath()
+    #     ReadFile()
+    #     SetTitle(self.title + '--' + self.filename)
+    # dlg.Destroy()
+
+    file_wildcard = "Paint files(*.paint)|*.paint|All files(*.*)|*.*"
+
+    dlg = wx.FileDialog("Open XYZ file", wildcard="XYZ files (*.xyz)|*.xyz",style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST)
+    if dlg.ShowModal() == wx.ID_OK:
+        filename = dlg.GetPath()
+        ReadFile()
+        SetTitle(self.title + '--' + self.filename)
+    dlg.Destroy()
+
+
+
 
 app=wx.App()
 win=wx.Frame(None,title=title,size=size)
@@ -57,9 +92,14 @@ loadButton=wx.Button(bkg,label=Button1)
 loadButton.Bind(wx.EVT_BUTTON,load)            #请修改触发事件和调用函数
 saveButton=wx.Button(bkg,label=Button2)
 saveButton.Bind(wx.EVT_BUTTON,save)          #请修改触发事件和调用函数
+openButton=wx.Button(bkg,label=Button3)
+openButton.Bind(wx.EVT_BUTTON,open_file)
 
-input1 = wx.TextCtrl(bkg,style=wx.TE_PROCESS_ENTER)
+
+input1 = wx.TextCtrl(bkg,value='c:\OnKeyDetector.log',style=wx.TE_PROCESS_ENTER)
 input1.Bind(wx.EVT_TEXT_ENTER,load)#当输入框检测到回车事件就调用函数load，必须和上面loadButton一致
+
+
 show=wx.TextCtrl(bkg,value='',style=wx.TE_MULTILINE | wx.HSCROLL)#value设置初始显示内容
 
 #布局
@@ -67,6 +107,8 @@ hbox=wx.BoxSizer()
 hbox.Add(input1,proportion=1,flag=wx.EXPAND)
 hbox.Add(loadButton,proportion=0,flag=wx.LEFT,border=5)
 hbox.Add(saveButton,proportion=0,flag=wx.LEFT,border=5)
+hbox.Add(openButton,proportion=0,flag=wx.LEFT,border=5)
+
 
 vbox=wx.BoxSizer(wx.VERTICAL)
 vbox.Add(hbox,proportion=0,flag=wx.EXPAND | wx.ALL,border=5)
