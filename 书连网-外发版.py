@@ -16,9 +16,11 @@ headers['Cookie']用于携带登陆信息,为了速度,没有编写登陆模块,
 
 # novel_url = 'http://vip.shulink.com/html/69/69330/indexasc.html'
 novel_url ='http://vip.shulink.com/files/article/html/68/68033/index.html'
+novel_url='http://vip.shulink.com/files/article/html/139/139522/index.html'
+
 '''此处为小说入口,也就是该小说的章节索引页面'''
 
-Cookie= '''PHPSESSID=fo8fjmqeaph67sq651rtfdro8h; jieqiUserInfo=jieqiUserId%3D379396%2CjieqiUserUname%3D%B6%AB%C4%DE%2CjieqiUserName%3D%26%23x4E1C%3B%26%23x9713%3B%2CjieqiUserGroup%3D3%2CjieqiUserGroupName%3D%26%23x666E%3B%26%23x901A%3B%26%23x4F1A%3B%26%23x5458%3B%2CjieqiUserVip%3D1%2CjieqiUserHonorId%3D5%2CjieqiUserHonor%3D%26%23x65E0%3B%26%23x53CC%3B%26%23x9690%3B%26%23x58EB%3B%2CjieqiUserToken%3Ddc9d608a620ec41e3ceb6645d3c886cb%2CjieqiCodeLogin%3D0%2CjieqiCodePost%3D0%2CjieqiUserPassword%3Ddd9afc93112397f0cf6b597453bb6b8e%2CjieqiUserAccount%3D%26%23x4E1C%3B%26%23x9713%3B%2CjieqiUserLogin%3D1592737763; jieqiVisitInfo=jieqiUserLogin%3D1592737763%2CjieqiUserId%3D379396; jieqiVisitId=article_articleviews%3D68033%7C69330; jieqiRecentRead=68033.5036865.1.1592739461.379396'''
+Cookie= '''PHPSESSID=ie2dts4ii60anit1mvk5bep9tr; jieqiUserInfo=jieqiUserId%3D369080%2CjieqiUserUname%3D%B6%AB%BC%D2%D6%D6%CA%F7%2A369080%2CjieqiUserName%3D%26%23x4E1C%3B%26%23x5BB6%3B%26%23x79CD%3B%26%23x6811%3B%26%23x002A%3B%26%23x0033%3B%26%23x0036%3B%26%23x0039%3B%26%23x0030%3B%26%23x0038%3B%26%23x0030%3B%2CjieqiUserGroup%3D3%2CjieqiUserGroupName%3D%26%23x666E%3B%26%23x901A%3B%26%23x4F1A%3B%26%23x5458%3B%2CjieqiUserVip%3D1%2CjieqiUserHonorId%3D6%2CjieqiUserHonor%3D%26%23x4E16%3B%26%23x5916%3B%26%23x9AD8%3B%26%23x4EBA%3B%2CjieqiUserToken%3D051bf5fce761675b226e5ffb93b5ea8d%2CjieqiCodeLogin%3D0%2CjieqiCodePost%3D0%2CjieqiUserPassword%3D02822ce4eaa605e1653d8dfe5951d30c%2CjieqiUserAccount%3D%26%23x4E1C%3B%26%23x5BB6%3B%26%23x79CD%3B%26%23x6811%3B%26%23x002A%3B%26%23x0033%3B%26%23x0036%3B%26%23x0039%3B%26%23x0030%3B%26%23x0038%3B%26%23x0030%3B%2CjieqiUserLogin%3D1592825790; jieqiVisitInfo=jieqiUserLogin%3D1592825790%2CjieqiUserId%3D369080; jieqiRecentRead=68033.5036865.1.1592739508.379396-69330.5075005.1.1592742596.379396-139522.5203760.1.1592825793.369080'''
 '''此处为登陆后的cookie信息,收费章节不携带cookie是无法下载的'''
 
 
@@ -163,11 +165,11 @@ for chapter_url,chapter_name in chapter_list:
 
     result=result.replace('</div>','<br/><br/>')
 
-    # print(result)
+    print(result)
 
     result = re.findall('[&emsp;]*(.*?)<br/>', result, re.S)
 
-    # print(result)
+    print(result)
 
     if result!=[]:     #如果提取到的result不是空的,那么说明已经取到了章节内容,则开始把章节写入文件
 
