@@ -146,14 +146,18 @@ with open(filepath, 'r', encoding='utf-8') as f:
     finished = f.read()
 '''读取小说文件内的数据,存入finished'''
 
+for chapter_url,chapter_name in chapter_list:
+    print(chapter_url,chapter_name)
+
 
 for chapter_url,chapter_name in chapter_list:
 
-    if chapter_name in finished:            #若该章节名称已经存在于文件中,说明本章已经下载,跳过
+    url = domain + chapter_url           #通过域名和章节链接拼接成章节的真实url
+
+    if url in finished:            #若该章节名称已经存在于文件中,说明本章已经下载,跳过
         print(chapter_name + '已下载')
         continue                        #已下载章节,不再下载,continue直接跳入下一次循环,若if判断为真本语句执行,之后的语句全部略过不再执行
 
-    url = domain + chapter_url           #通过域名和章节链接拼接成章节的真实url
 
     print(url, chapter_name)          #输出章节和章节的url,用于调试纠错和
 
@@ -174,6 +178,7 @@ for chapter_url,chapter_name in chapter_list:
     if result!=[]:     #如果提取到的result不是空的,那么说明已经取到了章节内容,则开始把章节写入文件
 
         with open(filepath, 'a', encoding='utf-8') as f:      #本语句写入章节的名称
+            f.write(url+'\r\n')
             f.write(chapter_name.replace('&emsp;','  '))
             f.write('\r\n\r\n')
 
