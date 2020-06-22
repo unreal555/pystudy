@@ -5,11 +5,21 @@ QQ群：476842922（欢迎加群讨论学习
 @author: Administrator
 """
 import wx
+import time
+import threading
+
+
+class MyThread(Thread):
+    def __init__(self,parent=None):
+        Thread.__init__(self)
+
+    def run(self):
+        test_run()
 
 class Frame( wx.Frame ):
 
     response = ""
-    title = 'Application'    #窗体名称
+    title = '图形界面框架模板'    #窗体名称
     size=wx.Size(500,300)    #尺寸
     Button1 = 'load'  # 第一个按钮名字
     Button2 = 'Save'  # 第二个按钮名字
@@ -86,15 +96,20 @@ class Frame( wx.Frame ):
         dlg = wx.FileDialog(self, "Open XYZ file", wildcard="XYZ files (*.*)|*.*",style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST)
         if dlg.ShowModal() == wx.ID_OK:
             self.filename = dlg.GetPath()
-            file=open("temFile.txt",'r')
+            print(self.filename)
+            file=open(self.filename,'r',encoding='gbk')
             self.show.SetValue(file.read())
             self.SetTitle(self.title + '--' + self.filename)
         dlg.Destroy()
 
     def load(self,event):
+        for i in range(1,10):
+            self.show.SetValue(str(i))
+            time.sleep(1)
+
         file=open(self.input.GetValue())  #特别注意，从输入框这么得到的字符串是unicode
         s=file.read()
-        show.SetValue(s)
+        self.show.SetValue(s)
         file.close()
 
     def Quit(self,event):  # 菜单项绑定事件
