@@ -1,121 +1,113 @@
-# -*- coding: cp936 -*-
-#’‚∏ˆøÚº‹ƒ„–Ë“™∏¥÷∆“ª∑›‘Ÿ π”√£¨ π”√∑Ω∑®æÕ «∏˘æ›◊¢ Õ◊‘∂®“Âƒ„µƒ—˘ Ω
-#◊¢“‚±æøÚº‹…Ëº∆≥ˆµƒµƒ≈≈∞Ê“—æ≠πÃ∂®
-"""-----------------------------------------------------------------"""
-#«Î‘⁄’‚¿ÔÃÌº”ƒ„µƒ ¬º˛∫Ø ˝“™ π”√µΩµƒƒ£øÈ
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Dec 27 23:07:01 2018
+QQÁæ§Ôºö476842922ÔºàÊ¨¢ËøéÂä†Áæ§ËÆ®ËÆ∫Â≠¶‰π†
+@author: Administrator
+"""
 import wx
-import os
-#≤ªƒ‹–ﬁ∏ƒµƒƒ⁄»› ªÚµ˜ ‘ƒ⁄»›
 
-#ª˘±æ≈‰÷√
-title='Application'# ‰»Îƒ„µƒ∂•º∂¥∞ø⁄√˚◊÷
-size=(410,335)#∂•º∂¥∞ø⁄≥ﬂ¥Á£®≥§£¨∏ﬂ£©
-Button1='Open'#µ⁄“ª∏ˆ∞¥≈•√˚◊÷
-Button2='Save'#µ⁄∂˛∏ˆ∞¥≈•√˚◊÷
-Button3='Open'
+class Frame( wx.Frame ):
 
+    response = ""
+    title = 'Application'    #Á™ó‰ΩìÂêçÁß∞
+    size=wx.Size(500,300)    #Â∞∫ÂØ∏
+    Button1 = 'load'  # Á¨¨‰∏Ä‰∏™ÊåâÈíÆÂêçÂ≠ó
+    Button2 = 'Save'  # Á¨¨‰∫å‰∏™ÊåâÈíÆÂêçÂ≠ó
+    Button3 = 'Open'
 
-def load(event):
-    file=open(input1.GetValue())  #Ãÿ±◊¢“‚£¨¥” ‰»ÎøÚ’‚√¥µ√µΩµƒ◊÷∑˚¥Æ «unicode
-    s=file.read()
-    show.SetValue(s)
-    file.close()
+    def __init__( self, parent ):
 
-def save(event):
-    file=open(input1,GetValue(),'w')
-    file.write(show.GetValue())
-    file.close()
+        wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = self.title, pos = wx.DefaultPosition, size = self.size, style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
-def Quit(event):#≤Àµ•œÓ∞Û∂® ¬º˛
-    show.AppendText(">please\n")
-    # exit()
+        self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 
+        self.file_menu_bar = wx.MenuBar()
+        self.file_menu = wx.Menu()
+        self.open_Item = wx.MenuItem(self.file_menu, wx.ID_ANY, u"Open", wx.EmptyString, wx.ITEM_NORMAL )
+        self.file_menu.Append( self.open_Item )
 
-def open_file(event):
+        self.file_menu.AppendSeparator()
 
-    # '''
-    # ¥Úø™ø™Œƒº˛∂‘ª∞øÚ
-    # '''
-    # file_wildcard = "Paint files(*.paint)|*.paint|All files(*.*)|*.*"
-    # dlg = wx.FileDialog("Open paint file...",
-    #                     # os.getcwd(),
-    #                     style = wx.FD_OPEN,
-    #                     wildcard = file_wildcard)
-    # if dlg.ShowModal() == wx.ID_OK:
-    #     filename = dlg.GetPath()
-    #     ReadFile()
-    #     SetTitle(self.title + '--' + self.filename)
-    # dlg.Destroy()
+        self.save_Item = wx.MenuItem( self.file_menu, wx.ID_ANY, u"Save", wx.EmptyString, wx.ITEM_NORMAL )
+        self.file_menu.Append(self.save_Item)
 
-    file_wildcard = "Paint files(*.paint)|*.paint|All files(*.*)|*.*"
+        self.file_menu_bar.Append( self.file_menu, u"File" )
 
-    dlg = wx.FileDialog("Open XYZ file", wildcard="XYZ files (*.xyz)|*.xyz",style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST)
-    if dlg.ShowModal() == wx.ID_OK:
-        filename = dlg.GetPath()
-        ReadFile()
-        SetTitle(self.title + '--' + self.filename)
-    dlg.Destroy()
+        self.SetMenuBar( self.file_menu_bar )
+
+        # Connect Events
+        self.Bind( wx.EVT_MENU, self.open, id = self.open_Item.GetId() )
+        self.Bind( wx.EVT_MENU, self.save, id = self.save_Item.GetId() )
+
+        self.bkg = wx.Panel(self)
+
+        self.loadButton = wx.Button(self.bkg, label=self.Button1)
+        self.loadButton.Bind(wx.EVT_BUTTON, self.load)  # ËØ∑‰øÆÊîπËß¶Âèë‰∫ã‰ª∂ÂíåË∞ÉÁî®ÂáΩÊï∞
+        self.saveButton = wx.Button(self.bkg, label=self.Button2)
+        self.saveButton.Bind(wx.EVT_BUTTON, self.save)  # ËØ∑‰øÆÊîπËß¶Âèë‰∫ã‰ª∂ÂíåË∞ÉÁî®ÂáΩÊï∞
+        self.openButton = wx.Button(self.bkg, label=self.Button3)
+        self.openButton.Bind(wx.EVT_BUTTON, self.open)
 
 
+        self.input = wx.TextCtrl( self.bkg, wx.ID_ANY,  value='c:\OnKeyDetector.log', style=wx.TE_PROCESS_ENTER)
+        self.input.SetBackgroundColour('Black')
+        self.input.SetForegroundColour('Green')
+        self.input.Bind(wx.EVT_TEXT_ENTER, self.load)  # ÂΩìËæìÂÖ•Ê°ÜÊ£ÄÊµãÂà∞ÂõûËΩ¶‰∫ã‰ª∂Â∞±Ë∞ÉÁî®ÂáΩÊï∞loadÔºåÂøÖÈ°ªÂíå‰∏äÈù¢loadButton‰∏ÄËá¥
+
+        self.show = wx.TextCtrl(self.bkg, value='', style=wx.TE_MULTILINE | wx.HSCROLL)  # valueËÆæÁΩÆÂàùÂßãÊòæÁ§∫ÂÜÖÂÆπ
+        self.show.SetBackgroundColour('Black')
+        self.show.SetForegroundColour('Green')
+
+        self.SetTransparent(1000)
+
+        self.hbox = wx.BoxSizer()
+        self.hbox.Add(self.input, proportion=1, flag=wx.EXPAND)
+        self.hbox.Add(self.loadButton, proportion=0, flag=wx.LEFT, border=5)
+        self.hbox.Add(self.saveButton, proportion=0, flag=wx.LEFT, border=5)
+        self.hbox.Add(self.openButton, proportion=0, flag=wx.LEFT, border=5)
+
+        self.vbox = wx.BoxSizer(wx.VERTICAL)
+        self.vbox.Add(self.hbox, proportion=0, flag=wx.EXPAND | wx.ALL, border=5)
+        self.vbox.Add(self.show, proportion=1, flag=wx.EXPAND | wx.LEFT | wx.BOTTOM | wx.RIGHT, border=5)
+
+        self.bkg.SetSizer(self.vbox)
 
 
-app=wx.App()
-win=wx.Frame(None,title=title,size=size)
-win.SetPosition((450,150))#…Ë÷√¥∞ø⁄¥Úø™∫Û‘⁄∆¡ƒªµƒŒª÷√
+    def __del__( self ):
+        pass
 
-menubar = wx.MenuBar()
-##’‚¿Ôø™ º…˙≥…“ª∏ˆ
-filemenu = wx.Menu()
-###’‚¿Ôø™ º…˙≥…“ª∏ˆ≤Àµ•œÓœ¬¿≠œ¬¿≠“ªœÓ
-qmi = wx.MenuItem(filemenu,2, "Quit")#–ﬁ∏ƒ√˚◊÷
-omi=wx.MenuItem(filemenu,1,'Open')
+    def save( self, event ):
+        file=open("temFile.txt",'w')
+        file.write(self.show.GetValue())
+        file.close()
 
+    def open(self, event):
+        file_wildcard = "Paint files(*.paint)|*.paint|All files(*.*)|*.*"
+        dlg = wx.FileDialog(self, "Open XYZ file", wildcard="XYZ files (*.*)|*.*",style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST)
+        if dlg.ShowModal() == wx.ID_OK:
+            self.filename = dlg.GetPath()
+            file=open("temFile.txt",'r')
+            self.show.SetValue(file.read())
+            self.SetTitle(self.title + '--' + self.filename)
+        dlg.Destroy()
 
-filemenu.Append(omi)
-filemenu.AppendSeparator()
-filemenu.Append(qmi)
+    def load(self,event):
+        file=open(self.input.GetValue())  #ÁâπÂà´Ê≥®ÊÑèÔºå‰ªéËæìÂÖ•Ê°ÜËøô‰πàÂæóÂà∞ÁöÑÂ≠óÁ¨¶‰∏≤ÊòØunicode
+        s=file.read()
+        show.SetValue(s)
+        file.close()
 
-
-menubar.Append(filemenu, "File")#–ﬁ∏ƒ√˚◊÷
-
-win.SetMenuBar(menubar)
-#∏¯id=1µƒœÓ∞Û∂® ¬º˛
-win.Bind(wx.EVT_MENU, Quit, id=2) #–ﬁ∏ƒ¥•∑¢ ¬º˛∫Õµ˜”√∫Ø ˝£¨◊¢“‚Quit√˚◊÷≥˝¡À∫Ø ˝“‘Õ‚æ¯∂‘≤ªƒ‹≥ˆœ÷‘⁄»Œ∫Œµÿ∑Ω
-
-
-
-bkg=wx.Panel(win)
-
-
-
-loadButton=wx.Button(bkg,label=Button1)
-loadButton.Bind(wx.EVT_BUTTON,load)            #«Î–ﬁ∏ƒ¥•∑¢ ¬º˛∫Õµ˜”√∫Ø ˝
-saveButton=wx.Button(bkg,label=Button2)
-saveButton.Bind(wx.EVT_BUTTON,save)          #«Î–ﬁ∏ƒ¥•∑¢ ¬º˛∫Õµ˜”√∫Ø ˝
-openButton=wx.Button(bkg,label=Button3)
-openButton.Bind(wx.EVT_BUTTON,open_file)
+    def Quit(self,event):  # ËèúÂçïÈ°πÁªëÂÆö‰∫ã‰ª∂
+        show.AppendText(">please\n")
+        # exit()
 
 
-input1 = wx.TextCtrl(bkg,value='c:\OnKeyDetector.log',style=wx.TE_PROCESS_ENTER)
-input1.Bind(wx.EVT_TEXT_ENTER,load)#µ± ‰»ÎøÚºÏ≤‚µΩªÿ≥µ ¬º˛æÕµ˜”√∫Ø ˝load£¨±ÿ–Î∫Õ…œ√ÊloadButton“ª÷¬
+def main():
+    app = wx.App()
+    win =Frame(None)
+    win.Show()
+    app.MainLoop()
 
 
-show=wx.TextCtrl(bkg,value='',style=wx.TE_MULTILINE | wx.HSCROLL)#value…Ë÷√≥ı ºœ‘ æƒ⁄»›
-
-#≤ºæ÷
-hbox=wx.BoxSizer()
-hbox.Add(input1,proportion=1,flag=wx.EXPAND)
-hbox.Add(loadButton,proportion=0,flag=wx.LEFT,border=5)
-hbox.Add(saveButton,proportion=0,flag=wx.LEFT,border=5)
-hbox.Add(openButton,proportion=0,flag=wx.LEFT,border=5)
-
-
-vbox=wx.BoxSizer(wx.VERTICAL)
-vbox.Add(hbox,proportion=0,flag=wx.EXPAND | wx.ALL,border=5)
-vbox.Add(show,proportion=1,flag=wx.EXPAND | wx.LEFT | wx.BOTTOM | wx.RIGHT,border=5)
-
-bkg.SetSizer(vbox)
-
-win.Show()
-
-app.MainLoop()
+if __name__ == '__main__':
+    main()
