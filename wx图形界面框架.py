@@ -17,10 +17,8 @@ Button3='Open'
 
 def load(event):
     file=open(input1.GetValue())  #特别注意，从输入框这么得到的字符串是unicode
-
     s=file.read()
     show.SetValue(s)
-
     file.close()
 
 def save(event):
@@ -30,7 +28,7 @@ def save(event):
 
 def Quit(event):#菜单项绑定事件
     show.AppendText(">please\n")
-    exit()
+    # exit()
 
 
 def open_file(event):
@@ -83,6 +81,8 @@ menubar.Append(filemenu, "File")#修改名字
 win.SetMenuBar(menubar)
 #给id=1的项绑定事件
 win.Bind(wx.EVT_MENU, Quit, id=2) #修改触发事件和调用函数，注意Quit名字除了函数以外绝对不能出现在任何地方
+
+
 
 bkg=wx.Panel(win)
 
