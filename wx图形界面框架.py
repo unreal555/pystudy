@@ -6,15 +6,27 @@ QQ群：476842922（欢迎加群讨论学习
 """
 import wx
 import time
-import threading
+from threading import Thread
+from pubsub import pub
+import shu_lian_wang
 
+print(dir(pub))
 
-class MyThread(Thread):
+class MyWork(Thread):
+    flag=True
     def __init__(self,parent=None):
         Thread.__init__(self)
 
     def run(self):
-        test_run()
+        self.do_work()
+
+
+    def do_work(self):
+        for i in range(1,10):
+            if self.flag==True:
+                time.sleep(1)
+                pub.sendMessage("stat", msg=str(i)+'\r\n')
+                pub.subscribe(Frame.Listener_flag,'flag')
 
 class Frame( wx.Frame ):
 
@@ -86,10 +98,16 @@ class Frame( wx.Frame ):
     def __del__( self ):
         pass
 
-    def save( self, event ):
-        file=open("temFile.txt",'w')
-        file.write(self.show.GetValue())
-        file.close()
+
+    def save(self, event ):
+        pub.sendMessage('flag',flag='False')
+
+
+
+
+        # file=open("temFile.txt",'w')
+        # file.write(self.show.GetValue())
+        # file.close()
 
     def open(self, event):
         file_wildcard = "Paint files(*.paint)|*.paint|All files(*.*)|*.*"
@@ -103,14 +121,22 @@ class Frame( wx.Frame ):
         dlg.Destroy()
 
     def load(self,event):
-        for i in range(1,10):
-            self.show.SetValue(str(i))
-            time.sleep(1)
+        print('多线程')
+        run=MyWork()
+        run.start()
+        pub.subscribe(self.Listener_msg,'stat')
 
-        file=open(self.input.GetValue())  #特别注意，从输入框这么得到的字符串是unicode
-        s=file.read()
-        self.show.SetValue(s)
-        file.close()
+        # file=open(self.input.GetValue())  #特别注意，从输入框这么得到的字符串是unicode
+        # s=file.read()
+        # self.show.SetValue(s)
+        # file.close()
+
+    def Listener_msg(self,msg):
+        self.show.AppendText(str(msg))
+    def Listener_flag(self,flag):
+        if flag==False:
+            MyWork.flag=False
+
 
     def Quit(self,event):  # 菜单项绑定事件
         show.AppendText(">please\n")

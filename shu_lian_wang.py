@@ -5,6 +5,7 @@ import os
 import re
 import random
 from time import sleep
+from pubsub import pub
 
 '''
 readme
@@ -23,7 +24,7 @@ novel_url='http://vip.shulink.com/files/article/html/139/139522/index.html'
 Cookie= '''PHPSESSID=ie2dts4ii60anit1mvk5bep9tr; jieqiUserInfo=jieqiUserId%3D369080%2CjieqiUserUname%3D%B6%AB%BC%D2%D6%D6%CA%F7%2A369080%2CjieqiUserName%3D%26%23x4E1C%3B%26%23x5BB6%3B%26%23x79CD%3B%26%23x6811%3B%26%23x002A%3B%26%23x0033%3B%26%23x0036%3B%26%23x0039%3B%26%23x0030%3B%26%23x0038%3B%26%23x0030%3B%2CjieqiUserGroup%3D3%2CjieqiUserGroupName%3D%26%23x666E%3B%26%23x901A%3B%26%23x4F1A%3B%26%23x5458%3B%2CjieqiUserVip%3D1%2CjieqiUserHonorId%3D6%2CjieqiUserHonor%3D%26%23x4E16%3B%26%23x5916%3B%26%23x9AD8%3B%26%23x4EBA%3B%2CjieqiUserToken%3D051bf5fce761675b226e5ffb93b5ea8d%2CjieqiCodeLogin%3D0%2CjieqiCodePost%3D0%2CjieqiUserPassword%3D02822ce4eaa605e1653d8dfe5951d30c%2CjieqiUserAccount%3D%26%23x4E1C%3B%26%23x5BB6%3B%26%23x79CD%3B%26%23x6811%3B%26%23x002A%3B%26%23x0033%3B%26%23x0036%3B%26%23x0039%3B%26%23x0030%3B%26%23x0038%3B%26%23x0030%3B%2CjieqiUserLogin%3D1592825790; jieqiVisitInfo=jieqiUserLogin%3D1592825790%2CjieqiUserId%3D369080; jieqiRecentRead=68033.5036865.1.1592739508.379396-69330.5075005.1.1592742596.379396-139522.5203760.1.1592825793.369080'''
 '''此处为登陆后的cookie信息,收费章节不携带cookie是无法下载的'''
 
-retry_times=5   #设置下载网页的最大重试次数
+
 
 domain = 'http://vip.shulink.com/'   #书连网域名
 
@@ -119,90 +120,80 @@ def qu_kong_ge(s):
         print('老兄，给字符串')
         return False
 
-headers=get_headers()         #获得请求头信息
+def start():
 
-headers['Cookie']=Cookie       #若cookie有变化,则覆盖
+    headers=get_headers()         #获得请求头信息
 
-index_html = requests.get(novel_url, headers=headers).content.decode('gbk')
-'''请求章节索引页面,用于提取章节名和章节的链接'''
+    headers['Cookie']=Cookie       #若cookie有变化,则覆盖
 
-index_html=qu_kong_ge(index_html)
-'''去除章节索引页面中所有空白字符,方便正则公式提取需要的信息'''
+    index_html = requests.get(novel_url, headers=headers).content.decode('gbk')
+    '''请求章节索引页面,用于提取章节名和章节的链接'''
 
-title=get_title(index_html)
-'''调用函数,获取小说的标题'''
+    index_html=qu_kong_ge(index_html)
+    '''去除章节索引页面中所有空白字符,方便正则公式提取需要的信息'''
 
-filepath=os.path.join('./',title+'.txt')
-'''根据小说标题,生成文件路径'''
-print(filepath)
+    title=get_title(index_html)
+    '''调用函数,获取小说的标题'''
 
-chapter_list=get_chapter_list(index_html)
-'''调用函数,获得章节信息,包含名称和链接'''
+    filepath=os.path.join('./',title+'.txt')
+    '''根据小说标题,生成文件路径'''
+    print(filepath)
 
-create_file(filepath)
-'''根据filepath创建文件,若文件已存在,则略过,不存在,则创建'''
+    chapter_list=get_chapter_list(index_html)
+    '''调用函数,获得章节信息,包含名称和链接'''
 
-with open(filepath, 'r', encoding='utf-8') as f:
-    finished = f.read()
-'''读取小说文件内的数据,存入finished'''
+    create_file(filepath)
+    '''根据filepath创建文件,若文件已存在,则略过,不存在,则创建'''
 
-for chapter_url,chapter_name in chapter_list:
-    print(chapter_url,chapter_name)
+    with open(filepath, 'r', encoding='utf-8') as f:
+        finished = f.read()
+    '''读取小说文件内的数据,存入finished'''
 
-
-for chapter_url,chapter_name in chapter_list:
-
-    url = domain + chapter_url           #通过域名和章节链接拼接成章节的真实url
-
-    if url in finished:            #若该章节名称已经存在于文件中,说明本章已经下载,跳过
-        print(chapter_name + '已下载')
-        continue                        #已下载章节,不再下载,continue直接跳入下一次循环,若if判断为真本语句执行,之后的语句全部略过不再执行
+    for chapter_url,chapter_name in chapter_list:
+        print(chapter_url,chapter_name)
 
 
-    print(url, chapter_name)          #输出章节和章节的url,用于调试纠错和
+    for chapter_url,chapter_name in chapter_list:
+
+        url = domain + chapter_url           #通过域名和章节链接拼接成章节的真实url
+
+        if url in finished:            #若该章节名称已经存在于文件中,说明本章已经下载,跳过
+            print(chapter_name + '已下载')
+            continue                        #已下载章节,不再下载,continue直接跳入下一次循环,若if判断为真本语句执行,之后的语句全部略过不再执行
 
 
-    count=0
-    response=''
-    while count<retry_times:
-        try:
-            response = requests.get(url, headers=headers)# 请求章节页面
-            if response.status_code==200:
-                break
-        except:
-            count=count+1
-            random_wait(5,10)
+        pub.sendMessage('stat',msg=url+'   '+chapter_name+'\r\n')          #输出章节和章节的url,用于调试纠错和
+
+        result = requests.get(url, headers=headers).content.decode('gbk')      #请求章节页面
+
+        result = qu_kong_ge(result)                           #调用函数,去除页面文件中的空格,
+
+        result = re.findall('<divid="acontent"class="acontent">(.*?</div>)', result, re.S)[0]    #提取内容
+
+        result=result.replace('</div>','<br/><br/>')
+
+        print(result)
+
+        result = re.findall('[&emsp;]*(.*?)<br/>', result, re.S)
 
 
-    result=response.content.decode('gbk')
 
-    result = qu_kong_ge(result)                           #调用函数,去除页面文件中的空格,
+        if result!=[]:     #如果提取到的result不是空的,那么说明已经取到了章节内容,则开始把章节写入文件
 
-    result = re.findall('<divid="acontent"class="acontent">(.*?</div>)', result, re.S)[0]    #提取内容
+            with open(filepath, 'a', encoding='utf-8') as f:      #本语句写入章节的名称
+                f.write(url+'\r\n')
+                f.write(chapter_name.replace('&emsp;','  '))
+                f.write('\r\n\r\n')
 
-    result=result.replace('</div>','<br/><br/>')
+            for i in result:                                 #本循环,用于将章节的每一句写入文件
+                print(i)
+                with open(filepath, 'a', encoding='utf-8') as f:
+                    f.write('\t' + i + '\r\n')
 
-    print(result)
-
-    result = re.findall('[&emsp;]*(.*?)<br/>', result, re.S)
-
-    print(result)
-
-    if result!=[]:     #如果提取到的result不是空的,那么说明已经取到了章节内容,则开始把章节写入文件
-
-        with open(filepath, 'a', encoding='utf-8') as f:      #本语句写入章节的名称
-            f.write(url+'\r\n')
-            f.write(chapter_name.replace('&emsp;','  '))
-            f.write('\r\n\r\n')
-
-        for i in result:                                 #本循环,用于将章节的每一句写入文件
-            print(i)
-            with open(filepath, 'a', encoding='utf-8') as f:
-                f.write('\t' + i + '\r\n')
-
-        with open(filepath, 'a', encoding='utf-8') as f:             #本语句,用于在一章的结束,多写入一个换行
-            f.write('\r\n')
-            f.flush()
+            with open(filepath, 'a', encoding='utf-8') as f:             #本语句,用于在一章的结束,多写入一个换行
+                f.write('\r\n')
+                f.flush()
 
 
-    random_wait()        #随机等待1-3秒,开始请求下一章
+        random_wait()        #随机等待1-3秒,开始请求下一章
+
