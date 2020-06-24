@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a29feb6-6947-483a-9da2-985463451c54" name="默认的" comment="默认的">
-      <change afterPath="$PROJECT_DIR$/梦落千年爱上你-西红柿炖茄丁-玄古-书连网.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy.py" beforeDir="false" afterPath="$PROJECT_DIR$/proxy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wx图形界面框架.py" beforeDir="false" afterPath="$PROJECT_DIR$/wx图形界面框架.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,11 +70,6 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>第一百九十九</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -138,7 +134,7 @@
       <recent name="D:\PyCharm2018.3.3\pystudy\scrapy-demo\biquge" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.书连网-外发版">
+  <component name="RunManager" selected="Python.wx图形界面框架">
     <configuration name="书连网-外发版" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -183,20 +179,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="pic_count" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="proxy" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="D:\PyCharm2019.3.1\pystudy\venv\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pic_count.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/proxy.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -250,19 +246,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.pic_count" />
       <item itemvalue="Python.logger" />
       <item itemvalue="Python.wx图形界面框架" />
       <item itemvalue="Python.wx图形界面框架2" />
       <item itemvalue="Python.书连网-外发版" />
+      <item itemvalue="Python.proxy" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.书连网-外发版" />
         <item itemvalue="Python.wx图形界面框架" />
+        <item itemvalue="Python.proxy" />
+        <item itemvalue="Python.书连网-外发版" />
         <item itemvalue="Python.wx图形界面框架2" />
         <item itemvalue="Python.logger" />
-        <item itemvalue="Python.pic_count" />
       </list>
     </recent_temporary>
   </component>
@@ -343,28 +339,9 @@
       <workItem from="1592806038206" duration="4393000" />
       <workItem from="1592826937518" duration="251000" />
       <workItem from="1592828572413" duration="2582000" />
-      <workItem from="1592877930807" duration="8389000" />
-    </task>
-    <task id="LOCAL-00011" summary="1">
-      <created>1585316194156</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1585316194156</updated>
-    </task>
-    <task id="LOCAL-00012" summary="默认的">
-      <created>1585734075940</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1585734075940</updated>
-    </task>
-    <task id="LOCAL-00013" summary="默认的">
-      <created>1590297490956</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1590297490956</updated>
+      <workItem from="1592877930807" duration="8476000" />
+      <workItem from="1592963088072" duration="8454000" />
+      <workItem from="1592983301532" duration="607000" />
     </task>
     <task id="LOCAL-00014" summary="默认的">
       <created>1590581291542</created>
@@ -688,7 +665,28 @@
       <option name="project" value="LOCAL" />
       <updated>1592881931453</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="默认的">
+      <created>1592904570649</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1592904570727</updated>
+    </task>
+    <task id="LOCAL-00061" summary="默认的">
+      <created>1592904597918</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1592904597918</updated>
+    </task>
+    <task id="LOCAL-00062" summary="默认的">
+      <created>1592904655310</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1592904655310</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -765,6 +763,10 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="94" y="149" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.984@0.0.1280.984" timestamp="1592459268178" />
+    <state x="355" y="127" key="#proxy" timestamp="1592963614164">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="355" y="127" key="#proxy/0.0.1280.984@0.0.1280.984" timestamp="1592963614164" />
     <state x="355" y="127" key="#wx图形界面框架" timestamp="1592806505798">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
@@ -777,27 +779,43 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="355" y="127" key="#书连网-外发版/0.0.1280.984@0.0.1280.984" timestamp="1592881105882" />
-    <state x="288" y="88" key="CommitChangelistDialog2" timestamp="1592904595219">
+    <state x="288" y="88" key="CommitChangelistDialog2" timestamp="1592904653453">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="288" y="88" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1592904595219" />
+    <state x="288" y="88" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1592904653453" />
     <state x="0" y="108" key="CommitChangelistDialog2/0.0.600.1204@0.0.600.1204" timestamp="1592798943488" />
-    <state width="1236" height="56" key="GridCell.Tab.0.bottom" timestamp="1592899999310">
+    <state width="1236" height="376" key="GridCell.Tab.0.bottom" timestamp="1592982076776">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1236" height="56" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1592899999310" />
-    <state width="1236" height="56" key="GridCell.Tab.0.center" timestamp="1592899999310">
+    <state width="1236" height="376" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1592982076776" />
+    <state width="1236" height="376" key="GridCell.Tab.0.center" timestamp="1592982076776">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1236" height="56" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1592899999310" />
-    <state width="1236" height="56" key="GridCell.Tab.0.left" timestamp="1592899999279">
+    <state width="1236" height="376" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1592982076776" />
+    <state width="1236" height="376" key="GridCell.Tab.0.left" timestamp="1592982076776">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1236" height="56" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1592899999279" />
-    <state width="1236" height="56" key="GridCell.Tab.0.right" timestamp="1592899999310">
+    <state width="1236" height="376" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1592982076776" />
+    <state width="1236" height="376" key="GridCell.Tab.0.right" timestamp="1592982076776">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1236" height="56" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1592899999310" />
+    <state width="1236" height="376" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1592982076776" />
+    <state width="1236" height="376" key="GridCell.Tab.1.bottom" timestamp="1592982076776">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="1236" height="376" key="GridCell.Tab.1.bottom/0.0.1280.984@0.0.1280.984" timestamp="1592982076776" />
+    <state width="1236" height="376" key="GridCell.Tab.1.center" timestamp="1592982076776">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="1236" height="376" key="GridCell.Tab.1.center/0.0.1280.984@0.0.1280.984" timestamp="1592982076776" />
+    <state width="1236" height="376" key="GridCell.Tab.1.left" timestamp="1592982076776">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="1236" height="376" key="GridCell.Tab.1.left/0.0.1280.984@0.0.1280.984" timestamp="1592982076776" />
+    <state width="1236" height="376" key="GridCell.Tab.1.right" timestamp="1592982076776">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="1236" height="376" key="GridCell.Tab.1.right/0.0.1280.984@0.0.1280.984" timestamp="1592982076776" />
     <state x="477" y="215" key="RollbackChangesDialog" timestamp="1592549222965">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
@@ -806,10 +824,10 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="48" y="210" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1592555399358" />
-    <state x="232" y="227" key="Vcs.Push.Dialog.v2" timestamp="1592904609306">
+    <state x="232" y="227" key="Vcs.Push.Dialog.v2" timestamp="1592904661596">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="232" y="227" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1592904609306" />
+    <state x="232" y="227" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1592904661596" />
     <state x="0" y="278" key="Vcs.Push.Dialog.v2/0.0.600.1204@0.0.600.1204" timestamp="1592798962763" />
     <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1592458303069">
       <screen x="0" y="0" width="1280" height="984" />
@@ -824,12 +842,24 @@
     </state>
     <state x="451" y="397" key="git4idea.ui.GitResetDialog/0.0.1280.984@0.0.1280.984" timestamp="1592549161697" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/pystudy$_.coverage" NAME="书连网-外发版 Coverage Results" MODIFIED="1592899988156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$detected_qrcode.coverage" NAME="detected_qrcode Coverage Results" MODIFIED="1592460776516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$logger.coverage" NAME="logger Coverage Results" MODIFIED="1592551926206" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$pic_count.coverage" NAME="pic_count Coverage Results" MODIFIED="1592544566892" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$wx.coverage" NAME="wx图形界面框架 Coverage Results" MODIFIED="1592880070510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$proxy.coverage" NAME="proxy Coverage Results" MODIFIED="1592963857843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$wx.coverage" NAME="wx图形界面框架 Coverage Results" MODIFIED="1592981516027" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$wx2.coverage" NAME="wx图形界面框架2 Coverage Results" MODIFIED="1592810484696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$save_read_config.coverage" NAME="save_read_config Coverage Results" MODIFIED="1592470627872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

@@ -75,9 +75,9 @@ def save(obj):
             f.write('{}{}'.format(str(proxy),'\r\n'))
 
 if __name__ == '__main__':
-    pool = ThreadPoolExecutor(10)
+    pool = ThreadPoolExecutor(1)
     for i in range(1,1000):
-        time.sleep(random.choice(range(15,25)))
+        # time.sleep(random.choice(range(15,25)))
         for j in get_ip('https://www.xicidaili.com/nn/{}'.format(i)):
             # a=['58','59','25','122','1234','yt','er']
             pool.submit(test_proxy, j).add_done_callback(save)
