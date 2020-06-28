@@ -234,7 +234,9 @@ def create_ciyun():
     data=pd.read_csv('./test1.csv',encoding='utf-8-sig')
     all=[]
     for i in data['guojia']:
-
+        print(i,type(i))
+        if isinstance(i,float):
+            continue
         if  '/' not in i:
             all.append(i)
         else:
@@ -252,40 +254,40 @@ def create_ciyun():
 
 
 
-
-def create_ciyun():
-    all={}
-    temp=[]
-    with open('./douban_film.txt','r',encoding='utf-8') as f:
-        temp=f.readlines()
-
-    for i in range(0,len(temp)):
-        all[i]=json.loads(temp[i])
-
-    count={}
-    for key in all.keys():
-        print(all[key]['riqi'])
-        year=re.findall('(\d{4})',all[key]['riqi'])
-        print(year)
-        m=min(year)
-
-        if str(m) not in count.keys():
-            count[m]=1
-        else:
-            count[m]=count[m]+1
-    print(count)
-
-    result=[]
-    for key in count.keys():
-        result.append((key,count[key]))
-
-    print(result)
-
-    wc = wordcloud.WordCloud(font_path='C:/Windows/Fonts/simhei.ttf',max_words=300,     max_font_size=150)
-
-    wc.generate_from_frequencies(count)
-    plt.imshow(wc)
-    plt.waitforbuttonpress(0)
+#
+# def create_ciyun():
+#     all={}
+#     temp=[]
+#     with open('./test1.csv','r',encoding='utf-8') as f:
+#         temp=f.readlines()
+#
+#     for i in range(0,len(temp)):
+#         all[i]=json.loads(temp[i])
+#
+#     count={}
+#     for key in all.keys():
+#         print(all[key]['riqi'])
+#         year=re.findall('(\d{4})',all[key]['riqi'])
+#         print(year)
+#         m=min(year)
+#
+#         if str(m) not in count.keys():
+#             count[m]=1
+#         else:
+#             count[m]=count[m]+1
+#     print(count)
+#
+#     result=[]
+#     for key in count.keys():
+#         result.append((key,count[key]))
+#
+#     print(result)
+#
+#     wc = wordcloud.WordCloud(font_path='C:/Windows/Fonts/simhei.ttf',max_words=300,     max_font_size=150)
+#
+#     wc.generate_from_frequencies(count)
+#     plt.imshow(wc)
+#     plt.waitforbuttonpress(0)
 
 
 def quchong():
