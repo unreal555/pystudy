@@ -4,11 +4,13 @@ import json
 import mytools
 import csv
 import os
-#import wordcloud
-#import matplotlib.pyplot as plt
-#import pandas as pd
+import wordcloud
+import matplotlib.pyplot as plt
+import pandas as pd
 from collections import Counter
 import random
+import pickle
+import numpy as np
 
 
 headers = {
@@ -32,7 +34,7 @@ def parse_html(url):
     print(text)
 
 
-    name=re.findall('<spanproperty="v:itemreviewed">(.*?)</span>',text,re.S)
+    name=re.findall('<span property="v:itemreviewed">(.*?)</span>',yuanshi,re.S)
     if len(name)==0:
         name=''
     else:
@@ -149,8 +151,17 @@ def parse_html(url):
 
 
 
-    rate=re.findall('<strongclass="llrating_num"property="v:average">(.*?)</strong>',text,re.S)[0]
-    vote_count=re.findall('<spanproperty="v:votes">(.*?)</span>',text,re.S)[0]
+    rate=re.findall('<strongclass="llrating_num"property="v:average">(.*?)</strong>',text,re.S)
+    if len(rate)==0:
+        rate=''
+    else:
+        rate=rate[0]
+    vote_count=re.findall('<spanproperty="v:votes">(.*?)</span>',text,re.S)
+    if len(vote_count)==0:
+        vote_count=''
+    else:
+        vote_count=vote_count[0]
+
     print('rate,vote_count',rate,vote_count)
 
 
@@ -181,14 +192,12 @@ def parse_html(url):
 
 @mytools.execute_lasts_time
 def main():
-    for i in range(0,400):
-        url='https://movie.douban.com/j/new_search_subjects?sort=S&range=0,10&tags=&start={}'.format(i*20)
+    for i in range(0,500):
+        url='https://movie.douban.com/j/new_search_subjects?sort=U&range=0,10&tags=%E7%94%B5%E5%BD%B1&start={}'.format(i*20)
         page=requests.get(url,headers=headers).text
         result=json.loads(page)
         for i in result['data']:
-
             parse_html(i['url'])
-	    
             mytools.random_wait(1,7)
 
 
@@ -221,75 +230,80 @@ def down_image(url, headers):
     with open(filename, 'wb') as f:
         f.write(r.content)
 
-def create_ciyun():
-    headers = ['url','name','daoyan','bianju','actor','leixing','guojia','yuyan','riqi','shoubo','pianchang','rate','vote_count', 'desc','jishu','danjipianchang','imdb','othername']
+def create_ciyun(count):
+    img=plt.imread('./pic/heart.jpg')
+    img=img.astype(np.uint8)
 
-    # reader=''
-    # with open('./douban_film.csv','r',encoding='utf-8-sig') as f:
-    #     reader=csv.DictReader(f,headers)
-    #
-    #     for i in reader:
-    #         print(i)
-
-    data=pd.read_csv('./douban_film.csv',encoding='utf-8-sig')
-    all=[]
-    for i in data['guojia']:
-
-        if  '/' not in i:
-            all.append(i)
-        else:
-            for j in i.split('/'):
-
-                all.append(j)
-
-    result=Counter(all)
-
-    wc = wordcloud.WordCloud(font_path='C:/Windows/Fonts/simhei.ttf',max_words=30,     max_font_size=150)
-    wc.generate_from_frequencies(result)
-    plt.imshow(wc)
-    plt.waitforbuttonpress(0)
-
-
-
-
-
-def create_ciyun():
-    all={}
-    temp=[]
-    with open('./douban_film.txt','r',encoding='utf-8') as f:
-        temp=f.readlines()
-
-    for i in range(0,len(temp)):
-        all[i]=json.loads(temp[i])
-
-    count={}
-    for key in all.keys():
-        print(all[key]['riqi'])
-        year=re.findall('(\d{4})',all[key]['riqi'])
-        print(year)
-        m=min(year)
-
-        if str(m) not in count.keys():
-            count[m]=1
-        else:
-            count[m]=count[m]+1
-    print(count)
-
-    result=[]
-    for key in count.keys():
-        result.append((key,count[key]))
-
-    print(result)
-
-    wc = wordcloud.WordCloud(font_path='C:/Windows/Fonts/simhei.ttf',max_words=300,     max_font_size=150)
-
+    wc = wordcloud.WordCloud(font_path='C:/Windows/Fonts/STHUPO.TTF',
+                             max_words=100,
+                             max_font_size=180,
+                             min_font_size=5,
+                             background_color="white",
+                             mask=img,
+                             # color_func = random_color_func,
+                             width=1180,  # 设置图片的宽度
+                             height=764,  # 设置图片的高度
+                             margin=2,
+                             scale=6  #这个数值越大，产生的图片分辨率越高，字迹越清晰
+                             )
     wc.generate_from_frequencies(count)
     plt.imshow(wc)
-    plt.waitforbuttonpress(0)
+    plt.axis("off")
+    plt.waitforbuttonpress()
+
+def random_color_func(word=None, font_size=None, position=None, orientation=None, font_path=None,
+                      random_state=None):
+    h = random.randint(0,100)
+    s = int(100.0 * 255.0 / 255.0)
+    l = int(100.0 * float(random.randint(100,150)) / 255.0)
+    return "hsl({}, {}%, {}%)".format(h, s, l)
+
+
+
+def get_count(key='rate'):
+    db=pd.read_csv('./douban_film.csv',encoding='utf_8_sig')
+    print(db.index)
+    result=[]
+    for index,row in db.iterrows():
+        result.append(str(row[key]))
+        # print(row[key])
+        # if '/' in row[key]:
+        #     row[key]=row[key].split('/')
+        #     for i in  row[key]:
+        #         result.append(i)
+        # else:
+        #
+        #     row[key]=row[key].split(',')
+        #     result.append(row[key][0])
+
+        print(row[key],type(row[key]))
+    print(result)
+    count=Counter(result)
+    print(count)
+
+    with open('./temp.txt','wb') as f:
+        pickle.dump(count,f)
+
+    with open('./temp.txt','rb') as f:
+        print(pickle.load(f))
+
+    create_ciyun(count)
+
+    # dup=result.drop_duplicates(subset=['url'],keep='first').reset_index()
+    #
+    # # result.to_csv('./test.csv',encoding='utf-8')
+    # dup.to_csv('./test1.csv',encoding='utf-8')
+
+
+
+
+
+
 
 
 
 if __name__ == '__main__':
 
-    main()
-    #create_ciyun()
+    # main()
+    # create_ciyun()
+    get_count()
