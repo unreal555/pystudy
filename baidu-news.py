@@ -2,6 +2,9 @@ import mytools
 import requests
 import re
 from lxml import html
+import os
+
+import csv
 
 cookie='''
 Bdpagetype: 3
@@ -28,15 +31,26 @@ Vary: Accept-Encoding
 X-Ua-Compatible: IE=Edge,chrome=1'''
 
 cookie=mytools.tras_header(cookie)
+headers=['title','url']
 
-
-for n in range(0,100):
-
+for n in range(0,1000):
+    count=0
     url='http://www.baidu.com/s?rtt=1&bsst=1&cl=2&tn=news&rsv_dl=ns_pc&word=%E6%88%BF%E8%B4%B7&x_bfe_rqs=03E80&x_bfe_tjscore=0.580106&tngroupname=organic_news&newVideo=12&pn={}'.format(10*n)
     print(url)
     result=requests.get(url,cookies=cookie)
 
     text=mytools.qu_kong_ge(result.text)
+
+    if os.path.exists('./baidu.csv'):
+        with open('./baidu.csv','r',encoding='utf-8') as f:
+            all=f.read()
+    else:
+        all=''
+        with open('./baidu.csv', 'w', newline='',encoding='utf-8-sig') as f:
+            # 标头在这里传入，作为第一行数据
+            writer = csv.DictWriter(f, headers)
+            writer.writeheader()
+            f.flush()
 
 
     while 1:
@@ -45,25 +59,30 @@ for n in range(0,100):
         print('''<!--STATUSOK-->''' in text)
         if  '''<!--STATUSOK-->''' in text:
 
-            result=re.findall('''<h3class="c-title"><ahref=".*?"target="_blank">(.*?)</a>''',text)
-            with open('./baidu.txt','r',encoding='utf-8') as f:
-                all=f.read()
+            result=re.findall('''<h3class="c-title"><ahref="(.*?)data.*?target="_blank">(.*?)</a>''',text)
+
+            for url,title in result:
+                item={}
+                item['url']=url.split('&')[0]
+                item['title']=mytools.qu_html_lable(title)
+                print(item)
+
+                if item['title'] in all:
+                    print(item['title']+'已重复')
+                    count=count+1
+
+                    if count>8:
+                        exit(0)
 
 
-                for i in result:
-                    x=mytools.qu_html_lable(i)
+                with open('./baidu.csv', 'a', newline='',encoding='utf-8-sig') as f:
+                    writer = csv.DictWriter(f, headers)
+                    writer.writerow(item)
+                    f.flush()
 
-                    if x in all:
-                        exit()
 
-                    with open('./baidu.txt','a',encoding='utf-8') as f:
-
-                        print(x)
-                        f.write(x+'\r\n')
-                        f.flush()
-
-                mytools.random_wait(1,8)
-                break
+            mytools.random_wait(1,8)
+            break
         else:
             mytools.random_wait(1,8)
             result=requests.get(url,cookies=cookie)
