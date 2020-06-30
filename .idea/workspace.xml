@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a29feb6-6947-483a-9da2-985463451c54" name="默认的" comment="默认的">
-      <change afterPath="$PROJECT_DIR$/情感分析.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pystudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pystudy.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baidu-news.py" beforeDir="false" afterPath="$PROJECT_DIR$/baidu-news.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <ignored path="$PROJECT_DIR$/venv1/" />
@@ -427,14 +423,7 @@
       <workItem from="1593436468736" duration="4075000" />
       <workItem from="1593499717865" duration="4955000" />
       <workItem from="1593507154727" duration="2047000" />
-      <workItem from="1593517784569" duration="2632000" />
-    </task>
-    <task id="LOCAL-00023" summary="默认的">
-      <created>1591250909321</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1591250909321</updated>
+      <workItem from="1593517784569" duration="2993000" />
     </task>
     <task id="LOCAL-00024" summary="默认的">
       <created>1591251066361</created>
@@ -772,11 +761,18 @@
       <option name="project" value="LOCAL" />
       <updated>1593514490025</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="默认的">
+      <created>1593520481930</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1593520481931</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5721000" />
+    <option name="totallyTimeSpent" value="6082000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
