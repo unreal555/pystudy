@@ -5,6 +5,7 @@ from lxml import html
 import os
 import time
 import csv
+from snownlp import SnowNLP
 
 cookie='''
 Bdpagetype: 3
@@ -32,7 +33,7 @@ X-Ua-Compatible: IE=Edge,chrome=1'''
 
 cookie=mytools.tras_header(cookie)
 print(cookie)
-headers=['title','url','laiyuan','shijian']#%E6%88%BF%E8%B4%B7
+headers=['title','url','laiyuan','shijian','senti']#%E6%88%BF%E8%B4%B7
 
 keys=['房贷','商贷','公积金','首付','购房','买房','房价','房产税','楼盘','不动产','商品房','限购','限贷','土地拍卖','土拍','土地市场','地王','一手房','二手房','新房','房地产','楼市']
 def do(key):
@@ -72,6 +73,8 @@ def do(key):
                     item['laiyuan'] = mytools.qu_html_lable(laiyuan)
 
                     item['shijian'] = mytools.qu_html_lable(shijian)
+
+                    item['senti']=SnowNLP(item['title']).sentiments
                     if '前' in item['shijian']:
                         item['shijian']=time.strftime("%Y-%m-%d")
 
