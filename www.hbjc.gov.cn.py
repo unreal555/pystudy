@@ -84,7 +84,7 @@ def get_content(page_url):
         text=response.text
         result = re.findall(''' <!--正文开始-->(.*?)<!--正文结束-->''', text, re.S)[0]
         result = qu_html_lable(result)
-        result = result.replace(' ', '').replace('\u3000', '').replace('\n', '')
+        result = result.replace(' ', '').replace('\u3000', '').replace('\n', '').replace('&nbsp;','')
         return (result)
 
 
@@ -92,14 +92,14 @@ def get_content(page_url):
 
 def write_csv(item):
     filename=item['desc'].split('/')[-2]
-    if os.path.exists('./{}.csv'.format(filename)):
+    if os.path.exists('./{}.txt'.format(filename)):
         with open('./{}.csv'.format(filename), 'a', newline='', encoding='utf-8-sig') as f:
 
             writer = csv.DictWriter(f, table_names)
             writer.writerow(item)
             f.flush()
     else:
-        with open('./{}.csv'.format(filename), 'w', newline='', encoding='utf-8-sig') as f:
+        with open('./{}.txt'.format(filename), 'w', newline='', encoding='utf-8-sig') as f:
             # 标头在这里传入，作为第一行数据
             writer = csv.DictWriter(f, table_names)
             writer.writeheader()
