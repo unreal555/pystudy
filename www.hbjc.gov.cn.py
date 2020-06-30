@@ -93,7 +93,7 @@ def get_content(page_url):
 def write_csv(item):
     filename=item['desc'].split('/')[-2]
     if os.path.exists('./{}.txt'.format(filename)):
-        with open('./{}.csv'.format(filename), 'a', newline='', encoding='utf-8-sig') as f:
+        with open('./{}.txt'.format(filename), 'a', newline='', encoding='utf-8-sig') as f:
 
             writer = csv.DictWriter(f, table_names)
             writer.writerow(item)
