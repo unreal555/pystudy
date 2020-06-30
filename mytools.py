@@ -205,6 +205,7 @@ def my_request(url,headers={'User-Agent':USER_AGENT_LIST['chrome']},code='utf-8'
                 if debug: print('status_code', response.status_code)
                 count+=1
                 random_wait(wait_from,wait_to)
+                continue
 
             if response.status_code == 200  and keyword =='':
                 return text
@@ -216,6 +217,7 @@ def my_request(url,headers={'User-Agent':USER_AGENT_LIST['chrome']},code='utf-8'
                 if debug: print('status_code', response.status_code)
                 count+=1
                 random_wait(wait_from,wait_to)
+                continue
 
 
 
@@ -224,8 +226,8 @@ def my_request(url,headers={'User-Agent':USER_AGENT_LIST['chrome']},code='utf-8'
             count+=1
             random_wait(wait_from,wait_to)
 
-        if debug: print('达到最大重试次数{}',retry_times)
-        return False
+    if debug: print('达到最大重试次数{}'.format(retry_times))
+    return False
 
 
 
@@ -233,5 +235,5 @@ def my_request(url,headers={'User-Agent':USER_AGENT_LIST['chrome']},code='utf-8'
 if __name__ == '__main__':
 
     url='http://www.baidu.com/s?rtt=1&bsst=1&cl=2&tn=news&rsv_dl=ns_pc&word=睡觉&x_bfe_rqs=03E80&x_bfe_tjscore=0.580106&tngroupname=organic_news&newVideo=12&pn=260'
-    print(my_request(url=url,keyword='timeout-button',retry_times=1,wait_from=10,wait_to=20))
+    print(my_request(url=url,keyword='timeout-button',retry_times=3,wait_from=1,wait_to=2))
 

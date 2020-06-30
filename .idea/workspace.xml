@@ -2,13 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a29feb6-6947-483a-9da2-985463451c54" name="默认的" comment="默认的">
-      <change afterPath="$PROJECT_DIR$/mybanquan.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/www.hbjc.gov.cn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pystudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pystudy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baidu-news.py" beforeDir="false" afterPath="$PROJECT_DIR$/baidu-news.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baidu.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mytools.py" beforeDir="false" afterPath="$PROJECT_DIR$/mytools.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -356,14 +349,7 @@
       <workItem from="1593431639466" duration="496000" />
       <workItem from="1593436468736" duration="4075000" />
       <workItem from="1593499717865" duration="4955000" />
-      <workItem from="1593507154727" duration="1737000" />
-    </task>
-    <task id="LOCAL-00019" summary="默认的">
-      <created>1591156531394</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1591156531394</updated>
+      <workItem from="1593507154727" duration="2047000" />
     </task>
     <task id="LOCAL-00020" summary="默认的">
       <created>1591164591359</created>
@@ -701,7 +687,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593431731221</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="默认的">
+      <created>1593508936106</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1593508936107</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -817,27 +810,27 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="355" y="127" key="#书连网-外发版/0.0.1280.984@0.0.1280.984" timestamp="1592881105882" />
-    <state x="288" y="88" key="CommitChangelistDialog2" timestamp="1593336431253">
+    <state x="288" y="88" key="CommitChangelistDialog2" timestamp="1593508932423">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="288" y="88" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1593336431253" />
+    <state x="288" y="88" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1593508932423" />
     <state x="0" y="108" key="CommitChangelistDialog2/0.0.600.1204@0.0.600.1204" timestamp="1592798943488" />
-    <state width="1078" height="769" key="GridCell.Tab.0.bottom" timestamp="1593508902210">
+    <state width="1078" height="628" key="GridCell.Tab.0.bottom" timestamp="1593509218704">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1078" height="769" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1593508902210" />
-    <state width="1078" height="769" key="GridCell.Tab.0.center" timestamp="1593508902210">
+    <state width="1078" height="628" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1593509218704" />
+    <state width="1078" height="628" key="GridCell.Tab.0.center" timestamp="1593509218703">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1078" height="769" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1593508902210" />
-    <state width="1078" height="769" key="GridCell.Tab.0.left" timestamp="1593508902210">
+    <state width="1078" height="628" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1593509218703" />
+    <state width="1078" height="628" key="GridCell.Tab.0.left" timestamp="1593509218703">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1078" height="769" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1593508902210" />
-    <state width="1078" height="769" key="GridCell.Tab.0.right" timestamp="1593508902210">
+    <state width="1078" height="628" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1593509218703" />
+    <state width="1078" height="628" key="GridCell.Tab.0.right" timestamp="1593509218704">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1078" height="769" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1593508902210" />
+    <state width="1078" height="628" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1593509218704" />
     <state width="618" height="17" key="GridCell.Tab.1.bottom" timestamp="1593508725318">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
@@ -862,10 +855,10 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="140" y="127" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1593491558501" />
-    <state x="232" y="227" key="Vcs.Push.Dialog.v2" timestamp="1593336437945">
+    <state x="232" y="227" key="Vcs.Push.Dialog.v2" timestamp="1593508953228">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="232" y="227" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1593336437945" />
+    <state x="232" y="227" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1593508953228" />
     <state x="0" y="278" key="Vcs.Push.Dialog.v2/0.0.600.1204@0.0.600.1204" timestamp="1592798962763" />
     <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1592458303069">
       <screen x="0" y="0" width="1280" height="984" />
@@ -904,7 +897,7 @@
     <SUITE FILE_PATH="coverage/pystudy$wx.coverage" NAME="wx图形界面框架 Coverage Results" MODIFIED="1592989256888" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$baidu_news.coverage" NAME="baidu-news Coverage Results" MODIFIED="1593490319173" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$wx2.coverage" NAME="wx图形界面框架2 Coverage Results" MODIFIED="1592810484696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$mytools.coverage" NAME="mytools Coverage Results" MODIFIED="1593508902191" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$mytools.coverage" NAME="mytools Coverage Results" MODIFIED="1593509218688" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$mybanquan.coverage" NAME="mybanquan Coverage Results" MODIFIED="1593480420863" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$save_read_config.coverage" NAME="save_read_config Coverage Results" MODIFIED="1592470627872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$logger.coverage" NAME="logger Coverage Results" MODIFIED="1592551926206" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
