@@ -49,11 +49,11 @@ def parse_index(link,desc):
             print('曾经已经下载,跳过')
             continue
 
-
+        print(url)
         item = {}
         item['desc']=desc
         if '../.' in url:
-            continue
+            item['url']=url.replace('../../','http://www.hbjc.gov.cn/')
         else:
             item['url']=url.replace('./',desc)
         item['title']=title
@@ -143,6 +143,16 @@ else:
         f.write('')
     log=''
 
+for i in bnbg:
+    print('下载半年报告' + i)
+    parse_index(i, desc='http://www.hbjc.gov.cn/gzbg/bnbg/')
+
+for i in ztbg:
+    print('下载工作报告' + i)
+    parse_index(i, desc='http://www.hbjc.gov.cn/gzbg/ztbg/')
+
+
+
 for i in zdal:
     print('下载指导案例' + i)
     parse_index(i,desc='http://www.hbjc.gov.cn/qwfb/zdal/')
@@ -153,13 +163,7 @@ for i in ndbg:
     print('下载年度报告' + i)
     parse_index(i, desc='http://www.hbjc.gov.cn/gzbg/ndbg/')
 
-for i in bnbg:
-    print('下载半年报告' + i)
-    parse_index(i, desc='http://www.hbjc.gov.cn/gzbg/bnbg/')
 
-for i in ztbg:
-    print('下载工作报告' + i)
-    parse_index(i, desc='http://www.hbjc.gov.cn/gzbg/ztbg/')
 
 for i in ajxx:
     print('下载案件信息'+i)
