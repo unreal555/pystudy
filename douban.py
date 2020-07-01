@@ -4,13 +4,7 @@ import json
 import mytools
 import csv
 import os
-import wordcloud
-import matplotlib.pyplot as plt
-import pandas as pd
-from collections import Counter
-import random
-import pickle
-import numpy as np
+
 
 
 headers = {
@@ -230,73 +224,6 @@ def down_image(url, headers):
     with open(filename, 'wb') as f:
         f.write(r.content)
 
-def create_ciyun(count):
-    img=plt.imread('./pic/heart.jpg')
-    img=img.astype(np.uint8)
-
-    wc = wordcloud.WordCloud(font_path='C:/Windows/Fonts/STHUPO.TTF',
-                             max_words=100,
-                             max_font_size=180,
-                             min_font_size=5,
-                             background_color="white",
-                             mask=img,
-                             # color_func = random_color_func,
-                             width=1180,  # 设置图片的宽度
-                             height=764,  # 设置图片的高度
-                             margin=2,
-                             scale=6  #这个数值越大，产生的图片分辨率越高，字迹越清晰
-                             )
-    wc.generate_from_frequencies(count)
-    plt.imshow(wc)
-    plt.axis("off")
-    plt.waitforbuttonpress()
-
-def random_color_func(word=None, font_size=None, position=None, orientation=None, font_path=None,
-                      random_state=None):
-    h = random.randint(0,100)
-    s = int(100.0 * 255.0 / 255.0)
-    l = int(100.0 * float(random.randint(100,150)) / 255.0)
-    return "hsl({}, {}%, {}%)".format(h, s, l)
-
-
-
-def get_count(key='rate'):
-    db=pd.read_csv('./douban_film.csv',encoding='utf_8_sig')
-    print(db.index)
-    result=[]
-    for index,row in db.iterrows():
-        result.append(str(row[key]))
-        # print(row[key])
-        # if '/' in row[key]:
-        #     row[key]=row[key].split('/')
-        #     for i in  row[key]:
-        #         result.append(i)
-        # else:
-        #
-        #     row[key]=row[key].split(',')
-        #     result.append(row[key][0])
-
-        print(row[key],type(row[key]))
-    print(result)
-    count=Counter(result)
-    print(count)
-
-    with open('./temp.txt','wb') as f:
-        pickle.dump(count,f)
-
-    with open('./temp.txt','rb') as f:
-        print(pickle.load(f))
-
-    create_ciyun(count)
-
-    # dup=result.drop_duplicates(subset=['url'],keep='first').reset_index()
-    #
-    # # result.to_csv('./test.csv',encoding='utf-8')
-    # dup.to_csv('./test1.csv',encoding='utf-8')
-
-
-
-
 
 
 
@@ -304,6 +231,5 @@ def get_count(key='rate'):
 
 if __name__ == '__main__':
 
-    # main()
-    # create_ciyun()
-    get_count()
+    main()
+
