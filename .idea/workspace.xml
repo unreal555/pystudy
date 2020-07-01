@@ -2,13 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a29feb6-6947-483a-9da2-985463451c54" name="默认的" comment="默认的">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pystudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pystudy.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/情感分析.py" beforeDir="false" afterPath="$PROJECT_DIR$/情感分析.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.输出,编码学习.py" beforeDir="false" afterPath="$PROJECT_DIR$/学习/1.输出,编码学习.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10.file操作,测试代理服务器,单线程.py" beforeDir="false" afterPath="$PROJECT_DIR$/学习/10.file操作,测试代理服务器,单线程.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/11.用pickle储存对象.py" beforeDir="false" afterPath="$PROJECT_DIR$/学习/11.用pickle储存对象.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/12.while循环,tryesle结构.py" beforeDir="false" afterPath="$PROJECT_DIR$/学习/12.while循环,tryesle结构.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/13.各种赋值.py" beforeDir="false" afterPath="$PROJECT_DIR$/学习/13.各种赋值.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/14.执行shell命令,并用print将结果保存至文件,print的高级用法.py" beforeDir="false" afterPath="$PROJECT_DIR$/学习/14.执行shell命令,并用print将结果保存至文件,print的高级用法.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/15.生成式.py" beforeDir="false" afterPath="$PROJECT_DIR$/学习/15.生成式.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/17.nonlocal和闭包.py" beforeDir="false" afterPath="$PROJECT_DIR$/学习/17.nonlocal和闭包.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/18.递归,调用自定义类LsitSort.py" beforeDir="false" afterPath="$PROJECT_DIR$/学习/18.递归,调用自定义类LsitSort.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/19.lambda函数.py" beforeDir="false" afterPath="$PROJECT_DIR$/学习/19.lambda函数.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2.数据类型学习.py" beforeDir="false" afterPath="$PROJECT_DIR$/学习/2.数据类型学习.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/20.性能检测.py" beforeDir="false" afterPath="$PROJECT_DIR$/学习/20.性能检测.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/21.绘制普通曲线.py" beforeDir="false" afterPath="$PROJECT_DIR$/学习/21.绘制普通曲线.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/22.绘制双坐标轴.py" beforeDir="false" afterPath="$PROJECT_DIR$/学习/22.绘制双坐标轴.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/23.整理文件.py" beforeDir="false" afterPath="$PROJECT_DIR$/学习/23.整理文件.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/24.整理文件图形界面.py" beforeDir="false" afterPath="$PROJECT_DIR$/学习/24.整理文件图形界面.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/25.整理照片图形界面dict算法.py" beforeDir="false" afterPath="$PROJECT_DIR$/学习/25.整理照片图形界面dict算法.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/26.分析硬盘文件.py" beforeDir="false" afterPath="$PROJECT_DIR$/学习/26.分析硬盘文件.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/27.恢复照片.py" beforeDir="false" afterPath="$PROJECT_DIR$/学习/27.恢复照片.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/27.目录选择待完善.py" beforeDir="false" afterPath="$PROJECT_DIR$/学习/27.目录选择待完善.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/28.tcp.py" beforeDir="false" afterPath="$PROJECT_DIR$/学习/28.tcp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/29.port scan.py" beforeDir="false" afterPath="$PROJECT_DIR$/学习/29.port scan.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.函数学习.py" beforeDir="false" afterPath="$PROJECT_DIR$/学习/3.函数学习.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/30.找质数-挨个除，效率差.py" beforeDir="false" afterPath="$PROJECT_DIR$/学习/30.找质数-挨个除，效率差.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4.高级特性(切片,迭代,列表生成器材,生成器).py" beforeDir="false" afterPath="$PROJECT_DIR$/学习/4.高级特性(切片,迭代,列表生成器材,生成器).py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5.高阶函数(map,reduce,filter,sorted).py" beforeDir="false" afterPath="$PROJECT_DIR$/学习/5.高阶函数(map,reduce,filter,sorted).py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/6.模块.py" beforeDir="false" afterPath="$PROJECT_DIR$/学习/6.模块.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/7.类.py" beforeDir="false" afterPath="$PROJECT_DIR$/学习/7.类.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/8.python正则表达式.py" beforeDir="false" afterPath="$PROJECT_DIR$/学习/8.python正则表达式.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/9.随机数,分数,浮点数,比较== is.py" beforeDir="false" afterPath="$PROJECT_DIR$/学习/9.随机数,分数,浮点数,比较== is.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www.hbjc.gov.cn.py" beforeDir="false" afterPath="$PROJECT_DIR$/湖北检察院.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiangrikui.py" beforeDir="false" afterPath="$PROJECT_DIR$/随机的樱花树.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaozhu.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/情感分析.py" beforeDir="false" afterPath="$PROJECT_DIR$/csv_duplicates.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/携程.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/通用访问网页.py" beforeDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/venv/" />
-    <ignored path="$PROJECT_DIR$/venv1/" />
-    <ignored path="$PROJECT_DIR$/venv2/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,22 +101,6 @@
   <component name="FavoritesManager">
     <favorites_list name="pystudy" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/情感分析.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
-              <folding>
-                <element signature="e#0#27#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -110,15 +127,6 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/read_write_config.py" root0="FORCE_HIGHLIGHTING" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/www.hbjc.gov.cn.py" />
-        <option value="$PROJECT_DIR$/baidu-news.py" />
-        <option value="$PROJECT_DIR$/情感分析.py" />
-      </list>
-    </option>
-  </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
       <set>
@@ -126,34 +134,9 @@
       </set>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="309" />
-    <option name="y" value="83" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
-  </component>
   <component name="ProjectId" id="1dTo587vzNqcIC8YWETZMQ9PIVJ" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="pystudy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pystudy" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -187,6 +170,10 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\PyCharm2019.3.1\pystudy\学习" />
+      <recent name="D:\PyCharm2019.3.1\pystudy" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\PyCharm2019.3.1\pystudy" />
       <recent name="D:\PyCharm 2018.3.3\pystudy" />
@@ -195,20 +182,8 @@
       <recent name="D:\PyCharm2018.3.3\pystudy\scrapy-demo\biquge" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Python.情感分析">
-    <configuration name="情感分析" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.画佩奇">
+    <configuration name="随机的樱花树" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -221,7 +196,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/情感分析.py" />
+      <option name="SCRIPT_NAME" value="D:\PyCharm2019.3.1\pystudy\随机的樱花树.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -230,20 +205,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="baidu-news" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="画佩奇" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\Administrator\AppData\Local\Programs\Python\Python38\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/baidu-news.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/画佩奇.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -252,20 +227,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="mybanquan" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="csv_duplicates" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="D:\PyCharm2019.3.1\pystudy\venv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mybanquan.py" />
+      <option name="SCRIPT_NAME" value="D:\PyCharm2019.3.1\pystudy\csv_duplicates.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -274,20 +249,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="mytools" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="pic_count" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="D:\PyCharm2019.3.1\pystudy\venv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mytools.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pic_count.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -296,20 +271,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="www.hbjc.gov.cn" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="xiaozhu" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\Administrator\AppData\Local\Programs\Python\Python38\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/www.hbjc.gov.cn.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/xiaozhu.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -319,19 +294,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.baidu-news" />
-      <item itemvalue="Python.mybanquan" />
-      <item itemvalue="Python.mytools" />
-      <item itemvalue="Python.www.hbjc.gov.cn" />
-      <item itemvalue="Python.情感分析" />
+      <item itemvalue="Python.csv_duplicates" />
+      <item itemvalue="Python.xiaozhu" />
+      <item itemvalue="Python.画佩奇" />
+      <item itemvalue="Python.随机的樱花树" />
+      <item itemvalue="Python.pic_count" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.情感分析" />
-        <item itemvalue="Python.baidu-news" />
-        <item itemvalue="Python.www.hbjc.gov.cn" />
-        <item itemvalue="Python.mytools" />
-        <item itemvalue="Python.mybanquan" />
+        <item itemvalue="Python.画佩奇" />
+        <item itemvalue="Python.pic_count" />
+        <item itemvalue="Python.随机的樱花树" />
+        <item itemvalue="Python.xiaozhu" />
+        <item itemvalue="Python.csv_duplicates" />
       </list>
     </recent_temporary>
   </component>
@@ -772,36 +747,6 @@
     <option name="localTasksCounter" value="74" />
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7534000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18550107" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.43878657" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32936078" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Python Console" order="12" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-    </layout>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -824,12 +769,6 @@
         <entry key="1">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
               <option name="FILTERS">
                 <map>
                   <entry key="branch">
@@ -854,12 +793,6 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
               <option name="COLUMN_ORDER" />
             </State>
           </value>
@@ -932,22 +865,22 @@
     </state>
     <state x="288" y="88" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1593508932423" />
     <state x="0" y="108" key="CommitChangelistDialog2/0.0.600.1204@0.0.600.1204" timestamp="1592798943488" />
-    <state width="1078" height="628" key="GridCell.Tab.0.bottom" timestamp="1593509218704">
+    <state width="1236" height="393" key="GridCell.Tab.0.bottom" timestamp="1593566436480">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1078" height="628" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1593509218704" />
-    <state width="1078" height="628" key="GridCell.Tab.0.center" timestamp="1593509218703">
+    <state width="1236" height="393" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1593566436480" />
+    <state width="1236" height="393" key="GridCell.Tab.0.center" timestamp="1593566436480">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1078" height="628" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1593509218703" />
-    <state width="1078" height="628" key="GridCell.Tab.0.left" timestamp="1593509218703">
+    <state width="1236" height="393" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1593566436480" />
+    <state width="1236" height="393" key="GridCell.Tab.0.left" timestamp="1593566436480">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1078" height="628" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1593509218703" />
-    <state width="1078" height="628" key="GridCell.Tab.0.right" timestamp="1593509218704">
+    <state width="1236" height="393" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1593566436480" />
+    <state width="1236" height="393" key="GridCell.Tab.0.right" timestamp="1593566436480">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state width="1078" height="628" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1593509218704" />
+    <state width="1236" height="393" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1593566436480" />
     <state width="618" height="17" key="GridCell.Tab.1.bottom" timestamp="1593508725318">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
@@ -968,10 +901,10 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="477" y="215" key="RollbackChangesDialog/0.0.1280.984@0.0.1280.984" timestamp="1592549222965" />
-    <state x="140" y="127" key="SettingsEditor" timestamp="1593491558501">
+    <state x="140" y="127" key="SettingsEditor" timestamp="1593564160889">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="140" y="127" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1593491558501" />
+    <state x="140" y="127" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1593564160889" />
     <state x="232" y="227" key="Vcs.Push.Dialog.v2" timestamp="1593508953228">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
@@ -981,10 +914,10 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1280.984@0.0.1280.984" timestamp="1592458303069" />
-    <state x="353" y="293" key="git4idea.merge.GitPullDialog" timestamp="1593478567923">
+    <state x="353" y="293" key="git4idea.merge.GitPullDialog" timestamp="1593563742211">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="353" y="293" key="git4idea.merge.GitPullDialog/0.0.1280.984@0.0.1280.984" timestamp="1593478567923" />
+    <state x="353" y="293" key="git4idea.merge.GitPullDialog/0.0.1280.984@0.0.1280.984" timestamp="1593563742211" />
     <state x="451" y="397" key="git4idea.ui.GitResetDialog" timestamp="1592549161697">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
@@ -1008,70 +941,20 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/pystudy$_.coverage" NAME="书连网-外发版 Coverage Results" MODIFIED="1592899988156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$detected_qrcode.coverage" NAME="detected_qrcode Coverage Results" MODIFIED="1592460776516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$pic_count.coverage" NAME="pic_count Coverage Results" MODIFIED="1592544566892" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$proxy.coverage" NAME="proxy Coverage Results" MODIFIED="1592963857843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$douban.coverage" NAME="douban Coverage Results" MODIFIED="1593421303685" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$pic_count.coverage" NAME="pic_count Coverage Results" MODIFIED="1593566306616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$wx.coverage" NAME="wx图形界面框架 Coverage Results" MODIFIED="1592989256888" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$baidu_news.coverage" NAME="baidu-news Coverage Results" MODIFIED="1593490319173" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$wx2.coverage" NAME="wx图形界面框架2 Coverage Results" MODIFIED="1592810484696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$xiaozhu.coverage" NAME="xiaozhu Coverage Results" MODIFIED="1593566216468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$mytools.coverage" NAME="mytools Coverage Results" MODIFIED="1593509218688" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$xiangrikui.coverage" NAME="xiangrikui Coverage Results" MODIFIED="1593566254146" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$mybanquan.coverage" NAME="mybanquan Coverage Results" MODIFIED="1593480420863" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$save_read_config.coverage" NAME="save_read_config Coverage Results" MODIFIED="1592470627872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$logger.coverage" NAME="logger Coverage Results" MODIFIED="1592551926206" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$.coverage" NAME="画佩奇 Coverage Results" MODIFIED="1593566436449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$www_hbjc_gov_cn.coverage" NAME="www.hbjc.gov.cn Coverage Results" MODIFIED="1593505132311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ztbg.csv" />
-    <entry file="file://$PROJECT_DIR$/bnbg.csv" />
-    <entry file="file://$PROJECT_DIR$/www.hbjc.gov.cn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1862">
-          <caret line="103" column="24" selection-start-line="103" selection-start-column="21" selection-end-line="103" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/douban.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="291" column="19" selection-start-line="291" selection-start-column="17" selection-end-line="291" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mytools.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1349">
-          <caret line="32" column="59" selection-start-line="32" selection-start-column="59" selection-end-line="32" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/text.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/房贷.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/baidu-news.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1315">
-          <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/情感分析.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <SUITE FILE_PATH="coverage/pystudy$quchong.coverage" NAME="csv_duplicates Coverage Results" MODIFIED="1593565736597" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
