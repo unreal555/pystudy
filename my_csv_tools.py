@@ -43,6 +43,16 @@ def csv_dup(source,des=''):
     if des=='':
         des=source.split('.csv')[0]+'.去重.csv'
 
+    des_dir,des_filename=os.path.split(des)
+
+    if des_filename=='':
+        print('输出文件路径有误,请重试')
+        return False
+    if os.path.exists(des_dir):
+        pass
+    else:
+        os.makedirs(des_dir)
+
 
     db=pd.read_csv(source,encoding='utf-8-sig')
     print(db)
@@ -52,10 +62,6 @@ def csv_dup(source,des=''):
 
 def dir_csv_dup(path='.'):
     for root, dirnames, filenames in os.walk(path):
-        if os.path.exists(os.path.join(root, '去重')):
-            pass
-        else:
-            os.makedirs(os.path.join(root, '去重'))
 
         for filename in filenames:
             if '.csv' in filename:
@@ -67,8 +73,4 @@ def dir_csv_dup(path='.'):
                 continue
 
 if __name__=='__main__':
-    head=['a','b']
-    item={}
-    item['a']='sdafdsad'
-    item['b']='adadf'
-    write_csv('./text.csv',item=item,column_names=head)
+    dir_csv_dup(r'.')
