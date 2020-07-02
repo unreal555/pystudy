@@ -1,4 +1,4 @@
-﻿#!/bin/py
+﻿﻿#!/bin/py
 # -*-coding:utf-8-*-
 import requests
 import os
@@ -75,7 +75,7 @@ def get_title(s):
     else:
         return False
 
-def create_file(filepath):
+def create_file(filepath,title):
     '''
     根据filepath,创建小说存储文件,如果文件存在,则略过,若不存在,则创建文件并写入小说的标题
     '''
@@ -142,7 +142,7 @@ def start():
     chapter_list=get_chapter_list(index_html)
     '''调用函数,获得章节信息,包含名称和链接'''
 
-    create_file(filepath)
+    create_file(filepath,title)
     '''根据filepath创建文件,若文件已存在,则略过,不存在,则创建'''
 
     with open(filepath, 'r', encoding='utf-8') as f:
@@ -197,3 +197,5 @@ def start():
 
         random_wait()        #随机等待1-3秒,开始请求下一章
 
+if __name__ == '__main__':
+    start()

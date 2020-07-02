@@ -4,8 +4,7 @@ import time
 import re
 import datetime
 import os
-import mytools
-
+import my_html_tools
 '''
 获得当前时间，返回类型为datetime
 '''
@@ -23,7 +22,7 @@ def get_now_time():
 def get_shutdown_time():
     while 1:
         temp=input('输入几点关机，HH:MM,取消设定的时间请按c:   ')
-        temp=mytools.qu_kong_ge(temp)
+        temp=my_html_tools.qu_kong_ge(temp)
         temp=temp.replace('：',':')
         print(temp)
 

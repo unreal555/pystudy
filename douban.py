@@ -1,7 +1,7 @@
 ﻿import requests
 import re
 import json
-import mytools
+import my_html_tools
 import csv
 import os
 
@@ -23,7 +23,7 @@ def parse_html(url):
             pass
 
     yuanshi=response.text
-    text = mytools.qu_kong_ge(response.text)
+    text = my_html_tools.qu_kong_ge(response.text)
     print(url)
     print(text)
 
@@ -184,7 +184,7 @@ def parse_html(url):
     write_movies_file(item)
     write_csv(item)
 
-@mytools.execute_lasts_time
+@my_html_tools.execute_lasts_time
 def main():
     for i in range(0,500):
         url='https://movie.douban.com/j/new_search_subjects?sort=U&range=0,10&tags=%E7%94%B5%E5%BD%B1&start={}'.format(i*20)
@@ -192,7 +192,7 @@ def main():
         result=json.loads(page)
         for i in result['data']:
             parse_html(i['url'])
-            mytools.random_wait(1,7)
+            my_html_tools.random_wait(1,7)
 
 
 

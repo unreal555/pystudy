@@ -7,7 +7,6 @@ import os
 import numpy
 temp_dir_path=os.getenv('temp')
 print(temp_dir_path)
-import mytools
 from io import BytesIO
 import base64
 

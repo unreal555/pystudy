@@ -1,5 +1,5 @@
 import requests
-import mytools
+import my_html_tools
 import re
 import os
 
@@ -11,10 +11,10 @@ domain='http://www.ting89.com'
 
 url='http://www.ting89.com/books/15314.html'
 
-@mytools.execute_lasts_time
+@my_html_tools.execute_lasts_time
 def get_book(url):
     response=requests.get(url)
-    page=mytools.qu_kong_ge(response.content.decode('gbk'))
+    page=my_html_tools.qu_kong_ge(response.content.decode('gbk'))
     bookname=re.findall('<title>(.*?)</title>',page)[0]
 
     print(bookname)
@@ -46,12 +46,12 @@ def get_book(url):
             chapter=domain+i[0]
             response=requests.get(chapter,proxies=proxies)
             page=response.content.decode('gbk')
-            page=mytools.qu_kong_ge(page)
+            page=my_html_tools.qu_kong_ge(page)
             down=re.findall(r'''下载保存时请自行重命名</div><iframesrc="http://play.ting89.com/down/down.php\?url=(.*?)"height''',page)[0]
 
             with open('./{}/{}'.format(bookname,'list.txt'),'a',encoding='utf-8') as f:
                 f.write('\t'+down+'\r\n')
-            mytools.random_wait(1,2)
+            my_html_tools.random_wait(1,2)
 
         except:
             with open('./wrong.txt','a',encoding='utf-8'):
