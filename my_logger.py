@@ -1,4 +1,4 @@
-1  # coding: utf-8
+﻿1  # coding: utf-8
 2  # Team : None
 3  # Author：zl
 4  # Date ：2020/6/19 0019 下午 1:30
@@ -18,14 +18,18 @@ class logger():
     def __init__(self,file=os.path.join('.','log.txt')):
 
         self.__file=file
-        if os.path.exists(file):
+        if os.path.isfile(file):
             with open(file, 'r', encoding='utf-8') as f:
                 self.__log=f.read()
             log=time.strftime('%Y-%m-%d %H:%M:%S')+'\t'+'打开日志,开始记录'
             self.__do(log)
 
         else:
-
+            dir,filename=os.path.split(file)
+            if not os.path.exists(dir):
+                os.makedirs(dir)
+            with open(file, 'a', encoding='utf-8') as f:
+                f.write('')
             log = time.strftime('%Y-%m-%d %H:%M:%S') + '\t' + '创建日志'
             self.__do(log)
 
