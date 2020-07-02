@@ -4,35 +4,13 @@
 # Date ：2020/6/30 0030 上午 9:00
 # Tool ：PyCharm
 
-import requests
 import random
 import re
 import time
 import string
-from zhon.hanzi import punctuation as ZHONG_WEN_BIAO_DIAN
-from string import punctuation as YING_WEN_BIAO_DIAN
-from string import ascii_lowercase as XIAO_XIE_ZI_MU
-from string import ascii_uppercase as DA_XIE_ZI_MU
-from string import digits as SHU_ZI
+import requests
 
-ZHONG_WEN_ZI_FU_FOR_RE=r'\u4e00-\u9fa5'
-
-YING_WEN_ZI_FU_FOR_RE='a-zA-Z0-9'
-
-USER_AGENT_LIST = {
-    'chrome':'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.162 Safari/537.36',   #chrome
-    'firefox':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',     #fireFox
-    'ie':'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko'                                              #IE11
-}
-
-Http_Proxy_List= ['',
-                  'http://test2:594188@58.59.25.122:1234',
-                  'http://test:594188@58.59.25.123:1234']
-
-Https_Proxy_List=['',
-                  'https://test2:594188@58.59.25.122:1234',
-                  'https://test:594188@58.59.25.123:1234']
-
+user_anent='chrome''Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.162 Safari/537.36'
 #装饰器,用于返回函数名和执行时间
 def execute_lasts_time(func):
     def warpper(*args,**kwargs):
@@ -42,32 +20,6 @@ def execute_lasts_time(func):
         print('%s执行时间为:%s'%(func.__name__,lasts_time),'\r')
         return result
     return warpper
-
-def get_Proxy(url):
-    with open('./proxy.txt','r',encoding='utf-8') as f:
-        content=re.sub('[\'|\s+]','',f.read())
-    result=re.findall('\((.*?)\)',content)
-
-    for i in result:
-
-        ip,port,locate,des=i.split(',')
-        # print(des=='HTTPS',des=='HTTP',des,type(des),len(des),len('HTTP'))
-        if des=='HTTP':
-            Http_Proxy_List.append('http://{}:{}'.format(ip,port))
-        if des=='HTTPS':
-            Https_Proxy_List.append('https://{}:{}'.format(ip,port))
-
-    # print(Http_Proxy_List)
-    # print(Https_Proxy_List)
-    print(url.split('://')[0],type(url.split('://')[0]))
-    if url.split('://')[0]=='http':
-        print('选择http代理')
-        proxies={'http':random.choice(Http_Proxy_List)}
-        return proxies
-    if url.split('://')[0]=='https':
-        print('选择https代理')
-        proxies={'http':random.choice(Https_Proxy_List)}
-        return  proxies
 
 def random_wait(n=1,m=3,*args):
     if not (isinstance(n, (int, float)) and isinstance(m, (int, float))):
@@ -94,41 +46,35 @@ def get_random_num(n=1,m=3,*args):
         n,m=m,n
     temp = random.uniform(n, m)
     return temp
-
-
-
-def tras_header(str):
+@execute_lasts_time
+def tras_header(str,debug=False):
     '''定义返回值'''
     result={}
 
     '''以换行符转成list'''
     s=re.split('\n',str)
-    print('转换成的list为',s)
-
-
+    if debug:print('转换成的list为',s)
 
     '''遍历每一行'''
     for item in s:
         '''如为空行，跳过'''
-        print(item)
+        if debug:print(item)
         if item.replace(' ','')=='':
-            print('本行为空行，跳过')
+            if debug:print('本行为空行，跳过')
             continue
 
         '''以冒号为分隔符分割元素'''
-        print(re.split(': ',item))
+        if debug:print(re.split(': ',item))
         key,value=re.split(': ',item)
         key=qu_kong_ge(key)
         if key[0]==':':
             key=key[1:]
-
         result[key]=value
 
     print('{')
     for i in result:
         print('\'{}\':\'{}\','.format(i,result[i]))
     print('}')
-    print(result)
     return result
 
 def qu_kong_ge(s):
@@ -136,22 +82,23 @@ def qu_kong_ge(s):
         return re.sub('\s+', '', s)
     else:
         print('老兄，给字符串')
-        return 0
+        return False
 
-def qu_str(source,grabage):      #去除source中的垃圾,grabage为list,存储垃圾
+def qu_str(source,*grabage):      #去除source中的垃圾,grabage为list,存储垃圾
     target=source
-    print(grabage)
+
+    print('去除以下垃圾字符{}'.format(grabage))
     if len(grabage)==0 :
         print('要消除的字符串是什么？')
-        return 1
+        return False
 
-    if not isinstance(grabage, list):
+    if not isinstance(grabage, (list,tuple)):
         print('垃圾信息只接受队列')
-        return 1
+        return False
 
     if (not isinstance(source,str)) or source=='':
         print('原始字符串错误')
-        return 2
+        return False
 
     for i in grabage:
         target=target.replace(i,'')
@@ -163,16 +110,16 @@ def qu_html_lable(s):
         return reg.sub('', s)
     else:
         print('老兄，给字符串')
-        return 0
+        return False
 
 def qu_te_shu_zi_fu(s):
     if isinstance(s, str):
         return re.sub('[\/:*?"<>|]','-',s)
     else:
         print('老兄，给字符串')
-        return 0
+        return False
 
-def my_request(url,headers={'User-Agent':USER_AGENT_LIST['chrome']},code='utf-8',retry_times=5,wait_from=1,wait_to=3,debug=True,keyword=''):
+def my_request(url,headers={'User-Agent':user_anent},proxies={},code='utf-8',retry_times=5,wait_from=1,wait_to=3,debug=False,keyword=''):
     '''
     :param url: 请求的url
     :param headers: 请求头
@@ -195,7 +142,8 @@ def my_request(url,headers={'User-Agent':USER_AGENT_LIST['chrome']},code='utf-8'
     content=''
     while count<retry_times:
         try:
-            response=requests.get(url,headers=headers)
+            response=requests.get(url,headers=headers,proxies=proxies)
+            print(response.headers)
             text=response.content.decode(code)
 
             if debug:print('text',text)
@@ -233,7 +181,18 @@ def my_request(url,headers={'User-Agent':USER_AGENT_LIST['chrome']},code='utf-8'
 
 
 if __name__ == '__main__':
-
+    proxies={'http':'http://test:594188@58.59.25.123:1234','https':'https://test:594188@58.59.25.123:1234'}
     url='http://www.baidu.com/s?rtt=1&bsst=1&cl=2&tn=news&rsv_dl=ns_pc&word=睡觉&x_bfe_rqs=03E80&x_bfe_tjscore=0.580106&tngroupname=organic_news&newVideo=12&pn=260'
-    print(my_request(url=url,keyword='timeout-button',retry_times=3,wait_from=1,wait_to=2))
+    page=my_request(url=url,keyword='timeout-button',proxies=proxies,retry_times=3,wait_from=1,wait_to=2,debug=True)
 
+
+    #
+    # s = '''Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+    # Accept-Encoding: gzip, deflate
+    # Accept-Language: zh-CN,zh;q=0.9
+    # Connection: keep-alive
+    # Cookie: Province=0530; City=0531; _ntes_nnid=1ac836af6b79d21869a8ef8c0f71ad92,1592528750159; UM_distinctid=172ca1c4fdd124-02d4e1bf8b5945-464c092c-140000-172ca1c4feac2; _ntes_nuid=1ac836af6b79d21869a8ef8c0f71ad92; NNSSPID=299545cb18b7427cb17e8f2e8ae04319; vinfo_n_f_l_n3=6459bb65b72ee59d.1.16.1592528750168.1593422727306.1593569116469
+    # Host: www.163.com
+    # Upgrade-Insecure-Requests: 1
+    # User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36'''
+    # print(tras_header(s))
