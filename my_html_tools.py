@@ -10,6 +10,12 @@ import time
 import string
 import requests
 
+Proxy = [
+    {'http': '', 'https': ''},
+    {'http': 'http://test:594188@58.59.25.122:1234', 'https': 'https://test:594188@58.59.25.122:1234'},
+    {'http': 'http://test:594188@58.59.25.123:1234', 'https': 'https://test:594188@58.59.25.123:1234'}
+]
+
 user_anent='chrome''Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.162 Safari/537.36'
 #装饰器,用于返回函数名和执行时间
 def execute_lasts_time(func):
@@ -136,6 +142,7 @@ def my_request(url,headers={'User-Agent':user_anent},proxies={},code='utf-8',ret
     if debug: print('debug', debug)
     if debug: print('wait from {} to {} sec'.format(wait_from,wait_to))
     if debug: print('keyword',keyword)
+    if debug: print('proxies', proxies)
 
 
     count=0
@@ -143,10 +150,10 @@ def my_request(url,headers={'User-Agent':user_anent},proxies={},code='utf-8',ret
     while count<retry_times:
         try:
             response=requests.get(url,headers=headers,proxies=proxies)
-            print(response.headers)
+            if debug:print(response.headers)
             text=response.content.decode(code)
 
-            if debug:print('text',text)
+            if debug:print('text',qu_kong_ge(text))
             if debug:print('status_code',response.status_code)
 
             if response.status_code!=200:
@@ -162,7 +169,7 @@ def my_request(url,headers={'User-Agent':user_anent},proxies={},code='utf-8',ret
                 return text
 
             if response.status_code == 200  and keyword  in text:
-                if debug: print('status_code', response.status_code)
+                if debug: print('页面正常返回,但是不包含key中的字符串,重试')
                 count+=1
                 random_wait(wait_from,wait_to)
                 continue
@@ -178,13 +185,14 @@ def my_request(url,headers={'User-Agent':user_anent},proxies={},code='utf-8',ret
     return False
 
 
+def get_proxie():
+    return random.choice(Proxy)
 
 
 if __name__ == '__main__':
-    proxies={'http':'http://test:594188@58.59.25.123:1234','https':'https://test:594188@58.59.25.123:1234'}
-    url='http://www.baidu.com/s?rtt=1&bsst=1&cl=2&tn=news&rsv_dl=ns_pc&word=睡觉&x_bfe_rqs=03E80&x_bfe_tjscore=0.580106&tngroupname=organic_news&newVideo=12&pn=260'
-    page=my_request(url=url,keyword='timeout-button',proxies=proxies,retry_times=3,wait_from=1,wait_to=2,debug=True)
 
+    url='http://www.baidu.com/s?rtt=1&bsst=1&cl=2&tn=news&rsv_dl=ns_pc&word=睡觉&x_bfe_rqs=03E80&x_bfe_tjscore=0.580106&tngroupname=organic_news&newVideo=12&pn=260'
+    page=my_request(url=url,keyword='timeout-button',proxies=get_proxie(),retry_times=10,wait_from=1,wait_to=2,debug=True)
 
     #
     # s = '''Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9

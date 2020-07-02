@@ -34,10 +34,6 @@ class ChangLiang():
     ]
 
 
-    def get_proxie(self):
-
-        return random.choice(self.Proxy)
-
 
 Chang=ChangLiang()
 print(Chang.get_proxie())
