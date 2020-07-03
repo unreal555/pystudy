@@ -1,8 +1,9 @@
 ﻿# coding: utf-8
 # Team : JiaLiDun University
 # Author：zl
-# Date ：2020/7/2 0002 上午 8:50
+# Date ：2020/7/3 0003 上午 9:01
 # Tool ：PyCharm
+
 import mytools
 from mytools import my_request
 import re
@@ -13,7 +14,7 @@ import os
 base_dir='.'
 subdir='data'
 # subdir=str(time.strftime('%Y-%m-%d'))
-filename='新浪.csv'
+filename='新浪娱乐.csv'
 abs_path=os.path.join(base_dir,subdir)
 data_file_path=os.path.join(base_dir,subdir,filename)
 
@@ -22,8 +23,10 @@ data_file_path=os.path.join(base_dir,subdir,filename)
 columns_names=['title','content','riqi','pic','laiyuan','url',]
 
 starts = {
-    '国际军情':'''http://mil.news.sina.com.cn/roll/index.d.html?cid=57919''',
-    '国内军情':'''http://mil.news.sina.com.cn/roll/index.d.html?cid=57918''',
+    '娱乐要闻1':'''https://cre.mix.sina.com.cn/api/v3/get?cateid=1Q&cre=tianyi&mod=pcent&merge=3&statics=1&length=15&up=1&down=0''',
+    '娱乐要闻2':'''https://cre.mix.sina.com.cn/api/v3/get?cateid=1Q&cre=tianyi&mod=pcent&merge=3&statics=1&length=15&up=1&down=0''',
+    '娱乐要闻3':'''https://cre.mix.sina.com.cn/api/v3/get?cateid=1Q&cre=tianyi&mod=pcent&merge=3&statics=1&length=15&up=2&down=0''',
+    '娱乐要闻4':'''https://cre.mix.sina.com.cn/api/v3/get?cateid=1Q&cre=tianyi&mod=pcent&merge=3&statics=1&length=15&up=3&down=0''',
     }
 
 reg_part = '''<divclass="fixList"><ulclass="linkNews">(.*?)</ul></div>'''
