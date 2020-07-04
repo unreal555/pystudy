@@ -1,8 +1,8 @@
-﻿1  # coding: utf-8
-2  # Team : None
-3  # Author：zl
-4  # Date ：2020/6/19 0019 下午 1:30
-5  # Tool ：PyCharm
+﻿# coding: utf-8
+# Team : None
+# Author：zl
+# Date ：2020/6/19 0019 下午 1:30
+# Tool ：PyCharm
 
 import os
 import time
