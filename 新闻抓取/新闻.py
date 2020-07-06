@@ -13,8 +13,8 @@ import sina_junshi
 import sina_yule
 from concurrent.futures import ThreadPoolExecutor
 
-# if check_ban_quan(96):
-if 1:
+if check_ban_quan(96):
+
 
     base_dir='.'
     subdir='data'

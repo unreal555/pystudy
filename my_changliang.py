@@ -35,8 +35,10 @@ class ChangLiang():
 
 
 
-Chang=ChangLiang()
-print(Chang.get_proxie())
+if __name__ == '__main__':
+
+    Chang=ChangLiang()
+    print(Chang.get_proxie())
 
 
 
