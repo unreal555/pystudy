@@ -33,7 +33,6 @@ class logger():
             log = time.strftime('%Y-%m-%d %H:%M:%S') + '\t' + '创建日志'
             self.__do(log)
 
-    def __do(self,log):
         with open(self.__file, 'a', encoding='utf-8') as f:
             f.write(self.__mark)
             f.write(log)
