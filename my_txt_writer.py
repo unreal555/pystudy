@@ -1,4 +1,4 @@
-﻿import os
+import os
 
 
 line=(r'asdfadfasdf',r'a',r'asdfasdfasdfasdfasdf',r'asdfasdfasd',r'fas',r'df,asdfasd,fasdfasdfadfasd,',23)
@@ -52,5 +52,5 @@ def write_txt(file_path,data,tab=1,enter=1,codec='utf-8',debug=False):
 
 
 if __name__ == '__main__':
-    write_txt('./text.txt',tab=0,enter=4,data=line,debug=True)
+    write_txt('./text.txt',tab=1,enter=1,data=line,debug=True)
 
