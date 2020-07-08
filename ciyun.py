@@ -15,23 +15,25 @@ from matplotlib import font_manager
 
 
 my_font = font_manager.FontProperties(fname='C:/Windows/Fonts/STHUPO.TTF')
+my_font.set_size(20)
+print(dir(my_font.set_style))
 
 
 def create_ciyun(count):
-    img=plt.imread('./pic/heart.jpg')
+    img=plt.imread('./pic/tuoyuan.jpg')
     img=img.astype(np.uint8)
 
     wc = wordcloud.WordCloud(font_path='C:/Windows/Fonts/STHUPO.TTF',
-                             max_words=100,
+                             max_words=150,
                              max_font_size=180,
                              min_font_size=5,
                              # background_color="white",
                              mask=img,
-                             # color_func = random_color_func,
+                             color_func = random_color_func,
                              width=1180,  # 设置图片的宽度
                              height=764,  # 设置图片的高度
                              margin=2,
-                             scale=10  #这个数值越大，产生的图片分辨率越高，字迹越清晰
+                             scale=3  #这个数值越大，产生的图片分辨率越高，字迹越清晰
                              )
     wc.generate_from_frequencies(count)
     plt.imshow(wc)
@@ -40,7 +42,7 @@ def create_ciyun(count):
 
 def random_color_func(word=None, font_size=None, position=None, orientation=None, font_path=None,
                       random_state=None):
-    h = random.randint(0,100)
+    h = random.randint(0,360)
     s = int(100.0 * 255.0 / 255.0)
     l = int(100.0 * float(random.randint(150,250)) / 255.0)
     return "hsl({}, {}%, {}%)".format(h, s, l)
@@ -101,35 +103,44 @@ def drawBar(count):
     plt.show()
 
 if __name__=='__main__':
-    count=get_count('rate')
-
+    count=get_count('guojia')
+    count={value:key for key,value in count.items()}
     x=sorted(count.keys())
+    print(x)
     y=[]
     for key in x:
         y.append(count[key])
 
-    print(x)
-    print(y)
 
-    #
-    #
-    #
-    # # 设置图形大小
-    # plt.figure(figsize=(18, 10), dpi=100)
-    #
-    #
-    # for i in range(0,len(x)):
-    #     plt.bar(x[i],y[i])
-    # # 绘制条形图
-    # # plt.bar(range(len(x)), y, width=0.3)  # width表示条形粗细
-    # # 绘制条形图 （横向条形图）
-    # # plt.barh(range(len(x)), y, height=0.3, color="orange")  # 横向条形图中height表示条形粗细
-    #
-    # # 设置x轴刻度
-    # plt.xticks(fontproperties=my_font, rotation=45)
-    # plt.yticks(fontproperties=my_font)  # barh()绘制横向条形图时，设置的是y轴刻度
-    # plt.show()
+
+
+
+
+    # 设置图形大小
+    fig=plt.figure(figsize=(18, 10), dpi=100)
+
+
+
+
+
+
+    for a,b in zip(y,x):
+        plt.bar(a,b,bottom=0,edgecolor='k',linewidth=2)
+        plt.text(a, b , '%4s' % b, ha='center', va='top', fontsize=30,rotation=90,)
+
+    plt.plot(y,x,color="red",linewidth=6,)
+
+
+
+
+
+    plt.xticks(fontproperties=my_font, rotation=90,)  #fontsize=30
+    plt.yticks(fontproperties=my_font)  # barh()绘制横向条形图时，设置的是y轴刻度   ,fontsize=30
+    # plt.title("xxxxx",fontproperties=my_font)
+    # plt.ylim(0,3500)
+
+    plt.show()
     # # 保存图片
     # # plt.savefig("./movie.png")
 
-    create_ciyun(count)
+    # create_ciyun({value:key for key,value in count.items()})
