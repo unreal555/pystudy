@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a29feb6-6947-483a-9da2-985463451c54" name="默认的" comment="默认的">
-      <change afterPath="$PROJECT_DIR$/pic/tuoyuan.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/猜数字.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/31.找质数.py" beforeDir="false" afterPath="$PROJECT_DIR$/学习/31.找质数.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chd刷积分.py" beforeDir="false" afterPath="$PROJECT_DIR$/学习/chd刷积分.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ciyun.py" beforeDir="false" afterPath="$PROJECT_DIR$/ciyun.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,8 +147,8 @@
       <recent name="D:\PyCharm2019.3.1\pystudy" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.ciyun">
-    <configuration name="湖北检察院" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.猜数字">
+    <configuration name="猜数字" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -164,7 +161,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/湖北检察院.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/猜数字.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -239,28 +236,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="my_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="pystudy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="D:\PyCharm2019.3.1\pystudy\my_test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="my_txt_writer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -286,17 +261,17 @@
     <list>
       <item itemvalue="Python.my_html_tools" />
       <item itemvalue="Python.my_test (1)" />
-      <item itemvalue="Python.my_test" />
       <item itemvalue="Python.my_txt_writer" />
       <item itemvalue="Python.ciyun" />
+      <item itemvalue="Python.猜数字" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.猜数字" />
         <item itemvalue="Python.ciyun" />
         <item itemvalue="Python.my_txt_writer" />
         <item itemvalue="Python.my_test (1)" />
         <item itemvalue="Python.my_html_tools" />
-        <item itemvalue="Python.my_test" />
       </list>
     </recent_temporary>
   </component>
@@ -401,14 +376,8 @@
       <workItem from="1594102021180" duration="1578000" />
       <workItem from="1594103821001" duration="7000" />
       <workItem from="1594104231677" duration="1433000" />
-      <workItem from="1594169699394" duration="2144000" />
-    </task>
-    <task id="LOCAL-00039" summary="默认的">
-      <created>1591941068487</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1591941068487</updated>
+      <workItem from="1594169699394" duration="2436000" />
+      <workItem from="1594197102878" duration="2021000" />
     </task>
     <task id="LOCAL-00040" summary="默认的">
       <created>1592206562045</created>
@@ -746,7 +715,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594107912221</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="默认的">
+      <created>1594193081276</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1594193081291</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -928,9 +904,10 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="355" y="127" key="#新闻/0.0.1280.984@0.0.1280.984" timestamp="1593738539691" />
-    <state x="288" y="88" key="CommitChangelistDialog2" timestamp="1594107910084">
-      <screen x="0" y="0" width="1280" height="984" />
+    <state x="288" y="88" key="CommitChangelistDialog2" timestamp="1594193077641">
+      <screen x="0" y="0" width="1280" height="980" />
     </state>
+    <state x="288" y="88" key="CommitChangelistDialog2/0.0.1280.980@0.0.1280.980" timestamp="1594193077641" />
     <state x="288" y="88" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1594107910084" />
     <state x="0" y="108" key="CommitChangelistDialog2/0.0.600.1204@0.0.600.1204" timestamp="1592798943488" />
     <state x="120" y="79" key="DiffContextDialog" timestamp="1594088824886">
@@ -942,45 +919,45 @@
     </state>
     <state x="420" y="236" key="FileChooserDialogImpl/0.0.1280.980@0.0.1280.980" timestamp="1594175172144" />
     <state x="420" y="237" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1593738769635" />
-    <state width="1236" height="380" key="GridCell.Tab.0.bottom" timestamp="1594191653895">
+    <state width="1236" height="573" key="GridCell.Tab.0.bottom" timestamp="1594200470352">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="380" key="GridCell.Tab.0.bottom/0.0.1280.980@0.0.1280.980" timestamp="1594191653895" />
+    <state width="1236" height="573" key="GridCell.Tab.0.bottom/0.0.1280.980@0.0.1280.980" timestamp="1594200470352" />
     <state width="1236" height="259" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1594103648152" />
-    <state width="1236" height="380" key="GridCell.Tab.0.center" timestamp="1594191653895">
+    <state width="1236" height="573" key="GridCell.Tab.0.center" timestamp="1594200470352">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="380" key="GridCell.Tab.0.center/0.0.1280.980@0.0.1280.980" timestamp="1594191653895" />
+    <state width="1236" height="573" key="GridCell.Tab.0.center/0.0.1280.980@0.0.1280.980" timestamp="1594200470352" />
     <state width="1236" height="259" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1594103648152" />
-    <state width="1236" height="380" key="GridCell.Tab.0.left" timestamp="1594191653895">
+    <state width="1236" height="573" key="GridCell.Tab.0.left" timestamp="1594200470352">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="380" key="GridCell.Tab.0.left/0.0.1280.980@0.0.1280.980" timestamp="1594191653895" />
+    <state width="1236" height="573" key="GridCell.Tab.0.left/0.0.1280.980@0.0.1280.980" timestamp="1594200470352" />
     <state width="1236" height="259" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1594103648152" />
-    <state width="1236" height="380" key="GridCell.Tab.0.right" timestamp="1594191653895">
+    <state width="1236" height="573" key="GridCell.Tab.0.right" timestamp="1594200470352">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="380" key="GridCell.Tab.0.right/0.0.1280.980@0.0.1280.980" timestamp="1594191653895" />
+    <state width="1236" height="573" key="GridCell.Tab.0.right/0.0.1280.980@0.0.1280.980" timestamp="1594200470352" />
     <state width="1236" height="259" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1594103648152" />
-    <state width="1236" height="318" key="GridCell.Tab.1.bottom" timestamp="1594176506196">
+    <state width="1236" height="318" key="GridCell.Tab.1.bottom" timestamp="1594195790101">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="318" key="GridCell.Tab.1.bottom/0.0.1280.980@0.0.1280.980" timestamp="1594176506196" />
+    <state width="1236" height="318" key="GridCell.Tab.1.bottom/0.0.1280.980@0.0.1280.980" timestamp="1594195790101" />
     <state width="1236" height="121" key="GridCell.Tab.1.bottom/0.0.1280.984@0.0.1280.984" timestamp="1593595608032" />
-    <state width="1236" height="318" key="GridCell.Tab.1.center" timestamp="1594176506196">
+    <state width="1236" height="318" key="GridCell.Tab.1.center" timestamp="1594195790100">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="318" key="GridCell.Tab.1.center/0.0.1280.980@0.0.1280.980" timestamp="1594176506196" />
+    <state width="1236" height="318" key="GridCell.Tab.1.center/0.0.1280.980@0.0.1280.980" timestamp="1594195790100" />
     <state width="1236" height="121" key="GridCell.Tab.1.center/0.0.1280.984@0.0.1280.984" timestamp="1593595608032" />
-    <state width="1236" height="318" key="GridCell.Tab.1.left" timestamp="1594176506196">
+    <state width="1236" height="318" key="GridCell.Tab.1.left" timestamp="1594195790100">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="318" key="GridCell.Tab.1.left/0.0.1280.980@0.0.1280.980" timestamp="1594176506196" />
+    <state width="1236" height="318" key="GridCell.Tab.1.left/0.0.1280.980@0.0.1280.980" timestamp="1594195790100" />
     <state width="1236" height="121" key="GridCell.Tab.1.left/0.0.1280.984@0.0.1280.984" timestamp="1593595608032" />
-    <state width="1236" height="318" key="GridCell.Tab.1.right" timestamp="1594176506196">
+    <state width="1236" height="318" key="GridCell.Tab.1.right" timestamp="1594195790100">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="318" key="GridCell.Tab.1.right/0.0.1280.980@0.0.1280.980" timestamp="1594176506196" />
+    <state width="1236" height="318" key="GridCell.Tab.1.right/0.0.1280.980@0.0.1280.980" timestamp="1594195790100" />
     <state width="1236" height="121" key="GridCell.Tab.1.right/0.0.1280.984@0.0.1280.984" timestamp="1593595608032" />
     <state x="477" y="215" key="RollbackChangesDialog" timestamp="1593659862517">
       <screen x="0" y="0" width="1280" height="984" />
@@ -990,9 +967,10 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="140" y="127" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1594088595969" />
-    <state x="232" y="227" key="Vcs.Push.Dialog.v2" timestamp="1594107923000">
-      <screen x="0" y="0" width="1280" height="984" />
+    <state x="232" y="226" key="Vcs.Push.Dialog.v2" timestamp="1594193090527">
+      <screen x="0" y="0" width="1280" height="980" />
     </state>
+    <state x="232" y="226" key="Vcs.Push.Dialog.v2/0.0.1280.980@0.0.1280.980" timestamp="1594193090527" />
     <state x="232" y="227" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1594107923000" />
     <state x="0" y="278" key="Vcs.Push.Dialog.v2/0.0.600.1204@0.0.600.1204" timestamp="1592798962763" />
     <state x="92" y="92" width="1096" height="800" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1593661305224">
@@ -1061,7 +1039,7 @@
     <SUITE FILE_PATH="coverage/pystudy$my_changliang.coverage" NAME="my_changliang Coverage Results" MODIFIED="1593681441985" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$my_html_tools.coverage" NAME="my_html_tools Coverage Results" MODIFIED="1594088352477" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$logger.coverage" NAME="logger Coverage Results" MODIFIED="1592551926206" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$.coverage" NAME="新闻 Coverage Results" MODIFIED="1593747750552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/新闻抓取" />
+    <SUITE FILE_PATH="coverage/pystudy$.coverage" NAME="猜数字 Coverage Results" MODIFIED="1594200470336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$my_banquan.coverage" NAME="my_banquan_set Coverage Results" MODIFIED="1593585341585" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$my_test__1_.coverage" NAME="my_test (1) Coverage Results" MODIFIED="1594088661907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
