@@ -1,8 +1,8 @@
-1  # coding: utf-8
-2  # Team : None
-3  # Author：zl
-4  # Date ：2020/7/1 0001 上午 9:42
-5  # Tool ：PyCharm
+# coding: utf-8
+# Team : None
+# Author：zl
+# Date ：2020/7/1 0001 上午 9:42
+# Tool ：PyCharm
 import pandas as pd
 import os
 import csv
@@ -14,7 +14,6 @@ def write_csv(file_path,item,column_names):
     :param column_names:    表头
     :return:
     '''
-
 
     if os.path.exists(file_path):
         with open(file_path, 'a', newline='', encoding='utf-8-sig') as f:

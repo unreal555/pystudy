@@ -11,6 +11,10 @@ import string
 import requests
 import os
 
+
+import logging
+
+
 Proxy = [
     {'http': '', 'https': ''},
     {'http': 'http://test:594188@58.59.25.122:1234', 'https': 'https://test:594188@58.59.25.122:1234'},
@@ -29,59 +33,60 @@ def execute_lasts_time(func):
     return warpper
 
 def random_wait(n=1,m=3,*args):
-    if not (isinstance(n, (int, float)) and isinstance(m, (int, float))):
-        print('参数输入错误，不是整数或小数，采用默认值1，3')
-        n=1
-        m=3
-
-    if n>m:
-        n,m=m,n
-    temp = random.uniform(n, m)
+    temp = get_random_num(n,m)
     print("wait {} second".format(temp))
     time.sleep(temp)
+    return True
 
 def get_random_str(lenth=8):
-    return ''.join(random.sample(string.ascii_letters + string.digits, lenth))
+    n=''.join(random.sample(string.ascii_letters + string.digits, lenth))
+    logging.debug('获得的随机字符串为{}'.format(n))
+    return n
 
 def get_random_num(n=1,m=3,*args):
     if not (isinstance(n, (int, float)) and isinstance(m, (int, float))):
-        print('参数输入错误，不是整数或小数，采用默认值1，3')
+        logging.debug('参数输入错误，不是整数或小数，采用默认值1，3')
         n=1
         m=3
 
     if n>m:
+        logging.debug('m,n不是小-大顺序,自动调换mn数值')
         n,m=m,n
-    temp = random.uniform(n, m)
-    return temp
+    num=random.uniform(n, m)
+    logging.debug('获得的随机数为{}'.format(num))
+    return num
+
 @execute_lasts_time
-def tras_header(str,debug=False):
+def tras_header(str):
     '''定义返回值'''
     result={}
 
+
     '''以换行符转成list'''
     s=re.split('\n',str)
-    if debug:print('转换成的list为',s)
+    logging.debug('转换成的list为{}'.format(s))
 
     '''遍历每一行'''
     for item in s:
-        '''如为空行，跳过'''
-        if debug:print(item)
+        '''跳过如为空行，'''
+        logging.debug('正在处理{}'.format(item))
         if item.replace(' ','')=='':
-            if debug:print('本行为空行，跳过')
+            logging.debug('本行为空行，跳过')
             continue
 
         '''以冒号为分隔符分割元素'''
-        if debug:print(re.split(': ',item))
+        logging.debug(re.split(': ',item))
         key,value=re.split(': ',item)
         key=qu_kong_ge(key)
         if key[0]==':':
             key=key[1:]
         result[key]=value
 
-    print('{')
+    print('转换结果:\n')
+    print(('{'))
     for i in result:
-        print('\'{}\':\'{}\','.format(i,result[i]))
-    print('}')
+        print(('\'{}\':\'{}\','.format(i,result[i])))
+    print(('}'))
     return result
 
 def qu_kong_ge(s):
@@ -96,15 +101,15 @@ def qu_str(source,*grabage):      #去除source中的垃圾,grabage为list,存�
 
     print('去除以下垃圾字符{}'.format(grabage))
     if len(grabage)==0 :
-        print('要消除的字符串是什么？')
+        logging.error('要消除的垃圾信息为空,请检查grabage？')
         return False
 
     if not isinstance(grabage, (list,tuple)):
-        print('垃圾信息只接受队列')
+        logging.error('垃圾信息只接受队列和元组')
         return False
 
     if (not isinstance(source,str)) or source=='':
-        print('原始字符串错误')
+        logging.error('待处理的source字符串为空,或不是str类型')
         return False
 
     for i in grabage:
@@ -126,7 +131,7 @@ def qu_te_shu_zi_fu(s):
         print('老兄，给字符串')
         return False
 
-def my_request(url,headers={'User-Agent':user_anent},proxies={},codec='utf-8',retry_times=5,wait_from=1,wait_to=3,debug=False,keyword=''):
+def my_request(url,headers={'User-Agent':user_anent},proxies={},codec='utf-8',retry_times=5,wait_from=1,wait_to=3,keyword=''):
     '''
     :param url: 请求的url
     :param headers: 请求头
@@ -137,29 +142,26 @@ def my_request(url,headers={'User-Agent':user_anent},proxies={},codec='utf-8',re
     :return: 返回页面的text
     '''
 
-    if debug: print('url', url)
-    if debug: print('headers', headers)
-    if debug: print('retry_times', retry_times)
-    if debug: print('debug', debug)
-    if debug: print('wait from {} to {} sec'.format(wait_from,wait_to))
-    if debug: print('keyword',keyword)
-    if debug: print('proxies', proxies)
-    if debug: print('codec', codec)
-
+    logging.info('url:{}'.format(url))
+    logging.info('headers:{}'.format(headers))
+    logging.info('retry_times:{}'.format(retry_times))
+    logging.info('wait from {} to {} sec'.format(wait_from,wait_to))
+    logging.info('keyword:{}'.format(keyword))
+    logging.info('proxies:{}'.format(proxies))
+    logging.info('codec:{}'.format(codec))
 
     count=0
     content=''
     while count<retry_times:
         try:
             response=requests.get(url,headers=headers,proxies=proxies)
-            if debug:print(response.headers)
+            logging.debug('response.header为{}'.format(response.headers))
             text=response.content.decode(codec)
 
-            if debug:print('text',qu_kong_ge(text))
-            if debug:print('status_code',response.status_code)
+            logging.debug('text:   {}'.format(qu_kong_ge(text)))
+            logging.debug(logging.debug('请求{},返回状态码为{}:'.format(url,response.status_code)))
 
             if response.status_code!=200:
-                if debug: print('status_code', response.status_code)
                 count+=1
                 random_wait(wait_from,wait_to)
                 continue
@@ -171,7 +173,7 @@ def my_request(url,headers={'User-Agent':user_anent},proxies={},codec='utf-8',re
                 return text
 
             if response.status_code == 200  and keyword  in text:
-                if debug: print('页面正常返回,但是不包含key中的字符串,重试')
+                logging.debug('页面正常返回,但是不包含key中的字符串,重试')
                 count+=1
                 random_wait(wait_from,wait_to)
                 continue
@@ -179,35 +181,75 @@ def my_request(url,headers={'User-Agent':user_anent},proxies={},codec='utf-8',re
 
 
         except Exception as e:
-            if debug:print('第{}次请求页面失败,原因是{}'.format(count,e))
+            logging.debug('第{}次请求页面失败,原因是{}'.format(count,e))
             count+=1
             random_wait(wait_from,wait_to)
 
-    if debug: print('达到最大重试次数{}'.format(retry_times))
+    logging.debug('达到最大重试次数{}'.format(retry_times))
     return False
 
+def check_fname(fname):
+    '''
+    检查fname路径的文件是否存在,若不存在,则创建文件储存的目录,返回fname值
+    若文件存在,则尝试返回另外一个名字
+    :param fname:
+    :return:  fname
+    '''
+    dir, filename = os.path.split(fname)
 
-def get_proxie():
+    if dir == '':
+        logging.debug('fname:{}没有路径,路径设为当前路径'.format(fname))
+        dir = '.'
+
+    if filename == '':
+        logging.debug('fname:{}没有文件名,程序退出'.format(fname))
+        return False
+
+    basename,extname=os.path.splitext(filename)
+
+    logging.info('输入文件,目录为{},文件名{},扩展名为{}'.format(dir,basename,extname))
+
+    count=1
+    while os.path.exists(os.path.join(dir,basename+extname)) and os.path.isfile(os.path.join(dir,basename+extname)):
+        logging.info('{}{}文件重名,尝试更名'.format(basename,extname))
+
+        reg=r'\(\(\d+\)\)'
+        if re.findall(reg,basename)==[]:
+            basename=basename+r'(({}))'.format(count)
+            count=count+1
+        else:
+            print(re.split(reg,basename))
+            basename=re.split(reg,basename)[0]+r'(({}))'.format(count)
+            count = count + 1
+
+    fname=os.path.join(dir,basename+extname)
+
+    if not os.path.exists(dir):
+        logging.info('{}目录不存在,创建'.format(dir))
+        os.makedirs(dir)
+
+    return fname
+
+def get_random_proxie():
+    proxies= random.choice(Proxy)
+    logging.info('随机选择代理为{}'.format(proxies))
     return random.choice(Proxy)
 
-def download(url,fname='',headers={'User-Agent':user_anent},proxies={},retry_times=5,wait_from=1,
-             wait_to=3,debug=False):
+def download(url,fname='',headers={'User-Agent':user_anent},proxies={},retry_times=5,wait_from=1,wait_to=3):
     '''
     :param url: 请求的url
     :param fname:  保存的文件路径+文件名
     :param headers: 请求头
     :param retry_times: 若是发生错误的重试次数
-    :param debug: 是否打开调试显示
     :param keyword:  *****重要,表示页面不是所需页面的关键字,有这个关键字,说明页面请求是失败的,要重试
     :return: 返回页面的text
     '''
-    if debug: print('url', url)
-    if debug: print('headers', headers)
-    if debug: print('retry_times', retry_times)
-    if debug: print('debug', debug)
-    if debug: print('wait from {} to {} sec'.format(wait_from,wait_to))
-    if debug: print('proxies', proxies)
-    if debug: print('fname',fname)
+    logging.info('url:{}'.format(url))
+    logging.info('headers:{}'.format(headers))
+    logging.info('retry_times:{}'.format(retry_times))
+    logging.info('wait from {} to {} sec'.format(wait_from,wait_to))
+    logging.info('proxies:{}'.format(proxies))
+    logging.info('fname:{}'.format(fname))
 
 
     def get_fname(fname):
@@ -222,18 +264,17 @@ def download(url,fname='',headers={'User-Agent':user_anent},proxies={},retry_tim
 
         basename,extname=os.path.splitext(filename)
 
-        if debug: print('文件存储的目录为{},文件名{},扩展名为{}'.format(dir,basename,extname))
+        logging.info('文件存储的目录为{},文件名{},扩展名为{}'.format(dir,basename,extname))
 
         count=1
         while os.path.exists(os.path.join(dir,basename+extname)) and os.path.isfile(os.path.join(dir,basename+extname)):
-            if debug: print('{}{}文件重名,尝试更名'.format(basename,extname))
+            logging.info('{}{}文件重名,尝试更名'.format(basename,extname))
 
             reg=r'\(\d+\)'
             if re.findall(reg,basename)==[]:
                 basename=basename+r'({})'.format(count)
                 count=count+1
             else:
-                print(re.split(reg,basename))
                 basename=re.split(reg,basename)[0]+r'({})'.format(count)
                 count = count + 1
 
@@ -248,14 +289,14 @@ def download(url,fname='',headers={'User-Agent':user_anent},proxies={},retry_tim
     r=''
     while count < retry_times:
         try:
-            print('开始尝试第{}第下载,url为{}'.format(count + 1, url))
+            logging.info('开始尝试第{}第下载,url为{}'.format(count + 1, url))
             r = requests.get(url, headers=headers,proxies=proxies)
-            print(r.status_code)
-            print(r.content)
+            logging.debug(r.status_code)
+            logging.debug(r.content)
             if r.status_code == 200:
                 break
             if r.status_code!=200:
-                if debug:print('下载失败,状态码不为200,为{}'.format(r.status_code))
+                logging.debug('下载失败,状态码不为200,为{}'.format(r.status_code))
                 count=count+1
                 random_wait(wait_from,wait_to)
                 continue
@@ -274,26 +315,16 @@ def download(url,fname='',headers={'User-Agent':user_anent},proxies={},retry_tim
             f.write(r.content)
             return True
     except Exception as e:
-        if debug:print('写入文件失败,原因是:{}'.format(e))
+        logging.debug('写入文件失败,原因是:{}'.format(e))
         return False
 
 if __name__ == '__main__':
 
     # url='http://www.baidu.com/s?rtt=1&bsst=1&cl=2&tn=news&rsv_dl=ns_pc&word=睡觉&x_bfe_rqs=03E80&x_bfe_tjscore=0.580106&tngroupname=organic_news&newVideo=12&pn=260'
     # page=my_request(url=url,keyword='timeout-button',proxies=get_proxie(),retry_times=10,wait_from=1,wait_to=2,debug=True)
-    download(url='https://img.tupianzj.com/uploads/allimg/160531/9-160531223943.gif',fname='./d/',debug=True)
+    download(url='https://img.tupianzj.com/uploads/allimg/160531/9-160531223943.gif',proxies=get_random_proxie(),fname='./d/')
 
 
 
 
 
-    #
-    # s = '''Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
-    # Accept-Encoding: gzip, deflate
-    # Accept-Language: zh-CN,zh;q=0.9
-    # Connection: keep-alive
-    # Cookie: Province=0530; City=0531; _ntes_nnid=1ac836af6b79d21869a8ef8c0f71ad92,1592528750159; UM_distinctid=172ca1c4fdd124-02d4e1bf8b5945-464c092c-140000-172ca1c4feac2; _ntes_nuid=1ac836af6b79d21869a8ef8c0f71ad92; NNSSPID=299545cb18b7427cb17e8f2e8ae04319; vinfo_n_f_l_n3=6459bb65b72ee59d.1.16.1592528750168.1593422727306.1593569116469
-    # Host: www.163.com
-    # Upgrade-Insecure-Requests: 1
-    # User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36'''
-    # print(tras_header(s))
