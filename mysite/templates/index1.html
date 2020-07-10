@@ -1,0 +1,38 @@
+﻿﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    {% for row in posts.object_list %}
+    <li>{{row.name}}----------------{{row.age}}</li>
+    {% endfor %}
+</ul>
+{% if posts.has_previous %}
+    <a href="/index1?p={{posts.previous_page_number}}">上一页</a>
+{% else %}
+    <a href="#">上一页</a>
+{%endif%}
+
+{% for index in posts_list%}
+    {% if index == posts.number %}
+        <a href="#" style="color: black">{{index}}</a>
+    {% else %}
+        <a href="/index1?p={{index}}">{{index}}</a>
+    {% endif %}
+{% endfor %}
+
+{% if posts.has_next %}
+    <a href="/index1?p={{posts.next_page_number}}">下一页</a>
+{% else %}
+    <a href="#">下一页</a>
+{%endif%}
+<span>
+    {{posts.number}}/{{posts.paginator.num_pages}}
+</span>
+
+
+</body>
+</html>
