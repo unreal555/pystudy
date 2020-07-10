@@ -252,17 +252,17 @@ def start():
                 print('新闻联播')
                 Browser.get('https://www.xuexi.cn/8e35a343fca20ee32c79d67e35dfca90/7f9f27c65e84e71e1b7189b7132b4710.html')
                 sleep(5)
+                Browser.execute_script("window.scrollBy(0,400)")
+                sleep(3)
                 Browser.find_element_by_xpath("*").send_keys(Keys.SPACE)
                 sleep(600)
-                Browser.execute_script("window.scrollBy(0,400)")
-
 
             while news_time_score + news_count_score < 12:
                 watch_page(random.choice(news_list))
             while video_time_score + video_conut_score < 12:
                 watch_page(random.choice(video_list))
-            while every_day_score<6:
-                wait()
+            # while every_day_score<6:
+            #     wait()
 
         Browser.close()
         print('主线程退出')
