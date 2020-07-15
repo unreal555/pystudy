@@ -40,17 +40,19 @@ class My_sql():
         print('释放类%s'%type(self))
 
 d=My_sql()
-# sql="select * from user  WHERE USER_NAME =%s or LAST_VISIT_IP=%s"      #防止注入，自动拼接参数
-# name='张磊'
-# ip='60.216.17.130'
-sql = '''
-    CREATE TABLE USER1 (
-    id INT auto_increment PRIMARY KEY ,
-    name CHAR(10) NOT NULL UNIQUE,
-    age TINYINT NOT NULL
-    )ENGINE=innodb DEFAULT CHARSET=utf8;
-    '''
+name='张磊'
+ip='60.216.17.130'
+sql=r"select * from user  WHERE USER_NAME ='%s'"%(name)      #防止注入，自动拼接参数
+
+# sql = '''
+#     CREATE TABLE USER1 (
+#     id INT auto_increment PRIMARY KEY ,
+#     name CHAR(10) NOT NULL UNIQUE,
+#     age TINYINT NOT NULL
+#     )ENGINE=innodb DEFAULT CHARSET=utf8;
+#     '''
 r=d.exe_sql(sql)
-r=d.exe_sql('select * from user ')
+print(r)
+# r=d.exe_sql('select * from user ')
 
 

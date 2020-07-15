@@ -10,8 +10,9 @@
       <excludeFolder url="file://$MODULE_DIR$/venv" />
       <excludeFolder url="file://$MODULE_DIR$/venv1" />
       <excludeFolder url="file://$MODULE_DIR$/venv2" />
+      <excludeFolder url="file://$MODULE_DIR$/venv353" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.8 (pystudy)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.5 (pystudy)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

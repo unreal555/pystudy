@@ -2,25 +2,834 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a29feb6-6947-483a-9da2-985463451c54" name="默认的" comment="默认的">
-      <change afterPath="$PROJECT_DIR$/mysite/app01/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/app01/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/app01/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/app01/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/app01/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/app01/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/app01/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/app01/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/db.sqlite3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/mysite/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/mysite/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/mysite/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/mysite/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/mysite/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/templates/index1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ghost_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/Lib/tcl8.6/init.tcl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/Scripts/Activate.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/Scripts/_bz2.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/Scripts/_ctypes.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/Scripts/_ctypes_test.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/Scripts/_decimal.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/Scripts/_elementtree.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/Scripts/_hashlib.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/Scripts/_lzma.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/Scripts/_msi.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/Scripts/_multiprocessing.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/Scripts/_overlapped.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/Scripts/_socket.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/Scripts/_sqlite3.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/Scripts/_ssl.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/Scripts/_testbuffer.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/Scripts/_testcapi.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/Scripts/_testimportmultiple.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/Scripts/_testmultiphase.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/Scripts/_tkinter.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/Scripts/activate.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/Scripts/deactivate.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/Scripts/pyexpat.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/Scripts/python.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/Scripts/python3.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/Scripts/python35.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/Scripts/pythonw.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/Scripts/select.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/Scripts/sqlite3.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/Scripts/tcl86t.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/Scripts/tk86t.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/Scripts/unicodedata.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/Scripts/vcruntime140.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/Scripts/winsound.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/pip-selfcheck.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv353/pyvenv.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/Ghost.py-0.2.3.dist-info/METADATA" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/Ghost.py-0.2.3.dist-info/RECORD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/Ghost.py-0.2.3.dist-info/WHEEL" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/Ghost.py-0.2.3.dist-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/appdirs-1.4.4.dist-info/INSTALLER" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/appdirs-1.4.4.dist-info/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/appdirs-1.4.4.dist-info/METADATA" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/appdirs-1.4.4.dist-info/RECORD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/appdirs-1.4.4.dist-info/WHEEL" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/appdirs-1.4.4.dist-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/appdirs.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/distlib-0.3.1.dist-info/INSTALLER" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/distlib-0.3.1.dist-info/METADATA" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/distlib-0.3.1.dist-info/RECORD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/distlib-0.3.1.dist-info/WHEEL" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/distlib/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/distlib/_backport/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/distlib/_backport/misc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/distlib/_backport/shutil.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/distlib/_backport/sysconfig.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/distlib/_backport/sysconfig.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/distlib/_backport/tarfile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/distlib/compat.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/distlib/database.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/distlib/index.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/distlib/locators.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/distlib/manifest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/distlib/markers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/distlib/metadata.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/distlib/resources.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/distlib/scripts.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/distlib/t32.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/distlib/t64.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/distlib/util.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/distlib/version.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/distlib/w32.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/distlib/w64.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/distlib/wheel.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/filelock-3.0.12.dist-info/INSTALLER" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/filelock-3.0.12.dist-info/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/filelock-3.0.12.dist-info/METADATA" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/filelock-3.0.12.dist-info/RECORD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/filelock-3.0.12.dist-info/WHEEL" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/filelock-3.0.12.dist-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/filelock.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/ghost/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/ghost/bindings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/ghost/ext/django/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/ghost/ghost.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/ghost/logger.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/ghost/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/tests/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/tests/ghost/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/tests/ghost/bindings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/tests/ghost/ext/django/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/tests/ghost/ext/django/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/tests/ghost/ghost.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/tests/ghost/logger.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/tests/ghost/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/tests/run.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv-20.0.26.dist-info/INSTALLER" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv-20.0.26.dist-info/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv-20.0.26.dist-info/METADATA" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv-20.0.26.dist-info/RECORD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv-20.0.26.dist-info/WHEEL" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv-20.0.26.dist-info/entry_points.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv-20.0.26.dist-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv-20.0.26.dist-info/zip-safe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/__main__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/activation/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/activation/activator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/activation/bash/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/activation/bash/activate.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/activation/batch/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/activation/batch/activate.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/activation/batch/deactivate.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/activation/batch/pydoc.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/activation/cshell/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/activation/cshell/activate.csh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/activation/fish/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/activation/fish/activate.fish" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/activation/powershell/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/activation/powershell/activate.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/activation/python/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/activation/python/activate_this.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/activation/via_template.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/activation/xonsh/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/activation/xonsh/activate.xsh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/app_data/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/app_data/base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/app_data/na.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/app_data/via_disk_folder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/app_data/via_tempdir.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/config/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/config/cli/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/config/cli/parser.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/config/convert.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/config/env_var.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/config/ini.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/create/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/create/creator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/create/debug.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/create/describe.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/create/pyenv_cfg.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/create/via_global_ref/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/create/via_global_ref/_virtualenv.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/create/via_global_ref/api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/create/via_global_ref/builtin/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/create/via_global_ref/builtin/builtin_way.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/create/via_global_ref/builtin/cpython/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/create/via_global_ref/builtin/cpython/common.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/create/via_global_ref/builtin/cpython/cpython2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/create/via_global_ref/builtin/cpython/cpython3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/create/via_global_ref/builtin/cpython/mac_os.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/create/via_global_ref/builtin/pypy/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/create/via_global_ref/builtin/pypy/common.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/create/via_global_ref/builtin/pypy/pypy2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/create/via_global_ref/builtin/pypy/pypy3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/create/via_global_ref/builtin/python2/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/create/via_global_ref/builtin/python2/python2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/create/via_global_ref/builtin/python2/site.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/create/via_global_ref/builtin/ref.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/create/via_global_ref/builtin/via_global_self_do.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/create/via_global_ref/store.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/create/via_global_ref/venv.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/discovery/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/discovery/builtin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/discovery/cached_py_info.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/discovery/discover.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/discovery/py_info.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/discovery/py_spec.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/discovery/windows/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/discovery/windows/pep514.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/info.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/report.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/run/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/run/plugin/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/run/plugin/activators.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/run/plugin/base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/run/plugin/creators.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/run/plugin/discovery.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/run/plugin/seeders.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/run/session.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/seed/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/seed/embed/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/seed/embed/base_embed.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/seed/embed/pip_invoke.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/seed/embed/via_app_data/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/seed/embed/via_app_data/pip_install/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/seed/embed/via_app_data/pip_install/base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/seed/embed/via_app_data/pip_install/copy.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/seed/embed/via_app_data/pip_install/symlink.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/seed/embed/via_app_data/via_app_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/seed/seeder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/seed/wheels/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/seed/wheels/acquire.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/seed/wheels/bundle.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/seed/wheels/embed/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/seed/wheels/embed/pip-19.1.1-py2.py3-none-any.whl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/seed/wheels/embed/pip-20.1.1-py2.py3-none-any.whl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/seed/wheels/embed/setuptools-43.0.0-py2.py3-none-any.whl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/seed/wheels/embed/setuptools-44.1.1-py2.py3-none-any.whl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/seed/wheels/embed/setuptools-49.1.0-py3-none-any.whl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/seed/wheels/embed/wheel-0.33.6-py2.py3-none-any.whl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/seed/wheels/embed/wheel-0.34.2-py2.py3-none-any.whl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/seed/wheels/periodic_update.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/seed/wheels/util.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/util/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/util/error.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/util/lock.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/util/path/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/util/path/_pathlib/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/util/path/_pathlib/via_os_path.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/util/path/_permission.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/util/path/_sync.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/util/six.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/util/subprocess/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/util/subprocess/_win_subprocess.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/util/zipapp.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/virtualenv/version.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/analogclock/lib_setup/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/plot/examples/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/core/itopicdefnprovider.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wxPython-4.1.0.dist-info/INSTALLER" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Scripts/virtualenv.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/ghost/README.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/pystudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pystudy.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_sql_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_sql_tools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/app01/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/app01/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/mysite/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/templates/index1.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/index1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/BdfFontFile.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/BdfFontFile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/BlpImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/BlpImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/BmpImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/BmpImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/BufrStubImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/BufrStubImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ContainerIO.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/ContainerIO.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/CurImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/CurImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/DcxImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/DcxImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/DdsImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/DdsImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/EpsImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/EpsImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ExifTags.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/ExifTags.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/FitsStubImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/FitsStubImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/FliImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/FliImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/FontFile.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/FontFile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/FpxImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/FpxImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/FtexImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/FtexImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/GbrImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/GbrImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/GdImageFile.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/GdImageFile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/GifImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/GifImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/GimpGradientFile.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/GimpGradientFile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/GimpPaletteFile.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/GimpPaletteFile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/GribStubImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/GribStubImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/Hdf5StubImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/Hdf5StubImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/IcnsImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/IcnsImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/IcoImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/IcoImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/ImImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/Image.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/Image.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageChops.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/ImageChops.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageCms.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/ImageCms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageColor.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/ImageColor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageDraw.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/ImageDraw.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageDraw2.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/ImageDraw2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageEnhance.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/ImageEnhance.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageFile.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/ImageFile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageFilter.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/ImageFilter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageFont.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/ImageFont.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageGrab.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/ImageGrab.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageMath.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/ImageMath.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageMode.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/ImageMode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageMorph.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/ImageMorph.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageOps.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/ImageOps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImagePalette.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/ImagePalette.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImagePath.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/ImagePath.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageQt.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/ImageQt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageSequence.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/ImageSequence.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageShow.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/ImageShow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageStat.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/ImageStat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageTk.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/ImageTk.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageTransform.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/ImageTransform.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImageWin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/ImageWin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/ImtImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/ImtImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/IptcImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/IptcImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/Jpeg2KImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/Jpeg2KImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/JpegImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/JpegImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/JpegPresets.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/JpegPresets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/McIdasImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/McIdasImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/MicImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/MicImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/MpegImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/MpegImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/MpoImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/MpoImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/MspImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/MspImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/PSDraw.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/PSDraw.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/PaletteFile.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/PaletteFile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/PalmImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/PalmImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/PcdImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/PcdImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/PcfFontFile.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/PcfFontFile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/PcxImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/PcxImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/PdfImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/PdfImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/PdfParser.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/PdfParser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/PixarImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/PixarImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/PngImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/PngImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/PpmImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/PpmImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/PsdImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/PsdImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/PyAccess.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/PyAccess.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/SgiImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/SgiImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/SpiderImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/SpiderImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/SunImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/SunImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/TarIO.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/TarIO.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/TgaImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/TgaImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/TiffImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/TiffImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/TiffTags.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/TiffTags.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/WalImageFile.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/WalImageFile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/WebPImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/WebPImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/WmfImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/WmfImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/XVThumbImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/XVThumbImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/XbmImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/XbmImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/XpmImagePlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/XpmImagePlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/__main__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/_binary.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/_binary.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/_imaging.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/_imaging.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/_imagingcms.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/_imagingcms.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/_imagingft.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/_imagingft.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/_imagingmath.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/_imagingmath.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/_imagingmorph.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/_imagingmorph.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/_imagingtk.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/_imagingtk.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/_tkinter_finder.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/_tkinter_finder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/_util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/_version.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/_version.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/_webp.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/_webp.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/PIL/features.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/PIL/features.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/Pillow-7.1.2.dist-info/INSTALLER" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/Ghost.py-0.2.3.dist-info/INSTALLER" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/Pillow-7.1.2.dist-info/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/Pillow-7.1.2.dist-info/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/Pillow-7.1.2.dist-info/METADATA" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/Pillow-7.1.2.dist-info/METADATA" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/Pillow-7.1.2.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/Pillow-7.1.2.dist-info/RECORD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/Pillow-7.1.2.dist-info/WHEEL" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/Pillow-7.1.2.dist-info/WHEEL" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/Pillow-7.1.2.dist-info/top_level.txt" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/Pillow-7.1.2.dist-info/top_level.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/Pillow-7.1.2.dist-info/zip-safe" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/Pillow-7.1.2.dist-info/zip-safe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/__version__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/__version__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/_adv.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/_adv.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/_aui.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/_aui.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/_core.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/_core.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/_dataview.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/_dataview.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/_glcanvas.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/_glcanvas.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/_grid.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/_grid.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/_html.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/_html.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/_html2.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/_html2.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/_media.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/_media.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/_msw.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/_msw.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/_propgrid.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/_propgrid.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/_ribbon.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/_ribbon.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/_richtext.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/_richtext.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/_stc.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/_stc.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/_xml.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/_xml.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/_xrc.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/_xrc.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/adv.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/adv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/adv.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/adv.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/aui.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/aui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/aui.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/aui.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/core.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/core.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/core.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/core.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/dataview.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/dataview.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/dataview.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/dataview.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/gizmos.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/gizmos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/glcanvas.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/glcanvas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/glcanvas.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/glcanvas.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/grid.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/grid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/grid.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/grid.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/html.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/html.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/html.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/html.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/html2.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/html2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/html2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/html2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/include/wxPython/sip.h" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/include/wxPython/sip.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/include/wxPython/wxpy_api.h" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/include/wxPython/wxpy_api.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/CDate.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/CDate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/ClickableHtmlWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/ClickableHtmlWindow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/ghost/ext/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/activex.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/activex.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/activexwrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/activexwrapper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/advancedsplash.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/advancedsplash.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/aquabutton.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/aquabutton.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/artmanager.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/artmanager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/aui/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/aui/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/aui/aui_constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/aui/aui_constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/aui/aui_switcherdialog.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/aui/aui_switcherdialog.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/aui/aui_utilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/aui/aui_utilities.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/aui/auibar.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/aui/auibar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/aui/auibook.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/aui/auibook.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/aui/dockart.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/aui/dockart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/aui/framemanager.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/aui/framemanager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/aui/tabart.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/aui/tabart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/aui/tabmdi.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/aui/tabmdi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/balloontip.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/balloontip.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/buttonpanel.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/buttonpanel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/cubecolourdialog.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/cubecolourdialog.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/customtreectrl.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/customtreectrl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/data/ShortcutEditor_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/data/ShortcutEditor_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/data/ShortcutEditor_1_thumb.png" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/data/ShortcutEditor_1_thumb.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/data/ShortcutEditor_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/data/ShortcutEditor_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/data/ShortcutEditor_2_thumb.png" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/data/ShortcutEditor_2_thumb.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/data/ShortcutEditor_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/data/ShortcutEditor_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/data/ShortcutEditor_3_thumb.png" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/data/ShortcutEditor_3_thumb.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/data/ShortcutEditor_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/data/ShortcutEditor_4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/data/ShortcutEditor_4_thumb.png" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/data/ShortcutEditor_4_thumb.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/data/default_help_text.html" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/data/default_help_text.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/flatmenu.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/flatmenu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/flatnotebook.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/flatnotebook.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/floatspin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/floatspin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/fmcustomizedlg.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/fmcustomizedlg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/fmresources.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/fmresources.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/foldpanelbar.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/foldpanelbar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/fourwaysplitter.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/fourwaysplitter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/genericmessagedialog.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/genericmessagedialog.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/gradientbutton.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/gradientbutton.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/hyperlink.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/hyperlink.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/hypertreelist.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/hypertreelist.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/infobar.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/infobar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/knobctrl.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/knobctrl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/labelbook.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/labelbook.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/multidirdialog.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/multidirdialog.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/peakmeter.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/peakmeter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/persist/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/persist/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/persist/persist_constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/persist/persist_constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/persist/persist_handlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/persist/persist_handlers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/persist/persistencemanager.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/persist/persistencemanager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/piectrl.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/piectrl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/pybusyinfo.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/pybusyinfo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/pycollapsiblepane.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/pycollapsiblepane.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/pygauge.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/pygauge.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/pyprogress.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/pyprogress.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/ribbon/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/ribbon/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/ribbon/art.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/ribbon/art.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/ribbon/art_aui.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/ribbon/art_aui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/ribbon/art_default.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/ribbon/art_default.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/ribbon/art_internal.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/ribbon/art_internal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/ribbon/art_msw.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/ribbon/art_msw.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/ribbon/art_osx.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/ribbon/art_osx.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/ribbon/bar.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/ribbon/bar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/ribbon/buttonbar.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/ribbon/buttonbar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/ribbon/control.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/ribbon/control.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/ribbon/gallery.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/ribbon/gallery.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/ribbon/page.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/ribbon/page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/ribbon/panel.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/ribbon/panel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/ribbon/toolbar.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/ribbon/toolbar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/rulerctrl.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/rulerctrl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/shapedbutton.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/shapedbutton.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/shortcuteditor.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/shortcuteditor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/speedmeter.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/speedmeter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/supertooltip.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/supertooltip.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/thumbnailctrl.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/thumbnailctrl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/toasterbox.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/toasterbox.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/ultimatelistctrl.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/ultimatelistctrl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/xlsgrid.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/xlsgrid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/agw/zoombar.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/agw/zoombar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/analogclock/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/analogclock/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/analogclock/analogclock.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/analogclock/analogclock.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/analogclock/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/analogclock/helpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/analogclock/lib_setup/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/ghost/ext/django/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/analogclock/lib_setup/buttontreectrlpanel.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/analogclock/lib_setup/buttontreectrlpanel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/analogclock/lib_setup/fontselect.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/analogclock/lib_setup/fontselect.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/analogclock/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/analogclock/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/analogclock/styles.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/analogclock/styles.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/anchors.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/anchors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/art/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/art/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/art/flagart.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/art/flagart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/art/img2pyartprov.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/art/img2pyartprov.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/busy.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/busy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/buttons.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/buttons.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/calendar.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/calendar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/colourchooser/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/colourchooser/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/colourchooser/canvas.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/colourchooser/canvas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/colourchooser/intl.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/colourchooser/intl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/colourchooser/pycolourbox.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/colourchooser/pycolourbox.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/colourchooser/pycolourchooser.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/colourchooser/pycolourchooser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/colourchooser/pycolourslider.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/colourchooser/pycolourslider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/colourchooser/pypalette.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/colourchooser/pypalette.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/colourdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/colourdb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/colourselect.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/colourselect.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/colourutils.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/colourutils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/combotreebox.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/combotreebox.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/delayedresult.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/delayedresult.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/dialogs.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/dialogs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/docview.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/docview.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/dragscroller.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/dragscroller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/editor/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/editor/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/editor/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/editor/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/editor/editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/editor/editor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/editor/images.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/editor/images.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/editor/selection.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/editor/selection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/embeddedimage.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/embeddedimage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/eventStack.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/eventStack.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/eventwatcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/eventwatcher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/evtmgr.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/evtmgr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/expando.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/expando.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/fancytext.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/fancytext.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/filebrowsebutton.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/filebrowsebutton.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/flashwin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/flashwin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/flashwin_old.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/flashwin_old.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/floatcanvas/FCEvents.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/floatcanvas/FCEvents.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/floatcanvas/FCObjects.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/floatcanvas/FCObjects.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/floatcanvas/FloatCanvas.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/floatcanvas/FloatCanvas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/floatcanvas/GUIMode.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/floatcanvas/GUIMode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/floatcanvas/NavCanvas.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/floatcanvas/NavCanvas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/floatcanvas/Resources.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/floatcanvas/Resources.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/floatcanvas/ScreenShot.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/floatcanvas/ScreenShot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/floatcanvas/Utilities/BBox.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/floatcanvas/Utilities/BBox.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/floatcanvas/Utilities/Colors.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/floatcanvas/Utilities/Colors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/floatcanvas/Utilities/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/floatcanvas/Utilities/GUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/floatcanvas/Utilities/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/floatcanvas/Utilities/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/floatcanvas/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/floatcanvas/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/foldmenu.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/foldmenu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/gestures.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/gestures.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/gizmos/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/gizmos/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/gizmos/dynamicsash.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/gizmos/dynamicsash.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/gizmos/ledctrl.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/gizmos/ledctrl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/gizmos/treelistctrl.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/gizmos/treelistctrl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/graphics.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/graphics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/gridmovers.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/gridmovers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/iewin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/iewin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/iewin_old.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/iewin_old.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/imagebrowser.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/imagebrowser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/imageutils.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/imageutils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/infoframe.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/infoframe.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/inspection.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/inspection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/intctrl.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/intctrl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/itemspicker.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/itemspicker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/langlistctrl.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/langlistctrl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/layoutf.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/layoutf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/masked/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/masked/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/masked/combobox.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/masked/combobox.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/masked/ctrl.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/masked/ctrl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/masked/ipaddrctrl.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/masked/ipaddrctrl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/masked/maskededit.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/masked/maskededit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/masked/numctrl.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/masked/numctrl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/masked/textctrl.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/masked/textctrl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/masked/timectrl.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/masked/timectrl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/mixins/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/mixins/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/mixins/grid.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/mixins/grid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/mixins/gridlabelrenderer.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/mixins/gridlabelrenderer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/mixins/imagelist.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/mixins/imagelist.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/mixins/inspection.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/mixins/inspection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/mixins/listctrl.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/mixins/listctrl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/mixins/rubberband.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/mixins/rubberband.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/mixins/treemixin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/mixins/treemixin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/msgpanel.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/msgpanel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/multisash.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/multisash.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/myole4ax.idl" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/myole4ax.idl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/myole4ax.tlb" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/myole4ax.tlb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/newevent.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/newevent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/nvdlg.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/nvdlg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/ogl/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/ogl/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/ogl/basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/ogl/basic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/ogl/bmpshape.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/ogl/bmpshape.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/ogl/canvas.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/ogl/canvas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/ogl/composit.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/ogl/composit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/ogl/diagram.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/ogl/diagram.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/ogl/divided.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/ogl/divided.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/ogl/drawn.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/ogl/drawn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/ogl/lines.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/ogl/lines.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/ogl/oglmisc.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/ogl/oglmisc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pdfviewer/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pdfviewer/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pdfviewer/bitmaps/ArrowLeft.png" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pdfviewer/bitmaps/ArrowLeft.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pdfviewer/bitmaps/ArrowRight.png" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pdfviewer/bitmaps/ArrowRight.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pdfviewer/bitmaps/DirectionH.png" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pdfviewer/bitmaps/DirectionH.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pdfviewer/bitmaps/DirectionV.png" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pdfviewer/bitmaps/DirectionV.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pdfviewer/bitmaps/PlayerFirst.png" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pdfviewer/bitmaps/PlayerFirst.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pdfviewer/bitmaps/PlayerLast.png" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pdfviewer/bitmaps/PlayerLast.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pdfviewer/bitmaps/PlayerNext.png" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pdfviewer/bitmaps/PlayerNext.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pdfviewer/bitmaps/PlayerPrev.png" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pdfviewer/bitmaps/PlayerPrev.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pdfviewer/bitmaps/Printer.png" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pdfviewer/bitmaps/Printer.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pdfviewer/bitmaps/ReadMe.txt" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pdfviewer/bitmaps/ReadMe.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pdfviewer/bitmaps/Save.png" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pdfviewer/bitmaps/Save.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pdfviewer/bitmaps/ZoomIn.png" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pdfviewer/bitmaps/ZoomIn.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pdfviewer/bitmaps/ZoomOut.png" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pdfviewer/bitmaps/ZoomOut.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pdfviewer/bitmaps/encode_bitmaps.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pdfviewer/bitmaps/encode_bitmaps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pdfviewer/buttonpanel.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pdfviewer/buttonpanel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pdfviewer/images.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pdfviewer/images.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pdfviewer/viewer.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pdfviewer/viewer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pdfwin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pdfwin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pdfwin_old.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pdfwin_old.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/platebtn.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/platebtn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/plot/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/plot/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/plot/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/plot/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/plot/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/plot/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/plot/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/plot/__main__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/plot/examples/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/tests/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/plot/examples/demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/plot/examples/demo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/plot/examples/simple_example.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/plot/examples/simple_example.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/plot/plotcanvas.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/plot/plotcanvas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/plot/polyobjects.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/plot/polyobjects.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/plot/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/plot/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/popupctl.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/popupctl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/printout.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/printout.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/progressindicator.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/progressindicator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/LICENSE_BSD_Simple.txt" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/LICENSE_BSD_Simple.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/README_WxPython.txt" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/README_WxPython.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/RELEASE_NOTES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/RELEASE_NOTES.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/core/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/core/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/core/arg1/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/core/arg1/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/core/arg1/listenerimpl.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/core/arg1/listenerimpl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/core/arg1/publisher.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/core/arg1/publisher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/core/arg1/publishermixin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/core/arg1/publishermixin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/core/arg1/topicargspecimpl.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/core/arg1/topicargspecimpl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/core/arg1/topicmgrimpl.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/core/arg1/topicmgrimpl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/core/callables.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/core/callables.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/core/imp2.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/core/imp2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/core/itopicdefnprovider.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/tests/ghost/ext/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/core/kwargs/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/core/kwargs/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/core/kwargs/datamsg.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/core/kwargs/datamsg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/core/kwargs/listenerimpl.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/core/kwargs/listenerimpl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/core/kwargs/publisher.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/core/kwargs/publisher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/core/kwargs/publishermixin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/core/kwargs/publishermixin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/core/kwargs/topicargspecimpl.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/core/kwargs/topicargspecimpl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/core/kwargs/topicmgrimpl.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/core/kwargs/topicmgrimpl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/core/listener.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/core/listener.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/core/listenerbase.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/core/listenerbase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/core/notificationmgr.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/core/notificationmgr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/core/publisherbase.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/core/publisherbase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/core/topicargspec.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/core/topicargspec.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/core/topicdefnprovider.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/core/topicdefnprovider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/core/topicexc.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/core/topicexc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/core/topicmgr.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/core/topicmgr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/core/topicobj.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/core/topicobj.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/core/topictreetraverser.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/core/topictreetraverser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/core/topicutils.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/core/topicutils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/core/treeconfig.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/core/treeconfig.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/core/validatedefnargs.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/core/validatedefnargs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/core/weakmethod.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/core/weakmethod.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/policies.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/policies.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/pub.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/pub.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/py2and3.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/py2and3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/setuparg1.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/setuparg1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/setupkwargs.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/setupkwargs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/utils/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/utils/exchandling.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/utils/exchandling.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/utils/misc.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/utils/misc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/utils/notification.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/utils/notification.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/utils/topictreeprinter.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/utils/topictreeprinter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pubsub/utils/xmltopicdefnprovider.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pubsub/utils/xmltopicdefnprovider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/pydocview.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/pydocview.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/rcsizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/rcsizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/resizewidget.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/resizewidget.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/scrolledpanel.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/scrolledpanel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/sheet.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/sheet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/sized_controls.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/sized_controls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/softwareupdate.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/softwareupdate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/splitter.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/splitter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/statbmp.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/statbmp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/stattext.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/stattext.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/throbber.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/throbber.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/ticker.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/ticker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/ticker_xrc.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/ticker_xrc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/wordwrap.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/wordwrap.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/wxcairo/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/wxcairo/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/wxcairo/wx_cairocffi.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/wxcairo/wx_cairocffi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/wxcairo/wx_pycairo.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/wxcairo/wx_pycairo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/lib/wxpTag.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/lib/wxpTag.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/libcairo-2.dll" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/libcairo-2.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/af/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/af/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/an/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/an/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/ar/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/ar/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/ca/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/ca/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/ca@valencia/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/ca@valencia/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/cs/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/cs/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/da/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/da/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/de/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/de/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/el/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/el/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/es/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/es/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/eu/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/eu/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/fi/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/fi/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/fr/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/fr/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/gl_ES/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/gl_ES/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/hi/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/hi/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/hr/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/hr/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/hu/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/hu/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/id/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/id/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/it/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/it/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/ja/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/ja/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/ko_KR/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/ko_KR/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/lt/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/lt/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/lv/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/lv/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/ms/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/ms/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/nb/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/nb/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/ne/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/ne/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/nl/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/nl/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/pl/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/pl/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/pt/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/pt/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/pt_BR/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/pt_BR/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/ro/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/ro/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/ru/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/ru/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/sk/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/sk/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/sl/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/sl/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/sq/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/sq/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/sv/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/sv/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/ta/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/ta/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/tr/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/tr/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/uk/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/uk/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/vi/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/vi/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/zh_CN/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/zh_CN/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/locale/zh_TW/LC_MESSAGES/wxstd.mo" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/locale/zh_TW/LC_MESSAGES/wxstd.mo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/media.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/media.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/media.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/media.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/msvcp140.dll" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/msvcp140.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/msw.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/msw.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/msw.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/msw.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/propgrid.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/propgrid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/propgrid.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/propgrid.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/CHANGES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/CHANGES.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/Py.ico" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/Py.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/PyAlaCarte.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/PyAlaCarte.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/PyAlaMode.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/PyAlaMode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/PyAlaModeTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/PyAlaModeTest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/PyCrust.ico" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/PyCrust.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/PyCrust.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/PyCrust.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/PyCrust_16.png" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/PyCrust_16.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/PyCrust_32.png" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/PyCrust_32.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/PyFilling.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/PyFilling.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/PyShell.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/PyShell.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/PySlices.ico" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/PySlices.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/PySlices.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/PySlices.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/PySlicesShell.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/PySlicesShell.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/PySlices_16.png" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/PySlices_16.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/PySlices_32.png" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/PySlices_32.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/PyWrap.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/PyWrap.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/buffer.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/buffer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/crust.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/crust.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/crustslices.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/crustslices.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/dispatcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/dispatcher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/document.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/document.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/editor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/editwindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/editwindow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/filling.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/filling.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/frame.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/frame.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/images.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/images.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/interpreter.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/interpreter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/introspect.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/introspect.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/magic.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/magic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/parse.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/parse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/path.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/path.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/pseudo.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/pseudo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/shell.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/shell.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/sliceshell.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/sliceshell.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/tests/test_interpreter.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/tests/test_interpreter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/tests/test_introspect.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/tests/test_introspect.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/tests/test_pseudo.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/tests/test_pseudo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/tests/test_version.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/tests/test_version.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/tests/testall.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/tests/testall.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/py/version.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/py/version.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/ribbon.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/ribbon.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/ribbon.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/ribbon.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/richtext.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/richtext.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/richtext.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/richtext.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/siplib.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/siplib.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/stc.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/stc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/stc.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/stc.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/svg/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/svg/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/svg/_nanosvg.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/svg/_nanosvg.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/tools/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/tools/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/tools/dbg.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/tools/dbg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/tools/genaxmodule.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/tools/genaxmodule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/tools/helpviewer.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/tools/helpviewer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/tools/img2img.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/tools/img2img.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/tools/img2png.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/tools/img2png.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/tools/img2py.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/tools/img2py.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/tools/img2xpm.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/tools/img2xpm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/tools/pywxrc.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/tools/pywxrc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/tools/wxget.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/tools/wxget.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/tools/wxget_docs_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/tools/wxget_docs_demo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/vcruntime140.dll" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/vcruntime140.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/webkit.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/webkit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/webkit.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/webkit.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/wxbase314u_net_vc140_x64.dll" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/wxbase314u_net_vc140_x64.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/wxbase314u_vc140_x64.dll" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/wxbase314u_vc140_x64.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/wxbase314u_xml_vc140_x64.dll" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/wxbase314u_xml_vc140_x64.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/wxmsw314u_adv_vc140_x64.dll" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/wxmsw314u_adv_vc140_x64.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/wxmsw314u_aui_vc140_x64.dll" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/wxmsw314u_aui_vc140_x64.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/wxmsw314u_core_vc140_x64.dll" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/wxmsw314u_core_vc140_x64.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/wxmsw314u_gl_vc140_x64.dll" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/wxmsw314u_gl_vc140_x64.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/wxmsw314u_html_vc140_x64.dll" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/wxmsw314u_html_vc140_x64.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/wxmsw314u_media_vc140_x64.dll" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/wxmsw314u_media_vc140_x64.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/wxmsw314u_propgrid_vc140_x64.dll" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/wxmsw314u_propgrid_vc140_x64.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/wxmsw314u_qa_vc140_x64.dll" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/wxmsw314u_qa_vc140_x64.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/wxmsw314u_ribbon_vc140_x64.dll" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/wxmsw314u_ribbon_vc140_x64.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/wxmsw314u_richtext_vc140_x64.dll" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/wxmsw314u_richtext_vc140_x64.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/wxmsw314u_stc_vc140_x64.dll" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/wxmsw314u_stc_vc140_x64.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/wxmsw314u_webview_vc140_x64.dll" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/wxmsw314u_webview_vc140_x64.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/wxmsw314u_xrc_vc140_x64.dll" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/wxmsw314u_xrc_vc140_x64.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/xml.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/xml.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/xml.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/xml.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/xrc.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/xrc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wx/xrc.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wx/xrc.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wxPython-4.1.0.dist-info/INSTALLER" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/Pillow-7.1.2.dist-info/INSTALLER" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wxPython-4.1.0.dist-info/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wxPython-4.1.0.dist-info/LICENSE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wxPython-4.1.0.dist-info/METADATA" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wxPython-4.1.0.dist-info/METADATA" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wxPython-4.1.0.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wxPython-4.1.0.dist-info/RECORD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wxPython-4.1.0.dist-info/WHEEL" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wxPython-4.1.0.dist-info/WHEEL" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wxPython-4.1.0.dist-info/entry_points.txt" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wxPython-4.1.0.dist-info/entry_points.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/wxPython-4.1.0.dist-info/top_level.txt" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/wxPython-4.1.0.dist-info/top_level.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/Activate.ps1" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Scripts/Activate.ps1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/activate" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Scripts/activate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/activate.bat" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Scripts/activate.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/deactivate.bat" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Scripts/deactivate.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/helpviewer.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Scripts/helpviewer.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/img2png.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Scripts/img2png.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/img2py.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Scripts/img2py.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/img2xpm.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Scripts/img2xpm.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/pycrust.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Scripts/pycrust.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/pyshell.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Scripts/pyshell.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/pyslices.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Scripts/pyslices.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/pyslicesshell.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Scripts/pyslicesshell.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/python.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Scripts/python.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/pythonw.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Scripts/pythonw.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/pywxrc.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Scripts/pywxrc.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/wxdemo.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Scripts/wxdemo.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/wxdocs.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Scripts/wxdocs.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/wxget.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/Scripts/wxget.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/pyvenv.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/venv38/pyvenv.cfg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +892,12 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="oa" type="feb32156:DbDataSourceImpl" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="FavoritesManager">
@@ -93,8 +907,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Unit Test" />
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -129,14 +943,15 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="ToolWindowPython Console.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/mysite/mysite" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/venv353" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -155,13 +970,6 @@
     </option>
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\PyCharm2019.3.1\pystudy\mysite" />
-      <recent name="D:\PyCharm2019.3.1\pystudy\mysite\app01" />
-      <recent name="D:\PyCharm2019.3.1\pystudy\mysite\app01\templates" />
-      <recent name="D:\PyCharm2019.3.1\pystudy\学习" />
-      <recent name="D:\PyCharm2019.3.1\pystudy" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\PyCharm2019.3.1\pystudy\mysite\mysite" />
       <recent name="D:\PyCharm2019.3.1\pystudy\mysite\app01\template" />
@@ -169,8 +977,15 @@
       <recent name="D:\PyCharm2019.3.1\pystudy\新闻抓取" />
       <recent name="D:\PyCharm2019.3.1\pystudy" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\PyCharm2019.3.1\pystudy" />
+      <recent name="D:\PyCharm2019.3.1\pystudy\mysite" />
+      <recent name="D:\PyCharm2019.3.1\pystudy\mysite\app01" />
+      <recent name="D:\PyCharm2019.3.1\pystudy\mysite\app01\templates" />
+      <recent name="D:\PyCharm2019.3.1\pystudy\学习" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.猜数字">
+  <component name="RunManager" selected="Python.ghost_test">
     <configuration name="猜数字" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -215,7 +1030,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="my_html_tools" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="ghost_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -228,7 +1043,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my_html_tools.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ghost_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -237,7 +1052,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="my_test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="my_sql_tools" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -250,7 +1065,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my_test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my_sql_tools.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -284,17 +1099,17 @@
     <list>
       <item itemvalue="Python.猜数字" />
       <item itemvalue="Python.ciyun" />
-      <item itemvalue="Python.my_html_tools" />
-      <item itemvalue="Python.my_test (1)" />
       <item itemvalue="Python.my_txt_writer" />
+      <item itemvalue="Python.my_sql_tools" />
+      <item itemvalue="Python.ghost_test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.ghost_test" />
+        <item itemvalue="Python.my_sql_tools" />
         <item itemvalue="Python.猜数字" />
         <item itemvalue="Python.ciyun" />
         <item itemvalue="Python.my_txt_writer" />
-        <item itemvalue="Python.my_test (1)" />
-        <item itemvalue="Python.my_html_tools" />
       </list>
     </recent_temporary>
   </component>
@@ -403,14 +1218,10 @@
       <workItem from="1594197102878" duration="2021000" />
       <workItem from="1594341469807" duration="1244000" />
       <workItem from="1594348538428" duration="1261000" />
-      <workItem from="1594366201801" duration="4330000" />
-    </task>
-    <task id="LOCAL-00042" summary="默认的">
-      <created>1592213396632</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1592213396632</updated>
+      <workItem from="1594366201801" duration="4411000" />
+      <workItem from="1594619734543" duration="542000" />
+      <workItem from="1594689614695" duration="7391000" />
+      <workItem from="1594784616196" duration="7507000" />
     </task>
     <task id="LOCAL-00043" summary="默认的">
       <created>1592213670734</created>
@@ -748,7 +1559,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594348210132</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="默认的">
+      <created>1594372710747</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1594372710747</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -882,9 +1700,10 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="355" y="127" key="#baidu-news/0.0.1280.984@0.0.1280.984" timestamp="1593481773321" />
-    <state x="94" y="149" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593491403152">
-      <screen x="0" y="0" width="1280" height="984" />
+    <state x="94" y="148" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594692161631">
+      <screen x="0" y="0" width="1280" height="980" />
     </state>
+    <state x="94" y="148" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.980@0.0.1280.980" timestamp="1594692161631" />
     <state x="94" y="149" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.984@0.0.1280.984" timestamp="1593491403152" />
     <state x="392" y="299" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594087497018">
       <screen x="0" y="0" width="1280" height="984" />
@@ -930,73 +1749,79 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="355" y="127" key="#新闻/0.0.1280.984@0.0.1280.984" timestamp="1593738539691" />
-    <state x="288" y="88" key="CommitChangelistDialog2" timestamp="1594348208603">
+    <state x="85" y="88" key="CommitChangelistDialog2" timestamp="1594802615408">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="288" y="88" key="CommitChangelistDialog2/0.0.1280.980@0.0.1280.980" timestamp="1594348208603" />
+    <state x="85" y="88" key="CommitChangelistDialog2/0.0.1280.980@0.0.1280.980" timestamp="1594802615408" />
     <state x="288" y="88" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1594107910084" />
     <state x="0" y="108" key="CommitChangelistDialog2/0.0.600.1204@0.0.600.1204" timestamp="1592798943488" />
-    <state x="120" y="79" key="DiffContextDialog" timestamp="1594088824886">
-      <screen x="0" y="0" width="1280" height="984" />
+    <state x="120" y="79" key="DiffContextDialog" timestamp="1594802511324">
+      <screen x="0" y="0" width="1280" height="980" />
     </state>
+    <state x="120" y="79" key="DiffContextDialog/0.0.1280.980@0.0.1280.980" timestamp="1594802511324" />
     <state x="120" y="79" key="DiffContextDialog/0.0.1280.984@0.0.1280.984" timestamp="1594088824886" />
-    <state x="420" y="236" key="FileChooserDialogImpl" timestamp="1594175172144">
+    <state x="420" y="236" key="FileChooserDialogImpl" timestamp="1594800028203">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="420" y="236" key="FileChooserDialogImpl/0.0.1280.980@0.0.1280.980" timestamp="1594175172144" />
+    <state x="420" y="236" key="FileChooserDialogImpl/0.0.1280.980@0.0.1280.980" timestamp="1594800028203" />
     <state x="420" y="237" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1593738769635" />
-    <state width="1236" height="53" key="GridCell.Tab.0.bottom" timestamp="1594372672652">
+    <state width="1236" height="251" key="GridCell.Tab.0.bottom" timestamp="1594800613654">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="53" key="GridCell.Tab.0.bottom/0.0.1280.980@0.0.1280.980" timestamp="1594372672652" />
+    <state width="1236" height="251" key="GridCell.Tab.0.bottom/0.0.1280.980@0.0.1280.980" timestamp="1594800613654" />
     <state width="1236" height="259" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1594103648152" />
-    <state width="1236" height="53" key="GridCell.Tab.0.center" timestamp="1594372672652">
+    <state width="1236" height="251" key="GridCell.Tab.0.center" timestamp="1594800613607">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="53" key="GridCell.Tab.0.center/0.0.1280.980@0.0.1280.980" timestamp="1594372672652" />
+    <state width="1236" height="251" key="GridCell.Tab.0.center/0.0.1280.980@0.0.1280.980" timestamp="1594800613607" />
     <state width="1236" height="259" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1594103648152" />
-    <state width="1236" height="53" key="GridCell.Tab.0.left" timestamp="1594372672652">
+    <state width="1236" height="251" key="GridCell.Tab.0.left" timestamp="1594800613576">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="53" key="GridCell.Tab.0.left/0.0.1280.980@0.0.1280.980" timestamp="1594372672652" />
+    <state width="1236" height="251" key="GridCell.Tab.0.left/0.0.1280.980@0.0.1280.980" timestamp="1594800613576" />
     <state width="1236" height="259" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1594103648152" />
-    <state width="1236" height="53" key="GridCell.Tab.0.right" timestamp="1594372672652">
+    <state width="1236" height="251" key="GridCell.Tab.0.right" timestamp="1594800613607">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="53" key="GridCell.Tab.0.right/0.0.1280.980@0.0.1280.980" timestamp="1594372672652" />
+    <state width="1236" height="251" key="GridCell.Tab.0.right/0.0.1280.980@0.0.1280.980" timestamp="1594800613607" />
     <state width="1236" height="259" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1594103648152" />
-    <state width="1236" height="318" key="GridCell.Tab.1.bottom" timestamp="1594195790101">
+    <state width="1236" height="318" key="GridCell.Tab.1.bottom" timestamp="1594785551115">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="318" key="GridCell.Tab.1.bottom/0.0.1280.980@0.0.1280.980" timestamp="1594195790101" />
+    <state width="1236" height="318" key="GridCell.Tab.1.bottom/0.0.1280.980@0.0.1280.980" timestamp="1594785551115" />
     <state width="1236" height="121" key="GridCell.Tab.1.bottom/0.0.1280.984@0.0.1280.984" timestamp="1593595608032" />
-    <state width="1236" height="318" key="GridCell.Tab.1.center" timestamp="1594195790100">
+    <state width="1236" height="318" key="GridCell.Tab.1.center" timestamp="1594785551115">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="318" key="GridCell.Tab.1.center/0.0.1280.980@0.0.1280.980" timestamp="1594195790100" />
+    <state width="1236" height="318" key="GridCell.Tab.1.center/0.0.1280.980@0.0.1280.980" timestamp="1594785551115" />
     <state width="1236" height="121" key="GridCell.Tab.1.center/0.0.1280.984@0.0.1280.984" timestamp="1593595608032" />
-    <state width="1236" height="318" key="GridCell.Tab.1.left" timestamp="1594195790100">
+    <state width="1236" height="318" key="GridCell.Tab.1.left" timestamp="1594785551114">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="318" key="GridCell.Tab.1.left/0.0.1280.980@0.0.1280.980" timestamp="1594195790100" />
+    <state width="1236" height="318" key="GridCell.Tab.1.left/0.0.1280.980@0.0.1280.980" timestamp="1594785551114" />
     <state width="1236" height="121" key="GridCell.Tab.1.left/0.0.1280.984@0.0.1280.984" timestamp="1593595608032" />
-    <state width="1236" height="318" key="GridCell.Tab.1.right" timestamp="1594195790100">
+    <state width="1236" height="318" key="GridCell.Tab.1.right" timestamp="1594785551115">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="318" key="GridCell.Tab.1.right/0.0.1280.980@0.0.1280.980" timestamp="1594195790100" />
+    <state width="1236" height="318" key="GridCell.Tab.1.right/0.0.1280.980@0.0.1280.980" timestamp="1594785551115" />
     <state width="1236" height="121" key="GridCell.Tab.1.right/0.0.1280.984@0.0.1280.984" timestamp="1593595608032" />
+    <state width="220" height="477" key="HiddenNamespacesPopup" timestamp="1594692021500">
+      <screen x="0" y="0" width="1280" height="980" />
+    </state>
+    <state width="220" height="477" key="HiddenNamespacesPopup/0.0.1280.980@0.0.1280.980" timestamp="1594692021500" />
     <state x="477" y="215" key="RollbackChangesDialog" timestamp="1593659862517">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="477" y="215" key="RollbackChangesDialog/0.0.1280.984@0.0.1280.984" timestamp="1593659862517" />
-    <state x="140" y="127" key="SettingsEditor" timestamp="1594088595969">
-      <screen x="0" y="0" width="1280" height="984" />
-    </state>
-    <state x="140" y="127" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1594088595969" />
-    <state x="232" y="226" key="Vcs.Push.Dialog.v2" timestamp="1594348218665">
+    <state x="182" y="100" key="SettingsEditor" timestamp="1594802108453">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="232" y="226" key="Vcs.Push.Dialog.v2/0.0.1280.980@0.0.1280.980" timestamp="1594348218665" />
+    <state x="182" y="100" key="SettingsEditor/0.0.1280.980@0.0.1280.980" timestamp="1594802108453" />
+    <state x="140" y="127" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1594088595969" />
+    <state x="232" y="226" key="Vcs.Push.Dialog.v2" timestamp="1594802649915">
+      <screen x="0" y="0" width="1280" height="980" />
+    </state>
+    <state x="232" y="226" key="Vcs.Push.Dialog.v2/0.0.1280.980@0.0.1280.980" timestamp="1594802649915" />
     <state x="232" y="227" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1594107923000" />
     <state x="0" y="278" key="Vcs.Push.Dialog.v2/0.0.600.1204@0.0.600.1204" timestamp="1592798962763" />
     <state x="92" y="92" width="1096" height="800" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1593661305224">
@@ -1007,6 +1832,14 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1280.984@0.0.1280.984" timestamp="1592458303069" />
+    <state x="92" y="92" width="1096" height="796" key="dock-window-1" timestamp="1594785001174">
+      <screen x="0" y="0" width="1280" height="980" />
+    </state>
+    <state x="92" y="92" width="1096" height="796" key="dock-window-1/0.0.1280.980@0.0.1280.980" timestamp="1594785001174" />
+    <state x="92" y="92" width="1096" height="796" key="dock-window-2" timestamp="1594785001174">
+      <screen x="0" y="0" width="1280" height="980" />
+    </state>
+    <state x="92" y="92" width="1096" height="796" key="dock-window-2/0.0.1280.980@0.0.1280.980" timestamp="1594785001174" />
     <state x="353" y="292" key="git4idea.merge.GitPullDialog" timestamp="1594341505608">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
@@ -1050,6 +1883,8 @@
     <SUITE FILE_PATH="coverage/pystudy$my_banquan_clean.coverage" NAME="my_banquan_clean Coverage Results" MODIFIED="1594025643634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$save_read_config.coverage" NAME="save_read_config Coverage Results" MODIFIED="1592470627872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$my_csv_tools.coverage" NAME="my_csv_tools Coverage Results" MODIFIED="1593582650776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$my_sql_tools.coverage" NAME="my_sql_tools Coverage Results" MODIFIED="1594692751571" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$ghost_test.coverage" NAME="ghost_test Coverage Results" MODIFIED="1594795205202" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$my_file_get.coverage" NAME="my_file_get Coverage Results" MODIFIED="1594015752482" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$www_hbjc_gov_cn.coverage" NAME="www.hbjc.gov.cn Coverage Results" MODIFIED="1593505132311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$quchong.coverage" NAME="csv_duplicates Coverage Results" MODIFIED="1593565736597" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
