@@ -122,7 +122,8 @@ if __name__=='__main__':
     logger=logger()
     logger.write('asdadfalsdjfklasdadg')
     logger.write('asdadfalsdjfklasdadg', 'assdsd')
-    print(logger.check('sdadfalsdjfkla'))
+    logger.write(('adfadfadf','adfadasdfasdf'))
+    print(logger.check('asda'))
 
     del logger
 
