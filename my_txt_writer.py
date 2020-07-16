@@ -29,7 +29,7 @@ def write_txt(file,data,tab=1,enter=1,codec='utf-8',debug=False):
 
     if  os.path.exists(file) and os.path.isfile(file):
         if isinstance(data,str):
-            with open(file_path,'a',encoding=codec) as f:
+            with open(file,'a',encoding=codec) as f:
                 f.write(tab+str(data)+enter)
                 logging.info('{}写入成功'.format(data))
 

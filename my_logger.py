@@ -33,12 +33,7 @@ class logger():
             log = time.strftime('%Y-%m-%d %H:%M:%S') + '\t' + '创建日志'
             self.__do(log)
 
-        with open(self.__file, 'a', encoding='utf-8') as f:
-            f.write(self.__mark)
-            f.write(log)
-            f.write(self.__mark)
-            f.write(self.__huan_hang)
-            f.flush()
+
 
     def write(self,*info):
 
@@ -102,6 +97,14 @@ class logger():
         log= time.strftime('%Y-%m-%d %H:%M:%S') + '\t' + '重建完成'
 
         self.__do(log)
+
+    def __do(self,log):
+        with open(self.__file, 'a', encoding='utf-8') as f:
+            f.write(self.__mark)
+            f.write(log)
+            f.write(self.__mark)
+            f.write(self.__huan_hang)
+            f.flush()
 
     def __del__(self):
         self.__huan_hang=''
