@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a29feb6-6947-483a-9da2-985463451c54" name="默认的" comment="默认的">
-      <change afterPath="$PROJECT_DIR$/my_get_dir_files.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_grabage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_pyppeteer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/schedule-0.6.0.dist-info/AUTHORS.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/schedule-0.6.0.dist-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/schedule-0.6.0.dist-info/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/schedule-0.6.0.dist-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/schedule-0.6.0.dist-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/schedule-0.6.0.dist-info/WHEEL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/schedule-0.6.0.dist-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/schedule/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_changliang.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_changliang.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_logger.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypppeteer-skwen/pyppeteer学习skwen.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypppeteer-skwen/pyppeteer学习skwen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_get_dir_files.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_get_dir_files.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_grabage.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_grabage.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -412,14 +400,7 @@
       <workItem from="1594859691396" duration="6980000" />
       <workItem from="1594880124926" duration="5217000" />
       <workItem from="1594947587240" duration="6053000" />
-      <workItem from="1594968375039" duration="2534000" />
-    </task>
-    <task id="LOCAL-00046" summary="默认的">
-      <created>1592289362567</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1592289362567</updated>
+      <workItem from="1594968375039" duration="4683000" />
     </task>
     <task id="LOCAL-00047" summary="默认的">
       <created>1592299663968</created>
@@ -757,7 +738,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594884445120</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="默认的">
+      <created>1594971049863</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1594971049863</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -940,41 +928,41 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="355" y="127" key="#新闻/0.0.1280.984@0.0.1280.984" timestamp="1593738539691" />
-    <state x="85" y="88" key="CommitChangelistDialog2" timestamp="1594884449925">
+    <state x="85" y="88" key="CommitChangelistDialog2" timestamp="1594971022000">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="85" y="88" key="CommitChangelistDialog2/0.0.1280.980@0.0.1280.980" timestamp="1594884449925" />
+    <state x="85" y="88" key="CommitChangelistDialog2/0.0.1280.980@0.0.1280.980" timestamp="1594971022000" />
     <state x="288" y="88" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1594107910084" />
     <state x="0" y="108" key="CommitChangelistDialog2/0.0.600.1204@0.0.600.1204" timestamp="1592798943488" />
-    <state x="120" y="79" key="DiffContextDialog" timestamp="1594883553969">
+    <state x="120" y="79" key="DiffContextDialog" timestamp="1594971019239">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="120" y="79" key="DiffContextDialog/0.0.1280.980@0.0.1280.980" timestamp="1594883553969" />
+    <state x="120" y="79" key="DiffContextDialog/0.0.1280.980@0.0.1280.980" timestamp="1594971019239" />
     <state x="120" y="79" key="DiffContextDialog/0.0.1280.984@0.0.1280.984" timestamp="1594088824886" />
     <state x="420" y="236" key="FileChooserDialogImpl" timestamp="1594803490356">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="420" y="236" key="FileChooserDialogImpl/0.0.1280.980@0.0.1280.980" timestamp="1594803490356" />
     <state x="420" y="237" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1593738769635" />
-    <state width="1236" height="248" key="GridCell.Tab.0.bottom" timestamp="1594970408918">
+    <state width="1236" height="248" key="GridCell.Tab.0.bottom" timestamp="1594973995561">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="248" key="GridCell.Tab.0.bottom/0.0.1280.980@0.0.1280.980" timestamp="1594970408918" />
+    <state width="1236" height="248" key="GridCell.Tab.0.bottom/0.0.1280.980@0.0.1280.980" timestamp="1594973995561" />
     <state width="1236" height="259" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1594103648152" />
-    <state width="1236" height="248" key="GridCell.Tab.0.center" timestamp="1594970408918">
+    <state width="1236" height="248" key="GridCell.Tab.0.center" timestamp="1594973995561">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="248" key="GridCell.Tab.0.center/0.0.1280.980@0.0.1280.980" timestamp="1594970408918" />
+    <state width="1236" height="248" key="GridCell.Tab.0.center/0.0.1280.980@0.0.1280.980" timestamp="1594973995561" />
     <state width="1236" height="259" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1594103648152" />
-    <state width="1236" height="248" key="GridCell.Tab.0.left" timestamp="1594970408918">
+    <state width="1236" height="248" key="GridCell.Tab.0.left" timestamp="1594973995561">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="248" key="GridCell.Tab.0.left/0.0.1280.980@0.0.1280.980" timestamp="1594970408918" />
+    <state width="1236" height="248" key="GridCell.Tab.0.left/0.0.1280.980@0.0.1280.980" timestamp="1594973995561" />
     <state width="1236" height="259" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1594103648152" />
-    <state width="1236" height="248" key="GridCell.Tab.0.right" timestamp="1594970408918">
+    <state width="1236" height="248" key="GridCell.Tab.0.right" timestamp="1594973995561">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="248" key="GridCell.Tab.0.right/0.0.1280.980@0.0.1280.980" timestamp="1594970408918" />
+    <state width="1236" height="248" key="GridCell.Tab.0.right/0.0.1280.980@0.0.1280.980" timestamp="1594973995561" />
     <state width="1236" height="259" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1594103648152" />
     <state width="1236" height="318" key="GridCell.Tab.1.bottom" timestamp="1594805079348">
       <screen x="0" y="0" width="1280" height="980" />
@@ -1010,10 +998,10 @@
     </state>
     <state x="182" y="100" key="SettingsEditor/0.0.1280.980@0.0.1280.980" timestamp="1594953874798" />
     <state x="140" y="127" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1594088595969" />
-    <state x="232" y="226" key="Vcs.Push.Dialog.v2" timestamp="1594888224134">
+    <state x="232" y="226" key="Vcs.Push.Dialog.v2" timestamp="1594972130750">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="232" y="226" key="Vcs.Push.Dialog.v2/0.0.1280.980@0.0.1280.980" timestamp="1594888224134" />
+    <state x="232" y="226" key="Vcs.Push.Dialog.v2/0.0.1280.980@0.0.1280.980" timestamp="1594972130750" />
     <state x="232" y="227" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1594107923000" />
     <state x="0" y="278" key="Vcs.Push.Dialog.v2/0.0.600.1204@0.0.600.1204" timestamp="1592798962763" />
     <state x="92" y="92" width="1096" height="800" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1593661305224">
@@ -1092,7 +1080,7 @@
     <SUITE FILE_PATH="coverage/pystudy$get_wanben_index.coverage" NAME="get_wanben_index Coverage Results" MODIFIED="1594881537319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pypppeteer-skwen" />
     <SUITE FILE_PATH="coverage/pystudy$wx.coverage" NAME="wx图形界面框架 Coverage Results" MODIFIED="1592989256888" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$baidu_news.coverage" NAME="baidu-news Coverage Results" MODIFIED="1593490319173" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$my_walk_dir.coverage" NAME="my_get_dir_files Coverage Results" MODIFIED="1594970408902" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$my_walk_dir.coverage" NAME="my_get_dir_files Coverage Results" MODIFIED="1594973995451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$wx2.coverage" NAME="wx图形界面框架2 Coverage Results" MODIFIED="1592810484696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$mytools.coverage" NAME="mytools Coverage Results" MODIFIED="1593509218688" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$my_text.coverage" NAME="my_test Coverage Results" MODIFIED="1594082824018" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

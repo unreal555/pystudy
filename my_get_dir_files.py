@@ -7,6 +7,11 @@
 import os
 
 def get_dir_files(path,*ext):
+    '''
+    :param path: 要分析的路径
+    :param ext:   扩展名,逗号分隔的str
+    :return:    False 或者文件列表
+    '''
     try:
         if os.path.exists(path) and os.path.isdir(path):
             result=[os.path.join(path,x) for x in os.listdir(path)]
