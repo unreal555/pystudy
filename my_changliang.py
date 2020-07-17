@@ -12,6 +12,7 @@ from string import ascii_uppercase as DA_XIE_ZI_MU
 from string import digits as SHU_ZI
 import random
 
+
 class ChangLiang():
     ZHONG_WEN_ZI_FU_FOR_RE = r'\u4e00-\u9fa5'
 

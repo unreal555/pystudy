@@ -83,16 +83,19 @@ class logger():
 
         result=re.findall(r'{}(.*?){}'.format(self.__mark,self.__mark),content,re.S)
 
-        os.renames(self.__file,self.__file+'.{}'.format(time.strftime('%Y-%m-%d-%H-%M-%S')))
+        dir,file=os.path.split(self.__file)
+        filename,ext=os.path.splitext(file)
+        backup_name=os.path.join(dir,filename+'-'+time.strftime('%Y-%m-%d-%H-%M-%S')+ext)
 
-        log = time.strftime('%Y-%m-%d %H:%M:%S') + '\t' + '重建'
-
-        self.__do(log)
-
+        os.renames(self.__file,backup_name)
         for i in result:
             if i=='':
                 continue
             self.__do(i)
+
+        log = time.strftime('%Y-%m-%d %H:%M:%S') + '\t' + '重建'
+
+        self.__do(log)
 
         log= time.strftime('%Y-%m-%d %H:%M:%S') + '\t' + '重建完成'
 
@@ -124,7 +127,7 @@ if __name__=='__main__':
     logger.write('asdadfalsdjfklasdadg', 'assdsd')
     logger.write(('adfadfadf','adfadasdfasdf'))
     print(logger.check('asda'))
-
+    logger.rebulid()
     del logger
 
 

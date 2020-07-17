@@ -1,4 +1,4 @@
-#!/bin/py
+﻿#!/bin/py
 #   -*-coding:utf-8-*-
 
 # 通过ID获取（getElementById）
@@ -48,7 +48,7 @@ async def go(page, url):
             break
         except Exception as e:
             print(e)
-            random_wait(5, 20)
+            random_wait(2, 4)
             continue
 
 
@@ -75,10 +75,24 @@ async def get_chapter_content(page, chapter_start_url):
     result = ''
     for i in chapter_page_list:
         result = result + get_text(await get_chapter_page_content(page, i))
-    # print(result)
+    print(result)
     result = result.replace('”', '」')
     result = result.replace('“', '「')
-    result = result.replace(' ', '').replace('\r', '').replace('\n', '')
+
+    result = result.replace('[', '「')
+    result = result.replace(']', '」')
+    
+    result = result.replace(' ', '').replace('\r', '').replace('\n', '').replace('\t', '')
+
+
+
+    result = result.replace('。」', '」juahojuhao')
+    result = result.replace('。', '。\t\t\t\t\t')
+    result = result.replace('」juahojuhao','。」' )
+    
+    
+
+    
     result = result.replace('。」', '。」\t\t\t\t\t')
     result = result.replace('！」', '！」\t\t\t\t\t')
     result = result.replace('……」', '……」\t\t\t\t\t')
@@ -86,6 +100,12 @@ async def get_chapter_content(page, chapter_start_url):
     result = result.replace('.」', '.」\t\t\t\t\t')
     result = result.replace('!」', '!」\t\t\t\t\t')
     result = result.replace('？」', '？」\t\t\t\t\t')
+
+
+
+
+
+    
     result = result.split('\t\t\t\t\t')
 
     for i in result:
@@ -99,12 +119,34 @@ async def get_chapter_page_content(page, url):
     while 1:
         try:
             await go(page, url)
-            random_wait(2, 3)
+            random_wait(0.1,0.2)
             await page.evaluate('window.scrollBy(0, document.body.scrollHeight)')
-            random_wait(2, 3)
+            random_wait(0.1,0.2)
             await page.evaluate('window.scrollBy(0, document.body.scrollHeight)')
-            random_wait(2, 3)
+            random_wait(0.1,0.2)
             await page.evaluate('window.scrollBy(0, document.body.scrollHeight)')
+
+
+            random_wait(0.1,0.2)
+            await page.evaluate('window.scrollBy(0, document.body.scrollHeight)')
+            random_wait(0.1,0.2)
+            await page.evaluate('window.scrollBy(0, document.body.scrollHeight)')
+            random_wait(0.1,0.2)
+            await page.evaluate('window.scrollBy(0, document.body.scrollHeight)')
+            random_wait(0.1,0.2)
+            await page.evaluate('window.scrollBy(0, document.body.scrollHeight)')
+            random_wait(0.1,0.2)
+            await page.evaluate('window.scrollBy(0, document.body.scrollHeight)')
+            random_wait(0.1,0.2)
+            await page.evaluate('window.scrollBy(0, document.body.scrollHeight)')
+
+            random_wait(0.1,0.2)
+            await page.evaluate('window.scrollBy(0, document.body.scrollHeight)')
+            random_wait(0.1,0.2)
+            await page.evaluate('window.scrollBy(0, document.body.scrollHeight)')
+            random_wait(0.1,0.2)
+            await page.evaluate('window.scrollBy(0, document.body.scrollHeight)')
+            
             # s = await page.evaluate(pageFunction='document.body.textContent', force_expr=True)
             s = await page.evaluate('''() =>  document.querySelector("#content").innerText''')
             return s
@@ -164,31 +206,32 @@ async def main(url, count):  # 定义main协程函数，
             print(e)
     await browser.close()
 
-    with open('E:/a/a/{}.txt'.format(book[0]), 'w', encoding='utf-8') as f:
+    with open('./a/{}.txt'.format(book[0]), 'w', encoding='utf-8') as f:
         f.write(book[0])
-        f.write('\n\r')
-        f.write('\n\r')
-        f.write('\n\r')
+        f.write('\r\n')
+        f.write('\r\n')
+        f.write('\r\n')
         for chapter in book[1]:
             f.write('\t')
             f.write(chapter[0])
-            f.write('\n\r')
-        f.write('\n\r')
-        f.write('\n\r')
+            f.write('\r\n')
+        f.write('\r\n')
+        f.write('\r\n')
         for chapter in book[1]:
             f.write(chapter[0])
-            f.write('\n\r')
+            f.write('\r\n')
             for line in chapter[1]:
-                f.write('\n\r')
+                f.write('\r\n')
                 line = line.replace(chapter[0].replace(' ', ''), '').replace('努力加载中', '')
-                f.write('\t' + line + '\n\r')
-            f.write('\n\r')
+                f.write('\t' + line + '\r\n')
+            f.write('\r\n')
 
 
 if __name__ == '__main__':
     count = createCounter()
     loop = asyncio.get_event_loop()  # 协程，开启个无限循环的程序流程，把一些函数注册到事件循环上。当满足事件发生的时候，调用相应的协程函数。
     logger=my_logger.logger()
+    logger.rebulid()
     with open('./index.txt','r',encoding='utf-8') as f:
         result=(re.findall('''\(\'(.*?)\',.*?\'(.*?)\'\)''',f.read()))
     for url,title in result:
