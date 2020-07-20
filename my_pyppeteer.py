@@ -11,79 +11,88 @@
 # 通过选择器获取一组元素（querySelectorAll）
 
 import asyncio
+from  my_html_tools import random_wait
+wait_from=1
+wait_to=3
 import re
 import os
 import sys
 from pyppeteer.launcher import launch  # 控制模拟浏览器用
 
-
-class Broswer():
-    __Broswer=''
-    __page=''
-    __counter = ''
-    __loop = asyncio.get_event_loop()
-    def createCounter(self):
-        s = 0
-        def counter():
-            nonlocal s
-            s = s + 1
-            return s
-        return counter
+def createCounter():
+    s = 0
+    def counter():
+        nonlocal s
+        s = s + 1
+        return s
+    return counter
 
 
-    async def go(self,page, url):
-        while 1:
-            num = count()
-            print(num)
-
-            try:
-                await page.goto(url)
-                break
-            except Exception as e:
-                print(e)
-                random_wait(2, 4)
-                continue
-
-    def __init__(self):
-
-        async  def init(self):
-            self.__browser = await launch({'headless': False, 'dumpio': True, 'args': ['--window-size=16,12']})  # ,'--no-sandbox'
-            self.__page = await self.__browser.newPage()
-            await page.setUserAgent(
-                'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36')
-
-        if self.__counter=='':
-            self.__counter=self.createCounter(self)
-
-        init(self)
+counter=createCounter()
+browser=''
+page=''
 
 
+async def init():
+    browser = await launch({'headless': False, 'dumpio': True, 'args': ['--window-size=1024,768']})  # ,'--no-sandbox'
+    page = await browser.newPage()
+    await page.setUserAgent(
+        'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36')
+    return (browser,page)
 
-
-          # 协程，开启个无限循环的程序流程，把一些函数注册到事件循环上。当满足事件发生的时候，调用相应的协程函数。
-        # self.loop.run_until_complete(main(url, self.__counter))
-
-
-    async def wait(self):
-        random_wait(0.1, 0.2)
-        await self.__page.evaluate('window.scrollBy(0, document.body.scrollHeight)')
-
-    async def get_innerText(self):
+async def go(page, url,retry=-1):
+    count=0
+    while 1:
+        num = counter()
+        print('累计加载 {} 个网页'.format(num))
         try:
-            s = await self.__page.evaluate('''() =>  document.querySelector("#content").innerText''')
+            await page.goto(url)
+            print('页面{}打开成功'.format(url))
+            count+=1
+            return True
         except Exception as e:
             print(e)
-        return s
 
-    async def close_page(self):
-        await self.__page.close()
+            if count==retry:
+                print('重试已达{}次,不再尝试加载页面{}'.format(retry,url))
+                return False
+            else:
+                print('重试{}次,继续加载页面{}'.format(count, url))
+                random_wait(wait_from, wait_to)
+                continue
+        self.loop.run_until_complete(self.work)
 
-    async def close_browser(self):
-        await self.__browserclose()
+async def scroll(page,to='document.body.scrollHeight'):
+    await page.evaluate('window.scrollBy(0, {})'.format(str(to)))
+    random_wait(wait_from,wait_to)
+
+async def get_innerText(page,obj='''#content'''):
+    try:
+        s = await page.evaluate('''() =>  document.querySelector("{}").innerText'''.format(obj))
+    except Exception as e:
+        print(e)
+    return s
+
+async def close_page(page):
+    await page.close()
+
+async def close_browser(self):
+    await browser.close()
+
+
+
+
+async def main():
+    browser,page=await init()
+    await go(page,'http://www.sohu.com')
+    print(await  get_innerText(page,obj='''body > div.wrapper-box > div.area.clearfix.public.content-yule.channel-content > div.main.left > div:nth-child(2) > div.main-box.clearfix.yule-news'''))
+    await scroll(page,to=500)
 
 
 
 
 
-if __name__ == '__main__':
-    b=Broswer()
+loop = asyncio.get_event_loop()  # 协程，开启个无限循环的程序流程，把一些函数注册到事件循环上。当满足事件发生的时候，调用相应的协程函数。
+loop.run_until_complete(main())
+
+
