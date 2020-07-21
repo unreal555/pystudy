@@ -76,8 +76,12 @@ async def get_chapter_content(page, chapter_start_url):
     for i in chapter_page_list:
         result = result + get_text(await get_chapter_page_content(page, i))
     print(result)
+
+    result = result.replace('】', '」')
+    result = result.replace('【', '「')
     result = result.replace('”', '」')
     result = result.replace('“', '「')
+
 
     result = result.replace('[', '「')
     result = result.replace(']', '」')
