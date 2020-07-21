@@ -117,6 +117,6 @@ def Main(logger):
             write_csv(file_path=data_file_path,item=item,column_names=columns_names)
             logger.write(item['url'])
 
+if __name__ == '__main__':
 
-
-
+    Main()

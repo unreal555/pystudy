@@ -137,8 +137,8 @@ async def get_page(page,url):
     # print(page.)
 
 if __name__ == '__main__':
-    username = '19953115891' # 淘宝用户名
-    pwd = 'thdl555' #密码
+    username = '' # 淘宝用户名
+    pwd = '' #密码
     url = 'https://login.taobao.com/member/login.jhtml'
     loop = asyncio.get_event_loop()  #协程，开启个无限循环的程序流程，把一些函数注册到事件循环上。当满足事件发生的时候，调用相应的协程函数。
     cookies,page=loop.run_until_complete(main(username, pwd, url))

@@ -84,9 +84,8 @@ async def close_browser(self):
 
 async def main():
     browser,page=await init()
-    await go(page,'https://www.taobao.com')
-    # print(await  get_innerText(page,obj='''body > div.wrapper-box > div.area.clearfix.public.content-yule.channel-content > div.main.left > div:nth-child(2) > div.main-box.clearfix.yule-news'''))
-    await scroll(page,to=500)
+    await go(page,'https://login.taobao.com/')
+
 
 
 
