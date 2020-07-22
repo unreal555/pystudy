@@ -15,21 +15,21 @@ class logger():
     __log=''
     __file=''
 
-    def __init__(self,file=os.path.join('.','log.txt')):
+    def __init__(self,dir='.',name='log.txt'):
+        print('初始化logger')
 
-        self.__file=file
-        if os.path.isfile(file):
-            with open(file, 'r', encoding='utf-8') as f:
+        self.__file=os.path.join(dir,name)
+
+        if os.path.isfile(self.__file):
+            with open(self.__file, 'r', encoding='utf-8') as f:
                 self.__log=f.read()
             log=time.strftime('%Y-%m-%d %H:%M:%S')+'\t'+'打开日志,开始记录'
             self.__do(log)
 
         else:
-            dir,filename=os.path.split(file)
             if not os.path.exists(dir):
+                print('创建日志路径{}'.format(dir))
                 os.makedirs(dir)
-            with open(file, 'a', encoding='utf-8') as f:
-                f.write('')
             log = time.strftime('%Y-%m-%d %H:%M:%S') + '\t' + '创建日志'
             self.__do(log)
 
@@ -102,6 +102,8 @@ class logger():
         self.__do(log)
 
     def __do(self,log):
+        print('写入日志{}'.format(log))
+        print('日志位置{}'.format(self.__file))
         with open(self.__file, 'a', encoding='utf-8') as f:
             f.write(self.__mark)
             f.write(log)
