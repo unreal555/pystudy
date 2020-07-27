@@ -5,14 +5,9 @@
 # Tool ：PyCharm
 
 
-import wx
-import time
+import wx,os
 import matplotlib.pyplot as plt
-
-
-
-
-
+print(os.path.abspath('.'))
 
 
 class Frame( wx.Frame ):
@@ -21,7 +16,8 @@ class Frame( wx.Frame ):
     size=wx.Size(600,100)    #尺寸
     Button1 = '选择'  # 第一个按钮名字
     Button2 = '开始'  # 第一个按钮名字
-    filename=r'C:\Users\Administrator\Desktop\data.txt'
+    filename=r'data.txt'
+
 
 
     def __init__( self, parent ):
@@ -43,25 +39,28 @@ class Frame( wx.Frame ):
         self.input_file.SetForegroundColour('Green')
         self.input_file.Bind(wx.EVT_TEXT_ENTER, self.start)  # 当输入框检测到回车事件就调用函数start，必须和上面startButton一致
 
-        self.input_a = wx.TextCtrl( self.bkg, wx.ID_ANY,  value='', style=wx.TE_PROCESS_ENTER)
+        self.input_a = wx.TextCtrl( self.bkg, wx.ID_ANY,  value='A', style=wx.TE_PROCESS_ENTER)
         self.input_a.SetBackgroundColour('Black')
         self.input_a.SetForegroundColour('Green')
         self.input_a.Bind(wx.EVT_TEXT_ENTER, self.start)  # 当输入框检测到回车事件就调用函数start，必须和上面startButton一致
 
-        self.input_b= wx.TextCtrl( self.bkg, wx.ID_ANY,  value='', style=wx.TE_PROCESS_ENTER)
+        self.input_b= wx.TextCtrl( self.bkg, wx.ID_ANY,  value='B', style=wx.TE_PROCESS_ENTER)
         self.input_b.SetBackgroundColour('Black')
         self.input_b.SetForegroundColour('Green')
         self.input_b.Bind(wx.EVT_TEXT_ENTER, self.start)  # 当输入框检测到回车事件就调用函数start，必须和上面startButton一致
 
-        self.input_c = wx.TextCtrl( self.bkg, wx.ID_ANY,  value='', style=wx.TE_PROCESS_ENTER)
+        self.input_c = wx.TextCtrl( self.bkg, wx.ID_ANY,  value='C', style=wx.TE_PROCESS_ENTER)
         self.input_c.SetBackgroundColour('Black')
         self.input_c.SetForegroundColour('Green')
         self.input_c.Bind(wx.EVT_TEXT_ENTER, self.start)  # 当输入框检测到回车事件就调用函数start，必须和上面startButton一致
 
-        self.input_d = wx.TextCtrl(self.bkg, wx.ID_ANY, value='', style=wx.TE_PROCESS_ENTER)
+        self.input_d = wx.TextCtrl(self.bkg, wx.ID_ANY, value='D', style=wx.TE_PROCESS_ENTER)
         self.input_d.SetBackgroundColour('Black')
         self.input_d.SetForegroundColour('Green')
         self.input_d.Bind(wx.EVT_TEXT_ENTER, self.start)  # 当输入框检测到回车事件就调用函数start，必须和上面startButton一致
+
+
+
 
         self.SetTransparent(1000)
 
@@ -117,16 +116,20 @@ class Frame( wx.Frame ):
             except Exception as e:
                 dlg = wx.MessageDialog(None, str(e), u"错误,请检查输入参数", wx.OK)
                 dlg.ShowModal()
-            self.draw(data)
+            if len(data)<1:
+                dlg = wx.MessageDialog(None, '数据量错误','', u"数据错误", wx.OK)
+                dlg.ShowModal()
+            else:
+                self.draw(data)
 
 
 
     def draw(self,data):
-        fig = plt.figure(figsize=(18, 10), dpi=100)
+        fig = plt.figure(figsize=(18, 10))#, dpi=100)
         plt.plot(data)
         plt.show()
 
-        # plt.plot(y, x, color="red", linewidth=6, )
+
 
 
 
