@@ -1,5 +1,4 @@
-﻿﻿#!/bin/py
-# -*-coding:utf-8-*-
+﻿# -*-coding:utf-8-*-
 import requests
 import os
 import re

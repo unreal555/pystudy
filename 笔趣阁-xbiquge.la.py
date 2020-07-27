@@ -9,7 +9,7 @@ import os
 import random
 import my_logger
 
-def get(url):
+def get_booke(url):
 
     chapter_reg=r'''<dd><a href='(.*?)' >(.*?)</a></dd>'''
     title_reg=r'<script language="javascript" type="text/javascript">var bookid = ".*?"; var booktitle = "(.*?)";</script>'
@@ -76,7 +76,7 @@ def get(url):
 
 
 
-get('http://www.xbiquge.la/21/21488/')
+get_book('http://www.xbiquge.la/21/21488/')
 
 
 
