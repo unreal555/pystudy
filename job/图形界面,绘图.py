@@ -13,7 +13,7 @@ print(os.path.abspath('.'))
 class Frame( wx.Frame ):
 
     title = 'wx'    #窗体名称
-    size=wx.Size(600,100)    #尺寸
+    size=wx.Size(600,150)    #尺寸
     Button1 = '选择'  # 第一个按钮名字
     Button2 = '开始'  # 第一个按钮名字
     filename=r'data.txt'
