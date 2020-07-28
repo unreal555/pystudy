@@ -54,6 +54,7 @@ class Frame( wx.Frame ):
         self.openButton = wx.Button(self.bkg, label=self.Button3)
         self.openButton.Bind(wx.EVT_BUTTON, self.open)
 
+        self.text_a = wx.StaticText(self.bkg, -1, "输出",(100, 10))
 
         self.input = wx.TextCtrl( self.bkg, wx.ID_ANY,  value='c:\OnKeyDetector.log', style=wx.TE_PROCESS_ENTER)
         self.input.SetBackgroundColour('Black')
@@ -74,6 +75,7 @@ class Frame( wx.Frame ):
 
         self.vbox = wx.BoxSizer(wx.VERTICAL)
         self.vbox.Add(self.hbox, proportion=0, flag=wx.EXPAND | wx.ALL, border=5)
+        self.vbox.Add(self.text_a, proportion=0, flag=wx.EXPAND | wx.ALL, border=5)
         self.vbox.Add(self.show, proportion=1, flag=wx.EXPAND | wx.LEFT | wx.BOTTOM | wx.RIGHT, border=5)
 
         self.bkg.SetSizer(self.vbox)
