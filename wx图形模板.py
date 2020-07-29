@@ -67,13 +67,13 @@ class Frame( wx.Frame ):
 
         self.SetTransparent(1000)
 
-        self.hbox = wx.BoxSizer()
+        self.hbox = wx.BoxSizer()  #水平容器
         self.hbox.Add(self.input, proportion=1, flag=wx.EXPAND)
         self.hbox.Add(self.startButton, proportion=0, flag=wx.LEFT, border=5)
         self.hbox.Add(self.stopButton, proportion=0, flag=wx.LEFT, border=5)
         self.hbox.Add(self.openButton, proportion=0, flag=wx.LEFT, border=5)
 
-        self.vbox = wx.BoxSizer(wx.VERTICAL)
+        self.vbox = wx.BoxSizer(wx.VERTICAL) #####垂直容器
         self.vbox.Add(self.hbox, proportion=0, flag=wx.EXPAND | wx.ALL, border=5)
         self.vbox.Add(self.text_a, proportion=0, flag=wx.EXPAND | wx.ALL, border=5)
         self.vbox.Add(self.show, proportion=1, flag=wx.EXPAND | wx.LEFT | wx.BOTTOM | wx.RIGHT, border=5)
