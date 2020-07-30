@@ -5,6 +5,8 @@
 # Tool ：PyCharm
 import os
 import csv
+import pandas as pd
+from my_csv_tools import write_csv
 
 def write_csv(item,file_path='./result.csv',column_names=''):
     '''
@@ -40,6 +42,44 @@ def write_csv(item,file_path='./result.csv',column_names=''):
         print('{} 写入成功'.format(item))
         return True
 
+def csv_dup(source,des='',key=[]):
+
+    if os.path.exists(source):
+        pass
+    else:
+        print('源文件{}不存在'.format(source))
+
+    if des=='':
+        des=source.split('.csv')[0]+'.去重.csv'
+
+    des_dir,des_filename=os.path.split(des)
+
+    if des_filename=='':
+        print('输出文件路径有误,请重试')
+        return False
+    if os.path.exists(des_dir):
+        pass
+    else:
+        os.makedirs(des_dir)
+
+
+    db=pd.read_csv(source,encoding='utf-8-sig')
+    print(db)
+    dup=db.drop_duplicates(subset=key,keep='first')
+    print(dup)
+    dup.to_csv(des,index=False,encoding='utf-8-sig')
+
+def dir_csv_dup(path='.'):
+    for root, dirnames, filenames in os.walk(path):
+
+        for filename in filenames:
+            if '.csv' in filename:
+                source=os.path.join(root,filename)
+                des=os.path.join(root,'去重',filename)
+                csv_dup(source,des)
+            else:
+                print('跳过',filename)
+                continue
 
 if __name__=='__main__':
 
@@ -47,3 +87,4 @@ if __name__=='__main__':
 
     a=['a','b','c','d']
     write_csv(a)
+    csv_dup('./result.csv',key=['a'])

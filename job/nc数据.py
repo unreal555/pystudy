@@ -4,8 +4,9 @@ import csv
 import os
 import re
 import numpy as np
-#from mpl_toolkits.basemap import Basemap      #pip install pyproj -i https://pypi.tuna.tsinghua.edu.cn/simple
+#from mpl_toolkits.basemap import Basemap      #pip install matplotlib 3.0.3
 import matplotlib.pyplot as plt
+import my_csv_tools
 
 def write_csv(file_path,item,column_names):
     if os.path.exists(file_path):
@@ -68,30 +69,15 @@ def to_csv():
                         continue
                     item=dict(lat=float(lat),lon=float(lon),time=str(nc.num2date(time[i], 'days since 1900-01-01 00:00:0.0')),value=float(value))
                     print(item)
-                    # write_csv(result, item, column_names)
+                    my_csv_tools.write_csv(result, item, column_names)
                 except Exception as e:
                     print("错误,{}".format(e))
 
 
 
 
-
-def draw():
-
-    print(dataset.variables['pet'].units)
-
-    lon_0 = lons.mean()
-    lat_0 = lats.mean()
-
-    m = Basemap(lat_0=lat_0, lon_0=lon_0)
-    lon, lat = np.meshgrid(lons, lats)
-    xi, yi = m(lon, lat)
-
-    pet_0 = pet[1, ::, ::]
-    cs = m.pcolor(xi, yi, np.squeeze(pet_0))
-
-
 to_csv()
+ 
 
 
 
