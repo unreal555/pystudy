@@ -2,7 +2,7 @@
 
 from pyzbar.pyzbar import decode
 import cv2
-import pic_exchange
+import my_pic_base64_exchange
 import os
 import numpy
 temp_dir_path=os.getenv('temp')
@@ -39,7 +39,7 @@ def qrcode_detected(path):
                 # cv2.waitKey(0)
                 temp=cv2.imencode('.png',clip)[1]
                 temp=numpy.array(temp)
-                temp = temp.tostring()
+                temp = temp.tobytes()
 
                 str ="data:image/png;base64,"+ base64.b64encode(temp).decode()
                 qr[s]=[info,str]
@@ -58,7 +58,8 @@ def qrcode_detected(path):
 if __name__ == '__main__':
     path = 'd:/1.png'
 
-    qrcode_detected(path)
+
+    print(qrcode_detected(path))
     
 
 
