@@ -2,590 +2,150 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a29feb6-6947-483a-9da2-985463451c54" name="默认的" comment="默认的">
-      <change afterPath="$PROJECT_DIR$/my_detect_qrcode_tools.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_make_qrcode_tools.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/colorama-0.4.3.dist-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/colorama-0.4.3.dist-info/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/colorama-0.4.3.dist-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/colorama-0.4.3.dist-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/colorama-0.4.3.dist-info/WHEEL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/colorama-0.4.3.dist-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/colorama/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/colorama/ansi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/colorama/ansitowin32.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/colorama/initialise.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/colorama/win32.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/colorama/winterm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib-3.2.1-py3.8-nspkg.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib-3.2.1.dist-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib-3.2.1.dist-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib-3.2.1.dist-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib-3.2.1.dist-info/REQUESTED" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib-3.2.1.dist-info/WHEEL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib-3.2.1.dist-info/namespace_packages.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib-3.2.1.dist-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/_animation_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/_cm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/_cm_listed.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/_color_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/_constrained_layout.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/_contour.cp38-win_amd64.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/_image.cp38-win_amd64.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/_layoutbox.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/_mathtext_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/_path.cp38-win_amd64.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/_png.cp38-win_amd64.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/_pylab_helpers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/_qhull.cp38-win_amd64.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/_text_layout.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/_tri.cp38-win_amd64.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/_version.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/afm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/animation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/artist.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/axes/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/axes/_axes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/axes/_base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/axes/_secondary_axes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/axes/_subplots.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/axis.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backend_bases.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backend_managers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backend_tools.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/_backend_agg.cp38-win_amd64.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/_backend_pdf_ps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/_backend_tk.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/_tkagg.cp38-win_amd64.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/backend_agg.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/backend_cairo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/backend_gtk3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/backend_gtk3agg.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/backend_gtk3cairo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/backend_macosx.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/backend_mixed.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/backend_nbagg.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/backend_pdf.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/backend_pgf.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/backend_ps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/backend_qt4.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/backend_qt4agg.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/backend_qt4cairo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/backend_qt5.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/backend_qt5agg.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/backend_qt5cairo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/backend_svg.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/backend_template.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/backend_tkagg.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/backend_tkcairo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/backend_webagg.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/backend_webagg_core.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/backend_wx.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/backend_wxagg.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/backend_wxcairo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/qt_compat.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/qt_editor/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/qt_editor/_formlayout.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/qt_editor/figureoptions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/qt_editor/formlayout.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/qt_editor/formsubplottool.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/web_backend/all_figures.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/web_backend/css/boilerplate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/web_backend/css/fbm.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/web_backend/css/page.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/web_backend/ipython_inline_figure.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/web_backend/jquery-ui-1.12.1/AUTHORS.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/web_backend/jquery-ui-1.12.1/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/web_backend/jquery-ui-1.12.1/external/jquery/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/web_backend/jquery-ui-1.12.1/images/ui-icons_444444_256x240.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/web_backend/jquery-ui-1.12.1/images/ui-icons_555555_256x240.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/web_backend/jquery-ui-1.12.1/images/ui-icons_777620_256x240.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/web_backend/jquery-ui-1.12.1/images/ui-icons_777777_256x240.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/web_backend/jquery-ui-1.12.1/images/ui-icons_cc0000_256x240.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/web_backend/jquery-ui-1.12.1/images/ui-icons_ffffff_256x240.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/web_backend/jquery-ui-1.12.1/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/web_backend/jquery-ui-1.12.1/jquery-ui.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/web_backend/jquery-ui-1.12.1/jquery-ui.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/web_backend/jquery-ui-1.12.1/jquery-ui.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/web_backend/jquery-ui-1.12.1/jquery-ui.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/web_backend/jquery-ui-1.12.1/jquery-ui.structure.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/web_backend/jquery-ui-1.12.1/jquery-ui.structure.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/web_backend/jquery-ui-1.12.1/jquery-ui.theme.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/web_backend/jquery-ui-1.12.1/jquery-ui.theme.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/web_backend/jquery-ui-1.12.1/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/web_backend/js/mpl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/web_backend/js/mpl_tornado.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/web_backend/js/nbagg_mpl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/web_backend/nbagg_uat.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/backends/web_backend/single_figure.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/bezier.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/blocking_input.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/category.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/cbook/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/cbook/deprecation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/cm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/collections.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/colorbar.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/colors.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/compat/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/concrt140.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/container.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/contour.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/dates.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/docstring.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/dviread.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/figure.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/font_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/fontconfig_pattern.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/ft2font.cp38-win_amd64.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/gridspec.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/hatch.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/image.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/legend.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/legend_handler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/lines.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/markers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mathtext.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mlab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/cmex10.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/cmmi10.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/cmr10.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/cmsy10.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/cmtt10.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/pagd8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/pagdo8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/pagk8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/pagko8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/pbkd8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/pbkdi8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/pbkl8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/pbkli8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/pcrb8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/pcrbo8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/pcrr8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/pcrro8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/phvb8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/phvb8an.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/phvbo8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/phvbo8an.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/phvl8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/phvlo8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/phvr8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/phvr8an.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/phvro8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/phvro8an.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/pncb8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/pncbi8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/pncr8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/pncri8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/pplb8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/pplbi8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/pplr8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/pplri8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/psyr.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/ptmb8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/ptmbi8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/ptmr8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/ptmri8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/putb8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/putbi8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/putr8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/putri8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/pzcmi8a.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/afm/pzdr.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/pdfcorefonts/Courier-Bold.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/pdfcorefonts/Courier-BoldOblique.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/pdfcorefonts/Courier-Oblique.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/pdfcorefonts/Courier.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/pdfcorefonts/Helvetica-Bold.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/pdfcorefonts/Helvetica-BoldOblique.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/pdfcorefonts/Helvetica-Oblique.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/pdfcorefonts/Helvetica.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/pdfcorefonts/Symbol.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/pdfcorefonts/Times-Bold.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/pdfcorefonts/Times-BoldItalic.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/pdfcorefonts/Times-Italic.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/pdfcorefonts/Times-Roman.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/pdfcorefonts/ZapfDingbats.afm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/pdfcorefonts/readme.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans-BoldOblique.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans-Oblique.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansDisplay.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansMono-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansMono-BoldOblique.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansMono-Oblique.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansMono.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif-BoldItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif-Italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerifDisplay.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/LICENSE_DEJAVU" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/LICENSE_STIX" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneral.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneralBol.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneralBolIta.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneralItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/STIXNonUni.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/STIXNonUniBol.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/STIXNonUniBolIta.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/STIXNonUniIta.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizFiveSymReg.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizFourSymBol.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizFourSymReg.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizOneSymBol.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizOneSymReg.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizThreeSymBol.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizThreeSymReg.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizTwoSymBol.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizTwoSymReg.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/cmb10.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/cmex10.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/cmmi10.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/cmr10.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/cmss10.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/cmsy10.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/fonts/ttf/cmtt10.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/back.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/back.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/back.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/back_large.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/back_large.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/filesave.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/filesave.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/filesave.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/filesave.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/filesave_large.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/filesave_large.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/forward.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/forward.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/forward.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/forward.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/forward_large.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/forward_large.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/hand.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/hand.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/hand.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/hand.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/hand_large.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/help.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/help.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/help.ppm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/help.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/help_large.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/help_large.ppm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/home.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/home.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/home.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/home.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/home_large.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/home_large.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/matplotlib.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/matplotlib.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/matplotlib.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/matplotlib_128.ppm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/matplotlib_large.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/move.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/move.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/move.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/move.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/move_large.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/move_large.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/qt4_editor_options.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/qt4_editor_options.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/qt4_editor_options.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/qt4_editor_options_large.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/subplots.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/subplots.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/subplots.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/subplots.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/subplots_large.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/subplots_large.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/zoom_to_rect.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/zoom_to_rect.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/zoom_to_rect.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/zoom_to_rect.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/zoom_to_rect_large.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/images/zoom_to_rect_large.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/matplotlibrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/sample_data/Minduka_Present_Blue_Pack.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/sample_data/None_vs_nearest-pdf.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/sample_data/README.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/sample_data/aapl.npz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/sample_data/ada.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/sample_data/axes_grid/bivariate_normal.npy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/sample_data/ct.raw.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/sample_data/data_x_x2_x3.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/sample_data/demodata.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/sample_data/eeg.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/sample_data/embedding_in_wx3.xrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/sample_data/goog.npz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/sample_data/grace_hopper.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/sample_data/grace_hopper.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/sample_data/jacksboro_fault_dem.npz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/sample_data/logo2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/sample_data/membrane.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/sample_data/msft.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/sample_data/percent_bachelors_degrees_women_usa.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/sample_data/s1045.ima.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/sample_data/topobathy.npz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/stylelib/Solarize_Light2.mplstyle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/stylelib/_classic_test_patch.mplstyle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/stylelib/bmh.mplstyle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/stylelib/classic.mplstyle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/stylelib/dark_background.mplstyle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/stylelib/fast.mplstyle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/stylelib/fivethirtyeight.mplstyle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/stylelib/ggplot.mplstyle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/stylelib/grayscale.mplstyle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/stylelib/seaborn-bright.mplstyle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/stylelib/seaborn-colorblind.mplstyle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/stylelib/seaborn-dark-palette.mplstyle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/stylelib/seaborn-dark.mplstyle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/stylelib/seaborn-darkgrid.mplstyle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/stylelib/seaborn-deep.mplstyle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/stylelib/seaborn-muted.mplstyle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/stylelib/seaborn-notebook.mplstyle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/stylelib/seaborn-paper.mplstyle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/stylelib/seaborn-pastel.mplstyle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/stylelib/seaborn-poster.mplstyle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/stylelib/seaborn-talk.mplstyle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/stylelib/seaborn-ticks.mplstyle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/stylelib/seaborn-white.mplstyle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/stylelib/seaborn-whitegrid.mplstyle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/stylelib/seaborn.mplstyle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/mpl-data/stylelib/tableau-colorblind10.mplstyle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/msvcp140.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/offsetbox.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/patches.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/path.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/patheffects.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/projections/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/projections/geo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/projections/polar.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/pylab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/pyplot.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/quiver.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/rcsetup.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/sankey.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/scale.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/sphinxext/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/sphinxext/mathmpl.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/sphinxext/plot_directive.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/spines.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/stackplot.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/streamplot.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/style/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/style/core.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/table.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/testing/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/testing/compare.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/testing/conftest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/testing/decorators.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/testing/disable_internet.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/testing/exceptions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/testing/jpl_units/Duration.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/testing/jpl_units/Epoch.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/testing/jpl_units/EpochConverter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/testing/jpl_units/StrConverter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/testing/jpl_units/UnitDbl.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/testing/jpl_units/UnitDblConverter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/testing/jpl_units/UnitDblFormatter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/testing/jpl_units/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/conftest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_afm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_agg.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_agg_filter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_animation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_arrow_patches.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_artist.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_axes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_backend_bases.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_backend_cairo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_backend_nbagg.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_backend_pdf.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_backend_pgf.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_backend_ps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_backend_qt.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_backend_svg.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_backend_tk.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_backend_tools.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_backend_webagg.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_backends_interactive.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_basic.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_bbox_tight.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_category.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_cbook.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_collections.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_colorbar.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_colors.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_compare_images.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_constrainedlayout.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_container.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_contour.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_cycles.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_dates.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_determinism.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_dviread.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_figure.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_font_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_fontconfig_pattern.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_gridspec.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_image.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_legend.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_lines.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_marker.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_mathtext.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_matplotlib.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_mlab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_offsetbox.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_patches.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_path.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_patheffects.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_pickle.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_png.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_preprocess_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_pyplot.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_quiver.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_rcparams.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_sankey.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_scale.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_simplification.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_skew.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_sphinxext.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_spines.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_streamplot.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_style.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_subplots.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_table.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_testing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_texmanager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_text.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_ticker.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_tightlayout.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_transforms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_triangulation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_ttconv.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_type1font.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_units.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_usetex.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tests/test_widgets.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/texmanager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/text.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/textpath.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/ticker.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tight_bbox.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tight_layout.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/transforms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tri/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tri/triangulation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tri/tricontour.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tri/trifinder.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tri/triinterpolate.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tri/tripcolor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tri/triplot.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tri/trirefine.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/tri/tritools.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/ttconv.cp38-win_amd64.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/type1font.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/units.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/matplotlib/widgets.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axes_grid/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axes_grid/anchored_artists.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axes_grid/angle_helper.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axes_grid/axes_divider.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axes_grid/axes_grid.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axes_grid/axes_rgb.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axes_grid/axes_size.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axes_grid/axis_artist.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axes_grid/axisline_style.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axes_grid/axislines.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axes_grid/clip_path.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axes_grid/colorbar.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axes_grid/floating_axes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axes_grid/grid_finder.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axes_grid/grid_helper_curvelinear.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axes_grid/inset_locator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axes_grid/parasite_axes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axes_grid1/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axes_grid1/anchored_artists.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axes_grid1/axes_divider.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axes_grid1/axes_grid.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axes_grid1/axes_rgb.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axes_grid1/axes_size.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axes_grid1/colorbar.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axes_grid1/inset_locator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axes_grid1/mpl_axes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axes_grid1/parasite_axes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axisartist/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axisartist/angle_helper.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axisartist/axes_divider.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axisartist/axes_grid.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axisartist/axes_rgb.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axisartist/axis_artist.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axisartist/axisline_style.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axisartist/axislines.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axisartist/clip_path.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axisartist/floating_axes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axisartist/grid_finder.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axisartist/grid_helper_curvelinear.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/axisartist/parasite_axes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/mplot3d/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/mplot3d/art3d.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/mplot3d/axes3d.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/mplot3d/axis3d.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/mplot3d/proj3d.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/tests/conftest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/tests/test_axes_grid.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/tests/test_axes_grid1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/tests/test_axisartist_angle_helper.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/tests/test_axisartist_axis_artist.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/tests/test_axisartist_axislines.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/tests/test_axisartist_clip_path.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/tests/test_axisartist_floating_axes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/tests/test_axisartist_grid_finder.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/tests/test_axisartist_grid_helper_curvelinear.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/mpl_toolkits/tests/test_mplot3d.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/pylab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/qrcode-6.1.dist-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/qrcode-6.1.dist-info/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/qrcode-6.1.dist-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/qrcode-6.1.dist-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/qrcode-6.1.dist-info/REQUESTED" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/qrcode-6.1.dist-info/WHEEL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/qrcode-6.1.dist-info/entry_points.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/qrcode-6.1.dist-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/qrcode/LUT.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/qrcode/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/qrcode/base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/qrcode/console_scripts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/qrcode/constants.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/qrcode/exceptions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/qrcode/image/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/qrcode/image/base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/qrcode/image/pil.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/qrcode/image/pure.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/qrcode/image/svg.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/qrcode/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/qrcode/release.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/qrcode/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/qrcode/tests/svg.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/qrcode/tests/test_example.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/qrcode/tests/test_qrcode.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/qrcode/tests/test_release.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/qrcode/tests/test_script.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/qrcode/util.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/Scripts/qr.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv38/share/man/man1/qr.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/DejaVuSansMono.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/my_make_barcode_tools.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/单号.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/条码.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_docx_tools.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_make_barcode_tools.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/barcode/DejaVuSansMono.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/barcode/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/barcode/base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/barcode/charsets/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/barcode/charsets/code128.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/barcode/charsets/code39.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/barcode/charsets/ean.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/barcode/charsets/itf.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/barcode/charsets/upc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/barcode/codex.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/barcode/ean.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/barcode/errors.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/barcode/isxn.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/barcode/itf.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/barcode/pybarcode.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/barcode/upc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/barcode/version.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/barcode/writer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/blkcntnr.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/compat.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/dml/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/dml/color.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/document.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/enum/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/enum/base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/enum/dml.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/enum/section.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/enum/shape.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/enum/style.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/enum/table.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/enum/text.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/exceptions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/image/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/image/bmp.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/image/constants.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/image/exceptions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/image/gif.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/image/helpers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/image/image.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/image/jpeg.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/image/png.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/image/tiff.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/opc/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/opc/compat.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/opc/constants.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/opc/coreprops.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/opc/exceptions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/opc/oxml.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/opc/package.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/opc/packuri.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/opc/part.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/opc/parts/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/opc/parts/coreprops.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/opc/phys_pkg.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/opc/pkgreader.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/opc/pkgwriter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/opc/rel.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/opc/shared.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/opc/spec.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/oxml/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/oxml/coreprops.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/oxml/document.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/oxml/exceptions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/oxml/ns.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/oxml/numbering.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/oxml/section.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/oxml/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/oxml/shape.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/oxml/shared.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/oxml/simpletypes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/oxml/styles.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/oxml/table.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/oxml/text/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/oxml/text/font.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/oxml/text/paragraph.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/oxml/text/parfmt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/oxml/text/run.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/oxml/xmlchemy.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/package.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/parts/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/parts/document.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/parts/hdrftr.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/parts/image.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/parts/numbering.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/parts/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/parts/story.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/parts/styles.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/section.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/shape.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/shared.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/styles/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/styles/latent.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/styles/style.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/styles/styles.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/table.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/templates/default-footer.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/templates/default-header.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/templates/default-settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/templates/default-styles.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/templates/default.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/text/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/text/font.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/text/paragraph.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/text/parfmt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/text/run.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/docx/text/tabstops.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/pybarcoder-0.7.17.dist-info/INSTALLER" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/pybarcoder-0.7.17.dist-info/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/pybarcoder-0.7.17.dist-info/METADATA" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/pybarcoder-0.7.17.dist-info/RECORD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/pybarcoder-0.7.17.dist-info/REQUESTED" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/pybarcoder-0.7.17.dist-info/WHEEL" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/pybarcoder-0.7.17.dist-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/pybarcoder/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/pybarcoder/builder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/pybarcoder/msyh.ttf.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/python_barcode-0.11.0.dist-info/INSTALLER" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/python_barcode-0.11.0.dist-info/LICENCE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/python_barcode-0.11.0.dist-info/METADATA" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/python_barcode-0.11.0.dist-info/RECORD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/python_barcode-0.11.0.dist-info/WHEEL" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/python_barcode-0.11.0.dist-info/entry_points.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/python_barcode-0.11.0.dist-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/python_docx-0.8.10.dist-info/INSTALLER" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/python_docx-0.8.10.dist-info/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/python_docx-0.8.10.dist-info/METADATA" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/python_docx-0.8.10.dist-info/RECORD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/python_docx-0.8.10.dist-info/REQUESTED" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/python_docx-0.8.10.dist-info/WHEEL" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/python_docx-0.8.10.dist-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/tests/test_builds.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/tests/test_checksums.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Lib/site-packages/tests/test_manually.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv38/Scripts/python-barcode.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/detected_qrcode.py" beforeDir="false" afterPath="$PROJECT_DIR$/detected_qrcode.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pic_exchange.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_pic_base64_exchange.py" afterDir="false" />
     </list>
     <list id="8588c83b-02df-4f2d-afbf-d08d61711870" name="Revert &quot;默认的&quot;" comment="Revert &quot;默认的&quot;&#10;&#10;This reverts commit 4875fd21">
       <change beforePath="$PROJECT_DIR$/scrapy-demo/ting89/ting89/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/scrapy-demo/ting89/ting89/items.py" afterDir="false" />
@@ -713,7 +273,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="ToolWindowPython Console.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/job" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -749,8 +309,8 @@
       <recent name="D:\PyCharm2019.3.1\pystudy\mysite\app01" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.my_make_qrcode_tools">
-    <configuration name="detected_qrcode" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.条码">
+    <configuration name="条码" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -758,34 +318,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/job" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/detected_qrcode.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="my_csv_dup_tools" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="pystudy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my_csv_dup_tools.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/job/条码.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -816,6 +354,50 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="my_docx_tools" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pystudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my_docx_tools.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="my_make_barcode_tools" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pystudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my_make_barcode_tools.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="my_make_qrcode_tools" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -838,42 +420,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="nc数据" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="pystudy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/job" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/job/nc数据.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Python.nc数据" />
-      <item itemvalue="Python.my_csv_dup_tools" />
-      <item itemvalue="Python.detected_qrcode" />
       <item itemvalue="Python.my_detect_qrcode_tools" />
       <item itemvalue="Python.my_make_qrcode_tools" />
+      <item itemvalue="Python.my_docx_tools" />
+      <item itemvalue="Python.my_make_barcode_tools" />
+      <item itemvalue="Python.条码" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.条码" />
+        <item itemvalue="Python.my_make_barcode_tools" />
+        <item itemvalue="Python.my_docx_tools" />
         <item itemvalue="Python.my_make_qrcode_tools" />
         <item itemvalue="Python.my_detect_qrcode_tools" />
-        <item itemvalue="Python.detected_qrcode" />
-        <item itemvalue="Python.nc数据" />
-        <item itemvalue="Python.my_csv_dup_tools" />
       </list>
     </recent_temporary>
   </component>
@@ -997,14 +557,10 @@
       <workItem from="1595988330177" duration="14352000" />
       <workItem from="1596012754246" duration="564000" />
       <workItem from="1596075427299" duration="7120000" />
-      <workItem from="1596155466426" duration="4907000" />
-    </task>
-    <task id="LOCAL-00059" summary="默认的">
-      <created>1592881931453</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1592881931453</updated>
+      <workItem from="1596155466426" duration="12121000" />
+      <workItem from="1596174485793" duration="1134000" />
+      <workItem from="1596176231788" duration="1787000" />
+      <workItem from="1596185751236" duration="458000" />
     </task>
     <task id="LOCAL-00060" summary="默认的">
       <created>1592904570649</created>
@@ -1342,7 +898,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596095963242</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="默认的">
+      <created>1596160792807</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1596160792807</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1542,25 +1105,25 @@
     </state>
     <state x="420" y="236" key="FileChooserDialogImpl/0.0.1280.980@0.0.1280.980" timestamp="1594803490356" />
     <state x="420" y="237" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1593738769635" />
-    <state width="1236" height="255" key="GridCell.Tab.0.bottom" timestamp="1596160562913">
+    <state width="1079" height="312" key="GridCell.Tab.0.bottom" timestamp="1596178109589">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="255" key="GridCell.Tab.0.bottom/0.0.1280.980@0.0.1280.980" timestamp="1596160562913" />
+    <state width="1079" height="312" key="GridCell.Tab.0.bottom/0.0.1280.980@0.0.1280.980" timestamp="1596178109589" />
     <state width="1236" height="259" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1594103648152" />
-    <state width="1236" height="255" key="GridCell.Tab.0.center" timestamp="1596160562913">
+    <state width="1079" height="312" key="GridCell.Tab.0.center" timestamp="1596178109589">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="255" key="GridCell.Tab.0.center/0.0.1280.980@0.0.1280.980" timestamp="1596160562913" />
+    <state width="1079" height="312" key="GridCell.Tab.0.center/0.0.1280.980@0.0.1280.980" timestamp="1596178109589" />
     <state width="1236" height="259" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1594103648152" />
-    <state width="1236" height="255" key="GridCell.Tab.0.left" timestamp="1596160562913">
+    <state width="1079" height="312" key="GridCell.Tab.0.left" timestamp="1596178109589">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="255" key="GridCell.Tab.0.left/0.0.1280.980@0.0.1280.980" timestamp="1596160562913" />
+    <state width="1079" height="312" key="GridCell.Tab.0.left/0.0.1280.980@0.0.1280.980" timestamp="1596178109589" />
     <state width="1236" height="259" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1594103648152" />
-    <state width="1236" height="255" key="GridCell.Tab.0.right" timestamp="1596160562913">
+    <state width="1079" height="312" key="GridCell.Tab.0.right" timestamp="1596178109589">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="255" key="GridCell.Tab.0.right/0.0.1280.980@0.0.1280.980" timestamp="1596160562913" />
+    <state width="1079" height="312" key="GridCell.Tab.0.right/0.0.1280.980@0.0.1280.980" timestamp="1596178109589" />
     <state width="1236" height="259" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1594103648152" />
     <state width="1236" height="318" key="GridCell.Tab.1.bottom" timestamp="1596159154687">
       <screen x="0" y="0" width="1280" height="980" />
@@ -1599,10 +1162,10 @@
     </state>
     <state x="477" y="214" key="RollbackChangesDialog/0.0.1280.980@0.0.1280.980" timestamp="1596096762710" />
     <state x="477" y="215" key="RollbackChangesDialog/0.0.1280.984@0.0.1280.984" timestamp="1593659862517" />
-    <state x="265" y="107" key="SettingsEditor" timestamp="1596157593994">
+    <state x="265" y="107" key="SettingsEditor" timestamp="1596175130939">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="265" y="107" key="SettingsEditor/0.0.1280.980@0.0.1280.980" timestamp="1596157593994" />
+    <state x="265" y="107" key="SettingsEditor/0.0.1280.980@0.0.1280.980" timestamp="1596175130939" />
     <state x="140" y="127" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1594088595969" />
     <state x="232" y="226" key="Vcs.Push.Dialog.v2" timestamp="1596095903462">
       <screen x="0" y="0" width="1280" height="980" />
@@ -1680,49 +1243,51 @@
     <SUITE FILE_PATH="coverage/pystudy$proxy.coverage" NAME="proxy Coverage Results" MODIFIED="1592963857843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$pic_count.coverage" NAME="pic_count Coverage Results" MODIFIED="1593566306616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$douban.coverage" NAME="douban Coverage Results" MODIFIED="1593589596018" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$ting89.coverage" NAME="ting89 Coverage Results" MODIFIED="1595318292419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$ciyun.coverage" NAME="ciyun Coverage Results" MODIFIED="1594191653895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$my_txt_writer.coverage" NAME="my_txt_writer Coverage Results" MODIFIED="1594103644544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$biquge.coverage" NAME="biquge Coverage Results" MODIFIED="1595401958794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$xiaozhu.coverage" NAME="xiaozhu Coverage Results" MODIFIED="1593566216468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$my_txt_tools.coverage" NAME="my_txt_tools Coverage Results" MODIFIED="1595310373061" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$my_banquan_clean.coverage" NAME="my_banquan_clean Coverage Results" MODIFIED="1594025643634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$pyppeteerskwen.coverage" NAME="pyppeteer学习skwen Coverage Results" MODIFIED="1594868270259" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$save_read_config.coverage" NAME="save_read_config Coverage Results" MODIFIED="1592470627872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$my_sql_tools.coverage" NAME="my_sql_tools Coverage Results" MODIFIED="1594692751571" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$my_csv_tools.coverage" NAME="my_csv_tools Coverage Results" MODIFIED="1596095105701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$ghost_test.coverage" NAME="ghost_test Coverage Results" MODIFIED="1594866840335" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$wx_.coverage" NAME="wx图形界面框架-带并行框架 Coverage Results" MODIFIED="1595901180629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$my_file_get.coverage" NAME="my_file_get Coverage Results" MODIFIED="1594015752482" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$my_logger.coverage" NAME="my_logger Coverage Results" MODIFIED="1595398018347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$my_csv_dup_tools.coverage" NAME="my_csv_dup_tools Coverage Results" MODIFIED="1596095530160" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$www_hbjc_gov_cn.coverage" NAME="www.hbjc.gov.cn Coverage Results" MODIFIED="1593505132311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$quchong.coverage" NAME="csv_duplicates Coverage Results" MODIFIED="1593565736597" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$_.coverage" NAME="书连网-外发版 Coverage Results" MODIFIED="1593738826575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$detected_qrcode.coverage" NAME="detected_qrcode Coverage Results" MODIFIED="1596156976277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$get_wanben_index.coverage" NAME="get_wanben_index Coverage Results" MODIFIED="1594881537319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pypppeteer-skwen" />
     <SUITE FILE_PATH="coverage/pystudy$baidu_news.coverage" NAME="baidu-news Coverage Results" MODIFIED="1593490319173" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$wx.coverage" NAME="wx图形模板 Coverage Results" MODIFIED="1595906690971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$my_walk_dir.coverage" NAME="my_get_dir_files Coverage Results" MODIFIED="1594974325252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$wx2.coverage" NAME="wx图形界面框架2 Coverage Results" MODIFIED="1592810484696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$my_qrcode_tools.coverage" NAME="my_qrcode_tools Coverage Results" MODIFIED="1596157043745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$mytools.coverage" NAME="mytools Coverage Results" MODIFIED="1593509218688" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$my_text.coverage" NAME="my_test Coverage Results" MODIFIED="1594082824018" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$0.coverage" NAME="图形界面,绘图 Coverage Results" MODIFIED="1595836138691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$my_make_qrcode_tools.coverage" NAME="my_make_qrcode_tools Coverage Results" MODIFIED="1596160562897" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$my_make_barcode_tools.coverage" NAME="my_make_barcode_tools Coverage Results" MODIFIED="1596168444163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$sina_yule.coverage" NAME="sina-yule Coverage Results" MODIFIED="1593738395391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/新闻抓取" />
     <SUITE FILE_PATH="coverage/pystudy$xiangrikui.coverage" NAME="xiangrikui Coverage Results" MODIFIED="1593566254146" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$my_grabage.coverage" NAME="my_grabage Coverage Results" MODIFIED="1594974578715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$mybanquan.coverage" NAME="mybanquan Coverage Results" MODIFIED="1593480420863" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$my_changliang.coverage" NAME="my_changliang Coverage Results" MODIFIED="1593681441985" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$my_html_tools.coverage" NAME="my_html_tools Coverage Results" MODIFIED="1594088352477" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$meituan.coverage" NAME="meituan Coverage Results" MODIFIED="1596091737495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job" />
     <SUITE FILE_PATH="coverage/pystudy$logger.coverage" NAME="logger Coverage Results" MODIFIED="1592551926206" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$___1_.coverage" NAME="图形界面,绘图 (1) Coverage Results" MODIFIED="1595900707911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job" />
-    <SUITE FILE_PATH="coverage/pystudy$.coverage" NAME="猜数字 Coverage Results" MODIFIED="1594369782936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$my_pyppeteer.coverage" NAME="my_pyppeteer Coverage Results" MODIFIED="1595230747629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$my_banquan.coverage" NAME="my_banquan_set Coverage Results" MODIFIED="1593585341585" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$my_test__1_.coverage" NAME="my_test (1) Coverage Results" MODIFIED="1594088661907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$ting89.coverage" NAME="ting89 Coverage Results" MODIFIED="1595318292419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$ciyun.coverage" NAME="ciyun Coverage Results" MODIFIED="1594191653895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$biquge.coverage" NAME="biquge Coverage Results" MODIFIED="1595401958794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$my_txt_tools.coverage" NAME="my_txt_tools Coverage Results" MODIFIED="1595310373061" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$my_docx_tools.coverage" NAME="my_docx_tools Coverage Results" MODIFIED="1596165894096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$save_read_config.coverage" NAME="save_read_config Coverage Results" MODIFIED="1592470627872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$my_csv_tools.coverage" NAME="my_csv_tools Coverage Results" MODIFIED="1596095105701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$ghost_test.coverage" NAME="ghost_test Coverage Results" MODIFIED="1594866840335" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$my_file_get.coverage" NAME="my_file_get Coverage Results" MODIFIED="1594015752482" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$www_hbjc_gov_cn.coverage" NAME="www.hbjc.gov.cn Coverage Results" MODIFIED="1593505132311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$quchong.coverage" NAME="csv_duplicates Coverage Results" MODIFIED="1593565736597" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$_.coverage" NAME="书连网-外发版 Coverage Results" MODIFIED="1593738826575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$detected_qrcode.coverage" NAME="detected_qrcode Coverage Results" MODIFIED="1596156976277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$get_wanben_index.coverage" NAME="get_wanben_index Coverage Results" MODIFIED="1594881537319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pypppeteer-skwen" />
+    <SUITE FILE_PATH="coverage/pystudy$wx.coverage" NAME="wx图形模板 Coverage Results" MODIFIED="1595906690971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$wx2.coverage" NAME="wx图形界面框架2 Coverage Results" MODIFIED="1592810484696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$my_make_qrcode_tools.coverage" NAME="my_make_qrcode_tools Coverage Results" MODIFIED="1596160562897" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$my_html_tools.coverage" NAME="my_html_tools Coverage Results" MODIFIED="1594088352477" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$meituan.coverage" NAME="meituan Coverage Results" MODIFIED="1596091737495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job" />
+    <SUITE FILE_PATH="coverage/pystudy$___1_.coverage" NAME="图形界面,绘图 (1) Coverage Results" MODIFIED="1595900707911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job" />
+    <SUITE FILE_PATH="coverage/pystudy$.coverage" NAME="条码 Coverage Results" MODIFIED="1596178038820" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job" />
+    <SUITE FILE_PATH="coverage/pystudy$my_pyppeteer.coverage" NAME="my_pyppeteer Coverage Results" MODIFIED="1595230747629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$nc.coverage" NAME="nc数据 Coverage Results" MODIFIED="1596096686207" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job" />
   </component>
 </project>
