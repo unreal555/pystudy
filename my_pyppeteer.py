@@ -17,6 +17,8 @@ wait_to=3
 import re
 import os
 import sys
+import re
+
 from pyppeteer.launcher import launch  # 控制模拟浏览器用
 
 def createCounter():
@@ -68,7 +70,7 @@ async def scroll(page,to='document.body.scrollHeight'):
 
 async def get_innerText(page,obj='''#content'''):
     try:
-        s = await page.evaluate('''() =>  document.querySelector("{}").innerText'''.format(obj))
+        s = await page.evaluate('''() =>  document.xpath("{}").innerText'''.format(obj))#.querySelector
     except Exception as e:
         print(e)
     return s
@@ -84,10 +86,17 @@ async def close_browser(self):
 
 async def main():
     browser,page=await init()
-    await go(page,'https://login.taobao.com/')
+    reg='''<iframe id=.*?vid=(.*?)&.*?</iframe>'''
+    for i in range(0,30):
+
+        await go(page,'http://www.imomoe.in/player/7388-0-{}.html'.format(i))
+        content=await page.content()
+
+        s=re.findall(reg,content)[0]
 
 
-
+        with open ('./list.txt','a',encoding='utf-8') as f:
+            f.write(s+'\r\n')
 
 
 
