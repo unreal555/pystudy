@@ -73,7 +73,7 @@ class ProxyMiddleWare(object):
             # request.headers[ 'Referrer Policy'] = ' no-referrer-when-downgrade'
             # request.headers['Referer'] = request.url,
             # request.headers['if-modified-since']='if-modified-since:Tue, 06 Jun 2017 11:59:14 GMT'
-            request.headers['host'] = 'img.hywly.com',
+            request.headers['host'] = request.url.split('/')[2],
             request.headers['DNT'] = '1',
             request.headers['Accept'] = 'text/html, application/xhtml+xml, */*',
             request.headers['Accept-Language'] = 'zh-CN'
@@ -97,7 +97,7 @@ class ProxyMiddleWare(object):
             request.headers['Origin'] ='http://www.tujidao.com',
             request.headers[
                 'User-Agent'] = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36'
-
+        print(request.url)
         print(request.headers)
 
 class DemoSpiderMiddleware(object):

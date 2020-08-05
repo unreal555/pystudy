@@ -6,23 +6,63 @@
 
 import pandas as pd
 import my_make_barcode_tools as barcode
-from docx  import Document
-from docx.shared import Cm
+
+from openpyxl import Workbook, load_workbook
+from openpyxl.drawing.image import Image
+
+
+
+
+w=input('输入图片宽度,单位毫米:')
+h=input('输入图片高度,单位毫米:')
 
 data=pd.read_excel('./单号.xls')
-doc=Document()
+
+
+wb = Workbook()
+sheet = wb.active
+
+
+count=0
 for row in data.iterrows():
-    info=row[1]['发票号']
     num=int(row[1]['箱数'])
-    path=barcode.make_barcode(info,dir='./barcode')
+    count=count+num
 
-    for i in range(0,num):
-        inline_shape = doc.add_picture(path) # 插入图片，并获取形状对象
-        inline_shape.height = Cm(2.5)  # 设置图片高度为4cm
-        inline_shape.width = Cm(5)  # 设置图片宽度为4cm
+print(count)
 
 
+def get_cell():
+    
+    for a,b in [[x,y] for y in range(1,1000) for x in ['A','B']]:
+        yield a,b
 
-    doc.save('result.docx')
+cell=get_cell()
+    
 
-    break
+m='A'
+n=1
+for row in data.iterrows():
+        info=row[1]['发票号']
+        num=int(row[1]['箱数'])
+        path=barcode.make_barcode(info,dir='./barcode')
+
+        for i in range(0,num):
+
+            m,n=next(cell)
+            sheet.column_dimensions[m].width = float(w)/7.9#修改列D的列宽
+            
+                 
+            img = Image(path)
+            newsize = (float(w),float(h))
+            img.width, img.height = newsize
+                
+            sheet.row_dimensions[n].height =   float(h)/1.38   #修改行3的行高
+
+            sheet.add_image(img, '{}{}'.format(m,n) )
+            
+           
+            wb.save('result.xlsx')
+
+
+            
+      
