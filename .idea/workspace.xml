@@ -2,26 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a29feb6-6947-483a-9da2-985463451c54" name="默认的" comment="默认的">
-      <change afterPath="$PROJECT_DIR$/job/my_make_qrcode_tools.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/job/my_pyppeteer - 副本.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scrapy-demo/tujidao/build/crawl/Analysis-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scrapy-demo/tujidao/build/crawl/EXE-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scrapy-demo/tujidao/build/crawl/PKG-00.pkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scrapy-demo/tujidao/build/crawl/PKG-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scrapy-demo/tujidao/build/crawl/PYZ-00.pyz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scrapy-demo/tujidao/build/crawl/PYZ-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scrapy-demo/tujidao/build/crawl/Tree-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scrapy-demo/tujidao/build/crawl/Tree-01.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scrapy-demo/tujidao/build/crawl/base_library.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scrapy-demo/tujidao/build/crawl/crawl.exe.manifest" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scrapy-demo/tujidao/build/crawl/warn-crawl.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scrapy-demo/tujidao/build/crawl/xref-crawl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/imomoe.in.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/5xdmw.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/my_pyppeteer.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/my_pyppeteer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/条码.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/条码.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_pyppeteer.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_pyppeteer.py" afterDir="false" />
     </list>
     <list id="8588c83b-02df-4f2d-afbf-d08d61711870" name="Revert &quot;默认的&quot;" comment="Revert &quot;默认的&quot;&#10;&#10;This reverts commit 4875fd21">
       <change beforePath="$PROJECT_DIR$/scrapy-demo/ting89/ting89/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/scrapy-demo/ting89/ting89/items.py" afterDir="false" />
@@ -444,14 +426,7 @@
       <workItem from="1596421448467" duration="1785000" />
       <workItem from="1596618210746" duration="547000" />
       <workItem from="1596629056321" duration="4670000" />
-      <workItem from="1596705236039" duration="140000" />
-    </task>
-    <task id="LOCAL-00062" summary="默认的">
-      <created>1592904655310</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1592904655310</updated>
+      <workItem from="1596705236039" duration="417000" />
     </task>
     <task id="LOCAL-00063" summary="默认的">
       <created>1592986404533</created>
@@ -789,7 +764,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596632493973</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="默认的">
+      <created>1596705707990</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1596705707990</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TodoView">
@@ -982,10 +964,10 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="355" y="127" key="#新闻/0.0.1280.984@0.0.1280.984" timestamp="1593738539691" />
-    <state x="85" y="88" key="CommitChangelistDialog2" timestamp="1596186425308">
+    <state x="85" y="88" key="CommitChangelistDialog2" timestamp="1596705746444">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="85" y="88" key="CommitChangelistDialog2/0.0.1280.980@0.0.1280.980" timestamp="1596186425308" />
+    <state x="85" y="88" key="CommitChangelistDialog2/0.0.1280.980@0.0.1280.980" timestamp="1596705746444" />
     <state x="288" y="88" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1594107910084" />
     <state x="0" y="108" key="CommitChangelistDialog2/0.0.600.1204@0.0.600.1204" timestamp="1592798943488" />
     <state x="120" y="79" width="1024" height="784" key="DiffContextDialog" timestamp="1595830041243">
@@ -1060,10 +1042,10 @@
     </state>
     <state x="265" y="107" key="SettingsEditor/0.0.1280.980@0.0.1280.980" timestamp="1596175130939" />
     <state x="140" y="127" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1594088595969" />
-    <state x="232" y="226" key="Vcs.Push.Dialog.v2" timestamp="1596186498504">
+    <state x="232" y="226" key="Vcs.Push.Dialog.v2" timestamp="1596705751280">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="232" y="226" key="Vcs.Push.Dialog.v2/0.0.1280.980@0.0.1280.980" timestamp="1596186498504" />
+    <state x="232" y="226" key="Vcs.Push.Dialog.v2/0.0.1280.980@0.0.1280.980" timestamp="1596705751280" />
     <state x="232" y="227" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1594107923000" />
     <state x="0" y="278" key="Vcs.Push.Dialog.v2/0.0.600.1204@0.0.600.1204" timestamp="1592798962763" />
     <state x="92" y="92" width="1096" height="800" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1593661305224">

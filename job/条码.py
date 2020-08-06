@@ -61,7 +61,7 @@ for row in data.iterrows():
                 
             sheet.row_dimensions[n].height =   float(h)/1.38   #修改行3的行高
 
-            sheet.add_image(img, '{}{}'.format(m,n) )
+            sheet.add_image(img, '{}{}'.format(m,n))
             
            
             wb.save('result.xlsx')
