@@ -35,13 +35,13 @@ def image_add_text(img_path, text,  text_color=(0, 0, 0), text_size=20):
 
 w=input('输入图片宽度,单位毫米:')
 h=input('输入图片高度,单位毫米:')
-
+o=input('输入间隔行宽度,单位毫米:')
 data=pd.read_excel('./单号.xls')
 
 
 wb = Workbook()
 sheet = wb.active
-
+sheet.column_dimensions['b'].width = float(o)/7.9#修改列D的列宽
 
 count=0
 for row in data.iterrows():
@@ -59,8 +59,6 @@ def get_cell():
 cell=get_cell()
     
 
-m='A'
-n=1
 for row in data.iterrows():
         info=row[1]['发票号']
         num=int(row[1]['箱数'])
@@ -84,6 +82,8 @@ for row in data.iterrows():
 
 
             wb.save('result.xlsx')
-        break
+
+            if i>1:
+                break
 
       
