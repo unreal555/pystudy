@@ -29,6 +29,47 @@ def createCounter():
         return s
     return counter
 
+def qu_kong_ge(s):
+    if isinstance(s, str):
+        return re.sub('\s+', '', s)
+    else:
+        print('老兄，给字符串')
+        return False
+
+def qu_str(source,*grabage):      #去除source中的垃圾,grabage为list,存储垃圾
+    target=source
+
+    print('去除以下垃圾字符{}'.format(grabage))
+    if len(grabage)==0 :
+        logging.error('要消除的垃圾信息为空,请检查grabage？')
+        return False
+
+    if not isinstance(grabage, (list,tuple)):
+        logging.error('垃圾信息只接受队列和元组')
+        return False
+
+    if (not isinstance(source,str)) or source=='':
+        logging.error('待处理的source字符串为空,或不是str类型')
+        return False
+
+    for i in grabage:
+        target=target.replace(i,'')
+    return target
+
+def qu_html_lable(s):
+    reg = re.compile(r'<[^>]+>', re.S)
+    if isinstance(s, str):
+        return reg.sub('', s)
+    else:
+        print('老兄，给字符串')
+        return False
+
+def qu_te_shu_zi_fu(s):
+    if isinstance(s, str):
+        return re.sub('[\/:*?"<>|]','-',s)
+    else:
+        print('老兄，给字符串')
+        return False
 
 counter=createCounter()
 browser=''

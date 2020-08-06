@@ -6,9 +6,11 @@
 
 import pandas as pd
 import my_make_barcode_tools as barcode
+import my_make_qrcode_tools as qrcode
 
 from openpyxl import Workbook, load_workbook
 from openpyxl.drawing.image import Image
+import os
 
 
 
@@ -44,7 +46,8 @@ n=1
 for row in data.iterrows():
         info=row[1]['发票号']
         num=int(row[1]['箱数'])
-        path=barcode.make_barcode(info,dir='./barcode')
+        path=os.path.join('./barcode',info+'.png')
+        qrcode.make_qrcode(info,save_path=path)
 
         for i in range(0,num):
 

@@ -11,7 +11,6 @@
 # 通过选择器获取一组元素（querySelectorAll）
 
 import asyncio
-from  my_html_tools import random_wait
 wait_from=1
 wait_to=3
 import re
@@ -36,6 +35,40 @@ def qu_kong_ge(s):
         print('老兄，给字符串')
         return False
 
+def qu_str(source,*grabage):      #去除source中的垃圾,grabage为list,存储垃圾
+    target=source
+
+    print('去除以下垃圾字符{}'.format(grabage))
+    if len(grabage)==0 :
+        logging.error('要消除的垃圾信息为空,请检查grabage？')
+        return False
+
+    if not isinstance(grabage, (list,tuple)):
+        logging.error('垃圾信息只接受队列和元组')
+        return False
+
+    if (not isinstance(source,str)) or source=='':
+        logging.error('待处理的source字符串为空,或不是str类型')
+        return False
+
+    for i in grabage:
+        target=target.replace(i,'')
+    return target
+
+def qu_html_lable(s):
+    reg = re.compile(r'<[^>]+>', re.S)
+    if isinstance(s, str):
+        return reg.sub('', s)
+    else:
+        print('老兄，给字符串')
+        return False
+
+def qu_te_shu_zi_fu(s):
+    if isinstance(s, str):
+        return re.sub('[\/:*?"<>|]','-',s)
+    else:
+        print('老兄，给字符串')
+        return False
 
 
 async def init():
@@ -88,7 +121,8 @@ async def close_browser(self):
 
 
 async def main(url):
-    reg_movie_url='''<iframeid=.*?vid=(.*?)&.*?</iframe>'''
+    reg_title='''<divclass="ptitlel"><p><ahref=.*?title=.*?>(.*?)</a>.*?<.*?<ahref=.*?"target=.*?>(.*?)</a><span>(.*?)</span></p><.*?>'''
+    reg_movie_url='''<iframeid="play2".*?src="(.*?)amp;(vid=.*?)amp;userlink=.*?</iframe>'''
     reg_page_url='<li><atitle=.*?"href="(.*?)"target=.*?>(.*?)</a></li>'
     reg_parts='''<divclass="movurls"id="play_.*?">(.*?)</div>'''
 
@@ -98,8 +132,13 @@ async def main(url):
     await go(page,url)
     content=await page.content()
     content=qu_kong_ge(content)
+
+    print(content)
+    
     parts=re.findall(reg_parts,content)
-    print(parts)
+
+    des,title,jishu=re.findall(reg_title,content)[0]
+
     for part in parts:
         page_urls=re.findall(reg_page_url,part)
         print(page_urls)
@@ -108,10 +147,11 @@ async def main(url):
         for url,title in page_urls:
             await go(page,domain+url)
             content=await page.content()
-            print(content)
+            content=qu_kong_ge(content)
             s=re.findall(reg_movie_url,content)[0]
+            print(s)
             with open ('./list.txt','a',encoding='utf-8') as f:
-                f.write(s+'\r\n')
+                f.write(''.join(s)+'\r\n')
         with open ('.text.txt','a',encoding='utf-8') as f:
             f.write('-------------------------------------\r\n')
 
