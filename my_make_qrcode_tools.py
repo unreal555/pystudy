@@ -34,6 +34,7 @@ def make_qrcode(content, save_path=None):  #content似乎长度限制为2321,通
         else:
             os.makedirs(dir)
         img.save(save_path)
+        return save_path
     else:
         img.show()  # 中间图不显示
 
@@ -70,7 +71,13 @@ def make_qrcode_with_icon(content, icon_path, save_path=None):
     qr_code_img.paste(icon_img, (code_width * 3 // 8, code_width * 3 // 8))
 
     if save_path:
+        dir,filename=os.path.split(save_path)
+        if os.path.exists(dir):
+            pass
+        else:
+            os.makedirs(dir)
         qr_code_img.save(save_path)  # 保存二维码图片
+        return save_path
 
     else:
         qr_code_img.show()  # 显示二维码图片

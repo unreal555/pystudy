@@ -2,27 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a29feb6-6947-483a-9da2-985463451c54" name="默认的" comment="默认的">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pystudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pystudy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/job/频谱/1.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/DejaVuSansMono.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/job/二维码条码/DejaVuSansMono.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/barcode/LJ200730011.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/barcode/LJ200731012.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/barcode/LJ200731013.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/barcode/LLF200730013.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/barcode/YBHK200730001-N.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/barcode/YBHK200731001-N.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/job/图形界面绘图/data.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/my_make_barcode_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/二维码条码/my_make_barcode_tools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/my_make_qrcode_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/二维码条码/my_make_qrcode_tools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/nc数据.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/读取netcdf4数据/nc数据.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/result.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/simhei.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/job/二维码条码/simhei.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/单号.xls" beforeDir="false" afterPath="$PROJECT_DIR$/job/二维码条码/单号.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/图形界面,绘图.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/图形界面绘图/图形界面,绘图.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/条码.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/二维码条码/条码.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/频谱.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/频谱/频谱.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my_make_qrcode_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_make_qrcode_tools.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -444,13 +423,6 @@
       <workItem from="1596760294162" duration="786000" />
       <workItem from="1596761323339" duration="181000" />
     </task>
-    <task id="LOCAL-00066" summary="默认的">
-      <created>1593336433296</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1593336433296</updated>
-    </task>
     <task id="LOCAL-00067" summary="默认的">
       <created>1593431731220</created>
       <option name="number" value="00067" />
@@ -787,7 +759,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596761112439</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="默认的">
+      <created>1596764763653</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1596764763653</updated>
+    </task>
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="TodoView">
@@ -981,10 +960,10 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="355" y="127" key="#新闻/0.0.1280.984@0.0.1280.984" timestamp="1593738539691" />
-    <state x="85" y="88" key="CommitChangelistDialog2" timestamp="1596761992021">
+    <state x="85" y="88" key="CommitChangelistDialog2" timestamp="1596764759690">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="85" y="88" key="CommitChangelistDialog2/0.0.1280.980@0.0.1280.980" timestamp="1596761992021" />
+    <state x="85" y="88" key="CommitChangelistDialog2/0.0.1280.980@0.0.1280.980" timestamp="1596764759690" />
     <state x="288" y="88" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1594107910084" />
     <state x="0" y="108" key="CommitChangelistDialog2/0.0.600.1204@0.0.600.1204" timestamp="1592798943488" />
     <state x="120" y="79" width="1024" height="784" key="DiffContextDialog" timestamp="1595830041243">
@@ -1059,10 +1038,10 @@
     </state>
     <state x="265" y="107" key="SettingsEditor/0.0.1280.980@0.0.1280.980" timestamp="1596762211252" />
     <state x="140" y="127" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1594088595969" />
-    <state x="232" y="226" key="Vcs.Push.Dialog.v2" timestamp="1596762002727">
+    <state x="232" y="226" key="Vcs.Push.Dialog.v2" timestamp="1596764771564">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="232" y="226" key="Vcs.Push.Dialog.v2/0.0.1280.980@0.0.1280.980" timestamp="1596762002727" />
+    <state x="232" y="226" key="Vcs.Push.Dialog.v2/0.0.1280.980@0.0.1280.980" timestamp="1596764771564" />
     <state x="232" y="227" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1594107923000" />
     <state x="0" y="278" key="Vcs.Push.Dialog.v2/0.0.600.1204@0.0.600.1204" timestamp="1592798962763" />
     <state x="92" y="92" width="1096" height="800" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1593661305224">
