@@ -24,8 +24,15 @@ def make_qrcode(content, save_path=None):  #content似乎长度限制为2321,通
                                   )
     qr_code_maker.add_data(data=content)
     qr_code_maker.make(fit=True)
-    img = qr_code_maker.make_image(fill_color="green", back_color="white")
+    img = qr_code_maker.make_image(fill_color="black", back_color="white").convert(
+        'RGBA')  # 问题就出在这个地方，如果要生成白底黑码的二维码必须要在这里以RGB的方式指定颜色。
+
     if save_path:
+        dir,filename=os.path.split(save_path)
+        if os.path.exists(dir):
+            pass
+        else:
+            os.makedirs(dir)
         img.save(save_path)
     else:
         img.show()  # 中间图不显示
@@ -86,4 +93,4 @@ Python中取整的几种方法小结_python_脚本之家家家家家家家家家
 2017年1月6日 取整的方式则包括向下取整、四舍五的方式6日 取整的方式6日 取整的方式。下面就来看看在Python中取整的几种方法吧。1、向下取整 向下取整直接用内建的 int() 函数即可:...
 6日 取整的方式6日 取整的方式6日 取整的方6日 家家家家家家家家取整的方式6日 取整的方式6日 取整的方式6日 取整的方式6日 取整的方式6日 取整的方式6日 取整的方式6日 取整的方式取整的方式6日 取整的方式6日 取整的方式6日 取整的方式6日 取整的方式式6日 取整的方式6日 取整的方式6日 取整的方式6日 取整的方式6日 6日 取整的方式6日 取整的方式6日 取整的方式6日 取整的方式取整的方式6日 取整的方式6日 取整的方式6日 取整的方式
 '''
-    make_qrcode_with_icon('''你好,猪头''','./temp.png')
+    make_qrcode('''你好,猪头''','./temp.png')

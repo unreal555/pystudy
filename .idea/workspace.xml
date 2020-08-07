@@ -2,14 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a29feb6-6947-483a-9da2-985463451c54" name="默认的" comment="默认的">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pystudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pystudy.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
-    <list id="8588c83b-02df-4f2d-afbf-d08d61711870" name="Revert &quot;默认的&quot;" comment="Revert &quot;默认的&quot;&#10;&#10;This reverts commit 4875fd21">
-      <change beforePath="$PROJECT_DIR$/scrapy-demo/ting89/ting89/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/scrapy-demo/ting89/ting89/items.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scrapy-demo/ting89/ting89/middlewares.py" beforeDir="false" afterPath="$PROJECT_DIR$/scrapy-demo/ting89/ting89/middlewares.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scrapy-demo/ting89/ting89/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/scrapy-demo/ting89/ting89/pipelines.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scrapy-demo/ting89/ting89/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/scrapy-demo/ting89/ting89/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scrapy-demo/ting89/ting89/spiders/ting89.py" beforeDir="false" afterPath="$PROJECT_DIR$/scrapy-demo/ting89/ting89/spiders/ting89.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/job/频谱/1.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/DejaVuSansMono.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/job/二维码条码/DejaVuSansMono.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/barcode/LJ200730011.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/barcode/LJ200731012.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/barcode/LJ200731013.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/barcode/LLF200730013.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/barcode/YBHK200730001-N.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/barcode/YBHK200731001-N.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/job/图形界面绘图/data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/my_make_barcode_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/二维码条码/my_make_barcode_tools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/my_make_qrcode_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/二维码条码/my_make_qrcode_tools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/nc数据.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/读取netcdf4数据/nc数据.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/result.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/simhei.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/job/二维码条码/simhei.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/单号.xls" beforeDir="false" afterPath="$PROJECT_DIR$/job/二维码条码/单号.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/图形界面,绘图.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/图形界面绘图/图形界面,绘图.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/条码.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/二维码条码/条码.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/频谱.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/频谱/频谱.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_make_qrcode_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_make_qrcode_tools.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +112,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GithubPullRequestsUISettings">
     <option name="hiddenUrls">
@@ -155,13 +170,6 @@
     </option>
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\PyCharm2019.3.1\pystudy\job" />
-      <recent name="D:\PyCharm2019.3.1\pystudy" />
-      <recent name="D:\PyCharm2019.3.1\pystudy\pypppeteer-skwen" />
-      <recent name="D:\PyCharm2019.3.1\pystudy\mysite" />
-      <recent name="D:\PyCharm2019.3.1\pystudy\mysite\app01" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\PyCharm 2018.3.3\pystudy\job" />
       <recent name="D:\PyCharm2019.3.1\pystudy\job" />
@@ -169,9 +177,16 @@
       <recent name="D:\PyCharm2019.3.1\pystudy\mysite\mysite" />
       <recent name="D:\PyCharm2019.3.1\pystudy\mysite\app01\template" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\PyCharm2019.3.1\pystudy\job\二维码条码" />
+      <recent name="D:\PyCharm2019.3.1\pystudy\job\读取netcdf4数据" />
+      <recent name="D:\PyCharm2019.3.1\pystudy\job" />
+      <recent name="D:\PyCharm2019.3.1\pystudy\job\图形界面绘图" />
+      <recent name="D:\PyCharm2019.3.1\pystudy\job\频谱" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.my_pyppeteer (1)">
-    <configuration name="条码" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.条码 (1)">
+    <configuration name="条码 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -179,12 +194,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/job" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/job/二维码条码" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/job/条码.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/job/二维码条码/条码.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -282,19 +297,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.条码" />
       <item itemvalue="Python.begin_tujidao" />
       <item itemvalue="Python.imomoe.in" />
       <item itemvalue="Python.my_pyppeteer (1)" />
       <item itemvalue="Python.my_pyppeteer" />
+      <item itemvalue="Python.条码 (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.条码 (1)" />
         <item itemvalue="Python.my_pyppeteer (1)" />
         <item itemvalue="Python.my_pyppeteer" />
         <item itemvalue="Python.imomoe.in" />
         <item itemvalue="Python.begin_tujidao" />
-        <item itemvalue="Python.条码" />
       </list>
     </recent_temporary>
   </component>
@@ -966,10 +981,10 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="355" y="127" key="#新闻/0.0.1280.984@0.0.1280.984" timestamp="1593738539691" />
-    <state x="85" y="88" key="CommitChangelistDialog2" timestamp="1596761172115">
+    <state x="85" y="88" key="CommitChangelistDialog2" timestamp="1596761992021">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="85" y="88" key="CommitChangelistDialog2/0.0.1280.980@0.0.1280.980" timestamp="1596761172115" />
+    <state x="85" y="88" key="CommitChangelistDialog2/0.0.1280.980@0.0.1280.980" timestamp="1596761992021" />
     <state x="288" y="88" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1594107910084" />
     <state x="0" y="108" key="CommitChangelistDialog2/0.0.600.1204@0.0.600.1204" timestamp="1592798943488" />
     <state x="120" y="79" width="1024" height="784" key="DiffContextDialog" timestamp="1595830041243">
@@ -982,25 +997,25 @@
     </state>
     <state x="420" y="236" key="FileChooserDialogImpl/0.0.1280.980@0.0.1280.980" timestamp="1594803490356" />
     <state x="420" y="237" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1593738769635" />
-    <state width="1077" height="117" key="GridCell.Tab.0.bottom" timestamp="1596618829391">
+    <state width="1236" height="163" key="GridCell.Tab.0.bottom" timestamp="1596764328018">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1077" height="117" key="GridCell.Tab.0.bottom/0.0.1280.980@0.0.1280.980" timestamp="1596618829391" />
+    <state width="1236" height="163" key="GridCell.Tab.0.bottom/0.0.1280.980@0.0.1280.980" timestamp="1596764328018" />
     <state width="1236" height="259" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1594103648152" />
-    <state width="1077" height="117" key="GridCell.Tab.0.center" timestamp="1596618829391">
+    <state width="1236" height="163" key="GridCell.Tab.0.center" timestamp="1596764328018">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1077" height="117" key="GridCell.Tab.0.center/0.0.1280.980@0.0.1280.980" timestamp="1596618829391" />
+    <state width="1236" height="163" key="GridCell.Tab.0.center/0.0.1280.980@0.0.1280.980" timestamp="1596764328018" />
     <state width="1236" height="259" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1594103648152" />
-    <state width="1077" height="117" key="GridCell.Tab.0.left" timestamp="1596618829391">
+    <state width="1236" height="163" key="GridCell.Tab.0.left" timestamp="1596764328018">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1077" height="117" key="GridCell.Tab.0.left/0.0.1280.980@0.0.1280.980" timestamp="1596618829391" />
+    <state width="1236" height="163" key="GridCell.Tab.0.left/0.0.1280.980@0.0.1280.980" timestamp="1596764328018" />
     <state width="1236" height="259" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1594103648152" />
-    <state width="1077" height="117" key="GridCell.Tab.0.right" timestamp="1596618829391">
+    <state width="1236" height="163" key="GridCell.Tab.0.right" timestamp="1596764328018">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1077" height="117" key="GridCell.Tab.0.right/0.0.1280.980@0.0.1280.980" timestamp="1596618829391" />
+    <state width="1236" height="163" key="GridCell.Tab.0.right/0.0.1280.980@0.0.1280.980" timestamp="1596764328018" />
     <state width="1236" height="259" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1594103648152" />
     <state width="1236" height="318" key="GridCell.Tab.1.bottom" timestamp="1596159154687">
       <screen x="0" y="0" width="1280" height="980" />
@@ -1030,24 +1045,24 @@
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="120" y="79" key="MergeDialog/0.0.1280.980@0.0.1280.980" timestamp="1595318341150" />
-    <state x="349" y="205" key="MultipleFileMergeDialog" timestamp="1595318343085">
+    <state x="349" y="205" key="MultipleFileMergeDialog" timestamp="1596761956375">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="349" y="205" key="MultipleFileMergeDialog/0.0.1280.980@0.0.1280.980" timestamp="1595318343085" />
+    <state x="349" y="205" key="MultipleFileMergeDialog/0.0.1280.980@0.0.1280.980" timestamp="1596761956375" />
     <state x="477" y="214" key="RollbackChangesDialog" timestamp="1596761654394">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="477" y="214" key="RollbackChangesDialog/0.0.1280.980@0.0.1280.980" timestamp="1596761654394" />
     <state x="477" y="215" key="RollbackChangesDialog/0.0.1280.984@0.0.1280.984" timestamp="1593659862517" />
-    <state x="265" y="107" key="SettingsEditor" timestamp="1596175130939">
+    <state x="265" y="107" key="SettingsEditor" timestamp="1596762211252">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="265" y="107" key="SettingsEditor/0.0.1280.980@0.0.1280.980" timestamp="1596175130939" />
+    <state x="265" y="107" key="SettingsEditor/0.0.1280.980@0.0.1280.980" timestamp="1596762211252" />
     <state x="140" y="127" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1594088595969" />
-    <state x="232" y="226" key="Vcs.Push.Dialog.v2" timestamp="1596705751280">
+    <state x="232" y="226" key="Vcs.Push.Dialog.v2" timestamp="1596762002727">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="232" y="226" key="Vcs.Push.Dialog.v2/0.0.1280.980@0.0.1280.980" timestamp="1596705751280" />
+    <state x="232" y="226" key="Vcs.Push.Dialog.v2/0.0.1280.980@0.0.1280.980" timestamp="1596762002727" />
     <state x="232" y="227" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1594107923000" />
     <state x="0" y="278" key="Vcs.Push.Dialog.v2/0.0.600.1204@0.0.600.1204" timestamp="1592798962763" />
     <state x="92" y="92" width="1096" height="800" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1593661305224">
@@ -1074,10 +1089,10 @@
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="429" y="291" key="git4idea.merge.GitMergeDialog/0.0.1280.980@0.0.1280.980" timestamp="1596760876080" />
-    <state x="353" y="292" key="git4idea.merge.GitPullDialog" timestamp="1596761406287">
+    <state x="353" y="292" key="git4idea.merge.GitPullDialog" timestamp="1596761932409">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="353" y="292" key="git4idea.merge.GitPullDialog/0.0.1280.980@0.0.1280.980" timestamp="1596761406287" />
+    <state x="353" y="292" key="git4idea.merge.GitPullDialog/0.0.1280.980@0.0.1280.980" timestamp="1596761932409" />
     <state x="353" y="293" key="git4idea.merge.GitPullDialog/0.0.1280.984@0.0.1280.984" timestamp="1593996111900" />
     <state x="451" y="397" key="git4idea.ui.GitResetDialog" timestamp="1592549161697">
       <screen x="0" y="0" width="1280" height="984" />
@@ -1147,6 +1162,7 @@
     <SUITE FILE_PATH="coverage/pystudy$my_logger.coverage" NAME="my_logger Coverage Results" MODIFIED="1595398018347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$my_csv_dup_tools.coverage" NAME="my_csv_dup_tools Coverage Results" MODIFIED="1596095530160" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$baidu_news.coverage" NAME="baidu-news Coverage Results" MODIFIED="1593490319173" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$__1_.coverage" NAME="条码 (1) Coverage Results" MODIFIED="1596764328004" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/二维码条码" />
     <SUITE FILE_PATH="coverage/pystudy$my_walk_dir.coverage" NAME="my_get_dir_files Coverage Results" MODIFIED="1594974325252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$my_qrcode_tools.coverage" NAME="my_qrcode_tools Coverage Results" MODIFIED="1596157043745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$mytools.coverage" NAME="mytools Coverage Results" MODIFIED="1593509218688" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -1154,6 +1170,7 @@
     <SUITE FILE_PATH="coverage/pystudy$0.coverage" NAME="图形界面,绘图 Coverage Results" MODIFIED="1595836138691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$my_make_barcode_tools.coverage" NAME="my_make_barcode_tools Coverage Results" MODIFIED="1596168444163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$sina_yule.coverage" NAME="sina-yule Coverage Results" MODIFIED="1593738395391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/新闻抓取" />
+    <SUITE FILE_PATH="coverage/pystudy$my_pyppeteer__1_.coverage" NAME="my_pyppeteer (1) Coverage Results" MODIFIED="1596762755260" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job" />
     <SUITE FILE_PATH="coverage/pystudy$xiangrikui.coverage" NAME="xiangrikui Coverage Results" MODIFIED="1593566254146" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$my_grabage.coverage" NAME="my_grabage Coverage Results" MODIFIED="1594974578715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$mybanquan.coverage" NAME="mybanquan Coverage Results" MODIFIED="1593480420863" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
