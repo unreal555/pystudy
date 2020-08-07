@@ -39,7 +39,8 @@ def image_add_text(img_path, text,  text_color=(0, 0, 0), text_size=20):
 
 w=input('输入图片宽度,单位毫米:')
 h=input('输入图片高度,单位毫米:')
-o=input('输入间隔行宽度,单位毫米:')
+s=input('输入行间距,单位毫米:')
+o=input('输入空白列宽度,单位毫米:')
 
 
 data=pd.read_excel('./单号.xls')
@@ -71,7 +72,6 @@ for row in data.iterrows():
         info=row[1]['发票号']
         num=int(row[1]['箱数'])
         path=os.path.join('./barcode',info+'.png')
-        info='YBHK200730001-N200730001-N'
         qrcode.make_qrcode(info,save_path=path)
         image_add_text(img_path=path,text=info)
 
@@ -85,12 +85,13 @@ for row in data.iterrows():
             newsize = (float(w),float(h))
             img.width, img.height = newsize
 
-            sheet.row_dimensions[n].height =   float(h)/1.3   #修改行3的行高
+            sheet.row_dimensions[n].height =   float(h)/1.3+float(s)   #修改行3的行高
 
             sheet.add_image(img, '{}{}'.format(m,n) )
 
 
             wb.save('result.xlsx')
+
 
 
 
