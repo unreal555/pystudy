@@ -41,8 +41,7 @@ def get_cell():
 cell=get_cell()
     
 
-m='A'
-n=1
+
 for row in data.iterrows():
         info=row[1]['发票号']
         num=int(row[1]['箱数'])
@@ -62,10 +61,12 @@ for row in data.iterrows():
             sheet.row_dimensions[n].height =   float(h)/1.38   #修改行3的行高
 
             sheet.add_image(img, '{}{}'.format(m,n))
+            #sheet.add_image(img, '{}{}'.format(m,str(int(n)+1)))
+
             
            
             wb.save('result.xlsx')
-
+        break
 
             
       
