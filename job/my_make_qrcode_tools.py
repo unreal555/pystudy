@@ -31,7 +31,7 @@ def make_qrcode(content, save_path=None):  #content似乎长度限制为2321,通
                                   )
     qr_code_maker.add_data(data=content)
     qr_code_maker.make(fit=True)
-    img = qr_code_maker.make_image(fill_color="green", back_color="white")
+    img = qr_code_maker.make_image(fill_color="black", back_color="white").convert('RGBA')# 问题就出在这个地方，如果要生成白底黑码的二维码必须要在这里以RGB的方式指定颜色。
     if save_path:
         img.save(save_path)
     else:
