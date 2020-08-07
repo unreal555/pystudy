@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a29feb6-6947-483a-9da2-985463451c54" name="默认的" comment="默认的">
-      <change afterPath="$PROJECT_DIR$/job/barcode/LJ200731013.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/job/barcode/LLF200730013.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/job/result.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/条码.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/条码.py" afterDir="false" />
     </list>
     <list id="8588c83b-02df-4f2d-afbf-d08d61711870" name="Revert &quot;默认的&quot;" comment="Revert &quot;默认的&quot;&#10;&#10;This reverts commit 4875fd21">
       <change beforePath="$PROJECT_DIR$/scrapy-demo/ting89/ting89/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/scrapy-demo/ting89/ting89/items.py" afterDir="false" />
@@ -430,21 +426,8 @@
       <workItem from="1596618210746" duration="547000" />
       <workItem from="1596629056321" duration="4670000" />
       <workItem from="1596705236039" duration="518000" />
-      <workItem from="1596760294162" duration="608000" />
-    </task>
-    <task id="LOCAL-00064" summary="默认的">
-      <created>1592990826497</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1592990826513</updated>
-    </task>
-    <task id="LOCAL-00065" summary="默认的">
-      <created>1593335389239</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1593335389239</updated>
+      <workItem from="1596760294162" duration="786000" />
+      <workItem from="1596761323339" duration="181000" />
     </task>
     <task id="LOCAL-00066" summary="默认的">
       <created>1593336433296</created>
@@ -775,7 +758,21 @@
       <option name="project" value="LOCAL" />
       <updated>1596705830526</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="默认的">
+      <created>1596761038120</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1596761038120</updated>
+    </task>
+    <task id="LOCAL-00114" summary="默认的">
+      <created>1596761112439</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1596761112439</updated>
+    </task>
+    <option name="localTasksCounter" value="115" />
     <servers />
   </component>
   <component name="TodoView">
@@ -909,6 +906,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="1" />
     <MESSAGE value="Revert &quot;默认的&quot;&#10;&#10;This reverts commit 4875fd21" />
     <MESSAGE value="默认的" />
@@ -968,10 +966,10 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="355" y="127" key="#新闻/0.0.1280.984@0.0.1280.984" timestamp="1593738539691" />
-    <state x="85" y="88" key="CommitChangelistDialog2" timestamp="1596761010935">
+    <state x="85" y="88" key="CommitChangelistDialog2" timestamp="1596761172115">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="85" y="88" key="CommitChangelistDialog2/0.0.1280.980@0.0.1280.980" timestamp="1596761010935" />
+    <state x="85" y="88" key="CommitChangelistDialog2/0.0.1280.980@0.0.1280.980" timestamp="1596761172115" />
     <state x="288" y="88" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1594107910084" />
     <state x="0" y="108" key="CommitChangelistDialog2/0.0.600.1204@0.0.600.1204" timestamp="1592798943488" />
     <state x="120" y="79" width="1024" height="784" key="DiffContextDialog" timestamp="1595830041243">
@@ -1036,10 +1034,10 @@
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="349" y="205" key="MultipleFileMergeDialog/0.0.1280.980@0.0.1280.980" timestamp="1595318343085" />
-    <state x="477" y="214" key="RollbackChangesDialog" timestamp="1596761018127">
+    <state x="477" y="214" key="RollbackChangesDialog" timestamp="1596761654394">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="477" y="214" key="RollbackChangesDialog/0.0.1280.980@0.0.1280.980" timestamp="1596761018127" />
+    <state x="477" y="214" key="RollbackChangesDialog/0.0.1280.980@0.0.1280.980" timestamp="1596761654394" />
     <state x="477" y="215" key="RollbackChangesDialog/0.0.1280.984@0.0.1280.984" timestamp="1593659862517" />
     <state x="265" y="107" key="SettingsEditor" timestamp="1596175130939">
       <screen x="0" y="0" width="1280" height="980" />
@@ -1076,10 +1074,10 @@
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="429" y="291" key="git4idea.merge.GitMergeDialog/0.0.1280.980@0.0.1280.980" timestamp="1596760876080" />
-    <state x="353" y="292" key="git4idea.merge.GitPullDialog" timestamp="1596761023758">
+    <state x="353" y="292" key="git4idea.merge.GitPullDialog" timestamp="1596761406287">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="353" y="292" key="git4idea.merge.GitPullDialog/0.0.1280.980@0.0.1280.980" timestamp="1596761023758" />
+    <state x="353" y="292" key="git4idea.merge.GitPullDialog/0.0.1280.980@0.0.1280.980" timestamp="1596761406287" />
     <state x="353" y="293" key="git4idea.merge.GitPullDialog/0.0.1280.984@0.0.1280.984" timestamp="1593996111900" />
     <state x="451" y="397" key="git4idea.ui.GitResetDialog" timestamp="1592549161697">
       <screen x="0" y="0" width="1280" height="984" />
