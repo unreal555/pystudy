@@ -47,7 +47,8 @@ data=pd.read_excel('./单号.xls')
 
 wb = Workbook()
 sheet = wb.active
-sheet.column_dimensions['b'].width = float(o)/7.9#修改列D的列宽
+sheet.column_dimensions['A'].width = float(o)/7.9#修改列D的列宽
+sheet.column_dimensions['C'].width = float(o)/7.9#修改列D的列宽
 
 
 
@@ -60,7 +61,7 @@ print(count)
 
 def get_cell():
 
-    for a,b in [[x,y] for y in range(1,1000) for x in ['A','C']]:
+    for a,b in [[x,y] for y in range(1,1000) for x in ['B','D']]:
         yield a,b
 
 cell=get_cell()
