@@ -170,11 +170,19 @@ def my_request(url,headers={'User-Agent':user_anent},proxies={},codec=None,retry
     while count<retry_times:
         try:
             response=requests.get(url,headers=headers,proxies=proxies)
-            print(type(response.content))
+            print(str.upper(str(response.headers)))
             print('response.header为{}'.format(response.headers))
 
             if codec==None:
-                codec=detect_charset(response.content)
+                result=re.findall('''.*?charset=([0-9a-zA-Z\-]*)''',str(response.headers))
+                print(result)
+                if len(result)>0 :
+                    codec= result[0]
+                    print('读取到response.headers存在字符编码集,读取dodec为{}'.format(codec))
+                else:
+                    codec = detect_charset(response.content)
+                    print('调用detect_charset猜测dodec为{}'.format(codec))
+
 
             text=response.content.decode(codec)
 
@@ -228,7 +236,7 @@ def check_fname(fname):
 
     basename,extname=os.path.splitext(filename)
 
-    print('输入文件,目录为{},文件名{},扩展名为{}'.format(dir,basename,extname))
+    print('''输入文件,目录为:"{}",文件名为:"{}",扩展名为:"{}"'''.format(dir,basename,extname))
 
     count=1
     while os.path.exists(os.path.join(dir,basename+extname)) and os.path.isfile(os.path.join(dir,basename+extname)):
@@ -249,6 +257,7 @@ def check_fname(fname):
         print('{}目录不存在,创建'.format(dir))
         os.makedirs(dir)
 
+    print('''检查完毕,返回文件全路径为{}'''.format(fname))
     return fname
 
 def get_random_proxie():
@@ -341,9 +350,12 @@ def download(url,fname='',headers={'User-Agent':user_anent},proxies={},retry_tim
 
 if __name__ == '__main__':
 
-    url='http://wap.xiongti.cn/html/61/61431/indexasc.html'
-    # page=my_request(url=url,keyword='timeout-button',proxies=get_proxie(),retry_times=10,wait_from=1,wait_to=2,debug=True)
-    s=my_request(url)
+    # url='http://wap.xiongti.cn/html/61/61431/indexasc.html'
+    # # page=my_request(url=url,keyword='timeout-button',proxies=get_proxie(),retry_times=10,wait_from=1,wait_to=2,debug=True)
+    # s=my_request(url)
+    # print(qu_kong_ge(s)
+
+    print(check_fname('pic/2.jpg'))
 
 
 
