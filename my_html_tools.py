@@ -348,6 +348,14 @@ def download(url,fname='',headers={'User-Agent':user_anent},proxies={},retry_tim
         print('写入文件失败,原因是:{}'.format(e))
         return False
 
+def createCounter():
+    s = 0
+    def counter():
+        nonlocal s
+        s = s + 1
+        return s
+    return counter
+
 if __name__ == '__main__':
 
     # url='http://wap.xiongti.cn/html/61/61431/indexasc.html'

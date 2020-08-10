@@ -23,7 +23,7 @@ def get_dir_files(path,*ext):
             if len(ext)>0:
                 print('返回{}类型的文件'.format(ext))
 
-                result=[x for x in result if os.path.splitext(x)[1].split('.')[1] in ext]
+                result=[x for x in result if os.path.splitext(x)[1].split('.')[-1] in ext]
                 for i in result:print(i)
 
         else:
@@ -33,4 +33,4 @@ def get_dir_files(path,*ext):
 
               
 if __name__ == '__main__':
-    get_dir_files(r'C:\Users\Administrator\Desktop\s')
+    get_dir_files(r'C:\Users\Administrator\Desktop','txt','xls')
