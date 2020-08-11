@@ -11,13 +11,15 @@ def get_md5(info):
         m = hashlib.md5(info.encode('utf-8')).hexdigest()
         print(m)
         return m
-    if isinstance(info,bytes):
+    elif isinstance(info,bytes):
         m = hashlib.md5(info).hexdigest()
         print(m)
         return m
-    return False
+    else:
+        print('MD5只接受byte或str类型数据')
+        return False
 
 if __name__ == '__main__':
-    with open('./pic/2.jpg','rb') as f:
+    with open('./pic/heart.jpg','rb') as f:
         file=f.read()
     get_md5(file)
