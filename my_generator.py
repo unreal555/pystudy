@@ -15,5 +15,9 @@ def get_execl_cell():
 if __name__ == '__main__':
     cell=get_execl_cell()
     for i in range(1,1000*26):
-        x,y=next(cell)
+        try:
+            x,y=next(cell)
+        except StopIteration:
+            break
+
         print(x,y)
