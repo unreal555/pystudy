@@ -45,12 +45,14 @@ def get_dirs_files_list(path,*ext):
     except Exception as e:
         print('发生错误{}'.format(e))
 
-              
+
+
 if __name__ == '__main__':
-    for i in get_dirs_files_list(r'G:\20200819','dir'):
+    path=r'''Y:\myoa-backup\20200714全备份\20200214'''
+    for i in get_dirs_files_list(path,'dir'):
         days={}
         for x in get_dirs_files_list(i):
-            days[int(x[-8:-1])]=[x,*get_dirs_files_list(x)]
+            days[int(x[-8:-1])]=[x,*get_dirs_files_list(x,'BA_','Lst')]
         print(days)
 
 
