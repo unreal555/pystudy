@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a29feb6-6947-483a-9da2-985463451c54" name="默认的" comment="默认的">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pystudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pystudy.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_get_dir_file_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_get_dir_file_list.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +166,7 @@
       <recent name="D:\PyCharm2019.3.1\pystudy\job\频谱" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.my_generator">
+  <component name="RunManager" selected="Python.my_get_dir_file_list (1)">
     <configuration name="my_generator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -191,6 +189,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="my_get_dir_file_list (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pystudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my_get_dir_file_list.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="my_get_dir_file_list" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -205,28 +225,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="D:\PyCharm2019.3.1\pystudy\my_get_dir_file_list.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="my_html_tools" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="pystudy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="D:\PyCharm2019.3.1\pystudy\venv38\Scripts\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my_html_tools.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -280,19 +278,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.my_html_tools" />
       <item itemvalue="Python.my_get_dir_file_list" />
       <item itemvalue="Python.my_txt_tools" />
       <item itemvalue="Python.my_generator" />
       <item itemvalue="Python.my_md5" />
+      <item itemvalue="Python.my_get_dir_file_list (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.my_get_dir_file_list (1)" />
         <item itemvalue="Python.my_generator" />
         <item itemvalue="Python.my_md5" />
         <item itemvalue="Python.my_txt_tools" />
         <item itemvalue="Python.my_get_dir_file_list" />
-        <item itemvalue="Python.my_html_tools" />
       </list>
     </recent_temporary>
   </component>
@@ -430,14 +428,9 @@
       <workItem from="1596893065629" duration="1826000" />
       <workItem from="1597050337834" duration="1134000" />
       <workItem from="1597109719005" duration="7228000" />
-      <workItem from="1597195614046" duration="4867000" />
-    </task>
-    <task id="LOCAL-00076" summary="默认的">
-      <created>1593572314308</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1593572314308</updated>
+      <workItem from="1597195614046" duration="4989000" />
+      <workItem from="1597284875584" duration="2419000" />
+      <workItem from="1597798405045" duration="4495000" />
     </task>
     <task id="LOCAL-00077" summary="默认的">
       <created>1593581464572</created>
@@ -775,7 +768,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597137578501</updated>
     </task>
-    <option name="localTasksCounter" value="125" />
+    <task id="LOCAL-00125" summary="默认的">
+      <created>1597222188467</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1597222188467</updated>
+    </task>
+    <option name="localTasksCounter" value="126" />
     <servers />
   </component>
   <component name="TodoView">
@@ -989,10 +989,10 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="355" y="127" key="#新闻/0.0.1280.984@0.0.1280.984" timestamp="1593738539691" />
-    <state x="85" y="88" key="CommitChangelistDialog2" timestamp="1597137567159">
+    <state x="85" y="88" key="CommitChangelistDialog2" timestamp="1597222180979">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="85" y="88" key="CommitChangelistDialog2/0.0.1280.980@0.0.1280.980" timestamp="1597137567159" />
+    <state x="85" y="88" key="CommitChangelistDialog2/0.0.1280.980@0.0.1280.980" timestamp="1597222180979" />
     <state x="288" y="88" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1594107910084" />
     <state x="0" y="108" key="CommitChangelistDialog2/0.0.600.1204@0.0.600.1204" timestamp="1592798943488" />
     <state x="120" y="79" width="1024" height="784" key="DiffContextDialog" timestamp="1595830041243">
@@ -1005,25 +1005,25 @@
     </state>
     <state x="420" y="236" key="FileChooserDialogImpl/0.0.1280.980@0.0.1280.980" timestamp="1594803490356" />
     <state x="420" y="237" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1593738769635" />
-    <state width="1236" height="407" key="GridCell.Tab.0.bottom" timestamp="1597213060675">
+    <state width="1236" height="337" key="GridCell.Tab.0.bottom" timestamp="1597802506088">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="407" key="GridCell.Tab.0.bottom/0.0.1280.980@0.0.1280.980" timestamp="1597213060675" />
+    <state width="1236" height="337" key="GridCell.Tab.0.bottom/0.0.1280.980@0.0.1280.980" timestamp="1597802506088" />
     <state width="1236" height="259" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1594103648152" />
-    <state width="1236" height="407" key="GridCell.Tab.0.center" timestamp="1597213060675">
+    <state width="1236" height="337" key="GridCell.Tab.0.center" timestamp="1597802506088">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="407" key="GridCell.Tab.0.center/0.0.1280.980@0.0.1280.980" timestamp="1597213060675" />
+    <state width="1236" height="337" key="GridCell.Tab.0.center/0.0.1280.980@0.0.1280.980" timestamp="1597802506088" />
     <state width="1236" height="259" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1594103648152" />
-    <state width="1236" height="407" key="GridCell.Tab.0.left" timestamp="1597213060675">
+    <state width="1236" height="337" key="GridCell.Tab.0.left" timestamp="1597802506088">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="407" key="GridCell.Tab.0.left/0.0.1280.980@0.0.1280.980" timestamp="1597213060675" />
+    <state width="1236" height="337" key="GridCell.Tab.0.left/0.0.1280.980@0.0.1280.980" timestamp="1597802506088" />
     <state width="1236" height="259" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1594103648152" />
-    <state width="1236" height="407" key="GridCell.Tab.0.right" timestamp="1597213060675">
+    <state width="1236" height="337" key="GridCell.Tab.0.right" timestamp="1597802506088">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="407" key="GridCell.Tab.0.right/0.0.1280.980@0.0.1280.980" timestamp="1597213060675" />
+    <state width="1236" height="337" key="GridCell.Tab.0.right/0.0.1280.980@0.0.1280.980" timestamp="1597802506088" />
     <state width="1236" height="259" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1594103648152" />
     <state width="1236" height="318" key="GridCell.Tab.1.bottom" timestamp="1597050193017">
       <screen x="0" y="0" width="1280" height="980" />
@@ -1067,10 +1067,10 @@
     </state>
     <state x="265" y="107" key="SettingsEditor/0.0.1280.980@0.0.1280.980" timestamp="1596762211252" />
     <state x="140" y="127" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1594088595969" />
-    <state x="232" y="226" key="Vcs.Push.Dialog.v2" timestamp="1597137580451">
+    <state x="232" y="226" key="Vcs.Push.Dialog.v2" timestamp="1597806334590">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="232" y="226" key="Vcs.Push.Dialog.v2/0.0.1280.980@0.0.1280.980" timestamp="1597137580451" />
+    <state x="232" y="226" key="Vcs.Push.Dialog.v2/0.0.1280.980@0.0.1280.980" timestamp="1597806334590" />
     <state x="232" y="227" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1594107923000" />
     <state x="0" y="278" key="Vcs.Push.Dialog.v2/0.0.600.1204@0.0.600.1204" timestamp="1592798962763" />
     <state x="92" y="92" width="1096" height="800" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1593661305224">
@@ -1164,7 +1164,7 @@
     <SUITE FILE_PATH="coverage/pystudy$xiaozhu.coverage" NAME="xiaozhu Coverage Results" MODIFIED="1593566216468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$my_banquan_clean.coverage" NAME="my_banquan_clean Coverage Results" MODIFIED="1594025643634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$pyppeteerskwen.coverage" NAME="pyppeteer学习skwen Coverage Results" MODIFIED="1594868270259" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$my_generator.coverage" NAME="my_generator Coverage Results" MODIFIED="1597212609420" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$my_generator.coverage" NAME="my_generator Coverage Results" MODIFIED="1597288822774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$my_sql_tools.coverage" NAME="my_sql_tools Coverage Results" MODIFIED="1594692751571" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$wx_.coverage" NAME="wx图形界面框架-带并行框架 Coverage Results" MODIFIED="1595901180629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$my_logger.coverage" NAME="my_logger Coverage Results" MODIFIED="1595398018347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -1201,6 +1201,7 @@
     <SUITE FILE_PATH="coverage/pystudy$www_hbjc_gov_cn.coverage" NAME="www.hbjc.gov.cn Coverage Results" MODIFIED="1593505132311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$quchong.coverage" NAME="csv_duplicates Coverage Results" MODIFIED="1593565736597" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$_.coverage" NAME="书连网-外发版 Coverage Results" MODIFIED="1593738826575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$my_get_dir_file_list__1_.coverage" NAME="my_get_dir_file_list (1) Coverage Results" MODIFIED="1597802506073" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$detected_qrcode.coverage" NAME="detected_qrcode Coverage Results" MODIFIED="1596156976277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$get_wanben_index.coverage" NAME="get_wanben_index Coverage Results" MODIFIED="1594881537319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pypppeteer-skwen" />
     <SUITE FILE_PATH="coverage/pystudy$wx.coverage" NAME="wx图形模板 Coverage Results" MODIFIED="1595906690971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
