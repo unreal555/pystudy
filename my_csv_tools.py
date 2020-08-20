@@ -27,7 +27,7 @@ def write_csv(item,file_path='./result.csv',column_names=''):
             with open(file_path, 'a', newline='', encoding='utf-8-sig') as f:
                 writer = csv.DictWriter(f, column_names)
                 writer.writerow(item)
-                f.flush()
+            print('{} 写入成功'.format(item))
 
         if not os.path.exists(file_path):
             with open(file_path,'w', newline='', encoding='utf-8-sig') as f:
