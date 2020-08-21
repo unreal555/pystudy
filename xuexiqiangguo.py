@@ -92,9 +92,7 @@ def check_point():
         print('7',a['data']['dayScoreDtos'][7]['currentScore'], a['data']['dayScoreDtos'][7]['name'])
         print('8',a['data']['dayScoreDtos'][8]['currentScore'], a['data']['dayScoreDtos'][8]['name'])
         print('9',a['data']['dayScoreDtos'][9]['currentScore'], a['data']['dayScoreDtos'][9]['name'])
-
         print('10',a['data']['dayScoreDtos'][10]['currentScore'], a['data']['dayScoreDtos'][10]['name'])
-
         print('11',a['data']['dayScoreDtos'][11]['currentScore'], a['data']['dayScoreDtos'][11]['name'])
         print('12',a['data']['dayScoreDtos'][11]['currentScore'], a['data']['dayScoreDtos'][12]['name'])
         print('13',a['data']['dayScoreDtos'][11]['currentScore'], a['data']['dayScoreDtos'][13]['name'])
@@ -110,8 +108,8 @@ def check_point():
         video_conut_score = a['data']['dayScoreDtos'][1]['currentScore']
 
         every_day_score=a['data']['dayScoreDtos'][4]['currentScore']
-        news_time_score = a['data']['dayScoreDtos'][9]['currentScore']
-        video_time_score = a['data']['dayScoreDtos'][11]['currentScore']
+        news_time_score = a['data']['dayScoreDtos'][8]['currentScore']
+        video_time_score = a['data']['dayScoreDtos'][10]['currentScore']
 
 
 

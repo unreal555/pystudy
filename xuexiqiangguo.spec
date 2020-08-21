@@ -4,9 +4,9 @@ block_cipher = None
 
 
 a = Analysis(['xuexiqiangguo.py'],
-             pathex=['D:\\PyCharm2018.3.3\\pystudy'],
+             pathex=['D:\\PyCharm2019.3.1\\pystudy'],
              binaries=[],
-             datas=[('./libiconv-2.dll','.'),('./libzbar-32.dll','.')],
+             datas=[],
              hiddenimports=[],
              hookspath=[],
              runtime_hooks=[],
