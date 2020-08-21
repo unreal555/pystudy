@@ -13,8 +13,10 @@ def get_dirs_files_list(path,*ext):
     :return:    False 或者文件列表
     '''
     path=os.path.abspath(path)
+    path=str.lower(path)
     try:
         if os.path.exists(path) and os.path.isdir(path):
+
             result=[os.path.join(path,x) for x in os.listdir(path)]
 
 
@@ -36,7 +38,7 @@ def get_dirs_files_list(path,*ext):
 
             if len(ext)>0:
                 print('返回{}类型的文件'.format(ext))
-                result=[x for x in result if os.path.splitext(x)[1].split('.')[-1] in ext]
+                result=[x for x in result if str.lower(os.path.splitext(x)[1].split('.')[-1]) in ext]
                 print(result)
                 return result
 
