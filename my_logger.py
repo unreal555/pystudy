@@ -131,7 +131,3 @@ if __name__=='__main__':
     print(logger.check('asda'))
     logger.rebulid()
     del logger
-
-
-
-
