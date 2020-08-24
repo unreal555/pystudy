@@ -111,7 +111,7 @@ class Ting89_Spider(scrapy.Spider):
 
         page=mytools.qu_kong_ge(response.text)
         print(page)
-        url=re.findall('''<iframesrc="http://play.ting89.com/down/down.php\?url=(.*?)".*</iframe>''',page)[0]
+        url=re.findall('''<iframesrc=".*?url=(.*?)".*</iframe>''',page)[0]
         print(url)
         item=FileItem()
         item['file_urls']=url
