@@ -47,7 +47,7 @@ class myapp():
         file = ctypes.c_char_p(file)  # 转换文件地址为c字符指针类型
         self.dll.PLAY_OpenFile(self.nPort,file)
         self.dll.PLAY_Play(self.nPort, self.hwnd)
-
+        self.dll.PLAY_PlaySound(self.nPort)
     def get_pos(self):
 
         try:
