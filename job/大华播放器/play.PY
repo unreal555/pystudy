@@ -42,7 +42,7 @@ class myapp():
 
     def openfile(self):
         file =  askopenfilename()
-        file=file.encode('unicode_escape')
+        file=file.encode('gbk')
         print(file)
         file = ctypes.c_char_p(file)  # 转换文件地址为c字符指针类型
         self.dll.PLAY_OpenFile(self.nPort,file)
