@@ -2,8 +2,7 @@ from  tkinter import *
 import tkinter 
 import ctypes
 from ctypes import *
-import time
-import functools
+
 from tkinter.filedialog import askopenfilename
 
 
@@ -22,9 +21,24 @@ class myapp():
 
     hwnd=''
 
-    scorll_bar=''
+    bar=''
 
+    flag=True
 
+    def __del__(self):
+        self.dll.PLAY_Stop(self.nPort)
+        self.dll.PLAY_CloseFile(self.nPort)
+        self.dll.PLAY_ReleasePort(self.nPort)
+        self.bar=0
+        self.hwnd=0
+        self.flag=0
+        self.dll=0
+        self.root=0
+        del self.bar
+        del self.hwnd
+        del self.flag
+        del self.dll
+        del self.root
 
     def openfile(self):
         file =  askopenfilename()
@@ -38,15 +52,13 @@ class myapp():
 
         try:
             full=self.dll.PLAY_GetFileTime(self.nPort)
-        
-            past=self.dll.PLAY_GetPlayedTime(self.nPort)
 
-        
+            past=self.dll.PLAY_GetPlayedTime(self.nPort)
 
             pos=int(past/full*100)
 
             print(full,past,pos)
-        
+
             return pos
         except Exception as e:
             print(e)
@@ -57,14 +69,24 @@ class myapp():
         # 代码...
 
         pos=self.get_pos()
-        
-        if isinstance(pos,int):
-            self.scorll_bar.set(pos)
 
-        
+        if isinstance(pos,int) and self.flag==True:
+            self.bar.set(pos)
+
         self.root.after(1000, self.refresh_data )   # 这里的10000单位为毫秒
-    
 
+    def mouse_down(self,event):
+        self.flag=False
+
+    def mouse_move(self,event):
+        pos=self.bar.get()/100
+        print(pos)
+        self.dll.PLAY_SetPlayPos(self.nPort, ctypes.c_float(pos))
+
+
+
+    def mouse_up(self,event):
+        self.flag=True
 
     def stop(self):
 
@@ -73,7 +95,7 @@ class myapp():
 
     def play(self):
         self.dll.PLAY_Play(self.nPort,self.hwnd)
-        
+
 
     def play_fast(self):
         self.dll.PLAY_Fast(self.nPort)
@@ -87,7 +109,7 @@ class myapp():
 
         self.root.geometry("800x600")
 
-        
+
         video = tkinter.Frame(self.root)             #定义视频播放窗体
 
         control=tkinter.Frame(self.root)
@@ -97,7 +119,7 @@ class myapp():
 
         control1.pack(side=tkinter.LEFT,anchor=tkinter.S,expand=tkinter.NO,fill=tkinter.BOTH)
         control2.pack(side=tkinter.RIGHT,anchor=tkinter.S,expand=tkinter.YES,fill=tkinter.BOTH)
-              
+
 
         open_button=tkinter.Button(control1,text='open',command=self.openfile)
 
@@ -112,24 +134,16 @@ class myapp():
         speedup_button.grid(row=0, column=2)
         stop_button.grid(row=0, column=3)
 
-        scorll_bar=tkinter.Scale(control2, from_=0, to=100, orient=tkinter.HORIZONTAL,showvalue=0)
-        scorll_bar.pack(side=tkinter.RIGHT,anchor=tkinter.S,expand=tkinter.YES,fill=tkinter.BOTH)
+        self.bar=tkinter.Scale(control2, from_=0, to=100, orient=tkinter.HORIZONTAL,showvalue=0)
 
-        self.scorll_bar=scorll_bar
-        
+        self.bar.bind("<ButtonPress-1>",self.mouse_down)
+        self.bar.bind("<ButtonRelease-1>",self.mouse_up)
+        self.bar.bind('<B1-Motion> ',self.mouse_move)
+        self.bar.pack(side=tkinter.RIGHT,anchor=tkinter.S,expand=tkinter.YES,fill=tkinter.BOTH)
+
         video.pack(side=tkinter.TOP,anchor=tkinter.S,expand=tkinter.YES,fill=tkinter.BOTH)
         control.pack(side=tkinter.BOTTOM,anchor=tkinter.S,expand=tkinter.NO,fill=tkinter.BOTH)
-
-
         self.hwnd = video.winfo_id()        #获得视频窗体的句柄
-
-        print(self.hwnd)        #输出句柄
-
-
-
-
-
-
 
         self.refresh_data()
 
@@ -142,4 +156,20 @@ app=myapp()
 
 
 
-
+#
+# <ButtonPress-n>     <Button-n>      <n>                         鼠标按钮n被按下，n为1左键，2中键，3右键
+# <ButtonRelease-n>                                               鼠标按钮n被松开
+# <Double-Button-n>                                               鼠标按钮n被双击
+# <Triple-Button-n>                                               鼠标按钮n被三击
+# <Motion>                                                        鼠标被按下，同时，鼠标发生移动
+# <Bn-Motion>                                                     鼠标按钮n被按下，同时，鼠标发生移动
+# <Enter>                                                         鼠标进入
+# <Leave>                                                         鼠标离开
+# <MouseWheel>                                                    鼠标滚轮滚动
+# <Button-1>  鼠标左键
+# <Button-2>   鼠标中间键（滚轮）
+# <Button-3>  鼠标右键
+# <Double-Button-1>   双击鼠标左键
+# <Double-Button-3>   双击鼠标右键
+# <Triple-Button-1>   三击鼠标左键
+# <Triple-Button-3>   三击鼠标右键
