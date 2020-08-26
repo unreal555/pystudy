@@ -5,7 +5,13 @@
 # Tool ：PyCharm
 import my_changliang
 
-
+def createCounter():
+    s = 0
+    def counter():
+        nonlocal s
+        s = s + 1
+        return s
+    return counter
 
 
 def get_execl_cell():

@@ -2,6 +2,8 @@ from  tkinter import *
 import tkinter 
 import ctypes
 from ctypes import *
+import time
+import os
 
 from tkinter.filedialog import askopenfilename
 
@@ -23,20 +25,21 @@ class myapp():
 
     bar=''
 
-    flag=True
+    drag_flag=True
 
     def __del__(self):
         self.dll.PLAY_Stop(self.nPort)
         self.dll.PLAY_CloseFile(self.nPort)
         self.dll.PLAY_ReleasePort(self.nPort)
+        self.nPort=0
         self.bar=0
         self.hwnd=0
-        self.flag=0
+        self.drag_flag=0
         self.dll=0
         self.root=0
         del self.bar
         del self.hwnd
-        del self.flag
+        del self.drag_flag
         del self.dll
         del self.root
 
@@ -48,6 +51,8 @@ class myapp():
         self.dll.PLAY_OpenFile(self.nPort,file)
         self.dll.PLAY_Play(self.nPort, self.hwnd)
         self.dll.PLAY_PlaySound(self.nPort)
+
+
     def get_pos(self):
 
         try:
@@ -55,11 +60,14 @@ class myapp():
 
             past=self.dll.PLAY_GetPlayedTime(self.nPort)
 
-            pos=int(past/full*100)
+            if full>0 and past>0:
+                pos=int(past/full*100)
+                return pos
 
-            print(full,past,pos)
+            else:
+                return 0
 
-            return pos
+
         except Exception as e:
             print(e)
             return 0
@@ -67,50 +75,65 @@ class myapp():
     def refresh_data(self):
         # 需要刷新数据的操作
         # 代码...
-
         pos=self.get_pos()
 
-        if isinstance(pos,int) and self.flag==True:
+        if isinstance(pos,int) and self.drag_flag==True:
             self.bar.set(pos)
 
         self.root.after(1000, self.refresh_data )   # 这里的10000单位为毫秒
 
     def mouse_down(self,event):
-        self.flag=False
+        self.drag_flag=False
 
     def mouse_move(self,event):
         pos=self.bar.get()/100
         print(pos)
         self.dll.PLAY_SetPlayPos(self.nPort, ctypes.c_float(pos))
 
-
-
     def mouse_up(self,event):
-        self.flag=True
+        self.drag_flag=True
 
     def stop(self):
 
         self.dll.PLAY_Stop(self.nPort)
 
-
     def play(self):
         self.dll.PLAY_Play(self.nPort,self.hwnd)
 
-
     def play_fast(self):
         self.dll.PLAY_Fast(self.nPort)
+
+    def pause(self):
+        self.dll.PLAY_Pause(self.nPort,ctypes.c_bool(TRUE))
+
+    def onebyone(self):
+        self.dll.PLAY_OneByOne(self.nPort)
+
+    def catchpic(self):
+        filename=str(time.time())+'.bmp'
+        dir=os.path.abspath('.')
+        dir=os.path.join(dir,'catch')
+        if not os.path.exists(dir):
+            os.makedirs(dir)
+        path=os.path.join(dir,filename)
+        path=path.encode('gbk')
+        print(path)
+        path=ctypes.c_char_p(path)
+        print(path)
+        self.dll.PLAY_CatchPic(self.nPort,path)
+        print(self.dll.PLAY_GetLastErrorEx(self.nPort))
 
     def __init__(self):
 
                                        #定义图形界面
         self.root.title('dhplay')
         self.root['bg'] = '#bcbcbc'
-        #root.attributes("-alpha", 0.9)
+        # self.root.attributes("-alpha", 0.9)
 
         self.root.geometry("800x600")
 
 
-        video = tkinter.Frame(self.root)             #定义视频播放窗体
+        video = tkinter.Frame(self.root,bg='#bcbcbc')             #定义视频播放窗体
 
         control=tkinter.Frame(self.root)
 
@@ -121,18 +144,29 @@ class myapp():
         control2.pack(side=tkinter.RIGHT,anchor=tkinter.S,expand=tkinter.YES,fill=tkinter.BOTH)
 
 
-        open_button=tkinter.Button(control1,text='open',command=self.openfile)
+        open_button=tkinter.Button(control1,text='打开',command=self.openfile)
 
-        play_button=tkinter.Button(control1,text='play',command=self.play)
+        play_button=tkinter.Button(control1,text='播放',command=self.play)
 
-        speedup_button=tkinter.Button(control1,text='speed',command=self.play_fast)
+        speedup_button=tkinter.Button(control1,text='加速',command=self.play_fast)
 
-        stop_button=tkinter.Button(control1,text='stop',command=self.stop)
+        # pause_button=tkinter.Button(control1,text='暂停',command=self.pause)
+
+        onebyone_button=tkinter.Button(control1,text='单帧',command=self.onebyone)
+
+        catchpic_button = tkinter.Button(control1, text='截图', command=self.catchpic)
+
+        stop_button=tkinter.Button(control1,text='停止',command=self.stop)
+
+
 
         open_button.grid(row=0, column=0)
         play_button.grid(row=0, column=1)
         speedup_button.grid(row=0, column=2)
-        stop_button.grid(row=0, column=3)
+        # pause_button.grid(row=0, column=3)
+        onebyone_button.grid(row=0, column=4)
+        catchpic_button.grid(row=0, column=5)
+        stop_button.grid(row=0, column=6)
 
         self.bar=tkinter.Scale(control2, from_=0, to=100, orient=tkinter.HORIZONTAL,showvalue=0)
 
