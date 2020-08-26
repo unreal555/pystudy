@@ -180,12 +180,13 @@ class myapp():
         catchpic_button.grid(row=0, column=5)
         stop_button.grid(row=0, column=6)
 
-        self.bar=tkinter.Scale(control2, from_=0, to=100, orient=tkinter.HORIZONTAL,showvalue=0)
+        self.bar=tkinter.Scale(control2, from_=0, to=100, orient=tkinter.HORIZONTAL,showvalue=0,borderwidth=0.01,repeatinterval=0,tickinterval=25,font=('宋体',8),cursor='cross',
+                               sliderlength=13)
 
         self.bar.bind("<ButtonPress-1>",self.mouse_down)
         self.bar.bind("<ButtonRelease-1>",self.mouse_up)
         self.bar.bind('<B1-Motion> ',self.mouse_move)
-        self.bar.pack(side=tkinter.RIGHT,anchor=tkinter.S,expand=tkinter.YES,fill=tkinter.BOTH)
+        self.bar.pack(side=tkinter.BOTTOM,anchor=tkinter.S,expand=tkinter.YES,fill=tkinter.BOTH)
 
         video.pack(side=tkinter.TOP,anchor=tkinter.S,expand=tkinter.YES,fill=tkinter.BOTH)
         control.pack(side=tkinter.BOTTOM,anchor=tkinter.S,expand=tkinter.NO,fill=tkinter.BOTH)
