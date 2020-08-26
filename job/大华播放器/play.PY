@@ -29,7 +29,6 @@ class myapp():
         nPort = c_long(self.dll.PLAY_GetFreePort(byref(port)))  # 调用函数获得视频通道编号
         return nPort
 
-
     def __del__(self):
         self.dll.PLAY_Stop(self.nPort)
         self.dll.PLAY_CloseFile(self.nPort)
@@ -50,18 +49,21 @@ class myapp():
 
         file =  askopenfilename()
         temp,ext=os.path.splitext(file)
+        print(file)
+        if file=='':
+            return 0
+
         if str.lower(ext)!='.dav':
             showinfo('注意','应该为.dav文件')
             return 0
         file=file.encode('gbk')
-        print(file)
         file = ctypes.c_char_p(file)  # 转换文件地址为c字符指针类型
-        self.nPort = self.get_nPort()
+        if self.nPort==None:
+            self.nPort = self.get_nPort()
         self.dll.PLAY_OpenFile(self.nPort,file)
         self.dll.PLAY_Play(self.nPort, self.hwnd)
         self.dll.PLAY_PlaySound(self.nPort)
         print(self.dll.PLAY_GetLastErrorEx(self.nPort))
-
 
     def get_pos(self):
 
@@ -90,7 +92,7 @@ class myapp():
         if isinstance(pos,int) and self.drag_flag==True:
             self.bar.set(pos)
 
-        self.root.after(1000, self.refresh_data )   # 这里的10000单位为毫秒
+        self.root.after(10, self.refresh_data )   # 这里的10000单位为毫秒
 
     def mouse_down(self,event):
         self.drag_flag=False
@@ -108,6 +110,7 @@ class myapp():
         self.dll.PLAY_Stop(self.nPort)
         self.dll.PLAY_CloseFile(self.nPort)
         self.dll.PLAY_ReleasePort(self.nPort)
+        self.nPort=None
 
     def play(self):
         self.dll.PLAY_Play(self.nPort,self.hwnd)
@@ -192,8 +195,6 @@ class myapp():
         self.refresh_data()
 
         self.root.mainloop()
-
-
 
 app=myapp()
 
