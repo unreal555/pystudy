@@ -1,4 +1,5 @@
 from  tkinter import *
+from tkinter.messagebox import *
 import tkinter 
 import ctypes
 from ctypes import *
@@ -11,21 +12,23 @@ from tkinter.filedialog import askopenfilename
 #tkinter.messagebox.showinfo("源目录错误", "{}不是目录,或者目录不存在,请重新输入".format(source))
 class myapp():
 
-    def get_nPort(dll):
-        port = c_long()  # 定义视频通道类型
-        nPort = c_long(dll.PLAY_GetFreePort(byref(port)))  # 调用函数获得视频通道编号
-        return nPort
 
     dll = ctypes.windll.LoadLibrary('./dhplay.dll')  # 加载动态库为dh
     root=Tk() 
-
-    nPort=get_nPort(dll)
+    nPort=None
+    # nPort=get_nPort(dll)
 
     hwnd=''
 
     bar=''
 
     drag_flag=True
+
+    def get_nPort(self):
+        port = c_long()  # 定义视频通道类型
+        nPort = c_long(self.dll.PLAY_GetFreePort(byref(port)))  # 调用函数获得视频通道编号
+        return nPort
+
 
     def __del__(self):
         self.dll.PLAY_Stop(self.nPort)
@@ -44,13 +47,20 @@ class myapp():
         del self.root
 
     def openfile(self):
+
         file =  askopenfilename()
+        temp,ext=os.path.splitext(file)
+        if str.lower(ext)!='.dav':
+            showinfo('注意','应该为.dav文件')
+            return 0
         file=file.encode('gbk')
         print(file)
         file = ctypes.c_char_p(file)  # 转换文件地址为c字符指针类型
+        self.nPort = self.get_nPort()
         self.dll.PLAY_OpenFile(self.nPort,file)
         self.dll.PLAY_Play(self.nPort, self.hwnd)
         self.dll.PLAY_PlaySound(self.nPort)
+        print(self.dll.PLAY_GetLastErrorEx(self.nPort))
 
 
     def get_pos(self):
@@ -96,6 +106,8 @@ class myapp():
     def stop(self):
 
         self.dll.PLAY_Stop(self.nPort)
+        self.dll.PLAY_CloseFile(self.nPort)
+        self.dll.PLAY_ReleasePort(self.nPort)
 
     def play(self):
         self.dll.PLAY_Play(self.nPort,self.hwnd)
@@ -117,9 +129,7 @@ class myapp():
             os.makedirs(dir)
         path=os.path.join(dir,filename)
         path=path.encode('gbk')
-        print(path)
         path=ctypes.c_char_p(path)
-        print(path)
         self.dll.PLAY_CatchPic(self.nPort,path)
         print(self.dll.PLAY_GetLastErrorEx(self.nPort))
 
