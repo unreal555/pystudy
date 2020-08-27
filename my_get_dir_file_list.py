@@ -5,42 +5,76 @@
 # Tool ：PyCharm
 
 import os
+import re
 
-def get_dirs_files_list(path,*ext):
+def get_dirs_files_list(path,*ext,debug=False,full_path=True):
     '''
     :param path: 要分析的路径
     :param ext:   dir或者扩展名,逗号分隔的str
+    :param debug:  是否输出
+    :param full_path:   默认返回全路径
     :return:    False 或者文件列表
     '''
-    path=os.path.abspath(path)
+    
     path=str.lower(path)
+
+    path=os.path.abspath(path)
+
+  
+    
+    
     try:
         if os.path.exists(path) and os.path.isdir(path):
 
-            result=[os.path.join(path,x) for x in os.listdir(path)]
+            temp=[os.path.join(path,x) for x in os.listdir(path)]
 
 
 
             if len(ext)==0:
                 print('无类型筛选,返回所有文件')
-                print(result)
+
+                if full_path==True:
+                    result=temp
+                else:
+                    result=[]
+                    for i in temp:
+                        result.append(re.split(r'[\\/]',i)[-1])                                                    
+                if debug:print(result)                
                 return result
+
 
             if ext[0]=='''dir''':
                 dirs=[]
                 print('返回目录')
-                for i in result:
+
+                
+                for i in temp:
+                    
                     if os.path.isdir(i):
-                        dirs.append(i)
-                print(dirs)
+                        if full_path==True:
+                            dirs.append(i)
+                        else:
+                            dirs.append(re.split(r'[\\/]',i)[-1])
+
+
+                        
+                if debug:print(dirs)
                 return  dirs
 
 
             if len(ext)>0:
                 print('返回{}类型的文件'.format(ext))
-                result=[x for x in result if str.lower(os.path.splitext(x)[1].split('.')[-1]) in ext]
-                print(result)
-                return result
+                s=[x for x in temp if str.lower(os.path.splitext(x)[1].split('.')[-1]) in ext]
+                files=[]
+                if full_path==True:
+                    files=s
+                else:
+                    for i in s:
+                        files.append(re.split(r'[\\/]',i)[-1])
+
+                
+                if debug:print(files)
+                return files
 
         else:
             return False
@@ -50,10 +84,5 @@ def get_dirs_files_list(path,*ext):
 
 
 if __name__ == '__main__':
-    source=r'''X:\自动备份'''
-    des=os.path.join('''X:\自动备份''','des')
-    for i in get_dirs_files_list(path,'dir'):
-        days={}
-        for x in get_dirs_files_list(i):
-            days[int(x[-8:])]=[x,*get_dirs_files_list(x,'BA_','Lst')]
-        print(days)
+    for i in get_dirs_files_list(r'Z:\job',debug=False,full_path=False):
+        print(i)
