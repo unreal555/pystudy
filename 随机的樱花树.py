@@ -9,8 +9,8 @@ w = turtle.Screen()
 
 def tree(branchLen, t):
 
-    if branchLen > 2:
-        if 8 <= branchLen <= 12:
+    if branchLen > 3:
+        if 8 <= branchLen <= 16:
             if random.randint(0, 2) == 0:
                 t.color('snow')
             else:
@@ -57,6 +57,7 @@ def petal(m, t):  # 树下花瓣
 
 
 def main():
+
     t = turtle.Turtle()
     turtle.delay(300)
     myWin = turtle.Screen()
@@ -69,8 +70,10 @@ def main():
     t.color('sienna')
     tree(60, t)
     petal(100, t)
+    myWin.clearscreen()
 
-    myWin.exitonclick()
+    # myWin.exitonclick()
 
 
-main()
+while 1:
+    main()
