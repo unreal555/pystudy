@@ -13,12 +13,11 @@ class myapp():
 
 
     dll = ctypes.windll.LoadLibrary('./dhplay.dll')  # 加载动态库为dh
-    root=Tk() 
+
     nPort=None
     # nPort=get_nPort(dll)
-
+    root=Tk()
     hwnd=''
-
     bar=''
 
     drag_flag=True
@@ -90,6 +89,7 @@ class myapp():
 
         if isinstance(pos,int) and self.drag_flag==True:
             self.bar.set(pos)
+            # self.value=pos
 
         self.root.after(10, self.refresh_data )   # 这里的10000单位为毫秒
 

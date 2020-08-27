@@ -2,10 +2,12 @@ import turtle
 import random
 from turtle import *
 from time import sleep
+
+
 turtle.speed(1)
 t = turtle.Turtle()
 w = turtle.Screen()
-
+myWin = turtle.Screen()
 
 def tree(branchLen, t):
 
@@ -60,7 +62,7 @@ def main():
 
     t = turtle.Turtle()
     turtle.delay(300)
-    myWin = turtle.Screen()
+
     t.getscreen().tracer(5, 0)
     turtle.screensize(bg='wheat')
     t.left(90)
@@ -74,6 +76,8 @@ def main():
 
     # myWin.exitonclick()
 
-
-while 1:
-    main()
+try:
+    while 1:
+        main()
+except Exception as e:
+    pass
