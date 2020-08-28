@@ -15,20 +15,13 @@ def get_dirs_files_list(path,*ext,debug=False,full_path=True):
     :param full_path:   默认返回全路径
     :return:    False 或者文件列表
     '''
-    
     path=str.lower(path)
-
     path=os.path.abspath(path)
-
-  
-    
-    
+    ext = [str.lower(x) for x in ext]
     try:
         if os.path.exists(path) and os.path.isdir(path):
 
             temp=[os.path.join(path,x) for x in os.listdir(path)]
-
-
 
             if len(ext)==0:
                 print('无类型筛选,返回所有文件')
@@ -43,11 +36,10 @@ def get_dirs_files_list(path,*ext,debug=False,full_path=True):
                 return result
 
 
-            if ext[0]=='''dir''':
+            if len(ext)==0 and '''dir''' in ext:
                 dirs=[]
                 print('返回目录')
 
-                
                 for i in temp:
                     
                     if os.path.isdir(i):
@@ -55,16 +47,25 @@ def get_dirs_files_list(path,*ext,debug=False,full_path=True):
                             dirs.append(i)
                         else:
                             dirs.append(re.split(r'[\\/]',i)[-1])
-
-
-                        
                 if debug:print(dirs)
                 return  dirs
 
+            if len(ext)>0 and 'dir' in ext:
+                print('目录和文件,请分开筛选,返回目录,本次只返回目录')
+                dirs = []
+                for i in temp:
 
-            if len(ext)>0:
+                    if os.path.isdir(i):
+                        if full_path == True:
+                            dirs.append(i)
+                        else:
+                            dirs.append(re.split(r'[\\/]', i)[-1])
+                if debug: print(dirs)
+                return dirs
+
+            if len(ext)>0 and 'dir' not in ext:
                 print('返回{}类型的文件'.format(ext))
-                s=[x for x in temp if str.lower(os.path.splitext(x)[1].split('.')[-1]) in ext]
+                s=[x for x in temp if str.lower(re.split(r'\.',x)[-1]) in ext]
                 files=[]
                 if full_path==True:
                     files=s
@@ -84,5 +85,5 @@ def get_dirs_files_list(path,*ext,debug=False,full_path=True):
 
 
 if __name__ == '__main__':
-    for i in get_dirs_files_list(r'Z:\job',debug=False,full_path=False):
+    for i in get_dirs_files_list(r'c:','dir'):
         print(i)
