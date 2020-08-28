@@ -21,18 +21,18 @@ def get_files(path,*ext,debug=False):
 
     if len(ext)==0:
         print('无类型筛选,返回所有文件')
-        return all
+        return all_files
 
     if len(ext)>0 and 'dir' not in ext:
         print('返回{}类型的文件'.format(ext))
-        result=[x for x in all if str.lower(re.split(r'\.',x)[-1]) in ext]
+        result=[x for x in all_files if str.lower(re.split(r'\.',x)[-1]) in ext]
         return result
 
     if len(ext)>0 and 'dir' in ext:
-        print('目录和文件,请分开筛选,返回目录,本次只返回目录')
+        print('目录和文件,请分开筛选,本次只返回目录')
         return all_dirs
 
 
 
 if __name__ == '__main__':
-    print(get_files(r'e:/','dir',debug=True))
+    print(get_files(r'e:/','jpg',debug=True))
