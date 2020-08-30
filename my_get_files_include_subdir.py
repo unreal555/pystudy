@@ -42,9 +42,12 @@ def get_files(path,*ext,debug=False,content=''):
 
 
     if content=='':
+        print('无筛选')
         return result
 
     if isinstance(content,str):
+        print('有筛选，str为"{}"：'.format(content))
+        print(result)
         temp=[]
         for item in result:
             if content in item:
@@ -52,22 +55,32 @@ def get_files(path,*ext,debug=False,content=''):
         return temp
 
     if isinstance(content,(list,tuple)):
+        print('有筛选，list为"{}"：'.format(str(content)))
         temp=[]
         for item in result:
+            flag=0
             if isinstance(item,str):
                 for key in content:
-                    if key not in item:
+                    print(key,item)
+                    if key   in item:
+                        flag+=1
+                    else:
                         break
-            temp.append(item)
+                    if flag==len(content):
+                        temp.append(item)
+
+        return temp
 
 
 
 if __name__ == '__main__':
 
-    for i in get_files(r'd:/','dir',content='张',debug=True):
-        print(i)
+    print(get_files(r'd:/','jpg',content=('张','纯','7'),debug=True))
+        # if os.path.exists(i):
+        #     continue
 
 
-        shutil.copytree(i,'d:/temp',dirs_exist_ok=True)
+        # print(i)
+        # shutil.copytree(i,'d:/temp',dirs_exist_ok=True)
 
 
