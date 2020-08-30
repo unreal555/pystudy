@@ -6,13 +6,15 @@
 
 import os
 import  re
+import shutil
 
-def get_files(path,*ext,debug=False):
+def get_files(path,*ext,debug=False,content=''):
     all_files=[]
     all_dirs=[]
+    result=''
     ext=[str.lower(x) for x in ext]
-    for basedir,subdirs,files in os.walk(path,topdown=0):
-        if len(files)==0:
+    for basedir,subdirs,files in os.walk(path,topdown=1):
+        if len(files)==0:   #空目录直接跳过
             continue
         all_dirs.append(basedir)
         for file in files:
@@ -21,18 +23,51 @@ def get_files(path,*ext,debug=False):
 
     if len(ext)==0:
         print('无类型筛选,返回所有文件')
-        return all_files
+        result=all_files
+
+
+    if len(ext)==1 and 'dir' in ext:
+        print('返回目录')
+        result=all_dirs
 
     if len(ext)>0 and 'dir' not in ext:
         print('返回{}类型的文件'.format(ext))
         result=[x for x in all_files if str.lower(re.split(r'\.',x)[-1]) in ext]
+
+
+    if len(ext)>1 and 'dir' in ext:
+        print('目录和文件,请分开筛选,本次只返回目录')
+        result=all_dirs
+
+
+
+    if content=='':
         return result
 
-    if len(ext)>0 and 'dir' in ext:
-        print('目录和文件,请分开筛选,本次只返回目录')
-        return all_dirs
+    if isinstance(content,str):
+        temp=[]
+        for item in result:
+            if content in item:
+                temp.append(item)
+        return temp
+
+    if isinstance(content,(list,tuple)):
+        temp=[]
+        for item in result:
+            if isinstance(item,str):
+                for key in content:
+                    if key not in item:
+                        break
+            temp.append(item)
 
 
 
 if __name__ == '__main__':
-    print(get_files(r'e:/','jpg',debug=True))
+
+    for i in get_files(r'd:/','dir',content='张',debug=True):
+        print(i)
+
+
+        shutil.copytree(i,'d:/temp',dirs_exist_ok=True)
+
+
