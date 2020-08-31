@@ -9,8 +9,8 @@ import os
 from my_get_dir_file_list import get_dirs_files_list
 from my_logger import logger
 
-basedir = '''G:\\tujidao'''
-suoluedir = '''G:\\suoluetu'''
+basedir = r'''C:\Users\Administrator\Desktop\p'''
+suoluedir = r'''C:\Users\Administrator\Desktop\s'''
 
 basedir = str.lower(basedir)
 suoluedir = str.lower(suoluedir)

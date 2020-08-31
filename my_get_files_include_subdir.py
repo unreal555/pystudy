@@ -16,10 +16,14 @@ def get_files(path,*ext,debug=False,content=''):
     for basedir,subdirs,files in os.walk(path,topdown=1):
         if len(files)==0:   #空目录直接跳过
             continue
+
+        if debug:print('正在处理目录:{}'.format(basedir))
         all_dirs.append(basedir)
-        for file in files:
-            if debug:print(r'当前目录为:  {}，文件为:  {}'.format(basedir,file))
-            all_files.append(os.path.join(basedir, file))
+
+        if 'dir' not in ext:
+            for file in files:
+                if debug:print(r'当前目录为:  {}，文件为:  {}'.format(basedir,file))
+                all_files.append(os.path.join(basedir, file))
 
     if len(ext)==0:
         print('无类型筛选,返回所有文件')
@@ -50,7 +54,7 @@ def get_files(path,*ext,debug=False,content=''):
         print(result)
         temp=[]
         for item in result:
-            if content in item:
+            if str.lower(content) in str.lower(item):
                 temp.append(item)
         return temp
 
@@ -62,7 +66,7 @@ def get_files(path,*ext,debug=False,content=''):
             if isinstance(item,str):
                 for key in content:
                     print(key,item)
-                    if key   in item:
+                    if str.lower(key) in str.lower(item):
                         flag+=1
                     else:
                         break
@@ -75,12 +79,8 @@ def get_files(path,*ext,debug=False,content=''):
 
 if __name__ == '__main__':
 
-    print(get_files(r'd:/','jpg',content=('张','纯','7'),debug=True))
-        # if os.path.exists(i):
-        #     continue
+    for i in get_files(r'h:/tujidao','jpg',content=('徐微微'),debug=True):
 
-
-        # print(i)
-        # shutil.copytree(i,'d:/temp',dirs_exist_ok=True)
+        shutil.copytree(i+'//',r'C:\\Users\\Administrator\\Desktop\p\\'+re.split(r'[\\/]',i)[-1],dirs_exist_ok=True)
 
 
