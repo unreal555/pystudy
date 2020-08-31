@@ -1378,10 +1378,37 @@ def get_content(driver,url):
     方案最新版本号=re.findall(r'''<th.*?>方案最新版本号</th><td.*?>(.*?)</td>''',html,re.S)
     版本日期=re.findall(r'''<th.*?>版本日期.*?</th><td.*?>(.*?)</td>''',html,re.S)#<th>版本日期:</th><td>2020-07-17</td>
     方案是否为联合用药=re.findall(r'''<th.*?>方案是否为联合用药.*?</th><td.*?>(.*?)</td>''',html,re.S)
-
-
     print(登记号,相关登记号,药物名称,药物类型,备案号,适应症,试验专业题目,试验通俗题目,试验方案编号,方案最新版本号,版本日期,方案是否为联合用药)
 
+    申请人名称=re.findall(r'''<th>申请人名称</th><td.*?>(.*?)</td>''',html,re.S)
+    联系人姓名=re.findall(r'''<th.*?>联系人姓名</th><td.*?>(.*?)</td>''',html,re.S)
+    联系人座机=re.findall(r'''<th.*?>联系人座机</th><td.*?>(.*?)</td>''',html,re.S)
+    联系人手机号=re.findall(r'''<th.*?>联系人手机号</th><td.*?>(.*?)</td>''',html,re.S)
+    联系人Email=re.findall(r'''<th.*?>联系人Email</th><td.*?>(.*?)</td>''',html,re.S)
+    联系人邮政地址=re.findall(r'''<th.*?>联系人邮政地址</th><td.*?>(.*?)</td>''',html,re.S)
+    联系人邮编=re.findall(r'''<th.*?>联系人邮编</th><td.*?>(.*?)</td>''',html,re.S)
+    print(申请人名称,联系人姓名,联系人座机,联系人手机号,联系人Email,联系人邮政地址,联系人邮编)
+
+
+    试验目的=re.findall(r'''divclass="sDPTit2">1、试验目的</div>(.*?)<div''',html,re.S)
+    试验分类=re.findall(r'''<th.*?>试验分类</th><td.*?>(.*?)</td>''',html,re.S)
+    试验分期=re.findall(r'''<th.*?>试验分期</th><td.*?>(.*?)</td>''',html,re.S)
+    设计类型=re.findall(r'''<th.*?>设计类型</th><td.*?>(.*?)</td>''',html,re.S)
+    随机化=re.findall(r'''<th.*?>随机化</th><td.*?>(.*?)</td>''',html,re.S)
+    盲法=re.findall(r'''<th.*?>盲法</th><td.*?>(.*?)</td>''',html,re.S)
+    试验范围=re.findall(r'''<th.*?>试验范围</th><td.*?>(.*?)</td>''',html,re.S)
+    print(试验目的,试验分类,试验分期,设计类型,随机化,盲法,试验范围)
+
+    受试者年龄=re.findall(r'''<th.*?>年龄</th><td.*?>(.*?)</td>''',html,re.S)
+    受试者性别=re.findall(r'''<th.*?>性别</th><td.*?>(.*?)</td>''',html,re.S)
+    健康受试者=re.findall(r'''<th.*?>健康受试者</th><td.*?>(.*?)</td>''',html,re.S)
+    入选标准=re.findall(r'''<th.*?>入选标准</th><td.*?><table.*?>(.*?)</table></td>''',html,re.S)
+    if len(入选标准)>0:
+        入选标准=my_html_tools.qu_html_lable(入选标准[0])
+    排除标准=re.findall(r'''<th.*?>排除标准</th><td.*?><table.*?>(.*?)</table></td>''',html,re.S)
+    if len(排除标准)>0:
+        排除标准=my_html_tools.qu_html_lable(排除标准[0])
+    print(受试者年龄,受试者性别,健康受试者,入选标准,排除标准)
 
 for i in range(1,20000):
     url='http://www.chinadrugtrials.org.cn/clinicaltrials.searchlistdetail.dhtml?currentpage={}&sort=desc&sort2=desc&rule=CTR'.format(i)
