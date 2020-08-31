@@ -2,6 +2,7 @@ import time
 import re
 from selenium import webdriver
 import my_html_tools
+from selenium.webdriver.common.action_chains import ActionChains
 
 html=r'''<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -1357,33 +1358,61 @@ Copyright © 国家药品监督管理局药品审评中心 All Right Reserved.
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_experimental_option('excludeSwitches', ['enable-automation'])
 driver = webdriver.Chrome(options=chrome_options,
-                          executable_path="D:\\PyCharm2019.3.1\\pystudy\\chromedriver.exe")
+                          executable_path=".\chromedriver.exe")
 
 driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {"source": """Object.defineProperty(navigator, 'webdriver', {get: () => undefined})"""})
 
 url = "http://www.chinadrugtrials.org.cn/clinicaltrials.searchlist.dhtml"
 url='http://www.chinadrugtrials.org.cn/clinicaltrials.searchlistdetail.dhtml'
 driver.get(url)
-html=driver.page_source
-html=my_html_tools.qu_kong_ge(html)
-
-登记号=re.findall(r'''<th.*?>登记号</th><td.*?>(.*?)</td>''',html,re.S)
-相关登记号=re.findall(r'''<th.*?>相关登记号</th><td.*?>(.*?)</td>''',html,re.S)
-药物名称=re.findall(r'''<th.*?>药物名称</th><td.*?>(.*?)</td>''',html,re.S)
-药物类型=re.findall(r'''<th.*?>药物类型</th><td.*?>(.*?)</td>''',html,re.S)
-备案号=re.findall(r'''<th.*?>备案号</th><td.*?>(.*?)</td>''',html,re.S)
-适应症=re.findall(r'''<th.*?>适应症</th><td.*?>(.*?)</td>''',html,re.S)
-试验专业题目=re.findall(r'''<th.*?>试验专业题目</th><td.*?>(.*?)</td>''',html,re.S)
-试验通俗题目=re.findall(r'''<th.*?>试验通俗题目</th><td.*?>(.*?)</td>''',html,re.S)
-试验方案编号=re.findall(r'''<th.*?>试验方案编号.*?</th><td.*?>(.*?)</td>''',html,re.S)
-方案最新版本号=re.findall(r'''<th.*?>方案最新版本号</th><td.*?>(.*?)</td>''',html,re.S)
-版本日期=re.findall(r'''<th.*?>版本日期.*?</th><td.*?>(.*?)</td>''',html,re.S)#<th>版本日期:</th><td>2020-07-17</td>
-方案是否为联合用药=re.findall(r'''<th.*?>方案是否为联合用药.*?</th><td.*?>(.*?)</td>''',html,re.S)
 
 
-print(登记号,相关登记号,药物名称,药物类型,备案号,适应症,试验专业题目,试验通俗题目,试验方案编号,方案最新版本号,版本日期,方案是否为联合用药)
+def get_content(driver):
+    html=driver.page_source
+    html=my_html_tools.qu_kong_ge(html)
+    登记号=re.findall(r'''<th.*?>登记号</th><td.*?>(.*?)</td>''',html,re.S)
+    相关登记号=re.findall(r'''<th.*?>相关登记号</th><td.*?>(.*?)</td>''',html,re.S)
+    药物名称=re.findall(r'''<th.*?>药物名称</th><td.*?>(.*?)</td>''',html,re.S)
+    药物类型=re.findall(r'''<th.*?>药物类型</th><td.*?>(.*?)</td>''',html,re.S)
+    备案号=re.findall(r'''<th.*?>备案号</th><td.*?>(.*?)</td>''',html,re.S)
+    适应症=re.findall(r'''<th.*?>适应症</th><td.*?>(.*?)</td>''',html,re.S)
+    试验专业题目=re.findall(r'''<th.*?>试验专业题目</th><td.*?>(.*?)</td>''',html,re.S)
+    试验通俗题目=re.findall(r'''<th.*?>试验通俗题目</th><td.*?>(.*?)</td>''',html,re.S)
+    试验方案编号=re.findall(r'''<th.*?>试验方案编号.*?</th><td.*?>(.*?)</td>''',html,re.S)
+    方案最新版本号=re.findall(r'''<th.*?>方案最新版本号</th><td.*?>(.*?)</td>''',html,re.S)
+    版本日期=re.findall(r'''<th.*?>版本日期.*?</th><td.*?>(.*?)</td>''',html,re.S)#<th>版本日期:</th><td>2020-07-17</td>
+    方案是否为联合用药=re.findall(r'''<th.*?>方案是否为联合用药.*?</th><td.*?>(.*?)</td>''',html,re.S)
 
 
+    print(登记号,相关登记号,药物名称,药物类型,备案号,适应症,试验专业题目,试验通俗题目,试验方案编号,方案最新版本号,版本日期,方案是否为联合用药)
+
+get_content(driver=driver)
+while 1:
+    my_html_tools.random_wait(5,8)
+    try:
+        js2 =''' document.querySelector("#toolbar_bottom > div > a").click()'''
+        driver.execute_script(js2)
+
+       # driver.find_element_by_css_selector('#toolbar_top > div > a').click()
+    except Exception as e:
+        print(e)
+        driver.back()
+
+    get_content(driver=driver)
+
+
+
+
+
+
+
+
+    #
+    #
+
+    # ActionChains(driver).move_to_element(t).perform()
+    # my_html_tools.random_wait(1,1)
+    # ActionChains(driver).click().perform()
 
 
 
