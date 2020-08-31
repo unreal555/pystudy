@@ -13,6 +13,7 @@ def get_files(path,*ext,debug=False,content=''):
     all_dirs=[]
     result=''
     ext=[str.lower(x) for x in ext]
+    
     for basedir,subdirs,files in os.walk(path,topdown=1):
         if len(files)==0:   #空目录直接跳过
             continue
@@ -24,6 +25,7 @@ def get_files(path,*ext,debug=False,content=''):
             for file in files:
                 if debug:print(r'当前目录为:  {}，文件为:  {}'.format(basedir,file))
                 all_files.append(os.path.join(basedir, file))
+                
 
     if len(ext)==0:
         print('无类型筛选,返回所有文件')
@@ -51,11 +53,13 @@ def get_files(path,*ext,debug=False,content=''):
 
     if isinstance(content,str):
         print('有筛选，str为"{}"：'.format(content))
-        print(result)
+        
         temp=[]
         for item in result:
             if str.lower(content) in str.lower(item):
                 temp.append(item)
+
+            
         return temp
 
     if isinstance(content,(list,tuple)):
@@ -79,8 +83,9 @@ def get_files(path,*ext,debug=False,content=''):
 
 if __name__ == '__main__':
 
-    for i in get_files(r'h:/tujidao','jpg',content=('徐微微'),debug=True):
+    for i in get_files(r'e:/',content='新',debug=True):
+        print(i)
 
-        shutil.copytree(i+'//',r'C:\\Users\\Administrator\\Desktop\p\\'+re.split(r'[\\/]',i)[-1],dirs_exist_ok=True)
+        
 
 
