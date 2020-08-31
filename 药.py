@@ -1362,12 +1362,8 @@ driver = webdriver.Chrome(options=chrome_options,
 
 driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {"source": """Object.defineProperty(navigator, 'webdriver', {get: () => undefined})"""})
 
-url = "http://www.chinadrugtrials.org.cn/clinicaltrials.searchlist.dhtml"
-url='http://www.chinadrugtrials.org.cn/clinicaltrials.searchlistdetail.dhtml'
-driver.get(url)
-
-
-def get_content(driver):
+def get_content(driver,url):
+    driver.get(url)
     html=driver.page_source
     html=my_html_tools.qu_kong_ge(html)
     登记号=re.findall(r'''<th.*?>登记号</th><td.*?>(.*?)</td>''',html,re.S)
@@ -1386,47 +1382,15 @@ def get_content(driver):
 
     print(登记号,相关登记号,药物名称,药物类型,备案号,适应症,试验专业题目,试验通俗题目,试验方案编号,方案最新版本号,版本日期,方案是否为联合用药)
 
-get_content(driver=driver)
-while 1:
-    my_html_tools.random_wait(5,8)
-    try:
-        js2 =''' document.querySelector("#toolbar_bottom > div > a").click()'''
-        driver.execute_script(js2)
 
-       # driver.find_element_by_css_selector('#toolbar_top > div > a').click()
-    except Exception as e:
-        print(e)
-        driver.back()
-
-    get_content(driver=driver)
+for i in range(1,20000):
+    url='http://www.chinadrugtrials.org.cn/clinicaltrials.searchlistdetail.dhtml?currentpage={}&sort=desc&sort2=desc&rule=CTR'.format(i)
+    print(url)
+    get_content(driver=driver,url=url)
+    my_html_tools.random_wait(2,4)
 
 
 
-
-
-
-
-
-    #
-    #
-
-    # ActionChains(driver).move_to_element(t).perform()
-    # my_html_tools.random_wait(1,1)
-    # ActionChains(driver).click().perform()
-
-
-
-
-
-
-
-#
-# id_value = driver.find_element_by_xpath('//a[@id="7e9a398a0e52469983e1c68daf937ace"]')
-# print(id_value.text)
-#
-# list_value = driver.find_elements_by_xpath('//a[@onclick="getDetail(this.id)"]')
-# for i in list_value:
-#     print("序号：%s   值：%s" % (list_value.index(i) + 1, i.text))
 
 
 
