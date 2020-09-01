@@ -14,9 +14,13 @@ class logger():
     __mark=' # # # '
     __log=''
     __file=''
+    __debug=False
 
     def __init__(self,dir='.',name='log.txt',debug=False):
-        if debug:print('初始化logger')
+
+        self.__debu=debug
+        
+        if self.__debug:print('初始化logger')
 
         self.__file=os.path.join(dir,name)
 
@@ -28,7 +32,7 @@ class logger():
 
         else:
             if not os.path.exists(dir):
-                if debug:print('创建日志路径{}'.format(dir))
+                if self.__debug:print('创建日志路径{}'.format(dir))
                 os.makedirs(dir)
             log = time.strftime('%Y-%m-%d %H:%M:%S') + '\t' + '创建日志'
             self.__do(log)
@@ -38,7 +42,7 @@ class logger():
     def write(self,*info):
 
         if len(info)==0:
-            if debug:print('内容为空,请输入有效的日志')
+            if self.__debug:print('内容为空,请输入有效的日志')
             return False
 
         if len(info)==1:
@@ -49,8 +53,8 @@ class logger():
                 return True
 
             except Exception as  e:
-                if debug:print(e)
-                if debug:print('日志必须为文本,请检查输入')
+                if self.__debug:print(e)
+                if self.__debug:print('日志必须为文本,请检查输入')
                 return False
 
         if len(info)>1:
@@ -65,8 +69,8 @@ class logger():
                 return True
 
             except Exception as e:
-                if debug:print(e)
-                if debug:print('日志必须为文本,请检查输入')
+                if self.__debug:print(e)
+                if self.__debug:print('日志必须为文本,请检查输入')
                 return False
 
     def check(self,target):
@@ -102,8 +106,8 @@ class logger():
         self.__do(log)
 
     def __do(self,log):
-        if debug:print('写入日志{}'.format(log))
-        if debug:print('日志位置{}'.format(self.__file))
+        if self.__debug:print('写入日志{}'.format(log))
+        if self.__debug:print('日志位置{}'.format(self.__file))
         with open(self.__file, 'a', encoding='utf-8') as f:
             f.write(self.__mark)
             f.write(log)
@@ -128,6 +132,5 @@ if __name__=='__main__':
     logger.write('asdadfalsdjfklasdadg')
     logger.write('asdadfalsdjfklasdadg', 'assdsd')
     logger.write(('adfadfadf','adfadasdfasdf'))
-    if debug:print(logger.check('asda'))
     logger.rebulid()
     del logger
