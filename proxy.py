@@ -14,12 +14,14 @@ def get_ip(url):
     print(page.url)
     page_source=page.text.replace(' ','').replace('\n','').replace('\r ','')
     print(page_source)
-    result=re.findall(r'</td><td>(\d+).(\d+).(\d+).(\d+)</td><td>(\d+)</td><td><ahref=".*?">(.*?)</a></td><tdclass=".*?">.*?</td><td>(.*?)</td>',page_source)
+    result=re.findall(r'<tr><.*?"IP">(\d+).(\d+).(\d+).(\d+)</td><.*?"PORT">(\d+)</td>.*?<.*?"类型">(.*?)<.*?"位置">(.*?)</td><.*?"响应速度">.*?</td>.*?"最后验证时间">.*?</td></tr>',page_source)
     print(result)
     return result
 
 def test_proxy(i):
-    ip1, ip2, ip3, ip4, port, area, des=i[0],i[1],i[2],i[3],i[4],i[5],i[6]
+
+    print(i)
+    ip1, ip2, ip3, ip4, port, des, area=i[0],i[1],i[2],i[3],i[4],i[5],i[6]
     if int(port)>65535 or int(port)<0:
         print('port wrong',('{}.{}.{}.{}'.format(ip1,ip2,ip3,ip4),port))
         return 0
@@ -29,12 +31,15 @@ def test_proxy(i):
 
 
     ip='{}.{}.{}.{}'.format(ip1,ip2,ip3,ip4)
+    print(ip,des)
+
     url='icanhazip.com'
     if des=='HTTP':
-        proxies={'http':'http://'+ip}
+        proxies={'http':'http://'+ip+':'+str(port)}
         # proxies={'http': 'http://test2:594188@58.59.25.122:1234'}
         try:
             s=requests.get('http://'+url,proxies=proxies,headers=headers)
+
             print('s.test',s.text)
             print('proxy',ip)
             print('http比较',ip in s.text)
@@ -46,7 +51,7 @@ def test_proxy(i):
             return 0
 
     if des=='HTTPS':
-        proxies={'https':'https://'+ip}
+        proxies={'https':'https://'+ip+':'+str(port)}
         # proxies={'https': 'https://test:594188@58.59.25.122:1234'}
         try:
             s=requests.get('https://'+url,proxies=proxies,headers=headers)
@@ -75,11 +80,11 @@ def save(obj):
             f.write('{}{}'.format(str(proxy),'\r\n'))
 
 if __name__ == '__main__':
-    pool = ThreadPoolExecutor(1)
+    pool = ThreadPoolExecutor(5)
     for i in range(1,1000):
-        # time.sleep(random.choice(range(15,25)))
-        for j in get_ip('https://www.xicidaili.com/nn/{}'.format(i)):
+
+        for j in get_ip('https://www.kuaidaili.com/free/inha/{}/'.format(i)):
             # a=['58','59','25','122','1234','yt','er']
             pool.submit(test_proxy, j).add_done_callback(save)
 
-
+        time.sleep(random.choice(range(15, 25)))
