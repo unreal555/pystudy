@@ -93,7 +93,7 @@ def get_content(driver,url,logger):
     
 
     
-    
+    driver.delete_all_cookies()
     driver.get(url)   
 
     html=driver.page_source
@@ -110,7 +110,9 @@ def get_content(driver,url,logger):
         
         if len(re.findall(r'''<th.*?>登记号</th><td.*?>(.*?)</td>''',html,re.S))==0:
             print('有异常情况,开始重试',len(re.findall(r'''<th.*?>登记号</th><td.*?>(.*?)</td>''',html,re.S)))
+            driver.back()
             random_wait(10,60)
+            driver.delete_all_cookies()
             driver.get(url)   
             html=driver.page_source
             html=qu_kong_ge(html)
@@ -224,7 +226,7 @@ def get_content(driver,url,logger):
 
 
     
-for i in range(58,20000):
+for i in range(110,20000):
     
     url='http://www.chinadrugtrials.org.cn/clinicaltrials.searchlistdetail.dhtml?currentpage={}&sort=desc&sort2=desc&rule=CTR'.format(i)
 
