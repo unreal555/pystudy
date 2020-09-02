@@ -5,6 +5,9 @@ import random
 import my_logger
 import my_csv_tools
 
+min_s=100
+max_s=180
+n=129
 
 
 # chrome_options.add_argument("--headless")
@@ -110,10 +113,11 @@ def get_content(driver,url,logger):
         
         if len(re.findall(r'''<th.*?>登记号</th><td.*?>(.*?)</td>''',html,re.S))==0:
             print('有异常情况,开始重试',len(re.findall(r'''<th.*?>登记号</th><td.*?>(.*?)</td>''',html,re.S)))
+            random_wait()
             driver.back()
-            random_wait(10,60)
+            random_wait(min_s,max_s)
             driver.delete_all_cookies()
-            driver.get(url)   
+            driver.get(url)
             html=driver.page_source
             html=qu_kong_ge(html)
             retry_time=retry_time-1
@@ -226,12 +230,12 @@ def get_content(driver,url,logger):
 
 
     
-for i in range(110,20000):
+for i in range(n,20000):
     
     url='http://www.chinadrugtrials.org.cn/clinicaltrials.searchlistdetail.dhtml?currentpage={}&sort=desc&sort2=desc&rule=CTR'.format(i)
 
     get_content(driver=driver,url=url,logger=logger)
 
-    random_wait(10,60)
+    random_wait(min_s,max_s)
 
 
