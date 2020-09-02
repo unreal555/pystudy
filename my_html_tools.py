@@ -115,9 +115,12 @@ def tras_header(str):
     print(('}'))
     return result
 
-def qu_kong_ge(s):
+def qu_kong_ge(s,include_space=True):
     if isinstance(s, str):
-        return re.sub('\s+', '', s)
+        if include_space==True:
+            return re.sub('\s+', '', s)
+        else:
+            return re.sub('[\t\r\n]', '', s)
     else:
         print('老兄，给字符串')
         return False
@@ -367,16 +370,51 @@ def createCounter():
         return s
     return counter
 
+def dup_removal(s,clean_empty=True):
+    t=[]
+    if isinstance(s,list):
+        for i in s:
+
+            if clean_empty==True and i=='':
+                continue
+            if i not in t:
+                t.append(i)
+        return t
+    else:
+        print('请输入list')
+        return False
+
+def geshihua(s,clean_html_lable=False,):
+
+    t = []
+    if clean_html_lable==True:
+        for i in s:
+            t.append(qu_html_lable(i))
+    else:
+        t=s
+
+    if len(t) == 0:
+        return ''
+    if len(t) == 1:
+        return t[0]
+
+    if len(t) == 2:
+        if t[0] == t[1]:
+            return t[0]
+        else:
+            return t
+
+    if len(t) >= 3:
+        return t
+
+
 if __name__ == '__main__':
 
     # url='http://wap.xiongti.cn/html/61/61431/indexasc.html'
     # # page=my_request(url=url,keyword='timeout-button',proxies=get_proxie(),retry_times=10,wait_from=1,wait_to=2,debug=True)
     # s=my_request(url)
     # print(qu_kong_ge(s)
-
-    random_wait(60,60)
-
-
+    check_fname('./pic/2.jpg')
 
 
 
