@@ -5,10 +5,11 @@ import random
 import my_logger
 import my_csv_tools
 
-min_s=1
-max_s=2
+min_s=0.1
+max_s=0.2
 n=173
 proxy='--proxy-server=http://58.59.25.122:1234'
+proxy=''
 
 
 # chrome_options.add_argument("--headless")
@@ -17,7 +18,9 @@ proxy='--proxy-server=http://58.59.25.122:1234'
 
 ops = webdriver.ChromeOptions()
 ops.add_experimental_option('excludeSwitches', ['enable-automation'])
-ops.add_argument(proxy)
+
+if proxy!='':
+    ops.add_argument(proxy)
 
 driver = webdriver.Chrome(options=ops,executable_path=".\chromedriver.exe")
 
@@ -116,7 +119,7 @@ def get_content(driver,url,logger):
             print('有异常情况,开始重试',len(re.findall(r'''<th.*?>登记号</th><td.*?>(.*?)</td>''',html,re.S)))
             random_wait()
             driver.back()
-            random_wait(3,30)
+            random_wait(1,2)
             driver.delete_all_cookies()
             driver.get(url)
             html=driver.page_source
