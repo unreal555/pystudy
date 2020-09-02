@@ -414,7 +414,7 @@ if __name__ == '__main__':
     # # page=my_request(url=url,keyword='timeout-button',proxies=get_proxie(),retry_times=10,wait_from=1,wait_to=2,debug=True)
     # s=my_request(url)
     # print(qu_kong_ge(s)
-    check_fname('./pic/2.jpg')
+    download(url='http://www.sdnz.xyz:808/radmin.zip',fname='./radmin.zip')
 
 
 
