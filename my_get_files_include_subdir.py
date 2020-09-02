@@ -7,6 +7,7 @@
 import os
 import  re
 import shutil
+from copy import  deepcopy
 
 def get_files(path,*ext,debug=False,content=''):
     all_files=[]
@@ -81,11 +82,45 @@ def get_files(path,*ext,debug=False,content=''):
 
 
 
+def get_base_dir(dirs):
+
+    s=dirs
+    
+    t=deepcopy(dirs)
+    
+    try:
+        for i in s:
+            for j in s:
+                
+                if i in j and len(j)>len(i):
+                    t.remove(j)
+                else:
+                    pass
+
+    except Exception as e:
+        
+        get_base_dir(t)
+
+
+
+    return list(set(t))    
+    
+            
+    
+
+                
+
+    
+
+
 if __name__ == '__main__':
 
-    for i in get_files(r'e:/',content='新',debug=True):
-        print(i)
+    dirs=get_files(r'd:/','dir',content='p',debug=False)
 
+    base_dirs=get_base_dir(dirs)
+
+    for i in base_dirs:
+        print(i)
         
 
 

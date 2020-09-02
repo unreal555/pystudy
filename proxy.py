@@ -80,7 +80,7 @@ def save(obj):
             f.write('{}{}'.format(str(proxy),'\r\n'))
 
 if __name__ == '__main__':
-    pool = ThreadPoolExecutor(5)
+    pool = ThreadPoolExecutor(10)
     for i in range(1,1000):
 
         for j in get_ip('https://www.kuaidaili.com/free/inha/{}/'.format(i)):
