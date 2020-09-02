@@ -279,7 +279,7 @@ def get_random_proxie():
     print('随机选择代理为{}'.format(proxies))
     return random.choice(Proxy)
 
-def download(url,fname='',headers={'User-Agent':user_anent},proxies={},retry_times=5,wait_from=1,wait_to=3):
+def download(url,fname='',headers={'User-Agent':user_anent},proxies={},retry_times=5,wait_from=1,wait_to=3,debug=False):
     '''
     :param url: 请求的url
     :param fname:  保存的文件路径+文件名
@@ -336,7 +336,7 @@ def download(url,fname='',headers={'User-Agent':user_anent},proxies={},retry_tim
             print('开始尝试第{}第下载,url为{}'.format(count + 1, url))
             r = requests.get(url, headers=headers,proxies=proxies)
             print(r.status_code)
-            print(r.content)
+            if debug:print(r.content)
             if r.status_code == 200:
                 break
             if r.status_code!=200:
@@ -414,7 +414,9 @@ if __name__ == '__main__':
     # # page=my_request(url=url,keyword='timeout-button',proxies=get_proxie(),retry_times=10,wait_from=1,wait_to=2,debug=True)
     # s=my_request(url)
     # print(qu_kong_ge(s)
-    download(url='http://www.sdnz.xyz:808/radmin.zip',fname='./radmin.zip')
+    url='http://wsgg.sbj.cnipa.gov.cn:9080/tmann/annInfoView/homePage.html'
+
+    print(qu_html_lable(my_request(url)))
 
 
 
