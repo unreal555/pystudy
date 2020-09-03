@@ -62,11 +62,9 @@ def random_wait(n=1,m=3,show=True,*args):
             time.sleep(0.3)
             t=t-1
         time.sleep(t)
-        print('\r','wait end,continue work\r\n',end='',flush=True)
-
+        print('\r','wait end,continue work',flush=True)
     else:
         time.sleep(t)
-
     return True
 
 def get_random_str(lenth=8):
@@ -425,7 +423,7 @@ if __name__ == '__main__':
     # counter=createCounter()
     # for i in range(1,100):
     #     print(counter())
-    random_wait(10,20)
+    random_wait(3600,3600)
 
 
 
