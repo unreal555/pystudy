@@ -9,7 +9,7 @@ import os
 min_s=0.1
 max_s=0.2
 proxy='--proxy-server=http://58.59.25.122:1234'
-proxy=''
+#proxy=''
 
 
 # chrome_options.add_argument("--headless")
@@ -27,6 +27,7 @@ driver = webdriver.Chrome(options=ops,executable_path=".\chromedriver.exe")
 driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {"source": """Object.defineProperty(navigator, 'webdriver', {get: () => undefined})"""})
 
 logger=my_logger.logger()
+logger.rebulid()
 
 csv_header=['登记号','相关登记号','药物名称','药物类型','备案号','适应症','试验专业题目','试验通俗题目','试验方案编号','方案最新版本号','版本日期','方案是否为联合用药','申请人名称','联系人姓名','联系人座机',
             '联系人手机号','联系人Email','联系人邮政地址','联系人邮编','试验目的','试验分类','试验分期','设计类型','随机化','盲法','试验范围','受试者年龄','受试者性别','健康受试者','入选标准','排除标准',
@@ -284,21 +285,15 @@ if os.path.exists('./log.txt') and os.path.isfile('./log.txt'):
     print(lost)
     n=keys[-1]+1
 
-if lost !=[]:
-
-    for i in lost:
-
-        flag = counter()
-        print('达到', flag, '个')
-        if flag % 15 == 0:
-            random_wait(3600, 3700)
-
-        url = 'http://www.chinadrugtrials.org.cn/clinicaltrials.searchlistdetail.dhtml?currentpage={}&sort=desc&sort2=desc&rule=CTR'.format(
-            i)
-
-        get_content(driver=driver, url=url, logger=logger, counter=counter)
-
-        random_wait(min_s, max_s)
+#if lost !=[]:
+#    for i in lost:
+#        flag = counter()
+#        print('达到', flag, '个')
+#        if flag % 15 == 0:
+#            random_wait(3600, 3700)
+#        url = 'http://www.chinadrugtrials.org.cn/clinicaltrials.searchlistdetail.dhtml?currentpage={}&sort=desc&sort2=desc&rule=CTR'.format(i)
+#        get_content(driver=driver, url=url, logger=logger, counter=counter)
+#        random_wait(min_s, max_s)
 
 
 
