@@ -4,10 +4,10 @@ import time
 import random
 import my_logger
 import my_csv_tools
+import os
 
 min_s=0.1
 max_s=0.2
-n=201
 proxy='--proxy-server=http://58.59.25.122:1234'
 proxy=''
 
@@ -117,8 +117,6 @@ def geshihua(s):
 
 def get_content(driver,url,logger,counter):
 
-    if (counter())%15==0:
-        random_wait(3600,3700)
     
     driver.delete_all_cookies()
     driver.get(url)   
@@ -136,9 +134,13 @@ def get_content(driver,url,logger,counter):
             return
         
         if len(re.findall(r'''<th.*?>登记号</th><td.*?>(.*?)</td>''',html,re.S))==0:
-            if (counter()) % 15 == 0:
-                random_wait(3600, 3700)
             print('有异常情况,开始重试',len(re.findall(r'''<th.*?>登记号</th><td.*?>(.*?)</td>''',html,re.S)))
+            
+            flag=counter()
+            print('达到',flag,'个')
+            if flag%15==0:
+                random_wait(3600,3700)
+            
             random_wait(0.5,1)
             driver.back()
             random_wait(0.5,1)
@@ -254,16 +256,61 @@ def get_content(driver,url,logger,counter):
 
 
 
+counter=createCounter()
+n=1
+lost=[]
+
+if os.path.exists('./log.txt') and os.path.isfile('./log.txt'):
+    with open('./log.txt', encoding='utf-8') as f:
+        lines = f.readlines()
+
+    keys = []
+
+    for i in lines:
+        if i == '':
+            continue
+        else:
+            temp = re.findall(r'''# # #.*?\['(\d+)'\] # # #''', i)
+            if len(temp) == 1:
+                keys.append(int(temp[0]))
+    keys = sorted(keys)
+    print(keys)
+
+    for i in range(keys[-1], 0, -1):
+
+        if i not in keys:
+            lost.append(i)
+
+    print(lost)
+    n=keys[-1]+1
+
+if lost !=[]:
+
+    for i in lost:
+
+        flag = counter()
+        print('达到', flag, '个')
+        if flag % 15 == 0:
+            random_wait(3600, 3700)
+
+        url = 'http://www.chinadrugtrials.org.cn/clinicaltrials.searchlistdetail.dhtml?currentpage={}&sort=desc&sort2=desc&rule=CTR'.format(
+            i)
+
+        get_content(driver=driver, url=url, logger=logger, counter=counter)
+
+        random_wait(min_s, max_s)
 
 
-    
+
 for i in range(n,20000):
 
-    counter=createCounter()
-    
+    flag=counter()
+    print('达到',flag,'个')
+    if flag%15==0:
+        random_wait(3600,3700)
     url='http://www.chinadrugtrials.org.cn/clinicaltrials.searchlistdetail.dhtml?currentpage={}&sort=desc&sort2=desc&rule=CTR'.format(i)
 
-    get_content(driver=driver,url=url,logger=logger,counter=createCounter())
+    get_content(driver=driver,url=url,logger=logger,counter=counter)
 
     random_wait(min_s,max_s)
 

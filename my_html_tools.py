@@ -47,17 +47,22 @@ def execute_lasts_time(func):
         return result
     return warpper
 
+@execute_lasts_time
 def random_wait(n=1,m=3,show=True,*args):
     t = get_random_num(n,m)
     print("wait {} second".format(t))
 
     if show == True:
         while t>1:
-            print('\r','counting:',t,end='',flush=True)
-            time.sleep(1)
+            print('\r','%-20s'%'counting down.',t,end='',flush=True)
+            time.sleep(0.3)
+            print('\r', '%-20s'%'counting down..', t, end='', flush=True)
+            time.sleep(0.4)
+            print('\r', '%-20s'%'counting down...', t, end='', flush=True)
+            time.sleep(0.3)
             t=t-1
         time.sleep(t)
-        print(print('\r','wait end,continue work',end='',flush=True))
+        print('\r','wait end,continue work\r\n',end='',flush=True)
 
     else:
         time.sleep(t)
@@ -79,7 +84,7 @@ def get_random_num(n=1,m=3,*args):
         print('m,n不是小-大顺序,自动调换mn数值')
         n,m=m,n
     num=random.uniform(n, m)
-    print('获得的随机数为{}'.format(num))
+    #print('获得的随机数为{}'.format(num))
     return num
 
 @execute_lasts_time
@@ -417,10 +422,10 @@ if __name__ == '__main__':
     # url='http://wsgg.sbj.cnipa.gov.cn:9080/tmann/annInfoView/homePage.html'
     #
     # print(qu_html_lable(my_request(url)))
-    counter=createCounter()
-    for i in range(1,100):
-        print(counter())
-
+    # counter=createCounter()
+    # for i in range(1,100):
+    #     print(counter())
+    random_wait(10,20)
 
 
 
