@@ -7,7 +7,7 @@ import my_csv_tools
 
 min_s=0.1
 max_s=0.2
-n=173
+n=201
 proxy='--proxy-server=http://58.59.25.122:1234'
 proxy=''
 
@@ -32,6 +32,13 @@ csv_header=['登记号','相关登记号','药物名称','药物类型','备案�
             '联系人手机号','联系人Email','联系人邮政地址','联系人邮编','试验目的','试验分类','试验分期','设计类型','随机化','盲法','试验范围','受试者年龄','受试者性别','健康受试者','入选标准','排除标准',
             '试验药','对照药','主要终点指标及评价时间','次要终点指标及评价时间','主要研究者信息','各参加机构信息','伦理委员会信息','数据安全监查委员会','为受试者购买试验伤害保险',
             '主要研究者信息','各参加机构信息','伦理委员会信息','试验状态','试验人数','受试者招募及试验完成日期','临床试验结果摘要']
+def createCounter():
+    s = 0
+    def counter():
+        nonlocal s
+        s = s + 1
+        return s
+    return counter
 
 def qu_html_lable(s):
     reg = re.compile(r'<[^>]+>', re.S)
@@ -54,11 +61,23 @@ def get_random_num(n=1,m=3,*args):
     print('获得的随机数为{}'.format(num))
     return num
 
-def random_wait(n=1,m=3,*args):
-    temp = get_random_num(n,m)
-    print("wait {} second".format(temp))
-    time.sleep(temp)
+def random_wait(n=1,m=3,show=True,*args):
+    t = get_random_num(n,m)
+    print("wait {} second".format(t))
+
+    if show == True:
+        while t>1:
+            print('\r','counting:',t,end='',flush=True)
+            time.sleep(1)
+            t=t-1
+        time.sleep(t)
+        print(print('\r','wait end,continue work',end='',flush=True))
+
+    else:
+        time.sleep(t)
+
     return True
+
 
 def qu_kong_ge(s):
     t= re.sub('[\t\r\n]','',s)
@@ -96,9 +115,10 @@ def geshihua(s):
     
 
 
-def get_content(driver,url,logger):
-    
+def get_content(driver,url,logger,counter):
 
+    if (counter())%15==0:
+        random_wait(3600,3700)
     
     driver.delete_all_cookies()
     driver.get(url)   
@@ -116,12 +136,15 @@ def get_content(driver,url,logger):
             return
         
         if len(re.findall(r'''<th.*?>登记号</th><td.*?>(.*?)</td>''',html,re.S))==0:
+            if (counter()) % 15 == 0:
+                random_wait(3600, 3700)
             print('有异常情况,开始重试',len(re.findall(r'''<th.*?>登记号</th><td.*?>(.*?)</td>''',html,re.S)))
-            random_wait()
+            random_wait(0.5,1)
             driver.back()
-            random_wait(1,2)
+            random_wait(0.5,1)
             driver.delete_all_cookies()
             driver.get(url)
+            random_wait(0.5, 1)
             html=driver.page_source
             html=qu_kong_ge(html)
             retry_time=retry_time-1
@@ -235,10 +258,12 @@ def get_content(driver,url,logger):
 
     
 for i in range(n,20000):
+
+    counter=createCounter()
     
     url='http://www.chinadrugtrials.org.cn/clinicaltrials.searchlistdetail.dhtml?currentpage={}&sort=desc&sort2=desc&rule=CTR'.format(i)
 
-    get_content(driver=driver,url=url,logger=logger)
+    get_content(driver=driver,url=url,logger=logger,counter=createCounter())
 
     random_wait(min_s,max_s)
 

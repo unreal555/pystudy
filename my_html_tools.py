@@ -414,9 +414,14 @@ if __name__ == '__main__':
     # # page=my_request(url=url,keyword='timeout-button',proxies=get_proxie(),retry_times=10,wait_from=1,wait_to=2,debug=True)
     # s=my_request(url)
     # print(qu_kong_ge(s)
-    url='http://wsgg.sbj.cnipa.gov.cn:9080/tmann/annInfoView/homePage.html'
+    # url='http://wsgg.sbj.cnipa.gov.cn:9080/tmann/annInfoView/homePage.html'
+    #
+    # print(qu_html_lable(my_request(url)))
+    counter=createCounter()
+    for i in range(1,100):
+        print(counter())
 
-    print(qu_html_lable(my_request(url)))
+
 
 
 
