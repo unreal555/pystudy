@@ -7,7 +7,7 @@
 import os
 import re
 
-def get_dirs_files_list(path,*ext,debug=False,full_path=True):
+def get_paths(path,*ext,debug=False,full_path=True):
     '''
     :param path: 要分析的路径
     :param ext:   dir或者扩展名,逗号分隔的str
@@ -85,5 +85,5 @@ def get_dirs_files_list(path,*ext,debug=False,full_path=True):
 
 
 if __name__ == '__main__':
-    for i in get_dirs_files_list(r'c:','dir'):
+    for i in get_paths(r'c:','dir'):
         print(i)

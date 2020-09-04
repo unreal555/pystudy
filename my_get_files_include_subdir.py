@@ -9,13 +9,14 @@ import  re
 import shutil
 from copy import  deepcopy
 
-def get_files(path,*ext,debug=False,content=''):
+def get_paths(path,*ext,debug=False,content=''):
     all_files=[]
     all_dirs=[]
     result=''
     ext=[str.lower(x) for x in ext]
-    
+    print('start scanning:')
     for basedir,subdirs,files in os.walk(path,topdown=1):
+
         if len(files)==0:   #空目录直接跳过
             continue
 
@@ -70,7 +71,7 @@ def get_files(path,*ext,debug=False,content=''):
             flag=0
             if isinstance(item,str):
                 for key in content:
-                    print(key,item)
+                    if debug:print(key,item)
                     if str.lower(key) in str.lower(item):
                         flag+=1
                     else:
@@ -83,11 +84,8 @@ def get_files(path,*ext,debug=False,content=''):
 
 
 def get_base_dir(dirs):
-
     s=dirs
-    
     t=deepcopy(dirs)
-    
     try:
         for i in s:
             for j in s:
@@ -96,31 +94,19 @@ def get_base_dir(dirs):
                     t.remove(j)
                 else:
                     pass
-
     except Exception as e:
-        
         get_base_dir(t)
-
-
-
-    return list(set(t))    
-    
-            
-    
-
-                
-
-    
-
+    return list(set(t))
 
 if __name__ == '__main__':
-
-    dirs=get_files(r'd:/','dir',content='p',debug=False)
-
-    base_dirs=get_base_dir(dirs)
-
-    for i in base_dirs:
+    # dirs=get_files(r'd:/','dir',content='p',debug=False)
+    #
+    # base_dirs=get_base_dir(dirs)
+    #
+    # for i in base_dirs:
+    #     print(i)
+    for i in get_paths('h://tujidao','dir',content=['姐妹花','徐微微']):
         print(i)
-        
+        shutil.copytree(i + '//', r'C:\\Users\\Administrator\\Desktop\p\\' + re.split(r'[\\/]', i)[-1], dirs_exist_ok=True)
 
 
