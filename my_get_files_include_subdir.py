@@ -105,7 +105,7 @@ if __name__ == '__main__':
     #
     # for i in base_dirs:
     #     print(i)
-    for i in get_paths('h://tujidao','dir',content=['姐妹花','徐微微']):
+    for i in get_paths('h://tujidao','dir',content=['徐微微']):
         print(i)
         shutil.copytree(i + '//', r'C:\\Users\\Administrator\\Desktop\p\\' + re.split(r'[\\/]', i)[-1], dirs_exist_ok=True)
 
