@@ -16,11 +16,14 @@ class logger():
     __file=''
     __debug=False
 
-    def __init__(self,dir='.',name='log.txt',debug=False):
+    def __init__(self,dir='.',name='log',debug=False):
 
         self.__debu=debug
         
         if self.__debug:print('初始化logger')
+
+        if 'txt' not in name:
+            name=name+'.txt'
 
         self.__file=os.path.join(dir,name)
 
@@ -89,7 +92,7 @@ class logger():
 
         dir,file=os.path.split(self.__file)
         filename,ext=os.path.splitext(file)
-        backup_name=os.path.join(dir,filename+'-'+time.strftime('%Y-%m-%d-%H-%M-%S')+ext)
+        backup_name=os.path.join(dir,filename+'-'+'backup-'+time.strftime('%Y-%m-%d-%H-%M-%S')+ext)
 
         os.renames(self.__file,backup_name)
         for i in result:
@@ -116,14 +119,18 @@ class logger():
             f.flush()
 
     def __del__(self):
+        log = time.strftime('%Y-%m-%d %H:%M:%S') + '\t' + '关闭日志'
+        self.__do(log)
         self.__huan_hang=''
         self.__mark=''
         self.__log=''
         self.__file=''
+        self.__debug=''
         del self.__huan_hang
         del self.__mark
         del self.__log
         del self.__file
+        del self.__debug
 
 
 
