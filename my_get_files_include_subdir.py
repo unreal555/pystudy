@@ -6,10 +6,15 @@
 
 import os
 import  re
-import shutil
 from copy import  deepcopy
 
-def get_paths(path,*ext,debug=False,content=''):
+def get_paths(path,*ext,debug=False,filter_key='',filter_type='and'):
+
+    if str.lower(filter_type) not in ['and','or'] :
+        print('filter_type must be 'and' or 'or'' )
+        return False
+
+
     all_files=[]
     all_dirs=[]
     result=''
@@ -49,37 +54,46 @@ def get_paths(path,*ext,debug=False,content=''):
 
 
 
-    if content=='':
+    if filter_key=='':
         print('无筛选')
         return result
 
-    if isinstance(content,str):
-        print('有筛选，str为"{}"：'.format(content))
+    if isinstance(filter_key,str):
+        print('有筛选，str为"{}"：'.format(filter_key))
         
         temp=[]
         for item in result:
-            if str.lower(content) in str.lower(item):
+            if str.lower(filter_key) in str.lower(item):
                 temp.append(item)
-
-            
         return temp
 
-    if isinstance(content,(list,tuple)):
-        print('有筛选，list为"{}"：'.format(str(content)))
+    if isinstance(filter_key,(list,tuple)) and filter_type=='and':
+        print('有筛选，过滤字段为"{}",过滤类型为and：'.format(str(filter_key)))
         temp=[]
         for item in result:
             flag=0
             if isinstance(item,str):
-                for key in content:
+                for key in filter_key:
                     if debug:print(key,item)
                     if str.lower(key) in str.lower(item):
                         flag+=1
                     else:
                         break
-                    if flag==len(content):
+                    if flag==len(filter_key):
                         temp.append(item)
-
         return temp
+
+    if isinstance(filter_key,(list,tuple)) and filter_type=='or':
+        print('有筛选，过滤字段为"{}",过滤类型为or：'.format(str(filter_key)))
+        temp=[]
+        for item in result:
+            if isinstance(item,str):
+                for key in filter_key:
+                    if debug:print(key,item)
+                    if str.lower(key) in str.lower(item):
+                        temp.append(item)
+        return temp
+        # return list(tuple(temp))
 
 
 
@@ -99,14 +113,8 @@ def get_base_dir(dirs):
     return list(set(t))
 
 if __name__ == '__main__':
-    # dirs=get_files(r'd:/','dir',content='p',debug=False)
-    #
-    # base_dirs=get_base_dir(dirs)
-    #
-    # for i in base_dirs:
-    #     print(i)
-    for i in get_paths('h://tujidao','dir',content=['徐微微']):
+
+
+
+    for i in    get_paths(r'X:\自动备份',filter_key=('001','zt'),filter_type='and'):
         print(i)
-        shutil.copytree(i + '//', r'C:\\Users\\Administrator\\Desktop\p\\' + re.split(r'[\\/]', i)[-1], dirs_exist_ok=True)
-
-
