@@ -187,8 +187,8 @@ def my_request(url,headers={'User-Agent':user_anent},proxies={},codec=None,retry
     while count<retry_times:
         try:
             response=requests.get(url,headers=headers,proxies=proxies)
-            print(str.upper(str(response.headers)))
             print('response.header为{}'.format(response.headers))
+            print(response.text)
 
             if codec==None:
                 result=re.findall('''.*?charset=([0-9a-zA-Z\-]*)''',str(response.headers))
@@ -423,8 +423,23 @@ if __name__ == '__main__':
     # counter=createCounter()
     # for i in range(1,100):
     #     print(counter())
-    random_wait(3600,3600)
+    # random_wait(3600,3600)
+
+    h='''
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+        Accept-Encoding: gzip, deflate
+        Accept-Language: zh-CN,zh;q=0.9
+        Cache-Control: max-age=0
+        Connection: keep-alive
+        Cookie: FSSBBIl1UgzbN7N80S=eG2nAr.WHlcLE0sCvaFV1laZbaL6u_cu0D3eakUhremS5fLhWveoBPoSRHsGwJ26; token=g9wnDjaMLW4DhO7y7Rwl50R7FPIMhC5LZy5A3qdxpaANdpjD0wWE6UJ6nwT; FSSBBIl1UgzbN7N80T=3rEiS4i4_y0o9VdF.5JeqCz0CBga1Hvcxq50W3blV1pmJTOom53lrLKe8E4NR7ca6hjLIBAM5ZdR71ID7AAHsEn9C.BMFkVeKS1G69H57FD60ElWZ1KKLEcnsxIrGbHm6xYfzx_CCiaQeTDrMBHDSXOEVOiar0OjJaOg_DzfhxkRg9yHjxju8VtrOzx0dK0HTeoFLHceh.9taxdQjrfpoegbGoJhHQHzOrXfWxuBOtNoEViNL0bz.BGXvrGZWp7ujgMyZmE_hPp1zsU_2ubn6gbBjU1kVhBQBHHtIt1eRrEUK6SXCdw5hb7fcejAnOtjWw97
+        Host: www.chinadrugtrials.org.cn
+        Upgrade-Insecure-Requests: 1
+        User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36
+    '''
 
 
+    url = 'http://www.chinadrugtrials.org.cn/clinicaltrials.searchlistdetail.dhtml?currentpage=3&sort=desc&sort2=desc&rule=CTR'
 
 
+    r=my_request(url,debug=True,headers=tras_header(h))
+    print(r)

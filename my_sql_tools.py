@@ -85,4 +85,4 @@ if __name__ == '__main__':
     db=My_sql()
     r=db.exe_sql(sql)
     for i in r:
-        print(i)
+        print(type(i))
