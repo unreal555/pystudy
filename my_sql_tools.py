@@ -2,13 +2,24 @@
 #-*-coding:utf-8-*-
 '''
 注意如果表,字段名和保留字重复,用反引号``包裹
+
+类型                     大小(单位：字节)
+TinyBlob                   最大 255
+Blob                         最大 65K
+MediumBlob            最大 16M
+LongBlob                 最大 4G
+
+TINYTEXT	256 bytes	256 bytes
+TEXT	65,535 bytes	约 64kb
+MEDIUMTEXT	16,777,215 bytes	约 16MB
+LONGTEXT	4,294,967,295 bytes	约 4GB
 '''
 import pymysql
 class My_sql():
     __conn=''
     __cursor=''
     def __init__(self,host='58.59.25.122',user='work',passwd='work',port=3336,charset='utf8',db='T'):##注意字符集不能有-,port必须是整数
-        print('初始化类%s'%type(self))
+        print('初始化数据库:%s\r\n'%db)
         if isinstance(port,int):
             try:
                 self.__conn = pymysql.connect(host=host, port=port, user=user, passwd=passwd, db=db, charset=charset)
@@ -81,8 +92,7 @@ class My_sql():
 
 
 if __name__ == '__main__':
-    sql='show tables'
+    sql='drop  tables test_desc,test_group'
     db=My_sql()
     r=db.exe_sql(sql)
-    for i in r:
-        print(type(i))
+    print(r)

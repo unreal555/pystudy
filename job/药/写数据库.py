@@ -9,14 +9,14 @@ from my_sql_tools import My_sql
 create_test_desc_sql = r'''
     CREATE TABLE `test_desc`  (
       `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键ID',
-      `source` varchar(100) CHARACTER SET utf8  NOT NULL COMMENT '数据来源（爬取网站域名）',
-      `source_id` varchar(500) CHARACTER SET utf8 NOT NULL COMMENT '资源主键ID',
-      `source_link` varchar(1000) CHARACTER SET utf8  NOT NULL COMMENT '资源网络地址',
+      `source` varchar(100) CHARACTER SET utf8mb4  NOT NULL COMMENT '数据来源（爬取网站域名）',
+      `source_id` varchar(500) CHARACTER SET utf8mb4 NOT NULL COMMENT '资源主键ID',
+      `source_link` varchar(1000) CHARACTER SET utf8mb4  NOT NULL COMMENT '资源网络地址',
       `weight` int(11) NOT NULL DEFAULT 0 COMMENT '权重',
       `count` int(11) NOT NULL DEFAULT 0 COMMENT '爬取次数',
       `last_date` date DEFAULT '2019-01-01' COMMENT '最后爬取日期',
       PRIMARY KEY (`id`) USING BTREE
-    ) ENGINE = InnoDB AUTO_INCREMENT = 413790 CHARACTER SET = utf8 ;
+    ) ENGINE = InnoDB AUTO_INCREMENT = 413790 CHARACTER SET = utf8mb4 ;
 '''
 create_test_group_sql=r'''
     CREATE TABLE `test_group`  (
@@ -30,7 +30,7 @@ create_test_group_sql=r'''
       `intervention` text COMMENT '干预措施',
       `intervention_code` varchar(100) DEFAULT NULL COMMENT '干预措施代码或名称',
       PRIMARY KEY (`id`) USING BTREE
-    ) ENGINE = InnoDB CHARACTER SET = utf8  COMMENT = '分组与干预措施';
+    ) ENGINE = InnoDB CHARACTER SET = utf8mb4   COMMENT = '分组与干预措施';
 '''
 drop_test_desc_sql='''
     drop table  if exists `test_desc`;
@@ -76,14 +76,15 @@ db=My_sql()                           #创建mysql连接,参数见My_sql init函
 # r=db.exe_sql(drop_test_group_sql)          #执行sql语句,如果表test_group存在,则删除
 # r=db.exe_sql(drop_test_desc_sql)               #执行sql语句,如果表test_desc存在,则删除
 # r=db.exe_sql(create_test_desc_sql)            #执行SQL语句,创建test_desc表
-# r=db.exe_sql(create_test_group_sql)           执行SQL语句,创建test_group表
+# r=db.exe_sql(create_test_group_sql)          # 执行SQL语句,创建test_group表
 
-t_id=db.insert_record('test_desc',t['test_desc'])   #插入试验基本信息记录,并获得id值,作为其他表的外键
+# t_id=db.insert_record('test_desc',t['test_desc'])   #插入试验基本信息记录,并获得id值,作为其他表的外键
+#
+# for record in t['test_group']:                #依次读取试验分组信息记录
+#     if record==[]:
+#         continue
+#     record['t_id']=t_id                    #在记录中,增加t_id字段及值
+#     db.insert_record('test_group', record)   #插入记录
 
-for record in t['test_group']:                #依次读取试验分组信息记录
-    if record==[]:
-        continue
-    record['t_id']=t_id                    #在记录中,增加t_id字段及值
-    db.insert_record('test_group', record)   #插入记录
 
-
+print(db.exe_sql('select version();'))
