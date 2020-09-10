@@ -21,12 +21,16 @@ class My_sql():
             raise Exception('port must be int')
 
     def exe_sql(self,sql,*args):
+        print('执行语句为:', sql, ';参数为:', args, '\r\n')
+
+        r=False
+
         try:
-            print('执行语句为:',sql,';参数为:',args,'\r\n')
             r = self.__cursor.execute(sql,args)
         except Exception as e:
-            print(e)
-            return 0
+            print('发生异常,错误为:',e)
+            return False
+
         if r:
             result=self.__cursor.fetchall()
             return result
@@ -42,13 +46,14 @@ class My_sql():
             print('记录类型错误,接受dict')
             return False
 
+
         keys = ', '.join(['`'+x+'`' for x in record.keys() ])
         values=list(record.values())
 
         marks = ', '.join(['%s'] * len(values))
         sql = "insert into %s (%s) values (%s)" % (table_name,keys, marks)
 
-        #print(sql,values)
+        print(sql, values)
 
         r=False
         try:
