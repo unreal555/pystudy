@@ -8,7 +8,7 @@ import os
 
 min_s=0.1
 max_s=0.2
-proxy='--proxy-server=http://58.59.25.122:1234'
+proxy='--proxy-server=http://test:594188@58.59.25.122:1234'
 #proxy=''
 
 
