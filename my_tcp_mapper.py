@@ -36,7 +36,7 @@ class PortMapper():
         local_server.bind((local_ip, local_port))
         local_server.listen(5)
 
-        self.send_log('Event: Starting mapping service on ' + local_ip + ':' + str(local_port) + ' ...')
+        self.send_log('Event: Starting mapping service on ' + local_ip + ':' + str(local_port) + ' to ' +  remote_ip+':'+str(remote_port) +'  ...')
 
         while True:
             try:
@@ -104,7 +104,7 @@ class PortMapper():
 # 主函数
 if __name__ == '__main__':
     PortMapper('192.168.1.251', 11223)
-    PortMapper('192.168.1.216', 80, '0.0.0.0', 801)
+    PortMapper('192.168.1.216', 11223, '0.0.0.0', 11223)
 
     # threading.Thread(target=PortMapper, args=('192.168.1.251', 11223)).start()
     # threading.Thread(target=PortMapper, args=('192.168.1.251', 808,'0.0.0.0',801)).start()
