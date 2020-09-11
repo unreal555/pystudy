@@ -13,13 +13,10 @@ class PortMapper():
         self.__PKT_BUFF_SIZE = buff_size
 
         if self.is_port_free(local_port):
-            pass
+            threading.Thread(target=self.tcp_mapping, args=(remote_ip, remote_port, local_ip, local_port)).start()
         else:
             self.send_log('本地端口:{} 被占用'.format(local_port))
             exit()
-
-        threading.Thread(target=self.tcp_mapping, args=(remote_ip,remote_port,local_ip,local_port)).start()
-
 
     def is_port_free(self, port,ip='0.0.0.0'):
 
@@ -32,8 +29,6 @@ class PortMapper():
             return False
         finally:
             s.close()
-
-
 
     # 端口映射函数
     def tcp_mapping(self,remote_ip, remote_port, local_ip, local_port):
@@ -48,7 +43,7 @@ class PortMapper():
                 (local_conn, local_addr) = local_server.accept()
             except (KeyboardInterrupt, Exception):
                 local_server.close()
-                send_log('Event: Something is wrong.  Stop mapping service...')
+                send_log('Event: Something is wrong or break.  Stop mapping service...')
                 break
 
             threading.Thread(target=self.tcp_mapping_request, args=(local_conn, remote_ip, remote_port)).start()
