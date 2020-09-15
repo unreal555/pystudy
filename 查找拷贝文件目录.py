@@ -4,9 +4,10 @@
 # Date ：2020/9/8 0008 下午 2:53
 # Tool ：PyCharm
 import shutil
+import re  
 from my_get_files_include_subdir  import get_paths
 
-for i in get_paths('h://tujidao','dir',content=['徐微微']):
+for i in get_paths('g://tujidao','dir',filter_key=['妲己','糯美子'],filter_type='or'):
     print(i)
     shutil.copytree(i + '//', r'C:\\Users\\Administrator\\Desktop\p\\' + re.split(r'[\\/]', i)[-1], dirs_exist_ok=True)
 

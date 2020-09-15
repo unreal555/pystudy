@@ -11,6 +11,7 @@ import string
 import requests
 import os
 import chardet
+from my_logger import logger
 
 
 
@@ -163,13 +164,13 @@ def qu_te_shu_zi_fu(s):
         print('老兄，给字符串')
         return False
 
-def my_request(url,return_type='text',headers={'User-Agent':user_anent},proxies={},codec=None,retry_times=5,wait_from=1,wait_to=3,forbidden_keyword='',debug=False):
+def my_request(url,headers={'User-Agent':user_anent},proxies={},codec=None,retry_times=5,wait_from=1,wait_to=3,keyword='',debug=False):
     '''
     :param url: 请求的url
     :param headers: 请求头
     :param retry_times: 若是发生错误的重试次数
     :param debug: 是否打开调试显示
-    :param forbidden_keyword:  *****重要,表示页面不是所需页面的关键字,有这个关键字,说明页面请求是失败的,要重试
+    :param keyword:  *****重要,表示页面不是所需页面的关键字,有这个关键字,说明页面请求是失败的,要重试
     :param encoding:页面的编码方式,默认为utf-8
     :return: 返回页面的text
     '''
@@ -178,33 +179,17 @@ def my_request(url,return_type='text',headers={'User-Agent':user_anent},proxies=
     if debug:print('headers:{}'.format(headers))
     if debug:print('retry_times:{}'.format(retry_times))
     if debug:print('wait from {} to {} sec'.format(wait_from,wait_to))
-    if debug:print('forbidden_keyword:{}'.format(forbidden_keyword))
+    if debug:print('keyword:{}'.format(keyword))
     if debug:print('proxies:{}'.format(proxies))
     if debug:print('codec:{}'.format(codec))
-
-
-    if str.lower(return_type) not in ('text','content'):
-        print('return_type must be text or content')
-        return False
 
     count=0
     content=''
     while count<retry_times:
         try:
             response=requests.get(url,headers=headers,proxies=proxies)
-
-            print('请求{},返回状态码为{}:'.format(url, response.status_code))
-            if debug: print('response.header为{}'.format(response.headers))
-            if debug: print(response.text)
-
-            if response.status_code!=200:
-                count+=1
-                random_wait(wait_from,wait_to)
-                continue
-
-            if response.status_code==200 and str.lower(return_type)=='content':
-                print('返回二进制content')
-                return response.content
+            print('response.header为{}'.format(response.headers))
+            print(response.text)
 
             if codec==None:
                 result=re.findall('''.*?charset=([0-9a-zA-Z\-]*)''',str(response.headers))
@@ -219,19 +204,28 @@ def my_request(url,return_type='text',headers={'User-Agent':user_anent},proxies=
 
             text=response.content.decode(codec)
 
-            if response.status_code == 200  and forbidden_keyword =='':
-                print('没有禁止字段,返回文本信息')
-                return text
+            if debug:print('请求{},返回状态码为{}:'.format(url,response.status_code))
 
-            if response.status_code == 200  and forbidden_keyword not in text:
-                print('含有禁止字段,文本信息中不包含禁止字段,返回文本信息')
-                return text
-
-            if response.status_code == 200  and forbidden_keyword  in text:
-                print('文本中包含禁止字段,重试..')
+            if response.status_code!=200:
                 count+=1
                 random_wait(wait_from,wait_to)
                 continue
+
+            if response.status_code == 200  and keyword =='':
+                print('返回正常，状态1')
+                return text
+
+            if response.status_code == 200  and keyword not in text:
+                print('返回正常，状态2')
+                return text
+
+            if response.status_code == 200  and keyword  in text:
+                print('页面正常返回,但是不包含key中的字符串,重试')
+                count+=1
+                random_wait(wait_from,wait_to)
+                continue
+
+
 
         except Exception as e:
             print('第{}次请求页面失败,原因是{}'.format(count,e))
@@ -295,6 +289,7 @@ def download(url,fname='',headers={'User-Agent':user_anent},proxies={},retry_tim
     :param fname:  保存的文件路径+文件名
     :param headers: 请求头
     :param retry_times: 若是发生错误的重试次数
+    :param keyword:  *****重要,表示页面不是所需页面的关键字,有这个关键字,说明页面请求是失败的,要重试
     :return: 返回页面的text
     '''
     print('url:{}'.format(url))
@@ -419,20 +414,86 @@ def geshihua(s,clean_html_lable=False,):
 
 if __name__ == '__main__':
 
-    # url='http://wap.xiongti.cn/html/61/61431/indexasc.html'
-    # # page=my_request(url=url,keyword='timeout-button',proxies=get_proxie(),retry_times=10,wait_from=1,wait_to=2,debug=True)
-    # s=my_request(url)
-    # print(qu_kong_ge(s)
-    # url='http://wsgg.sbj.cnipa.gov.cn:9080/tmann/annInfoView/homePage.html'
-    #
-    # print(qu_html_lable(my_request(url)))
-    # counter=createCounter()
-    # for i in range(1,100):
-    #     print(counter())
-    # random_wait(3600,3600)
+    headers='''
+:authority: www.mikuclub.org
+:method: GET
+:path: /wp-json/utils/v2/post_list?category_name=photo&page_type=category&paged=3
+:scheme: https
+accept: */*
+accept-encoding: gzip, deflate, br
+accept-language: zh-CN,zh;q=0.9
+cookie: __gads=ID=848d26c7ed073644:T=1600063982:S=ALNI_Mbq4S_YugtgEP3yeHNzrejLb_xSog; _ga=GA1.2.524907125.1600063935; _gid=GA1.2.1169526948.1600063936; PHPSESSID=gth6p6u2kb3mgs1vs6v5bu36th; _gat_gtag_UA_115526141_1=1
+referer: https://www.mikuclub.org/photo
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36
+x-requested-with: XMLHttpRequest
+'''
 
-    url = 'https://www.baidu.com'
+    reg_page=r'<h6class="post-title.*?><.*?href="(.*?)"title="(.*?)"target="_blank">.*?</a></h6>'
 
 
-    r=my_request(url,return_type='content',debug=False)
-    print(r)
+    baidu_pass='<inputclass="form-controlbg-whitepassword1"type="text"value="(.*?)".*?/>'
+
+    unzip_pass='<inputclass="form-controlbg-whitepassword_unzip1"type="text"value="(.*?)".*?/>'
+
+    baidu_url='<aclass=".*?download"title="下载.*?"href="(.*?)"target=.*?>.*?</a>'
+
+    logger=logger()
+
+
+    for i in range(1,100):
+        
+
+        
+
+
+
+        page=qu_kong_ge(my_request('https://www.mikuclub.org/photo/page/{}'.format(i),debug=True,headers=tras_header(headers)))
+
+        result=re.findall(reg_page,page,re.S)
+
+        for item in result:
+
+            if logger.check(item[0]):
+                print('{}已下载,跳过'.format(item[1]))
+                continue
+
+            else:
+
+                random_wait(1,3)
+
+
+                page=qu_kong_ge(my_request(item[0],debug=True,headers=tras_header(headers)))
+                
+
+                pass1=re.findall(baidu_pass,page,re.S)
+                
+
+                pass2=re.findall(unzip_pass,page,re.S)
+
+
+                url=re.findall(baidu_url,page,re.S)
+
+
+
+                
+                logger.write(item,pass1,pass2,url)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
