@@ -85,20 +85,24 @@ class ProxyMiddleWare(object):
 
 
         else:
-            request.headers[ 'Upgrade-Insecure-Requests']= '1',
-            request.headers['Host']= 'www.tujidao.com',
-            request.headers['Accept']= 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
-            request.headers[ 'Accept-Encoding']= 'gzip, deflate',
-            request.headers[ 'Accept-Language']= 'zh-CN,zh;q=0.9',
-            request.headers[ 'Cache-Control']= 'max-age=0',
-            request.headers['Connection']= 'keep-alive',
-            request.headers[ 'Content-Type']= 'application/x-www-form-urlencoded',
+            request.headers['authority']='www.tujidao.com'
+            request.headers['Accept']= 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+            request.headers[ 'Accept-Encoding']= 'gzip, deflate,br',
+            request.headers['method'] = 'get',
+            request.headers['scheme'] = 'https',
+            request.headers['upgrade-insecure-requests'] = '1',
+            request.headers[ 'Accept-LangPHPSEuage']= 'zh-CN,zh;q=0.9',
+            request.headers[ 'Cache-Control']= 'no-cache',
             request.headers['Referer']= 'http://www.tujidao.com/u/?action=login',
             request.headers['Origin'] ='http://www.tujidao.com',
+            request.headers['cookie'] = '''
+            PHPSESSID=vbme8jcjlifncfni3h0r2iiog4; UM_distinctid=174959e7ca5633-02359b14e2d56b-46440d2a-140000-174959e7cf12de; CNZZDATA1257039673=1250971660-1600234379-https%253A%252F%252Fwww.tujidao.com%252F%7C1600238352
+            '''
+
             request.headers[
                 'User-Agent'] = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36'
-        print(request.url)
-        print(request.headers)
+        print('request url   :',request.url)
+        print('request header:',request.headers)
 
 class DemoSpiderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,

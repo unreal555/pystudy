@@ -63,7 +63,7 @@ CONCURRENT_REQUESTS_PER_DOMAIN = 3
 CONCURRENT_REQUESTS_PER_IP = 3
 
 # Disable cookies (enabled by default)
-COOKIES_ENABLED = True
+COOKIES_ENABLED = False
 # COOKIES_DEBUG=True
 # DOWNLOADER_MIDDLEWARES_BASE = {
 #     'scrapy.contrib.downloadermiddleware.robotstxt.RobotsTxtMiddleware': 100,

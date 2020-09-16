@@ -15,7 +15,8 @@ from ..settings import IMAGES_STORE
 print(sys.path)
 flag=0
 
-start=0
+id=10
+start=1
 end = 30
 step=1
 
@@ -35,10 +36,11 @@ class MeiTuLu_Spider(scrapy.Spider):
     #登录
     def start_requests(self):
         formdata = {
-            't0': 'unreal555',
-            't1': '594188'
+            'way':'login',
+            'username': 'unreal555',
+            'password': '594188'
         }
-        yield scrapy.FormRequest('https://www.tujidao.com/u/?action=loginsave', formdata=formdata,callback=self.login_check)
+        yield scrapy.FormRequest('https://www.tujidao.com/u/?action=save', formdata=formdata,callback=self.login_check)
 
     #检查登录状态，获得cookie传递
     def login_check(self,response):
@@ -65,42 +67,50 @@ class MeiTuLu_Spider(scrapy.Spider):
         # for i in range(1650,1005,-1):#1630-1500-1200-1000
         #     yield scrapy.Request('http://www.tujidao.com/cat/?id=0&page={}'.format(i),callback=self.parse,dont_filter=True)
 
-        yield scrapy.Request('https://www.tujidao.com/cat/?id=0&page={}'.format(start), callback=self.parse,dont_filter=True)
+        yield scrapy.Request('https://www.tujidao.com/cat/?id={}&page={}'.format(id,start), callback=self.parse,dont_filter=True)
 
     def parse(self,response):
 
         print('获得{}响应，开始处理'.format(response.url))
+        # print(response.text)
 
         if response.status!=200:
             print('页面不存在,返回')
             return
         page = re.sub('[\s]+', '', response.text)
-        # print(page)
+        print(page)
+
 
         #提取相册记录，总的
-        select=re.findall('''(<li><ahref="/a/.*?</a></p></li>)''',page)
+        select=re.findall(r'''(<liid=.*?><ahref="/a/\?id=.*?>.*?</a></p></li>)''',page)
+        print(len(select))
 
 
         for i in select:
+            print(i)
             #如果没有提取到相册数字代码，写入错误日志
-            result=re.findall('<pclass="biaoti"><ahref="/a/\?id=(\d+)"target="_blank">(.*?)</a></p></li>',i)
+            result=re.findall('<pclass="biaoti"><ahref="/a/\?id=(\d+)".*?>(.*?)</a></p></li>',i)
             if len(result)==0:
                 with open(os.path.join(self.log_path,'wrong.txt'),'a',encoding='utf-8') as f:
                     f.write('{}'.format(time.strftime( '%Y-%m-%d %H-%M')+'\t' + response.url+'\r\n\r\n\r\n\r\n'))
                     return
+
             bianhao,biaoti=result[0]
 
             #如果没有提取到第一张图片地址，写入错误日志
-            result=re.findall('''<imgclass="lazy"data-original="(.*?)"></a>''',i)
+            result=re.findall('''<imgsrc="(.*?)">''',i)
             if len(result)==0:
                 with open(os.path.join(self.log_path,'wrong.txt'),'a',encoding='utf-8') as f:
                     f.write('{}'.format(time.strftime( '%Y-%m-%d %H-%M')+'\t' + response.url+'\r\n\r\n\r\n\r\n'))
                     return
+
 
             urls=result
             max=re.findall('''<spanclass="shuliang">(\d+)P</''',i)[0]
 
-            jigou=re.findall('''<ahref=/x/\?id=\d+>(.*?)</a>''',i)
+
+
+            jigou=re.findall('''<ahref="/x/\?id=\d+">(.*?)</a>''',i)
             if len(jigou)==0:
                 print('没有提取到机构名 ，使用默认名‘无机构’')
                 jigou='无机构'
@@ -108,7 +118,7 @@ class MeiTuLu_Spider(scrapy.Spider):
                 jigou=jigou[0]
 
             tag=''
-            for s in re.findall('''<ahref=/s/\?id=\d+>(.*?)</a>''',i):
+            for s in re.findall('''<ahref="/s/\?id=\d+">(.*?)</a>''',i):
                 tag=tag+s+'-'
             tag=tag+str(max)
             print(bianhao,'---',biaoti,'---',urls,'---',max,'---',tag,'---',jigou)
@@ -146,15 +156,14 @@ class MeiTuLu_Spider(scrapy.Spider):
 
             item = PicItem()
             item['image_urls'] = urls
-            # item['image_urls']=['https://ii.hywly.com/a/1/899/2.jpg','https://ii.hywly.com/a/1/899/7.jpg']
             item['image_path'] = xiangce_path
             item['image_log']=[bianhao,biaoti,self.log_path,self.log_name]
             yield item
 
-        now=re.findall('id=0&page=(\d+)',response.url)[0]
+        now=re.findall('id=10&page=(\d+)',response.url)[0]
         next=int(now)+step
         if int(now)!=end:
-            yield scrapy.Request('https://www.tujidao.com/cat/?id=0&page={}'.format(next), callback=self.parse,dont_filter=True)
+            yield scrapy.Request('https://www.tujidao.com/cat/?id={}&page={}'.format(id,next), callback=self.parse,dont_filter=True)
         else:
             return
 
