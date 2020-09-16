@@ -15,7 +15,18 @@ from ..settings import IMAGES_STORE
 print(sys.path)
 flag=0
 
-id=10
+'''
+8日本
+10中国
+11台湾
+19韩国
+20欧美
+23泰国
+
+'''
+
+
+id=8
 start=1
 end = 30
 step=1
@@ -160,7 +171,7 @@ class MeiTuLu_Spider(scrapy.Spider):
             item['image_log']=[bianhao,biaoti,self.log_path,self.log_name]
             yield item
 
-        now=re.findall('id=10&page=(\d+)',response.url)[0]
+        now=re.findall('id={}&page=(\d+)'.format(id),response.url)[0]
         next=int(now)+step
         if int(now)!=end:
             yield scrapy.Request('https://www.tujidao.com/cat/?id={}&page={}'.format(id,next), callback=self.parse,dont_filter=True)
