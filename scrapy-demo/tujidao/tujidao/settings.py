@@ -43,7 +43,7 @@ ROBOTSTXT_OBEY = False
 
 
 RETRY_ENABLED = True  #打开重试开关
-RETRY_TIMES = 100  #重试次数
+RETRY_TIMES = 15  #重试次数
 DOWNLOAD_TIMEOUT = 20  #超时
 RETRY_HTTP_CODES = [429,404,403]  #重试
 
@@ -63,8 +63,8 @@ CONCURRENT_REQUESTS_PER_DOMAIN = 3
 CONCURRENT_REQUESTS_PER_IP = 3
 
 # Disable cookies (enabled by default)
-COOKIES_ENABLED = False
-# COOKIES_DEBUG=True
+COOKIES_ENABLED = True
+COOKIES_DEBUG=True
 # DOWNLOADER_MIDDLEWARES_BASE = {
 #     'scrapy.contrib.downloadermiddleware.robotstxt.RobotsTxtMiddleware': 100,
 #     'scrapy.contrib.downloadermiddleware.httpauth.HttpAuthMiddleware': 300,

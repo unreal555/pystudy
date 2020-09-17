@@ -1,12 +1,11 @@
 # coding=utf-8
-
-
-#
 import  scrapy
 import re
 import os
 import sys
 import time
+import json
+
 path=os.path.join(os.path.dirname(__file__),"..")
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),"..")))
 print(path)
@@ -16,22 +15,31 @@ print(sys.path)
 flag=0
 
 '''
-8日本
-10中国
-11台湾
-19韩国
-20欧美
-23泰国
+区域
+cat   [10,11,8,19,20,23]   range(1,10)
+8日本   790
+10中国    778
+11台湾     137
+19韩国    6
+20欧美    39
+23泰国   42
+'''
+
+'''
+机构
+x    range(1,81)   range(1,20)
 
 '''
 
 
-id=8
-start=1
-end = 30
-step=1
 
-class MeiTuLu_Spider(scrapy.Spider):
+key='cat'    #cat=区域  s=tag     x=机构
+
+ids=[10,11,8,19,20,23] 
+pages=range(1,20)
+
+
+class TuJiDao_Spider(scrapy.Spider):
     name = 'tujidao'
     allowed_domains = 'tujidao.com'
 
@@ -46,39 +54,20 @@ class MeiTuLu_Spider(scrapy.Spider):
 
     #登录
     def start_requests(self):
-        formdata = {
-            'way':'login',
-            'username': 'unreal555',
-            'password': '594188'
+        formdata = {           #巨坑,单引号不行,必须双引号
+            "way":"login",
+            "username": "unreal555",
+            "password": "594188"
         }
-        yield scrapy.FormRequest('https://www.tujidao.com/u/?action=save', formdata=formdata,callback=self.login_check)
+        yield scrapy.FormRequest('https://www.tujidao.com/?action=save', formdata=formdata,callback=self.start)
 
-    #检查登录状态，获得cookie传递
-    def login_check(self,response):
 
-        set_cookie=response.headers.getlist('Set-Cookie')
-        print(set_cookie)
-        cookies={}
-        for i in set_cookie:
-            # print(i)
-            for j in i.decode('utf-8').replace(' ','').split(';'):
-                if '=' not in j:
-                    continue
-                print(j)
-                a,b=j.split('=')
-                cookies[a]=b
-        print('cookies',cookies)
-
-        yield scrapy.Request('https://www.tujidao.com/u/?', callback=self.after_login,dont_filter=True,cookies=cookies,meta={'cookies':cookies})
 
     #利用cookie访问相册索引页面,只传入首页，后续页面待本页面相册下载 完毕后提交
-    def after_login(self,response):
-        print('传递过来的cookie',response.meta['cookies'])
-
-        # for i in range(1650,1005,-1):#1630-1500-1200-1000
-        #     yield scrapy.Request('http://www.tujidao.com/cat/?id=0&page={}'.format(i),callback=self.parse,dont_filter=True)
-
-        yield scrapy.Request('https://www.tujidao.com/cat/?id={}&page={}'.format(id,start), callback=self.parse,dont_filter=True)
+    def start(self,response):
+        for id in ids:
+            for page in pages:
+                yield scrapy.Request('https://www.tujidao.com/{}/?id={}&page={}'.format(key,id,page), callback=self.parse,dont_filter=True)
 
     def parse(self,response):
 
@@ -170,13 +159,5 @@ class MeiTuLu_Spider(scrapy.Spider):
             item['image_path'] = xiangce_path
             item['image_log']=[bianhao,biaoti,self.log_path,self.log_name]
             yield item
-
-        now=re.findall('id={}&page=(\d+)'.format(id),response.url)[0]
-        next=int(now)+step
-        if int(now)!=end:
-            yield scrapy.Request('https://www.tujidao.com/cat/?id={}&page={}'.format(id,next), callback=self.parse,dont_filter=True)
-        else:
-            return
-
 
 

@@ -82,22 +82,33 @@ class ProxyMiddleWare(object):
             request.headers['Connection'] = 'Keep-Alive'
             request.headers['Cache-Control'] = 'no-cache'
 
+        if 'action=save' in request.url:
+            request.headers[':authority'] = 'www.tujidao.com',
+            request.headers[':method'] = 'POST',
+            request.headers[':path'] = '?action=save',
+            request.headers['accept'] = 'application/json, text/javascript, */*; q=0.01',
+            request.headers['content-type'] = 'application/x-www-form-urlencoded; charset=UTF-8',
+            request.headers['origin'] = 'https://www.tujidao.com',
+            request.headers['x-requested-with'] = 'XMLHttpRequest',
+            request.headers['referer'] = 'https://www.tujidao.com/?action=login',
+            # request.headers[''] = '',
+
 
 
         else:
-            request.headers['authority']='www.tujidao.com'
-            request.headers['Accept']= 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
-            request.headers[ 'Accept-Encoding']= 'gzip, deflate,br',
-            request.headers['method'] = 'get',
-            request.headers['scheme'] = 'https',
-            request.headers['upgrade-insecure-requests'] = '1',
-            request.headers[ 'Accept-LangPHPSEuage']= 'zh-CN,zh;q=0.9',
-            request.headers[ 'Cache-Control']= 'no-cache',
-            request.headers['Referer']= 'http://www.tujidao.com/u/?action=login',
-            request.headers['Origin'] ='http://www.tujidao.com',
-            request.headers['cookie'] = '''
-            PHPSESSID=vbme8jcjlifncfni3h0r2iiog4; UM_distinctid=174959e7ca5633-02359b14e2d56b-46440d2a-140000-174959e7cf12de; CNZZDATA1257039673=1250971660-1600234379-https%253A%252F%252Fwww.tujidao.com%252F%7C1600238352
-            '''
+            # request.headers['authority']='www.tujidao.com'
+            # request.headers['Accept']= 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+            # request.headers[ 'Accept-Encoding']= 'gzip, deflate,br',
+            # request.headers['method'] = 'get',
+            # request.headers['scheme'] = 'https',
+            # request.headers['upgrade-insecure-requests'] = '1',
+            # request.headers[ 'Accept-LangPHPSEuage']= 'zh-CN,zh;q=0.9',
+            # request.headers[ 'Cache-Control']= 'no-cache',
+            # request.headers['Referer']= 'http://www.tujidao.com/u/?action=login',
+            # request.headers['Origin'] ='http://www.tujidao.com',
+            # request.headers['cookie'] = '''
+            # PHPSESSID=vbme8jcjlifncfni3h0r2iiog4; UM_distinctid=174959e7ca5633-02359b14e2d56b-46440d2a-140000-174959e7cf12de; CNZZDATA1257039673=1250971660-1600234379-https%253A%252F%252Fwww.tujidao.com%252F%7C1600238352
+            # '''
 
             request.headers[
                 'User-Agent'] = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36'
