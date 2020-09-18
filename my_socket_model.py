@@ -7,11 +7,12 @@
 import socket
 import threading
 import time
+from my_md5 import get_md5
 
 
 class My_Socket():
     __username__ = 'admin'
-    __pwd__ = 'admin'
+    __pwd__ = 'fb06720f020127f7c94625d02076a46f'
     __local_server=''
     __addr=''
     __conn=''
@@ -76,7 +77,7 @@ class My_Socket():
 
 
     def do(self):
-        for i in range(1,100):
+        for i in range(1,10000):
             time.sleep(1)
             self.send_info(str(i)+'\r\n')
 
@@ -173,7 +174,7 @@ class My_Socket():
             except Exception as e:
                 self.send_log(e)
 
-            if username==self.__username__ and  psw==self.__pwd__:
+            if username==self.__username__ and  get_md5(psw)==self.__pwd__:
                 self.__user_stat.append(self.__addr[0])
                 self.send_info('> 欢迎：\r\n')
                 self.send_out_mark()

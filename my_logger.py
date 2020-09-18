@@ -84,6 +84,21 @@ class logger():
         else:
             return False
 
+
+    def find_lost(self,reg=r'''##(\d+)##'''):
+        
+        result=[int(x) for x in re.findall(reg,self.__log,re.S)]
+        
+        
+        if result==[]:
+            print('查询结果为空,日志没有记录,或者正则表达式错误,请检查')
+            return Fasle
+        else:
+            return sorted(set(range(min(result),max(result)))-set(result))
+               
+        
+        
+
     def rebulid(self):
         with open(self.__file,'r',encoding='utf-8') as f:
             content=f.read()
@@ -136,8 +151,5 @@ class logger():
 
 if __name__=='__main__':
     logger=logger()
-    logger.write('asdadfalsdjfklasdadg')
-    logger.write('asdadfalsdjfklasdadg', 'assdsd')
-    logger.write(('adfadfadf','adfadasdfasdf'))
-    logger.rebulid()
-    del logger
+    logger.find_lost()
+    
