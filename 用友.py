@@ -50,8 +50,9 @@ def get_dirs_files_list(path,*ext):
 
 
 if __name__ == '__main__':
-    source=r'''X:\自动备份'''
-    des=os.path.join(source,'des')
+    source=r'''x:\自动备份'''
+    des=os.path.join('x:','des')
+    
 
     if not os.path.exists(des):
         os.makedirs(des)
@@ -86,7 +87,15 @@ if __name__ == '__main__':
                     shutil.move(s,d)
                     break
 
-
+    source=r'X://BACK//'
+    
+    for s in os.listdir(source):
+        
+        s=os.path.join(source,s)
+        
+        if os.path.isfile(s):
+            
+            shutil.move(s,des)
 
 
 
