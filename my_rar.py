@@ -3,18 +3,17 @@ import os
 
 
 
-def rar(path,to='.',pwd=''):
+def my_rar(path,to='.',pwd=''):
 
     try:
         
         if os.path.exists(path) and os.path.isfile(path):
             rar=rarfile.RarFile(path)
 
-        
-        if pwd=='':
-            rar.extractall(to)
-        else:
-            rar.extractall(to,pwd=pwd)
+        # if pwd=='':
+        #     rar.extractall(to)
+        # else:
+        #     rar.extractall(to,pwd=pwd)
 
         return True
     
@@ -25,4 +24,4 @@ def rar(path,to='.',pwd=''):
     
 
 
-extract_all_files('d://1.rar',pwd='123')
+rar('d://PyCharm2019.3.1.rar')
