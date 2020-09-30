@@ -43,11 +43,10 @@ def pic_resize(source,dest='',save_as_jpg=True,q=90,size=1920):
         img.save(dest,quality=q)
 
 
-        if save_as_jpg==True and str.lower(file_ext) not in ['jpg','jpeg'] :
+        if save_as_jpg==True and str.lower(file_ext) not in ['.jpg','.jpeg'] :
             
             os.remove(source)
 
-        
         return True
     
     except Exception as e:

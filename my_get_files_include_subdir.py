@@ -116,5 +116,5 @@ if __name__ == '__main__':
 
 
 
-    for i in    get_paths(r'X:\自动备份',filter_key=('001','zt'),filter_type='and'):
-        print(i)
+    for i in    get_paths(r'.','py'):
+        print(os.path.splitext(i))
