@@ -12,11 +12,11 @@ import zipfile
 def my_zip(path, to='.', pwd=''):
     try:
 
-        r = zipfile.is_zipfile(zip_src)
+        r = zipfile.is_zipfile(path)
         if r:
-            fz = zipfile.ZipFile(zip_src, 'r')
+            fz = zipfile.ZipFile(path, 'r')
             for file in fz.namelist():
-                fz.extract(file, dst_dir)
+                fz.extract(file, to)
         else:
             print('This is not zip')
             return False
@@ -28,5 +28,5 @@ def my_zip(path, to='.', pwd=''):
         return False
 
 
-rar('d://PyCharm2019.3.1.rar')
+my_zip('d:/chrome-win32.zip')
 

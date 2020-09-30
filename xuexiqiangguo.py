@@ -25,8 +25,8 @@ user_agent = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv
 Browser = webdriver.Chrome('./chromedriver.exe')#,options=options)
 Browser.set_window_size(1080,1024)
 # Browser.set_window_position(2000,2000)
-news_page_time = 240
-video_page_time = 240
+news_page_time = 120
+video_page_time = 120
 news_count_score = None
 video_conut_score = None
 news_time_score = None
@@ -253,7 +253,7 @@ def start():
                 Browser.execute_script("window.scrollBy(0,400)")
                 sleep(3)
                 Browser.find_element_by_xpath("*").send_keys(Keys.SPACE)
-                sleep(600)
+                sleep(300)
 
             while news_time_score + news_count_score < 12:
                 watch_page(random.choice(news_list))
