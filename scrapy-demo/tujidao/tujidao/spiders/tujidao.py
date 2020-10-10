@@ -37,7 +37,7 @@ key='cat'    #cat=区域  s=tag     x=机构
 
 ids=[10,11,8,19,20,23]
 ids=ids[::-1]
-pages=range(20,0,-1)
+pages=range(50,0,-1)
 
 
 class TuJiDao_Spider(scrapy.Spider):

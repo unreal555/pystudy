@@ -1,4 +1,4 @@
-﻿# coding: utf-8
+﻿
 # Team : JiaLiDun University
 # Author：zl
 # Date ：2020/9/30 0030 上午 9:39
@@ -14,86 +14,167 @@ from tkinter.filedialog import askopenfilename
 
 class my_app():
 
-    window_num=[('单窗口',1),('四窗口',4),('九窗口',9)]
-
-    v_num=''
-
 
     root=Tk()
     root.title('dhplay')
     root['bg'] = '#bcbcbc'
-    root.attributes("-alpha", 0.9)
+    #root.attributes("-alpha", 0.9)
     root.geometry("800x600")
 
+    screen=9
 
-    def set_video_area(self,*args):
+    def get_hwnd(self,event):
+        print(event.widget.winfo_id())
+
+    def get_father_widget(self,event):
+        return event.widget.nametowidget(event.widget.winfo_parent())
+
+    def show_nine_play(self):
+        self.video_play_1.pack_forget()
+        self.video_play_2.pack_forget()
+        self.video_play_3.pack_forget()
+        self.video_play_4.pack_forget()
+        self.video_play_5.pack_forget()
+        self.video_play_6.pack_forget()
+        self.video_play_7.pack_forget()
+        self.video_play_8.pack_forget()
+        self.video_play_9.pack_forget()
+        self.video_play_area_1.pack_forget()
+        self.video_play_area_2.pack_forget()
+        self.video_play_area_3.pack_forget()
+        self.video_play_area_1.pack(side=tkinter.TOP, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
+        self.video_play_area_2.pack(side=tkinter.TOP, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
+        self.video_play_area_3.pack(side=tkinter.TOP, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
+        self.video_play_1.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
+        self.video_play_2.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
+        self.video_play_3.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
+        self.video_play_4.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
+        self.video_play_5.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
+        self.video_play_6.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
+        self.video_play_7.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
+        self.video_play_8.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
+        self.video_play_9.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
+
+    def show_one_play(self,event):
+
+        self.video_play_1.pack_forget()
+        self.video_play_2.pack_forget()
+        self.video_play_3.pack_forget()
+        self.video_play_4.pack_forget()
+        self.video_play_5.pack_forget()
+        self.video_play_6.pack_forget()
+        self.video_play_7.pack_forget()
+        self.video_play_8.pack_forget()
+        self.video_play_9.pack_forget()
+        self.video_play_area_1.pack_forget()
+        self.video_play_area_2.pack_forget()
+        self.video_play_area_3.pack_forget()
+        father_frame = event.widget.nametowidget(event.widget.winfo_parent())
+        father_frame.pack(side=tkinter.TOP, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
+        event.widget.pack(side=tkinter.TOP, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
+        print(event)
 
 
-        if int(self.v_num.get())==1:
-            print(self.v_num.get())
-            args[0].grid(row=0, column=0,sticky=tkinter.NSEW)
+    def change_window(self,event):
 
-        if int(self.v_num.get()) == 4:
-            print(self.v_num.get())
-            args[0].grid(row=0, column=0,sticky=tkinter.NSEW)
-            args[1].grid(row=0, column=1,sticky=tkinter.NSEW)
-            args[2].grid(row=1, column=0,sticky=tkinter.NSEW)
-            args[3].grid(row=1, column=1,sticky=tkinter.NSEW)
+        print(event, self.screen)
+
+        if self.screen==9:
+
+            self.show_one_play(event)
+
+            self.screen =1
+
+            print(self.screen)
+
+        else:
+
+            self.show_nine_play()
+
+            self.screen=9
+
+            print(self.screen)
 
 
-        if int(self.v_num.get()) == 9:
-            print(self.v_num.get())
-            args[0].grid(row=0, column=0,sticky=tkinter.NSEW)
-            args[1].grid(row=0, column=1,sticky=tkinter.NSEW)
-            args[2].grid(row=0, column=2,sticky=tkinter.NSEW)
-            args[3].grid(row=1, column=0,sticky=tkinter.NSEW)
-            args[4].grid(row=1, column=1,sticky=tkinter.NSEW)
-            args[5].grid(row=1 ,column=2,sticky=tkinter.NSEW)
-            args[6].grid(row=2, column=0,sticky=tkinter.NSEW)
-            args[7].grid(row=2, column=1,sticky=tkinter.NSEW)
-            args[8].grid(row=2, column=2,sticky=tkinter.NSEW)
+        
 
     def __init__(self):
 
-        control_area=tkinter.Frame(self.root, bd=1, relief="sunken")
-        video_area=tkinter.Frame(self.root ,bd=1, relief="sunken")
+        self.list_area=tkinter.Frame(self.root,cursor='cross' ,bd=3, relief="sunken")
 
-        video_list_area=tkinter.Frame(video_area,cursor='cross' ,bd=3, relief="sunken")
-        video_window_area=tkinter.Frame(video_area ,bd=1, relief="sunken")
+        self.video_area=tkinter.Frame(self.root ,bd=1, relief="sunken")
 
-        control_area.pack(side=tkinter.TOP, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
-        video_area.pack(side=tkinter.TOP, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
+        self.list_area.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
 
-        video_list_area.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
-        video_window_area.pack(side=tkinter.RIGHT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
+        self.video_area.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
 
-        video_list=tkinter.Listbox(video_list_area)
-        video_list.pack(side=tkinter.TOP, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
+        self.video_list=tkinter.Listbox(self.list_area)
 
-        self.v_num = IntVar()
-        self.v_num.set(1)
+        self.video_list.pack(side=tkinter.TOP, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
 
-        for lang, num in self.window_num:
-            b = Radiobutton(control_area, text=lang, variable=self.v_num, value=num,indicatoron=False,command=lambda : self.set_video_area(video_play_1,video_play_2,video_play_3,video_play_4,video_play_5,video_play_6,video_play_7,video_play_8,video_play_9))
-            b.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
+        self.video_play_area=tkinter.Frame(self.video_area ,bd=1, relief="sunken")
 
-        video_play_1 = tkinter.Canvas  (video_window_area ,bd=1, relief="sunken")
-        video_play_2 = tkinter.Canvas  (video_window_area , bd=1, relief="sunken")
-        video_play_3 = tkinter.Canvas  (video_window_area , bd=1, relief="sunken")
-        video_play_4 = tkinter.Canvas  (video_window_area , bd=1, relief="sunken")
-        video_play_5 = tkinter.Canvas  (video_window_area , bd=1, relief="sunken")
-        video_play_6 = tkinter.Canvas  (video_window_area , bd=1, relief="sunken")
-        video_play_7 = tkinter.Canvas  (video_window_area , bd=1, relief="sunken")
-        video_play_8 = tkinter.Canvas  (video_window_area , bd=1, relief="sunken")
-        video_play_9 = tkinter.Canvas  (video_window_area , bd=1, relief="sunken")
+        self.video_control_area=tkinter.Frame(self.video_area, bd=1, relief="sunken")
 
-        video_play_1.grid(row=0, column=0,sticky=tkinter.NSEW)
+        self.video_play_area.pack(side=tkinter.TOP, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
 
-        self.set_video_area(video_play_1,video_play_2,video_play_3,video_play_4,video_play_5,video_play_6,video_play_7,video_play_8,video_play_9)
+        self.video_control_area.pack(side=tkinter.BOTTOM, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
 
+        self.video_play_area_1=tkinter.Frame(self.video_play_area ,bd=1, relief="sunken")
+        self.video_play_area_2=tkinter.Frame(self.video_play_area ,bd=1, relief="sunken")
+        self.video_play_area_3=tkinter.Frame(self.video_play_area ,bd=1, relief="sunken")
 
+        self.video_play_1 = tkinter.Frame(self.video_play_area_1 , bd=5, relief="sunken")
+        self.video_play_2 = tkinter.Frame(self.video_play_area_1, bd=5, relief="sunken")
+        self.video_play_3 = tkinter.Frame(self.video_play_area_1 , bd=5, relief="sunken")
+        self.video_play_4 = tkinter.Frame(self.video_play_area_2 , bd=5, relief="sunken")
+        self.video_play_5 = tkinter.Frame(self.video_play_area_2 , bd=5, relief="sunken")
+        self.video_play_6 = tkinter.Frame(self.video_play_area_2 , bd=5, relief="sunken")
+        self.video_play_7 = tkinter.Frame(self.video_play_area_3 , bd=5, relief="sunken")
+        self.video_play_8 = tkinter.Frame(self.video_play_area_3 , bd=5, relief="sunken")
+        self.video_play_9 = tkinter.Frame(self.video_play_area_3 , bd=5, relief="sunken")
+        self.video_play_1.bind("<ButtonPress-1>", self.get_hwnd)
+        self.video_play_2.bind("<ButtonPress-1>", self.get_hwnd)
+        self.video_play_3.bind("<ButtonPress-1>", self.get_hwnd)
+        self.video_play_4.bind("<ButtonPress-1>", self.get_hwnd)
+        self.video_play_5.bind("<ButtonPress-1>", self.get_hwnd)
+        self.video_play_6.bind("<ButtonPress-1>", self.get_hwnd)
+        self.video_play_7.bind("<ButtonPress-1>", self.get_hwnd)
+        self.video_play_8.bind("<ButtonPress-1>", self.get_hwnd)
+        self.video_play_9.bind("<ButtonPress-1>", self.get_hwnd)
+        self.video_play_1.bind("<Double-Button-1>", self.change_window)
+        self.video_play_2.bind("<Double-Button-1>", self.change_window)
+        self.video_play_3.bind("<Double-Button-1>", self.change_window)
+        self.video_play_4.bind("<Double-Button-1>", self.change_window)
+        self.video_play_5.bind("<Double-Button-1>", self.change_window)
+        self.video_play_6.bind("<Double-Button-1>", self.change_window)
+        self.video_play_7.bind("<Double-Button-1>", self.change_window)
+        self.video_play_8.bind("<Double-Button-1>", self.change_window)
+        self.video_play_9.bind("<Double-Button-1>", self.change_window)
 
+        self.show_nine_play()
 
+        self.open_button=tkinter.Button(self.video_control_area,text='打开')
+
+        self.play_button=tkinter.Button(self.video_control_area,text='播放')
+
+        self.speedup_button=tkinter.Button(self.video_control_area,text='加速')
+
+        self.pause_button=tkinter.Button(self.video_control_area,text='暂停')
+
+        self.stop_button=tkinter.Button(self.video_control_area,text='停止')
+
+        self.open_button.grid(row=0, column=0)
+
+        self.play_button.grid(row=0, column=1)
+
+        self.speedup_button.grid(row=0, column=2)
+
+        self.pause_button.grid(row=0, column=3)
+
+        self.stop_button.grid(row=0, column=4)
+
+        print('init finished')
 
 
 app=my_app()

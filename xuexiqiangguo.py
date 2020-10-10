@@ -111,12 +111,12 @@ def check_point():
         news_time_score = a['data']['dayScoreDtos'][8]['currentScore']
         video_time_score = a['data']['dayScoreDtos'][10]['currentScore']
 
-
-
+        print('sum', news_count_score + news_time_score + video_conut_score + video_time_score)
 
 
 
         if news_count_score + news_time_score + video_conut_score + video_time_score >= 24:
+
             print('check_point线程退出')
             break
         sleep(10)
@@ -290,6 +290,7 @@ if __name__ == '__main__':
     for t in threads:
         t.join()
         t.join()
+
 
     print('刷分完毕，程序退出')
 
