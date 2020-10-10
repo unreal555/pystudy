@@ -124,15 +124,15 @@ class my_app():
         self.video_play_area_2=tkinter.Frame(self.video_play_area ,bd=1, relief="sunken")
         self.video_play_area_3=tkinter.Frame(self.video_play_area ,bd=1, relief="sunken")
 
-        self.video_play_1 = tkinter.Frame(self.video_play_area_1 , bd=5, relief="sunken")
-        self.video_play_2 = tkinter.Frame(self.video_play_area_1, bd=5, relief="sunken")
-        self.video_play_3 = tkinter.Frame(self.video_play_area_1 , bd=5, relief="sunken")
-        self.video_play_4 = tkinter.Frame(self.video_play_area_2 , bd=5, relief="sunken")
-        self.video_play_5 = tkinter.Frame(self.video_play_area_2 , bd=5, relief="sunken")
-        self.video_play_6 = tkinter.Frame(self.video_play_area_2 , bd=5, relief="sunken")
-        self.video_play_7 = tkinter.Frame(self.video_play_area_3 , bd=5, relief="sunken")
-        self.video_play_8 = tkinter.Frame(self.video_play_area_3 , bd=5, relief="sunken")
-        self.video_play_9 = tkinter.Frame(self.video_play_area_3 , bd=5, relief="sunken")
+        self.video_play_1 = tkinter.Frame(self.video_play_area_1 , cursor='plus',bd=2, relief="sunken")
+        self.video_play_2 = tkinter.Frame(self.video_play_area_1 , cursor='plus',bd=2, relief="sunken")
+        self.video_play_3 = tkinter.Frame(self.video_play_area_1 , cursor='plus',bd=2, relief="sunken")
+        self.video_play_4 = tkinter.Frame(self.video_play_area_2 , cursor='plus',bd=2, relief="sunken")
+        self.video_play_5 = tkinter.Frame(self.video_play_area_2 , cursor='plus',bd=2, relief="sunken")
+        self.video_play_6 = tkinter.Frame(self.video_play_area_2 , cursor='plus',bd=2, relief="sunken")
+        self.video_play_7 = tkinter.Frame(self.video_play_area_3 , cursor='plus',bd=2, relief="sunken")
+        self.video_play_8 = tkinter.Frame(self.video_play_area_3 , cursor='plus',bd=2, relief="sunken")
+        self.video_play_9 = tkinter.Frame(self.video_play_area_3 , cursor='plus',bd=2, relief="sunken")
         self.video_play_1.bind("<ButtonPress-1>", self.get_hwnd)
         self.video_play_2.bind("<ButtonPress-1>", self.get_hwnd)
         self.video_play_3.bind("<ButtonPress-1>", self.get_hwnd)
@@ -335,3 +335,48 @@ app.root.mainloop()
 # <Triple-Button-1>   三击鼠标左键
 # <Triple-Button-3>   三击鼠标右键
 
+
+#frame cursor style
+# "arrow"
+# 
+# "circle"
+# 
+# "clock"
+# 
+# "cross"
+# 
+# "dotbox"
+# 
+# "exchange"
+# 
+# "fleur"
+# 
+# "heart"
+# 
+# "heart"
+# 
+# "man"
+# 
+# "mouse"
+# 
+# "pirate"
+# 
+# "plus"
+# 
+# "shuttle"
+# 
+# "sizing"
+# 
+# "spider"
+# 
+# "spraycan"
+# 
+# "star"
+# 
+# "target"
+# 
+# "tcross"
+# 
+# "trek"
+# 
+# "watch"
