@@ -12,10 +12,10 @@ import time
 import os
 from tkinter.filedialog import askopenfilename
 import ctypes
-     
+
+from my_dvr import DVR
     
 class my_app():
-
 
     root=Tk()
     root.title('dhplay')
@@ -25,26 +25,58 @@ class my_app():
     window_des = [('单窗口', 1), ('四窗口', 4), ('九窗口', 9)]
     v_num=''
     is_single_playing=False
+    now_hwnd=-1
+    servers=[]
     
-    windows_status={
-        'num_1':'',
-        'num_2': '',
-        'num_3': '',
-        'num_4': '',
-        'num_5': '',
-        'num_6': '',
-        'num_7': '',
-        'num_8': '',
-        'num_9': '',
+    cam_window_status={
+        'cam_1':0,
+        'cam_2':0,
+        'cam_3':0,
+        'cam_4':0,
+        'cam_5':0,
+        'cam_6':0,
+        'cam_7':0,
+        'cam_8':0,
+        'cam_9':0,
     }
 
+    def cam_play(self,event):
+
+        if self.servers==[]:
+            server = DVR()
+            self.servers.append(server)
+        else:
+            server=self.servers[0]
 
 
+        server.Preview(hwnd=self.now_hwnd,channle=33)
 
-
+    def clear_video_window_select_color(self):
+        self.video_play_1['bg']= '#bcbcbc'
+        self.video_play_2['bg']= '#bcbcbc'
+        self.video_play_3['bg']= '#bcbcbc'
+        self.video_play_4['bg']= '#bcbcbc'
+        self.video_play_5['bg']= '#bcbcbc'
+        self.video_play_6['bg']= '#bcbcbc'
+        self.video_play_7['bg']= '#bcbcbc'
+        self.video_play_8['bg']= '#bcbcbc'
+        self.video_play_9['bg']= '#bcbcbc'
 
     def get_hwnd(self,event):
-        print(event.widget.winfo_id())
+
+        #清除所有视频窗口的颜色
+        self.clear_video_window_select_color()
+        #设置选中视频窗格的颜色,刚初始化
+        print(self.v_num.get())
+        if self.v_num.get()==1:
+            pass
+        else:
+            event.widget['bg']='#acbcbc'
+        #返回选中视频窗口的句柄
+        hwnd=event.widget.winfo_id()
+        print('当前窗口的句柄为:',hwnd)
+        self.now_hwnd=event.widget.winfo_id()
+        return hwnd
 
     def get_father_widget(self,event):
         return event.widget.nametowidget(event.widget.winfo_parent())
@@ -159,7 +191,12 @@ class my_app():
 
         self.video_area.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
 
-        self.video_list=tkinter.Listbox(self.list_area)
+        self.video_list=tkinter.Listbox(self.list_area,selectmode=SINGLE)
+
+        for item in ['asda','23233d']:
+            self.video_list.insert("end",item)
+
+        self.video_list.bind("<Double-Button-1>",self.cam_play)
 
         self.video_list.pack(side=tkinter.TOP, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
 
@@ -184,6 +221,15 @@ class my_app():
         self.video_play_7 = tkinter.Frame(self.video_play_area_3 , cursor='plus',bd=2, relief="sunken")
         self.video_play_8 = tkinter.Frame(self.video_play_area_3 , cursor='plus',bd=2, relief="sunken")
         self.video_play_9 = tkinter.Frame(self.video_play_area_3 , cursor='plus',bd=2, relief="sunken")
+        self.video_play_1['bg']= '#bcbcbc'
+        self.video_play_2['bg']= '#bcbcbc'
+        self.video_play_3['bg']= '#bcbcbc'
+        self.video_play_4['bg']= '#bcbcbc'
+        self.video_play_5['bg']= '#bcbcbc'
+        self.video_play_6['bg']= '#bcbcbc'
+        self.video_play_7['bg']= '#bcbcbc'
+        self.video_play_8['bg']= '#bcbcbc'
+        self.video_play_9['bg']= '#bcbcbc'
         self.video_play_1.bind("<ButtonPress-1>", self.get_hwnd)
         self.video_play_2.bind("<ButtonPress-1>", self.get_hwnd)
         self.video_play_3.bind("<ButtonPress-1>", self.get_hwnd)
@@ -202,6 +248,9 @@ class my_app():
         self.video_play_7.bind("<Double-Button-1>", self.change_window)
         self.video_play_8.bind("<Double-Button-1>", self.change_window)
         self.video_play_9.bind("<Double-Button-1>", self.change_window)
+
+
+
 
         self.v_num = IntVar()
         self.v_num.set(1)
@@ -231,6 +280,8 @@ class my_app():
         self.pause_button.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
 
         self.stop_button.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
+
+        self.now_hwnd = self.video_play_1.winfo_id()
 
         print('init finished')
 
