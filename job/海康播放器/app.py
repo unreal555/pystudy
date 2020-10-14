@@ -28,18 +28,19 @@ class my_app():
     v_num=''
     is_single_playing=False
     now_hwnd=-1
+    now_window_name=-1
     login_servers=[]
     
-    cam_window_status={
-        'cam_1':0,
-        'cam_2':0,
-        'cam_3':0,
-        'cam_4':0,
-        'cam_5':0,
-        'cam_6':0,
-        'cam_7':0,
-        'cam_8':0,
-        'cam_9':0,
+    window_status={
+        'window_1':0,
+        'window_2':0,
+        'window_3':0,
+        'window_4':0,
+        'window_5':0,
+        'window_6':0,
+        'window_7':0,
+        'window_8':0,
+        'window_9':0,
     }
 
     def read_config(self, path=os.path.join('.', 'config.ini')):
@@ -81,15 +82,33 @@ class my_app():
             item_text = self.cam_tree.item(item, "values")
             print(item_text)  # 输出所选行的第一列的值
 
+    def stop_cam(self,event):
+
+        window=self.now_window_name
+        print(self.window_status)
+        if window in self.window_status.keys():
+            if self.window_status[window] != 0:
+                server, lRealHandle = self.window_status[window]
+                server.Stop_Cam(lRealHandle)
+                self.window_status[window]=0
+        try:
+
+            event.widget['bg'] = '#acbcbc'
+        except:
+            pass
+        self.video_area.pack_forget()
+        self.video_area.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
+
     def play_cam(self, event):
+
         print('播放选中cam')
+        print(self.window_status)
         for item in self.cam_tree.selection():
             item_text = self.cam_tree.item(item, "values")
             print(item_text)  # 输出所选行的第一列的值
         if len(item_text) == 1:
             print('主机无法播放,请选择通道')
             return
-
         print('播放', item_text)
         server_ip=item_text[0]
         server_port = item_text[1]
@@ -104,51 +123,76 @@ class my_app():
             self.login_servers.append(server)
         else:
             for server in self.login_servers:
-                print('1')
                 info=server.GetServerInfo()
                 if server_ip in info and server_username in info and server_port in info:
-                    print(server_ip,server_username,server_port in info)
-                    print(server_ip in info and server_username in info and server_port in info)
+                   # print(server_ip,server_username,server_port in info)
                     server=server
                 else:
-                    print(3)
                     server = DVR(sDVRIP=server_ip, sDVRPort=server_port, sUserName=server_username,
                                  sPassword=server_pwd)
                     self.login_servers.append(server)
 
-        server.Play_Cam(hwnd=self.now_hwnd,channle=server_channle)
+        print(self.window_status[self.now_window_name]==0)
+
+        if self.window_status[self.now_window_name]==0:
+
+            lRealHandle=server.Play_Cam(hwnd=self.now_hwnd,channle=server_channle)
+            self.window_status[self.now_window_name]=(server,lRealHandle)
+            return True
+
+        if askokcancel(title='warning',message='该窗口已有视频播放,确定要在该窗口播放吗?'):
+            self.stop_cam(event=None)
+            lRealHandle=server.Play_Cam(hwnd=self.now_hwnd,channle=server_channle)
+            self.window_status[self.now_window_name]=(server,lRealHandle)
+            return True
+        else:
+            pass
 
     def clear_video_window_select_color(self):
-        self.video_play_1['bg']= '#bcbcbc'
-        self.video_play_2['bg']= '#bcbcbc'
-        self.video_play_3['bg']= '#bcbcbc'
-        self.video_play_4['bg']= '#bcbcbc'
-        self.video_play_5['bg']= '#bcbcbc'
-        self.video_play_6['bg']= '#bcbcbc'
-        self.video_play_7['bg']= '#bcbcbc'
-        self.video_play_8['bg']= '#bcbcbc'
-        self.video_play_9['bg']= '#bcbcbc'
+        self.video_play_1['highlightbackground']= '#bcbcbc'
+        self.video_play_2['highlightbackground']= '#bcbcbc'
+        self.video_play_3['highlightbackground']= '#bcbcbc'
+        self.video_play_4['highlightbackground']= '#bcbcbc'
+        self.video_play_5['highlightbackground']= '#bcbcbc'
+        self.video_play_6['highlightbackground']= '#bcbcbc'
+        self.video_play_7['highlightbackground']= '#bcbcbc'
+        self.video_play_8['highlightbackground']= '#bcbcbc'
+        self.video_play_9['highlightbackground']= '#bcbcbc'
+
+
 
     def get_hwnd(self,event):
 
         #清除所有视频窗口的颜色
         self.clear_video_window_select_color()
         #设置选中视频窗格的颜色,刚初始化
-        print(self.v_num.get())
+        print(self.window_status)
         if self.v_num.get()==1:
             pass
         else:
-            event.widget['bg']='#acbcbc'
+            event.widget['highlightbackground']='red'
         #返回选中视频窗口的句柄
         hwnd=event.widget.winfo_id()
-        print('当前窗口的句柄为:',hwnd)
-        self.now_hwnd=event.widget.winfo_id()
-        return hwnd
+        name=event.widget.winfo_class()
+        print('当前窗口的句柄为:',hwnd,name)
+        self.now_hwnd=hwnd
+        self.now_window_name=name
+        return hwnd,name
 
     def get_father_widget(self,event):
         return event.widget.nametowidget(event.widget.winfo_parent())
 
     def show_nine_play(self):
+        self.video_play_1['highlightthickness']= 2
+        self.video_play_2['highlightthickness']= 2
+        self.video_play_3['highlightthickness']= 2
+        self.video_play_4['highlightthickness']= 2
+        self.video_play_5['highlightthickness']= 2
+        self.video_play_6['highlightthickness']= 2
+        self.video_play_7['highlightthickness']= 2
+        self.video_play_8['highlightthickness']= 2
+        self.video_play_9['highlightthickness']= 2
+
         self.video_play_1.pack_forget()
         self.video_play_2.pack_forget()
         self.video_play_3.pack_forget()
@@ -176,6 +220,15 @@ class my_app():
         self.is_single_playing = False
 
     def show_four_play(self):
+        self.video_play_1['highlightthickness'] = 2
+        self.video_play_2['highlightthickness'] = 2
+        self.video_play_3['highlightthickness'] = 2
+        self.video_play_4['highlightthickness'] = 2
+        self.video_play_5['highlightthickness'] = 2
+        self.video_play_6['highlightthickness'] = 2
+        self.video_play_7['highlightthickness'] = 2
+        self.video_play_8['highlightthickness'] = 2
+        self.video_play_9['highlightthickness'] = 2
         self.video_play_1.pack_forget()
         self.video_play_2.pack_forget()
         self.video_play_3.pack_forget()
@@ -213,6 +266,8 @@ class my_app():
             self.video_play_area_1.pack(side=tkinter.TOP, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
             self.video_play_1.pack(side=tkinter.TOP, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
         else:
+
+            event.widget['highlightthickness']=0
             father_frame = event.widget.nametowidget(event.widget.winfo_parent())
             father_frame.pack(side=tkinter.TOP, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
             event.widget.pack(side=tkinter.TOP, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
@@ -271,24 +326,16 @@ class my_app():
         self.video_play_area_2=tkinter.Frame(self.video_play_area ,bd=1, relief="sunken")
         self.video_play_area_3=tkinter.Frame(self.video_play_area ,bd=1, relief="sunken")
 
-        self.video_play_1 = tkinter.Frame(self.video_play_area_1 , cursor='plus',bd=2, relief="sunken")
-        self.video_play_2 = tkinter.Frame(self.video_play_area_1 , cursor='plus',bd=2, relief="sunken")
-        self.video_play_3 = tkinter.Frame(self.video_play_area_1 , cursor='plus',bd=2, relief="sunken")
-        self.video_play_4 = tkinter.Frame(self.video_play_area_2 , cursor='plus',bd=2, relief="sunken")
-        self.video_play_5 = tkinter.Frame(self.video_play_area_2 , cursor='plus',bd=2, relief="sunken")
-        self.video_play_6 = tkinter.Frame(self.video_play_area_2 , cursor='plus',bd=2, relief="sunken")
-        self.video_play_7 = tkinter.Frame(self.video_play_area_3 , cursor='plus',bd=2, relief="sunken")
-        self.video_play_8 = tkinter.Frame(self.video_play_area_3 , cursor='plus',bd=2, relief="sunken")
-        self.video_play_9 = tkinter.Frame(self.video_play_area_3 , cursor='plus',bd=2, relief="sunken")
-        self.video_play_1['bg']= '#bcbcbc'
-        self.video_play_2['bg']= '#bcbcbc'
-        self.video_play_3['bg']= '#bcbcbc'
-        self.video_play_4['bg']= '#bcbcbc'
-        self.video_play_5['bg']= '#bcbcbc'
-        self.video_play_6['bg']= '#bcbcbc'
-        self.video_play_7['bg']= '#bcbcbc'
-        self.video_play_8['bg']= '#bcbcbc'
-        self.video_play_9['bg']= '#bcbcbc'
+        self.video_play_1 = tkinter.Frame(self.video_play_area_1 , cursor='plus',bd=2, relief="sunken",class_='window_1',highlightthickness=2)
+        self.video_play_2 = tkinter.Frame(self.video_play_area_1 , cursor='plus',bd=2, relief="sunken",class_='window_2',highlightthickness=2)
+        self.video_play_3 = tkinter.Frame(self.video_play_area_1 , cursor='plus',bd=2, relief="sunken",class_='window_3',highlightthickness=2)
+        self.video_play_4 = tkinter.Frame(self.video_play_area_2 , cursor='plus',bd=2, relief="sunken",class_='window_4',highlightthickness=2)
+        self.video_play_5 = tkinter.Frame(self.video_play_area_2 , cursor='plus',bd=2, relief="sunken",class_='window_5',highlightthickness=2)
+        self.video_play_6 = tkinter.Frame(self.video_play_area_2 , cursor='plus',bd=2, relief="sunken",class_='window_6',highlightthickness=2)
+        self.video_play_7 = tkinter.Frame(self.video_play_area_3 , cursor='plus',bd=2, relief="sunken",class_='window_7',highlightthickness=2)
+        self.video_play_8 = tkinter.Frame(self.video_play_area_3 , cursor='plus',bd=2, relief="sunken",class_='window_8',highlightthickness=2)
+        self.video_play_9 = tkinter.Frame(self.video_play_area_3 , cursor='plus',bd=2, relief="sunken",class_='window_9',highlightthickness=2)
+
         self.video_play_1.bind("<ButtonPress-1>", self.get_hwnd)
         self.video_play_2.bind("<ButtonPress-1>", self.get_hwnd)
         self.video_play_3.bind("<ButtonPress-1>", self.get_hwnd)
@@ -332,27 +379,30 @@ class my_app():
 
         self.show_window()
 
-        self.open_button=tkinter.Button(self.video_control_area,text='打开')
-
-        self.play_button=tkinter.Button(self.video_control_area,text='播放')
-
-        self.speedup_button=tkinter.Button(self.video_control_area,text='加速')
-
-        self.pause_button=tkinter.Button(self.video_control_area,text='暂停')
-
+        # self.open_button=tkinter.Button(self.video_control_area,text='打开')
+        #
+        # self.play_button=tkinter.Button(self.video_control_area,text='播放')
+        #
+        # self.speedup_button=tkinter.Button(self.video_control_area,text='加速')
+        #
+        # self.pause_button=tkinter.Button(self.video_control_area,text='暂停')
+        #
         self.stop_button=tkinter.Button(self.video_control_area,text='停止')
-
-        self.open_button.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
-
-        self.play_button.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
-
-        self.speedup_button.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
-
-        self.pause_button.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
-
         self.stop_button.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
+        self.stop_button.bind("<ButtonPress-1>", self.stop_cam)
+        #
+        # self.open_button.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
+        #
+        # self.play_button.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
+        #
+        # self.speedup_button.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
+        #
+        # self.pause_button.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
+
 
         self.now_hwnd = self.video_play_1.winfo_id()
+
+        self.now_window_name=self.video_play_1.winfo_class()
 
         print('init finished')
 
@@ -364,7 +414,7 @@ class my_app():
         self.is_single_playing=0
         self.now_hwnd=0
         for server in self.login_servers:
-            server.close()
+            server.Close()
         self.login_servers=0
         self.root.destroy()
 

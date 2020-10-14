@@ -14,6 +14,9 @@ import ctypes
 from ctypes import *
 import tkinter as tk
 
+
+
+
 class NET_DVR_PREVIEWINFO(ctypes.Structure):
     _fields_ = [
         # 通道号，目前设备模拟通道号从1开始，数字通道的起始通道号通过
@@ -227,21 +230,27 @@ class DVR():
             print("预览成功")
         return m_lRealHandle
 
+    def Stop_Cam(self,lRealHandle):
+
+        self.callCpp('NET_DVR_StopRealPlay',c_long(lRealHandle))
+
     def GetServerInfo(self):
         info=str(self.sDVRIP)+':'+str(self.sUserName)+':'+str(self.sDVRPort)
         print(info)
         return info
+    
     def Close(self):
         pass
 
 if __name__ == '__main__':
 
 
+
+
     window = tk.Tk()  # 创建窗口
     window.title("this is a test")  # 窗口标题
     window.geometry('500x900')  # 窗口大小，小写字母x
     video = tk.Frame(window, cursor='plus', bd=2, relief="sunken")
-
     video.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)  # 固定
     video1 = tk.Frame(window, cursor='plus', bd=2, relief="sunken")
 
@@ -252,5 +261,23 @@ if __name__ == '__main__':
 
     server1=DVR()
 
-    print(server1.GetServerInfo())
+
+    a=server1.Play_Cam(hwnd1,33)
+    b=server1.Play_Cam(hwnd2,33)
+
+    server1.Stop_Cam(a)
+    server1.Stop_Cam(b)
+
+    server1.Stop_Cam(a)
+    server1.Stop_Cam(b)
+    server1.Stop_Cam(a)
+    server1.Stop_Cam(b)
+
     window.mainloop()
+
+
+
+
+
+
+
