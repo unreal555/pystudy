@@ -1,5 +1,4 @@
-﻿
-# Team : JiaLiDun University
+﻿# Team : JiaLiDun University
 # Author：zl
 # Date ：2020/9/30 0030 上午 9:39
 # Tool ：PyCharm
@@ -12,8 +11,11 @@ import time
 import os
 from tkinter.filedialog import askopenfilename
 import ctypes
-
+import tkinter as tk
+import re
+import configparser
 from my_dvr import DVR
+from tkinter import ttk
     
 class my_app():
 
@@ -26,7 +28,7 @@ class my_app():
     v_num=''
     is_single_playing=False
     now_hwnd=-1
-    servers=[]
+    login_servers=[]
     
     cam_window_status={
         'cam_1':0,
@@ -40,16 +42,81 @@ class my_app():
         'cam_9':0,
     }
 
-    def cam_play(self,event):
+    def read_config(self, path=os.path.join('.', 'config.ini')):
+        '''
+        读取path指定的配置文件，默认为本目录config.ini
+        读取section指定的配置段，以字典的形式返回该section的key，value
+        '''
 
-        if self.servers==[]:
-            server = DVR()
-            self.servers.append(server)
+        config = configparser.ConfigParser()
+
+        if os.path.exists(path):
+            try:
+                config.read(path, encoding='gbk')
+
+            except configparser.MissingSectionHeaderError as e:
+                print('配置文件无任何section，请检查配置文件')
+                return (1)
+            except Exception as e:
+                print(e)
+                print('读取配置文件错误，请检查配置文件')
+                return (1)
         else:
-            server=self.servers[0]
+            print('未找到配置文件')
+            return (1)
 
+        servers = []
+        for section in config.sections():
+            server = {}
+            server['name'] = section
+            for item in config.items(section):
+                server[item[0]] = item[1]
+            servers.append(server)
 
-        server.Preview(hwnd=self.now_hwnd,channle=33)
+        return servers
+
+    def select_cam(self, event):
+        print('点击选中cam')
+        for item in self.cam_tree.selection():
+            item_text = self.cam_tree.item(item, "values")
+            print(item_text)  # 输出所选行的第一列的值
+
+    def play_cam(self, event):
+        print('播放选中cam')
+        for item in self.cam_tree.selection():
+            item_text = self.cam_tree.item(item, "values")
+            print(item_text)  # 输出所选行的第一列的值
+        if len(item_text) == 1:
+            print('主机无法播放,请选择通道')
+            return
+
+        print('播放', item_text)
+        server_ip=item_text[0]
+        server_port = item_text[1]
+        server_username = item_text[2]
+        server_pwd = item_text[3]
+        server_channle = int(re.findall('\d+',item_text[4])[0])
+        print(server_ip,server_port,server_username,server_pwd,server_channle)
+
+        if len(self.login_servers)==0:
+            server = DVR(sDVRIP=server_ip, sDVRPort=server_port, sUserName=server_username,
+                         sPassword=server_pwd)
+            self.login_servers.append(server)
+        else:
+            for server in self.login_servers:
+                print('1')
+                info=server.GetServerInfo()
+                if server_ip in info and server_username in info and server_port in info:
+                    print(server_ip,server_username,server_port in info)
+                    print(server_ip in info and server_username in info and server_port in info)
+                    server=server
+                else:
+                    print(3)
+                    server = DVR(sDVRIP=server_ip, sDVRPort=server_port, sUserName=server_username,
+                                 sPassword=server_pwd)
+                    self.login_servers.append(server)
+
+        server.Play_Cam(hwnd=self.now_hwnd,channle=server_channle)
 
     def clear_video_window_select_color(self):
         self.video_play_1['bg']= '#bcbcbc'
@@ -191,14 +258,6 @@ class my_app():
 
         self.video_area.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
 
-        self.video_list=tkinter.Listbox(self.list_area,selectmode=SINGLE)
-
-        for item in ['asda','23233d']:
-            self.video_list.insert("end",item)
-
-        self.video_list.bind("<Double-Button-1>",self.cam_play)
-
-        self.video_list.pack(side=tkinter.TOP, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
 
         self.video_play_area=tkinter.Frame(self.video_area ,bd=1, relief="sunken")
 
@@ -249,8 +308,20 @@ class my_app():
         self.video_play_8.bind("<Double-Button-1>", self.change_window)
         self.video_play_9.bind("<Double-Button-1>", self.change_window)
 
+        self.cam_tree = ttk.Treeview(self.list_area, selectmode='browse')
+        self.cam_tree.pack(side='left',fill=tkinter.BOTH)
+        self.cam_tree_scb = ttk.Scrollbar(self.list_area, orient="vertical", command=self.cam_tree.yview)
+        self.cam_tree_scb.pack(side='right', fill=tkinter.BOTH)
+        self.cam_tree.configure(yscrollcommand=self.cam_tree_scb.set)
 
-
+        for server in self.read_config():
+            tree = self.cam_tree.insert('', '1', text=server['name'] + ' - ' + server['ip'] + ':' + server['port'],values=server['name'])
+            for key in server.keys():
+                if 'channle' in key:
+                    values = (server['ip'], server['port'], server['user_name'], server['pwd'], key)
+                    self.cam_tree.insert(tree, '1', text=key.replace('channle_', '') + server[key], values=values)
+        self.cam_tree.bind("<ButtonPress-1>", self.select_cam)
+        self.cam_tree.bind("<Double-Button-1>", self.play_cam)
 
         self.v_num = IntVar()
         self.v_num.set(1)
@@ -284,6 +355,20 @@ class my_app():
         self.now_hwnd = self.video_play_1.winfo_id()
 
         print('init finished')
+
+    def __del__(self):
+        print('程序退出,销毁')
+
+        self.window_des=0
+        self.v_num=0
+        self.is_single_playing=0
+        self.now_hwnd=0
+        for server in self.login_servers:
+            server.close()
+        self.login_servers=0
+        self.root.destroy()
+
+
 
 if __name__ == '__main__':
 

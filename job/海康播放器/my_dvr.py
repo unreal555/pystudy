@@ -140,6 +140,7 @@ class DVR():
 
         # 用户注册设备
         # c++传递进去的是byte型数据，需要转成byte型传进去，否则会乱码
+        sDVRPort=int(sDVRPort)
         self.sDVRIP = bytes(sDVRIP, "ascii")
         self.sUserName = bytes(sUserName, "ascii")
         self.sPassword = bytes(sPassword, "ascii")
@@ -201,7 +202,7 @@ class DVR():
         lUserID = self.callCpp("NET_DVR_Login_V30", sDVRIP, sDVRPort, sUserName, sPassword, ctypes.byref(DeviceInfo))
 
         if lUserID == -1:
-            error_info = callCpp("NET_DVR_GetLastError")
+            error_info = self.callCpp("NET_DVR_GetLastError")
             print("登录错误信息：" + str(error_info))
             return False
         else:
@@ -209,7 +210,7 @@ class DVR():
             return lUserID
 
     # 预览实现
-    def Preview(self,hwnd,channle):
+    def Play_Cam(self,hwnd,channle):
         lpPreviewInfo = NET_DVR_PREVIEWINFO()
         # hPlayWnd需要输入创建图形窗口的handle,没有输入无法实现BMP抓图
         lpPreviewInfo.hPlayWnd = hwnd
@@ -220,7 +221,7 @@ class DVR():
         lUserID = self.lUserID
         m_lRealHandle = self.callCpp("NET_DVR_RealPlay_V40", lUserID, ctypes.byref(lpPreviewInfo), None, None)
         if (m_lRealHandle < 0):
-            error_info = callCpp("NET_DVR_GetLastError")
+            error_info = self.callCpp("NET_DVR_GetLastError")
             print("预览失败：" + str(error_info))
         else:
             print("预览成功")
@@ -230,7 +231,8 @@ class DVR():
         info=str(self.sDVRIP)+':'+str(self.sUserName)+':'+str(self.sDVRPort)
         print(info)
         return info
-
+    def Close(self):
+        pass
 
 if __name__ == '__main__':
 
