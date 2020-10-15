@@ -135,7 +135,7 @@ class NET_DVR_USER_LOGIN_INFO(Structure):
 class DVR():
     def __init__(self, lib_path='./dll', sDVRIP="47.92.89.1", sDVRPort=10000, sUserName="user1", sPassword="abcd1234"):
 
-        self.dlls =self.get_dlls(lib_path)
+        self.dlls =self.Get_Dlls(lib_path)
 
         print('生成dll库完毕',self.dlls)
 
@@ -152,12 +152,12 @@ class DVR():
         print("DVR参数初始化成功")
         self.lUserID = self.NET_DVR_Login(sDVRIP=self.sDVRIP, sDVRPort=self.sDVRPort, sUserName=self.sUserName, sPassword=self.sPassword, DeviceInfo=self.DeviceInfo)
 
-    def get_last_error(self):
-        error_code = self.callCpp("NET_DVR_GetLastError")
+    def Get_Last_Error(self):
+        error_code = self.CallCpp("NET_DVR_GetLastError")
         print('error code', error_code)
         return error_code
 
-    def get_dlls(self,lib_path):
+    def Get_Dlls(self,lib_path):
         pathss = []
         for root, dirs, files in os.walk(lib_path):
             for file in files:
@@ -165,7 +165,7 @@ class DVR():
                     pathss.append(os.path.join(lib_path, file))
         return pathss
 
-    def callCpp(self, func_name, *args):
+    def CallCpp(self, func_name, *args):
         for HK_dll in self.dlls:
             try:
                 lib = ctypes.cdll.LoadLibrary(HK_dll)
@@ -182,30 +182,30 @@ class DVR():
         return False
 
     def NET_DVR_Init(self):
-        init_res = self.callCpp("NET_DVR_Init")  # SDK初始化
+        init_res = self.CallCpp("NET_DVR_Init")  # SDK初始化
         if init_res:
             print("SDK初始化成功")
-            error_info = self.callCpp("NET_DVR_GetLastError")
+            error_info = self.CallCpp("NET_DVR_GetLastError")
         else:
-            error_info = self.callCpp("NET_DVR_GetLastError")
+            error_info = self.CallCpp("NET_DVR_GetLastError")
             print("SDK初始化错误：" + str(error_info))
             return False
 
-        set_overtime = self.callCpp("NET_DVR_SetConnectTime", 5000, 4)  # 设置超时
+        set_overtime = self.CallCpp("NET_DVR_SetConnectTime", 5000, 4)  # 设置超时
 
         if set_overtime:
             print("设置超时时间成功")
         else:
-            error_info = self.callCpp("NET_DVR_GetLastError")
+            error_info = self.CallCpp("NET_DVR_GetLastError")
             print("设置超时错误信息：" + str(error_info))
             return False
 
     def NET_DVR_Login(self, sDVRIP, sDVRPort, sUserName, sPassword, DeviceInfo):
 
-        lUserID = self.callCpp("NET_DVR_Login_V30", sDVRIP, sDVRPort, sUserName, sPassword, ctypes.byref(DeviceInfo))
+        lUserID = self.CallCpp("NET_DVR_Login_V30", sDVRIP, sDVRPort, sUserName, sPassword, ctypes.byref(DeviceInfo))
 
         if lUserID == -1:
-            error_info = self.callCpp("NET_DVR_GetLastError")
+            error_info = self.CallCpp("NET_DVR_GetLastError")
             print("登录错误信息：" + str(error_info))
             return False
         else:
@@ -222,25 +222,53 @@ class DVR():
         lpPreviewInfo.sMultiCastIP = None
         lpPreviewInfo.bBlocked = 1
         lUserID = self.lUserID
-        m_lRealHandle = self.callCpp("NET_DVR_RealPlay_V40", lUserID, ctypes.byref(lpPreviewInfo), None, None)
+        m_lRealHandle = self.CallCpp("NET_DVR_RealPlay_V40", lUserID, ctypes.byref(lpPreviewInfo), None, None)
         if (m_lRealHandle < 0):
-            error_info = self.callCpp("NET_DVR_GetLastError")
+            error_info = self.CallCpp("NET_DVR_GetLastError")
             print("预览失败：" + str(error_info))
         else:
             print("预览成功")
         return m_lRealHandle
 
-    def Stop_Cam(self,lRealHandle):
+    def Stop_Play_Cam(self,lRealHandle):
 
-        self.callCpp('NET_DVR_StopRealPlay',c_long(lRealHandle))
+        self.CallCpp('NET_DVR_StopRealPlay',c_long(lRealHandle))
 
     def GetServerInfo(self):
         info=str(self.sDVRIP)+':'+str(self.sUserName)+':'+str(self.sDVRPort)
         print(info)
         return info
-    
+
+    def Rec_Cam(self,lRealHandle,file):
+
+        file=bytes(file,'utf-8')
+
+        file=c_char_p(file)
+
+        self.CallCpp('NET_DVR_SaveRealData', c_long(lRealHandle),file)
+
+        self.Get_Last_Error()
+
+
+    def Capture_Cam(self,lRealHandle,file):
+
+        file=bytes(file,'utf-8')
+        file=c_char_p(file)
+        self.CallCpp('NET_DVR_CapturePicture', c_long(lRealHandle),file)
+        self.Get_Last_Error()
+
+    def Stop_Rec_Cam(self,lRealHandle,):
+        self.CallCpp('NET_DVR_StopSaveRealData', c_long(lRealHandle))
+        self.Get_Last_Error()
+
+
     def Close(self):
-        pass
+        self.CallCpp('NET_DVR_Logout', self.lUserID)
+        self.Get_Last_Error()
+
+        self.CallCpp('NET_DVR_Cleanup', self.lUserID)
+        self.Get_Last_Error()
+
 
 if __name__ == '__main__':
 
@@ -265,13 +293,20 @@ if __name__ == '__main__':
     a=server1.Play_Cam(hwnd1,33)
     b=server1.Play_Cam(hwnd2,33)
 
-    server1.Stop_Cam(a)
-    server1.Stop_Cam(b)
+    # server1.Stop_Cam(a)
+    # server1.Stop_Cam(b)
+    #
+    # server1.Stop_Cam(a)
+    # server1.Stop_Cam(b)
+    # server1.Stop_Cam(a)
+    # server1.Stop_Cam(b)
+    server1.Rec_Cam(lRealHandle=a,file='c://test.mp4')
 
-    server1.Stop_Cam(a)
-    server1.Stop_Cam(b)
-    server1.Stop_Cam(a)
-    server1.Stop_Cam(b)
+    server1.Stop_Play_Cam(a)
+
+    server1.Close()
+
+
 
     window.mainloop()
 

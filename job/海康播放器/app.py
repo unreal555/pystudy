@@ -16,8 +16,12 @@ import re
 import configparser
 from my_dvr import DVR
 from tkinter import ttk
+
     
 class my_app():
+    REC_PATH=os.path.abspath('./rec')
+    if not os.path.exists(REC_PATH):
+        os.makedirs(REC_PATH)
 
     root=Tk()
     root.title('dhplay')
@@ -30,7 +34,6 @@ class my_app():
     now_hwnd=-1
     now_window_name=-1
     login_servers=[]
-    
     window_status={
         'window_1':0,
         'window_2':0,
@@ -42,6 +45,12 @@ class my_app():
         'window_8':0,
         'window_9':0,
     }
+    rec_status=[]
+
+    def get_time(self):
+        return time.strftime('%Y-%m-%d %H:%M:%S')
+
+
 
     def read_config(self, path=os.path.join('.', 'config.ini')):
         '''
@@ -82,17 +91,16 @@ class my_app():
             item_text = self.cam_tree.item(item, "values")
             print(item_text)  # 输出所选行的第一列的值
 
-    def stop_cam(self,event):
+    def stop_play_cam(self,event):
 
         window=self.now_window_name
         print(self.window_status)
         if window in self.window_status.keys():
             if self.window_status[window] != 0:
                 server, lRealHandle = self.window_status[window]
-                server.Stop_Cam(lRealHandle)
+                server.Stop_Play_Cam(lRealHandle)
                 self.window_status[window]=0
         try:
-
             event.widget['bg'] = '#acbcbc'
         except:
             pass
@@ -141,12 +149,33 @@ class my_app():
             return True
 
         if askokcancel(title='warning',message='该窗口已有视频播放,确定要在该窗口播放吗?'):
-            self.stop_cam(event=None)
+            self.stop_play_cam(event=None)
             lRealHandle=server.Play_Cam(hwnd=self.now_hwnd,channle=server_channle)
             self.window_status[self.now_window_name]=(server,lRealHandle)
             return True
         else:
             pass
+
+    def rec_cam(self):
+        pass
+
+    def stop_rec_cam(self):
+        pass
+
+    def capture_cam(self,event):
+        window=self.now_window_name
+        print(self.window_status)
+        if window in self.window_status.keys():
+            if self.window_status[window] != 0:
+                server, lRealHandle = self.window_status[window]
+                server.Capture_Cam(lRealHandle,os.path.join(self.REC_PATH,self.get_time()+'.bmp'))
+                self.window_status[window]=0
+        try:
+            event.widget['bg'] = '#acbcbc'
+        except:
+            pass
+        self.video_area.pack_forget()
+        self.video_area.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
 
     def clear_video_window_select_color(self):
         self.video_play_1['highlightbackground']= '#bcbcbc'
@@ -379,24 +408,20 @@ class my_app():
 
         self.show_window()
 
-        # self.open_button=tkinter.Button(self.video_control_area,text='打开')
-        #
-        # self.play_button=tkinter.Button(self.video_control_area,text='播放')
-        #
-        # self.speedup_button=tkinter.Button(self.video_control_area,text='加速')
-        #
-        # self.pause_button=tkinter.Button(self.video_control_area,text='暂停')
-        #
         self.stop_button=tkinter.Button(self.video_control_area,text='停止')
         self.stop_button.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
-        self.stop_button.bind("<ButtonPress-1>", self.stop_cam)
-        #
-        # self.open_button.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
-        #
+        self.stop_button.bind("<ButtonPress-1>", self.stop_play_cam)
+
+        self.capture_button=tkinter.Button(self.video_control_area,text='截图')
+        self.capture_button.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
+        self.capture_button.bind("<ButtonPress-1>", self.capture_cam)
+        # self.play_button=tkinter.Button(self.video_control_area,text='播放')
         # self.play_button.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
         #
+        # self.speedup_button=tkinter.Button(self.video_control_area,text='加速')
         # self.speedup_button.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
         #
+        # self.pause_button=tkinter.Button(self.video_control_area,text='暂停')
         # self.pause_button.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
 
 
@@ -409,14 +434,14 @@ class my_app():
     def __del__(self):
         print('程序退出,销毁')
 
+        for server in self.login_servers:
+            server.Close()
         self.window_des=0
         self.v_num=0
         self.is_single_playing=0
         self.now_hwnd=0
-        for server in self.login_servers:
-            server.Close()
         self.login_servers=0
-        self.root.destroy()
+        self.root=0
 
 
 
