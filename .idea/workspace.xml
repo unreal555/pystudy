@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a29feb6-6947-483a-9da2-985463451c54" name="默认的" comment="默认的">
-      <change afterPath="$PROJECT_DIR$/my_time.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pystudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pystudy.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/config.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/海康播放器/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/海康播放器/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/海康播放器/my_dvr.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/海康播放器/my_dvr.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my_config_read_write_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_config_read_write_tools.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -141,7 +139,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="ToolWindowPython Console.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/job/海康播放器" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -289,17 +287,17 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.my_dvr (1)" />
-      <item itemvalue="Python.tree" />
       <item itemvalue="Python.app" />
-      <item itemvalue="Python.my_time" />
       <item itemvalue="Python.my_config_read_write_tools" />
+      <item itemvalue="Python.my_dvr (1)" />
+      <item itemvalue="Python.my_time" />
+      <item itemvalue="Python.tree" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.my_config_read_write_tools" />
-        <item itemvalue="Python.my_time" />
         <item itemvalue="Python.app" />
+        <item itemvalue="Python.my_time" />
         <item itemvalue="Python.my_dvr (1)" />
         <item itemvalue="Python.tree" />
       </list>
@@ -490,21 +488,13 @@
       <workItem from="1602578092085" duration="755000" />
       <workItem from="1602635680128" duration="9326000" />
       <workItem from="1602654619311" duration="8747000" />
-      <workItem from="1602725856126" duration="12924000" />
-    </task>
-    <task id="LOCAL-00141" summary="默认的">
-      <created>1598507381923</created>
-      <option name="number" value="00141" />
-      <option name="presentableId" value="LOCAL-00141" />
-      <option name="project" value="LOCAL" />
-      <updated>1598507382001</updated>
-    </task>
-    <task id="LOCAL-00142" summary="默认的">
-      <created>1598512254773</created>
-      <option name="number" value="00142" />
-      <option name="presentableId" value="LOCAL-00142" />
-      <option name="project" value="LOCAL" />
-      <updated>1598512254773</updated>
+      <workItem from="1602725856126" duration="13085000" />
+      <workItem from="1602745715128" duration="593000" />
+      <workItem from="1602853212442" duration="19000" />
+      <workItem from="1602853233702" duration="165000" />
+      <workItem from="1602853923942" duration="47000" />
+      <workItem from="1602853973091" duration="237000" />
+      <workItem from="1602904163783" duration="1694000" />
     </task>
     <task id="LOCAL-00143" summary="默认的">
       <created>1598606838400</created>
@@ -835,7 +825,21 @@
       <option name="project" value="LOCAL" />
       <updated>1602663009020</updated>
     </task>
-    <option name="localTasksCounter" value="190" />
+    <task id="LOCAL-00190" summary="默认的">
+      <created>1602745474683</created>
+      <option name="number" value="00190" />
+      <option name="presentableId" value="LOCAL-00190" />
+      <option name="project" value="LOCAL" />
+      <updated>1602745474684</updated>
+    </task>
+    <task id="LOCAL-00191" summary="默认的">
+      <created>1602905081693</created>
+      <option name="number" value="00191" />
+      <option name="presentableId" value="LOCAL-00191" />
+      <option name="project" value="LOCAL" />
+      <updated>1602905081693</updated>
+    </task>
+    <option name="localTasksCounter" value="192" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -975,11 +979,11 @@
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="94" y="148" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.980@0.0.1280.980" timestamp="1594692161631" />
-    <state x="392" y="298" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602743056460">
-      <screen x="0" y="0" width="1280" height="980" />
+    <state x="588" y="316" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602905216153">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="392" y="298" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.980@0.0.1280.980" timestamp="1602743056460" />
-    <state x="392" y="299" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.984@0.0.1280.984" timestamp="1594087497018" />
+    <state x="588" y="316" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1602905216153" />
     <state x="355" y="125" key="#my_generator" timestamp="1597050844213">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
@@ -1004,60 +1008,60 @@
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="355" y="125" key="#play.PY_(2)/0.0.1280.980@0.0.1280.980" timestamp="1598402846180" />
-    <state x="124" y="66" key="CommitChangelistDialog2" timestamp="1602663000643">
+    <state x="-2" y="0" width="1836" height="1040" key="CommitChangelistDialog2" timestamp="1602905080258">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="124" y="66" key="CommitChangelistDialog2/0.0.1280.980@0.0.1280.980" timestamp="1602750154234" />
+    <state x="-2" y="0" width="1836" height="1040" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1602905080258" />
+    <state x="120" y="79" width="1024" height="784" key="DiffContextDialog" timestamp="1602745464277">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="124" y="66" key="CommitChangelistDialog2/0.0.1280.980@0.0.1280.980" timestamp="1602663000643" />
-    <state x="288" y="88" key="CommitChangelistDialog2/0.0.1280.984@0.0.1280.984" timestamp="1594107910084" />
-    <state x="120" y="79" width="1024" height="784" key="DiffContextDialog" timestamp="1602575721343">
-      <screen x="0" y="0" width="1280" height="980" />
-    </state>
-    <state x="120" y="79" width="1024" height="784" key="DiffContextDialog/0.0.1280.980@0.0.1280.980" timestamp="1602575721343" />
-    <state x="120" y="79" key="DiffContextDialog/0.0.1280.984@0.0.1280.984" timestamp="1594088824886" />
-    <state x="420" y="236" key="FileChooserDialogImpl" timestamp="1602291671698">
-      <screen x="0" y="0" width="1280" height="980" />
+    <state x="120" y="79" width="1024" height="784" key="DiffContextDialog/0.0.1280.980@0.0.1280.980" timestamp="1602745464277" />
+    <state x="630" y="250" key="FileChooserDialogImpl" timestamp="1602853969800">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="420" y="236" key="FileChooserDialogImpl/0.0.1280.980@0.0.1280.980" timestamp="1602291671698" />
-    <state width="1021" height="413" key="GridCell.Tab.0.bottom" timestamp="1602745269688">
-      <screen x="0" y="0" width="1280" height="980" />
+    <state x="630" y="250" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1602853969800" />
+    <state width="1876" height="156" key="GridCell.Tab.0.bottom" timestamp="1602905878007">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1021" height="413" key="GridCell.Tab.0.bottom/0.0.1280.980@0.0.1280.980" timestamp="1602745269688" />
-    <state width="1236" height="259" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1594103648152" />
+    <state width="1236" height="318" key="GridCell.Tab.0.bottom/0.0.1280.980@0.0.1280.980" timestamp="1602745531079" />
+    <state width="1876" height="156" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602905878007" />
     <state width="402" height="433" key="GridCell.Tab.0.bottom/0.0.600.1200@0.0.600.1200" timestamp="1599003669439" />
-    <state width="1021" height="413" key="GridCell.Tab.0.center" timestamp="1602745269688">
-      <screen x="0" y="0" width="1280" height="980" />
+    <state width="1876" height="156" key="GridCell.Tab.0.center" timestamp="1602905878007">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1021" height="413" key="GridCell.Tab.0.center/0.0.1280.980@0.0.1280.980" timestamp="1602745269688" />
-    <state width="1236" height="259" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1594103648152" />
+    <state width="1236" height="318" key="GridCell.Tab.0.center/0.0.1280.980@0.0.1280.980" timestamp="1602745531079" />
+    <state width="1876" height="156" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602905878007" />
     <state width="402" height="433" key="GridCell.Tab.0.center/0.0.600.1200@0.0.600.1200" timestamp="1599003669439" />
-    <state width="1021" height="413" key="GridCell.Tab.0.left" timestamp="1602745269688">
-      <screen x="0" y="0" width="1280" height="980" />
+    <state width="1876" height="156" key="GridCell.Tab.0.left" timestamp="1602905878007">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1021" height="413" key="GridCell.Tab.0.left/0.0.1280.980@0.0.1280.980" timestamp="1602745269688" />
-    <state width="1236" height="259" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1594103648152" />
+    <state width="1236" height="318" key="GridCell.Tab.0.left/0.0.1280.980@0.0.1280.980" timestamp="1602745531078" />
+    <state width="1876" height="156" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602905878007" />
     <state width="402" height="433" key="GridCell.Tab.0.left/0.0.600.1200@0.0.600.1200" timestamp="1599003669439" />
-    <state width="1021" height="413" key="GridCell.Tab.0.right" timestamp="1602745269688">
-      <screen x="0" y="0" width="1280" height="980" />
+    <state width="1876" height="156" key="GridCell.Tab.0.right" timestamp="1602905878007">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1021" height="413" key="GridCell.Tab.0.right/0.0.1280.980@0.0.1280.980" timestamp="1602745269688" />
-    <state width="1236" height="259" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1594103648152" />
+    <state width="1236" height="318" key="GridCell.Tab.0.right/0.0.1280.980@0.0.1280.980" timestamp="1602745531079" />
+    <state width="1876" height="156" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602905878007" />
     <state width="402" height="433" key="GridCell.Tab.0.right/0.0.600.1200@0.0.600.1200" timestamp="1599003669439" />
-    <state width="1236" height="318" key="GridCell.Tab.1.bottom" timestamp="1602743336598">
+    <state width="1236" height="318" key="GridCell.Tab.1.bottom" timestamp="1602745531079">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="318" key="GridCell.Tab.1.bottom/0.0.1280.980@0.0.1280.980" timestamp="1602743336598" />
-    <state width="1236" height="318" key="GridCell.Tab.1.center" timestamp="1602743336598">
+    <state width="1236" height="318" key="GridCell.Tab.1.bottom/0.0.1280.980@0.0.1280.980" timestamp="1602745531079" />
+    <state width="1236" height="318" key="GridCell.Tab.1.center" timestamp="1602745531079">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="318" key="GridCell.Tab.1.center/0.0.1280.980@0.0.1280.980" timestamp="1602743336598" />
-    <state width="1236" height="318" key="GridCell.Tab.1.left" timestamp="1602743336598">
+    <state width="1236" height="318" key="GridCell.Tab.1.center/0.0.1280.980@0.0.1280.980" timestamp="1602745531079" />
+    <state width="1236" height="318" key="GridCell.Tab.1.left" timestamp="1602745531079">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="318" key="GridCell.Tab.1.left/0.0.1280.980@0.0.1280.980" timestamp="1602743336598" />
-    <state width="1236" height="318" key="GridCell.Tab.1.right" timestamp="1602743336598">
+    <state width="1236" height="318" key="GridCell.Tab.1.left/0.0.1280.980@0.0.1280.980" timestamp="1602745531079" />
+    <state width="1236" height="318" key="GridCell.Tab.1.right" timestamp="1602745531079">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="318" key="GridCell.Tab.1.right/0.0.1280.980@0.0.1280.980" timestamp="1602743336598" />
+    <state width="1236" height="318" key="GridCell.Tab.1.right/0.0.1280.980@0.0.1280.980" timestamp="1602745531079" />
     <state width="220" height="477" key="HiddenNamespacesPopup" timestamp="1594692021500">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
@@ -1074,16 +1078,16 @@
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="477" y="214" key="RollbackChangesDialog/0.0.1280.980@0.0.1280.980" timestamp="1602317077214" />
-    <state x="265" y="107" key="SettingsEditor" timestamp="1596762211252">
-      <screen x="0" y="0" width="1280" height="980" />
+    <state x="398" y="114" key="SettingsEditor" timestamp="1602854007256">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="265" y="107" key="SettingsEditor/0.0.1280.980@0.0.1280.980" timestamp="1596762211252" />
-    <state x="140" y="127" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1594088595969" />
-    <state x="188" y="150" key="Vcs.Push.Dialog.v2" timestamp="1602663023168">
-      <screen x="0" y="0" width="1280" height="980" />
+    <state x="398" y="114" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602854007256" />
+    <state x="282" y="159" key="Vcs.Push.Dialog.v2" timestamp="1602905090070">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="188" y="150" key="Vcs.Push.Dialog.v2/0.0.1280.980@0.0.1280.980" timestamp="1602663023168" />
-    <state x="232" y="227" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1594107923000" />
+    <state x="188" y="150" key="Vcs.Push.Dialog.v2/0.0.1280.980@0.0.1280.980" timestamp="1602750162642" />
+    <state x="282" y="159" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602905090070" />
     <state x="92" y="92" width="1096" height="796" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1602570563806">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
@@ -1104,10 +1108,11 @@
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="429" y="291" key="git4idea.merge.GitMergeDialog/0.0.1280.980@0.0.1280.980" timestamp="1596760876080" />
-    <state x="353" y="292" key="git4idea.merge.GitPullDialog" timestamp="1599093159357">
-      <screen x="0" y="0" width="1280" height="980" />
+    <state x="530" y="310" key="git4idea.merge.GitPullDialog" timestamp="1602854079297">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="353" y="292" key="git4idea.merge.GitPullDialog/0.0.1280.980@0.0.1280.980" timestamp="1599093159357" />
+    <state x="530" y="310" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602854079297" />
     <state x="27" y="358" key="git4idea.merge.GitPullDialog/0.0.600.1200@0.0.600.1200" timestamp="1599003264833" />
     <state x="269" y="367" key="git4idea.rebase.GitRebaseDialog" timestamp="1597051488962">
       <screen x="0" y="0" width="1280" height="980" />
@@ -1172,7 +1177,7 @@
     <SUITE FILE_PATH="coverage/pystudy$my_tk__PY__1_.coverage" NAME="my_tk模板_播放器.PY (1) Coverage Results" MODIFIED="1601433509255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$baidu_news.coverage" NAME="baidu-news Coverage Results" MODIFIED="1593490319173" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$__1_.coverage" NAME="药 (1) Coverage Results" MODIFIED="1599007566252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/药" />
-    <SUITE FILE_PATH="coverage/pystudy$app.coverage" NAME="app Coverage Results" MODIFIED="1602739919321" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康播放器" />
+    <SUITE FILE_PATH="coverage/pystudy$app.coverage" NAME="app Coverage Results" MODIFIED="1602904970324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康播放器" />
     <SUITE FILE_PATH="coverage/pystudy$my_walk_dir.coverage" NAME="my_get_dir_files Coverage Results" MODIFIED="1594974325252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$my_qrcode_tools.coverage" NAME="my_qrcode_tools Coverage Results" MODIFIED="1596157043745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$mytools.coverage" NAME="mytools Coverage Results" MODIFIED="1593509218688" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -1222,7 +1227,7 @@
     <SUITE FILE_PATH="coverage/pystudy$my_make_qrcode_tools.coverage" NAME="my_make_qrcode_tools Coverage Results" MODIFIED="1599185595209" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$tree.coverage" NAME="tree Coverage Results" MODIFIED="1602642558328" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康播放器" />
     <SUITE FILE_PATH="coverage/pystudy$my_print.coverage" NAME="my_printer Coverage Results" MODIFIED="1599793666475" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$my_config_read_write_tools.coverage" NAME="my_config_read_write_tools Coverage Results" MODIFIED="1602745269665" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$my_config_read_write_tools.coverage" NAME="my_config_read_write_tools Coverage Results" MODIFIED="1602905877991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$meituan.coverage" NAME="meituan Coverage Results" MODIFIED="1596091737495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job" />
     <SUITE FILE_PATH="coverage/pystudy$my_html_tools.coverage" NAME="my_html_tools Coverage Results" MODIFIED="1600135633670" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$___1_.coverage" NAME="图形界面,绘图 (1) Coverage Results" MODIFIED="1595900707911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job" />

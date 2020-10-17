@@ -4,20 +4,38 @@ import os
 class My_Config():
 
     def __init__(self,path=os.path.join('.', 'config.ini')):
-        print('My_Conifg initing...')
+
         self.config = configparser.ConfigParser()
         self.path=path
+
+        print('My_Conifg initing...')
+
+        if os.path.exists(self.path) and os.path.isdir(self.path):
+            print('文件名错误，已有同名文件夹,请修改')
+            exit()
+
         if os.path.exists(path):
             try:
                 self.config.read(path, encoding='gbk')
-            except configparser.MissingSectionHeaderError as e:
-                print('配置文件无任何section，添加默认section')
             except Exception as e:
                 print(e)
                 print('读取配置文件错误，请检查配置文件')
         else:
+            print(self.path,'不存在，创建文件')
             self.config.add_section('defalut')
             self.config.write(open(self.path,'w',encoding='gbk'))
+
+
+
+        if len(self.config.sections())==0:
+            print('配置文件无任何section，添加默认section')
+            self.config.add_section('defalut')
+            self.config.write(open(self.path,'w',encoding='gbk'))
+
+
+
+
+
         print('My_Conifg init finished...')
 
 
