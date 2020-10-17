@@ -11,13 +11,13 @@ class My_Config():
             try:
                 self.config.read(path, encoding='gbk')
             except configparser.MissingSectionHeaderError as e:
-                print('配置文件无任何section，请检查配置文件')
+                print('配置文件无任何section，添加默认section')
             except Exception as e:
                 print(e)
                 print('读取配置文件错误，请检查配置文件')
         else:
-            with open(self.path,'w',encoding='gbk')as f:
-                f.write()
+            self.config.add_section('defalut')
+            self.config.write(open(self.path,'w',encoding='gbk'))
         print('My_Conifg init finished...')
 
 
@@ -78,10 +78,5 @@ class My_Config():
 
 if __name__=='__main__':
 
-    config=My_Config()
-    config.write_seciton_item('test',sss='adddaa',dada='asd')
-    print(config.get_section_items('test'))
-    for section in config.get_sections():
-        print(section)
-        print(config.get_section_items(section))
-    config.remove_item('test','sss')
+    config=My_Config('test')
+
