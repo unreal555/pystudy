@@ -16,35 +16,34 @@ import logging
 import os
 import ctypes
 
-lib_path='./dll'
+class My_Dlls():
 
-def file_name(lib_path):
-    pathss=[]
-    for root, dirs, files in os.walk(lib_path):
-        for file in files:
-            pathss.append(os.path.join(lib_path,file))
-    return pathss
+    dlls=[]
 
-dll_list=file_name(lib_path=lib_path)
+    def __init__(self,lib_path='./dll'):
+        for root, dirs, files in os.walk(lib_path):
+            for file in files:
+                if '.dll'  in str.lower(file):
+                    self.dlls.append(os.path.join(root,file))
 
-def callCpp(func_name,*args):
-    for HK_dll in dll_list:
-        try:
-            lib = ctypes.cdll.LoadLibrary(HK_dll)
+    def callCpp(self,func_name,*args):
+
+        for dll in self.dlls:
             try:
-                value = eval("lib.%s"%func_name)(*args)
-                print("调用的库："+HK_dll)
-                print("执行成功,返回值："+str(value))
-                return value
+                lib = ctypes.cdll.LoadLibrary(dll)
+                try:
+                    value = eval("lib.%s"%func_name)(*args)
+                    print('命令为:', func_name, "    参数为:", str(args), " 调用的dll为:" ,dll, '  调用的返回值为:', value)
+                    return value
+                except Exception as e:
+                    print(e)
+                    print('库:%s中无函数:%s,尝试更换dll'%(dll,func_name))
+                    continue
             except:
+                print("库文件载入失败：",dll)
                 continue
-        except:
-            print("库文件载入失败："+HK_dll)
-            continue
-    print("没有找到接口！")
-    return False
+        print("没有找到函数入口！")
+        return False
 
-
-print('init',callCpp("NET_DVR_Init"))# app = my_app()
-print('init result',callCpp("NET_DVR_GetLastError"))
-
+a=My_Dlls('''./job/海康播放器/dll''')
+print(a.callCpp("NET_DVR_GetLastError"))
