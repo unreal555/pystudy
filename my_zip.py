@@ -9,19 +9,18 @@ import zipfile
 
 
 
-def my_zip(path, to='.', pwd=''):
+def my_zip(path, extract_to='.', pwd=''):
     try:
 
         r = zipfile.is_zipfile(path)
         if r:
             fz = zipfile.ZipFile(path, 'r')
             for file in fz.namelist():
-                fz.extract(file, to)
+                fz.extract(file, extract_to)
+            return True
         else:
             print('This is not zip')
             return False
-
-        return True
 
     except Exception as e:
         print(e)
