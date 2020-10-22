@@ -31,7 +31,7 @@ def trans(q):
         return s
 
 print(trans('아비노 시스루 원피스'))
-print(trans('hello world'))
+print(trans('hello worl d'))
 
 # 通用翻译API接入文档
 #

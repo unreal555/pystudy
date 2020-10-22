@@ -13,7 +13,7 @@ import os
 from tkinter.filedialog import askopenfilename
 
 class my_app():
-
+    default_color= '#bcbcbc'
     root=Tk()
     root.title('dhplay')
     root['bg'] = '#bcbcbc'
@@ -23,20 +23,21 @@ class my_app():
     v_num=''
     is_single_playing=False
     windows_status={
-        'num_1':'',
-        'num_2': '',
-        'num_3': '',
-        'num_4': '',
-        'num_5': '',
-        'num_6': '',
-        'num_7': '',
-        'num_8': '',
-        'num_9': '',
+        'window_1':'',
+        'window_2': '',
+        'window_3': '',
+        'window_4': '',
+        'window_5': '',
+        'window_6': '',
+        'window_7': '',
+        'window_8': '',
+        'window_9': '',
     }
 
 
     def get_hwnd(self,event):
         print(event.widget.winfo_id())
+        print(event.widget.winfo_class())
 
     def get_father_widget(self,event):
         return event.widget.nametowidget(event.widget.winfo_parent())
@@ -167,15 +168,15 @@ class my_app():
         self.video_play_area_2=tkinter.Frame(self.video_play_area ,bd=1, relief="sunken")
         self.video_play_area_3=tkinter.Frame(self.video_play_area ,bd=1, relief="sunken")
 
-        self.video_play_1 = tkinter.Frame(self.video_play_area_1 , cursor='plus',bd=2, relief="sunken")
-        self.video_play_2 = tkinter.Frame(self.video_play_area_1 , cursor='plus',bd=2, relief="sunken")
-        self.video_play_3 = tkinter.Frame(self.video_play_area_1 , cursor='plus',bd=2, relief="sunken")
-        self.video_play_4 = tkinter.Frame(self.video_play_area_2 , cursor='plus',bd=2, relief="sunken")
-        self.video_play_5 = tkinter.Frame(self.video_play_area_2 , cursor='plus',bd=2, relief="sunken")
-        self.video_play_6 = tkinter.Frame(self.video_play_area_2 , cursor='plus',bd=2, relief="sunken")
-        self.video_play_7 = tkinter.Frame(self.video_play_area_3 , cursor='plus',bd=2, relief="sunken")
-        self.video_play_8 = tkinter.Frame(self.video_play_area_3 , cursor='plus',bd=2, relief="sunken")
-        self.video_play_9 = tkinter.Frame(self.video_play_area_3 , cursor='plus',bd=2, relief="sunken")
+        self.video_play_1 = tkinter.Frame(self.video_play_area_1 , cursor='plus',bd=2, relief="sunken",highlightthickness=1,takefocus=True,class_='window_1')
+        self.video_play_2 = tkinter.Frame(self.video_play_area_1 , cursor='plus',bd=2, relief="sunken",highlightthickness=1,takefocus=True,class_='window_2')
+        self.video_play_3 = tkinter.Frame(self.video_play_area_1 , cursor='plus',bd=2, relief="sunken",highlightthickness=1,takefocus=True,class_='window_3')
+        self.video_play_4 = tkinter.Frame(self.video_play_area_2 , cursor='plus',bd=2, relief="sunken",highlightthickness=1,takefocus=True,class_='window_4')
+        self.video_play_5 = tkinter.Frame(self.video_play_area_2 , cursor='plus',bd=2, relief="sunken",highlightthickness=1,takefocus=True,class_='window_5')
+        self.video_play_6 = tkinter.Frame(self.video_play_area_2 , cursor='plus',bd=2, relief="sunken",highlightthickness=1,takefocus=True,class_='window_6')
+        self.video_play_7 = tkinter.Frame(self.video_play_area_3 , cursor='plus',bd=2, relief="sunken",highlightthickness=1,takefocus=True,class_='window_7')
+        self.video_play_8 = tkinter.Frame(self.video_play_area_3 , cursor='plus',bd=2, relief="sunken",highlightthickness=1,takefocus=True,class_='window_8')
+        self.video_play_9 = tkinter.Frame(self.video_play_area_3 , cursor='plus',bd=2, relief="sunken",highlightthickness=1,takefocus=True,class_='window_9')
         self.video_play_1.bind("<ButtonPress-1>", self.get_hwnd)
         self.video_play_2.bind("<ButtonPress-1>", self.get_hwnd)
         self.video_play_3.bind("<ButtonPress-1>", self.get_hwnd)
