@@ -13,16 +13,18 @@ import os
 from tkinter.filedialog import askopenfilename
 
 class my_app():
-    default_color= '#bcbcbc'
+    default_color= '#acbcbc'
+
     root=Tk()
     root.title('dhplay')
-    root['bg'] = '#bcbcbc'
+    root['bg'] = default_color
     root.attributes("-alpha", 0.9)
     root.geometry("1080x720")
     window_des = [('单窗口', 1), ('四窗口', 4), ('九窗口', 9)]
     v_num=''
     is_single_playing=False
-    windows_status={
+    
+    window_status={
         'window_1':'',
         'window_2': '',
         'window_3': '',
@@ -34,8 +36,27 @@ class my_app():
         'window_9': '',
     }
 
+    def set_window_clolor(self,event):
+        if self.is_single_playing==TRUE:
+            return
+        self.video_play_1['highlightbackground']= self.default_color
+        self.video_play_2['highlightbackground']= self.default_color
+        self.video_play_3['highlightbackground']= self.default_color
+        self.video_play_4['highlightbackground']= self.default_color
+        self.video_play_5['highlightbackground']= self.default_color
+        self.video_play_6['highlightbackground']= self.default_color
+        self.video_play_7['highlightbackground']= self.default_color
+        self.video_play_8['highlightbackground']= self.default_color
+        self.video_play_9['highlightbackground']= self.default_color
+        #设置选中视频窗格的颜色,刚初始化
+        print(self.window_status)
+        if self.v_num.get()==1:
+            pass
+        else:
+            event.widget['highlightbackground']='red'
 
     def get_hwnd(self,event):
+        self.set_window_clolor(event)
         print(event.widget.winfo_id())
         print(event.widget.winfo_class())
 
@@ -103,6 +124,15 @@ class my_app():
         self.video_play_area_1.pack_forget()
         self.video_play_area_2.pack_forget()
         self.video_play_area_3.pack_forget()
+        self.video_play_1['highlightbackground']= self.default_color
+        self.video_play_2['highlightbackground']= self.default_color
+        self.video_play_3['highlightbackground']= self.default_color
+        self.video_play_4['highlightbackground']= self.default_color
+        self.video_play_5['highlightbackground']= self.default_color
+        self.video_play_6['highlightbackground']= self.default_color
+        self.video_play_7['highlightbackground']= self.default_color
+        self.video_play_8['highlightbackground']= self.default_color
+        self.video_play_9['highlightbackground']= self.default_color
         if event==None:
             self.video_play_area_1.pack(side=tkinter.TOP, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
             self.video_play_1.pack(side=tkinter.TOP, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
@@ -286,7 +316,7 @@ app.root.mainloop()
 #     def __init__(self):
 #
 #         self.root2.title('2')
-#         self.root2['bg'] = '#bcbcbc'
+#         self.root2['bg'] = self.default_color
 #         # self.root.attributes("-alpha", 0.9)
 #
 #         self.root2.geometry("800x600")
@@ -294,13 +324,13 @@ app.root.mainloop()
 #
 #                                        #定义图形界面
 #         self.root.title('dhplay')
-#         self.root['bg'] = '#bcbcbc'
+#         self.root['bg'] = self.default_color
 #         # self.root.attributes("-alpha", 0.9)
 #
 #         self.root.geometry("800x600")
 #
 #
-#         video = tkinter.Frame(self.root,bg='#bcbcbc')             #定义视频播放窗体
+#         video = tkinter.Frame(self.root,bg=self.default_color)             #定义视频播放窗体
 #
 #         control=tkinter.Frame(self.root)
 #
@@ -354,7 +384,7 @@ app.root.mainloop()
 #     def next_windwos(self):
 #         self.root.destroy()
 #         self.root.title('2')
-#         self.root['bg'] = '#bcbcbc'
+#         self.root['bg'] = self.default_color
 #         # self.root.attributes("-alpha", 0.9)
 #
 #         self.root.geometry("800x600")
@@ -442,7 +472,7 @@ app.root.mainloop()
 #
 #     root=Tk()
 #     root.title('dhplay')
-#     root['bg'] = '#bcbcbc'
+#     root['bg'] = self.default_color
 #     root.attributes("-alpha", 0.9)
 #     root.geometry("800x600")
 #
