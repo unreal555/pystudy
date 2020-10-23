@@ -25,8 +25,8 @@ user_agent = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv
 Browser = webdriver.Chrome('./chromedriver.exe')#,options=options)
 Browser.set_window_size(1080,1024)
 # Browser.set_window_position(2000,2000)
-news_page_time = 120
-video_page_time = 120
+news_page_time = 70
+video_page_time = 70
 news_count_score = None
 video_conut_score = None
 news_time_score = None
@@ -245,22 +245,24 @@ def start():
             and video_conut_score != None and every_day_score != None:
 
 
-            if video_time_score < 3:
 
-                print('新闻联播')
-                Browser.get('https://www.xuexi.cn/8e35a343fca20ee32c79d67e35dfca90/7f9f27c65e84e71e1b7189b7132b4710.html')
-                sleep(5)
-                Browser.execute_script("window.scrollBy(0,400)")
-                sleep(3)
-                Browser.find_element_by_xpath("*").send_keys(Keys.SPACE)
-                sleep(300)
 
             while news_time_score + news_count_score < 12:
                 watch_page(random.choice(news_list))
             while video_time_score + video_conut_score < 12:
+                if video_time_score < 3:
+                    print('新闻联播')
+                    Browser.get(
+                        'https://www.xuexi.cn/8e35a343fca20ee32c79d67e35dfca90/7f9f27c65e84e71e1b7189b7132b4710.html')
+                    sleep(5)
+                    Browser.execute_script("window.scrollBy(0,400)")
+                    sleep(3)
+                    Browser.find_element_by_xpath("*").send_keys(Keys.SPACE)
+                    sleep(120)
+
                 watch_page(random.choice(video_list))
-            # while every_day_score<6:
-            #     wait()
+
+
 
         Browser.close()
         print('主线程退出')
