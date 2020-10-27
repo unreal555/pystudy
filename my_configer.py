@@ -33,7 +33,6 @@ class My_Config():
 
         print('My_Conifg init finished...')
 
-
     def get_sections(self):
         return self.config.sections()
 

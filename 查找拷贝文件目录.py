@@ -7,7 +7,7 @@ import shutil
 import re  
 from my_get_files_include_subdir  import get_paths
 
-for i in get_paths('g://tujidao','dir',filter_key=['妲己','糯美子'],filter_type='or'):
+for i in get_paths('E:\\a\\tujidao','dir',filter_key=['徐微微','朱可儿'],filter_type='or'):
     print(i)
     shutil.copytree(i + '//', r'C:\\Users\\Administrator\\Desktop\p\\' + re.split(r'[\\/]', i)[-1], dirs_exist_ok=True)
 
