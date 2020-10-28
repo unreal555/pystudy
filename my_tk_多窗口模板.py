@@ -171,6 +171,10 @@ class my_app():
 
             self.show_single_play(event=None)
 
+    def login(self):
+        print(1)
+
+        return False
 
     def __init__(self):
 
