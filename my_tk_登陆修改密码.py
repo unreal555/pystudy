@@ -10,25 +10,40 @@ import  pickle
 
 class tk_login():
 
-    window = tk.Tk()
-    window.title('login')
-    window.resizable(False, False)
     user_data_file='.//usr_info.dat'
 
+    def create_window(self, toplevel=False,title='main', size=(400, 300), resizable=False):
+
+        if toplevel == False:
+            window = tk.Tk()
+        else:
+            window=tk.Toplevel()
+
+        window.title(title)
 
 
-    def set_win_center(self,root, curWidth='', curHight=''):
+
+        if resizable == False:
+            window.resizable(False, False)
+        else:
+            window.resizable(True, True)
+
+        curWidth, curHight = size
+
+        curWidth = int(curWidth)
+        curHight = int(curHight)
+
+        scn_w, scn_h = window.maxsize()
 
 
-        if not curWidth:
+        if curWidth >= scn_w:
+            curWidth = scn_w
 
-            curWidth = root.winfo_width()
+        if curHight >= scn_h:
+            curHight = scn_h
 
-        if not curHight:
 
-            curHight = root.winfo_height()
 
-        scn_w, scn_h = root.maxsize()
 
         cen_x = (scn_w - curWidth) / 2
 
@@ -36,10 +51,13 @@ class tk_login():
 
         size_xy = '%dx%d+%d+%d' % (curWidth, curHight, cen_x, cen_y)
 
-        root.geometry(size_xy)
+        window.geometry(size_xy)
+
+        return window
 
     def __init__(self):
-        self.set_win_center(self.window,curWidth=400,curHight=300)
+
+        self.window=self.create_window(title='主窗口',size=(400,300),resizable=False)
 
         tk.Label(self.window, text='账户：').place(x=100, y=100)
         tk.Label(self.window, text='密码：').place(x=100, y=140)
@@ -141,18 +159,13 @@ class tk_login():
 
         def on_exit():
             window_modify.destroy()
-
-
-            self.window.deiconify()
             self.window.update()
+            self.window.deiconify()
+
 
 
         self.window.withdraw()
-        window_modify = tk.Toplevel(self.window)
-
-        window_modify.title('修改密码')
-        window_modify.resizable(False, False)
-        self.set_win_center(window_modify, 400, 300)
+        window_modify = self.create_window(title='修改密码',size=(400,300),toplevel=True,resizable=False)
 
         modify_name = tk.StringVar()
         old_pwd=  tk.StringVar()
