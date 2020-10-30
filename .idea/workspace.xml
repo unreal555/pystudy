@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a29feb6-6947-483a-9da2-985463451c54" name="默认的" comment="默认的">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pystudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pystudy.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_tk_多窗口模板.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_tk_nine_windows.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/海康播放器/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/海康播放器/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/海康播放器/my_tk_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/海康播放器/my_tk_登陆修改密码.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/海康播放器/usr_info.dat" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/my_tk_登陆修改密码.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_tk_登陆修改密码.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_tk模板_播放器.PY" beforeDir="false" afterPath="$PROJECT_DIR$/my_tk模板_播放器.PY" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +140,7 @@
     <property name="ToolWindowPython Console.ShowToolbar" value="false" />
     <property name="ToolWindowStructure.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/job/海康播放器" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -162,6 +161,13 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PyCharm2019.3.1\pystudy\job\海康播放器" />
+      <recent name="D:\PyCharm2019.3.1\pystudy" />
+      <recent name="D:\PyCharm2019.3.1\pystudy\多窗口播放器" />
+      <recent name="D:\PyCharm2019.3.1\pystudy\job" />
+      <recent name="D:\PyCharm2019.3.1\pystudy\job\药" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\PyCharm2019.3.1\pystudy\scrapy-demo\tujidao\tujidao" />
       <recent name="D:\PyCharm2019.3.1\pystudy\job\二维码条码" />
@@ -169,15 +175,30 @@
       <recent name="D:\PyCharm2019.3.1\pystudy\job" />
       <recent name="D:\PyCharm2019.3.1\pystudy\job\图形界面绘图" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\PyCharm2019.3.1\pystudy" />
-      <recent name="D:\PyCharm2019.3.1\pystudy\job\海康播放器" />
-      <recent name="D:\PyCharm2019.3.1\pystudy\多窗口播放器" />
-      <recent name="D:\PyCharm2019.3.1\pystudy\job" />
-      <recent name="D:\PyCharm2019.3.1\pystudy\job\药" />
-    </key>
   </component>
-  <component name="RunManager" selected="Python.my_tk模板_播放器.PY">
+  <component name="RunManager" selected="Python.app">
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pystudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/job/海康播放器" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/job/海康播放器/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="my_tk_登陆修改密码" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -266,28 +287,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="my_tk_login" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="pystudy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/job/海康播放器" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/job/海康播放器/my_tk_login.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="my_tk_nine_windows (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -333,19 +332,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.my_tk_login" />
       <item itemvalue="Python.my_tk_登陆修改密码" />
       <item itemvalue="Python.my_tk模板_播放器.PY" />
       <item itemvalue="Python.my_tk_nine_windows" />
       <item itemvalue="Python.my_tk_nine_windows (1)" />
+      <item itemvalue="Python.app" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.app" />
         <item itemvalue="Python.my_tk模板_播放器.PY" />
         <item itemvalue="Python.my_tk_登陆修改密码" />
         <item itemvalue="Python.my_tk_nine_windows (1)" />
         <item itemvalue="Python.my_tk_nine_windows" />
-        <item itemvalue="Python.my_tk_login" />
       </list>
     </recent_temporary>
   </component>
@@ -553,14 +552,7 @@
       <workItem from="1603675037074" duration="1124000" />
       <workItem from="1603761066605" duration="5413000" />
       <workItem from="1603846354970" duration="14797000" />
-      <workItem from="1604020640455" duration="8859000" />
-    </task>
-    <task id="LOCAL-00154" summary="默认的">
-      <created>1599033630829</created>
-      <option name="number" value="00154" />
-      <option name="presentableId" value="LOCAL-00154" />
-      <option name="project" value="LOCAL" />
-      <updated>1599033630829</updated>
+      <workItem from="1604020640455" duration="9602000" />
     </task>
     <task id="LOCAL-00155" summary="默认的">
       <created>1599037493759</created>
@@ -898,7 +890,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603873277959</updated>
     </task>
-    <option name="localTasksCounter" value="203" />
+    <task id="LOCAL-00203" summary="默认的">
+      <created>1604047467943</created>
+      <option name="number" value="00203" />
+      <option name="presentableId" value="LOCAL-00203" />
+      <option name="project" value="LOCAL" />
+      <updated>1604047467943</updated>
+    </task>
+    <option name="localTasksCounter" value="204" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1067,10 +1066,10 @@
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="355" y="125" key="#play.PY_(2)/0.0.1280.980@0.0.1280.980" timestamp="1598402846180" />
-    <state x="124" y="66" width="1836" height="1040" key="CommitChangelistDialog2" timestamp="1603873275993">
+    <state x="124" y="66" width="1836" height="1040" key="CommitChangelistDialog2" timestamp="1604047463435">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="124" y="66" key="CommitChangelistDialog2/0.0.1280.980@0.0.1280.980" timestamp="1603873275993" />
+    <state x="124" y="66" key="CommitChangelistDialog2/0.0.1280.980@0.0.1280.980" timestamp="1604047463435" />
     <state x="-2" y="0" width="1836" height="1040" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1602905080258" />
     <state x="120" y="79" width="1024" height="784" key="DiffContextDialog" timestamp="1603162842923">
       <screen x="0" y="0" width="1280" height="980" />
@@ -1081,46 +1080,46 @@
     </state>
     <state x="420" y="236" key="FileChooserDialogImpl/0.0.1280.980@0.0.1280.980" timestamp="1602291671698" />
     <state x="630" y="250" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1602853969800" />
-    <state width="767" height="70" key="GridCell.Tab.0.bottom" timestamp="1604046242976">
+    <state width="766" height="303" key="GridCell.Tab.0.bottom" timestamp="1604048284398">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="767" height="70" key="GridCell.Tab.0.bottom/0.0.1280.980@0.0.1280.980" timestamp="1604046242976" />
+    <state width="766" height="303" key="GridCell.Tab.0.bottom/0.0.1280.980@0.0.1280.980" timestamp="1604048284398" />
     <state width="1876" height="156" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602905878007" />
     <state width="402" height="433" key="GridCell.Tab.0.bottom/0.0.600.1200@0.0.600.1200" timestamp="1599003669439" />
-    <state width="767" height="70" key="GridCell.Tab.0.center" timestamp="1604046242976">
+    <state width="766" height="303" key="GridCell.Tab.0.center" timestamp="1604048284398">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="767" height="70" key="GridCell.Tab.0.center/0.0.1280.980@0.0.1280.980" timestamp="1604046242976" />
+    <state width="766" height="303" key="GridCell.Tab.0.center/0.0.1280.980@0.0.1280.980" timestamp="1604048284398" />
     <state width="1876" height="156" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602905878007" />
     <state width="402" height="433" key="GridCell.Tab.0.center/0.0.600.1200@0.0.600.1200" timestamp="1599003669439" />
-    <state width="767" height="70" key="GridCell.Tab.0.left" timestamp="1604046242976">
+    <state width="766" height="303" key="GridCell.Tab.0.left" timestamp="1604048284398">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="767" height="70" key="GridCell.Tab.0.left/0.0.1280.980@0.0.1280.980" timestamp="1604046242976" />
+    <state width="766" height="303" key="GridCell.Tab.0.left/0.0.1280.980@0.0.1280.980" timestamp="1604048284398" />
     <state width="1876" height="156" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602905878007" />
     <state width="402" height="433" key="GridCell.Tab.0.left/0.0.600.1200@0.0.600.1200" timestamp="1599003669439" />
-    <state width="767" height="70" key="GridCell.Tab.0.right" timestamp="1604046242976">
+    <state width="766" height="303" key="GridCell.Tab.0.right" timestamp="1604048284398">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="767" height="70" key="GridCell.Tab.0.right/0.0.1280.980@0.0.1280.980" timestamp="1604046242976" />
+    <state width="766" height="303" key="GridCell.Tab.0.right/0.0.1280.980@0.0.1280.980" timestamp="1604048284398" />
     <state width="1876" height="156" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602905878007" />
     <state width="402" height="433" key="GridCell.Tab.0.right/0.0.600.1200@0.0.600.1200" timestamp="1599003669439" />
-    <state width="618" height="90" key="GridCell.Tab.1.bottom" timestamp="1604028512133">
+    <state width="618" height="314" key="GridCell.Tab.1.bottom" timestamp="1604047656719">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="618" height="90" key="GridCell.Tab.1.bottom/0.0.1280.980@0.0.1280.980" timestamp="1604028512133" />
-    <state width="618" height="90" key="GridCell.Tab.1.center" timestamp="1604028512133">
+    <state width="618" height="314" key="GridCell.Tab.1.bottom/0.0.1280.980@0.0.1280.980" timestamp="1604047656719" />
+    <state width="618" height="314" key="GridCell.Tab.1.center" timestamp="1604047656719">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="618" height="90" key="GridCell.Tab.1.center/0.0.1280.980@0.0.1280.980" timestamp="1604028512133" />
-    <state width="618" height="90" key="GridCell.Tab.1.left" timestamp="1604028512133">
+    <state width="618" height="314" key="GridCell.Tab.1.center/0.0.1280.980@0.0.1280.980" timestamp="1604047656719" />
+    <state width="618" height="314" key="GridCell.Tab.1.left" timestamp="1604047656719">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="618" height="90" key="GridCell.Tab.1.left/0.0.1280.980@0.0.1280.980" timestamp="1604028512133" />
-    <state width="618" height="90" key="GridCell.Tab.1.right" timestamp="1604028512133">
+    <state width="618" height="314" key="GridCell.Tab.1.left/0.0.1280.980@0.0.1280.980" timestamp="1604047656719" />
+    <state width="618" height="314" key="GridCell.Tab.1.right" timestamp="1604047656719">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="618" height="90" key="GridCell.Tab.1.right/0.0.1280.980@0.0.1280.980" timestamp="1604028512133" />
+    <state width="618" height="314" key="GridCell.Tab.1.right/0.0.1280.980@0.0.1280.980" timestamp="1604047656719" />
     <state x="349" y="205" key="MultipleFileMergeDialog" timestamp="1596761956375">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
@@ -1134,10 +1133,10 @@
     </state>
     <state x="265" y="107" key="SettingsEditor/0.0.1280.980@0.0.1280.980" timestamp="1603158658879" />
     <state x="398" y="114" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602854007256" />
-    <state x="188" y="150" key="Vcs.Push.Dialog.v2" timestamp="1604046739531">
+    <state x="188" y="150" key="Vcs.Push.Dialog.v2" timestamp="1604047473809">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="188" y="150" key="Vcs.Push.Dialog.v2/0.0.1280.980@0.0.1280.980" timestamp="1604046739531" />
+    <state x="188" y="150" key="Vcs.Push.Dialog.v2/0.0.1280.980@0.0.1280.980" timestamp="1604047473809" />
     <state x="282" y="159" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602905090070" />
     <state x="92" y="92" width="1096" height="796" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1602570563806">
       <screen x="0" y="0" width="1280" height="980" />
@@ -1226,7 +1225,7 @@
     <SUITE FILE_PATH="coverage/pystudy$my_tk__PY__1_.coverage" NAME="my_tk模板_播放器.PY (1) Coverage Results" MODIFIED="1601433509255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$baidu_news.coverage" NAME="baidu-news Coverage Results" MODIFIED="1593490319173" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$__1_.coverage" NAME="药 (1) Coverage Results" MODIFIED="1599007566252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/药" />
-    <SUITE FILE_PATH="coverage/pystudy$app.coverage" NAME="app Coverage Results" MODIFIED="1603765995627" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康播放器" />
+    <SUITE FILE_PATH="coverage/pystudy$app.coverage" NAME="app Coverage Results" MODIFIED="1604048284383" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康播放器" />
     <SUITE FILE_PATH="coverage/pystudy$my_walk_dir.coverage" NAME="my_get_dir_files Coverage Results" MODIFIED="1594974325252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$my_qrcode_tools.coverage" NAME="my_qrcode_tools Coverage Results" MODIFIED="1596157043745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$mytools.coverage" NAME="mytools Coverage Results" MODIFIED="1593509218688" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

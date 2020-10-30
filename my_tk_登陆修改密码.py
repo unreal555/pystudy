@@ -247,13 +247,16 @@ class tk_login():
         # 确认注册
         bt_confirm = tk.Button(window_sign_up, text='确定', command=signtowcg).place(x=180, y=220)
 
-def start():
-     print(1)
-     app=tk_nine_windows()
-     app.root.mainloop()
+
+if __name__ == '__main__':
+
+    def start():
+         print(1)
+         app=tk_nine_windows()
+         app.root.mainloop()
 
 
-login=tk_login(my_func=start)
-login.main_window.mainloop()
+    login=tk_login(my_func=start)
+    login.main_window.mainloop()
 
               

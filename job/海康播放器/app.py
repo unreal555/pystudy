@@ -16,37 +16,13 @@ import re
 import configparser
 from my_dvr import DVR
 from tkinter import ttk
-import my_tk_login
+from my_tk_登陆修改密码 import tk_login
 
     
 class my_app():
     REC_PATH=os.path.abspath('./rec')
     if not os.path.exists(REC_PATH):
         os.makedirs(REC_PATH)
-
-    root=Tk()
-    root.title('dhplay')
-    root['bg'] = '#bcbcbc'
-    root.attributes("-alpha", 0.9)
-    root.geometry("1080x720")
-    window_des = [('单窗口', 1), ('四窗口', 4), ('九窗口', 9)]
-    v_num=''
-    is_single_playing=False
-    now_hwnd=-1
-    now_window_name=-1
-    login_servers=[]
-    window_status={
-        'window_1':0,
-        'window_2':0,
-        'window_3':0,
-        'window_4':0,
-        'window_5':0,
-        'window_6':0,
-        'window_7':0,
-        'window_8':0,
-        'window_9':0,
-    }
-    rec_status=[]
 
     def get_time(self):
         return time.strftime('%Y-%m-%d %H:%M:%S')
@@ -83,7 +59,7 @@ class my_app():
             for item in config.items(section):
                 server[item[0]] = item[1]
             servers.append(server)
-
+        print(servers)
         return servers
 
     def select_cam(self, event):
@@ -213,6 +189,9 @@ class my_app():
         return event.widget.nametowidget(event.widget.winfo_parent())
 
     def show_nine_play(self):
+
+
+
         self.video_play_1['highlightthickness']= 2
         self.video_play_2['highlightthickness']= 2
         self.video_play_3['highlightthickness']= 2
@@ -334,7 +313,29 @@ class my_app():
 
 
     def __init__(self):
-
+        self.root = Tk()
+        self.root.title('dhplay')
+        self.root['bg'] = '#bcbcbc'
+        self.root.attributes("-alpha", 0.9)
+        self.root.geometry("1080x720")
+        self.window_des = [('单窗口', 1), ('四窗口', 4), ('九窗口', 9)]
+        self.v_num = ''
+        self.is_single_playing = False
+        self.now_hwnd = -1
+        self.now_window_name = -1
+        self.login_servers = []
+        self.window_status = {
+            'window_1': 0,
+            'window_2': 0,
+            'window_3': 0,
+            'window_4': 0,
+            'window_5': 0,
+            'window_6': 0,
+            'window_7': 0,
+            'window_8': 0,
+            'window_9': 0,
+        }
+        self.rec_status = []
         self.list_area=tkinter.Frame(self.root,cursor='cross' ,bd=3, relief="sunken")
 
         self.video_area=tkinter.Frame(self.root ,bd=1, relief="sunken")
@@ -446,12 +447,13 @@ class my_app():
 
 
 
-if __name__ == '__main__':
+def start():
 
     app=my_app()
     app.root.mainloop()
 
-
+login=tk_login(my_func=start)
+login.main_window.mainloop()
 
 
 
