@@ -7,6 +7,7 @@
 import tkinter as tk
 import  tkinter.messagebox
 import  pickle
+from my_tk_nine_windows import tk_nine_windows
 
 class tk_login():
 
@@ -55,28 +56,30 @@ class tk_login():
 
         return window
 
-    def __init__(self):
+    def __init__(self,my_func=None):
 
-        self.window=self.create_window(title='主窗口',size=(400,300),resizable=False)
+        self.my_func=my_func
 
-        tk.Label(self.window, text='账户：').place(x=100, y=100)
-        tk.Label(self.window, text='密码：').place(x=100, y=140)
+        self.main_window=self.create_window(title='主窗口',size=(400,300),resizable=False)
+
+        tk.Label(self.main_window, text='账户：').place(x=100, y=100)
+        tk.Label(self.main_window, text='密码：').place(x=100, y=140)
 
         self.var_usr_name = tk.StringVar()
-        self.enter_usr_name = tk.Entry(self.window, textvariable=self.var_usr_name)
+        self.enter_usr_name = tk.Entry(self.main_window, textvariable=self.var_usr_name)
         self.enter_usr_name.place(x=160, y=100)
 
         self.var_usr_pwd = tk.StringVar()
-        self.enter_usr_pwd = tk.Entry(self.window, textvariable=self.var_usr_pwd, show='*')
+        self.enter_usr_pwd = tk.Entry(self.main_window, textvariable=self.var_usr_pwd, show='*')
         self.enter_usr_pwd.place(x=160, y=140)
 
-        self.bt_login = tk.Button(self.window, text='登录', command=self.check)
+        self.bt_login = tk.Button(self.main_window, text='登录', command=self.check)
         self.bt_login.place(x=120, y=230)
 
-        self.bt_modify = tk.Button(self.window, text='修改密码', command=self.usr_pwd_modify)
+        self.bt_modify = tk.Button(self.main_window, text='修改密码', command=self.usr_pwd_modify)
         self.bt_modify.place(x=180, y=230)
 
-        self.bt_logquit = tk.Button(self.window, text='退出', command=self.usr_sign_quit)
+        self.bt_logquit = tk.Button(self.main_window, text='退出', command=self.usr_sign_quit)
         self.bt_logquit.place(x=260, y=230)
 
     def check(self):
@@ -98,16 +101,27 @@ class tk_login():
             return False
 
         if usr_name in usrs_info:
+
             if usr_pwd == usrs_info[usr_name]:
                 tk.messagebox.showinfo(title='Welcome', message='用户: '+usr_name+'   登陆成功')
                 self.usr_sign_quit()
+
+                if self.my_func==None:
+                    pass
+                if callable(self.my_func):
+                    self.my_func()
+
                 return True
             else:
                 tk.messagebox.showerror(message='USERNAME or PASSWORD ERROR!')
                 return False
 
+        else:
+            tk.messagebox.showerror(message='USERNAME or PASSWORD ERROR!')
+            return False
+
     def usr_sign_quit(self):
-        self.window.destroy()
+        self.main_window.destroy()
 
     def usr_pwd_modify(self):
         def signtowcg():
@@ -158,36 +172,36 @@ class tk_login():
             return True
 
         def on_exit():
-            window_modify.destroy()
-            self.window.update()
-            self.window.deiconify()
+            modidy_user_psw_window.destroy()
+            self.main_window.update()
+            self.main_window.deiconify()
 
 
 
-        self.window.withdraw()
-        window_modify = self.create_window(title='修改密码',size=(400,300),toplevel=True,resizable=False)
+        self.main_window.withdraw()
+        modidy_user_psw_window = self.create_window(title='修改密码',size=(400,300),toplevel=True,resizable=False)
 
         modify_name = tk.StringVar()
         old_pwd=  tk.StringVar()
         new_pwd = tk.StringVar()
         pwd_comfirm = tk.StringVar()
 
-        window_modify.protocol('WM_DELETE_WINDOW', on_exit)
+        modidy_user_psw_window.protocol('WM_DELETE_WINDOW', on_exit)
 
 
-        tk.Label(window_modify, text='用户名：').place(x=90,y=50)
-        tk.Entry(window_modify, textvariable=modify_name).place(x=160, y=50)
+        tk.Label(modidy_user_psw_window, text='用户名：').place(x=90,y=50)
+        tk.Entry(modidy_user_psw_window, textvariable=modify_name).place(x=160, y=50)
 
-        tk.Label(window_modify, text='原密码：').place(x=90,y=100)
-        tk.Entry(window_modify, textvariable=old_pwd, show='*').place(x=160, y=100)
+        tk.Label(modidy_user_psw_window, text='原密码：').place(x=90,y=100)
+        tk.Entry(modidy_user_psw_window, textvariable=old_pwd, show='*').place(x=160, y=100)
 
-        tk.Label(window_modify, text='新密码：').place(x=90,y=150)
-        tk.Entry(window_modify, textvariable=new_pwd, show='*').place(x=160, y=150)
+        tk.Label(modidy_user_psw_window, text='新密码：').place(x=90,y=150)
+        tk.Entry(modidy_user_psw_window, textvariable=new_pwd, show='*').place(x=160, y=150)
 
-        tk.Label(window_modify, text='确认密码：').place(x=90, y=200)
-        tk.Entry(window_modify, textvariable=pwd_comfirm, show='*').place(x=160, y=200)
+        tk.Label(modidy_user_psw_window, text='确认密码：').place(x=90, y=200)
+        tk.Entry(modidy_user_psw_window, textvariable=pwd_comfirm, show='*').place(x=160, y=200)
     #确认注册
-        bt_confirm = tk.Button(window_modify, text='确定', command=signtowcg).place(x=180,y=240)
+        bt_confirm = tk.Button(modidy_user_psw_window, text='确定', command=signtowcg).place(x=180,y=240)
 
     def usr_sign_up(self):
         def signtowcg():
@@ -213,7 +227,7 @@ class tk_login():
                     window_sign_up.destroy()
 
         # 新建注册窗口
-        window_sign_up = tk.Toplevel(self.window)
+        window_sign_up = tk.Toplevel(self.main_window)
         window_sign_up.geometry('400x300')
         window_sign_up.title('sign_up')
 
@@ -233,6 +247,13 @@ class tk_login():
         # 确认注册
         bt_confirm = tk.Button(window_sign_up, text='确定', command=signtowcg).place(x=180, y=220)
 
-app=tk_login()
-app.window.mainloop()
+def start():
+     print(1)
+     app=tk_nine_windows()
+     app.root.mainloop()
+
+
+login=tk_login(my_func=start)
+login.main_window.mainloop()
+
               

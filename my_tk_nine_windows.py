@@ -12,29 +12,8 @@ import time
 import os
 from tkinter.filedialog import askopenfilename
 
-class my_app():
-    default_color= '#acbcbc'
+class tk_nine_windows():
 
-    root=Tk()
-    root.title('dhplay')
-    root['bg'] = default_color
-    root.attributes("-alpha", 0.9)
-    root.geometry("1080x720")
-    window_des = [('单窗口', 1), ('四窗口', 4), ('九窗口', 9)]
-    v_num=''
-    is_single_playing=False
-    
-    window_status={
-        'window_1':'',
-        'window_2': '',
-        'window_3': '',
-        'window_4': '',
-        'window_5': '',
-        'window_6': '',
-        'window_7': '',
-        'window_8': '',
-        'window_9': '',
-    }
 
     def set_window_clolor(self,event):
         if self.is_single_playing==TRUE:
@@ -177,6 +156,27 @@ class my_app():
         return False
 
     def __init__(self):
+        self.default_color = '#acbcbc'
+        self.root = Tk()
+        self.root.title('test')
+        self.root['bg'] = self.default_color
+        self.root.attributes("-alpha", 0.9)
+        self.root.geometry("1080x720")
+        self.window_des = [('单窗口', 1), ('四窗口', 4), ('九窗口', 9)]
+        self.v_num = ''
+        self.is_single_playing = False
+
+        self.window_status = {
+            'window_1': '',
+            'window_2': '',
+            'window_3': '',
+            'window_4': '',
+            'window_5': '',
+            'window_6': '',
+            'window_7': '',
+            'window_8': '',
+            'window_9': '',
+        }
 
         self.list_area=tkinter.Frame(self.root,cursor='cross' ,bd=3, relief="sunken")
 
@@ -261,14 +261,12 @@ class my_app():
 
         print('init finished')
 
+if __name__ == '__main__':
+    app=tk_nine_windows()
+    app.root.mainloop()
 
-app=my_app()
-app.root.mainloop()
-
-
-
-
-
+#
+#
 #
 # class myapp():
 #     root = Tk()
@@ -398,10 +396,10 @@ app.root.mainloop()
 #
 # app=myapp()
 # myapp.root.mainloop()
-
-
-
-
+#
+#
+#
+#
 #
 # <ButtonPress-n>     <Button-n>      <n>                         鼠标按钮n被按下，n为1左键，2中键，3右键
 # <ButtonRelease-n>                                               鼠标按钮n被松开
@@ -419,53 +417,53 @@ app.root.mainloop()
 # <Double-Button-3>   双击鼠标右键
 # <Triple-Button-1>   三击鼠标左键
 # <Triple-Button-3>   三击鼠标右键
-
-
-#frame cursor style
+#
+#
+# frame cursor style
 # "arrow"
-# 
+#
 # "circle"
-# 
+#
 # "clock"
-# 
+#
 # "cross"
-# 
+#
 # "dotbox"
-# 
+#
 # "exchange"
-# 
+#
 # "fleur"
-# 
+#
 # "heart"
-# 
+#
 # "heart"
-# 
+#
 # "man"
-# 
+#
 # "mouse"
-# 
+#
 # "pirate"
-# 
+#
 # "plus"
-# 
+#
 # "shuttle"
-# 
+#
 # "sizing"
-# 
+#
 # "spider"
-# 
+#
 # "spraycan"
-# 
+#
 # "star"
-# 
+#
 # "target"
-# 
+#
 # "tcross"
-# 
+#
 # "trek"
-# 
+#
 # "watch"
-
+#
 #
 # class my_app():
 #
@@ -547,4 +545,4 @@ app.root.mainloop()
 #         self.set_video_area(video_play_1,video_play_2,video_play_3,video_play_4,video_play_5,video_play_6,video_play_7,video_play_8,video_play_9)
 #
 #
-
+#

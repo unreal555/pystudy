@@ -7,11 +7,8 @@ from tkinter.filedialog import askopenfilename
 
 
 
-class myapp():
-    root = Tk()
-    root2=Tk()
+class player():
 
-    drag_flag=None
 
     def __del__(self):
         pass
@@ -21,9 +18,6 @@ class myapp():
         file =  askopenfilename()
         temp,ext=os.path.splitext(file)
         print(file)
-
-
-
 
 
     def mouse_down(self,event):
@@ -55,48 +49,32 @@ class myapp():
         pass
 
     def __init__(self):
+        self.root = Tk()
 
-        self.root2.title('2')
-        self.root2['bg'] = '#bcbcbc'
-        # self.root.attributes("-alpha", 0.9)
+        self.drag_flag = None
 
-        self.root2.geometry("800x600")
-
-
-                                       #定义图形界面
         self.root.title('dhplay')
         self.root['bg'] = '#bcbcbc'
         # self.root.attributes("-alpha", 0.9)
 
         self.root.geometry("800x600")
 
-
         video = tkinter.Frame(self.root,bg='#bcbcbc')             #定义视频播放窗体
 
         control=tkinter.Frame(self.root)
-
         control1=tkinter.Frame(control)
         control2=tkinter.Frame(control)
 
         control1.pack(side=tkinter.LEFT,anchor=tkinter.S,expand=tkinter.NO,fill=tkinter.BOTH)
         control2.pack(side=tkinter.RIGHT,anchor=tkinter.S,expand=tkinter.YES,fill=tkinter.BOTH)
 
-
-        open_button=tkinter.Button(control1,text='打开',command=self.openfile())
-
+        open_button=tkinter.Button(control1,text='打开',command=self.openfile)
         play_button=tkinter.Button(control1,text='播放',command=self.play)
-
         speedup_button=tkinter.Button(control1,text='加速',command=self.play_fast)
-
         # pause_button=tkinter.Button(control1,text='暂停',command=self.pause)
-
         onebyone_button=tkinter.Button(control1,text='单帧',command=self.onebyone)
-
         catchpic_button = tkinter.Button(control1, text='截图', command=self.catchpic)
-
         stop_button=tkinter.Button(control1,text='停止',command=self.stop)
-
-
 
         open_button.grid(row=0, column=0)
         play_button.grid(row=0, column=1)
@@ -119,22 +97,8 @@ class myapp():
         self.hwnd = video.winfo_id()        #获得视频窗体的句柄
 
 
-
-
-
-    def next_windwos(self):
-        self.root.destroy()
-        self.root.title('2')
-        self.root['bg'] = '#bcbcbc'
-        # self.root.attributes("-alpha", 0.9)
-
-        self.root.geometry("800x600")
-
-
-
-
-app=myapp()
-myapp.root.mainloop()
+app=player()
+app.root.mainloop()
 
 
 
