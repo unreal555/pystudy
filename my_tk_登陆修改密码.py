@@ -8,10 +8,22 @@ import tkinter as tk
 import  tkinter.messagebox
 import  pickle
 from my_tk_nine_windows import tk_nine_windows
+import hashlib
 
 class tk_login():
 
-    user_data_file='.//usr_info.dat'
+    def get_md5(self,info):
+        if isinstance(info, str):
+            m = hashlib.md5(info.encode('utf-8')).hexdigest()
+            print(m)
+            return m
+        elif isinstance(info, bytes):
+            m = hashlib.md5(info).hexdigest()
+            print(m)
+            return m
+        else:
+            print('MD5只接受byte或str类型数据')
+            return False
 
     def create_window(self, toplevel=False,title='main', size=(400, 300), resizable=False):
 
@@ -21,8 +33,6 @@ class tk_login():
             window=tk.Toplevel()
 
         window.title(title)
-
-
 
         if resizable == False:
             window.resizable(False, False)
@@ -36,15 +46,11 @@ class tk_login():
 
         scn_w, scn_h = window.maxsize()
 
-
         if curWidth >= scn_w:
             curWidth = scn_w
 
         if curHight >= scn_h:
             curHight = scn_h
-
-
-
 
         cen_x = (scn_w - curWidth) / 2
 
@@ -56,11 +62,15 @@ class tk_login():
 
         return window
 
-    def __init__(self,my_func=None):
+    def __init__(self,user_data_file='.//usr_info.dat',must_change_psw=False,my_func=None):
 
         self.my_func=my_func
 
+        self.user_data_file = user_data_file
+
         self.main_window=self.create_window(title='主窗口',size=(400,300),resizable=False)
+
+        self.must_change_psw=must_change_psw
 
         tk.Label(self.main_window, text='账户：').place(x=100, y=100)
         tk.Label(self.main_window, text='密码：').place(x=100, y=140)
@@ -92,7 +102,7 @@ class tk_login():
         except:
             tk.messagebox.showinfo(title='Notice', message='初次登陆或者无用户信息,初始化用户名为:admin,密码为:admin,建议修改使用')
             with open(self.user_data_file, 'wb') as usr_file:
-                usrs_info={'admin':'admin'}
+                usrs_info={'admin':self.get_md5('admin')}
                 pickle.dump(usrs_info, usr_file)
             return False
 
@@ -100,9 +110,13 @@ class tk_login():
             tk.messagebox.showerror(message='用户名密码不能为空！')
             return False
 
+        if self.must_change_psw==True and str.lower(usr_pwd)=='admin':
+            tk.messagebox.showerror(message='禁止使用默认密码,请先修改密码再访问')
+            return False
+
         if usr_name in usrs_info:
 
-            if usr_pwd == usrs_info[usr_name]:
+            if self.get_md5(usr_pwd) == usrs_info[usr_name]:
                 tk.messagebox.showinfo(title='Welcome', message='用户: '+usr_name+'   登陆成功')
                 self.usr_sign_quit()
 
@@ -157,14 +171,14 @@ class tk_login():
                 tk.messagebox.showerror(message='用户名不存在！')
                 return False
 
-            if exist_usr_info[Musername]!=OldPwd:
+            if exist_usr_info[Musername]!=self.get_md5(OldPwd):
                 tk.messagebox.showerror(message='原密码不对')
                 return False
 
 
 
-            if exist_usr_info[Musername]==OldPwd:
-                exist_usr_info[Musername] = NewPwd
+            if exist_usr_info[Musername]==self.get_md5(OldPwd):
+                exist_usr_info[Musername] = self.get_md5(NewPwd)
 
             with open(self.user_data_file, 'wb') as usr_file:
                 pickle.dump(exist_usr_info, usr_file)
@@ -248,6 +262,7 @@ class tk_login():
         bt_confirm = tk.Button(window_sign_up, text='确定', command=signtowcg).place(x=180, y=220)
 
 
+
 if __name__ == '__main__':
 
     def start():
@@ -256,7 +271,7 @@ if __name__ == '__main__':
          app.root.mainloop()
 
 
-    login=tk_login(my_func=start)
+    login=tk_login(my_func=start,must_change_psw=True)
     login.main_window.mainloop()
 
               
