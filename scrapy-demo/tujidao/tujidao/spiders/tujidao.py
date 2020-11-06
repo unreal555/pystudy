@@ -35,9 +35,28 @@ x    range(1,81)   range(1,20)
 
 key='cat'    #cat=区域  s=tag     x=机构
 
+
+cat=int(input('cat 8日本10中国11台湾19韩国20欧美23泰国42 0采用默认值'))
+start=int(input('start'))
+end=int(input('end'))
+
+
+
+
 ids=[10,11,8,19,20,23]
 ids=ids[::-1]
-pages=range(50,0,-1)
+pages=range(900,0,-1)
+
+if cat!=0:
+
+    if cat in ids:
+        ids=range(cat,cat+1)
+
+    pages=range(start,end+1)
+
+    print(ids,pages)
+
+    
 
 
 class TuJiDao_Spider(scrapy.Spider):

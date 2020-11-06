@@ -103,18 +103,11 @@ class Frame( wx.Frame ):
         pub.subscribe(self.Listener_flag, 'flag')
 
     def __del__( self ):
-
         pass
-
 
     def stop(self, event ):
         print('stop print')
         pub.sendMessage("flag",flag='False'+'\r\n')
-
-
-
-
-
         # file=open("temFile.txt",'w')
         # file.write(self.show.GetValue())
         # file.close()

@@ -9,6 +9,7 @@ import  tkinter.messagebox
 import  pickle
 from my_tk_nine_windows import tk_nine_windows
 import hashlib
+import os
 
 class tk_login():
 
@@ -91,6 +92,14 @@ class tk_login():
 
         self.bt_logquit = tk.Button(self.main_window, text='退出', command=self.usr_sign_quit)
         self.bt_logquit.place(x=260, y=230)
+
+        if not (os.path.exists(self.user_data_file) and os.path.isfile(self.user_data_file)):
+            tk.messagebox.showinfo(title='Notice', message='初次登陆或者无用户信息,初始化用户名为:admin,密码为:admin,建议修改使用')
+            with open(self.user_data_file, 'wb') as usr_file:
+                usrs_info = {'admin': self.get_md5('admin')}
+                pickle.dump(usrs_info, usr_file)
+        # self.main_window.update()
+        self.main_window.deiconify()
 
     def check(self):
         #输入框内容
