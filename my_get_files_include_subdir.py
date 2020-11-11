@@ -7,32 +7,70 @@
 import os
 import  re
 from copy import  deepcopy
+import pickle
 
-def get_paths(path,*ext,debug=False,filter_key='',filter_type='and'):
+def get_files_dirs(path,debug=False):
+    all_files = []
+    all_dirs = []
+    empty_dirs = []
+    print('开始扫描文件夹')
+
+    for basedir, subdirs, files in os.walk(path, topdown=1):
+        if debug: print('正在处理目录:{}'.format(basedir))
+
+        if len(files) == 0 and len(subdirs) == 0:  # 不包含文件和文件夹的空目录加入空目录列表
+            empty_dirs.append(basedir)
+
+        if len(files) == 0 and len(subdirs) != 0:  # 不包含文件,但是包含目录的文件夹忽略
+            continue
+
+        all_dirs.append(basedir)
+
+        if 'dir' not in ext:
+            for file in files:
+                if debug: print(r'当前目录为:  {}，文件为:  {}'.format(basedir, file))
+                all_files.append(os.path.join(basedir, file))
+    return all_files,all_dirs,empty_dirs
+
+
+def get_paths(path,*ext,debug=False,filter_key='',filter_type='and',find_empty_dirs=False,use_cache=True):
+
+    cache_file_path=os.path.join(path,'my_file_info.dat')
 
     if str.lower(filter_type) not in ['and','or'] :
         print('filter_type must be 'and' or 'or'' )
         return False
 
-
     all_files=[]
     all_dirs=[]
+    empty_dirs=[]
     result=''
     ext=[str.lower(x) for x in ext]
-    print('start scanning:')
-    for basedir,subdirs,files in os.walk(path,topdown=1):
 
-        if len(files)==0:   #空目录直接跳过
-            continue
 
-        if debug:print('正在处理目录:{}'.format(basedir))
-        all_dirs.append(basedir)
+    if use_cache==False:
+        all_files,all_dirs,empty_dirs=get_files_dirs(path)
+        with open(cache_file_path,'wb') as f:
+            pickle.dump([all_files,all_dirs,empty_dirs],f)
 
-        if 'dir' not in ext:
-            for file in files:
-                if debug:print(r'当前目录为:  {}，文件为:  {}'.format(basedir,file))
-                all_files.append(os.path.join(basedir, file))
-                
+    if use_cache==True:
+        if os.path.exists(cache_file_path) and os.path.isfile(cache_file_path) :
+            with open(cache_file_path,'rb') as f:
+                all_files,all_dirs,empty_dirs=pickle.load(f)
+        if not os.path.exists(cache_file_path):
+            all_files, all_dirs, empty_dirs = get_files_dirs(path)
+            with open(cache_file_path, 'wb') as f:
+                pickle.dump([all_files, all_dirs, empty_dirs],f)
+
+    print('扫描文件夹结束')
+
+    print('开始分类筛选')
+
+
+    if find_empty_dirs==True:
+        print('查找空目录')
+        all_dirs=empty_dirs
+        all_files=empty_dirs
 
     if len(ext)==0:
         print('无类型筛选,返回所有文件')
@@ -116,5 +154,4 @@ if __name__ == '__main__':
 
 
 
-    for i in    get_paths(r'.','py'):
-        print(os.path.splitext(i))
+    print(get_paths('c://',filter_key='photo',find_empty_dirs=True,use_cache=True))
