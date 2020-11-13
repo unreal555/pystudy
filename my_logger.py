@@ -20,16 +20,30 @@ class logger():
     def __get_time(self):
         return  time.strftime('%Y-%m-%d %H:%M:%S')
 
+    @staticmethod
+    def __clean_str(self,s):
+        return re.sub('[\r\n\t ]*','',s)
+
     def __init__(self, path='.', name='log', debug=False):
+
+        print(path,name)
 
         self.__debu = debug
 
+        self.__file=None
+
         if self.__debug: print('初始化logger')
+
+        if 'txt' in path and os.path.exists(path) and os.path.isfile(path):
+            self.__file = path
 
         if 'txt' not in name:
             name = name + '.txt'
 
-        self.__file = os.path.join(path, name)
+        if os.path.isdir(path):
+            self.__file = os.path.join(path, name)
+
+        print(self.__file)
 
         if os.path.isfile(self.__file):
             with open(self.__file, 'r', encoding='utf-8') as f:
@@ -85,6 +99,15 @@ class logger():
             return True
         else:
             return False
+
+    def get_recorde(self):
+        with open(self.__file,'r',encoding='utf-8') as f:
+            result=f.readlines()
+        print(result)
+        result=[x for x in result if len(self.__clean_str(self,x))!=0]
+        return result
+
+
 
     def find_lost(self, reg=r'''##(\d+)##'''):
 
@@ -143,5 +166,4 @@ class logger():
 
 
 if __name__ == '__main__':
-    logger = logger()
-    logger.write('test')
+    logger = logger('e://log-less.txt')

@@ -18,22 +18,39 @@ def get_files_dirs(path,debug=False):
     for basedir, subdirs, files in os.walk(path, topdown=1):
         if debug: print('正在处理目录:{}'.format(basedir))
 
+        all_dirs.append(basedir)
+
         if len(files) == 0 and len(subdirs) == 0:  # 不包含文件和文件夹的空目录加入空目录列表
             empty_dirs.append(basedir)
 
-        if len(files) == 0 and len(subdirs) != 0:  # 不包含文件,但是包含目录的文件夹忽略
-            continue
+        for file in files:
+            if debug: print(r'当前目录为:  {}，文件为:  {}'.format(basedir, file))
+            all_files.append(os.path.join(basedir, file))
 
-        all_dirs.append(basedir)
-
-        if 'dir' not in ext:
-            for file in files:
-                if debug: print(r'当前目录为:  {}，文件为:  {}'.format(basedir, file))
-                all_files.append(os.path.join(basedir, file))
     return all_files,all_dirs,empty_dirs
 
+def find_empty_dirs(path='.',use_cache=True):
+    cache_file_path = os.path.join(path, 'my_file_info.dat')
 
-def get_paths(path,*ext,debug=False,filter_key='',filter_type='and',find_empty_dirs=False,use_cache=True):
+    if use_cache==False:
+        all_files,all_dirs,empty_dirs=get_files_dirs(path)
+        with open(cache_file_path,'wb') as f:
+            pickle.dump([all_files,all_dirs,empty_dirs],f)
+
+    if use_cache==True:
+        if os.path.exists(cache_file_path) and os.path.isfile(cache_file_path) :
+            with open(cache_file_path,'rb') as f:
+                all_files,all_dirs,empty_dirs=pickle.load(f)
+        if not os.path.exists(cache_file_path):
+            all_files, all_dirs, empty_dirs = get_files_dirs(path)
+            with open(cache_file_path, 'wb') as f:
+                pickle.dump([all_files, all_dirs, empty_dirs],f)
+
+    return empty_dirs
+
+
+
+def get_paths(path,*ext,debug=False,filter_key='',filter_type='and',use_cache=True):
 
     cache_file_path=os.path.join(path,'my_file_info.dat')
 
@@ -66,11 +83,6 @@ def get_paths(path,*ext,debug=False,filter_key='',filter_type='and',find_empty_d
 
     print('开始分类筛选')
 
-
-    if find_empty_dirs==True:
-        print('查找空目录')
-        all_dirs=empty_dirs
-        all_files=empty_dirs
 
     if len(ext)==0:
         print('无类型筛选,返回所有文件')
@@ -154,4 +166,4 @@ if __name__ == '__main__':
 
 
 
-    print(get_paths('c://',filter_key='photo',find_empty_dirs=True,use_cache=True))
+    print(get_paths('c:/','jpg',filter_key='丰',use_cache=True))
