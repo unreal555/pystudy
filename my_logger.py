@@ -28,8 +28,9 @@ class logger():
 
         print(path,name)
 
-        self.__debu = debug
-
+        self.__huan_hang = '\r\n'
+        self.__mark = ' # # # '
+        self.__debug = debug
         self.__file=None
 
         if self.__debug: print('初始化logger')
@@ -66,8 +67,7 @@ class logger():
 
         if len(info) == 1:
             try:
-                log = str(info[0])
-                log = self.__get_time(self) + '\t' + log
+                log = '\t'.join([self.__get_time(self) ,str(info[0])])
                 self.__do(log)
                 return True
 
@@ -78,7 +78,6 @@ class logger():
 
         if len(info) > 1:
             log = [self.__get_time(self)]
-
             try:
                 for i in info:
                     log.append(str(i))
@@ -93,7 +92,9 @@ class logger():
                 return False
 
     def check(self, target):
+
         if target == '' or not isinstance(target, str):
+            print('搜索的字符串为空,或者类型不匹配,请检查')
             return False
         if target in self.__log:
             return True
@@ -166,4 +167,6 @@ class logger():
 
 
 if __name__ == '__main__':
-    logger = logger('e://log-less.txt')
+    logger = logger()
+    logger.write('test')
+    print(logger.get_recorde())
