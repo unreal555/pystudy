@@ -43,24 +43,24 @@ ROBOTSTXT_OBEY = False
 
 
 RETRY_ENABLED = True  #打开重试开关
-RETRY_TIMES = 20  #重试次数
-DOWNLOAD_TIMEOUT = 15  #超时
-RETRY_HTTP_CODES = [429,404,403]  #重试
+RETRY_TIMES =30 #重试次数
+DOWNLOAD_TIMEOUT = 90  #超时
+RETRY_HTTP_CODES = [429,403]  #重试
 
 HTTPERROR_ALLOWED_CODES = [301, 302,403,429]     # 返回301, 302时, 按正常返回对待, 可以正常写入cookie
 
 
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS =32
+CONCURRENT_REQUESTS =36
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY =0.01
+DOWNLOAD_DELAY =0.0001
 # The download delay setting will honor only one of:
-CONCURRENT_REQUESTS_PER_DOMAIN = 32
-CONCURRENT_REQUESTS_PER_IP =  32
+CONCURRENT_REQUESTS_PER_DOMAIN = 18
+CONCURRENT_REQUESTS_PER_IP =  18
 
 # Disable cookies (enabled by default)
 COOKIES_ENABLED = True

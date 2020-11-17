@@ -9,8 +9,8 @@ import json
 path=os.path.join(os.path.dirname(__file__),"..")
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),"..")))
 print(path)
-from items import PicItem
-from settings import IMAGES_STORE
+from ..items import PicItem
+from ..settings import IMAGES_STORE
 print(sys.path)
 flag=0
 
@@ -31,21 +31,37 @@ x    range(1,81)   range(1,20)
 
 '''
 
+
+
 key='cat'    #cat=区域  s=tag     x=机构
-cat=int(input('图集:8日本,10中国,11台湾,19韩国,20欧美,23泰国,0采用默认值:  '))
-ids=[10,11,8,19,20,23]
-ids=ids[::-1]
-pages=range(900,0,-1)
+
+#key='t'    #cat=区域  s=tag     x=机构  t=人物
+
+
+
+ids=[0,10,11,8,19,20,23]
+
+
+
+#ids=ids[::-1]
+pages=range(10,0,-1)
+
+
+cat=int(input('cat 8日本10中国11台湾19韩国20欧美23泰国 0采用默认值'))
 
 if cat!=0:
     start = int(input('start:  '))
     end = int(input('end:  '))
-    if cat in ids:
-        ids=range(cat,cat+1)
-    pages=range(start,end+1)
-    print(ids,pages)
-print(ids)
-print(pages)
+    
+    ids=range(cat,cat+1)
+    pages=range(end+1,start-1,-1)
+
+
+print(ids,pages)
+
+
+
+time.sleep(10)
 
 
 class TuJiDao_Spider(scrapy.Spider):
@@ -54,7 +70,6 @@ class TuJiDao_Spider(scrapy.Spider):
 
     log_path=os.path.join(IMAGES_STORE,name)
     log_name='log.txt'
-    log_wrong_name='wrong.txt'
 
     #日志文件
     if not os.path.exists(log_path):
@@ -101,7 +116,7 @@ class TuJiDao_Spider(scrapy.Spider):
             #如果没有提取到相册数字代码，写入错误日志
             result=re.findall('<pclass="biaoti"><ahref="/a/\?id=(\d+)".*?>(.*?)</a></p></li>',i)
             if len(result)==0:
-                with open(os.path.join(self.log_path,self.log_wrong_name),'a',encoding='utf-8') as f:
+                with open(os.path.join(self.log_path,'wrong.txt'),'a',encoding='utf-8') as f:
                     f.write('{}'.format(time.strftime( '%Y-%m-%d %H-%M')+'\t' + response.url+'\r\n\r\n\r\n\r\n'))
                     return
 
@@ -110,13 +125,13 @@ class TuJiDao_Spider(scrapy.Spider):
             #如果没有提取到第一张图片地址，写入错误日志
             result=re.findall('''<imgsrc="(.*?)">''',i)
             if len(result)==0:
-                with open(os.path.join(self.log_path,self.log_wrong_name),'a',encoding='utf-8') as f:
+                with open(os.path.join(self.log_path,'wrong.txt'),'a',encoding='utf-8') as f:
                     f.write('{}'.format(time.strftime( '%Y-%m-%d %H-%M')+'\t' + response.url+'\r\n\r\n\r\n\r\n'))
                     return
 
 
             urls=result
-            pic_max_num=re.findall('''<spanclass="shuliang">(\d+)P</''',i)[0]
+            max=re.findall('''<spanclass="shuliang">(\d+)P</''',i)[0]
 
 
 
@@ -130,43 +145,44 @@ class TuJiDao_Spider(scrapy.Spider):
             tag=''
             for s in re.findall('''<ahref="/s/\?id=\d+">(.*?)</a>''',i):
                 tag=tag+s+'-'
-            tag=tag+str(pic_max_num)
-            print(bianhao,'---',biaoti,'---',urls,'---',pic_max_num,'---',tag,'---',jigou)
-            biaoti=re.sub(r'[\/:*?"<>|]','-',biaoti)
-            tag=re.sub(r'[\/:*?"<>|]','-',tag)
-            jigou=re.sub(r'[\/:*?"<>|]','-',jigou)
+            tag=tag+str(max)
+            print(bianhao,'---',biaoti,'---',urls,'---',max,'---',tag,'---',jigou)
+            biaoti=re.sub('[\/:*?"<>|]','-',biaoti)
+            tag=re.sub('[\/:*?"<>|]','-',tag)
+            jigou==re.sub('[\/:*?"<>|]','-',jigou)
 
 
             with open(os.path.join(self.log_path,self.log_name), 'r', encoding='utf-8') as f:
                 log = f.read()
-            if bianhao  in log:
+            if '###'+bianhao+'###'  in log:
                 print('{}{} 已经下载，跳过'.format(bianhao,biaoti))
                 continue
 
-            if os.path.exists(os.path.join(self.log_path, self.log_wrong_name)):
-                with open(os.path.join(self.log_path, self.log_wrong_name), 'r', encoding='utf-8') as f:
+            if os.path.exists(os.path.join(self.log_path, 'wrong.txt')):
+                with open(os.path.join(self.log_path, 'wrong.txt'), 'r', encoding='utf-8') as f:
                     wrong_log = f.read()
-                if bianhao in wrong_log:
+                if '###'+bianhao+'###' in wrong_log:
                     print('{}{} 已经在错误日志，跳过'.format(bianhao, biaoti))
 
-            sub_path=os.path.join(jigou,biaoti+'-tag-'+tag)
+            sub_path=os.path.join(jigou,biaoti+'-tag-'+tag+'-page-'+bianhao)
             xiangce_path = os.path.join(self.log_path, sub_path)
 
             print(xiangce_path)
 
             url_first,url_last=urls[0].split('0.')
-            for i in range(1,int(pic_max_num)+1):
+            for i in range(1,int(max)+1):
                 urls.append('{}{}{}{}'.format(url_first,i,'.',url_last))
             print(urls)
 
-            if  not os.path.exists(xiangce_path):
+            if os.path.exists(xiangce_path):
+                pass
+            else:
                 os.makedirs(xiangce_path)
 
             item = PicItem()
             item['image_urls'] = urls
             item['image_path'] = xiangce_path
             item['image_log']=[bianhao,biaoti,self.log_path,self.log_name]
-            
             yield item
 
 

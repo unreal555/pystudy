@@ -104,11 +104,16 @@ class logger():
     def get_recorde(self):
         with open(self.__file,'r',encoding='utf-8') as f:
             result=f.readlines()
-        print(result)
         result=[x for x in result if len(self.__clean_str(self,x))!=0]
         return result
 
-
+    def get_recode_and_clean(self):
+        result=[]
+        for item in self.get_recorde():
+            if '打开日志' in item or '创建日志' in item :
+                continue
+            result.append('.'.join(re.findall(' # # # \d+-\d+-\d+ \d+:\d+:\d+	(.*?) # # #',item)))
+        return result
 
     def find_lost(self, reg=r'''##(\d+)##'''):
 
@@ -170,3 +175,4 @@ if __name__ == '__main__':
     logger = logger()
     logger.write('test')
     print(logger.get_recorde())
+    print(logger.get_recode_and_clean())
