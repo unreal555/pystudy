@@ -9,10 +9,11 @@ import  re
 from copy import  deepcopy
 import pickle
 
-def get_files_dirs(path,debug=False):
+def get_files_dirs_cache(path,debug=False):
     all_files = []
     all_dirs = []
     empty_dirs = []
+    cache_file_path=os.path.join(path,'my_file_info.dat')
     print('开始扫描文件夹')
 
     for basedir, subdirs, files in os.walk(path, topdown=1):
@@ -26,7 +27,9 @@ def get_files_dirs(path,debug=False):
         for file in files:
             if debug: print(r'当前目录为:  {}，文件为:  {}'.format(basedir, file))
             all_files.append(os.path.join(basedir, file))
-
+    
+    with open(cache_file_path,'wb') as f:
+        pickle.dump([all_files,all_dirs,empty_dirs],f)
     return all_files,all_dirs,empty_dirs
 
 def find_empty_dirs(path='.',use_cache=True):
@@ -75,7 +78,7 @@ def get_paths(path,*ext,debug=False,filter_key='',filter_type='and',use_cache=Tr
             with open(cache_file_path,'rb') as f:
                 all_files,all_dirs,empty_dirs=pickle.load(f)
         if not os.path.exists(cache_file_path):
-            all_files, all_dirs, empty_dirs = get_files_dirs(path)
+            all_files, all_dirs, empty_dirs = get_files_dirs_cache(path)
             with open(cache_file_path, 'wb') as f:
                 pickle.dump([all_files, all_dirs, empty_dirs],f)
 
