@@ -9,12 +9,11 @@ import time
 import re
 
 
-class logger():
-    __huan_hang = '\r\n'
-    __mark = ' # # # '
-    __log = ''
-    __file = ''
-    __debug = False
+
+class my_logger():
+
+
+
 
     @staticmethod
     def __get_time(self):
@@ -24,9 +23,13 @@ class logger():
     def __clean_str(self,s):
         return re.sub('[\r\n\t ]*','',s)
 
-    def __init__(self, path='.', name='log', debug=False):
+    def set_mark(self,mark):
+        if isinstance(mark,str) and '\r' not in mark and '\n' not in mark:
+            self.__mark=' '+mark+' '
+        else:
+            print('mark 必须为字符串,且不包含换行符')
 
-        print(path,name)
+    def __init__(self, path='.', name='log', debug=False):
 
         self.__huan_hang = '\r\n'
         self.__mark = ' # # # '
@@ -35,16 +38,18 @@ class logger():
 
         if self.__debug: print('初始化logger')
 
-        if 'txt' in path and os.path.exists(path) and os.path.isfile(path):
+        path=os.path.abspath(path)
+
+        if '.txt' in str.lower(path) and os.path.exists(path) and os.path.isfile(path):
             self.__file = path
 
-        if 'txt' not in name:
+        if '.txt' not in name:
             name = name + '.txt'
 
         if os.path.isdir(path):
             self.__file = os.path.join(path, name)
 
-        print(self.__file)
+        if self.__debug: print('日志位置为',self.__file)
 
         if os.path.isfile(self.__file):
             with open(self.__file, 'r', encoding='utf-8') as f:
@@ -70,25 +75,19 @@ class logger():
                 log = '\t'.join([self.__get_time(self) ,str(info[0])])
                 self.__do(log)
                 return True
-
             except Exception as  e:
                 if self.__debug: print(e)
-                if self.__debug: print('日志必须为文本,请检查输入')
                 return False
 
         if len(info) > 1:
-            log = [self.__get_time(self)]
-            try:
-                for i in info:
-                    log.append(str(i))
 
+            try:
+                log = [self.__get_time(self),*info]
                 log = '\t'.join(log)
                 self.__do(log)
                 return True
-
             except Exception as e:
                 if self.__debug: print(e)
-                if self.__debug: print('日志必须为文本,请检查输入')
                 return False
 
     def check(self, target):
@@ -107,7 +106,7 @@ class logger():
         result=[x for x in result if len(self.__clean_str(self,x))!=0]
         return result
 
-    def get_recode_and_clean(self):
+    def get_recorde_and_clean(self):
         result=[]
         for item in self.get_recorde():
             if '打开日志' in item or '创建日志' in item :
@@ -172,7 +171,11 @@ class logger():
 
 
 if __name__ == '__main__':
-    logger = logger()
+    logger = my_logger(debug=True)
+
     logger.write('test')
+
+
+    logger.write('new tst','tssfgsasdafsdfas','adfa ')
+
     print(logger.get_recorde())
-    print(logger.get_recode_and_clean())

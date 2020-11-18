@@ -30,6 +30,7 @@ def my_print_waitting(style='X',timer=0.3):
 
 item=['adsfasdfasdf1','adsfasdfasdf2','adsfasdfasdf3','adsfasdfasdf4','adsfasdfasdf5','adsfasdfasdf6',]
 
-# my_print(item,roll=True)
-my_print_waitting(style='*')
+if __name__ == '__main__':
+    pass
+
     
