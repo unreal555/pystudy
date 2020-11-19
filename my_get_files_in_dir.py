@@ -7,83 +7,31 @@
 import os
 import re
 
-def get_paths(path,*ext,debug=False,full_path=True):
-    '''
-    :param path: 要分析的路径
-    :param ext:   dir或者扩展名,逗号分隔的str
-    :param debug:  是否输出
-    :param full_path:   默认返回全路径
-    :return:    False 或者文件列表
-    '''
+def get_files(path,*ext,debug=False):
+
     path=str.lower(path)
     path=os.path.abspath(path)
     ext = [str.lower(x) for x in ext]
     try:
         if os.path.exists(path) and os.path.isdir(path):
-
-            temp=[os.path.join(path,x) for x in os.listdir(path)]
-
+            result=[os.path.join(path,x) for x in os.listdir(path)]
+            files=[x for x in result if os.path.isfile(x)]
             if len(ext)==0:
                 print('无类型筛选,返回所有文件')
-
-                if full_path==True:
-                    result=temp
-                else:
-                    result=[]
-                    for i in temp:
-                        result.append(re.split(r'[\\/]',i)[-1])                                                    
-                if debug:print(result)                
-                return result
-
-
-            if len(ext)==0 and '''dir''' in ext:
-                dirs=[]
-                print('返回目录')
-
-                for i in temp:
-                    
-                    if os.path.isdir(i):
-                        if full_path==True:
-                            dirs.append(i)
-                        else:
-                            dirs.append(re.split(r'[\\/]',i)[-1])
-                if debug:print(dirs)
-                return  dirs
-
-            if len(ext)>0 and 'dir' in ext:
-                print('目录和文件,请分开筛选,返回目录,本次只返回目录')
-                dirs = []
-                for i in temp:
-
-                    if os.path.isdir(i):
-                        if full_path == True:
-                            dirs.append(i)
-                        else:
-                            dirs.append(re.split(r'[\\/]', i)[-1])
-                if debug: print(dirs)
-                return dirs
-
-            if len(ext)>0 and 'dir' not in ext:
-                print('返回{}类型的文件'.format(ext))
-                s=[x for x in temp if str.lower(re.split(r'\.',x)[-1]) in ext]
-                files=[]
-                if full_path==True:
-                    files=s
-                else:
-                    for i in s:
-                        files.append(re.split(r'[\\/]',i)[-1])
-
-                
                 if debug:print(files)
                 return files
 
+            if len(ext)>0 :
+                print('返回{}类型的文件'.format(ext))
+                files=[x for x in files if str.lower(re.split(r'\.',x)[-1]) in ext]
+                if debug:print(files)
+                return files
         else:
             return False
     except Exception as e:
         print('发生错误{}'.format(e))
 
 
-
 if __name__ == '__main__':
-    for i in get_paths(r'c:','dir'):
-        print(i)
+    print(get_files(r'c:','sys',''))
+

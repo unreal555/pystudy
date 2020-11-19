@@ -6,7 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/scrapy-demo" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/scrapy-demo/demo" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/新闻抓取" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/job/新闻抓取" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/venv1" />
       <excludeFolder url="file://$MODULE_DIR$/venv2" />
       <excludeFolder url="file://$MODULE_DIR$/venv34" />

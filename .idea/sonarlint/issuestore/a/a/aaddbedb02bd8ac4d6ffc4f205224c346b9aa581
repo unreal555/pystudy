@@ -1,0 +1,11 @@
+
+spython:S1192N"ODefine a constant instead of duplicating this literal '%Y-%m-%d %H-%M' 3 times.(Äá¦¾şÿÿÿÿ8éóÿŞÚ.
+spython:S3776a"TRefactor this function to reduce its Cognitive Complexity from 23 to the 15 allowed.(ëƒæ¶8éóÿŞÚ.
+†python:S101C"hRename class "TuJiDao_Spider" to match the regular expression ^_?([A-Z_][a-zA-Z0-9]*|[a-z_][a-z0-9_]*)$.(ë ÄË8éóÿŞÚ.
+qpython:S1192–"LDefine a constant instead of duplicating this literal '[\/:*?"<>|]' 3 times.(€Úîùÿÿÿÿ8­—Šªİ.
+npython:S1192w"JDefine a constant instead of duplicating this literal 'wrong.txt' 4 times.(Şƒ‹üÿÿÿÿ8­—Šªİ.
+Bpython:S125&"Remove this commented out code.(œ¨ã³ÿÿÿÿÿ8­—Šªİ.
+=python:S125."Remove this commented out code.(Šˆ÷¡8­—Šªİ.
+Jpython:S5806†"+Rename this variable; it shadows a builtin.(”İˆL8­—Šªİ.
+Ypython:S905˜":Remove or refactor this statement; it has no side effects.(ôÛ¤Õ8­—Šªİ.
+Hpython:S108²")Either remove or fill this block of code.(ã‘Û¾8­—Šªİ.

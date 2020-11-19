@@ -1,0 +1,8 @@
+
+5python:S3626"Remove this redundant continue.(À–¬ˆ
+Fpython:S5806"+Rename this variable; it shadows a builtin.(¡¸ğîûÿÿÿÿ
+tpython:S1186"YAdd a nested comment explaining why this method is empty, or complete the implementation.(–”«úÿÿÿÿ
+9python:S125"Remove this commented out code.(Í„Ô¦üÿÿÿÿ
+Lpython:S1481"1Remove the unused local variable "file_wildcard".(ÅÃÎÿûÿÿÿÿ
+;python:S1481"%Remove the unused local variable "e".(óãŠ
+4python:S125"Remove this commented out code.(…¸šÛ
