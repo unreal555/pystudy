@@ -45,5 +45,7 @@ class My_Dlls():
         print("没有找到函数入口！")
         return False
 
-a=My_Dlls('''./job/海康播放器/dll''')
-print(a.callCpp("NET_DVR_GetLastError"))
+if __name__ == '__main__':
+
+    a=My_Dlls('''./job/海康播放器/dll''')
+    print(a.callCpp("NET_DVR_GetLastError"))
