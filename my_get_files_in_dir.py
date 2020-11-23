@@ -9,7 +9,6 @@ import re
 
 def get_files(path,*ext,debug=False):
 
-    path=str.lower(path)
     path=os.path.abspath(path)
     ext = [str.lower(x) for x in ext]
     try:

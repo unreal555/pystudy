@@ -1,34 +1,43 @@
 import os
 import sys
-from sss import get_files
+import re
+from my_get_files_in_dir import get_files
 
 def my_rename(ext_key=None,t_ext=None):
 
+    myself=sys.argv[0]
 
     work_path = os.getcwd()
 
-    files=get_files(work_path)
+    files=[]
 
+    for file in get_files(work_path):
+
+        if str.lower(myself) in str.lower(file):
+
+            continue
+
+        else:
+
+            files.append(file)
 
     def rename_ext(ext_key,t_ext):
 
         for file in files:
 
-            print(file)
-
             f_path,f_filename=os.path.split(file)
 
             f_name,f_ext=os.path.splitext(f_filename)
 
-            print(f_path,'-----',f_name,'-----',f_ext)
+            #print(f_path,'-----',f_name,'-----',f_ext)
 
             if '.' not in t_ext:
                 t_ext='.'+t_ext
 
             if str.lower(f_ext).replace('.','')==str.lower(ext_key):
 
-                os.rename(os.path.join(f_path,f_name+f_ext),os.path.join(f_path,f_name+t_ext))
                 #os.rename(os.path.join(f_path,f_name+f_ext),os.path.join(f_path,f_name+t_ext))
+                print(os.path.join(f_path,f_name+f_ext),'    ',os.path.join(f_path,f_name+t_ext))
 
     def rename_filename():
         
@@ -40,8 +49,8 @@ def my_rename(ext_key=None,t_ext=None):
 
             f_name,f_ext=os.path.splitext(f_filename)
 
-            os.rename(os.path.join(f_path,f_name+f_ext),os.path.join(f_path,str(count)+f_ext))
-
+            #os.rename(os.path.join(f_path,f_name+f_ext),os.path.join(f_path,str(count)+f_ext))
+            print(os.path.join(f_path, f_name + f_ext), '      ',os.path.join(f_path, str(count) + f_ext))
             count+=1
                 
 
@@ -55,14 +64,20 @@ def my_rename(ext_key=None,t_ext=None):
         
 if __name__ == '__main__':
 
-    print(sys.argv)
+    print(sys.argv,len(sys.argv))
     
     if len(sys.argv)==1:
         my_rename()
 
     elif len(sys.argv)==3:
+
+        s=re.sub('[\'\"]','',sys.argv[1])
+
+        t=re.sub('[\'\"]','',sys.argv[2])
+
+        print(s,t)
         
-        my_rename(sys.argv[1],sys.argv[2])
+        my_rename(s,t)
         
         
 
