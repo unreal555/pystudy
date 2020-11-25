@@ -8,7 +8,7 @@ import time
 import os
 import random
 
-URL=r'http://www.vipxs.la/8_8601'#http://www.vipxs.la/
+URL=r'http://www.vipxs.la/62_62548/'#'http://www.vipxs.la/8_8601'#http://www.vipxs.la/
 scheme,netloc,path,query,fragment=parse.urlsplit(URL)
 print(parse.urlsplit(URL))
 response= requests.get(URL)

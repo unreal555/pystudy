@@ -11,6 +11,10 @@ def my_rename(ext_key=None,t_ext=None):
 
     files=[]
 
+    if 'c:' in str.lower(work_path):
+        print('待修改的文件夹位于c盘,为安全禁止修改')
+        return False
+
     for file in get_files(work_path):
 
         if str.lower(myself) in str.lower(file):
@@ -65,11 +69,12 @@ def my_rename(ext_key=None,t_ext=None):
 if __name__ == '__main__':
 
     print(sys.argv,len(sys.argv))
-    
-    if len(sys.argv)==1:
+
+    if len(sys.argv)==2 and str.lower(sys.argv[1]) =='-y':
         my_rename()
 
-    elif len(sys.argv)==3:
+
+    if len(sys.argv)==3:
 
         s=re.sub('[\'\"]','',sys.argv[1])
 

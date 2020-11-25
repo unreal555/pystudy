@@ -1,9 +1,6 @@
 ﻿import os
 import re
 import my_changliang
-biaodian=my_changliang.YING_WEN_BIAO_DIAN+my_changliang.ZHONG_WEN_BIAO_DIAN
-zhonwen=my_changliang.ZHONG_WEN_ZI_FU_FOR_RE
-
 
 
 def write_txt(file,data,tab=1,enter=1,codec='utf-8',debug=False):
