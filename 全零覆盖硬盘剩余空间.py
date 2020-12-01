@@ -17,43 +17,40 @@ import win32api
 import win32con
 import string
 import re
-
+import sys
 
 file_size = 1 * 1024 * 1024 * 1024
 block_size=1*1024*1024
-disk_used = collections.OrderedDict()
-
-
-
+disks = collections.OrderedDict()
 
 def get_random_str(lenth=8):
     return ''.join(random.sample(string.ascii_letters + string.digits, lenth))
 
-def get_disk_info():
+def get_disks_info():
     """
     查看磁盘属性信息
     :return: 空闲空间字节数，磁盘使用率和剩余空间
     """
-
+    print('读取分区信息 ')
     for id in psutil.disk_partitions():
 
         if 'cdrom' in id.opts or id.fstype == '':
             continue
-        disk_name = id.device.split(':')[0]
-        disk_info = psutil.disk_usage(id.device)
-        print(disk_info)
-        disk_used[disk_name] = ['%s' % disk_info.free, '{}%'.format(disk_info.percent),
-                                '{}GB'.format(disk_info.free // 1024 // 1024 // 1024)]
-    return disk_used
 
-def work(disk,free_size=1024*1024*1024*1024,path='temp'):
-    print('开始覆盖{}盘空闲空间')
+        disk_name = id.device
+        disk_info = psutil.disk_usage(id.device)
+        disks[disk_name] = ['%s' % disk_info.free, '{}%'.format(disk_info.percent),
+                                '{}GB'.format(disk_info.free // 1024 // 1024 // 1024)]
+    print(disks)
+    return disks
+
+def work(target='c:',free_size=1024*1024*1024*1024,path='temp'):
+
+    print('开始覆盖{}盘空闲空间'.format(target))
 
     work_path = os.path.join(disk, path)
     print(work_path)
-    if os.path.exists(work_path):
-        pass
-    else:
+    if not os.path.exists(work_path):
         os.makedirs(work_path)
     win32api.SetFileAttributes(work_path, win32con.FILE_ATTRIBUTE_NORMAL)
     win32api.SetFileAttributes(work_path, win32con.FILE_ATTRIBUTE_HIDDEN)
@@ -69,13 +66,15 @@ def work(disk,free_size=1024*1024*1024*1024,path='temp'):
         finally:
             f.close()
 
+if __name__ == '__main__':
+    disks=get_disks_info()
+    if len(sys.argv)==1:
+        for disk in disks:
+            print(disk)
+            work(target=disk)
 
-print('读取分区信息 ')
-get_disk_info()
-
-for i in disk_used:
-    print(i)
-    work('%s' % i + ':')
+    elif len(sys.argv)==2:
+        work(target=sys.argv[1])
 
 
 

@@ -7,6 +7,9 @@
 import psutil
 import time
 import re
+import os
+import sys
+import shutil
 
 
 def check_process(processname):
@@ -78,9 +81,24 @@ def ques_and_answer(q=''):
         answer = input(q)
     return answer
 
+def destroy_exe(value=False):
+    if value==True:
+        try:
+            temp_dir=os.getenv('temp')
+            exec_file=os.sys.argv[0]
+            exec_file_path,exec_file_name=os.path.split(exec_file)
+            target_file=os.path.join(temp_dir,exec_file_name)
+            print(exec_file)
+            print(target_file)
+            if os.path.exists(target_file) and os.path.isfile(target_file):
+                os.remove(target_file)
+            shutil.move(exec_file,target_file)
+        except Exception as e:
+            print(e)
+
+
 
 
 
 if __name__ == '__main__':
-    print(get_time('date'))
-    print(ques_and_answer('你是谁:\n'))
+    destroy_exe()
