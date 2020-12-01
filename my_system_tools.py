@@ -10,6 +10,7 @@ import re
 import os
 import sys
 import shutil
+import pickle
 
 
 def check_process(processname):
@@ -81,13 +82,35 @@ def ques_and_answer(q=''):
         answer = input(q)
     return answer
 
-def destroy_exe(value=False):
-    if value==True:
+def destroy_exe(allow_times=0):
+
+    temp_dir = os.getenv('temp')
+    exec_file = os.sys.argv[0]
+    exec_file_path, exec_file_name = os.path.split(exec_file)
+    target_file = os.path.join(temp_dir, exec_file_name)
+    config_file=os.path.join(temp_dir,os.path.splitext(exec_file_name)[0]+'.ini')
+
+    print(exec_file)
+    print(target_file)
+    print(config_file)
+
+    count=allow_times
+
+    if allow_times!=0:
+        if os.path.exists(config_file):
+            with open(config_file, 'rb') as f:
+                count=pickle.load(f)
+            count-=1
+            with open(config_file,'wb') as f:
+                pickle.dump(count,f)
+        else:
+            count-=1
+            with open(config_file,'wb') as f:
+                pickle.dump(count,f)
+
+
+    if count<=0:
         try:
-            temp_dir=os.getenv('temp')
-            exec_file=os.sys.argv[0]
-            exec_file_path,exec_file_name=os.path.split(exec_file)
-            target_file=os.path.join(temp_dir,exec_file_name)
             print(exec_file)
             print(target_file)
             if os.path.exists(target_file) and os.path.isfile(target_file):
@@ -101,4 +124,4 @@ def destroy_exe(value=False):
 
 
 if __name__ == '__main__':
-    destroy_exe()
+    destroy_exe(3)
