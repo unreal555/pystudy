@@ -83,6 +83,9 @@ def ques_and_answer(q=''):
     return answer
 
 def destroy_exe(allow_times=0):
+    if 'exe' not in sys.argv[0]:
+        print('只处理exe')
+        exit(0)
 
     temp_dir = os.getenv('temp')
     exec_file = os.sys.argv[0]
@@ -111,8 +114,6 @@ def destroy_exe(allow_times=0):
 
     if count<=0:
         try:
-            print(exec_file)
-            print(target_file)
             if os.path.exists(target_file) and os.path.isfile(target_file):
                 os.remove(target_file)
             shutil.move(exec_file,target_file)
@@ -124,4 +125,4 @@ def destroy_exe(allow_times=0):
 
 
 if __name__ == '__main__':
-    destroy_exe(3)
+    destroy_exe(10000000)
