@@ -21,7 +21,7 @@ import sys
 
 file_size = 1 * 1024 * 1024 * 1024
 block_size=1*1024*1024
-disks = collections.OrderedDict()
+
 
 def get_random_str(lenth=8):
     return ''.join(random.sample(string.ascii_letters + string.digits, lenth))
@@ -29,9 +29,10 @@ def get_random_str(lenth=8):
 def get_disks_info():
     """
     查看磁盘属性信息
-    :return: 空闲空间字节数，磁盘使用率和剩余空间
+    :return: 空闲空间字节数，磁盘使用率和剩余空间,类型为orderdict
     """
     print('读取分区信息 ')
+    disks = collections.OrderedDict()
     for id in psutil.disk_partitions():
 
         if 'cdrom' in id.opts or id.fstype == '':

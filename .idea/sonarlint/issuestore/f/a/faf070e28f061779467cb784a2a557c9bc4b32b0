@@ -1,0 +1,8 @@
+
+`python:S1192_"IDefine a constant instead of duplicating this literal './{}.txt' 3 times.(È’Í@
+bpython:S1192C"JDefine a constant instead of duplicating this literal './log.txt' 4 times.(Ó„»÷
+Vpython:S905":Remove or refactor this statement; it has no side effects.(ÿµº°ýÿÿÿÿ
+Qpython:S905":Remove or refactor this statement; it has no side effects.(§©åÔ
+Vpython:S905":Remove or refactor this statement; it has no side effects.(„ø¤öøÿÿÿÿ
+Qpython:S905":Remove or refactor this statement; it has no side effects.(²£•©
+Vpython:S905":Remove or refactor this statement; it has no side effects.(ÏŽ¦Ûùÿÿÿÿ

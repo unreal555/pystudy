@@ -1,6 +1,4 @@
 
-spython:S37765"TRefactor this function to reduce its Cognitive Complexity from 72 to the 15 allowed.(ÍÆ„­8¼Åæ‚Ü.
-Jpython:S1481¡"%Remove the unused local variable "e".(¼–¯¸ÿÿÿÿÿ8Æ©ä§Û.
-Hpython:S108 ")Either remove or fill this block of code.(ã‘Û¾8Æ©ä§Û.
-Cpython:S125’"Remove this commented out code.(ïóœıüÿÿÿÿ8Æ©ä§Û.
-`python:S5797:"HReplace this expression; used as a condition it will always be constant.(şë Ø
+upython:S1192"QDefine a constant instead of duplicating this literal 'my_file_info.dat' 4 times.(¦íö×üÿÿÿÿ8¨¸Ôóİ.
+ypython:S3776‰"TRefactor this function to reduce its Cognitive Complexity from 58 to the 15 allowed.(¤˜Ôƒÿÿÿÿÿ8¼Åæ‚Ü.
+xpython:S37768"TRefactor this function to reduce its Cognitive Complexity from 65 to the 15 allowed.(ñÀãûÿÿÿÿÿ8‰áòİ.

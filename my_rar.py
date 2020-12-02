@@ -10,10 +10,10 @@ def my_rar(path,to='.',pwd=''):
         if os.path.exists(path) and os.path.isfile(path):
             rar=rarfile.RarFile(path)
 
-        # if pwd=='':
-        #     rar.extractall(to)
-        # else:
-        #     rar.extractall(to,pwd=pwd)
+        if pwd=='':
+            rar.extractall(to)
+        else:
+            rar.extractall(to,pwd=pwd)
 
         return True
     

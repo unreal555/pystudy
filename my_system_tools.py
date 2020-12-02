@@ -11,6 +11,8 @@ import os
 import sys
 import shutil
 import pickle
+import win32api
+
 
 
 def check_process(processname):
@@ -24,7 +26,24 @@ def check_process(processname):
         print(e)
     return result
 
+def get_disks_info():
+    """
+    查看磁盘属性信息
+    :return: 空闲空间字节数，磁盘使用率和剩余空间,类型为orderdict
+    """
+    print('读取分区信息 ')
+    disks = collections.OrderedDict()
+    for id in psutil.disk_partitions():
 
+        if 'cdrom' in id.opts or id.fstype == '':
+            continue
+
+        disk_name = id.device
+        disk_info = psutil.disk_usage(id.device)
+        disks[disk_name] = ['%s' % disk_info.free, '{}%'.format(disk_info.percent),
+                                '{}GB'.format(disk_info.free // 1024 // 1024 // 1024)]
+    print(disks)
+    return disks
 
 def get_random_str(lenth=8):
     n=''.join(random.sample(string.ascii_letters + string.digits, lenth))
@@ -120,9 +139,24 @@ def destroy_exe(allow_times=0):
         except Exception as e:
             print(e)
 
+def set_file_attribute(file,file_attribute=7):
+    '''
+    :param file:   file path
+    :param file_attribute:  1.只读   2.隐藏   4.系统   3.只读+隐藏  6.隐藏+系统   7.只读隐藏系统    0.清除所有属性
+    :return:
+    '''
+    if os.path.exists(file):
+        win32api.SetFileAttributes(file,file_attribute)
 
+def clean_file_attribute(file):
 
+    if os.path.exists(file):
+        win32api.SetFileAttributes(file, 0)
 
 
 if __name__ == '__main__':
-    destroy_exe(10000000)
+    file=r'd:\黄猿养殖.txt'
+    set_file_attribute(file,7)
+
+
+   # destroy_exe(10000000)

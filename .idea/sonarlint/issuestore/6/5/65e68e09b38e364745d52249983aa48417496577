@@ -1,4 +1,4 @@
 
-6python:S125"Remove this commented out code.(ÃÓôÅ
-;python:S125*"Remove this commented out code.(‘ÂÁ€øÿÿÿÿ
 Cpython:S58060"+Rename this variable; it shadows a builtin.(´éŞí
+;python:S125*"Remove this commented out code.(‘ÂÁ€øÿÿÿÿ
+6python:S125"Remove this commented out code.(ÃÓôÅ
