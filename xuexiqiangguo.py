@@ -24,6 +24,7 @@ user_agent = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv
 # Browser = webdriver.Ie('.\IEDriverServer.exe')
 Browser = webdriver.Chrome('./chromedriver.exe')#,options=options)
 Browser.set_window_size(1080,1024)
+
 # Browser.set_window_position(2000,2000)
 news_page_time = 70
 video_page_time = 70
@@ -177,6 +178,8 @@ def login():
         sleep(90)
         Browser.refresh()
     Browser.get('https://www.xuexi.cn')
+    sleep(3)
+    Browser.set_window_position(2000,20000)
     wait()
 
 
