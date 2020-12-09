@@ -305,7 +305,7 @@ if __name__ == '__main__':
         t.join()
         t.join()
 
-
+    send('刷分完毕,退出',subject='刷分完毕,退出')
     print('刷分完毕，程序退出')
 
 

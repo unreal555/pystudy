@@ -31,6 +31,20 @@ def get_files(path,*ext,debug=False):
         print('发生错误{}'.format(e))
 
 
+def get_dirs(path):
+
+    path=os.path.abspath(path)
+    try:
+        if os.path.exists(path) and os.path.isdir(path):
+            result=[os.path.join(path,x) for x in os.listdir(path)]
+            dirs=[x for x in result if os.path.isdir(x)]
+            return dirs
+        else:
+            return False
+    except Exception as e:
+        print('发生错误{}'.format(e))
+
+
 if __name__ == '__main__':
     print(get_files(r'c:','sys',''))
 

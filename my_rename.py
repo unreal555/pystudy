@@ -2,6 +2,25 @@ import os
 import sys
 import re
 from my_get_files_in_dir import get_files
+from my_get_files_in_dir import get_dirs
+
+
+
+
+def clean_empty_dir():
+    myself=sys.argv[0]
+
+    work_path = os.getcwd()
+
+
+    if 'c:' in str.lower(work_path):
+        print('待修改的文件夹位于c盘,为安全禁止修改')
+        return False
+
+    for dir in get_dirs(work_path):
+        if os.listdir(dir)==[]:
+            os.rmdir(dir)
+    
 
 def my_rename(ext_key=None,t_ext=None):
 
@@ -17,7 +36,7 @@ def my_rename(ext_key=None,t_ext=None):
 
     for file in get_files(work_path):
 
-        if str.lower(myself) in str.lower(file):
+        if (str.lower(myself) in str.lower(file)) or '.py' in str.lower(file)  or '.exe' in str.lower(file):
 
             continue
 
@@ -46,18 +65,44 @@ def my_rename(ext_key=None,t_ext=None):
     def rename_filename():
         
         count=1
+
+        result={}
         
         for file in files:
+
 
             f_path,f_filename=os.path.split(file)
 
             f_name,f_ext=os.path.splitext(f_filename)
 
+            temp=re.findall('\d+',f_name)
+
+
+            if len(temp)==0:
+
+                t_name=10000000000+count
+                
+                result[t_name] = (f_path,f_name,f_ext)
+
+
+            if len(temp)>0:
+
+                t_name=sum([int(x) for  x in temp])+count
+
+                result[t_name] = (f_path,f_name,f_ext)
+
+            count+=1
+
+            print(f_name,t_name)
+
+
+        count=1
+
+        for key in sorted(result.keys()):
+            f_path,f_name,f_ext=result[key]        
             #os.rename(os.path.join(f_path,f_name+f_ext),os.path.join(f_path,str(count)+f_ext))
             print(os.path.join(f_path, f_name + f_ext), '      ',os.path.join(f_path, str(count) + f_ext))
             count+=1
-                
-
                 
 
     if ext_key == None and  t_ext == None:
@@ -74,6 +119,10 @@ if __name__ == '__main__':
         my_rename()
 
 
+    if len(sys.argv)==2 and str.lower(sys.argv[1]) =='-clean':
+        clean_empty_dir()
+
+
     if len(sys.argv)==3:
 
         s=re.sub('[\'\"]','',sys.argv[1])
@@ -81,9 +130,9 @@ if __name__ == '__main__':
         t=re.sub('[\'\"]','',sys.argv[2])
 
         print(s,t)
-        
+
         my_rename(s,t)
-        
+
         
 
 
