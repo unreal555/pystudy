@@ -1,0 +1,10 @@
+
+Dpython:S5806ø"+Rename this variable; it shadows a builtin.(üğ†£
+spython:S1192}"VDefine a constant instead of duplicating this literal 'è€å…„ï¼Œç»™å­—ç¬¦ä¸²' 3 times.(Ò–…åúÿÿÿÿ
+rpython:S3776¡"TRefactor this function to reduce its Cognitive Complexity from 24 to the 15 allowed.(‰¼æÏıÿÿÿÿ
+qpython:S1542ò"SRename function "createCounter" to match the regular expression ^[a-z_][a-z0-9_]*$.(­×Ş²ÿÿÿÿÿ
+_python:S5799"GMerge these implicitly concatenated strings; or did you forget a comma?(Ëœ¨
+Dpython:S5806³"+Rename this variable; it shadows a builtin.(üğ†£
+Ipython:S1481¼"+Remove the unused local variable "content".(‹–ÍÃÿÿÿÿÿ
+mpython:S3776£"TRefactor this function to reduce its Cognitive Complexity from 35 to the 15 allowed.(Öæ§Ì
+]python:S11929"FDefine a constant instead of duplicating this literal '%-20s' 3 times.(µ¬·
