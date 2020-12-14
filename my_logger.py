@@ -43,7 +43,10 @@ class my_logger():
         if '.txt' in str.lower(path) and os.path.exists(path) and os.path.isfile(path):
             self.__file = path
 
-        if '.txt' not in name:
+        if '.log' in str.lower(path) and os.path.exists(path) and os.path.isfile(path):
+            self.__file = path
+
+        if not( '.txt'  in str.lower(name) or '.log' in str.lower(name)):
             name = name + '.txt'
 
         if os.path.isdir(path):

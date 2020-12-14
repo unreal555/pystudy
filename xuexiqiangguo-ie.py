@@ -14,8 +14,9 @@ import requests
 import os
 temp_dir_path=os.getenv('temp')
 import detected_qrcode
+import pyzbar
 
-
+#C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\_MEI12722\\libiconv.dll
 global news_page_time, count, video_page_time, news_list, cookie, video_list, news_time_score, news_count_score, video_time_score, video_conut_score
 user_agent = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko'}
 # options.add_argument('--incognito')  # 隐身模式（无痕模式）
@@ -47,6 +48,7 @@ def wait():
 
 
 def watch_page(url):
+    Browser.set_window_position(3000, 30000)
 
     try:
         Browser.get(url)
@@ -186,6 +188,7 @@ def login():
         Browser.refresh()
     Browser.get('https://www.xuexi.cn')
     sleep(3)
+    Browser.set_window_position(3000,30000)
 
 
 

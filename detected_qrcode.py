@@ -5,15 +5,14 @@ import cv2
 import my_pic_base64_exchange
 import os
 import numpy
-temp_dir_path=os.getenv('temp')
-print(temp_dir_path)
-from io import BytesIO
 import base64
 
-"""
+'''
 图片包含二维码检测
-"""
+'''
+
 def qrcode_detected(path):
+    temp_dir_path = os.getenv('temp')
 
     try:
         # 读取图片
@@ -46,20 +45,19 @@ def qrcode_detected(path):
 
         else:
             print('图片中未检测出二维码')
-            return 0
+            return False
     except Exception as e:
         print(e)
         print('异常错误，未检测出二维码')
-        return 0
+        return False
     return qr
 
 
 
 if __name__ == '__main__':
     path = 'd:/1.png'
-
-
     print(qrcode_detected(path))
-    
+
+
 
 

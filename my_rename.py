@@ -59,7 +59,7 @@ def my_rename(ext_key=None,t_ext=None):
 
             if str.lower(f_ext).replace('.','')==str.lower(ext_key):
 
-                #os.rename(os.path.join(f_path,f_name+f_ext),os.path.join(f_path,f_name+t_ext))
+                os.rename(os.path.join(f_path,f_name+f_ext),os.path.join(f_path,f_name+t_ext))
                 print(os.path.join(f_path,f_name+f_ext),'    ',os.path.join(f_path,f_name+t_ext))
 
     def rename_filename():
@@ -100,7 +100,7 @@ def my_rename(ext_key=None,t_ext=None):
 
         for key in sorted(result.keys()):
             f_path,f_name,f_ext=result[key]        
-            #os.rename(os.path.join(f_path,f_name+f_ext),os.path.join(f_path,str(count)+f_ext))
+            os.rename(os.path.join(f_path,f_name+f_ext),os.path.join(f_path,str(count)+f_ext))
             print(os.path.join(f_path, f_name + f_ext), '      ',os.path.join(f_path, str(count) + f_ext))
             count+=1
                 

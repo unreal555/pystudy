@@ -3,11 +3,11 @@
 block_cipher = None
 
 
-a = Analysis(['xuexiqiangguo-ie.py'],
+a = Analysis(['my_rename.py'],
              pathex=['D:\\PyCharm2019.3.1\\pystudy'],
              binaries=[],
              datas=[],
-             hiddenimports=['pyzbar'],
+             hiddenimports=[],
              hookspath=[],
              runtime_hooks=[],
              excludes=[],
@@ -23,7 +23,7 @@ exe = EXE(pyz,
           a.zipfiles,
           a.datas,
           [],
-          name='xuexiqiangguo-ie',
+          name='my_rename',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,

@@ -118,12 +118,9 @@ def tras_header(str):
     print(('}'))
     return result
 
-def qu_kong_ge(s,include_space=True):
+def qu_huan_hang_fu(s):
     if isinstance(s, str):
-        if include_space==True:
-            return re.sub('\s+', '', s)
-        else:
-            return re.sub('[\t\r\n]', '', s)
+        return re.sub('[\t\r\n]', '', s)
     else:
         print('老兄，给字符串')
         return False
@@ -158,7 +155,7 @@ def qu_html_lable(s):
 
 def qu_te_shu_zi_fu(s):
     if isinstance(s, str):
-        return re.sub(r'[\/:*?"<>|]','-',s)
+        return re.sub(r'[\/:*?"<>|]','',s)
     else:
         print('老兄，给字符串')
         return False
@@ -183,8 +180,8 @@ def my_request(url,return_type='text',headers={'User-Agent':user_anent},proxies=
     if debug:print('codec:{}'.format(codec))
 
 
-    if str.lower(return_type) not in ('text','content'):
-        print('return_type must be text or content')
+    if str.lower(return_type) not in ('text','bin'):
+        print('return_type must be text or bin')
         return False
 
     count=0
@@ -202,13 +199,12 @@ def my_request(url,return_type='text',headers={'User-Agent':user_anent},proxies=
                 random_wait(wait_from,wait_to)
                 continue
 
-            if response.status_code==200 and str.lower(return_type)=='content':
-                print('返回二进制content')
+            if response.status_code==200 and str.lower(return_type)=='bin':
+                print('返回二进制bin')
                 return response.content
 
             if codec==None:
                 result=re.findall('''.*?charset=([0-9a-zA-Z\-]*)''',str(response.headers))
-                print(result)
                 if len(result)>0 :
                     codec= result[0]
                     print('读取到response.headers存在字符编码集,读取dodec为{}'.format(codec))
@@ -236,7 +232,6 @@ def my_request(url,return_type='text',headers={'User-Agent':user_anent},proxies=
         except Exception as e:
             print('第{}次请求页面失败,原因是{}'.format(count,e))
             count+=1
-            random_wait(wait_from,wait_to)
 
     print('达到最大重试次数{}'.format(retry_times))
     return False
@@ -345,7 +340,6 @@ def download(url,fname='',headers={'User-Agent':user_anent},proxies={},retry_tim
             print('开始尝试第{}第下载,url为{}'.format(count + 1, url))
             r = requests.get(url, headers=headers,proxies=proxies)
             print(r.status_code)
-            if debug:print(r.content)
             if r.status_code == 200:
                 break
             if r.status_code!=200:
