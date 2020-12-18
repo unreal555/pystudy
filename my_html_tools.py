@@ -300,6 +300,11 @@ def download(url,fname='',headers={'User-Agent':user_anent},proxies={},retry_tim
     print('fname:{}'.format(fname))
 
 
+    if retry_times<0:
+        print('重试次数有误，取值大于零')
+        return False
+
+    
     def get_fname(fname):
 
         dir, filename = os.path.split(fname)
@@ -335,13 +340,18 @@ def download(url,fname='',headers={'User-Agent':user_anent},proxies={},retry_tim
 
     count=0
     r=''
-    while count < retry_times:
+    while count < retry_times+1:
         try:
             print('开始尝试第{}第下载,url为{}'.format(count + 1, url))
             r = requests.get(url, headers=headers,proxies=proxies)
-            print(r.status_code)
+
             if r.status_code == 200:
                 break
+
+            if r.status_code == 404:
+                print('下载失败,状态码不为200,为{},不再下载，退出'.format(r.status_code))
+                return False
+                
             if r.status_code!=200:
                 print('下载失败,状态码不为200,为{}'.format(r.status_code))
                 count=count+1
@@ -353,17 +363,17 @@ def download(url,fname='',headers={'User-Agent':user_anent},proxies={},retry_tim
             random_wait(wait_from, wait_to)
             continue
 
+    if r.content:
 
+        fname=get_fname(fname=fname)
 
-    fname=get_fname(fname=fname)
-
-    try:
-        with open(fname, 'wb') as f:
-            f.write(r.content)
-            return True
-    except Exception as e:
-        print('写入文件失败,原因是:{}'.format(e))
-        return False
+        try:
+            with open(fname, 'wb') as f:
+                f.write(r.content)
+                return True
+        except Exception as e:
+            print('写入文件失败,原因是:{}'.format(e))
+            return False
 
 def createCounter():
     s = 0
@@ -413,20 +423,18 @@ def geshihua(s,clean_html_lable=False,):
 
 if __name__ == '__main__':
 
-    # url='http://wap.xiongti.cn/html/61/61431/indexasc.html'
-    # # page=my_request(url=url,keyword='timeout-button',proxies=get_proxie(),retry_times=10,wait_from=1,wait_to=2,debug=True)
-    # s=my_request(url)
-    # print(qu_kong_ge(s)
-    # url='http://wsgg.sbj.cnipa.gov.cn:9080/tmann/annInfoView/homePage.html'
-    #
-    # print(qu_html_lable(my_request(url)))
-    # counter=createCounter()
-    # for i in range(1,100):
-    #     print(counter())
-    # random_wait(3600,3600)
+    xiangce=os.path.abspath('.').split('-')[-1]
 
-    url = 'https://www.baidu.com'
+    for n in range(0,100):
+
+        if os.path.exists('./%s.jpg'%n):
+            continue
+
+        
+        url='https://tjg.hywly.com/a/1/{}/{}.jpg'.format(xiangce,n)
+
+        download(url,fname='./%s.jpg'%n,retry_times=0)
+        
 
 
-    r=my_request(url,return_type='content',debug=False)
-    print(r)
+        

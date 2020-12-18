@@ -206,9 +206,9 @@ def get_base_dir(dirs):
     try:
         for i in s:
             for j in s:
-                
-                if i in j and len(j)>len(i):
+                if str.lower(i) in str.lower(j) and len(j)>=len(i):
                     t.remove(j)
+                    
 
     except Exception as e:
         pritn(e)
