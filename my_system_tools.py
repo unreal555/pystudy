@@ -153,10 +153,29 @@ def clean_file_attribute(file):
     if os.path.exists(file):
         win32api.SetFileAttributes(file, 0)
 
+def clean_tmp_files():
+    tmp_path=os.getenv('temp')
+    print(tmp_path)
+    for basedir,subdirs,files in os.walk(tmp_path,topdown=False):
+            for file in files:
+                print('removing file ',os.path.join(basedir,file))
+                try:
+                    os.remove(os.path.join(basedir,file))
+                except Exception as e:
+                    print(e)
+            print('removing dir ', basedir)
+            try:
+                if basedir==tmp_path:
+                    print('清除完毕')
+                    return 0
+                os.removedirs(basedir)
+            except Exception as e:
+                print(e)
+
 
 if __name__ == '__main__':
-    file=r'd:\黄猿养殖.txt'
-    set_file_attribute(file,7)
 
+    for i in os.environ.items():
+        print(i)
 
    # destroy_exe(10000000)
