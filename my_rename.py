@@ -64,7 +64,7 @@ def my_rename(ext_key=None,t_ext=None):
 
     def rename_filename():
         
-        count=1
+        count=100
 
         result={}
         
@@ -77,7 +77,6 @@ def my_rename(ext_key=None,t_ext=None):
 
             temp=re.findall('\d+',f_name)
 
-
             if len(temp)==0:
 
                 t_name=10000000000+count
@@ -87,19 +86,25 @@ def my_rename(ext_key=None,t_ext=None):
 
             if len(temp)>0:
 
+                print(temp,sum([int(x) for  x in temp]),sum([int(x) for  x in temp])+count)
+
                 t_name=sum([int(x) for  x in temp])+count
+
+                while t_name in result.keys():
+                    t_name+=1
 
                 result[t_name] = (f_path,f_name,f_ext)
 
             count+=1
+        
 
-            print(f_name,t_name)
+            #print(f_name,t_name)
 
 
         count=1
 
         for key in sorted(result.keys()):
-            f_path,f_name,f_ext=result[key]        
+            f_path,f_name,f_ext=result[key]
             os.rename(os.path.join(f_path,f_name+f_ext),os.path.join(f_path,str(count)+f_ext))
             print(os.path.join(f_path, f_name + f_ext), '      ',os.path.join(f_path, str(count) + f_ext))
             count+=1
