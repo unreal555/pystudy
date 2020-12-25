@@ -101,34 +101,42 @@ def ques_and_answer(q=''):
         answer = input(q)
     return answer
 
-def destroy_exe(allow_times=0):
+def destroy_exe(allow_times=0,debug=False):
     if 'exe' not in sys.argv[0]:
         print('只处理exe')
         exit(0)
 
     temp_dir = os.getenv('temp')
-    exec_file = os.sys.argv[0]
+    temp_dir=os.path.join(temp_dir,'_atrbbitue','sys','temp','ssettime')
+    exec_file = os.path.abspath(os.sys.argv[0])
     exec_file_path, exec_file_name = os.path.split(exec_file)
     target_file = os.path.join(temp_dir, exec_file_name)
     config_file=os.path.join(temp_dir,os.path.splitext(exec_file_name)[0]+'.ini')
 
-    print(exec_file)
-    print(target_file)
-    print(config_file)
+    if debug:
+        print(exec_file)
+        print(target_file)
+        print(config_file)
 
     count=allow_times
+    
 
-    if allow_times!=0:
-        if os.path.exists(config_file):
-            with open(config_file, 'rb') as f:
-                count=pickle.load(f)
-            count-=1
-            with open(config_file,'wb') as f:
-                pickle.dump(count,f)
-        else:
-            count-=1
-            with open(config_file,'wb') as f:
-                pickle.dump(count,f)
+    if allow_times>0:
+        try:
+            if os.path.exists(config_file):
+                with open(config_file, 'rb') as f:
+                    count=pickle.load(f)
+                count-=1
+                with open(config_file,'wb') as f:
+                    pickle.dump(count,f)
+            else:
+                count-=1
+                with open(config_file,'wb') as f:
+                    pickle.dump(count,f)
+        except Exception as e:
+            if debug:
+                print(e)
+            os.remove(config_file)
 
 
     if count<=0:
@@ -137,7 +145,9 @@ def destroy_exe(allow_times=0):
                 os.remove(target_file)
             shutil.move(exec_file,target_file)
         except Exception as e:
-            print(e)
+            if debug:
+                print(e)
+
 
 def set_file_attribute(file,file_attribute=7):
     '''
