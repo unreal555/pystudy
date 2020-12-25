@@ -29,12 +29,21 @@ class my_logger():
         else:
             print('mark 必须为字符串,且不包含换行符')
 
+    def reload_log(self):
+        with open(self.__file, 'r', encoding='utf-8') as f:
+                 self.__log= f.readlines()
+
+        
+                 
+        
+
     def __init__(self, path='.', name='log', debug=False):
 
         self.__huan_hang = '\r\n'
         self.__mark = ' # # # '
         self.__debug = debug
         self.__file=None
+        self.__log=[]
 
         if self.__debug: print('初始化logger')
 
@@ -55,8 +64,7 @@ class my_logger():
         if self.__debug: print('日志位置为',self.__file)
 
         if os.path.isfile(self.__file):
-            with open(self.__file, 'r', encoding='utf-8') as f:
-                self.__log = f.read()
+            self.reload_log()            
             log = self.__get_time(self) + '\t' + '打开日志,开始记录'
             self.__do(log)
 
@@ -93,15 +101,36 @@ class my_logger():
                 if self.__debug: print(e)
                 return False
 
-    def check(self, target):
+    def check(self, *target):
 
-        if target == '' or not isinstance(target, str):
+        if len(target) == 0 :
             print('搜索的字符串为空,或者类型不匹配,请检查')
             return False
-        if target in self.__log:
-            return True
-        else:
+
+        if  not isinstance(target, (tuple,list)):
+            print('类型错误,请重新输入')
             return False
+        
+        self.reload_log()
+
+
+        for line in self.__log:
+            count=0            
+            for key in target:
+                if key in line:
+                    count+=1
+                    continue
+                else:
+                    break
+            if len(target)==count:
+                return self.__log.index(line)
+
+        return False
+            
+            
+
+            
+        
 
     def get_recorde(self):
         with open(self.__file,'r',encoding='utf-8') as f:
@@ -174,11 +203,5 @@ class my_logger():
 
 
 if __name__ == '__main__':
-    logger = my_logger(debug=True)
-
-    logger.write('test')
-
-
-    logger.write('new tst','tssfgsasdafsdfas','adfa ')
-
-    print(logger.get_recorde())
+    logger=my_logger()
+    print(logger.check('new', 'tst','tssfgsadafsdfas'))
