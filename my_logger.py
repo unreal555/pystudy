@@ -33,10 +33,6 @@ class my_logger():
         with open(self.__file, 'r', encoding='utf-8') as f:
                  self.__log= f.readlines()
 
-        
-                 
-        
-
     def __init__(self, path='.', name='log', debug=False):
 
         self.__huan_hang = '\r\n'
@@ -49,10 +45,7 @@ class my_logger():
 
         path=os.path.abspath(path)
 
-        if '.txt' in str.lower(path) and os.path.exists(path) and os.path.isfile(path):
-            self.__file = path
-
-        if '.log' in str.lower(path) and os.path.exists(path) and os.path.isfile(path):
+        if ('.txt' in str.lower(path)  or '.log' in str.lower(path)) and os.path.exists(path) and os.path.isfile(path):
             self.__file = path
 
         if not( '.txt'  in str.lower(name) or '.log' in str.lower(name)):
@@ -64,7 +57,7 @@ class my_logger():
         if self.__debug: print('日志位置为',self.__file)
 
         if os.path.isfile(self.__file):
-            self.reload_log()            
+            self.reload_log()
             log = self.__get_time(self) + '\t' + '打开日志,开始记录'
             self.__do(log)
 
@@ -110,9 +103,8 @@ class my_logger():
         if  not isinstance(target, (tuple,list)):
             print('类型错误,请重新输入')
             return False
-        
-        self.reload_log()
 
+        self.reload_log()
 
         for line in self.__log:
             count=0            
@@ -126,11 +118,6 @@ class my_logger():
                 return self.__log.index(line)
 
         return False
-            
-            
-
-            
-        
 
     def get_recorde(self):
         with open(self.__file,'r',encoding='utf-8') as f:
@@ -204,4 +191,5 @@ class my_logger():
 
 if __name__ == '__main__':
     logger=my_logger()
-    print(logger.check('new', 'tst','tssfgsadafsdfas'))
+    logger.write('txt','1aas455rtrtrtrt45')
+    print(logger.check('txt','1aas455rtrtrtrt45'))
