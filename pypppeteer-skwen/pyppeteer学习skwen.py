@@ -41,7 +41,7 @@ def createCounter():
 async def go(page,url):
     while 1:
         num = count()
-        print(num)
+        if int(num%10) ==0 :print(num)
 
         try:
             await page.goto(url)
@@ -61,7 +61,7 @@ async def get_chapter_content(page, chapter_start_url):
             txt = await page.content()
             chapter_name = re.findall('<h1 class="page-title">(.*?)</h1>', txt)[0]
 
-            if 1:print(chapter_name)
+            if 0:print(chapter_name)
             
             chapter_page_list = [chapter_start_url]
 
@@ -74,7 +74,7 @@ async def get_chapter_content(page, chapter_start_url):
 
             next_chapter_url = qu_kong_ge(re.findall('''上一章</a>.*?<ahref="(.*?)"class="next">下一章''',qu_kong_ge(txt), re.S)[0])
             
-            if 1:print(next_chapter_url)
+            if 0:print(next_chapter_url)
             
             break
         except Exception as e:
@@ -192,7 +192,7 @@ async def get_chapter_page_content(page, url):
 
         
             
-            reg='<p.*?>[&nbsp;]{0,}(.*?)</p>'
+            reg='<p.*?>&nbsp.*?[a-z]*;(.*?)</p>'
 
 
             has_png=[]
@@ -200,12 +200,12 @@ async def get_chapter_page_content(page, url):
 
 
             for line in set(re.findall(reg,content_part)):
-
-                if 0:print(line)
-
+                #print(1)
   
                 line=line.replace('<br>','').replace('\t','').replace('&nbsp;','').replace('&amp;','&').replace('&quot;','"').replace('&gt;','>').replace('&lt;','<')#&nbsp|&quot|&amp|&lt|&gt等html字符转义_wusuopuBUPT的专...
 
+
+                
                 if len(line)==0:
                     continue
                 
@@ -220,7 +220,7 @@ async def get_chapter_page_content(page, url):
             for line in order_content_has_grabage:
                 
                 
-                #  print(line,no_png.index(line) ,has_png[no_png.index(line)])
+                #print(line,no_png.index(line) ,has_png[no_png.index(line)])
                 
                 try:
 
@@ -261,12 +261,14 @@ async def get_chapter_page_content(page, url):
 
 
                 #for i in  order_content_has_grabage:
-                #    try:
+               #     try:
                 #        print(i)
-               #     except Exception as e:
-                #        print(e)
+                #    except Exception as e:
+               #         print(e)
             else:
-                print('貌似本节无错')
+                
+                #print('貌似本节无错')
+                pass
                 
 
 
@@ -348,7 +350,7 @@ async def main(url, count):  # 定义main协程函数，
         
     await browser.close()
 
-    with open('./a/{}.txt'.format(book[0]), 'w', encoding='utf-8') as f:
+    with open('./temp/{}.txt'.format(book[0]), 'w', encoding='utf-8') as f:
         
         f.write(book[0])
         f.write('\r\n')
@@ -387,8 +389,8 @@ if __name__ == '__main__':
     
     with open('wanben.log','r',encoding='utf-8') as f:
         result=(re.findall(''' # # # \d+-\d+-\d+ \d+:\d+:\d+	\d+	(\d+)	(.*?) # # # ''',f.read()))
-    for n,title in result:
-        url=domain+'/0/{}/'.format(6)
+    for n,title in result[::-1]:
+        url=domain+'/0/{}/'.format(n)
         if logger.check(url)==True and logger.check(title)==True:
             print('{}已下载,跳过'.format(url))
             continue
