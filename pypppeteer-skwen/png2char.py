@@ -18,13 +18,17 @@ if __name__ == '__main__':
 
 
     result={}
-    for file in os.listdir('./a'):
+
+    temp_dir='./temp'
+    for i in os.listdir(temp_dir):
+        
+        file=os.path.join(temp_dir,i)
         
         if os.path.isfile(file) and 'txt' in file:
             print(file)
             with open(file,'r',encoding='utf-8') as f:
                 txt =f.read()            
-                for pre_two_word,url,next_tow_word in re.findall('()<imgsrc="(.*?)">()',txt):
+                for pre_two_word,url,next_tow_word in re.findall('(....)<imgsrc="(.*?)">(.....)',txt):
                     if url not in result.keys():
                         result[url]=[[pre_two_word,'???',next_tow_word] ]
                     else:
@@ -70,16 +74,34 @@ if __name__ == '__main__':
                 
             with open('png2char.dat','wb') as f:
                 pickle.dump(png2char,f)
-    
 
                 
-    with open('yin窟魔语_精品小说_wslmd199061.txt','r',encoding='utf-8') as f:
-        txt=f.read()
+    novel_dir='./novel'
+    if not os.path.exists(novel_dir):
+        os.makedirs(novel_dir)
+        
+                
+    for i in os.listdir(temp_dir):
 
+        file=os.path.join(temp_dir,i)
+        
+        if os.path.isfile(file) and 'txt' in file:
+            print(file)
+        else:
+            continue
 
-    for i in png2char.keys():
-        s='''<imgsrc="http://m.skwen.me/wzbodyimg/{}">'''.format(i)
-        t=png2char[i]
-        txt=txt.replace(s,t)
-    print(txt)
+        with open(file,'r',encoding='utf_8') as f:
+            txt=f.read()
+                  
+                  
+        for i in png2char.keys():
+            s='''<imgsrc="http://m.skwen.me/wzbodyimg/{}">'''.format(i)
+            t=png2char[i]
+            txt=txt.replace(s,t)
+
+        file=os.path.join('./novel',os.path.split(file)[-1])
+            
+        with open(file,'w',encoding='utf_8') as f:
+            f.write(txt)
+        
         

@@ -136,11 +136,8 @@ class DVR():
     def __init__(self, lib_path='./dll', sDVRIP="47.92.89.1", sDVRPort=10000, sUserName="user1", sPassword="abcd1234"):
 
         self.dlls =self.Get_Dlls(lib_path)
-
         print('生成dll库完毕',self.dlls)
-
         self.NET_DVR_Init()
-
         # 用户注册设备
         # c++传递进去的是byte型数据，需要转成byte型传进去，否则会乱码
         sDVRPort=int(sDVRPort)
@@ -151,10 +148,11 @@ class DVR():
         self.DeviceInfo = NET_DVR_DEVICEINFO_V30()
         print("DVR参数初始化成功")
         self.lUserID = self.NET_DVR_Login(sDVRIP=self.sDVRIP, sDVRPort=self.sDVRPort, sUserName=self.sUserName, sPassword=self.sPassword, DeviceInfo=self.DeviceInfo)
+        print('用户账户初始化完毕',self.lUserID)
 
     def Get_Last_Error(self):
         error_code = self.CallCpp("NET_DVR_GetLastError")
-        print('error code', error_code)
+        #print('error code', error_code)
         return error_code
 
     def Get_Dlls(self,lib_path):
@@ -183,22 +181,23 @@ class DVR():
 
     def NET_DVR_Init(self):
         init_res = self.CallCpp("NET_DVR_Init")  # SDK初始化
+        print(init_res)
         if init_res:
-            print("SDK初始化成功")
             error_info = self.CallCpp("NET_DVR_GetLastError")
         else:
             error_info = self.CallCpp("NET_DVR_GetLastError")
             print("SDK初始化错误：" + str(error_info))
             return False
-
         set_overtime = self.CallCpp("NET_DVR_SetConnectTime", 5000, 4)  # 设置超时
-
         if set_overtime:
             print("设置超时时间成功")
         else:
             error_info = self.CallCpp("NET_DVR_GetLastError")
             print("设置超时错误信息：" + str(error_info))
             return False
+
+        print("SDK初始化成功")
+        return True
 
     def NET_DVR_Login(self, sDVRIP, sDVRPort, sUserName, sPassword, DeviceInfo):
 
@@ -207,7 +206,7 @@ class DVR():
         if lUserID == -1:
             error_info = self.CallCpp("NET_DVR_GetLastError")
             print("登录错误信息：" + str(error_info))
-            return False
+            return -1
         else:
             print("登录成功，用户ID：" + str(lUserID))
             return lUserID

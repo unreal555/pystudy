@@ -7,10 +7,11 @@ file='wrong.txt'
 
 reg='http://www.skwen.me/\d+/(\d+)/.*?.html \d+ \d+ 内容可能丢失，重试'
 
-with open(file,'r',encoding='utf-8') as f:
+with open(file,'r',encoding='gbk') as f:
     txt=f.read()
 
-result=re.findall(reg,txt)
+
+result=[int(x) for x in re.findall(reg,txt)]
 
 
-print(set(result))
+print(sorted(list(set(result))))

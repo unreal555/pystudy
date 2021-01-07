@@ -17,6 +17,7 @@ import configparser
 from my_dvr import DVR
 from tkinter import ttk
 from my_tk_登陆修改密码 import tk_login
+from concurrent.futures import ThreadPoolExecutor
 
     
 class my_app():
@@ -26,8 +27,6 @@ class my_app():
 
     def get_time(self):
         return time.strftime('%Y-%m-%d %H:%M:%S')
-
-
 
     def read_config(self, path=os.path.join('.', 'config.ini')):
         '''
@@ -43,14 +42,14 @@ class my_app():
 
             except configparser.MissingSectionHeaderError as e:
                 print('配置文件无任何section，请检查配置文件')
-                return (1)
+                return (False)
             except Exception as e:
                 print(e)
                 print('读取配置文件错误，请检查配置文件')
-                return (1)
+                return (False)
         else:
             print('未找到配置文件')
-            return (1)
+            return (False)
 
         servers = []
         for section in config.sections():
@@ -64,7 +63,9 @@ class my_app():
 
     def select_cam(self, event):
         print('点击选中cam')
+        print(event.widget)
         for item in self.cam_tree.selection():
+            print(item)
             item_text = self.cam_tree.item(item, "values")
             print(item_text)  # 输出所选行的第一列的值
 
@@ -100,38 +101,44 @@ class my_app():
         server_username = item_text[2]
         server_pwd = item_text[3]
         server_channle = int(re.findall('\d+',item_text[4])[0])
-        print(server_ip,server_port,server_username,server_pwd,server_channle)
+        server_desc = server_ip + ':' + server_port + ':' + server_username
+        print(server_desc,server_ip,server_port,server_username,server_pwd,server_channle)
 
-        if len(self.login_servers)==0:
-            server = DVR(sDVRIP=server_ip, sDVRPort=server_port, sUserName=server_username,
-                         sPassword=server_pwd)
-            self.login_servers.append(server)
-        else:
-            for server in self.login_servers:
-                info=server.GetServerInfo()
-                if server_ip in info and server_username in info and server_port in info:
-                   # print(server_ip,server_username,server_port in info)
-                    server=server
-                else:
-                    server = DVR(sDVRIP=server_ip, sDVRPort=server_port, sUserName=server_username,
-                                 sPassword=server_pwd)
-                    self.login_servers.append(server)
+        # if len(self.online_servers)==0:
+        #     server = DVR(sDVRIP=server_ip, sDVRPort=server_port, sUserName=server_username,
+        #                  sPassword=server_pwd)
+        #     self.login_servers.append(server)
+        # else:
+        #     for server in self.login_servers:
+        #         info=server.GetServerInfo()
+        #         if server_ip in info and server_username in info and server_port in info:
+        #            # print(server_ip,server_username,server_port in info)
+        #             server=server
+        #         else:
+        #             server = DVR(sDVRIP=server_ip, sDVRPort=server_port, sUserName=server_username,
+        #                          sPassword=server_pwd)
+        #             self.login_servers.append(server)
+        #
+        # print(self.window_status[self.now_window_name]==0)
 
-        print(self.window_status[self.now_window_name]==0)
-
-        if self.window_status[self.now_window_name]==0:
-
-            lRealHandle=server.Play_Cam(hwnd=self.now_hwnd,channle=server_channle)
-            self.window_status[self.now_window_name]=(server,lRealHandle)
-            return True
-
-        if askokcancel(title='warning',message='该窗口已有视频播放,确定要在该窗口播放吗?'):
-            self.stop_play_cam(event=None)
-            lRealHandle=server.Play_Cam(hwnd=self.now_hwnd,channle=server_channle)
-            self.window_status[self.now_window_name]=(server,lRealHandle)
-            return True
-        else:
-            pass
+        if server_desc in self.online_servers.keys():
+            print(1)
+        if server_desc in self.offline_servers.keys():
+            print(2)
+        #
+        # if self.window_status[self.now_window_name]==0:
+        #
+        #     lRealHandle=server.Play_Cam(hwnd=self.now_hwnd,channle=server_channle)
+        #     self.window_status[self.now_window_name]=(server,lRealHandle)
+        #     return True
+        #
+        # if askokcancel(title='warning',message='该窗口已有视频播放,确定要在该窗口播放吗?'):
+        #     self.stop_play_cam(event=None)
+        #     lRealHandle=server.Play_Cam(hwnd=self.now_hwnd,channle=server_channle)
+        #     self.window_status[self.now_window_name]=(server,lRealHandle)
+        #     return True
+        # else:
+        #     pass
 
     def rec_cam(self):
         pass
@@ -165,8 +172,6 @@ class my_app():
         self.video_play_8['highlightbackground']= '#bcbcbc'
         self.video_play_9['highlightbackground']= '#bcbcbc'
 
-
-
     def get_hwnd(self,event):
 
         #清除所有视频窗口的颜色
@@ -189,8 +194,6 @@ class my_app():
         return event.widget.nametowidget(event.widget.winfo_parent())
 
     def show_nine_play(self):
-
-
 
         self.video_play_1['highlightthickness']= 2
         self.video_play_2['highlightthickness']= 2
@@ -312,6 +315,27 @@ class my_app():
             self.show_single_play(event=None)
 
 
+
+    def init_dvr(self,item):
+
+        server_name=item['name']
+        server_ip = item['ip']
+        server_port = item['port']
+        server_username = item['user_name']
+        server_pwd = item['pwd']
+        server_desc=server_ip+':'+server_port+':'+server_username
+        print(server_ip, server_port, server_username, server_pwd)
+        if server_desc not in self.online_servers.keys():
+            server = DVR(sDVRIP=server_ip, sDVRPort=server_port, sUserName=server_username,sPassword=server_pwd)
+            if server.lUserID==-1:
+                self.offline_servers[server_desc] = server
+            if server.lUserID>=0:
+                self.online_servers[server_desc]=server
+        print(self.online_servers)
+        print(self.offline_servers)
+
+
+
     def __init__(self):
         self.root = Tk()
         self.root.title('dhplay')
@@ -323,7 +347,9 @@ class my_app():
         self.is_single_playing = False
         self.now_hwnd = -1
         self.now_window_name = -1
-        self.login_servers = []
+        self.read_servers=[]
+        self.online_servers = {}
+        self.offline_servers={}
         self.window_status = {
             'window_1': 0,
             'window_2': 0,
@@ -386,18 +412,19 @@ class my_app():
         self.video_play_8.bind("<Double-Button-1>", self.change_window)
         self.video_play_9.bind("<Double-Button-1>", self.change_window)
 
+
+        self.read_servers=self.read_config()
         self.cam_tree = ttk.Treeview(self.list_area, selectmode='browse')
         self.cam_tree.pack(side='left',fill=tkinter.BOTH)
         self.cam_tree_scb = ttk.Scrollbar(self.list_area, orient="vertical", command=self.cam_tree.yview)
         self.cam_tree_scb.pack(side='right', fill=tkinter.BOTH)
         self.cam_tree.configure(yscrollcommand=self.cam_tree_scb.set)
-
-        for server in self.read_config():
-            tree = self.cam_tree.insert('', '1', text=server['name'] + ' - ' + server['ip'] + ':' + server['port'],values=server['name'])
-            for key in server.keys():
+        for item in self.read_servers:
+            tree = self.cam_tree.insert('', '1',text=item['name'] + ' - ' + item['ip'] + ':' + item['port'],values=item['ip'] + ':' + item['port']+':'+item['user_name'])
+            for key in item.keys():
                 if 'channle' in key:
-                    values = (server['ip'], server['port'], server['user_name'], server['pwd'], key)
-                    self.cam_tree.insert(tree, '1', text=key.replace('channle_', '') + server[key], values=values)
+                    values = (item['ip'], item['port'], item['user_name'], item['pwd'], key)
+                    self.cam_tree.insert(tree, '1', text=key.replace('channle_', '') + item[key], values=values)
         self.cam_tree.bind("<ButtonPress-1>", self.select_cam)
         self.cam_tree.bind("<Double-Button-1>", self.play_cam)
 
@@ -417,26 +444,33 @@ class my_app():
         self.capture_button=tkinter.Button(self.video_control_area,text='截图')
         self.capture_button.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
         self.capture_button.bind("<ButtonPress-1>", self.capture_cam)
-        # self.play_button=tkinter.Button(self.video_control_area,text='播放')
-        # self.play_button.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
-        #
-        # self.speedup_button=tkinter.Button(self.video_control_area,text='加速')
-        # self.speedup_button.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
-        #
-        # self.pause_button=tkinter.Button(self.video_control_area,text='暂停')
-        # self.pause_button.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
+        self.play_button=tkinter.Button(self.video_control_area,text='播放')
+        self.play_button.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
+
+        self.speedup_button=tkinter.Button(self.video_control_area,text='加速')
+        self.speedup_button.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
+
+        self.pause_button=tkinter.Button(self.video_control_area,text='暂停')
+        self.pause_button.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
 
 
         self.now_hwnd = self.video_play_1.winfo_id()
 
         self.now_window_name=self.video_play_1.winfo_class()
 
+        self.read_servers=self.read_config()
+
+        pool = ThreadPoolExecutor(10)
+        for item in self.read_servers:
+            print(11111)
+            pool.submit(self.init_dvr(item))
+
         print('init finished')
 
     def __del__(self):
         print('程序退出,销毁')
 
-        for server in self.login_servers:
+        for server in self.online_servers:
             server.Close()
         self.window_des=0
         self.v_num=0
@@ -452,9 +486,11 @@ def start():
     app=my_app()
     app.root.mainloop()
 
-login=tk_login(my_func=start)
-login.main_window.mainloop()
 
+
+# login=tk_login(my_func=start)
+# login.main_window.mainloop()
+start()
 
 
 #

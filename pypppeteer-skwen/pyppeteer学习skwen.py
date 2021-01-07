@@ -25,6 +25,8 @@ from pyppeteer.launcher import launch  # 控制模拟浏览器用
 from mytools import qu_kong_ge, random_wait,qu_te_shu_zi_fu
 from zhon.hanzi import punctuation as zhongwenbiaodian
 from string import punctuation as yingwenbiaodian
+import difflib
+
 
 
 def createCounter():
@@ -167,22 +169,14 @@ async def get_chapter_page_content(page, url):
 
             html=await page.content()
 
-            
+            html=qu_kong_ge(html,include_space=False)
 
-            
-            html=qu_kong_ge(html,include_space=True)
-
-
-
-            content_part=re.findall(r'''class="bd".*?>(.*?)<divid="cload".*?>''',html)[0]
-
-
-
+                    
             order_content_has_grabage=[]
 
             for line in re.split('\r|\n',order_content):
 
-                line=qu_kong_ge(line,include_space=True)
+                line=qu_kong_ge(line,include_space=False)
                 line=line.replace('&nbsp;','')
                 
                 if len(line)==0:
@@ -190,16 +184,21 @@ async def get_chapter_page_content(page, url):
                 else:
                     order_content_has_grabage.append(line)
 
-        
+
+
+            content_part=re.findall(r'''class="content".*?id="content".*?>(.*?)</div></div>''',html)[0]
+
+           # print(content_part)
+
             
-            reg='<p.*?>&nbsp.*?[a-z]*;(.*?)</p>'
+            reg='<p.*?>(.*?)</p>'
 
 
             has_png=[]
             no_png=[]
 
 
-            for line in set(re.findall(reg,content_part)):
+            for line in set(re.findall(reg,content_part)) :
                 #print(1)
   
                 line=line.replace('<br>','').replace('\t','').replace('&nbsp;','').replace('&amp;','&').replace('&quot;','"').replace('&gt;','>').replace('&lt;','<')#&nbsp|&quot|&amp|&lt|&gt等html字符转义_wusuopuBUPT的专...
@@ -213,37 +212,38 @@ async def get_chapter_page_content(page, url):
                     has_png.append(line)
                     no_png.append(re.sub('<img.*?png">','',line))
 
+            #print(no_png)
+
 
             result=[]
 
 
             for line in order_content_has_grabage:
                 
+                matches=difflib.get_close_matches(line,no_png,cutoff=0.2)
+
+                if len(matches)>0:
+                    result.append(has_png[no_png.index(matches[0])])
+
+                    
+
                 
-                #print(line,no_png.index(line) ,has_png[no_png.index(line)])
-                
-                try:
-
-                    no=no_png.index(line)
-
-                    result.append(has_png[no])
-
-                except ValueError as e:
-
-                    pass
-                
-
 
 
 
             
 
             temp=[]
+            
             for i in result:
-                    temp.append(re.sub('<imgsrc=".*?">','',i))
+                
+                 
+                    temp.append(re.sub('<img.*?png">','',i))
+                                  
 
-
-
+            
+                                  
+                        
             lost1=set(temp)-set(no_png)
             
             lost2=set(no_png)-set(temp)
@@ -251,7 +251,7 @@ async def get_chapter_page_content(page, url):
             
             if (len(lost1)!=0) or (len(lost2)!=0):
                 
-                print(url,len(result),len(has_png),'内容可能丢失，重试')
+                print(url,len(temp),len(has_png),'内容可能丢失，重试')
                     
                 #print(temp)
 
