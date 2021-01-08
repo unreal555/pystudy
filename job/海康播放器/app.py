@@ -19,6 +19,7 @@ from tkinter import ttk
 from my_tk_登陆修改密码 import tk_login
 from concurrent.futures import ThreadPoolExecutor
 
+pool = ThreadPoolExecutor(10)
     
 class my_app():
     REC_PATH=os.path.abspath('./rec')
@@ -458,9 +459,7 @@ class my_app():
 
         self.now_window_name=self.video_play_1.winfo_class()
 
-        self.read_servers=self.read_config()
 
-        pool = ThreadPoolExecutor(10)
         for item in self.read_servers:
             print(11111)
             pool.submit(self.init_dvr(item))
