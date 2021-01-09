@@ -497,8 +497,8 @@ class my_app():
                 self.online_dahua_servers[server_desc] = server
 
     def show_hk_cam_tree(self):
-        self.online_hk_tree = self.cam_tree.insert('', '1', text='海康在线', values='hk_online', open=True)
-        self.offline_hk_tree = self.cam_tree.insert('', '3', text='海康离线', values='hk_offline', open=True)
+        self.online_hk_tree = self.cam_tree.insert('', 1, text='海康在线', values='hk_online', open=True)
+        self.offline_hk_tree = self.cam_tree.insert('', 3, text='海康离线', values='hk_offline', open=True)
         for key in self.online_hk_servers:
 
             server = self.online_hk_servers[key]
@@ -523,8 +523,8 @@ class my_app():
                                      values=values)
 
     def show_dahua_cam_tree(self):
-        self.online_dahua_tree = self.cam_tree.insert('', '2', text='大华在线', values='dahua_online', open=True)
-        self.offline_dahua_tree = self.cam_tree.insert('', '4', text='大华离线', values='dahua_offline', open=True)
+        self.online_dahua_tree = self.cam_tree.insert('', 2, text='大华在线', values='dahua_online', open=True)
+        self.offline_dahua_tree = self.cam_tree.insert('', 4, text='大华离线', values='dahua_offline', open=True)
         for key in self.online_dahua_servers:
             server = self.online_dahua_servers[key]
             tree = self.cam_tree.insert(self.online_dahua_tree, '1',
@@ -576,9 +576,9 @@ class my_app():
             print(server)
             result=server['instance'].NET_DVR_Login()
             print(result)
-            # if result==-1:
-            #     continue
-            if result>=-1:
+            if result==-1:
+                continue
+            if result>=0:
                 new_online.append([key,{key:server}])
         for key,item in new_online:
             self.online_hk_servers.update(item)
@@ -601,7 +601,21 @@ class my_app():
         print(len(self.offline_hk_servers),self.offline_hk_servers)
 
     def check_servers(self,event):
-        self.check_hk_servers()
+
+        def do1():
+            self.check_hk_servers()
+            self.show_hk_cam_tree()
+        def do2():
+            self.show_dahua_cam_tree()
+
+        self.clean_cam_tree(event='')
+
+        t1=Thread(target=do1)
+        t2=Thread(target=do2)
+        t1.setDaemon(True)
+        t2.setDaemon(True)
+        t1.start()
+        t2.start()
 
 
     def __del__(self):
