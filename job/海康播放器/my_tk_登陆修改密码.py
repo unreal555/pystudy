@@ -7,7 +7,7 @@
 import tkinter as tk
 import  tkinter.messagebox
 import  pickle
-from my_tk_nine_windows import tk_nine_windows
+
 
 class tk_login():
 
@@ -254,7 +254,7 @@ if __name__ == '__main__':
          app=tk_nine_windows()
          app.root.mainloop()
 
-
+    from my_tk_nine_windows import tk_nine_windows
     login=tk_login(my_func=start)
     login.main_window.mainloop()
 
