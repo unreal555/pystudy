@@ -178,7 +178,18 @@ class my_app():
 
         self.now_window_name = self.video_play_1.winfo_class()
 
+        self.now_window_widget = self.video_play_1
+
         self.init_cam_tree(event='')
+
+        self.bar = tkinter.Scale(self.video_control_area, from_=20 ,to=100, orient=tkinter.HORIZONTAL, showvalue=0, borderwidth=0.01,
+                                 repeatinterval=0, font=('宋体', 8), cursor='cross',
+                                 sliderlength=10)#tickinterval=15, 
+
+     #   self.bar.bind("<ButtonPress-1>", self.mouse_down)
+     #   self.bar.bind("<ButtonRelease-1>", self.mouse_up)
+       # self.bar.bind('<B1-Motion> ', self.mouse_move)
+        self.bar.pack(side=tkinter.BOTTOM, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
 
         print('init finished')
 

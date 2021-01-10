@@ -188,6 +188,7 @@ class myapp():
         self.bar.bind('<B1-Motion> ',self.mouse_move)
         self.bar.pack(side=tkinter.BOTTOM,anchor=tkinter.S,expand=tkinter.YES,fill=tkinter.BOTH)
 
+
         video.pack(side=tkinter.TOP,anchor=tkinter.S,expand=tkinter.YES,fill=tkinter.BOTH)
         control.pack(side=tkinter.BOTTOM,anchor=tkinter.S,expand=tkinter.NO,fill=tkinter.BOTH)
         self.hwnd = video.winfo_id()        #获得视频窗体的句柄
