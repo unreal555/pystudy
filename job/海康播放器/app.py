@@ -42,8 +42,7 @@ class my_app():
 
         #self.root.overrideredirect(True)
         self.root.geometry("1080x720")
-        self.root.state("zoomed")
-
+        #self.root.state("zoomed")
 
         self.window_des = [('单窗口', 1), ('四窗口', 4), ('九窗口', 9)]
 
@@ -58,6 +57,8 @@ class my_app():
         self.now_hwnd = -1
         self.now_window_name = -1
         self.now_window_widget=-1
+
+        self.closing_flag=-1
 
         self.read_hk_servers = self.read_config(HK_INI_PATH)
         self.online_hk_servers = {}
@@ -189,28 +190,43 @@ class my_app():
 
         self.init_cam_tree(event='')
 
-        self.scale_bar = tkinter.Scale(self.video_control_area, from_=20 ,to=100, orient=tkinter.HORIZONTAL, showvalue=0, borderwidth=0.01,
-                                 repeatinterval=5, font=('宋体', 8),
-                                 sliderlength=10,resolution=0.1)#tickinterval=5  刻度
-
-
-        self.label_info= tk.Label(self.video_control_area,textvariable=self.info,width=60)  #anchor='w' ,justify='left',
+        self.label_info= tk.Label(self.video_control_area,textvariable=self.info,width=80)  #anchor='w' ,justify='left',
         self.label_info.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
 
+        self.scale_bar = tkinter.Scale(self.video_control_area, from_=20 ,to=100, orient=tkinter.HORIZONTAL, showvalue=0, borderwidth=0.01,
+                                 repeatinterval=1, repeatdelay=100, sliderlength=15,resolution=0.1)#tickinterval=5  刻度
+        self.scale_bar.set(95)
+        self.scale_bar.bind("<ButtonPress-1>", self.scale_mouse_click)
+        self.scale_bar.bind("<ButtonRelease-1>", self.scale_mouse_click)
+        self.scale_bar.bind('<B1-Motion> ', self.scale_mouse_click)
+        self.scale_bar.pack(side=tkinter.RIGHT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
+
+        self.label_scale_name = tk.Label(self.video_control_area, text='透明度',anchor='e' ,justify='right')
+        self.label_scale_name.pack(side=tkinter.RIGHT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
+
+        self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
+
+    def on_closing(self):
+        def do():
+            if askokcancel("Quit", "Do you want to quit?"):
+                while self.t1.is_alive() or self.t2.is_alive():
+                    self.closing_flag==1
+                    print(self.t1.is_alive() , self.t2.is_alive(),'正在退出，请等待...')
+                    self.info.set('正在退出，请等待...')
+                    time.sleep(1)
+                self.root.destroy()
+        t=Thread(target=do)
+        t.start()
 
 
-        self.scale_bar.set(90)
-        self.scale_bar.bind("<ButtonPress-1>", self.scale_mouse_move)
-        self.scale_bar.bind("<ButtonRelease-1>", self.scale_mouse_move)
-        self.scale_bar.bind('<B1-Motion> ', self.scale_mouse_move)
-        self.scale_bar.pack(side=tkinter.BOTTOM, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
 
-        print('init finished')
 
-    def scale_mouse_move(self,event):
-        print(event.x_root,event.y_root)
-        # print(self.scale_bar.location())
-        self.root.attributes("-alpha", self.scale_bar.get()/100)
+    def scale_mouse_click(self,event):
+        x=event.x_root
+        y=event.y_root
+        self.root.attributes("-alpha", self.scale_bar.get() / 100)
+
+
 
     def get_time(self):
         return time.strftime('%Y-%m-%d %H:%M:%S')
@@ -387,8 +403,14 @@ class my_app():
 
         print('当前窗口的句柄,name,widget:', self.now_hwnd,self.now_window_name,self.now_window_widget)
         print('当前窗口的状态为：',self.window_status[self.now_window_name])
-        
-        self.info.set('当前窗口为 {} {}'.format(self.now_window_name,self.window_status[self.now_window_name]))
+
+        state=self.window_status[self.now_window_name]
+
+        if state==0:
+            self.info.set('当前窗口为 {} ,空闲中'.format(self.now_window_name))
+        else:
+            type,dvr,channel,play_handle=state
+            self.info.set('当前窗口为:{}   dvr类型为:{}  主机:{}  主机通道:{} 主机播放句柄:{}'.format(self.now_window_name,type,dvr,channel,play_handle))
 
     def get_father_widget(self, event):
         return event.widget.nametowidget(event.widget.winfo_parent())
@@ -544,32 +566,35 @@ class my_app():
 
 
     def init_dahua_dvr(self):
+        try:
 
-        for item in self.read_dahua_servers:
-            print('登陆大华{}'.format(item))
-            server = {}
-            server['name'] = item['name']
-            server['ip'] = item['ip']
-            server['port'] = item['port']
-            server['user_name'] = item['user_name']
-            server['pwd'] = item['pwd']
-            server['type']='dahua'
-            server['channel'] = {}
-            for key in item.keys():
-                result = re.findall('channel_(\d+)', str.lower(key.replace(' ', '')))
+            for item in self.read_dahua_servers:
+                print('登陆大华{}'.format(item))
+                server = {}
+                server['name'] = item['name']
+                server['ip'] = item['ip']
+                server['port'] = item['port']
+                server['user_name'] = item['user_name']
+                server['pwd'] = item['pwd']
+                server['type']='dahua'
+                server['channel'] = {}
+                for key in item.keys():
+                    result = re.findall('channel_(\d+)', str.lower(key.replace(' ', '')))
 
-                if len(result) == 1:
-                    result = result[0]
-                    server['channel'][result] = item[key]
-            server_desc = server['ip'] + ':' + server['port'] + ':' + server['user_name']
-            instance =HK_DVR(sDVRIP=server['ip'], sDVRPort=server['port'], sUserName=server['user_name'],
-                           sPassword=server["pwd"])
-            if instance.lUserID == -1:
-                server['instance'] = instance
-                self.offline_dahua_servers[server_desc] = server
-            if instance.lUserID >= 0:
-                server['instance'] = instance
-                self.online_dahua_servers[server_desc] = server
+                    if len(result) == 1:
+                        result = result[0]
+                        server['channel'][result] = item[key]
+                server_desc = server['ip'] + ':' + server['port'] + ':' + server['user_name']
+                instance =HK_DVR(sDVRIP=server['ip'], sDVRPort=server['port'], sUserName=server['user_name'],
+                               sPassword=server["pwd"])
+                if instance.lUserID == -1:
+                    server['instance'] = instance
+                    self.offline_dahua_servers[server_desc] = server
+                if instance.lUserID >= 0:
+                    server['instance'] = instance
+                    self.online_dahua_servers[server_desc] = server
+        except Exception as e:
+            print(e)
 
 
     def show_cam_tree(self):
@@ -637,24 +662,29 @@ class my_app():
     def init_cam_tree(self,event):
 
         def do():
+
             self.info.set('连接视频服务器中......')
-            t1 = Thread(target=self.init_hk_dvr)
-            t2 = Thread(target=self.init_dahua_dvr)
-            t3 = Thread(target=self.show_cam_tree)
-            t1.setDaemon(True)
-            t2.setDaemon(True)
-            t1.start()
-            t2.start()
+            self.t1 = Thread(target=self.init_hk_dvr)
+            self.t2 = Thread(target=self.init_dahua_dvr)
+
+            self.t1.setDaemon(True)
+            self.t2.setDaemon(True)
+
+            self.t1.start()
+            self.t2.start()
             while 1:
-                if t1.is_alive() or t2.is_alive():
-                    pass
-                else:
-                    t3.start()
+                if self.t1.is_alive() or self.t2.is_alive():
+                    time.sleep(1)
+                    continue
+                if self.closing_flag==-1:
+                    self.t3 = Thread(target=self.show_cam_tree)
+                    self.t3.setDaemon(True)
+                    self.t3.start()
                     self.info.set('初始化完毕')
                     break
 
-
         t=Thread(target=do)
+        t.setDaemon(True)
         t.start()
 
 
@@ -700,6 +730,7 @@ class my_app():
 
     def __del__(self):
         print('程序退出,销毁')
+
         for key in self.online_hk_servers:
             self.online_hk_servers[key]['instance'].Close()
         for key in self.offline_hk_servers:
@@ -716,6 +747,10 @@ class my_app():
         self.now_hwnd = 0
         self.login_servers = 0
         self.root = 0
+
+
+
+
 
 
 def start():
