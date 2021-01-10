@@ -36,16 +36,23 @@ class my_app():
         self.root = Tk()
         self.root.title('Player')
 
+
         self.root['bg'] = default_color
         self.root.attributes("-alpha", 0.9)
+
+        #self.root.overrideredirect(True)
         self.root.geometry("1080x720")
         self.root.state("zoomed")
+
 
         self.window_des = [('单窗口', 1), ('四窗口', 4), ('九窗口', 9)]
 
         self.v_num = IntVar()
-
         self.v_num.set(1)
+
+        self.info=StringVar()
+        self.info.set('初始化中......')
+
         self.is_single_playing = False
 
         self.now_hwnd = -1
@@ -112,15 +119,15 @@ class my_app():
         self.video_play_9 = tkinter.Frame(self.video_play_area_3, cursor='plus', bd=2, relief="sunken",
                                           class_='window_9', highlightthickness=2,bg=video_default_color)
 
-        self.video_play_1.bind("<ButtonPress-1>", self.get_select_window_info)
-        self.video_play_2.bind("<ButtonPress-1>", self.get_select_window_info)
-        self.video_play_3.bind("<ButtonPress-1>", self.get_select_window_info)
-        self.video_play_4.bind("<ButtonPress-1>", self.get_select_window_info)
-        self.video_play_5.bind("<ButtonPress-1>", self.get_select_window_info)
-        self.video_play_6.bind("<ButtonPress-1>", self.get_select_window_info)
-        self.video_play_7.bind("<ButtonPress-1>", self.get_select_window_info)
-        self.video_play_8.bind("<ButtonPress-1>", self.get_select_window_info)
-        self.video_play_9.bind("<ButtonPress-1>", self.get_select_window_info)
+        self.video_play_1.bind("<ButtonPress-1>", self.set_select_window_info)
+        self.video_play_2.bind("<ButtonPress-1>", self.set_select_window_info)
+        self.video_play_3.bind("<ButtonPress-1>", self.set_select_window_info)
+        self.video_play_4.bind("<ButtonPress-1>", self.set_select_window_info)
+        self.video_play_5.bind("<ButtonPress-1>", self.set_select_window_info)
+        self.video_play_6.bind("<ButtonPress-1>", self.set_select_window_info)
+        self.video_play_7.bind("<ButtonPress-1>", self.set_select_window_info)
+        self.video_play_8.bind("<ButtonPress-1>", self.set_select_window_info)
+        self.video_play_9.bind("<ButtonPress-1>", self.set_select_window_info)
         self.video_play_1.bind("<Double-Button-1>", self.change_window)
         self.video_play_2.bind("<Double-Button-1>", self.change_window)
         self.video_play_3.bind("<Double-Button-1>", self.change_window)
@@ -182,16 +189,28 @@ class my_app():
 
         self.init_cam_tree(event='')
 
-        self.bar = tkinter.Scale(self.video_control_area, from_=20 ,to=100, orient=tkinter.HORIZONTAL, showvalue=0, borderwidth=0.01,
-                                 repeatinterval=0, font=('宋体', 8), cursor='cross',
-                                 sliderlength=10)#tickinterval=15, 
+        self.scale_bar = tkinter.Scale(self.video_control_area, from_=20 ,to=100, orient=tkinter.HORIZONTAL, showvalue=0, borderwidth=0.01,
+                                 repeatinterval=5, font=('宋体', 8),
+                                 sliderlength=10,resolution=0.1)#tickinterval=5  刻度
 
-     #   self.bar.bind("<ButtonPress-1>", self.mouse_down)
-     #   self.bar.bind("<ButtonRelease-1>", self.mouse_up)
-       # self.bar.bind('<B1-Motion> ', self.mouse_move)
-        self.bar.pack(side=tkinter.BOTTOM, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
+
+        self.label_info= tk.Label(self.video_control_area,textvariable=self.info,width=60)  #anchor='w' ,justify='left',
+        self.label_info.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
+
+
+
+        self.scale_bar.set(90)
+        self.scale_bar.bind("<ButtonPress-1>", self.scale_mouse_move)
+        self.scale_bar.bind("<ButtonRelease-1>", self.scale_mouse_move)
+        self.scale_bar.bind('<B1-Motion> ', self.scale_mouse_move)
+        self.scale_bar.pack(side=tkinter.BOTTOM, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
 
         print('init finished')
+
+    def scale_mouse_move(self,event):
+        print(event.x_root,event.y_root)
+        # print(self.scale_bar.location())
+        self.root.attributes("-alpha", self.scale_bar.get()/100)
 
     def get_time(self):
         return time.strftime('%Y-%m-%d %H:%M:%S')
@@ -256,15 +275,15 @@ class my_app():
 
             if self.window_status[self.now_window_name]==0:
                 showwarning(message='窗口空闲，没有可停止的对象')
-                #return
+                return
 
 
-            # if self.window_status[window] != 0:
-            #     server, lRealHandle = self.window_status[window]
-            #     server.Stop_Play_Cam(lRealHandle)
-            #     self.window_status[window] = 0
-
-            self.now_window_widget['bg']='#acbcbc'
+            if self.window_status[self.now_window_name] != 0:
+                server_type,server,channel,cam_handle = self.window_status[self.now_window_name]
+                print(server)
+                server.Stop_Play_Cam(cam_handle)
+                self.window_status[self.now_window_name] = 0
+                self.now_window_widget['bg']=video_default_color
 
         t=Thread(target=do)
         t.setDaemon(True)
@@ -291,6 +310,7 @@ class my_app():
             return
 
         if self.window_status[self.now_window_name]!=0:
+            print(self.window_status[self.now_window_name])
             showwarning(title='warning', message='该窗口已有视频播放,请先停止本窗口播放的视频')
             return
 
@@ -298,13 +318,21 @@ class my_app():
             print('调用海康播放')
             print(self.online_hk_servers)
             server=self.online_hk_servers[server_desc]['instance']
-            lRealHandle = server.Play_Cam(hwnd=self.now_hwnd, channel=int(channel))
-            if lRealHandle:
 
-                self.window_status[self.now_window_name] = ('hk',server,channel, lRealHandle)
-            else:
+            for  window_name  in self.window_status.keys():
+                value=self.window_status[window_name]
+                if isinstance(value,int):
+                    continue
+                if server in value  and 'hk' in value  and channel in value:
+                    showwarning(message='本cam已在 {} 中播放'.format(window_name))
+                    return
+
+            lRealHandle = server.Play_Cam(hwnd=self.now_hwnd, channel=int(channel))
+            if lRealHandle==-1:
                 showwarning(message='播放异常，请检查')
-            return
+                return
+            if lRealHandle>=0:
+                self.window_status[self.now_window_name] = ('hk',server,channel, lRealHandle)
 
 
         if 'dahua_' in statues:
@@ -343,25 +371,24 @@ class my_app():
         self.video_play_8['highlightbackground'] = '#bcbcbc'
         self.video_play_9['highlightbackground'] = '#bcbcbc'
 
-    def get_select_window_info(self, event):
+    def set_select_window_info(self, event):
 
         # 清除所有视频窗口的颜色
         self.clear_video_window_select_color()
         # 设置选中视频窗格的颜色,刚初始化
-        print(self.window_status)
         if self.v_num.get() == 1:
             pass
         else:
             event.widget['highlightbackground'] = 'red'
-        # 返回选中视频窗口的句柄
+        # 设置选中视频窗口的句柄
         self.now_hwnd = event.widget.winfo_id()
         self.now_window_name  = event.widget.winfo_class()
         self.now_window_widget=event.widget
 
         print('当前窗口的句柄,name,widget:', self.now_hwnd,self.now_window_name,self.now_window_widget)
-
-
         print('当前窗口的状态为：',self.window_status[self.now_window_name])
+        
+        self.info.set('当前窗口为 {} {}'.format(self.now_window_name,self.window_status[self.now_window_name]))
 
     def get_father_widget(self, event):
         return event.widget.nametowidget(event.widget.winfo_parent())
@@ -515,7 +542,6 @@ class my_app():
                 server['instance'] = instance
                 self.online_hk_servers[server_desc] = server
 
-        self.show_cam_tree()
 
     def init_dahua_dvr(self):
 
@@ -542,10 +568,12 @@ class my_app():
                 server['instance'] = instance
                 self.offline_dahua_servers[server_desc] = server
             if instance.lUserID >= 0:
+                server['instance'] = instance
                 self.online_dahua_servers[server_desc] = server
-        self.show_cam_tree()
+
 
     def show_cam_tree(self):
+
         self.clean_cam_tree(event='')
 
         if len(self.online_hk_servers)!=0:
@@ -608,12 +636,28 @@ class my_app():
 
     def init_cam_tree(self,event):
 
-        t1=Thread(target=self.init_hk_dvr)
-        t2=Thread(target=self.init_dahua_dvr)
-        t1.setDaemon(True)
-        t2.setDaemon(True)
-        t1.start()
-        t2.start()
+        def do():
+            self.info.set('连接视频服务器中......')
+            t1 = Thread(target=self.init_hk_dvr)
+            t2 = Thread(target=self.init_dahua_dvr)
+            t3 = Thread(target=self.show_cam_tree)
+            t1.setDaemon(True)
+            t2.setDaemon(True)
+            t1.start()
+            t2.start()
+            while 1:
+                if t1.is_alive() or t2.is_alive():
+                    pass
+                else:
+                    t3.start()
+                    self.info.set('初始化完毕')
+                    break
+
+
+        t=Thread(target=do)
+        t.start()
+
+
 
     def check_hk_servers(self):
         new_online=[]

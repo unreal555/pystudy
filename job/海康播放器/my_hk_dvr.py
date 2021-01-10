@@ -217,6 +217,8 @@ class HK_DVR():
 
     # 预览实现
     def Play_Cam(self,hwnd,channel):
+        hwnd=int(hwnd)
+        channel=int(channel)
         lpPreviewInfo = NET_DVR_PREVIEWINFO()
         # hPlayWnd需要输入创建图形窗口的handle,没有输入无法实现BMP抓图
         lpPreviewInfo.hPlayWnd = hwnd
@@ -226,17 +228,20 @@ class HK_DVR():
         lpPreviewInfo.bBlocked = 1
         lUserID = self.lUserID
         m_lRealHandle = self.CallCpp("NET_DVR_RealPlay_V40", lUserID, ctypes.byref(lpPreviewInfo), None, None)
-        if (m_lRealHandle < 0):
+        if (m_lRealHandle == -1):
             error_info = self.CallCpp("NET_DVR_GetLastError")
             print("预览失败：" + str(error_info))
-            return False
+            return -1
         else:
             print("预览成功")
         return m_lRealHandle
 
     def Stop_Play_Cam(self,lRealHandle):
+        lRealHandle=int(lRealHandle)
+        result=self.CallCpp('NET_DVR_StopRealPlay',c_long(lRealHandle))
+        print(result)
+        return result
 
-        self.CallCpp('NET_DVR_StopRealPlay',c_long(lRealHandle))
 
     def GetServerInfo(self):
         info=str(self.sDVRIP)+':'+str(self.sUserName)+':'+str(self.sDVRPort)
