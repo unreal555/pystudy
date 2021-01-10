@@ -208,15 +208,15 @@ class my_app():
 
     def on_closing(self):
         def do():
+            self.closing_flag == 1
             if askokcancel("Quit", "Do you want to quit?"):
                 while self.t1.is_alive() or self.t2.is_alive():
-                    self.closing_flag==1
                     print(self.t1.is_alive() , self.t2.is_alive(),'正在退出，请等待...')
                     self.info.set('正在退出，请等待...')
                     time.sleep(1)
                 self.root.destroy()
-        t=Thread(target=do)
-        t.start()
+        do()
+
 
 
 
