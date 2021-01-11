@@ -8,8 +8,8 @@ import os
 from ctypes import *
 from NetSDK.NetSDK import NetClient
 from NetSDK.SDK_Callback import fDisConnect, fHaveReConnect, fDecCBFun, fRealDataCallBackEx2
-from NetSDK.SDK_Enum import SDK_RealPlayType, EM_LOGIN_SPAC_CAP_TYPE, EM_REALDATA_FLAG
-from NetSDK.SDK_Struct import C_LLONG, sys_platform, NET_IN_LOGIN_WITH_HIGHLEVEL_SECURITY, NET_OUT_LOGIN_WITH_HIGHLEVEL_SECURITY, PLAY_FRAME_INFO
+from NetSDK.SDK_Enum import SDK_RealPlayType, EM_LOGIN_SPAC_CAP_TYPE, EM_REALDATA_FLAG,EM_DEV_CFG_TYPE
+from NetSDK.SDK_Struct import C_LLONG, NET_TIME,sys_platform, NET_IN_LOGIN_WITH_HIGHLEVEL_SECURITY, NET_OUT_LOGIN_WITH_HIGHLEVEL_SECURITY, PLAY_FRAME_INFO
 
 class DAHUA_DVR():
     lib_path='./dahua_dll'
@@ -45,9 +45,7 @@ class DAHUA_DVR():
 
         print("DVR参数初始化成功")
 
-        result=self.NET_DVR_Login()
-
-        self.lUserID, self.device_info, self.error_msg = self.NET_DVR_Login()
+        self.lUserID=self.NET_DVR_Login()
 
         print('大华DVR初始化完毕,登录状态为:',self.lUserID,'注意大华设备登陆,返回0为失败,正负值都为成功')
 
@@ -80,16 +78,17 @@ class DAHUA_DVR():
         if not self.lUserID:
             lUserID ,device_info, error_msg = self.sdk.LoginWithHighLevelSecurity(self.stuInParam, self.stuOutParam)
             if lUserID != 0:
+                self.device_info=device_info
                 for i in range(int(device_info.nChanNum)):
                     print('lUserID,channle',lUserID,i)
-                return (lUserID ,device_info, error_msg)
+                return lUserID
             else:
-                print('登陆失败,',device_info,error_msg)
-                return (0 ,device_info, error_msg)
+                print('登陆失败,',device_info)
+                return None
         else:
             result = self.sdk.Logout(lUserID)
             if result:
-                self.lUserID = 0
+                self.lUserID = None
 
     # 预览实现
     def Play_Cam(self,hwnd,channel):
@@ -120,12 +119,8 @@ class DAHUA_DVR():
             print('dahua cam 停止失败')
             return 0
 
-
-
-
-
     def GetServerInfo(self):
-        info=str('DAHUA:'+self.sDVRIP)+':'+str(self.sUserName)+':'+str(self.sDVRPort)
+        info=str('dahua:'+self.sDVRIP)+':'+str(self.sUserName)+':'+str(self.sDVRPort)
         print(info)
         return info
 
@@ -145,14 +140,21 @@ class DAHUA_DVR():
 
 
     def Close(self):
-        if self.lUserID!=0:
+        print(self.lUserID)
+        if self.lUserID!=0 and self.lUserID!=None:
             self.sdk.Logout(self.lUserID)
         self.sdk.Cleanup()
 
     def check_device_online(self):
-        dwCommand=c_double(20005)
-        dwCount=c_double(1)
-        result=self.CallCpp('NET_DVR_RemoteControl',self.lUserID,20005,'','')
+        time = NET_TIME()
+        print(self.lUserID, int(EM_DEV_CFG_TYPE.TIMECFG), -1, time, sizeof(NET_TIME))
+        result = self.sdk.GetDevConfig(self.lUserID, int(EM_DEV_CFG_TYPE.TIMECFG), -1, time, sizeof(NET_TIME))
+        print(result)
+        if not result:
+            print(self.sdk.GetLastErrorMessage())
+        else:
+            print(result)
+
         if result==0:
             return False
         if result==1:
@@ -171,6 +173,8 @@ if __name__ == '__main__':
     #
     # hwnd1 = video.winfo_id()
     server1=DAHUA_DVR(sDVRIP='47.92.89.1', sDVRPort=8101, sUserName='admin', sPassword='abcd1234')
+    server1.GetServerInfo()
+    server1.check_device_online()
     #window.mainloop()
 
 

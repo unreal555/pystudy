@@ -60,7 +60,7 @@ class my_app():
         self.now_window_name = -1
         self.now_window_widget=-1
 
-        self.closing_flag=-1
+        self.closing_flag = False
 
         self.read_hk_servers = self.read_config(HK_INI_PATH)
         self.online_hk_servers = {}
@@ -213,11 +213,12 @@ class my_app():
 
     def on_closing(self):
         def do():
-            self.closing_flag == 1
             if askokcancel("Quit", "Do you want to quit?"):
-                while self.t1.is_alive() or self.t2.is_alive():
-                    print(self.t1.is_alive() , self.t2.is_alive(),'正在退出，请等待...')
-                    self.info.set('正在退出，请等待...')
+                self.closing_flag=True
+                while self.refresh_button['state']==tk.DISABLED:
+
+                    print(self.refresh_button['state'],self.refresh_button['state']==tk.DISABLED)
+                    self.info.set('正在关闭，请等待...')
                     time.sleep(1)
                 self.__del__()
 
@@ -306,6 +307,7 @@ class my_app():
                 server.Stop_Play_Cam(cam_handle)
                 self.window_status[self.now_window_name] = 0
                 self.now_window_widget['bg']=video_default_color
+                self.info.set('当前窗口为 {} ,空闲中'.format(self.now_window_name))
 
         t=Thread(target=do)
         t.setDaemon(True)
@@ -354,12 +356,15 @@ class my_app():
                 showwarning(message='播放异常，请检查')
                 return
             if isinstance(lRealHandle,int):
-                self.window_status[self.now_window_name] = ('hk',server,channel, lRealHandle)
+                self.window_status[self.now_window_name] = (server_desc,server,channel, lRealHandle)
 
 
         if 'dahua:' in statues:
             print('调用大华播放')
             return
+
+        self.info.set('窗口:,{},播放:{}'.format(self.now_window_name,str(item)))
+
 
     def rec_cam(self):
         pass
@@ -554,7 +559,7 @@ class my_app():
                 if len(result) == 1:
                     result = result[0]
                     server['channel'][result] = item[key]
-            server_desc = server['ip'] + ':' + server['port'] + ':' + server['user_name']
+            server_desc ='haikang:' +server['ip'] + ':' + server['port'] + ':' + server['user_name']
 
             if (server_desc in self.online_hk_servers.keys()) or (server_desc in self.offline_hk_servers.keys()):
                 showwarning(message='大华配置文件中存在重复的主机，请检查配置文件，将同一主机的cam放在一起')
@@ -563,10 +568,10 @@ class my_app():
 
             instance = HK_DVR(sDVRIP=server['ip'], sDVRPort=server['port'], sUserName=server['user_name'],
                            sPassword=server["pwd"])
-            if instance.lUserID == -1:
+            if instance.lUserID == None:
                 server['instance'] = instance
                 self.offline_hk_servers[server_desc] = server
-            if instance.lUserID >= 0:
+            if instance.lUserID != None:
                 server['instance'] = instance
                 self.online_hk_servers[server_desc] = server
 
@@ -590,13 +595,13 @@ class my_app():
                     if len(result) == 1:
                         result = result[0]
                         server['channel'][result] = item[key]
-                server_desc = server['ip'] + ':' + server['port'] + ':' + server['user_name']
+                server_desc ='dahua:' +server['ip'] + ':' + server['port'] + ':' + server['user_name']
                 instance =DAHUA_DVR(sDVRIP=server['ip'], sDVRPort=server['port'], sUserName=server['user_name'],
                                sPassword=server["pwd"])
-                if instance.lUserID == 0:
+                if instance.lUserID == None:
                     server['instance'] = instance
                     self.offline_dahua_servers[server_desc] = server
-                if instance.lUserID !=0:
+                if instance.lUserID !=None:
                     server['instance'] = instance
                     self.online_dahua_servers[server_desc] = server
         # except Exception as e:
@@ -659,35 +664,41 @@ class my_app():
                     self.cam_tree.insert(tree, '1', text=str(str(channel) + ':' + server['channel'][channel]),
                                          values=values)
 
-
-
     def clean_cam_tree(self,event):
         for item in self.cam_tree.get_children():
             self.cam_tree.delete(item)
 
     def init_cam_tree(self,event):
 
+        self.refresh_button['state']=tk.DISABLED
+        self.refresh_button.unbind("<ButtonPress-1>")
         def do():
-
             self.info.set('连接视频服务器中......')
-            self.t1 = Thread(target=self.init_hk_dvr)
-            self.t2 = Thread(target=self.init_dahua_dvr)
+            t1 = Thread(target=self.init_hk_dvr)
+            t2 = Thread(target=self.init_dahua_dvr)
 
-            self.t1.setDaemon(True)
-            self.t2.setDaemon(True)
+            t1.setDaemon(True)
+            t2.setDaemon(True)
 
-            self.t1.start()
-            self.t2.start()
+            t1.start()
+            t2.start()
             while 1:
-                if self.t1.is_alive() or self.t2.is_alive():
+                if t1.is_alive() or t2.is_alive():
                     time.sleep(1)
                     continue
-                if self.closing_flag!=1:
-                    self.t3 = Thread(target=self.show_cam_tree)
-                    self.t3.setDaemon(True)
-                    self.t3.start()
+                if self.closing_flag==False:
+                    t3 = Thread(target=self.show_cam_tree)
+                    t3.setDaemon(True)
+                    t3.start()
+                    self.refresh_button['state'] = tk.NORMAL
+                    self.refresh_button.bind("<ButtonPress-1>", self.check_servers)
                     self.info.set('初始化完毕')
                     break
+                if self.closing_flag == True:
+                    print(self.refresh_button)
+                    self.refresh_button['state'] = tk.NORMAL
+                    break
+
 
         t=Thread(target=do)
         t.setDaemon(True)
@@ -700,9 +711,9 @@ class my_app():
         for key in self.offline_hk_servers:
             server=self.offline_hk_servers[key]
             result=server['instance'].NET_DVR_Login()
-            if result==-1:
+            if result==None:
                 continue
-            if result>=0:
+            if result!=None:
                 new_online.append([key,{key:server}])
         for key,item in new_online:
             self.online_hk_servers.update(item)
@@ -720,19 +731,73 @@ class my_app():
             self.offline_hk_servers.update(server)
             self.online_hk_servers.pop(key)
 
-        if new_offline!=[] or new_online!=[]:
-            self.show_cam_tree()
-
 
         print(len(self.online_hk_servers),self.online_hk_servers)
         print(len(self.offline_hk_servers),self.offline_hk_servers)
 
+    def check_dh_servers(self):
+        new_online=[]
+        for key in self.offline_dahua_servers:
+            server=self.offline_dahua_servers[key]
+            result=server['instance'].NET_DVR_Login()
+            if result==None:
+                continue
+            if result!=None:
+                new_online.append([key,{key:server}])
+        for key,item in new_online:
+            self.online_dahua_servers.update(item)
+            self.offline_dahua_servers.pop(key)
 
+        print(len(self.online_dahua_servers),self.offline_dahua_servers)
+        print(len(self.offline_dahua_servers),self.offline_dahua_servers)
+
+        new_offline=[]
+        for key in self.online_dahua_servers:
+            server=self.online_dahua_servers[key]
+            if server['instance'].check_device_online()==False:
+                new_offline.append([key,{key:server}])
+        for key,server in new_offline:
+            self.offline_hk_servers.update(server)
+            self.online_hk_servers.pop(key)
+
+        print(len(self.online_dahua_servers),self.online_hk_servers)
+        print(len(self.offline_dahua_servers),self.offline_hk_servers)
 
     def check_servers(self,event):
-        t1=Thread(target=self.check_hk_servers)
-        t1.setDaemon(True)
-        t1.start()
+        self.refresh_button['state']=tk.DISABLED
+        self.refresh_button.unbind("<ButtonPress-1>")
+        def do():
+            self.info.set('刷新服务器状态......')
+            check1 = Thread(target=self.check_dh_servers)
+            check2 = Thread(target=self.check_hk_servers)
+
+            check1.setDaemon(True)
+            check2.setDaemon(True)
+
+            check1.start()
+            check2.start()
+
+            while 1:
+                if check1.is_alive() or check2.is_alive():
+                    time.sleep(1)
+                    continue
+                if self.closing_flag==False:
+                    show1=Thread(target=self.show_cam_tree)
+                    show1.setDaemon(True)
+                    show1.start()
+                    self.info.set('刷新服务器成功')
+                    self.refresh_button['state'] = tk.NORMAL
+                    self.refresh_button.bind("<ButtonPress-1>",self.check_servers)
+                    break
+                if self.closing_flag == True:
+                    print(self.refresh_button)
+                    self.refresh_button['state'] = tk.NORMAL
+                    break
+
+        t=Thread(target=do)
+        t.setDaemon(True)
+        t.start()
+
 
     def __del__(self):
         print('程序退出,销毁')

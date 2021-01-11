@@ -202,7 +202,7 @@ class HK_DVR():
         if lUserID == -1:
             error_info = self.CallCpp("NET_DVR_GetLastError")
             print("登录错误信息：" + str(error_info))
-            return -1
+            return None
         else:
             print("登录成功，用户ID：" + str(lUserID),'注意海康设备登陆,返回-1为失败,大于等于零值都为成功')
             return lUserID
@@ -236,7 +236,7 @@ class HK_DVR():
 
 
     def GetServerInfo(self):
-        info=str('HAIKANG:'+self.sDVRIP)+':'+str(self.sUserName)+':'+str(self.sDVRPort)
+        info=str('haikang:'+self.sDVRIP)+':'+str(self.sUserName)+':'+str(self.sDVRPort)
         print(info)
         return info
 
