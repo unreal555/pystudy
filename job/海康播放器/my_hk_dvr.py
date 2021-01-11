@@ -5,17 +5,9 @@
 # Tool ：PyCharm
 
 
-# cam='rstp://user1:abcd1234@47.92.89.1:10000'
-# cam2='rstp://user1:abcd1234@47.92.89.1:10002'
-
-
 import os
 import ctypes
 from ctypes import *
-import tkinter as tk
-
-
-
 
 class NET_DVR_PREVIEWINFO(ctypes.Structure):
     _fields_ = [
@@ -288,29 +280,18 @@ class HK_DVR():
             return True
 
 if __name__ == '__main__':
-
-
-
-
+    import tkinter as tk
     window = tk.Tk()  # 创建窗口
     window.title("this is a test")  # 窗口标题
     window.geometry('500x900')  # 窗口大小，小写字母x
     video = tk.Frame(window, cursor='plus', bd=2, relief="sunken")
     video.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)  # 固定
     video1 = tk.Frame(window, cursor='plus', bd=2, relief="sunken")
-
     video1.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)  # 固定
-
     hwnd1 = video.winfo_id()
-
-
     server1=HK_DVR( sDVRIP='47.92.89.1', sDVRPort=8001, sUserName='user1', sPassword='abcd1234')
-
     print(server1.GetServerInfo())
     print(server1.check_device_online())
-
-
-
     window.mainloop()
 
 

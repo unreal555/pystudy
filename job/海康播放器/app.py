@@ -214,8 +214,11 @@ class my_app():
                     print(self.t1.is_alive() , self.t2.is_alive(),'正在退出，请等待...')
                     self.info.set('正在退出，请等待...')
                     time.sleep(1)
-                self.root.destroy()
-        do()
+                self.__del__()
+
+        t=Thread(target=do)
+        t.setDaemon(True)
+        t.start()
 
 
 
@@ -626,7 +629,7 @@ class my_app():
                                          values=values)
 
         self.fengexian = self.cam_tree.insert('', '2', text=' '*20, values='fengge', open=True)
-        self.fengexian = self.cam_tree.insert('', '3', text='*'*20, values='fengge', open=True)
+        self.fengexian = self.cam_tree.insert('', '3', text='*'*5+'我是分割线'+'*'*5,values='fengge', open=True)
         self.fengexian = self.cam_tree.insert('', '4', text=' '*20, values='fengge', open=True)
 
         if len(self.offline_hk_servers)!=0:
@@ -676,7 +679,7 @@ class my_app():
                 if self.t1.is_alive() or self.t2.is_alive():
                     time.sleep(1)
                     continue
-                if self.closing_flag==-1:
+                if self.closing_flag!=1:
                     self.t3 = Thread(target=self.show_cam_tree)
                     self.t3.setDaemon(True)
                     self.t3.start()
@@ -746,7 +749,7 @@ class my_app():
         self.is_single_playing = 0
         self.now_hwnd = 0
         self.login_servers = 0
-        self.root = 0
+        self.root.destroy()
 
 
 
