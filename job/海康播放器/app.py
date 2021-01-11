@@ -14,10 +14,12 @@ import ctypes
 import tkinter as tk
 import re
 import configparser
-from my_hk_dvr import HK_DVR
 from tkinter import ttk
 from my_tk_login import tk_login
 from threading import Thread
+
+from my_hk_dvr import HK_DVR
+from my_dh_dvr import DAHUA_DVR
 
 HK_INI_PATH = './hk.ini'
 DAHUA_INI_PATH = './dahua.ini'
@@ -204,6 +206,9 @@ class my_app():
         self.label_scale_name = tk.Label(self.video_control_area, text='透明度',anchor='e' ,justify='right')
         self.label_scale_name.pack(side=tkinter.RIGHT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
 
+        self.label_blank=tk.Label(self.video_control_area, text='   ',anchor='e' ,justify='right')
+        self.label_blank.pack(side=tkinter.RIGHT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
+
         self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
 
     def on_closing(self):
@@ -272,8 +277,6 @@ class my_app():
     def select_cam(self, event):
         print('鼠标单击选中cam')
         print(self.window_status)
-        if self.cam_tree.selection()==():
-            return
         for select in self.cam_tree.selection():
             item = self.cam_tree.item(select, "values")
             print(item)  # 输出所选行的第一列的值
@@ -324,7 +327,7 @@ class my_app():
 
         statues,server_desc,channel=item
 
-        if 'offline' in statues:
+        if ':offline' in statues:
             showwarning(message='服务器不在线，请刷新服务器')
             return
 
@@ -333,7 +336,7 @@ class my_app():
             showwarning(title='warning', message='该窗口已有视频播放,请先停止本窗口播放的视频')
             return
 
-        if 'hk_' in statues:
+        if 'haikang:' in statues:
             print('调用海康播放')
             print(self.online_hk_servers)
             server=self.online_hk_servers[server_desc]['instance']
@@ -347,14 +350,14 @@ class my_app():
                     return
 
             lRealHandle = server.Play_Cam(hwnd=self.now_hwnd, channel=int(channel))
-            if lRealHandle==-1:
+            if lRealHandle=='shibai':
                 showwarning(message='播放异常，请检查')
                 return
-            if lRealHandle>=0:
+            if isinstance(lRealHandle,int):
                 self.window_status[self.now_window_name] = ('hk',server,channel, lRealHandle)
 
 
-        if 'dahua_' in statues:
+        if 'dahua:' in statues:
             print('调用大华播放')
             return
 
@@ -413,7 +416,7 @@ class my_app():
             self.info.set('当前窗口为 {} ,空闲中'.format(self.now_window_name))
         else:
             type,dvr,channel,play_handle=state
-            self.info.set('当前窗口为:{}   dvr类型为:{}  主机:{}  主机通道:{} 主机播放句柄:{}'.format(self.now_window_name,type,dvr,channel,play_handle))
+            self.info.set('窗口:,{},dvr类型:{},主机:{},主机通道:{},主机播放句柄:{}'.format(self.now_window_name,type,dvr,channel,play_handle))
 
     def get_father_widget(self, event):
         return event.widget.nametowidget(event.widget.winfo_parent())
@@ -569,7 +572,7 @@ class my_app():
 
 
     def init_dahua_dvr(self):
-        try:
+        # try:
 
             for item in self.read_dahua_servers:
                 print('登陆大华{}'.format(item))
@@ -588,16 +591,16 @@ class my_app():
                         result = result[0]
                         server['channel'][result] = item[key]
                 server_desc = server['ip'] + ':' + server['port'] + ':' + server['user_name']
-                instance =HK_DVR(sDVRIP=server['ip'], sDVRPort=server['port'], sUserName=server['user_name'],
+                instance =DAHUA_DVR(sDVRIP=server['ip'], sDVRPort=server['port'], sUserName=server['user_name'],
                                sPassword=server["pwd"])
-                if instance.lUserID == -1:
+                if instance.lUserID == 0:
                     server['instance'] = instance
                     self.offline_dahua_servers[server_desc] = server
-                if instance.lUserID >= 0:
+                if instance.lUserID !=0:
                     server['instance'] = instance
                     self.online_dahua_servers[server_desc] = server
-        except Exception as e:
-            print(e)
+        # except Exception as e:
+        #     print(e)
 
 
     def show_cam_tree(self):
@@ -605,26 +608,26 @@ class my_app():
         self.clean_cam_tree(event='')
 
         if len(self.online_hk_servers)!=0:
-            self.online_hk_tree = self.cam_tree.insert('', '0', text='海康在线', values='hk_online', open=True)
+            self.online_hk_tree = self.cam_tree.insert('', '0', text='海康在线', values='haikang:online', open=True)
             for key in self.online_hk_servers:
                 server = self.online_hk_servers[key]
                 tree = self.cam_tree.insert(self.online_hk_tree, '1',
                                             text=server['name'] + ' - ' + server['ip'] + ':' + server['port'],
                                             values=server['name'], open=True)
                 for channel in server['channel'].keys():
-                    values = ['hk_online', key, channel]
+                    values = ['haikang:online', key, channel]
                     self.cam_tree.insert(tree, '1', text=str(str(channel) + ':' + server['channel'][channel]),
                                          values=values)
 
         if len(self.online_dahua_servers)!=0:
-            self.online_dahua_tree = self.cam_tree.insert('', '1', text='大华在线', values='dahua_online', open=True)
+            self.online_dahua_tree = self.cam_tree.insert('', '1', text='大华在线', values='dahua:online', open=True)
             for key in self.online_dahua_servers:
                 server = self.online_dahua_servers[key]
                 tree = self.cam_tree.insert(self.online_dahua_tree, '1',
                                             text=server['name'] + ' - ' + server['ip'] + ':' + server['port'],
                                             values=server['name'], open=True)
                 for channel in server['channel'].keys():
-                    values = ['dahua_online', key, channel]
+                    values = ['dahua:online', key, channel]
                     self.cam_tree.insert(tree, '1', text=str(str(channel) + ':' + server['channel'][channel]),
                                          values=values)
 
@@ -633,26 +636,26 @@ class my_app():
         self.fengexian = self.cam_tree.insert('', '4', text=' '*20, values='fengge', open=True)
 
         if len(self.offline_hk_servers)!=0:
-            self.offline_hk_tree = self.cam_tree.insert('', '7', text='海康离线', values='hk_offline', open=True)
+            self.offline_hk_tree = self.cam_tree.insert('', '7', text='海康离线', values='haikang:offline', open=True)
             for key in self.offline_hk_servers:
                 server = self.offline_hk_servers[key]
                 tree = self.cam_tree.insert(self.offline_hk_tree, '1',
                                             text=server['name'] + ' - ' + server['ip'] + ':' + server['port'],
                                             values=server['name'], open=False)
                 for channel in server['channel'].keys():
-                    values = ['hk_offline', key, channel]
+                    values = ['haikang:offline', key, channel]
                     self.cam_tree.insert(tree, '1', text=str(str(channel) + ':' + server['channel'][channel]),
                                          values=values)
 
         if len(self.offline_dahua_servers)!=0:
-            self.offline_dahua_tree = self.cam_tree.insert('', '8', text='大华离线', values='dahua_offline', open=True)
+            self.offline_dahua_tree = self.cam_tree.insert('', '8', text='大华离线', values='dahua:offline', open=True)
             for key in self.offline_dahua_servers:
                 server = self.offline_dahua_servers[key]
                 tree = self.cam_tree.insert(self.offline_dahua_tree, '1',
                                             text=server['name'] + ' - ' + server['ip'] + ':' + server['port'],
                                             values=server['name'], open=False)
                 for channel in server['channel'].keys():
-                    values = ['dahua_offline', key, channel]
+                    values = ['dahua:offline', key, channel]
                     self.cam_tree.insert(tree, '1', text=str(str(channel) + ':' + server['channel'][channel]),
                                          values=values)
 
