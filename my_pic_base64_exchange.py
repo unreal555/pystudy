@@ -64,6 +64,7 @@ def pic_to_base64(path):
     # 2、base64编码
     data = base64.b64encode(img).decode()
 
+    print(data)
     # 3、图片编码字符串拼接
     src = "data:image/{ext};base64,{data}".format(ext=ext, data=data)
     return src
@@ -74,7 +75,7 @@ if __name__ == '__main__':
     # https://www.baidu.com/img/bd_logo1.png
 
     # 编码测试
-    print(pic_to_base64("baidu.png"))
+    print(pic_to_base64('my-icon.ico'))
     # src = "data:image/png;base64,iVBORw0KGgoAAAA..."
 
     # 解码测试

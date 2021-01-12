@@ -17,6 +17,7 @@ from tkinter.messagebox import *
 
 from my_hk_dvr import HK_DVR
 from my_dh_dvr import DAHUA_DVR
+from my_icon import set_icon
 #from my_tk_login import tk_login
 
 
@@ -40,6 +41,9 @@ class my_app():
 
     def __init__(self):
         self.root = Tk()
+
+        set_icon(self.root)
+
         self.root.title('Player')
 
 
