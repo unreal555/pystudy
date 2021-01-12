@@ -95,7 +95,7 @@ class DAHUA_DVR():
         hwnd = int(hwnd)
         stream_type = SDK_RealPlayType.Realplay
         stream_type = SDK_RealPlayType.Realplay_1
-        self.m_lRealHandle = self.sdk.RealPlayEx(self.loginID, channel, int(hwnd) ,stream_type)
+        m_lRealHandle = self.sdk.RealPlayEx(self.lUserID, channel, int(hwnd) ,stream_type)
         if (m_lRealHandle == 0):
             error_info=self.GetServerInfo()
             print("预览失败：" + str(error_info))
