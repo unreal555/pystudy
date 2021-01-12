@@ -2,25 +2,25 @@
 # Author：zl
 # Date ：2020/9/30 0030 上午 9:39
 # Tool ：PyCharm
-
-
-from tkinter import *
-from tkinter.messagebox import *
-import tkinter
 import time
 import os
-from tkinter.filedialog import askopenfilename
-import ctypes
-import tkinter as tk
 import re
-import configparser
-from tkinter import ttk
-from threading import Thread
 import pickle
+from threading import Thread
+
+import configparser
+
+import tkinter as tk
+from tkinter import *
+from tkinter import ttk
+from tkinter.messagebox import *
+
+
+
 
 from my_hk_dvr import HK_DVR
 from my_dh_dvr import DAHUA_DVR
-from my_tk_login import tk_login
+#from my_tk_login import tk_login
 
 HK_INI_PATH = './hk.ini'
 DAHUA_INI_PATH = './dahua.ini'
@@ -88,43 +88,43 @@ class my_app():
 
         self.rec_status = []
 
-        self.list_area = tkinter.Frame(self.root,  bd=3, relief="sunken")
+        self.list_area = tk.Frame(self.root,  bd=3, relief="sunken")
 
-        self.video_area = tkinter.Frame(self.root, bd=1, relief="sunken")
+        self.video_area = tk.Frame(self.root, bd=1, relief="sunken")
 
-        self.list_area.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
+        self.list_area.pack(side=tk.LEFT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
-        self.video_area.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
+        self.video_area.pack(side=tk.LEFT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
 
-        self.video_play_area = tkinter.Frame(self.video_area, bd=1, relief="sunken")
+        self.video_play_area = tk.Frame(self.video_area, bd=1, relief="sunken")
 
-        self.video_control_area = tkinter.Frame(self.video_area, bd=1, relief="sunken")
+        self.video_control_area = tk.Frame(self.video_area, bd=1, relief="sunken")
 
-        self.video_play_area.pack(side=tkinter.TOP, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
+        self.video_play_area.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
 
-        self.video_control_area.pack(side=tkinter.BOTTOM, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
+        self.video_control_area.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
-        self.video_play_area_1 = tkinter.Frame(self.video_play_area, bd=1, relief="sunken")
-        self.video_play_area_2 = tkinter.Frame(self.video_play_area, bd=1, relief="sunken")
-        self.video_play_area_3 = tkinter.Frame(self.video_play_area, bd=1, relief="sunken")
+        self.video_play_area_1 = tk.Frame(self.video_play_area, bd=1, relief="sunken")
+        self.video_play_area_2 = tk.Frame(self.video_play_area, bd=1, relief="sunken")
+        self.video_play_area_3 = tk.Frame(self.video_play_area, bd=1, relief="sunken")
 
-        self.video_play_1 = tkinter.Frame(self.video_play_area_1, cursor='plus', bd=2, relief="sunken",
+        self.video_play_1 = tk.Frame(self.video_play_area_1, cursor='plus', bd=2, relief="sunken",
                                           class_='window_1', highlightthickness=2,bg=video_default_color)
-        self.video_play_2 = tkinter.Frame(self.video_play_area_1, cursor='plus', bd=2, relief="sunken",
+        self.video_play_2 = tk.Frame(self.video_play_area_1, cursor='plus', bd=2, relief="sunken",
                                           class_='window_2', highlightthickness=2,bg=video_default_color)
-        self.video_play_3 = tkinter.Frame(self.video_play_area_1, cursor='plus', bd=2, relief="sunken",
+        self.video_play_3 = tk.Frame(self.video_play_area_1, cursor='plus', bd=2, relief="sunken",
                                           class_='window_3', highlightthickness=2,bg=video_default_color)
-        self.video_play_4 = tkinter.Frame(self.video_play_area_2, cursor='plus', bd=2, relief="sunken",
+        self.video_play_4 = tk.Frame(self.video_play_area_2, cursor='plus', bd=2, relief="sunken",
                                           class_='window_4', highlightthickness=2,bg=video_default_color)
-        self.video_play_5 = tkinter.Frame(self.video_play_area_2, cursor='plus', bd=2, relief="sunken",
+        self.video_play_5 = tk.Frame(self.video_play_area_2, cursor='plus', bd=2, relief="sunken",
                                           class_='window_5', highlightthickness=2,bg=video_default_color)
-        self.video_play_6 = tkinter.Frame(self.video_play_area_2, cursor='plus', bd=2, relief="sunken",
+        self.video_play_6 = tk.Frame(self.video_play_area_2, cursor='plus', bd=2, relief="sunken",
                                           class_='window_6', highlightthickness=2,bg=video_default_color)
-        self.video_play_7 = tkinter.Frame(self.video_play_area_3, cursor='plus', bd=2, relief="sunken",
+        self.video_play_7 = tk.Frame(self.video_play_area_3, cursor='plus', bd=2, relief="sunken",
                                           class_='window_7', highlightthickness=2,bg=video_default_color)
-        self.video_play_8 = tkinter.Frame(self.video_play_area_3, cursor='plus', bd=2, relief="sunken",
+        self.video_play_8 = tk.Frame(self.video_play_area_3, cursor='plus', bd=2, relief="sunken",
                                           class_='window_8', highlightthickness=2,bg=video_default_color)
-        self.video_play_9 = tkinter.Frame(self.video_play_area_3, cursor='plus', bd=2, relief="sunken",
+        self.video_play_9 = tk.Frame(self.video_play_area_3, cursor='plus', bd=2, relief="sunken",
                                           class_='window_9', highlightthickness=2,bg=video_default_color)
 
         self.video_play_1.bind("<ButtonPress-1>", self.set_select_window_info)
@@ -147,47 +147,47 @@ class my_app():
         self.video_play_9.bind("<Double-Button-1>", self.change_window)
 
         self.cam_tree = ttk.Treeview(self.list_area, selectmode='browse')
-        self.cam_tree.pack(side='top', fill=tkinter.BOTH, expand=tkinter.YES)
+        self.cam_tree.pack(side='top', fill=tk.BOTH, expand=tk.YES)
 
 
         self.cam_tree.bind("<ButtonPress-1>", self.select_cam)
         self.cam_tree.bind("<Double-Button-1>", self.on_click_play_cam)
 
         self.cam_tree_scb_y = ttk.Scrollbar(self.cam_tree, orient='vertical', command=self.cam_tree.yview)
-        self.cam_tree_scb_y.pack(side='right', fill=tkinter.BOTH,expand=tkinter.NO)
+        self.cam_tree_scb_y.pack(side='right', fill=tk.BOTH,expand=tk.NO)
         self.cam_tree.configure(yscrollcommand=self.cam_tree_scb_y.set)
 
         self.cam_tree_scb_x = ttk.Scrollbar(self.cam_tree, orient=str.lower('HORIZONTAL'), command=self.cam_tree.xview)
-        self.cam_tree_scb_x.pack(side='bottom', fill=tkinter.BOTH,expand=tkinter.NO)
+        self.cam_tree_scb_x.pack(side='bottom', fill=tk.BOTH,expand=tk.NO)
         self.cam_tree.configure(xscrollcommand=self.cam_tree_scb_x.set)
 
-        self.refresh_button = tkinter.Button(self.list_area, width=20,text='刷新服务器')
-        self.refresh_button.pack(side='bottom', fill=tkinter.BOTH, expand=tkinter.NO)
+        self.refresh_button = tk.Button(self.list_area, width=20,text='刷新服务器')
+        self.refresh_button.pack(side='bottom', fill=tk.BOTH, expand=tk.NO)
         self.refresh_button.bind("<ButtonPress-1>", self.check_servers)
 
         for lang, num in self.window_des:
             self.b = Radiobutton(self.video_control_area, text=lang, variable=self.v_num, value=num, indicatoron=False,
                                  command=self.show_window)
-            self.b.pack(side=tkinter.RIGHT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
+            self.b.pack(side=tk.RIGHT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
         self.show_window()
 
-        self.stop_button = tkinter.Button(self.video_control_area, text='停止')
-        self.stop_button.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
+        self.stop_button = tk.Button(self.video_control_area, text='停止')
+        self.stop_button.pack(side=tk.LEFT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
         self.stop_button.bind("<ButtonPress-1>", self.stop_play_cam)
 
-        self.capture_button = tkinter.Button(self.video_control_area, text='截图')
-        self.capture_button.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
+        self.capture_button = tk.Button(self.video_control_area, text='截图')
+        self.capture_button.pack(side=tk.LEFT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
         self.capture_button.bind("<ButtonPress-1>", self.capture_cam)
 
-        self.play_button = tkinter.Button(self.video_control_area, text='播放')
-        self.play_button.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
+        self.play_button = tk.Button(self.video_control_area, text='播放')
+        self.play_button.pack(side=tk.LEFT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
-        self.speedup_button = tkinter.Button(self.video_control_area, text='加速')
-        self.speedup_button.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
+        self.speedup_button = tk.Button(self.video_control_area, text='加速')
+        self.speedup_button.pack(side=tk.LEFT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
-        self.pause_button = tkinter.Button(self.video_control_area, text='暂停')
-        self.pause_button.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
+        self.pause_button = tk.Button(self.video_control_area, text='暂停')
+        self.pause_button.pack(side=tk.LEFT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
         self.now_hwnd = self.video_play_1.winfo_id()
 
@@ -198,21 +198,21 @@ class my_app():
         self.init_cam_tree(event='')
 
         self.label_info= tk.Label(self.video_control_area,textvariable=self.info,width=80)  #anchor='w' ,justify='left',
-        self.label_info.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
+        self.label_info.pack(side=tk.LEFT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
-        self.scale_bar = tkinter.Scale(self.video_control_area, from_=20 ,to=100, orient=tkinter.HORIZONTAL, showvalue=0, borderwidth=0.01,
+        self.scale_bar = tk.Scale(self.video_control_area, from_=20 ,to=100, orient=tk.HORIZONTAL, showvalue=0, borderwidth=0.01,
                                  repeatinterval=1, repeatdelay=100, sliderlength=15,resolution=0.1)#tickinterval=5  刻度
         self.scale_bar.set(95)
         self.scale_bar.bind("<ButtonPress-1>", self.scale_mouse_click)
         self.scale_bar.bind("<ButtonRelease-1>", self.scale_mouse_click)
         self.scale_bar.bind('<B1-Motion> ', self.scale_mouse_click)
-        self.scale_bar.pack(side=tkinter.RIGHT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
+        self.scale_bar.pack(side=tk.RIGHT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
 
         self.label_scale_name = tk.Label(self.video_control_area, text='透明度',anchor='e' ,justify='right')
-        self.label_scale_name.pack(side=tkinter.RIGHT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
+        self.label_scale_name.pack(side=tk.RIGHT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
         self.label_blank=tk.Label(self.video_control_area, text='   ',anchor='e' ,justify='right')
-        self.label_blank.pack(side=tkinter.RIGHT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
+        self.label_blank.pack(side=tk.RIGHT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
         self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
 
@@ -395,7 +395,7 @@ class my_app():
         # except:
         #     pass
         # self.video_area.pack_forget()
-        # self.video_area.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
+        # self.video_area.pack(side=tk.LEFT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
 
     def clear_video_window_select_color(self):
         self.video_play_1['highlightbackground'] = '#bcbcbc'
@@ -524,18 +524,18 @@ class my_app():
         self.video_play_area_1.pack_forget()
         self.video_play_area_2.pack_forget()
         self.video_play_area_3.pack_forget()
-        self.video_play_area_1.pack(side=tkinter.TOP, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
-        self.video_play_area_2.pack(side=tkinter.TOP, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
-        self.video_play_area_3.pack(side=tkinter.TOP, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
-        self.video_play_1.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
-        self.video_play_2.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
-        self.video_play_3.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
-        self.video_play_4.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
-        self.video_play_5.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
-        self.video_play_6.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
-        self.video_play_7.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
-        self.video_play_8.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
-        self.video_play_9.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
+        self.video_play_area_1.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
+        self.video_play_area_2.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
+        self.video_play_area_3.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
+        self.video_play_1.pack(side=tk.LEFT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
+        self.video_play_2.pack(side=tk.LEFT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
+        self.video_play_3.pack(side=tk.LEFT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
+        self.video_play_4.pack(side=tk.LEFT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
+        self.video_play_5.pack(side=tk.LEFT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
+        self.video_play_6.pack(side=tk.LEFT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
+        self.video_play_7.pack(side=tk.LEFT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
+        self.video_play_8.pack(side=tk.LEFT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
+        self.video_play_9.pack(side=tk.LEFT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
         self.is_single_playing = False
 
     def show_four_play(self):
@@ -560,12 +560,12 @@ class my_app():
         self.video_play_area_1.pack_forget()
         self.video_play_area_2.pack_forget()
         self.video_play_area_3.pack_forget()
-        self.video_play_area_1.pack(side=tkinter.TOP, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
-        self.video_play_area_2.pack(side=tkinter.TOP, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
-        self.video_play_1.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
-        self.video_play_2.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
-        self.video_play_4.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
-        self.video_play_5.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
+        self.video_play_area_1.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
+        self.video_play_area_2.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
+        self.video_play_1.pack(side=tk.LEFT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
+        self.video_play_2.pack(side=tk.LEFT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
+        self.video_play_4.pack(side=tk.LEFT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
+        self.video_play_5.pack(side=tk.LEFT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
         self.is_single_playing = False
 
 
@@ -584,14 +584,14 @@ class my_app():
         self.video_play_area_2.pack_forget()
         self.video_play_area_3.pack_forget()
         if event == None:
-            self.video_play_area_1.pack(side=tkinter.TOP, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
-            self.video_play_1.pack(side=tkinter.TOP, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
+            self.video_play_area_1.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
+            self.video_play_1.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
         else:
 
             event.widget['highlightthickness'] = 0
             father_frame = event.widget.nametowidget(event.widget.winfo_parent())
-            father_frame.pack(side=tkinter.TOP, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
-            event.widget.pack(side=tkinter.TOP, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
+            father_frame.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
+            event.widget.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
         self.is_single_playing = True
 
     def change_window(self, event):
