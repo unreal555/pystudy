@@ -236,7 +236,10 @@ class HK_DVR():
 
 
     def GetServerInfo(self):
-        info=str('haikang:'+self.sDVRIP)+':'+str(self.sUserName)+':'+str(self.sDVRPort)
+        print(self.sDVRIP)
+        print(self.sUserName)
+        print(self.sUserName)
+        info='haikang:'+str(self.sDVRIP)+':'+str(self.sUserName)+':'+str(self.sUserName)
         print(info)
         return info
 
