@@ -1,11 +1,0 @@
-
-tpython:S1192"VDefine a constant instead of duplicating this literal 'è€å…„ï¼Œç»™å­—ç¬¦ä¸²' 3 times.(Ò–…åúÿÿÿÿ
-lpython:S15424"ORename function "get_Proxy" to match the regular expression ^[a-z_][a-z0-9_]*$.(Æ’¾Çúÿÿÿÿ
-;python:S125B"Remove this commented out code.( ´ÍÂşÿÿÿÿ
-rpython:S3776”"TRefactor this function to reduce its Cognitive Complexity from 26 to the 15 allowed.(º€ˆÇûÿÿÿÿ
-Apython:S108§")Either remove or fill this block of code.(ã‘Û¾
-5python:S2772¯"Remove this unneeded "pass".(ã‘Û¾
-Upython:S5754½"<Specify an exception class to catch or reraise the exception(ˆÊÉ·
-rpython:S3776Í"TRefactor this function to reduce its Cognitive Complexity from 25 to the 15 allowed.(§â‡ëıÿÿÿÿ
-Upython:S5754å"<Specify an exception class to catch or reraise the exception(ˆÊÉ·
-7python:S125Š"Remove this commented out code.(ÆÔœ¦

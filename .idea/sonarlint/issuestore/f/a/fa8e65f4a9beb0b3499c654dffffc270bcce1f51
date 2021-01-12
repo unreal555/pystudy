@@ -1,12 +1,0 @@
-
->python:S125È"Remove this commented out code.(Åª£Í8—¥Ù«ä.
-Cpython:S125†"Remove this commented out code.(Ôì¾Œøÿÿÿÿ8—¥Ù«ä.
-Bpython:S125"Remove this commented out code.(œë³Úıÿÿÿÿ8—¥Ù«ä.
-ypython:S3776€"TRefactor this function to reduce its Cognitive Complexity from 20 to the 15 allowed.(õçî—şÿÿÿÿ8—¥Ù«ä.
-Hpython:S108º")Either remove or fill this block of code.(ã‘Û¾8—¥Ù«ä.
->python:S3626G"Remove this redundant continue.(À–¬ˆ8—¥Ù«ä.
-Bpython:S125"Remove this commented out code.(Àß×ÿÿÿÿÿ8—¥Ù«ä.
-Vpython:S1751ı"1Refactor this loop to do more than one iteration.(ûŞˆÇşÿÿÿÿ8—¥Ù«ä.
-<python:S3626/"Remove this redundant return.(ÙãŞŸ8—¥Ù«ä.
-Cpython:S125Ó"Remove this commented out code.(¦’½¾ıÿÿÿÿ8—¥Ù«ä.
->python:S125â"Remove this commented out code.(ÆÔœ¦8—¥Ù«ä.

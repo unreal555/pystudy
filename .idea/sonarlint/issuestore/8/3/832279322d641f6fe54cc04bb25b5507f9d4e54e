@@ -1,19 +1,0 @@
-
-_python:S2208"GImport only needed names or import the module and then use its members.(ï€¢
-Apython:S108·")Either remove or fill this block of code.(ã‘Û¾
-xpython:S117O"\Rename this local variable "lRealHandle" to match the regular expression ^[_a-z][a-z0-9_]*$.(õì¹Àıÿÿÿÿ
-7python:S125´"Remove this commented out code.(ÆÔœ¦
-Hpython:S1481Â"/Remove the unused local variable "server_name".(À¹ÚÖ
-Tpython:S5754T"<Specify an exception class to catch or reraise the exception(ˆÊÉ·
-Hpython:S1066š"/Merge this if statement with the enclosing one.(©‰ì¾
-Gpython:S1066N"/Merge this if statement with the enclosing one.(©‰ì¾
-_python:S2208"GImport only needed names or import the module and then use its members.(†åÿ·
-Upython:S5754 "<Specify an exception class to catch or reraise the exception(ˆÊÉ·
-<python:S125ê"Remove this commented out code.(È°Ûşÿÿÿÿ
-wpython:S1186“"YAdd a nested comment explaining why this method is empty, or complete the implementation.(ÙÏ¡Ãÿÿÿÿÿ
-rpython:S1186"YAdd a nested comment explaining why this method is empty, or complete the implementation.(¶ù¶
-=python:S125l"Remove this commented out code.(Õ¯§ü8âÿıİí.
-ypython:S117›"\Rename this local variable "lRealHandle" to match the regular expression ^[_a-z][a-z0-9_]*$.(õì¹Àıÿÿÿÿ
-Apython:S108¤")Either remove or fill this block of code.(ã‘Û¾
-xpython:S1192–"SDefine a constant instead of duplicating this literal "<Double-Button-1>" 10 times.(ŠÚ¸øÿÿÿÿ8Ö°ºßí.
-vpython:S1192"QDefine a constant instead of duplicating this literal "<ButtonPress-1>" 12 times.(òêıªÿÿÿÿÿ8Ö°ºßí.

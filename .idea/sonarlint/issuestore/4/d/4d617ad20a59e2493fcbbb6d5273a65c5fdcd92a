@@ -1,9 +1,0 @@
-
-npython:S117"ZRename this local variable "novelList" to match the regular expression ^[_a-z][a-z0-9_]*$.(»Û¼s
-hpython:S1542"RRename function "getNovelList" to match the regular expression ^[a-z_][a-z0-9_]*$.(Ù ¿£
-vpython:S117"\Rename this local variable "chapterList" to match the regular expression ^[_a-z][a-z0-9_]*$.(Á÷€§üÿÿÿÿ
-qpython:S117"\Rename this local variable "novelAuthor" to match the regular expression ^[_a-z][a-z0-9_]*$.(œã·à
-xpython:S117"^Rename this local variable "novelCaregory" to match the regular expression ^[_a-z][a-z0-9_]*$.(¸¨É úÿÿÿÿ
-opython:S117"ZRename this local variable "novelDesc" to match the regular expression ^[_a-z][a-z0-9_]*$.(ŽÙÙŠ
-opython:S117"ZRename this local variable "novelName" to match the regular expression ^[_a-z][a-z0-9_]*$.( ï¸•
-cpython:S1542"MRename function "getInfo" to match the regular expression ^[a-z_][a-z0-9_]*$.(ÀÍ¼î
