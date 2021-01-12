@@ -740,7 +740,7 @@ class my_app():
                     values = ['dahua:offline', key, channel]
                     self.cam_tree.insert(tree, '1', text=str(str(channel) + ':' + server['channel'][channel]),
                                          values=values)
-        self.load_windows_states()
+
 
     def clean_cam_tree(self,event):
         for item in self.cam_tree.get_children():
@@ -765,6 +765,7 @@ class my_app():
                     time.sleep(1)
                     continue
                 if self.closing_flag==False:
+                    self.load_windows_states()
                     t3 = Thread(target=self.show_cam_tree)
                     t3.setDaemon(True)
                     t3.start()
