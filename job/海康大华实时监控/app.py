@@ -15,21 +15,26 @@ import tkinter as tk
 import re
 import configparser
 from tkinter import ttk
-from my_tk_login import tk_login
 from threading import Thread
+import pickle
 
 from my_hk_dvr import HK_DVR
 from my_dh_dvr import DAHUA_DVR
+from my_tk_login import tk_login
 
 HK_INI_PATH = './hk.ini'
 DAHUA_INI_PATH = './dahua.ini'
 REC_PATH = os.path.abspath('./rec')
+DAT_PATH='./dat'
 default_color = '#bcbcbc'
 video_default_color='#acbcbc'
 
 
 class my_app():
 
+
+    if not os.path.exists(DAT_PATH):
+        os.makedirs(DAT_PATH)
 
     if not os.path.exists(REC_PATH):
         os.makedirs(REC_PATH)
@@ -49,7 +54,7 @@ class my_app():
         self.window_des = [('单窗口', 1), ('四窗口', 4), ('九窗口', 9)]
 
         self.v_num = IntVar()
-        self.v_num.set(1)
+        self.v_num.set(9)
 
         self.info=StringVar()
         self.info.set('初始化中......')
@@ -146,7 +151,7 @@ class my_app():
 
 
         self.cam_tree.bind("<ButtonPress-1>", self.select_cam)
-        self.cam_tree.bind("<Double-Button-1>", self.play_cam)
+        self.cam_tree.bind("<Double-Button-1>", self.on_click_play_cam)
 
         self.cam_tree_scb_y = ttk.Scrollbar(self.cam_tree, orient='vertical', command=self.cam_tree.yview)
         self.cam_tree_scb_y.pack(side='right', fill=tkinter.BOTH,expand=tkinter.NO)
@@ -214,9 +219,9 @@ class my_app():
     def on_closing(self):
         def do():
             if askokcancel("Quit", "Do you want to quit?"):
+                self.save_windows_states()
                 self.closing_flag=True
                 while self.refresh_button['state']==tk.DISABLED:
-
                     print(self.refresh_button['state'],self.refresh_button['state']==tk.DISABLED)
                     self.info.set('正在关闭，请等待...')
                     time.sleep(1)
@@ -292,7 +297,7 @@ class my_app():
 
         def do():
 
-            if self.now_window_name==-1 or self.now_window_name==-1 or self.now_window_widget==-1:
+            if self.now_window_name==-1 or self.now_hwnd==-1 or self.now_window_widget==-1:
                 showwarning(message='请先选择一个播放窗口')
                 return
 
@@ -315,9 +320,10 @@ class my_app():
 
 
 
-    def play_cam(self, event):
+    def on_click_play_cam(self, event):
 
-        print('播放选中cam')
+
+        print('播放菜单选中cam')
         print(self.window_status)
         for select in self.cam_tree.selection():
             item = self.cam_tree.item(select, "values")
@@ -351,13 +357,7 @@ class my_app():
                     showwarning(message='本cam已在 {} 中播放'.format(window_name))
                     return
 
-            lRealHandle = server.Play_Cam(hwnd=self.now_hwnd, channel=int(channel))
-            if lRealHandle=='shibai':
-                showwarning(message='播放异常，请检查')
-                return
-            if isinstance(lRealHandle,int):
-                self.window_status[self.now_window_name] = (server_desc,server,channel, lRealHandle)
-
+            self.play_hk_cam(server_desc,server,channel,self.now_window_name,self.now_hwnd)
 
         if 'dahua:' in statues:
             print('调用大华播放')
@@ -365,6 +365,15 @@ class my_app():
 
         self.info.set('窗口:,{},播放:{}'.format(self.now_window_name,str(item)))
 
+    def play_hk_cam(self,server_desc,server,channel,window_name,hwnd,):
+
+        channel=int(channel)
+        lRealHandle = server.Play_Cam(hwnd, channel)
+        if lRealHandle == 'shibai':
+            showwarning(message='播放异常，请检查')
+            return
+        if isinstance(lRealHandle, int):
+            self.window_status[window_name] = (server_desc, server, channel, lRealHandle)
 
     def rec_cam(self):
         pass
@@ -421,7 +430,72 @@ class my_app():
             self.info.set('当前窗口为 {} ,空闲中'.format(self.now_window_name))
         else:
             type,dvr,channel,play_handle=state
-            self.info.set('窗口:,{},dvr类型:{},主机:{},主机通道:{},主机播放句柄:{}'.format(self.now_window_name,type,dvr,channel,play_handle))
+            self.info.set('窗口:,{},dvr类型:{},主机通道:{},主机播放句柄:{}'.format(self.now_window_name,type,channel,play_handle))
+
+    def save_windows_states(self):
+        states={}
+        for win_name in self.window_status:
+            if self.window_status[win_name]==0:
+                continue
+            else:
+                desc,dvr,channel,handle=self.window_status[win_name]
+                states[win_name]=[desc,channel]
+        with open(os.path.join(DAT_PATH,'state.dat'),'wb') as f:
+            pickle.dump(states,f)
+
+
+    def get_window_hwnd(self,name):
+        if name=='window_1':
+            return self.video_play_1.winfo_id()
+        if name == 'window_2':
+            return self.video_play_2.winfo_id()
+        if name == 'window_3':
+            return self.video_play_3.winfo_id()
+        if name == 'window_4':
+            return self.video_play_4.winfo_id()
+        if name == 'window_5':
+            return self.video_play_5.winfo_id()
+        if name == 'window_6':
+            return self.video_play_6.winfo_id()
+        if name == 'window_7':
+            return self.video_play_7.winfo_id()
+        if name == 'window_8':
+            return self.video_play_8.winfo_id()
+        if name == 'window_9':
+            return self.video_play_9.winfo_id()
+
+
+    def load_windows_states(self):
+        states={}
+        if os.path.exists(os.path.join(DAT_PATH,'state.dat')) and os.path.isfile(os.path.join(DAT_PATH,'state.dat')):
+            with open(os.path.join(DAT_PATH,'state.dat'),'rb') as f:
+                try:
+                    states=pickle.load(f)
+                    print('加载的上次的配置',states)
+                except:
+                    return
+
+        if states=={}:
+            return
+
+        if askokcancel('提示','是否载入上次的视频窗口')==True:
+            for window_name in states:
+                server_desc, channel = states[window_name]
+                print(server_desc,window_name,channel)
+                hwnd=self.get_window_hwnd(window_name)
+                server=''
+                print(server_desc,self.online_hk_servers.keys())
+                if server_desc in self.online_hk_servers.keys():
+                    server=self.online_hk_servers[server_desc]['instance']
+                if server_desc in self.online_dahua_servers.keys():
+                    server = self.online_dahua_servers[server_desc]['instance']
+                print(server_desc,server,channel,window_name,channel,hwnd)
+
+                if server=='':
+                    continue
+                else:
+                    self.play_hk_cam(server_desc,server,channel,window_name,hwnd)
+
 
     def get_father_widget(self, event):
         return event.widget.nametowidget(event.widget.winfo_parent())
@@ -492,6 +566,8 @@ class my_app():
         self.video_play_4.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
         self.video_play_5.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.YES, fill=tkinter.BOTH)
         self.is_single_playing = False
+
+
 
     def show_single_play(self, event):
         self.video_play_1.pack_forget()
@@ -663,6 +739,7 @@ class my_app():
                     values = ['dahua:offline', key, channel]
                     self.cam_tree.insert(tree, '1', text=str(str(channel) + ':' + server['channel'][channel]),
                                          values=values)
+        self.load_windows_states()
 
     def clean_cam_tree(self,event):
         for item in self.cam_tree.get_children():
