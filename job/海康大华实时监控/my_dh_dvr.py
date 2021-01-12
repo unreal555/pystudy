@@ -160,6 +160,8 @@ class DAHUA_DVR():
         if result==1:
             return True
 
+
+
 if __name__ == '__main__':
     # import tkinter as tk
     # window = tk.Tk()  # 创建窗口

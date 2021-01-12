@@ -1,4 +1,5 @@
-﻿# Team : JiaLiDun University
+﻿# coding:utf-8
+#﻿ Team : JiaLiDun University
 # Author：zl
 # Date ：2020/9/30 0030 上午 9:39
 # Tool ：PyCharm
@@ -14,9 +15,6 @@ import tkinter as tk
 from tkinter import *
 from tkinter import ttk
 from tkinter.messagebox import *
-
-
-
 
 from my_hk_dvr import HK_DVR
 from my_dh_dvr import DAHUA_DVR
@@ -195,7 +193,7 @@ class my_app():
 
         self.now_window_widget = self.video_play_1
 
-        self.init_cam_tree(event='')
+        self.last_init_things(event='')
 
         self.label_info= tk.Label(self.video_control_area,textvariable=self.info,width=80)  #anchor='w' ,justify='left',
         self.label_info.pack(side=tk.LEFT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
@@ -501,6 +499,7 @@ class my_app():
 
 
     def get_father_widget(self, event):
+
         return event.widget.nametowidget(event.widget.winfo_parent())
 
     def show_nine_play(self):
@@ -748,7 +747,7 @@ class my_app():
         for item in self.cam_tree.get_children():
             self.cam_tree.delete(item)
 
-    def init_cam_tree(self,event):
+    def last_init_things(self,event):
 
         self.refresh_button['state']=tk.DISABLED
         self.refresh_button.unbind("<ButtonPress-1>")
@@ -773,6 +772,7 @@ class my_app():
                     self.refresh_button['state'] = tk.NORMAL
                     self.refresh_button.bind("<ButtonPress-1>", self.check_servers)
                     self.load_windows_states()
+                    self.auto_check_servers()
                     self.info.set('初始化完毕')
                     break
                 if self.closing_flag == True:
@@ -781,7 +781,51 @@ class my_app():
                     break
 
 
+
         t=Thread(target=do)
+        t.setDaemon(True)
+        t.start()
+        
+    def auto_check_servers(self):
+
+        def do():
+
+            while self.closing_flag==False:
+                print('自动刷新服务器')
+                if  self.refresh_button['state'] == tk.DISABLED:
+                    time.sleep(3)
+                    continue
+
+                self.refresh_button['state'] = tk.DISABLED
+                self.refresh_button.unbind("<ButtonPress-1>")
+                self.info.set('自动刷新服务器状态......')
+                check1 = Thread(target=self.check_dh_servers)
+                check2 = Thread(target=self.check_hk_servers)
+
+                check1.setDaemon(True)
+                check2.setDaemon(True)
+
+                check1.start()
+                check2.start()
+
+
+                while check1.is_alive() or check2.is_alive():
+                    time.sleep(2)
+                    continue
+                if self.closing_flag == False:
+                    show1 = Thread(target=self.show_cam_tree)
+                    show1.setDaemon(True)
+                    show1.start()
+                    self.info.set('自动刷新服务器成功')
+                    self.refresh_button['state'] = tk.NORMAL
+                    self.refresh_button.bind("<ButtonPress-1>", self.check_servers)
+                if self.closing_flag ==  True:
+                    print(self.refresh_button)
+                    self.refresh_button['state'] = tk.NORMAL
+                    break
+                time.sleep(30)
+
+        t = Thread(target=do)
         t.setDaemon(True)
         t.start()
 

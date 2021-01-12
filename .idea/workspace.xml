@@ -1,37 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b8d6269-a564-4802-8c0e-0538c714e289" name="Default Changelist" comment="clean">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/pystudy.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/b/0b729087dc511508903d45188a16c3f4db6c3f98" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/1/1105de43b4cbeb18868232febc0fa0e0ba451d2f" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/d/ed93b846df1fcf2ad3f9eaba46d862eea320d03b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/job/sdk/CH-HCNetSDKV6.1.6.3_build20200925_Win32.rar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/job/sdk/CH-HCNetSDKV6.1.6.3_build20200925_Win64.rar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/job/sdk/大华_NetSDK_ChnEng_Python_win32_IS_V3.052.0000002.0.R.201103.zip" afterDir="false" />
+    <list default="true" id="9b8d6269-a564-4802-8c0e-0538c714e289" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/海康大华实时监控/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/海康大华实时监控/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/海康大华实时监控/build/app/Analysis-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/海康大华实时监控/build/app/EXE-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/海康大华实时监控/build/app/PKG-00.pkg" beforeDir="false" afterPath="$PROJECT_DIR$/job/sdk/大华_General_NetSDK_ChnEng_Python_win64_IS_V3.052.0000002.0.R.201103.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/海康大华实时监控/build/app/PKG-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/海康大华实时监控/build/app/PYZ-00.pyz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/海康大华实时监控/build/app/PYZ-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/海康大华实时监控/build/app/Tree-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/海康大华实时监控/build/app/Tree-01.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/海康大华实时监控/build/app/Tree-02.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/海康大华实时监控/build/app/app.exe.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/海康大华实时监控/build/app/base_library.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/海康大华实时监控/build/app/warn-app.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/海康大华实时监控/build/app/xref-app.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/job/海康大华实时监控/dat/state.dat" beforeDir="false" afterPath="$PROJECT_DIR$/job/海康大华实时监控/dat/state.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/海康大华实时监控/my_dh_dvr.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/海康大华实时监控/my_dh_dvr.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/海康大华实时监控/my_hk_dvr.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/海康大华实时监控/my_hk_dvr.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +144,7 @@
       <updated>1610422000266</updated>
       <workItem from="1610422002918" duration="1628000" />
       <workItem from="1610425511577" duration="1062000" />
-      <workItem from="1610429655621" duration="2227000" />
+      <workItem from="1610429655621" duration="7346000" />
     </task>
     <task id="LOCAL-00001" summary="clean">
       <created>1610422132117</created>
@@ -207,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610426564115</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="clean">
+      <created>1610432180167</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1610432180167</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,10 +200,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="clean" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="0" y="86" key="CommitChangelistDialog2" timestamp="1610432143164">
+    <state x="0" y="86" key="CommitChangelistDialog2" timestamp="1610432168358">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="0" y="86" key="CommitChangelistDialog2/0.0.1280.980@0.0.1280.980" timestamp="1610432143164" />
+    <state x="0" y="86" key="CommitChangelistDialog2/0.0.1280.980@0.0.1280.980" timestamp="1610432168358" />
     <state x="120" y="79" key="DiffContextDialog" timestamp="1610422096206">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
@@ -235,33 +216,37 @@
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="420" y="247" key="FileChooserDialogImpl/0.0.1280.980@0.0.1280.980" timestamp="1610423377973" />
-    <state width="1236" height="371" key="GridCell.Tab.0.bottom" timestamp="1610431414673">
+    <state width="1236" height="462" key="GridCell.Tab.0.bottom" timestamp="1610436534551">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="371" key="GridCell.Tab.0.bottom/0.0.1280.980@0.0.1280.980" timestamp="1610431414673" />
-    <state width="1236" height="371" key="GridCell.Tab.0.center" timestamp="1610431414673">
+    <state width="1236" height="462" key="GridCell.Tab.0.bottom/0.0.1280.980@0.0.1280.980" timestamp="1610436534551" />
+    <state width="1236" height="462" key="GridCell.Tab.0.center" timestamp="1610436534550">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="371" key="GridCell.Tab.0.center/0.0.1280.980@0.0.1280.980" timestamp="1610431414673" />
-    <state width="1236" height="371" key="GridCell.Tab.0.left" timestamp="1610431414673">
+    <state width="1236" height="462" key="GridCell.Tab.0.center/0.0.1280.980@0.0.1280.980" timestamp="1610436534550" />
+    <state width="1236" height="462" key="GridCell.Tab.0.left" timestamp="1610436534550">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="371" key="GridCell.Tab.0.left/0.0.1280.980@0.0.1280.980" timestamp="1610431414673" />
-    <state width="1236" height="371" key="GridCell.Tab.0.right" timestamp="1610431414673">
+    <state width="1236" height="462" key="GridCell.Tab.0.left/0.0.1280.980@0.0.1280.980" timestamp="1610436534550" />
+    <state width="1236" height="462" key="GridCell.Tab.0.right" timestamp="1610436534550">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="371" key="GridCell.Tab.0.right/0.0.1280.980@0.0.1280.980" timestamp="1610431414673" />
+    <state width="1236" height="462" key="GridCell.Tab.0.right/0.0.1280.980@0.0.1280.980" timestamp="1610436534550" />
     <state x="143" y="121" key="SettingsEditor" timestamp="1610423420867">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="143" y="121" key="SettingsEditor/0.0.1280.980@0.0.1280.980" timestamp="1610423420867" />
-    <state x="144" y="144" key="Vcs.Push.Dialog.v2" timestamp="1610429916946">
+    <state x="144" y="144" key="Vcs.Push.Dialog.v2" timestamp="1610432200463">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="144" y="144" key="Vcs.Push.Dialog.v2/0.0.1280.980@0.0.1280.980" timestamp="1610429916946" />
+    <state x="144" y="144" key="Vcs.Push.Dialog.v2/0.0.1280.980@0.0.1280.980" timestamp="1610432200463" />
+    <state x="92" y="92" width="1096" height="796" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1610435652153">
+      <screen x="0" y="0" width="1280" height="980" />
+    </state>
+    <state x="92" y="92" width="1096" height="796" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1280.980@0.0.1280.980" timestamp="1610435652153" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/pystudy$app.coverage" NAME="app Coverage Results" MODIFIED="1610431414657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康大华实时监控" />
+    <SUITE FILE_PATH="coverage/pystudy$app.coverage" NAME="app Coverage Results" MODIFIED="1610436534537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康大华实时监控" />
     <SUITE FILE_PATH="coverage/pystudy$my_hk_dvr.coverage" NAME="my_hk_dvr Coverage Results" MODIFIED="1610430048404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康大华实时监控" />
   </component>
 </project>
