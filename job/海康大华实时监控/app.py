@@ -719,16 +719,13 @@ class my_app():
             self.online_hk_servers.update(item)
             self.offline_hk_servers.pop(key)
 
-        print(len(self.online_hk_servers),self.online_hk_servers)
-        print(len(self.offline_hk_servers),self.offline_hk_servers)
-
         new_offline=[]
         for key in self.online_hk_servers:
             server=self.online_hk_servers[key]
             if server['instance'].check_device_online()==False:
                 new_offline.append([key,{key:server}])
-        for key,server in new_offline:
-            self.offline_hk_servers.update(server)
+        for key,item in new_offline:
+            self.offline_hk_servers.update(item)
             self.online_hk_servers.pop(key)
 
 
@@ -748,20 +745,17 @@ class my_app():
             self.online_dahua_servers.update(item)
             self.offline_dahua_servers.pop(key)
 
-        print(len(self.online_dahua_servers),self.offline_dahua_servers)
-        print(len(self.offline_dahua_servers),self.offline_dahua_servers)
-
         new_offline=[]
         for key in self.online_dahua_servers:
             server=self.online_dahua_servers[key]
             if server['instance'].check_device_online()==False:
                 new_offline.append([key,{key:server}])
-        for key,server in new_offline:
-            self.offline_hk_servers.update(server)
-            self.online_hk_servers.pop(key)
+        for key,item in new_offline:
+            self.offline_dahua_servers.update(item)
+            self.online_dahua_servers.pop(key)
 
-        print(len(self.online_dahua_servers),self.online_hk_servers)
-        print(len(self.offline_dahua_servers),self.offline_hk_servers)
+        print(len(self.online_dahua_servers),self.online_dahua_servers)
+        print(len(self.offline_dahua_servers),self.offline_dahua_servers)
 
     def check_servers(self,event):
         self.refresh_button['state']=tk.DISABLED
