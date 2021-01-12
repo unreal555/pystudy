@@ -334,6 +334,7 @@ class my_app():
         print('播放', item)
 
         statues,server_desc,channel=item
+        channel=int(channel)
 
         if ':offline' in statues:
             showwarning(message='服务器不在线，请刷新服务器')
@@ -346,11 +347,11 @@ class my_app():
 
         if 'haikang:' in statues:
             print('调用海康播放')
-            print(self.online_hk_servers)
             server=self.online_hk_servers[server_desc]['instance']
 
             for  window_name  in self.window_status.keys():
                 value=self.window_status[window_name]
+
                 if isinstance(value,int):
                     continue
                 if server in value  and 'haikang:' in value[0]  and channel in value:
