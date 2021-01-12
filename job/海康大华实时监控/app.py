@@ -5,7 +5,6 @@
 # Tool ：PyCharm
 import time
 import os
-import re
 import pickle
 from threading import Thread
 
@@ -19,6 +18,8 @@ from tkinter.messagebox import *
 from my_hk_dvr import HK_DVR
 from my_dh_dvr import DAHUA_DVR
 #from my_tk_login import tk_login
+
+
 
 HK_INI_PATH = './hk.ini'
 DAHUA_INI_PATH = './dahua.ini'
@@ -281,6 +282,7 @@ class my_app():
     def select_cam(self, event):
         print('鼠标单击选中cam')
         print(self.window_status)
+        item=''
         for select in self.cam_tree.selection():
             item = self.cam_tree.item(select, "values")
             print(item)  # 输出所选行的第一列的值
@@ -413,9 +415,7 @@ class my_app():
         # 清除所有视频窗口的颜色
         self.clear_video_window_select_color()
         # 设置选中视频窗格的颜色,刚初始化
-        if self.v_num.get() == 1:
-            pass
-        else:
+        if self.v_num.get() != 1:
             event.widget['highlightbackground'] = 'red'
         # 设置选中视频窗口的句柄
         self.now_hwnd = event.widget.winfo_id()
