@@ -1,0 +1,51 @@
+
+_python:S2208
+"GImport only needed names or import the module and then use its members.(¢†ô
+„python:S101"mRename class "NET_DVR_PREVIEWINFO" to match the regular expression ^_?([A-Z_][a-zA-Z0-9]*|[a-z_][a-z0-9_]*)$.(·³“¥
+Œpython:S1014"pRename class "NET_DVR_DEVICEINFO_V30" to match the regular expression ^_?([A-Z_][a-zA-Z0-9]*|[a-z_][a-z0-9_]*)$.(¿ƒàÿÿÿÿÿ
+‡python:S101V"pRename class "NET_DVR_DEVICEINFO_V40" to match the regular expression ^_?([A-Z_][a-zA-Z0-9]*|[a-z_][a-z0-9_]*)$.(ÕÓúã
+python:S101n"qRename class "NET_DVR_USER_LOGIN_INFO" to match the regular expression ^_?([A-Z_][a-zA-Z0-9]*|[a-z_][a-z0-9_]*)$.(½Ûæüÿÿÿÿ
+gpython:S116"ORename this field "lUserID" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÁÌİ×
+fpython:S116‰"NRename this field "sDVRIP" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÚÌÇ†
+jpython:S116"RRename this field "DeviceInfo" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÜıüÇ
+mpython:S116Œ"PRename this field "sDVRPort" to match the regular expression ^[_a-z][_a-z0-9]*$.(¦õö·ùÿÿÿÿ
+npython:S116‹"QRename this field "sPassword" to match the regular expression ^[_a-z][_a-z0-9]*$.(Üá„ùúÿÿÿÿ
+npython:S116Š"QRename this field "sUserName" to match the regular expression ^[_a-z][_a-z0-9]*$.(áï•Áùÿÿÿÿ
+|python:S101"`Rename class "HK_DVR" to match the regular expression ^_?([A-Z_][a-zA-Z0-9]*|[a-z_][a-z0-9_]*)$.(˜Ç¦•ıÿÿÿÿ
+jpython:S117"RRename this parameter "sDVRIP" to match the regular expression ^[_a-z][a-z0-9_]*$.(êÌáÚ
+lpython:S117"TRename this parameter "sDVRPort" to match the regular expression ^[_a-z][a-z0-9_]*$.(êÌáÚ
+mpython:S117"URename this parameter "sPassword" to match the regular expression ^[_a-z][a-z0-9_]*$.(êÌáÚ
+mpython:S117"URename this parameter "sUserName" to match the regular expression ^[_a-z][a-z0-9_]*$.(êÌáÚ
+jpython:S100’"RRename method "Get_Last_Error" to match the regular expression ^[a-z_][a-z0-9_]*$.(³–‹
+ipython:S100—"LRename method "Get_Dlls" to match the regular expression ^[a-z_][a-z0-9_]*$.(ÃÜÑÒüÿÿÿÿ
+opython:S117 "WRename this local variable "HK_dll" to match the regular expression ^[_a-z][a-z0-9_]*$.(åÜ©ô
+hpython:S100Ÿ"KRename method "CallCpp" to match the regular expression ^[a-z_][a-z0-9_]*$.(Ç»™ºøÿÿÿÿ
+Epython:S1481¢"'Remove the unused local variable "lib".(å÷™úÿÿÿÿ
+Upython:S5754©"<Specify an exception class to catch or reraise the exception(ˆÊÉ·
+Upython:S5754§"<Specify an exception class to catch or reraise the exception(ˆÊÉ·
+hpython:S1854³"ORemove this assignment to local variable 'error_info'; the value is never used.(…“€É
+mpython:S100¯"PRename method "NET_DVR_Init" to match the regular expression ^[a-z_][a-z0-9_]*$.(öìÙ øÿÿÿÿ
+upython:S117È"XRename this local variable "lUserID" to match the regular expression ^[_a-z][a-z0-9_]*$.(µ¡¶øÿÿÿÿ
+opython:S117Ä"WRename this local variable "sDVRIP" to match the regular expression ^[_a-z][a-z0-9_]*$.(Çôßá
+vpython:S117Å"YRename this local variable "sDVRPort" to match the regular expression ^[_a-z][a-z0-9_]*$.(ñ‹óüÿÿÿÿ
+rpython:S117Ç"ZRename this local variable "sPassword" to match the regular expression ^[_a-z][a-z0-9_]*$.(şÂõš
+wpython:S117Æ"ZRename this local variable "sUserName" to match the regular expression ^[_a-z][a-z0-9_]*$.(Âì¥æûÿÿÿÿ
+npython:S100Ã"QRename method "NET_DVR_Login" to match the regular expression ^[a-z_][a-z0-9_]*$.(Ş«±üÿÿÿÿ
+upython:S117İ"XRename this local variable "lUserID" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÉÜÁÿÿÿÿÿ
+vpython:S117Ö"^Rename this local variable "lpPreviewInfo" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ë×”à
+vpython:S117Ş"^Rename this local variable "m_lRealHandle" to match the regular expression ^[_a-z][a-z0-9_]*$.(øÉ’Ó
+ipython:S100Ó"LRename method "Play_Cam" to match the regular expression ^[a-z_][a-z0-9_]*$.(èãÉÓûÿÿÿÿ
+opython:S117ç"WRename this parameter "lRealHandle" to match the regular expression ^[_a-z][a-z0-9_]*$.(ı€äÖ
+ipython:S100ç"QRename method "Stop_Play_Cam" to match the regular expression ^[a-z_][a-z0-9_]*$.(ı€äÖ
+npython:S100î"QRename method "GetServerInfo" to match the regular expression ^[a-z_][a-z0-9_]*$.(ÄÀÔøÿÿÿÿ
+opython:S117ö"WRename this parameter "lRealHandle" to match the regular expression ^[_a-z][a-z0-9_]*$.(Şë—ô
+cpython:S100ö"KRename method "Rec_Cam" to match the regular expression ^[a-z_][a-z0-9_]*$.(Şë—ô
+opython:S117"WRename this parameter "lRealHandle" to match the regular expression ^[_a-z][a-z0-9_]*$.(ë´Í‡
+gpython:S100"ORename method "Capture_Cam" to match the regular expression ^[a-z_][a-z0-9_]*$.(ë´Í‡
+opython:S117ˆ"WRename this parameter "lRealHandle" to match the regular expression ^[_a-z][a-z0-9_]*$.(âËöã
+hpython:S100ˆ"PRename method "Stop_Rec_Cam" to match the regular expression ^[a-z_][a-z0-9_]*$.(âËöã
+apython:S100"IRename method "Close" to match the regular expression ^[a-z_][a-z0-9_]*$.(½ê¥œ
+wpython:S117•"ZRename this local variable "dwCommand" to match the regular expression ^[_a-z][a-z0-9_]*$.(°‡¨ûÿÿÿÿ
+ppython:S117–"XRename this local variable "dwCount" to match the regular expression ^[_a-z][a-z0-9_]*$.(®êÇŠ
+Kpython:S1481•"-Remove the unused local variable "dwCommand".(°‡¨ûÿÿÿÿ
+Dpython:S1481–"+Remove the unused local variable "dwCount".(®êÇŠ

@@ -255,7 +255,6 @@ class HK_DVR():
 
 
     def Capture_Cam(self,lRealHandle,file):
-
         file=bytes(file,'utf-8')
         file=c_char_p(file)
         self.CallCpp('NET_DVR_CapturePicture', c_long(lRealHandle),file)

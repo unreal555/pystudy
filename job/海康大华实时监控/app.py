@@ -24,7 +24,7 @@ from my_dh_dvr import DAHUA_DVR
 
 HK_INI_PATH = './hk.ini'
 DAHUA_INI_PATH = './dahua.ini'
-REC_PATH = os.path.abspath('./rec')
+REC_PATH = './rec'
 DAT_PATH='./dat'
 default_color = '#bcbcbc'
 video_default_color='#acbcbc'
@@ -387,9 +387,11 @@ class my_app():
         print(self.window_status)
         if window in self.window_status.keys():
             if self.window_status[window] != 0:
-                server, lRealHandle = self.window_status[window]
-                server.Capture_Cam(lRealHandle, os.path.join(self.REC_PATH, self.get_time() + '.bmp'))
-                self.window_status[window] = 0
+                server_desc,server, channel,lRealHandle = self.window_status[window]
+                filename=os.path.join(REC_PATH, server_desc+'-'+self.get_time() + '.bmp')
+                print(filename)
+                server.Capture_Cam(lRealHandle,filename)
+
         # try:
         #     event.widget['bg'] = '#acbcbc'
         # except:
@@ -765,12 +767,12 @@ class my_app():
                     time.sleep(1)
                     continue
                 if self.closing_flag==False:
-                    self.load_windows_states()
                     t3 = Thread(target=self.show_cam_tree)
                     t3.setDaemon(True)
                     t3.start()
                     self.refresh_button['state'] = tk.NORMAL
                     self.refresh_button.bind("<ButtonPress-1>", self.check_servers)
+                    self.load_windows_states()
                     self.info.set('初始化完毕')
                     break
                 if self.closing_flag == True:
@@ -782,8 +784,6 @@ class my_app():
         t=Thread(target=do)
         t.setDaemon(True)
         t.start()
-
-
 
     def check_hk_servers(self):
         new_online=[]
@@ -870,7 +870,6 @@ class my_app():
         t=Thread(target=do)
         t.setDaemon(True)
         t.start()
-
 
     def __del__(self):
         print('程序退出,销毁')

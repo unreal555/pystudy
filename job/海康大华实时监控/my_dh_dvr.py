@@ -86,7 +86,7 @@ class DAHUA_DVR():
                 print('登陆失败,',device_info)
                 return None
         else:
-            result = self.sdk.Logout(lUserID)
+            result = self.sdk.Logout(self.lUserID)
             if result:
                 self.lUserID = None
 
