@@ -218,6 +218,7 @@ class my_app():
 
 		self.show_window()
 
+
 		self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
 
 		self.last_init(event='')
