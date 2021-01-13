@@ -28,7 +28,7 @@ REC_PATH = './rec'
 DAT_PATH = './dat'
 default_color = '#bcbcbc'
 VIDEO_DEFAULT_COLOR = '#acbcbc'
-REFRESH_TIME=60
+REFRESH_TIME=600
 
 
 class my_app():
@@ -48,9 +48,8 @@ class my_app():
 		self.root['bg'] = default_color
 		self.root.attributes("-alpha", 0.9)
 
-		# self.root.overrideredirect(True)
+		self.root.overrideredirect(False)
 		self.root.geometry("1080x720")
-		# self.root.state("zoomed")
 
 		self.window_des = [('单窗口', 1), ('四窗口', 4), ('九窗口', 9)]
 
@@ -165,13 +164,6 @@ class my_app():
 		self.refresh_button.pack(side='bottom', fill=tk.BOTH, expand=tk.NO)
 		self.refresh_button.bind("<ButtonPress-1>", self.check_servers)
 
-		for lang, num in self.window_des:
-			self.b = Radiobutton(self.video_control_area, text=lang, variable=self.v_num, value=num, indicatoron=False,
-			                     command=self.show_window)
-			self.b.pack(side=tk.RIGHT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
-
-		self.show_window()
-
 		self.stop_button = tk.Button(self.video_control_area, text='停止')
 		self.stop_button.pack(side=tk.LEFT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 		self.stop_button.bind("<ButtonPress-1>", self.stop_play_cam)
@@ -195,11 +187,18 @@ class my_app():
 
 		self.now_window_widget = self.video_play_1
 
-		self.last_init_things(event='')
-
 		self.label_info = tk.Label(self.video_control_area, textvariable=self.info,
-		                           width=80)  # anchor='w' ,justify='left',
+		                           width=60)  # anchor='w' ,justify='left',
 		self.label_info.pack(side=tk.LEFT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+
+		self.full_screen_button = tk.Button(self.video_control_area,  text='全屏')#width=3,
+		self.full_screen_button.pack(side=tk.RIGHT, fill=tk.BOTH, expand=tk.NO)
+		self.full_screen_button.bind("<ButtonPress-1>", self.on_click_full_screen_button)
+
+		for lang, num in self.window_des:
+			self.b = Radiobutton(self.video_control_area, text=lang, variable=self.v_num, value=num, indicatoron=False,
+			                     command=self.show_window)
+			self.b.pack(side=tk.RIGHT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
 		self.scale_bar = tk.Scale(self.video_control_area, from_=20, to=100, orient=tk.HORIZONTAL, showvalue=0,
 		                          borderwidth=0.01,
@@ -217,7 +216,27 @@ class my_app():
 		self.label_blank = tk.Label(self.video_control_area, text='   ', anchor='e', justify='right')
 		self.label_blank.pack(side=tk.RIGHT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
+		self.show_window()
+
 		self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
+
+		self.last_init(event='')
+
+		self.root.bind('<KeyPress-Escape>',self.on_click_esc)
+
+	def on_click_esc(self,event):
+
+		print(event)
+		if self.full_screen_button['text']=='退出全屏':
+			self.root.attributes("-fullscreen", False)
+			self.root.attributes("-topmost", False)
+			self.full_screen_button['text'] = '全屏'
+			return
+		if self.full_screen_button['text'] == '全屏':
+			self.on_closing()
+			return
+
+
 
 	def on_closing(self):
 		def do():
@@ -310,7 +329,6 @@ class my_app():
 		t.start()
 
 	def on_click_play_cam(self, event):
-
 		print('播放菜单选中cam')
 		print(self.window_status)
 		for select in self.cam_tree.selection():
@@ -320,7 +338,6 @@ class my_app():
 			print('主机无法播放,请选择通道')
 			return
 		print('播放', item)
-
 		statues, server_desc, channel = item
 		channel = int(channel)
 
@@ -397,12 +414,17 @@ class my_app():
 				print(filename)
 				server.Capture_Cam(lRealHandle, filename)
 
-		# try:
-		#     event.widget['bg'] = '#acbcbc'
-		# except:
-		#     pass
-		# self.video_area.pack_forget()
-		# self.video_area.pack(side=tk.LEFT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
+	def on_click_full_screen_button(self,event):
+		if self.full_screen_button['text']=='全屏':
+			self.root.attributes("-fullscreen", True)
+			self.root.attributes("-topmost",True)
+			self.full_screen_button['text'] = '退出全屏'
+			return
+		if self.full_screen_button['text']=='退出全屏':
+			self.root.attributes("-fullscreen", False)
+			self.root.attributes("-topmost", False)
+			self.full_screen_button['text'] = '全屏'
+			return
 
 	def clear_video_window_select_color(self):
 		self.video_play_1['highlightbackground'] = '#bcbcbc'
@@ -653,7 +675,6 @@ class my_app():
 				self.online_hk_servers[server_desc] = server
 
 	def init_dahua_dvr(self):
-		# try:
 
 		for item in self.read_dahua_servers:
 			print('登陆大华{}'.format(item))
@@ -681,8 +702,45 @@ class my_app():
 				server['instance'] = instance
 				self.online_dahua_servers[server_desc] = server
 
-	# except Exception as e:
-	#     print(e)
+	def init_dvr(self):
+
+		self.info.set('初始化视频服务器中......')
+		t1 = Thread(target=self.init_hk_dvr)
+		t2 = Thread(target=self.init_dahua_dvr)
+		t1.setDaemon(True)
+		t2.setDaemon(True)
+		t1.start()
+		t2.start()
+		while t1.is_alive() or t2.is_alive():
+			time.sleep(1)
+			continue
+		self.info.set('初始化视频服务器完毕')
+		return True
+
+	def last_init(self, event):
+
+		def do():
+			self.refresh_button['state'] = tk.DISABLED
+			self.refresh_button.unbind("<ButtonPress-1>")
+			self.init_dvr()
+			if self.closing_flag == False:
+				# t = Thread(target=self.show_cam_tree)
+				# t.setDaemon(True)
+				# t.start()
+				self.show_cam_tree()
+				self.refresh_button['state'] = tk.NORMAL
+				self.refresh_button.bind("<ButtonPress-1>", self.check_servers)
+				self.load_windows_states()
+				self.auto_check_servers()
+
+			if self.closing_flag == True:
+				print(self.refresh_button)
+				self.refresh_button['state'] = tk.NORMAL
+
+
+		t = Thread(target=do)
+		t.setDaemon(True)
+		t.start()
 
 	def show_cam_tree(self):
 
@@ -744,43 +802,6 @@ class my_app():
 		for item in self.cam_tree.get_children():
 			self.cam_tree.delete(item)
 
-	def last_init_things(self, event):
-
-		self.refresh_button['state'] = tk.DISABLED
-		self.refresh_button.unbind("<ButtonPress-1>")
-
-		def do():
-			self.info.set('连接视频服务器中......')
-			t1 = Thread(target=self.init_hk_dvr)
-			t2 = Thread(target=self.init_dahua_dvr)
-
-			t1.setDaemon(True)
-			t2.setDaemon(True)
-
-			t1.start()
-			t2.start()
-			while 1:
-				if t1.is_alive() or t2.is_alive():
-					time.sleep(1)
-					continue
-				if self.closing_flag == False:
-					t3 = Thread(target=self.show_cam_tree)
-					t3.setDaemon(True)
-					t3.start()
-					self.refresh_button['state'] = tk.NORMAL
-					self.refresh_button.bind("<ButtonPress-1>", self.check_servers)
-					self.load_windows_states()
-					self.auto_check_servers()
-					self.info.set('初始化完毕')
-					break
-				if self.closing_flag == True:
-					print(self.refresh_button)
-					self.refresh_button['state'] = tk.NORMAL
-					break
-
-		t = Thread(target=do)
-		t.setDaemon(True)
-		t.start()
 
 	def auto_check_servers(self):
 
