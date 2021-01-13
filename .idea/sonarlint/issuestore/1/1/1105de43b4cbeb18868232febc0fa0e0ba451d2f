@@ -1,23 +1,23 @@
 
-Bpython:S125"Remove this commented out code.(ÑÑşƒÿÿÿÿÿ8”êÇ¥ï.
-Apython:S108Ø")Either remove or fill this block of code.(ã‘Û¾
-opython:S1192‚"QDefine a constant instead of duplicating this literal "<ButtonPress-1>" 18 times.(Ô†8”êÇ¥ï.
-<python:S125‰"Remove this commented out code.(È°Ûşÿÿÿÿ
-xpython:S1192‹"SDefine a constant instead of duplicating this literal "<Double-Button-1>" 10 times.(ŠÚ¸øÿÿÿÿ8”êÇ¥ï.
-€python:S117ô"\Rename this local variable "lRealHandle" to match the regular expression ^[_a-z][a-z0-9_]*$.(†êÄÏÿÿÿÿÿ8”êÇ¥ï.
-~python:S1186ş"YAdd a nested comment explaining why this method is empty, or complete the implementation.(ÙÏ¡Ãÿÿÿÿÿ8”êÇ¥ï.
-Hpython:S108¡")Either remove or fill this block of code.(ã‘Û¾8”êÇ¥ï.
-Ppython:S5806±"+Rename this variable; it shadows a builtin.(•“‚ÿÿÿÿÿ8”êÇ¥ï.
-_python:S2208"GImport only needed names or import the module and then use its members.(ï€¢
-Opython:S1066…"/Merge this if statement with the enclosing one.(©‰ì¾8”êÇ¥ï.
-ypython:S1186û"YAdd a nested comment explaining why this method is empty, or complete the implementation.(¶ù¶8”êÇ¥ï.
-_python:S2208"GImport only needed names or import the module and then use its members.(†åÿ·
-opython:S1192¼"JDefine a constant instead of duplicating this literal 'state.dat' 4 times.(ùÎº¥úÿÿÿÿ8”êÇ¥ï.
-€python:S117†"\Rename this local variable "lRealHandle" to match the regular expression ^[_a-z][a-z0-9_]*$.(õì¹Àıÿÿÿÿ8”êÇ¥ï.
-ypython:S3776Õ"TRefactor this function to reduce its Cognitive Complexity from 18 to the 15 allowed.(¿ºäêøÿÿÿÿ8”êÇ¥ï.
-Jpython:S1481ğ"%Remove the unused local variable "y".(ò‡ø†ùÿÿÿÿ8”êÇ¥ï.
->python:S125È"Remove this commented out code.(¶ôß±8”êÇ¥ï.
-\python:S5754Ü"<Specify an exception class to catch or reraise the exception(ˆÊÉ·8”êÇ¥ï.
-Epython:S1481ï"%Remove the unused local variable "x".(öø8”êÇ¥ï.
-rpython:S3776°"TRefactor this function to reduce its Cognitive Complexity from 24 to the 15 allowed.(‰ì©·ıÿÿÿÿ
-ipython:S1192Ü"IDefine a constant instead of duplicating this literal 'haikang:' 3 times.(¨à† 8”êÇ¥ï.
+fpython:S2208"GImport only needed names or import the module and then use its members.(†åÿ·8Êíµ«ï.
+Bpython:S125"Remove this commented out code.(ÑÑşƒÿÿÿÿÿ8Êíµ«ï.
+fpython:S2208"GImport only needed names or import the module and then use its members.(ï€¢8ß£°­ï.
+Epython:S1481ò"%Remove the unused local variable "y".(öø8Êíµ«ï.
+jpython:S1192¿"JDefine a constant instead of duplicating this literal 'state.dat' 4 times.(÷›¥8Ë¼®ï.
+npython:S1192ß"IDefine a constant instead of duplicating this literal 'haikang:' 3 times.(µáÎüÿÿÿÿ8Ë¼®ï.
+xpython:S1192"SDefine a constant instead of duplicating this literal "<Double-Button-1>" 10 times.(åœ¨Šÿÿÿÿÿ8Ë¼®ï.
+vpython:S1192„"QDefine a constant instead of duplicating this literal "<ButtonPress-1>" 20 times.(µáÎüÿÿÿÿ8Ë¼®ï.
+Tpython:S1066ˆ"/Merge this if statement with the enclosing one.(¢ú÷èøÿÿÿÿ8Ë¼®ï.
+Cpython:S125Ê"Remove this commented out code.(µáÎüÿÿÿÿ8Ë¼®ï.
+Epython:S1481ñ"%Remove the unused local variable "x".(“„ú‚8Ë¼®ï.
+zpython:S117÷"\Rename this local variable "lRealHandle" to match the regular expression ^[_a-z][a-z0-9_]*$.(”ÛŠM8Ë¼®ï.
+~python:S1186ş"YAdd a nested comment explaining why this method is empty, or complete the implementation.(µáÎüÿÿÿÿ8Ë¼®ï.
+~python:S1186"YAdd a nested comment explaining why this method is empty, or complete the implementation.(µáÎüÿÿÿÿ8Ë¼®ï.
+{python:S117‰"\Rename this local variable "lRealHandle" to match the regular expression ^[_a-z][a-z0-9_]*$.(©‰ì¾8Ë¼®ï.
+Ppython:S5806´"+Rename this variable; it shadows a builtin.(³£œ‰øÿÿÿÿ8Ë¼®ï.
+ypython:S3776Ø"TRefactor this function to reduce its Cognitive Complexity from 18 to the 15 allowed.(µáÎüÿÿÿÿ8Ë¼®ï.
+apython:S5754ß"<Specify an exception class to catch or reraise the exception(’ï˜Òÿÿÿÿÿ8Ë¼®ï.
+Mpython:S108Ü")Either remove or fill this block of code.(˜ÆÇøÿÿÿÿ8Ë¼®ï.
+ypython:S3776´"TRefactor this function to reduce its Cognitive Complexity from 24 to the 15 allowed.(µáÎüÿÿÿÿ8Ë¼®ï.
+Dpython:S3626±"Remove this redundant continue.(š±¨çıÿÿÿÿ8Ë¼®ï.
+Cpython:S125·"Remove this commented out code.(µáÎüÿÿÿÿ8Ë¼®ï.
