@@ -161,7 +161,7 @@ class my_app():
 		self.cam_tree.bind("<ButtonPress-1>", self.select_cam)
 		self.cam_tree.bind("<Double-Button-1>", self.on_click_play_cam)
 
-		self.cam_tree_scb_y = ttk.Scrollbar(self.cam_tree, orient='vertical', command=self.cam_tree.yview)
+		self.cam_tree_scb_y = ttk.Scrollbar(self.cam_tree, orient='vertical',command=self.cam_tree.yview)
 		self.cam_tree_scb_y.pack(side='right', fill=tk.BOTH, expand=tk.NO)
 		self.cam_tree.configure(yscrollcommand=self.cam_tree_scb_y.set)
 
@@ -169,7 +169,7 @@ class my_app():
 		self.cam_tree_scb_x.pack(side='bottom', fill=tk.BOTH, expand=tk.NO)
 		self.cam_tree.configure(xscrollcommand=self.cam_tree_scb_x.set)
 
-		self.refresh_button = tk.Button(self.list_area, width=20, text='刷新服务器')
+		self.refresh_button = tk.Button(self.list_area, width=18, text='刷新服务器')
 		self.refresh_button.pack(side='bottom', fill=tk.BOTH, expand=tk.NO)
 		self.refresh_button.bind("<ButtonPress-1>", self.check_servers)
 
@@ -366,10 +366,11 @@ class my_app():
 	def on_click_play_cam(self, event):
 		print('播放菜单选中cam')
 		print(self.window_status)
+		item=''
 		for select in self.cam_tree.selection():
 			item = self.cam_tree.item(select, "values")
 			print(item)  # 输出所选行的第一列的值
-		if len(item) == 1:
+		if len(item) in (0,1):
 			print('主机无法播放,请选择通道')
 			return
 		print('播放', item)
