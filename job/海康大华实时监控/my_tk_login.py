@@ -23,7 +23,6 @@ class tk_login():
         window.title(title)
 
 
-
         if resizable == False:
             window.resizable(False, False)
         else:
@@ -36,14 +35,11 @@ class tk_login():
 
         scn_w, scn_h = window.maxsize()
 
-
         if curWidth >= scn_w:
             curWidth = scn_w
 
         if curHight >= scn_h:
             curHight = scn_h
-
-
 
 
         cen_x = (scn_w - curWidth) / 2

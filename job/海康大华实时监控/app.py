@@ -45,11 +45,16 @@ class my_app():
 
 		self.root.title('Player')
 
+		self.root['bd']=0
 		self.root['bg'] = default_color
 		self.root.attributes("-alpha", 0.9)
+		#self.root.resizable(0, 0)  # 设置窗口大小不可变
 
-		self.root.overrideredirect(False)
-		self.root.geometry("1080x720")
+
+		self.root.overrideredirect()
+		max_x,max_y=self.root.maxsize()
+
+		self.root.geometry("%sx%s+%s+%s"%(int(max_x*0.9),int(max_y*0.9),int(max_x*0.05),int(max_y*0.02)))
 
 		self.window_des = [('单窗口', 1), ('四窗口', 4), ('九窗口', 9)]
 
@@ -88,43 +93,47 @@ class my_app():
 
 		self.rec_status = []
 
-		self.list_area = tk.Frame(self.root, bd=3, relief="sunken")
+		self.list_area = tk.Frame(self.root, bd=0, relief="sunken")
 
-		self.video_area = tk.Frame(self.root, bd=1, relief="sunken")
+		self.hide_area = tk.Frame(self.root, bd=0, relief="sunken")
 
-		self.list_area.pack(side=tk.LEFT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+		self.video_area = tk.Frame(self.root, bd=0, relief="sunken")
 
-		self.video_area.pack(side=tk.LEFT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
+		self.video_area.pack(side=tk.RIGHT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
 
-		self.video_play_area = tk.Frame(self.video_area, bd=1, relief="sunken")
+		self.hide_area.pack(side=tk.RIGHT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
-		self.video_control_area = tk.Frame(self.video_area, bd=1, relief="sunken")
+		self.list_area.pack(side=tk.RIGHT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+
+		self.video_play_area = tk.Frame(self.video_area, bd=0, relief="sunken")
+
+		self.video_control_area = tk.Frame(self.video_area, bd=0, relief="sunken")
 
 		self.video_play_area.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
 
 		self.video_control_area.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
-		self.video_play_area_1 = tk.Frame(self.video_play_area, bd=1, relief="sunken")
-		self.video_play_area_2 = tk.Frame(self.video_play_area, bd=1, relief="sunken")
-		self.video_play_area_3 = tk.Frame(self.video_play_area, bd=1, relief="sunken")
+		self.video_play_area_1 = tk.Frame(self.video_play_area, bd=0, relief="sunken")
+		self.video_play_area_2 = tk.Frame(self.video_play_area, bd=0, relief="sunken")
+		self.video_play_area_3 = tk.Frame(self.video_play_area, bd=0, relief="sunken")
 
-		self.video_play_1 = tk.Frame(self.video_play_area_1, cursor='plus', bd=2, relief="sunken",
+		self.video_play_1 = tk.Frame(self.video_play_area_1, cursor='plus', bd=1, relief="sunken",
 		                             class_='window_1', highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
-		self.video_play_2 = tk.Frame(self.video_play_area_1, cursor='plus', bd=2, relief="sunken",
+		self.video_play_2 = tk.Frame(self.video_play_area_1, cursor='plus', bd=1, relief="sunken",
 		                             class_='window_2', highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
-		self.video_play_3 = tk.Frame(self.video_play_area_1, cursor='plus', bd=2, relief="sunken",
+		self.video_play_3 = tk.Frame(self.video_play_area_1, cursor='plus', bd=1, relief="sunken",
 		                             class_='window_3', highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
-		self.video_play_4 = tk.Frame(self.video_play_area_2, cursor='plus', bd=2, relief="sunken",
+		self.video_play_4 = tk.Frame(self.video_play_area_2, cursor='plus', bd=1, relief="sunken",
 		                             class_='window_4', highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
-		self.video_play_5 = tk.Frame(self.video_play_area_2, cursor='plus', bd=2, relief="sunken",
+		self.video_play_5 = tk.Frame(self.video_play_area_2, cursor='plus', bd=1, relief="sunken",
 		                             class_='window_5', highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
-		self.video_play_6 = tk.Frame(self.video_play_area_2, cursor='plus', bd=2, relief="sunken",
+		self.video_play_6 = tk.Frame(self.video_play_area_2, cursor='plus', bd=1, relief="sunken",
 		                             class_='window_6', highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
-		self.video_play_7 = tk.Frame(self.video_play_area_3, cursor='plus', bd=2, relief="sunken",
+		self.video_play_7 = tk.Frame(self.video_play_area_3, cursor='plus', bd=1, relief="sunken",
 		                             class_='window_7', highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
-		self.video_play_8 = tk.Frame(self.video_play_area_3, cursor='plus', bd=2, relief="sunken",
+		self.video_play_8 = tk.Frame(self.video_play_area_3, cursor='plus', bd=1, relief="sunken",
 		                             class_='window_8', highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
-		self.video_play_9 = tk.Frame(self.video_play_area_3, cursor='plus', bd=2, relief="sunken",
+		self.video_play_9 = tk.Frame(self.video_play_area_3, cursor='plus', bd=1, relief="sunken",
 		                             class_='window_9', highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
 
 		self.video_play_1.bind("<ButtonPress-1>", self.set_select_window_info)
@@ -156,7 +165,7 @@ class my_app():
 		self.cam_tree_scb_y.pack(side='right', fill=tk.BOTH, expand=tk.NO)
 		self.cam_tree.configure(yscrollcommand=self.cam_tree_scb_y.set)
 
-		self.cam_tree_scb_x = ttk.Scrollbar(self.cam_tree, orient=str.lower('HORIZONTAL'), command=self.cam_tree.xview)
+		self.cam_tree_scb_x = ttk.Scrollbar(self.cam_tree, orient=str.lower('HORIZONTAL'),command=self.cam_tree.yview)
 		self.cam_tree_scb_x.pack(side='bottom', fill=tk.BOTH, expand=tk.NO)
 		self.cam_tree.configure(xscrollcommand=self.cam_tree_scb_x.set)
 
@@ -181,14 +190,14 @@ class my_app():
 		self.pause_button = tk.Button(self.video_control_area, text='暂停')
 		self.pause_button.pack(side=tk.LEFT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
-		self.now_hwnd = self.video_play_1.winfo_id()
+		self.image = tk.PhotoImage(file="./dat/fenge_line.png")
+		self.hide_button= tk.Button(self.hide_area,width=5,text='showing',bg='gray',image=self.image)
+		self.hide_button.pack(side=tk.LEFT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+		self.hide_button.bind("<ButtonPress-1>",self.on_click_hide_cam_tree_area)
+		self.hide_button.bind("<Enter>",self.on_mouse_enter_hidden_button)
+		self.hide_button.bind("<Leave>", self.on_mouse_leave_hidden_button)
 
-		self.now_window_name = self.video_play_1.winfo_class()
-
-		self.now_window_widget = self.video_play_1
-
-		self.label_info = tk.Label(self.video_control_area, textvariable=self.info,
-		                           width=60)  # anchor='w' ,justify='left',
+		self.label_info = tk.Label(self.video_control_area, textvariable=self.info,width=60)  # anchor='w' ,justify='left',
 		self.label_info.pack(side=tk.LEFT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
 		self.full_screen_button = tk.Button(self.video_control_area,  text='全屏')#width=3,
@@ -200,7 +209,7 @@ class my_app():
 			                     command=self.show_window)
 			self.b.pack(side=tk.RIGHT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
-		self.scale_bar = tk.Scale(self.video_control_area, from_=20, to=100, orient=tk.HORIZONTAL, showvalue=0,
+		self.scale_bar = tk.Scale(self.video_control_area, from_=50, to=100, orient=tk.HORIZONTAL, showvalue=0,
 		                          borderwidth=0.01,
 		                          repeatinterval=1, repeatdelay=100, sliderlength=15,
 		                          resolution=0.1)  # tickinterval=5  刻度
@@ -218,12 +227,17 @@ class my_app():
 
 		self.show_window()
 
+		self.root.bind('<KeyPress-Escape>',self.on_click_esc)
+
+		self.now_hwnd = self.video_play_1.winfo_id()
+
+		self.now_window_name = self.video_play_1.winfo_class()
+
+		self.now_window_widget = self.video_play_1
 
 		self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
 
 		self.last_init(event='')
-
-		self.root.bind('<KeyPress-Escape>',self.on_click_esc)
 
 	def on_click_esc(self,event):
 
@@ -237,6 +251,26 @@ class my_app():
 			self.on_closing()
 			return
 
+	def on_click_hide_cam_tree_area(self,event):
+		if self.hide_button['text']=='showing':
+			self.list_area.pack_forget()
+			self.hide_button['text'] = 'hidding'
+			return
+
+		if self.hide_button['text']=='hidding':
+			self.list_area.pack(side=tk.LEFT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+			self.hide_button['text'] = 'showing'
+			return
+
+
+		self.list_area.pack_forget()
+		print(self.list_area.winfo_exists())
+
+	def on_mouse_enter_hidden_button(self,event):
+		self.hide_button['bg']='black'
+
+	def on_mouse_leave_hidden_button(self,event):
+		self.hide_button['bg'] = 'white'
 
 
 	def on_closing(self):
