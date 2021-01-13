@@ -161,11 +161,11 @@ class my_app():
 		self.cam_tree.bind("<ButtonPress-1>", self.select_cam)
 		self.cam_tree.bind("<Double-Button-1>", self.on_click_play_cam)
 
-		self.cam_tree_scb_y = ttk.Scrollbar(self.cam_tree, orient='vertical',command=self.cam_tree.yview)
+		self.cam_tree_scb_y = Scrollbar(self.cam_tree, orient='vertical',command=self.cam_tree.yview,width=15)
 		self.cam_tree_scb_y.pack(side='right', fill=tk.BOTH, expand=tk.NO)
 		self.cam_tree.configure(yscrollcommand=self.cam_tree_scb_y.set)
 
-		self.cam_tree_scb_x = ttk.Scrollbar(self.cam_tree, orient=str.lower('HORIZONTAL'),command=self.cam_tree.xview)
+		self.cam_tree_scb_x = Scrollbar(self.cam_tree, orient='horizontal',command=self.cam_tree.xview,width=15)
 		self.cam_tree_scb_x.pack(side='bottom', fill=tk.BOTH, expand=tk.NO)
 		self.cam_tree.configure(xscrollcommand=self.cam_tree_scb_x.set)
 
