@@ -165,7 +165,7 @@ class my_app():
 		self.cam_tree_scb_y.pack(side='right', fill=tk.BOTH, expand=tk.NO)
 		self.cam_tree.configure(yscrollcommand=self.cam_tree_scb_y.set)
 
-		self.cam_tree_scb_x = ttk.Scrollbar(self.cam_tree, orient=str.lower('HORIZONTAL'),command=self.cam_tree.yview)
+		self.cam_tree_scb_x = ttk.Scrollbar(self.cam_tree, orient=str.lower('HORIZONTAL'),command=self.cam_tree.xview)
 		self.cam_tree_scb_x.pack(side='bottom', fill=tk.BOTH, expand=tk.NO)
 		self.cam_tree.configure(xscrollcommand=self.cam_tree_scb_x.set)
 
