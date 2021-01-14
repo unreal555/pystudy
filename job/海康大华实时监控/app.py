@@ -26,7 +26,7 @@ HK_INI_PATH = './hk.ini'
 DAHUA_INI_PATH = './dahua.ini'
 REC_PATH = './rec'
 DAT_PATH = './dat'
-default_color = '#bcbcbc'
+DEFAULT_COLOR = '#bcbcbc'
 VIDEO_DEFAULT_COLOR = '#acbcbc'
 REFRESH_TIME=600
 
@@ -46,7 +46,7 @@ class my_app():
 		self.root.title('Player')
 
 		self.root['bd']=0
-		self.root['bg'] = default_color
+		self.root['bg'] = DEFAULT_COLOR
 		self.root.attributes("-alpha", 0.9)
 		#self.root.resizable(0, 0)  # 设置窗口大小不可变
 
