@@ -693,7 +693,7 @@ class my_app():
 			for key in item.keys():
 				result = re.findall('channel_(\d+)', str.lower(key.replace(' ', '')))
 				if len(result) == 1:
-					result = result[0]
+					result = int(result[0])
 					server['channel'][result] = item[key]
 			server_desc = 'haikang:' + server['ip'] + ':' + server['port'] + ':' + server['user_name']
 
@@ -726,7 +726,7 @@ class my_app():
 				result = re.findall('channel_(\d+)', str.lower(key.replace(' ', '')))
 
 				if len(result) == 1:
-					result = result[0]
+					result = int(result[0])
 					server['channel'][result] = item[key]
 			server_desc = 'dahua:' + server['ip'] + ':' + server['port'] + ':' + server['user_name']
 			instance = DAHUA_DVR(sDVRIP=server['ip'], sDVRPort=server['port'], sUserName=server['user_name'],
@@ -789,7 +789,7 @@ class my_app():
 				tree = self.cam_tree.insert(self.online_hk_tree, '1',
 				                            text=server['name'] + ' - ' + server['ip'] + ':' + server['port'],
 				                            values=server['name'], open=True)
-				for channel in server['channel'].keys():
+				for channel in sorted(server['channel'].keys(),reverse = False):
 					values = ['haikang:online', key, channel]
 					self.cam_tree.insert(tree, '1', text=str(str(channel) + ':' + server['channel'][channel]),
 					                     values=values)
@@ -801,7 +801,7 @@ class my_app():
 				tree = self.cam_tree.insert(self.online_dahua_tree, '1',
 				                            text=server['name'] + ' - ' + server['ip'] + ':' + server['port'],
 				                            values=server['name'], open=True)
-				for channel in server['channel'].keys():
+				for channel in sorted(server['channel'].keys(),reverse = False):
 					values = ['dahua:online', key, channel]
 					self.cam_tree.insert(tree, '1', text=str(str(channel) + ':' + server['channel'][channel]),
 					                     values=values)
@@ -817,7 +817,7 @@ class my_app():
 				tree = self.cam_tree.insert(self.offline_hk_tree, '1',
 				                            text=server['name'] + ' - ' + server['ip'] + ':' + server['port'],
 				                            values=server['name'], open=False)
-				for channel in server['channel'].keys():
+				for channel in sorted(server['channel'].keys(),reverse = False):
 					values = ['haikang:offline', key, channel]
 					self.cam_tree.insert(tree, '1', text=str(str(channel) + ':' + server['channel'][channel]),
 					                     values=values)
@@ -829,7 +829,7 @@ class my_app():
 				tree = self.cam_tree.insert(self.offline_dahua_tree, '1',
 				                            text=server['name'] + ' - ' + server['ip'] + ':' + server['port'],
 				                            values=server['name'], open=False)
-				for channel in server['channel'].keys():
+				for channel in sorted(server['channel'].keys(),reverse = False):
 					values = ['dahua:offline', key, channel]
 					self.cam_tree.insert(tree, '1', text=str(str(channel) + ':' + server['channel'][channel]),
 					                     values=values)
