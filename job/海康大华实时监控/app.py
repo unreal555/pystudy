@@ -136,31 +136,31 @@ class my_app():
 		self.video_play_9 = tk.Frame(self.video_play_area_3, cursor='plus', bd=1, relief="sunken",
 		                             class_='window_9', highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
 
-		self.video_play_1_state=tk.Label(self.video_play_1,cursor='plus', text='no signal',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
+		self.video_play_1_state=tk.Label(self.video_play_1,cursor='plus', text='',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
 		self.video_play_1_state.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
-		self.video_play_2_state=tk.Label(self.video_play_2,cursor='plus', text='no signal',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
+		self.video_play_2_state=tk.Label(self.video_play_2,cursor='plus', text='',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
 		self.video_play_2_state.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
-		self.video_play_3_state=tk.Label(self.video_play_3,cursor='plus', text='no signal',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
+		self.video_play_3_state=tk.Label(self.video_play_3,cursor='plus', text='',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
 		self.video_play_3_state.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
-		self.video_play_4_state=tk.Label(self.video_play_4,cursor='plus', text='no signal',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
+		self.video_play_4_state=tk.Label(self.video_play_4,cursor='plus', text='',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
 		self.video_play_4_state.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
-		self.video_play_5_state=tk.Label(self.video_play_5,cursor='plus', text='no signal',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
+		self.video_play_5_state=tk.Label(self.video_play_5,cursor='plus', text='',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
 		self.video_play_5_state.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
-		self.video_play_6_state=tk.Label(self.video_play_6,cursor='plus', text='no signal',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
+		self.video_play_6_state=tk.Label(self.video_play_6,cursor='plus', text='',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
 		self.video_play_6_state.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
-		self.video_play_7_state=tk.Label(self.video_play_7,cursor='plus', text='no signal',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
+		self.video_play_7_state=tk.Label(self.video_play_7,cursor='plus', text='',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
 		self.video_play_7_state.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
-		self.video_play_8_state=tk.Label(self.video_play_8,cursor='plus', text='no signal',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
+		self.video_play_8_state=tk.Label(self.video_play_8,cursor='plus', text='',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
 		self.video_play_8_state.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
-		self.video_play_9_state=tk.Label(self.video_play_9,cursor='plus', text='no signal',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
+		self.video_play_9_state=tk.Label(self.video_play_9,cursor='plus', text='',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
 		self.video_play_9_state.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
 		self.video_play_1.bind('<Enter>',self.on_mouse_move_in_area)
@@ -291,9 +291,6 @@ class my_app():
 
 		self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
 
-		self.video_play_1_state.pack_forget()
-
-
 		# self.last_init(event='')
 
 	def on_click_esc(self,event):
@@ -330,12 +327,12 @@ class my_app():
 		self.hide_button['bg'] = 'white'
 
 	def on_mouse_move_in_area(self,event):
+		if self.window_status[event.widget.winfo_class()]=='0':
+			pass
 		label=self.get_childen_widget(event)
-		print('in')
 		label.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
 	def on_mouse_move_out_area(self,event):
-		print('out')
 		label=self.get_childen_widget(event)
 		label.pack_forget()
 
