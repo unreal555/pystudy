@@ -136,6 +136,60 @@ class my_app():
 		self.video_play_9 = tk.Frame(self.video_play_area_3, cursor='plus', bd=1, relief="sunken",
 		                             class_='window_9', highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
 
+		self.video_play_1_state=tk.Label(self.video_play_1,cursor='plus', text='no signal',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
+		self.video_play_1_state.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+
+		self.video_play_2_state=tk.Label(self.video_play_2,cursor='plus', text='no signal',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
+		self.video_play_2_state.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+
+		self.video_play_3_state=tk.Label(self.video_play_3,cursor='plus', text='no signal',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
+		self.video_play_3_state.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+
+		self.video_play_4_state=tk.Label(self.video_play_4,cursor='plus', text='no signal',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
+		self.video_play_4_state.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+
+		self.video_play_5_state=tk.Label(self.video_play_5,cursor='plus', text='no signal',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
+		self.video_play_5_state.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+
+		self.video_play_6_state=tk.Label(self.video_play_6,cursor='plus', text='no signal',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
+		self.video_play_6_state.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+
+		self.video_play_7_state=tk.Label(self.video_play_7,cursor='plus', text='no signal',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
+		self.video_play_7_state.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+
+		self.video_play_8_state=tk.Label(self.video_play_8,cursor='plus', text='no signal',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
+		self.video_play_8_state.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+
+		self.video_play_9_state=tk.Label(self.video_play_9,cursor='plus', text='no signal',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
+		self.video_play_9_state.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+
+		self.video_play_1.bind('<Enter>',self.on_mouse_move_in_area)
+		self.video_play_1.bind('<Leave>', self.on_mouse_move_out_area)
+
+		self.video_play_2.bind('<Enter>',self.on_mouse_move_in_area)
+		self.video_play_2.bind('<Leave>', self.on_mouse_move_out_area)
+
+		self.video_play_3.bind('<Enter>',self.on_mouse_move_in_area)
+		self.video_play_3.bind('<Leave>', self.on_mouse_move_out_area)
+
+		self.video_play_4.bind('<Enter>',self.on_mouse_move_in_area)
+		self.video_play_4.bind('<Leave>', self.on_mouse_move_out_area)
+
+		self.video_play_5.bind('<Enter>',self.on_mouse_move_in_area)
+		self.video_play_5.bind('<Leave>', self.on_mouse_move_out_area)
+
+		self.video_play_6.bind('<Enter>',self.on_mouse_move_in_area)
+		self.video_play_6.bind('<Leave>', self.on_mouse_move_out_area)
+
+		self.video_play_7.bind('<Enter>',self.on_mouse_move_in_area)
+		self.video_play_7.bind('<Leave>', self.on_mouse_move_out_area)
+
+		self.video_play_8.bind('<Enter>',self.on_mouse_move_in_area)
+		self.video_play_8.bind('<Leave>', self.on_mouse_move_out_area)
+
+		self.video_play_9.bind('<Enter>',self.on_mouse_move_in_area)
+		self.video_play_9.bind('<Leave>', self.on_mouse_move_out_area)
+
 		self.video_play_1.bind("<ButtonPress-1>", self.set_select_window_info)
 		self.video_play_2.bind("<ButtonPress-1>", self.set_select_window_info)
 		self.video_play_3.bind("<ButtonPress-1>", self.set_select_window_info)
@@ -237,7 +291,10 @@ class my_app():
 
 		self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
 
-		self.last_init(event='')
+		self.video_play_1_state.pack_forget()
+
+
+		# self.last_init(event='')
 
 	def on_click_esc(self,event):
 
@@ -272,6 +329,15 @@ class my_app():
 	def on_mouse_leave_hidden_button(self,event):
 		self.hide_button['bg'] = 'white'
 
+	def on_mouse_move_in_area(self,event):
+		label=self.get_childen_widget(event)
+		print('in')
+		label.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+
+	def on_mouse_move_out_area(self,event):
+		print('out')
+		label=self.get_childen_widget(event)
+		label.pack_forget()
 
 	def on_closing(self):
 		def do():
@@ -561,6 +627,11 @@ class my_app():
 	def get_father_widget(self, event):
 
 		return event.widget.nametowidget(event.widget.winfo_parent())
+
+	def get_childen_widget(self, event):
+		child=event.widget.winfo_children()
+		if len(child)>0:
+			return event.widget.nametowidget(child[0])
 
 	def show_nine_play(self):
 
