@@ -301,6 +301,14 @@ class my_app():
 		self.label_scale_name = tk.Label(self.video_control_area, text='透明度', anchor='e', justify='right')
 		self.label_scale_name.pack(side=tk.RIGHT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
+		self.show_win_info_checkbutton_flag= StringVar()
+		self.show_win_info_checkbutton_flag.set('show')
+		self.show_win_info_checkbutton=tk.Checkbutton(self.video_control_area, variable=self.show_win_info_checkbutton_flag,onvalue='show',offvalue='hide',text='显示窗格信息',
+													  command=self.on_click_show_win_info_checkbutton)
+		self.show_win_info_checkbutton.pack(side=tk.RIGHT, anchor=tk.S)
+		self.refresh_video_states()
+
+
 		self.label_blank = tk.Label(self.video_control_area, text='   ', anchor='e', justify='right')
 		self.label_blank.pack(side=tk.RIGHT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
@@ -317,6 +325,41 @@ class my_app():
 		self.last_init(event='')
 		# self.v_num.set(9)
 		# self.show_window()
+
+
+	def refresh_video_states(self):
+		self.on_click_show_win_info_checkbutton()
+
+	def on_click_show_win_info_checkbutton(self):
+		labels=[self.video_play_1_state, self.video_play_2_state, self.video_play_3_state, self.video_play_4_state,
+		 self.video_play_5_state, self.video_play_6_state, self.video_play_7_state, self.video_play_8_state, self.video_play_9_state]
+
+		win_descs=['window_1','window_2','window_3','window_4','window_5','window_6','window_7','window_8','window_9']
+
+		if self.show_win_info_checkbutton_flag.get()=='hide':
+			for label in labels:
+				label['text']=''
+				label.place_forget()
+			return
+
+		for win_desc,label in zip(win_descs,labels):
+			print(win_desc)
+			info=self.window_status[win_desc]
+			if info==0:
+				show_info='窗口：%s，No Singal'%win_desc
+			else:
+				server_desc,ip,port,user=info[0].split(':')
+				channel=info[2]
+				if server_desc=='dahua':
+					server_desc='大华'
+				if server_desc=='haikang':
+					server_desc='海康'
+				show_info='窗口：%s，正在播放%s@%s:%s channel %s'%(win_desc,server_desc,ip,port,channel)
+			label['text']=show_info
+			label.place(rely=0.9, relx=0.5,anchor=CENTER)
+			label['bg']=DEFAULT_COLOR
+
+
 
 	def on_click_esc(self,event):
 
@@ -351,6 +394,8 @@ class my_app():
 		self.hide_button['bg'] = 'white'
 
 	def on_mouse_move_in_area(self,event):
+		if self.show_win_info_checkbutton_flag.get()=='show':
+			return
 		win_desc=event.widget.winfo_class()
 		info=self.window_status[event.widget.winfo_class()]
 		if info==0:
@@ -368,10 +413,6 @@ class my_app():
 			size_x=8*len(show_info)
 			size_y=20
 
-		label=self.get_childen_widget(event)[0]
-		label['text']=show_info
-		label.place(rely=0.9, relx=0.5,anchor=CENTER)
-		label['bg']=DEFAULT_COLOR
 		self.float_label['text']=show_info
 		self.float_label.pack(side=tk.RIGHT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
 		self.float_window.geometry('%sx%s+%s+%s'%(size_x,size_y,event.x_root+5,event.y_root+5))
@@ -381,9 +422,7 @@ class my_app():
 
 	def on_mouse_move_out_area(self,event):
 
-		label=self.get_childen_widget(event)[0]
-		label['text']=''
-		label.place_forget()
+
 
 		self.float_label['text']=0
 		self.float_label.pack_forget()
@@ -485,6 +524,7 @@ class my_app():
 				self.window_status[self.now_window_name] = 0
 				self.now_window_widget['bg'] = VIDEO_DEFAULT_COLOR
 				self.info.set('当前窗口为 {} ,空闲中'.format(self.now_window_name))
+			self.refresh_video_states()
 
 		t = Thread(target=do)
 		t.setDaemon(True)
@@ -542,6 +582,7 @@ class my_app():
 				# 	return
 
 			self.play_dh_cam(server_desc, server, channel, self.now_window_name, self.now_hwnd)
+		self.refresh_video_states()
 
 	def play_dh_cam(self, server_desc, server, channel, window_name, hwnd):
 		channel = int(channel)
@@ -726,6 +767,7 @@ class my_app():
 					continue
 				else:
 					self.play_hk_cam(server_desc, server, channel, window_name, hwnd)
+				self.refresh_video_states()
 
 
 
