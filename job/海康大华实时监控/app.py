@@ -54,7 +54,7 @@ class my_app():
 		self.float_window = tk.Toplevel(self.root)
 		self.float_window.geometry('1x1')
 		self.float_label=tk.Label(self.float_window,text='')
-		self.float_window.attributes("-alpha", 0.3)  # 透明度(0.0~1.0)
+		self.float_window.attributes("-alpha", 0.7)  # 透明度(0.0~1.0)
 		self.float_window.overrideredirect(True)  # 去除窗口边框
 		self.float_window.attributes("-toolwindow", True)  # 置为工具窗口(没有最大最小按钮)
 		self.float_window.attributes("-topmost", True)
@@ -302,16 +302,14 @@ class my_app():
 	def on_mouse_leave_hidden_button(self,event):
 		self.hide_button['bg'] = 'white'
 
-
-
 	def on_mouse_move_in_area(self,event):
 		win_desc=event.widget.winfo_class()
 		info=self.window_status[event.widget.winfo_class()]
 		print(info)
 		if info==0:
 			show_info='窗口：%s，No Singal'%win_desc
-			size_x=10*len(show_info)
-			size_y=25
+			size_x=8*len(show_info)
+			size_y=20
 		else:
 			server_desc,ip,port,user=info[0].split(':')
 			channel=info[2]
@@ -320,11 +318,12 @@ class my_app():
 			if server_desc=='haikang':
 				server_desc='海康'
 			show_info='窗口：%s，正在播放%s@%s:%s channel %s'%(win_desc,server_desc,ip,port,channel)
-			size_x=10*len(show_info)
-			size_y=25
+			size_x=8*len(show_info)
+			size_y=20
 		self.float_label['text']=show_info
 		self.float_label.pack(side=tk.RIGHT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
 		self.float_window.geometry('%sx%s+%s+%s'%(size_x,size_y,event.x_root+5,event.y_root+5))
+		#self.float_label.after(10000,self.on_mouse_stop_move_three_second)
 
 
 	def on_mouse_move_out_area(self,event):
@@ -332,6 +331,16 @@ class my_app():
 		self.float_label['text']=0
 		self.float_label.pack_forget()
 		self.float_window.geometry('1x1')
+
+
+	def on_mouse_stop_move_three_second(self):
+		try:
+			self.float_label['text']=0
+			self.float_label.pack_forget()
+			self.float_window.geometry('1x1')
+			self.float_label.after(10000, self.on_mouse_stop_move_three_second)
+		except Exception as e:
+			print(e)
 
 
 	def on_closing(self):
@@ -549,13 +558,23 @@ class my_app():
 		print('当前窗口的句柄,name,widget:', self.now_hwnd, self.now_window_name, self.now_window_widget)
 		print('当前窗口的状态为：', self.window_status[self.now_window_name])
 
-		state = self.window_status[self.now_window_name]
-
-		if state == 0:
-			self.info.set('当前窗口为 {} ,空闲中'.format(self.now_window_name))
+		win_desc=event.widget.winfo_class()
+		info=self.window_status[event.widget.winfo_class()]
+		print(info)
+		if info==0:
+			show_info='窗口：%s，No Singal'%win_desc
 		else:
-			type, dvr, channel, play_handle = state
-			self.info.set('窗口:,{},dvr类型:{},主机通道:{},主机播放句柄:{}'.format(self.now_window_name, type, channel, play_handle))
+			server_desc,ip,port,user=info[0].split(':')
+			channel=info[2]
+			if server_desc=='dahua':
+				server_desc='大华'
+			if server_desc=='haikang':
+				server_desc='海康'
+			show_info='窗口：%s，正在播放%s@%s:%s channel %s'%(win_desc,server_desc,ip,port,channel)
+		self.info.set(show_info)
+
+
+
 
 	def save_windows_states(self):
 		states = {}
