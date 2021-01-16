@@ -7,6 +7,27 @@ import time
 import os
 import pickle
 from threading import Thread
+from concurrent.futures import ProcessPoolExecutor
+'''
+from concurrent.futures import ProcessPoolExecutor
+import time
+
+
+def return_future_result(message):
+   time.sleep(2)
+   return message
+
+
+if __name__ == '__main__':
+   pool = ProcessPoolExecutor(max_workers=2)  # 创建一个最大可容纳2个task的进程池
+   future1 = pool.submit(return_future_result, ("hello"))  # 往进程池里面加入一个task
+   future2 = pool.submit(return_future_result, ("world"))  # 往进程池里面加入一个task
+   print(future1.done())  # 判断task1是否结束
+   time.sleep(3)
+   print(future2.done())  # 判断task2是否结束
+   print(future1.result())  # 查看task1返回的结果
+   print(future2.result())  # 查看task2返回的结果
+   '''
 
 import configparser
 
@@ -707,6 +728,7 @@ class my_app():
 					self.play_hk_cam(server_desc, server, channel, window_name, hwnd)
 
 
+
 	def get_father_widget(self, event):
 
 		return event.widget.nametowidget(event.widget.winfo_parent())
@@ -998,7 +1020,7 @@ class my_app():
 			while self.closing_flag == False:
 				for i in range(REFRESH_TIME//10,0,-1):
 					self.info.set('计划在%s秒后自动刷新服务器...'%(i*10))
-					time.sleep(10)
+					time.sleep(60)
 					if self.closing_flag==True:
 						exit()
 				print('自动刷新服务器')
@@ -1061,6 +1083,8 @@ class my_app():
 
 		print(len(self.online_hk_servers), self.online_hk_servers)
 		print(len(self.offline_hk_servers), self.offline_hk_servers)
+		return new_online,new_offline
+
 
 	def check_dh_servers(self):
 		new_online = []
@@ -1086,6 +1110,7 @@ class my_app():
 
 		print(len(self.online_dahua_servers), self.online_dahua_servers)
 		print(len(self.offline_dahua_servers), self.offline_dahua_servers)
+		return new_online,new_offline
 
 	def check_servers(self, event):
 		self.refresh_button['state'] = tk.DISABLED

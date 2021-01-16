@@ -30,8 +30,10 @@ def trans(q):
         print('输入{}翻译成{}'.format(q,s))
         return s
 
-print(trans('아비노 시스루 원피스'))
-print(trans('hello worl d'))
+# print(trans('아비노 시스루 원피스'))
+# print(trans('hello world'))
+# print(trans('mr. dursley was the director of a firm called grunnings'))
+trans('망고나무는 내 친구 가을이 되자, 망고나무는 몸이 무거워졌습니다. 가지마다 노')
 
 # 通用翻译API接入文档
 #
