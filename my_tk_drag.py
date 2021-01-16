@@ -55,8 +55,7 @@ class drag_window():
 		self.root.bind('<B1-Motion>',self.on_mouse_drag_window)
 		self.root.bind('<ButtonPress-1>', self.on_mouse_left_button_press)
 		self.root.bind('<Button-3>',self.on_mouse_right_button_press)
-		self.root.bind(('<Double-Button-3>',self.on_mouse_right_button_press))
-
+		self.root.bind('<Triple-Button-2>', self.on_click_exit)
 		self.root.bind('<Enter>',self.on_mouse_enter_area_and_show_help)
 		self.root.bind('<Leave>', self.on_mouse_leave_area_and_hide_help)
 
@@ -81,6 +80,7 @@ class drag_window():
 		self.y=event.y
 
 	def on_mouse_drag_window(self,event):
+		self.on_mouse_leave_area_and_hide_help(event)
 		x=event.x_root-self.x
 		y=event.y_root-self.y
 		print(x,y)
