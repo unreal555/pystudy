@@ -322,6 +322,7 @@ class my_app():
 		self.float_label['text']=show_info
 		self.float_label.pack(side=tk.RIGHT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
 		self.float_window.geometry('%sx%s+%s+%s'%(size_x,size_y,event.x_root+5,event.y_root+5))
+		self.float_window.attributes("-topmost", True)
 		#self.float_label.after(10000,self.on_mouse_stop_move_three_second)
 
 
