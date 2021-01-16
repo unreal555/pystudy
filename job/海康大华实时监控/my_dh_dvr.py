@@ -55,6 +55,12 @@ class DAHUA_DVR():
     def ReConnectCallBack(self):
         pass
 
+    def CaptureCallBack(lLoginID, pBuf, RevLen, EncodeType, CmdSerial, dwUser):
+        if lLoginID == 0:
+            return
+        print('Enter CaptureCallBack')
+
+
     # 拉流回调函数功能
     def RealDataCallBack(self, lRealHandle, dwDataType, pBuffer, dwBufSize, param, dwUser):
         if lRealHandle == self.playID:
@@ -110,14 +116,14 @@ class DAHUA_DVR():
         return error_code
 
     def Stop_Play_Cam(self,lRealHandle):
-        if self.lRealHandle:
-            result=self.sdk.StopRealPlayEx(self.playID)
+        if lRealHandle:
+            result=self.sdk.StopRealPlayEx(lRealHandle)
         if result==1:
             print('dahua cam 停止成功')
-            return 1
+            return True
         else:
             print('dahua cam 停止失败')
-            return 0
+            return False
 
     def GetServerInfo(self):
         info=str('dahua:'+self.sDVRIP)+':'+str(self.sUserName)+':'+str(self.sDVRPort)
@@ -131,9 +137,16 @@ class DAHUA_DVR():
         file=c_char_p(file)
 
 
-    def Capture_Cam(self,lRealHandle,file):
-
-        pass
+    def Capture_Cam(self, lUserID,channel):
+        dwUser = 0
+        self.sdk.SetSnapRevCallBack(self.CaptureCallBack, dwUser)
+        channel = int(channel)
+        snap = SNAP_PARAMS()
+        snap.Channel = channel
+        snap.Quality = 1
+        snap.mode = 0
+        # 抓图
+        self.sdk.SnapPictureEx(lUserID, snap)
 
     def Stop_Rec_Cam(self,lRealHandle,):
         pass

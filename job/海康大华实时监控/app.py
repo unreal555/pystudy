@@ -305,7 +305,6 @@ class my_app():
 	def on_mouse_move_in_area(self,event):
 		win_desc=event.widget.winfo_class()
 		info=self.window_status[event.widget.winfo_class()]
-		print(info)
 		if info==0:
 			show_info='窗口：%s，No Singal'%win_desc
 			size_x=8*len(show_info)
@@ -511,14 +510,24 @@ class my_app():
 		pass
 
 	def capture_cam(self, event):
-		window = self.now_window_name
-		print(self.window_status)
-		if window in self.window_status.keys():
-			if self.window_status[window] != 0:
-				server_desc, server, channel, lRealHandle = self.window_status[window]
-				filename = os.path.join(REC_PATH, server_desc + '-' + self.get_time() + '.bmp')
-				print(filename)
-				server.Capture_Cam(lRealHandle, filename)
+		# dahua:47.92.89.1:8101:admin', <my_dh_dvr.DAHUA_DVR object at 0x000000000BCBA340>, 0, 410118320)
+
+		info = self.window_status[self.now_window_name]
+
+		if len(info) == 0:
+			showwarning(message='当前窗口没有视频播放')
+			return
+
+		server_desc, server, channel, lUrseID = info
+
+		if 'haikang:' in server_desc:
+			print('调用海康截图')
+			#self.play_hk_cam(server_desc, server, channel, self.now_window_name, self.now_hwnd)
+
+		if 'dahua:' in server_desc:
+			print('调用大华截图')
+
+			#self._dh_cam(server_desc, server, channel, self.now_window_name, self.now_hwnd)
 
 	def on_click_full_screen_button(self,event):
 		if self.full_screen_button['text']=='全屏':
