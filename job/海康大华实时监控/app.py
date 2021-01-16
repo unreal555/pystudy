@@ -139,6 +139,33 @@ class my_app():
 		self.video_play_9 = tk.Frame(self.video_play_area_3, cursor='plus', bd=1, relief="sunken",
 		                             class_='window_9', highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
 
+		self.video_play_1_state=tk.Label(self.video_play_1,cursor='plus', bd=1,relief="sunken",
+		                              highlightthickness=0, bg=VIDEO_DEFAULT_COLOR)
+
+		self.video_play_2_state=tk.Label(self.video_play_2,cursor='plus', bd=1,relief="sunken",
+		                              highlightthickness=0, bg=VIDEO_DEFAULT_COLOR)
+
+		self.video_play_3_state=tk.Label(self.video_play_3,cursor='plus', bd=1,relief="sunken",
+		                              highlightthickness=0, bg=VIDEO_DEFAULT_COLOR)
+
+		self.video_play_4_state=tk.Label(self.video_play_4,cursor='plus', bd=1,relief="sunken",
+		                              highlightthickness=0, bg=VIDEO_DEFAULT_COLOR)
+
+		self.video_play_5_state=tk.Label(self.video_play_5,cursor='plus', bd=1,relief="sunken",
+		                              highlightthickness=0, bg=VIDEO_DEFAULT_COLOR)
+
+		self.video_play_6_state=tk.Label(self.video_play_6,cursor='plus', bd=1,relief="sunken",
+		                              highlightthickness=0, bg=VIDEO_DEFAULT_COLOR)
+
+		self.video_play_7_state=tk.Label(self.video_play_7,cursor='plus', bd=1,relief="sunken",
+		                              highlightthickness=0, bg=VIDEO_DEFAULT_COLOR)
+
+		self.video_play_8_state=tk.Label(self.video_play_8,cursor='plus', bd=1,relief="sunken",
+		                              highlightthickness=0, bg=VIDEO_DEFAULT_COLOR)
+
+		self.video_play_9_state=tk.Label(self.video_play_9,cursor='plus', bd=1,relief="sunken",
+		                              highlightthickness=0, bg=VIDEO_DEFAULT_COLOR)
+
 
 		self.video_play_1.bind('<Motion>',self.on_mouse_move_in_area)
 		self.video_play_1.bind('<Leave>', self.on_mouse_move_out_area)
@@ -267,7 +294,7 @@ class my_app():
 		self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
 
 		self.last_init(event='')
-		# self.v_num.set(4)
+		# self.v_num.set(9)
 		# self.show_window()
 
 	def on_click_esc(self,event):
@@ -319,6 +346,11 @@ class my_app():
 			show_info='窗口：%s，正在播放%s@%s:%s channel %s'%(win_desc,server_desc,ip,port,channel)
 			size_x=8*len(show_info)
 			size_y=20
+
+		label=self.get_childen_widget(event)[0]
+		label['text']=show_info
+		label.place(rely=0.9, relx=0.5,anchor=CENTER)
+		label['bg']=DEFAULT_COLOR
 		self.float_label['text']=show_info
 		self.float_label.pack(side=tk.RIGHT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
 		self.float_window.geometry('%sx%s+%s+%s'%(size_x,size_y,event.x_root+5,event.y_root+5))
@@ -327,6 +359,10 @@ class my_app():
 
 
 	def on_mouse_move_out_area(self,event):
+
+		label=self.get_childen_widget(event)[0]
+		label['text']=''
+		label.place_forget()
 
 		self.float_label['text']=0
 		self.float_label.pack_forget()
