@@ -6,28 +6,7 @@
 import time
 import os
 import pickle
-from threading import Thread
 from concurrent.futures import ThreadPoolExecutor
-'''
-from concurrent.futures import ProcessPoolExecutor
-import time
-
-
-def return_future_result(message):
-   time.sleep(2)
-   return message
-
-
-if __name__ == '__main__':
-   pool = ProcessPoolExecutor(max_workers=2)  # 创建一个最大可容纳2个task的进程池
-   future1 = pool.submit(return_future_result, ("hello"))  # 往进程池里面加入一个task
-   future2 = pool.submit(return_future_result, ("world"))  # 往进程池里面加入一个task
-   print(future1.done())  # 判断task1是否结束
-   time.sleep(3)
-   print(future2.done())  # 判断task2是否结束
-   print(future1.result())  # 查看task1返回的结果
-   print(future2.result())  # 查看task2返回的结果
-   '''
 
 import configparser
 
@@ -50,8 +29,7 @@ DAT_PATH = './dat'
 DEFAULT_COLOR = '#bcbcbc'
 VIDEO_DEFAULT_COLOR = '#acbcbc'
 FONT_COLOR='black'
-REFRESH_TIME=60
-
+REFRESH_TIME=5
 
 class my_app():
 	if not os.path.exists(DAT_PATH):
@@ -188,32 +166,32 @@ class my_app():
 		                              highlightthickness=0, bg=VIDEO_DEFAULT_COLOR)
 
 
-		self.video_play_1.bind('<Motion>',self.on_mouse_move_in_area)
-		self.video_play_1.bind('<Leave>', self.on_mouse_move_out_area)
+		self.video_play_1.bind('<Motion>',self.on_mouse_move_in_video_play_area)
+		self.video_play_1.bind('<Leave>', self.on_mouse_move_out_video_play_area)
 
-		self.video_play_2.bind('<Motion>',self.on_mouse_move_in_area)
-		self.video_play_2.bind('<Leave>', self.on_mouse_move_out_area)
+		self.video_play_2.bind('<Motion>',self.on_mouse_move_in_video_play_area)
+		self.video_play_2.bind('<Leave>', self.on_mouse_move_out_video_play_area)
 
-		self.video_play_3.bind('<Motion>',self.on_mouse_move_in_area)
-		self.video_play_3.bind('<Leave>', self.on_mouse_move_out_area)
+		self.video_play_3.bind('<Motion>',self.on_mouse_move_in_video_play_area)
+		self.video_play_3.bind('<Leave>', self.on_mouse_move_out_video_play_area)
 
-		self.video_play_4.bind('<Motion>',self.on_mouse_move_in_area)
-		self.video_play_4.bind('<Leave>', self.on_mouse_move_out_area)
+		self.video_play_4.bind('<Motion>',self.on_mouse_move_in_video_play_area)
+		self.video_play_4.bind('<Leave>', self.on_mouse_move_out_video_play_area)
 
-		self.video_play_5.bind('<Motion>',self.on_mouse_move_in_area)
-		self.video_play_5.bind('<Leave>', self.on_mouse_move_out_area)
+		self.video_play_5.bind('<Motion>',self.on_mouse_move_in_video_play_area)
+		self.video_play_5.bind('<Leave>', self.on_mouse_move_out_video_play_area)
 
-		self.video_play_6.bind('<Motion>',self.on_mouse_move_in_area)
-		self.video_play_6.bind('<Leave>', self.on_mouse_move_out_area)
+		self.video_play_6.bind('<Motion>',self.on_mouse_move_in_video_play_area)
+		self.video_play_6.bind('<Leave>', self.on_mouse_move_out_video_play_area)
 
-		self.video_play_7.bind('<Motion>',self.on_mouse_move_in_area)
-		self.video_play_7.bind('<Leave>', self.on_mouse_move_out_area)
+		self.video_play_7.bind('<Motion>',self.on_mouse_move_in_video_play_area)
+		self.video_play_7.bind('<Leave>', self.on_mouse_move_out_video_play_area)
 
-		self.video_play_8.bind('<Motion>',self.on_mouse_move_in_area)
-		self.video_play_8.bind('<Leave>', self.on_mouse_move_out_area)
+		self.video_play_8.bind('<Motion>',self.on_mouse_move_in_video_play_area)
+		self.video_play_8.bind('<Leave>', self.on_mouse_move_out_video_play_area)
 
-		self.video_play_9.bind('<Motion>',self.on_mouse_move_in_area)
-		self.video_play_9.bind('<Leave>', self.on_mouse_move_out_area)
+		self.video_play_9.bind('<Motion>',self.on_mouse_move_in_video_play_area)
+		self.video_play_9.bind('<Leave>', self.on_mouse_move_out_video_play_area)
 
 		self.video_play_1.bind("<ButtonPress-1>", self.set_select_window_info)
 		self.video_play_2.bind("<ButtonPress-1>", self.set_select_window_info)
@@ -384,8 +362,6 @@ class my_app():
 			self.hide_button['text'] = 'showing'
 			return
 
-		self.list_area.pack_forget()
-		print(self.list_area.winfo_exists())
 
 	def on_mouse_enter_hidden_button(self,event):
 		self.hide_button['bg']='black'
@@ -393,7 +369,7 @@ class my_app():
 	def on_mouse_leave_hidden_button(self,event):
 		self.hide_button['bg'] = 'white'
 
-	def on_mouse_move_in_area(self,event):
+	def on_mouse_move_in_video_play_area(self,event):
 		if self.show_win_info_checkbutton_flag.get()=='show':
 			return
 		win_desc=event.widget.winfo_class()
@@ -420,7 +396,7 @@ class my_app():
 		#self.float_label.after(10000,self.on_mouse_stop_move_three_second)
 
 
-	def on_mouse_move_out_area(self,event):
+	def on_mouse_move_out_video_play_area(self,event):
 
 
 
@@ -449,14 +425,9 @@ class my_app():
 					self.info.set('正在关闭，请等待...')
 					time.sleep(1)
 				self.__del__()
-
-		t = Thread(target=do)
-		t.setDaemon(True)
-		t.start()
+		ThreadPoolExecutor(max_workers=1).submit(do)
 
 	def scale_mouse_click(self, event):
-		x = event.x_root
-		y = event.y_root
 		self.root.attributes("-alpha", self.scale_bar.get() / 100)
 
 	def get_time(self):
@@ -525,10 +496,7 @@ class my_app():
 				self.now_window_widget['bg'] = VIDEO_DEFAULT_COLOR
 				self.info.set('当前窗口为 {} ,空闲中'.format(self.now_window_name))
 			self.refresh_video_states()
-
-		t = Thread(target=do)
-		t.setDaemon(True)
-		t.start()
+		ThreadPoolExecutor(max_workers=1).submit(do)
 
 	def on_click_play_cam(self, event):
 		print('播放菜单选中cam')
@@ -1056,7 +1024,8 @@ class my_app():
 		def do():
 			while self.closing_flag == False:
 				for i in range(REFRESH_TIME,0,-1):
-					if REFRESH_TIME//60==0:  self.info.set('计划在%s秒后自动刷新服务器...'%(i*60))
+					print(i,'后刷新服务器')
+					if REFRESH_TIME//60==0:  self.info.set('计划在%s秒后自动刷新服务器...'%(i))
 					#60刷新一次状态t标签
 					time.sleep(1)
 					if self.closing_flag==True:
@@ -1078,19 +1047,22 @@ class my_app():
 					print(check1.done(), check2.done(), not (check1.done() and check2.done()))
 					time.sleep(1)
 					if self.closing_flag == True:
+						print('检测到关机')
 						self.refresh_button['state'] = tk.NORMAL
-						break
-					#检测服务器过程中若发现关机信号，则把刷新按钮状态更新为正常，结束刷新服务器的检测过程，同时把刷新按钮设为正常，作为刷新结束的标志
+						self.video_play_area.forget()
 
-				if self.closing_flag == False:
-					pool.submit(self.show_cam_tree)
-					self.info.set('刷新服务器成功')
-					self.refresh_button['state'] = tk.NORMAL
-					self.refresh_button.bind("<ButtonPress-1>", self.check_servers)
-				return check1.result(),check1.result()
+						break
+					else:
+						continue
+					#检测服务器过程中若发现关机信号，则把刷新按钮状态更新为正常，结束刷新服务器的检测过程，同时把刷新按钮设为正常，作为刷新结束的标志
+				print('没有检测到关机')
+				self.pool.submit(self.show_cam_tree)
+				self.info.set('刷新服务器成功')
+				self.refresh_button['state'] = tk.NORMAL
+				self.refresh_button.bind("<ButtonPress-1>", self.check_servers)
+				print(check1.result(),check2.result())
 		pool=ThreadPoolExecutor(max_workers=3)
 		check=pool.submit(do)
-		print(check.result())
 
 	def check_hk_servers(self):
 		new_online = []
@@ -1168,6 +1140,8 @@ class my_app():
 		pool.submit(do)
 
 
+
+
 	def __del__(self):
 		print('程序退出,销毁')
 
@@ -1181,12 +1155,10 @@ class my_app():
 		for key in self.offline_dahua_servers:
 			self.offline_dahua_servers[key]['instance'].Close()
 
-		self.window_des = 0
-		self.v_num = 0
-		self.is_single_playing = 0
-		self.now_hwnd = 0
-		self.login_servers = 0
-		self.root.destroy()
+		self.float_window.quit()
+		self.root.quit()
+		print('destory')
+
 
 
 def start():
