@@ -1,10 +1,10 @@
-# -*- mode: python -*-
+ï»¿# -*- mode: python ; coding: utf-8 -*-
 
 block_cipher = None
 
 
 a = Analysis(['app.py'],
-             pathex=['D:\\PyCharm2019.3.1\\pystudy\\job\\º£¿µ´ó»ªÊµÊ±¼à¿Ø'],
+             pathex=['D:\\PyCharm2019.3.1\\pystudy\\job\\æµ·åº·å¤§åå®æ—¶ç›‘æ§'],
              binaries=[],
              datas=[('NetSDK','NetSDK')],
              hiddenimports=[],
@@ -28,5 +28,6 @@ exe = EXE(pyz,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
+          upx_exclude=[],
           runtime_tmpdir=None,
           console=False , icon='my-icon.ico')
