@@ -318,10 +318,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="675" y="155" key="#app/0.0.1920.1040@0.0.1920.1040" timestamp="1610803251133" />
-    <state x="0" y="86" key="CommitChangelistDialog2" timestamp="1610507651776">
-      <screen x="0" y="0" width="1280" height="980" />
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1610892687024">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="0" y="86" key="CommitChangelistDialog2/0.0.1280.980@0.0.1280.980" timestamp="1610507651776" />
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1610892687024" />
     <state x="120" y="79" key="DiffContextDialog" timestamp="1610442429648">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
@@ -370,11 +371,11 @@
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state width="1236" height="318" key="GridCell.Tab.1.right/0.0.1280.980@0.0.1280.980" timestamp="1610442574756" />
-    <state x="153" y="0" key="SettingsEditor" timestamp="1610537793718">
+    <state x="153" y="0" key="SettingsEditor" timestamp="1610892621507">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="143" y="121" key="SettingsEditor/0.0.1280.980@0.0.1280.980" timestamp="1610423420867" />
-    <state x="153" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1610537793718" />
+    <state x="153" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1610892621507" />
     <state x="144" y="144" key="Vcs.Push.Dialog.v2" timestamp="1610507688245">
       <screen x="0" y="0" width="1280" height="980" />
     </state>

@@ -1,0 +1,7 @@
+
+vpython:S1186^"YAdd a nested comment explaining why this method is empty, or complete the implementation.(–”«úÿÿÿÿ
+Npython:S1481c"1Remove the unused local variable "file_wildcard".(ÅÃÎÿûÿÿÿÿ
+lpython:S3776j"TRefactor this function to reduce its Cognitive Complexity from 23 to the 15 allowed.(¬¤òŒ
+7python:S125"Remove this commented out code.(Œ›ë
+7python:S125•"Remove this commented out code.(šå‡Ã
+Epython:S1481¨"'Remove the unused local variable "fig".(öì©úÿÿÿÿ
