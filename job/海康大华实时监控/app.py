@@ -50,7 +50,7 @@ DAT_PATH = './dat'
 DEFAULT_COLOR = '#bcbcbc'
 VIDEO_DEFAULT_COLOR = '#acbcbc'
 FONT_COLOR='black'
-REFRESH_TIME=600
+REFRESH_TIME=60
 
 
 class my_app():
@@ -1056,50 +1056,44 @@ class my_app():
 
 
 	def auto_check_servers(self):
-
 		def do():
-
 			while self.closing_flag == False:
-				for i in range(REFRESH_TIME//10,0,-1):
-					self.info.set('计划在%s秒后自动刷新服务器...'%(i*10))
-					time.sleep(60)
+				for i in range(REFRESH_TIME,0,-1):
+					if REFRESH_TIME//60==0:  self.info.set('计划在%s秒后自动刷新服务器...'%(i*60))
+					#60刷新一次状态t标签
+					time.sleep(1)
 					if self.closing_flag==True:
 						exit()
+
 				print('自动刷新服务器')
 				if self.refresh_button['state'] == tk.DISABLED:
-					time.sleep(3)
+					time.sleep(1)
 					continue
+				#如果refresh__button不可用，说明在手动刷新或者正在初始化，暂时推迟刷新一个周期
 
 				self.refresh_button['state'] = tk.DISABLED
 				self.refresh_button.unbind("<ButtonPress-1>")
 				self.info.set('自动刷新服务器状态......')
-				check1 = Thread(target=self.check_dh_servers)
-				check2 = Thread(target=self.check_hk_servers)
+				check1 = pool.submit(self.check_dh_servers)
+				check2 = pool.submit(self.check_hk_servers)
 
-				check1.setDaemon(True)
-				check2.setDaemon(True)
+				while (not check2.done()) or (not check1.done()):
+					print(check1.done(), check2.done(), not (check1.done() and check2.done()))
+					time.sleep(1)
+					if self.closing_flag == True:
+						self.refresh_button['state'] = tk.NORMAL
+						break
+					#检测服务器过程中若发现关机信号，则把刷新按钮状态更新为正常，结束刷新服务器的检测过程，同时把刷新按钮设为正常，作为刷新结束的标志
 
-				check1.start()
-				check2.start()
-
-				while check1.is_alive() or check2.is_alive():
-					time.sleep(2)
-					continue
 				if self.closing_flag == False:
-					show1 = Thread(target=self.show_cam_tree)
-					show1.setDaemon(True)
-					show1.start()
-					self.info.set('自动刷新服务器成功')
+					pool.submit(self.show_cam_tree)
+					self.info.set('刷新服务器成功')
 					self.refresh_button['state'] = tk.NORMAL
 					self.refresh_button.bind("<ButtonPress-1>", self.check_servers)
-				if self.closing_flag == True:
-					print(self.refresh_button)
-					self.refresh_button['state'] = tk.NORMAL
-					break
-
-		t = Thread(target=do)
-		t.setDaemon(True)
-		t.start()
+				return check1.result(),check1.result()
+		pool=ThreadPoolExecutor(max_workers=3)
+		check=pool.submit(do)
+		print(check.result())
 
 	def check_hk_servers(self):
 		new_online = []
@@ -1155,7 +1149,6 @@ class my_app():
 		return new_online,new_offline
 
 	def check_servers(self, event):
-
 		def do():
 			self.info.set('刷新服务器状态......')
 			self.refresh_button['state'] = tk.DISABLED
@@ -1176,17 +1169,6 @@ class my_app():
 			print(check1.result(), check2.result)
 		pool = ThreadPoolExecutor(max_workers=3)
 		pool.submit(do)
-
-
-
-
-
-
-
-
-
-
-
 
 
 	def __del__(self):
