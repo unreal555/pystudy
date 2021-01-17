@@ -7,7 +7,7 @@ import time
 import os
 import pickle
 from threading import Thread
-from concurrent.futures import ProcessPoolExecutor
+from concurrent.futures import ThreadPoolExecutor
 '''
 from concurrent.futures import ProcessPoolExecutor
 import time
@@ -1155,40 +1155,39 @@ class my_app():
 		return new_online,new_offline
 
 	def check_servers(self, event):
-		self.refresh_button['state'] = tk.DISABLED
-		self.refresh_button.unbind("<ButtonPress-1>")
 
 		def do():
 			self.info.set('刷新服务器状态......')
-			check1 = Thread(target=self.check_dh_servers)
-			check2 = Thread(target=self.check_hk_servers)
-
-			check1.setDaemon(True)
-			check2.setDaemon(True)
-
-			check1.start()
-			check2.start()
-
-			while 1:
-				if check1.is_alive() or check2.is_alive():
-					time.sleep(1)
-					continue
-				if self.closing_flag == False:
-					show1 = Thread(target=self.show_cam_tree)
-					show1.setDaemon(True)
-					show1.start()
-					self.info.set('刷新服务器成功')
-					self.refresh_button['state'] = tk.NORMAL
-					self.refresh_button.bind("<ButtonPress-1>", self.check_servers)
-					break
+			self.refresh_button['state'] = tk.DISABLED
+			self.refresh_button.unbind("<ButtonPress-1>")
+			check1 = pool.submit(self.check_dh_servers)
+			check2 = pool.submit(self.check_hk_servers)
+			while (not check2.done()) or (not check1.done()) :
+				print(check1.done(), check2.done(), not(check1.done() and check2.done()))
+				time.sleep(1)
 				if self.closing_flag == True:
-					print(self.refresh_button)
 					self.refresh_button['state'] = tk.NORMAL
 					break
+			if self.closing_flag == False:
+				pool.submit(self.show_cam_tree)
+				self.info.set('刷新服务器成功')
+				self.refresh_button['state'] = tk.NORMAL
+				self.refresh_button.bind("<ButtonPress-1>", self.check_servers)
+			print(check1.result(), check2.result)
+		pool = ThreadPoolExecutor(max_workers=3)
+		pool.submit(do)
 
-		t = Thread(target=do)
-		t.setDaemon(True)
-		t.start()
+
+
+
+
+
+
+
+
+
+
+
 
 	def __del__(self):
 		print('程序退出,销毁')
