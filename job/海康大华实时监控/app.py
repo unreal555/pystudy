@@ -955,15 +955,12 @@ class my_app():
 				self.online_dahua_servers[server_desc] = server
 
 	def init_dvr(self):
-
+		pool=ThreadPoolExecutor(max_workers=2)
 		self.info.set('初始化视频服务器中......')
-		t1 = Thread(target=self.init_hk_dvr)
-		t2 = Thread(target=self.init_dahua_dvr)
-		t1.setDaemon(True)
-		t2.setDaemon(True)
-		t1.start()
-		t2.start()
-		while t1.is_alive() or t2.is_alive():
+		hk = pool.submit(self.init_hk_dvr)
+		dahua = pool.submit(self.init_dahua_dvr)
+
+		while (not hk.done()) or (not dahua.done()):
 			time.sleep(1)
 			continue
 		self.info.set('初始化视频服务器完毕')
@@ -972,27 +969,27 @@ class my_app():
 	def last_init(self, event):
 
 		def do():
-			self.refresh_button['state'] = tk.DISABLED
-			self.refresh_button.unbind("<ButtonPress-1>")
-			self.init_dvr()
 			if self.closing_flag == False:
-				# t = Thread(target=self.show_cam_tree)
-				# t.setDaemon(True)
-				# t.start()
+				self.refresh_button['state'] = tk.DISABLED
+				self.refresh_button.unbind("<ButtonPress-1>")
+				#刷新按钮禁用，防止在初始化过程中重复点击按钮刷新服务器
+				self.init_dvr()
+				#初始登录视频服务器，
 				self.show_cam_tree()
+				#根据登陆情况初始化服务器列表
 				self.refresh_button['state'] = tk.NORMAL
 				self.refresh_button.bind("<ButtonPress-1>", self.check_servers)
+				#允许点击刷新按钮
 				self.load_windows_states()
+				#加载上回的视频和窗口状态
 				self.auto_check_servers()
+				#启动定时刷新
 
 			if self.closing_flag == True:
 				print(self.refresh_button)
 				self.refresh_button['state'] = tk.NORMAL
 
-
-		t = Thread(target=do)
-		t.setDaemon(True)
-		t.start()
+		ThreadPoolExecutor(max_workers=1).submit(do)
 
 	def show_cam_tree(self):
 
