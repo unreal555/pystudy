@@ -1,0 +1,23 @@
+
+>python:S125³"Remove this commented out code.(—•κΡ8­Ί²υο.
+=python:S3626θ"Remove this redundant return.(Ωγή8ΰΆηφο.
+~python:S1186ϊ"YAdd a nested comment explaining why this method is empty, or complete the implementation.(‰μ©·ύÿÿÿÿ8“ωθφο.
+fpython:S2208"GImport only needed names or import the module and then use its members.(†εÿ·8­Ί²υο.
+Epython:S1481"%Remove the unused local variable "x".(φψ8“ωθφο.
+~python:S1186®"YAdd a nested comment explaining why this method is empty, or complete the implementation.(ΩΟ΅Γÿÿÿÿÿ8“ωθφο.
+Hpython:S108ί")Either remove or fill this block of code.(γ‘ΫΎ8“ωθφο.
+>python:S125¶"Remove this commented out code.(Ψ–†Τ8­Ί²υο.
+xpython:S1186±"YAdd a nested comment explaining why this method is empty, or complete the implementation.(Ω‹Ο%8“ωθφο.
+ypython:S1186«"YAdd a nested comment explaining why this method is empty, or complete the implementation.(¶ω¶8“ωθφο.
+Hpython:S108Ϋ")Either remove or fill this block of code.(γ‘ΫΎ8“ωθφο.
+Jpython:S1481‘"%Remove the unused local variable "y".(ς‡ψ†ωÿÿÿÿ8“ωθφο.
+=python:S3626Ύ"Remove this redundant return.(Ωγή8“ωθφο.
+npython:S1192u"QDefine a constant instead of duplicating this literal "<ButtonPress-1>" 15 times.(Τ†8­Ί²υο.
+xpython:S1186υ"YAdd a nested comment explaining why this method is empty, or complete the implementation.(ψφΨ8“ωθφο.
+~python:S1186§"YAdd a nested comment explaining why this method is empty, or complete the implementation.(Μ ώ¬ωÿÿÿÿ8“ωθφο.
+fpython:S2208	"GImport only needed names or import the module and then use its members.(ο€Ά8­Ί²υο.
+wpython:S1192~"SDefine a constant instead of duplicating this literal "<Double-Button-1>" 10 times.(ΪΈψÿÿÿÿ8­Ί²υο.
+Cpython:S125™"Remove this commented out code.(Θ°Ϋώÿÿÿÿ8“ωθφο.
+ypython:S1186Ά"YAdd a nested comment explaining why this method is empty, or complete the implementation.(μίϊ8“ωθφο.
+~python:S1186ƒ"YAdd a nested comment explaining why this method is empty, or complete the implementation.(•κΖ‚όÿÿÿÿ8“ωθφο.
+Cpython:S125ÿ"Remove this commented out code.(”’αΙύÿÿÿÿ8ƒξφο.

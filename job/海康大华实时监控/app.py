@@ -1,4 +1,4 @@
-﻿# coding:utf-8
+﻿
 # ﻿ Team : JiaLiDun University
 # Author：zl
 # Date ：2020/9/30 0030 上午 9:39
@@ -6,7 +6,7 @@
 import time
 import os
 import pickle
-from threading import Thread
+from concurrent.futures import ThreadPoolExecutor
 
 import configparser
 
@@ -28,8 +28,8 @@ REC_PATH = './rec'
 DAT_PATH = './dat'
 DEFAULT_COLOR = '#bcbcbc'
 VIDEO_DEFAULT_COLOR = '#acbcbc'
-REFRESH_TIME=600
-
+FONT_COLOR='black'
+REFRESH_TIME=5
 
 class my_app():
 	if not os.path.exists(DAT_PATH):
@@ -40,26 +40,28 @@ class my_app():
 
 	def __init__(self):
 		self.root = Tk()
-
 		set_icon(self.root)
-
 		self.root.title('Player')
-
 		self.root['bd']=0
 		self.root['bg'] = DEFAULT_COLOR
 		self.root.attributes("-alpha", 0.9)
 		#self.root.resizable(0, 0)  # 设置窗口大小不可变
-
-
 		self.root.overrideredirect()
 		max_x,max_y=self.root.maxsize()
-
 		self.root.geometry("%sx%s+%s+%s"%(int(max_x*0.9),int(max_y*0.9),int(max_x*0.05),int(max_y*0.02)))
+
+		self.float_window = tk.Toplevel(self.root)
+		self.float_window.geometry('1x1')
+		self.float_label=tk.Label(self.float_window,text='')
+		self.float_window.attributes("-alpha", 0.7)  # 透明度(0.0~1.0)
+		self.float_window.overrideredirect(True)  # 去除窗口边框
+		self.float_window.attributes("-toolwindow", True)  # 置为工具窗口(没有最大最小按钮)
+		self.float_window.attributes("-topmost", True)
+
 
 		self.window_des = [('单窗口', 1), ('四窗口', 4), ('九窗口', 9)]
 
 		self.v_num = IntVar()
-		self.v_num.set(9)
 
 		self.info = StringVar()
 		self.info.set('初始化中......')
@@ -136,59 +138,60 @@ class my_app():
 		self.video_play_9 = tk.Frame(self.video_play_area_3, cursor='plus', bd=1, relief="sunken",
 		                             class_='window_9', highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
 
-		self.video_play_1_state=tk.Label(self.video_play_1,cursor='plus', text='',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
-		self.video_play_1_state.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+		self.video_play_1_state=tk.Label(self.video_play_1,cursor='plus', bd=1,relief="sunken",
+		                              highlightthickness=0, bg=VIDEO_DEFAULT_COLOR)
 
-		self.video_play_2_state=tk.Label(self.video_play_2,cursor='plus', text='',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
-		self.video_play_2_state.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+		self.video_play_2_state=tk.Label(self.video_play_2,cursor='plus', bd=1,relief="sunken",
+		                              highlightthickness=0, bg=VIDEO_DEFAULT_COLOR)
 
-		self.video_play_3_state=tk.Label(self.video_play_3,cursor='plus', text='',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
-		self.video_play_3_state.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+		self.video_play_3_state=tk.Label(self.video_play_3,cursor='plus', bd=1,relief="sunken",
+		                              highlightthickness=0, bg=VIDEO_DEFAULT_COLOR)
 
-		self.video_play_4_state=tk.Label(self.video_play_4,cursor='plus', text='',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
-		self.video_play_4_state.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+		self.video_play_4_state=tk.Label(self.video_play_4,cursor='plus', bd=1,relief="sunken",
+		                              highlightthickness=0, bg=VIDEO_DEFAULT_COLOR)
 
-		self.video_play_5_state=tk.Label(self.video_play_5,cursor='plus', text='',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
-		self.video_play_5_state.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+		self.video_play_5_state=tk.Label(self.video_play_5,cursor='plus', bd=1,relief="sunken",
+		                              highlightthickness=0, bg=VIDEO_DEFAULT_COLOR)
 
-		self.video_play_6_state=tk.Label(self.video_play_6,cursor='plus', text='',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
-		self.video_play_6_state.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+		self.video_play_6_state=tk.Label(self.video_play_6,cursor='plus', bd=1,relief="sunken",
+		                              highlightthickness=0, bg=VIDEO_DEFAULT_COLOR)
 
-		self.video_play_7_state=tk.Label(self.video_play_7,cursor='plus', text='',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
-		self.video_play_7_state.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+		self.video_play_7_state=tk.Label(self.video_play_7,cursor='plus', bd=1,relief="sunken",
+		                              highlightthickness=0, bg=VIDEO_DEFAULT_COLOR)
 
-		self.video_play_8_state=tk.Label(self.video_play_8,cursor='plus', text='',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
-		self.video_play_8_state.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+		self.video_play_8_state=tk.Label(self.video_play_8,cursor='plus', bd=1,relief="sunken",
+		                              highlightthickness=0, bg=VIDEO_DEFAULT_COLOR)
 
-		self.video_play_9_state=tk.Label(self.video_play_9,cursor='plus', text='',bd=1, relief="sunken", highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
-		self.video_play_9_state.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+		self.video_play_9_state=tk.Label(self.video_play_9,cursor='plus', bd=1,relief="sunken",
+		                              highlightthickness=0, bg=VIDEO_DEFAULT_COLOR)
 
-		self.video_play_1.bind('<Enter>',self.on_mouse_move_in_area)
-		self.video_play_1.bind('<Leave>', self.on_mouse_move_out_area)
 
-		self.video_play_2.bind('<Enter>',self.on_mouse_move_in_area)
-		self.video_play_2.bind('<Leave>', self.on_mouse_move_out_area)
+		self.video_play_1.bind('<Motion>',self.on_mouse_move_in_video_play_area)
+		self.video_play_1.bind('<Leave>', self.on_mouse_move_out_video_play_area)
 
-		self.video_play_3.bind('<Enter>',self.on_mouse_move_in_area)
-		self.video_play_3.bind('<Leave>', self.on_mouse_move_out_area)
+		self.video_play_2.bind('<Motion>',self.on_mouse_move_in_video_play_area)
+		self.video_play_2.bind('<Leave>', self.on_mouse_move_out_video_play_area)
 
-		self.video_play_4.bind('<Enter>',self.on_mouse_move_in_area)
-		self.video_play_4.bind('<Leave>', self.on_mouse_move_out_area)
+		self.video_play_3.bind('<Motion>',self.on_mouse_move_in_video_play_area)
+		self.video_play_3.bind('<Leave>', self.on_mouse_move_out_video_play_area)
 
-		self.video_play_5.bind('<Enter>',self.on_mouse_move_in_area)
-		self.video_play_5.bind('<Leave>', self.on_mouse_move_out_area)
+		self.video_play_4.bind('<Motion>',self.on_mouse_move_in_video_play_area)
+		self.video_play_4.bind('<Leave>', self.on_mouse_move_out_video_play_area)
 
-		self.video_play_6.bind('<Enter>',self.on_mouse_move_in_area)
-		self.video_play_6.bind('<Leave>', self.on_mouse_move_out_area)
+		self.video_play_5.bind('<Motion>',self.on_mouse_move_in_video_play_area)
+		self.video_play_5.bind('<Leave>', self.on_mouse_move_out_video_play_area)
 
-		self.video_play_7.bind('<Enter>',self.on_mouse_move_in_area)
-		self.video_play_7.bind('<Leave>', self.on_mouse_move_out_area)
+		self.video_play_6.bind('<Motion>',self.on_mouse_move_in_video_play_area)
+		self.video_play_6.bind('<Leave>', self.on_mouse_move_out_video_play_area)
 
-		self.video_play_8.bind('<Enter>',self.on_mouse_move_in_area)
-		self.video_play_8.bind('<Leave>', self.on_mouse_move_out_area)
+		self.video_play_7.bind('<Motion>',self.on_mouse_move_in_video_play_area)
+		self.video_play_7.bind('<Leave>', self.on_mouse_move_out_video_play_area)
 
-		self.video_play_9.bind('<Enter>',self.on_mouse_move_in_area)
-		self.video_play_9.bind('<Leave>', self.on_mouse_move_out_area)
+		self.video_play_8.bind('<Motion>',self.on_mouse_move_in_video_play_area)
+		self.video_play_8.bind('<Leave>', self.on_mouse_move_out_video_play_area)
+
+		self.video_play_9.bind('<Motion>',self.on_mouse_move_in_video_play_area)
+		self.video_play_9.bind('<Leave>', self.on_mouse_move_out_video_play_area)
 
 		self.video_play_1.bind("<ButtonPress-1>", self.set_select_window_info)
 		self.video_play_2.bind("<ButtonPress-1>", self.set_select_window_info)
@@ -276,10 +279,16 @@ class my_app():
 		self.label_scale_name = tk.Label(self.video_control_area, text='透明度', anchor='e', justify='right')
 		self.label_scale_name.pack(side=tk.RIGHT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
+		self.show_win_info_checkbutton_flag= StringVar()
+		self.show_win_info_checkbutton_flag.set('show')
+		self.show_win_info_checkbutton=tk.Checkbutton(self.video_control_area, variable=self.show_win_info_checkbutton_flag,onvalue='show',offvalue='hide',text='显示窗格信息',
+													  command=self.on_click_show_win_info_checkbutton)
+		self.show_win_info_checkbutton.pack(side=tk.RIGHT, anchor=tk.S)
+		self.refresh_video_states()
+
+
 		self.label_blank = tk.Label(self.video_control_area, text='   ', anchor='e', justify='right')
 		self.label_blank.pack(side=tk.RIGHT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
-
-		self.show_window()
 
 		self.root.bind('<KeyPress-Escape>',self.on_click_esc)
 
@@ -291,7 +300,44 @@ class my_app():
 
 		self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
 
-		# self.last_init(event='')
+		self.last_init(event='')
+		# self.v_num.set(9)
+		# self.show_window()
+
+
+	def refresh_video_states(self):
+		self.on_click_show_win_info_checkbutton()
+
+	def on_click_show_win_info_checkbutton(self):
+		labels=[self.video_play_1_state, self.video_play_2_state, self.video_play_3_state, self.video_play_4_state,
+		 self.video_play_5_state, self.video_play_6_state, self.video_play_7_state, self.video_play_8_state, self.video_play_9_state]
+
+		win_descs=['window_1','window_2','window_3','window_4','window_5','window_6','window_7','window_8','window_9']
+
+		if self.show_win_info_checkbutton_flag.get()=='hide':
+			for label in labels:
+				label['text']=''
+				label.place_forget()
+			return
+
+		for win_desc,label in zip(win_descs,labels):
+			print(win_desc)
+			info=self.window_status[win_desc]
+			if info==0:
+				show_info='窗口：%s，No Singal'%win_desc
+			else:
+				server_desc,ip,port,user=info[0].split(':')
+				channel=info[2]
+				if server_desc=='dahua':
+					server_desc='大华'
+				if server_desc=='haikang':
+					server_desc='海康'
+				show_info='窗口：%s，正在播放%s@%s:%s channel %s'%(win_desc,server_desc,ip,port,channel)
+			label['text']=show_info
+			label.place(rely=0.9, relx=0.5,anchor=CENTER)
+			label['bg']=DEFAULT_COLOR
+
+
 
 	def on_click_esc(self,event):
 
@@ -317,24 +363,57 @@ class my_app():
 			return
 
 
-		self.list_area.pack_forget()
-		print(self.list_area.winfo_exists())
-
 	def on_mouse_enter_hidden_button(self,event):
 		self.hide_button['bg']='black'
 
 	def on_mouse_leave_hidden_button(self,event):
 		self.hide_button['bg'] = 'white'
 
-	def on_mouse_move_in_area(self,event):
-		if self.window_status[event.widget.winfo_class()]=='0':
-			pass
-		label=self.get_childen_widget(event)
-		label.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+	def on_mouse_move_in_video_play_area(self,event):
+		if self.show_win_info_checkbutton_flag.get()=='show':
+			return
+		win_desc=event.widget.winfo_class()
+		info=self.window_status[event.widget.winfo_class()]
+		if info==0:
+			show_info='窗口：%s，No Singal'%win_desc
+			size_x=8*len(show_info)
+			size_y=20
+		else:
+			server_desc,ip,port,user=info[0].split(':')
+			channel=info[2]
+			if server_desc=='dahua':
+				server_desc='大华'
+			if server_desc=='haikang':
+				server_desc='海康'
+			show_info='窗口：%s，正在播放%s@%s:%s channel %s'%(win_desc,server_desc,ip,port,channel)
+			size_x=8*len(show_info)
+			size_y=20
 
-	def on_mouse_move_out_area(self,event):
-		label=self.get_childen_widget(event)
-		label.pack_forget()
+		self.float_label['text']=show_info
+		self.float_label.pack(side=tk.RIGHT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
+		self.float_window.geometry('%sx%s+%s+%s'%(size_x,size_y,event.x_root+5,event.y_root+5))
+		self.float_window.attributes("-topmost", True)
+		#self.float_label.after(10000,self.on_mouse_stop_move_three_second)
+
+
+	def on_mouse_move_out_video_play_area(self,event):
+
+
+
+		self.float_label['text']=0
+		self.float_label.pack_forget()
+		self.float_window.geometry('1x1')
+
+
+	def on_mouse_stop_move_three_second(self):
+		try:
+			self.float_label['text']=0
+			self.float_label.pack_forget()
+			self.float_window.geometry('1x1')
+			self.float_label.after(10000, self.on_mouse_stop_move_three_second)
+		except Exception as e:
+			print(e)
+
 
 	def on_closing(self):
 		def do():
@@ -346,14 +425,9 @@ class my_app():
 					self.info.set('正在关闭，请等待...')
 					time.sleep(1)
 				self.__del__()
-
-		t = Thread(target=do)
-		t.setDaemon(True)
-		t.start()
+		ThreadPoolExecutor(max_workers=1).submit(do)
 
 	def scale_mouse_click(self, event):
-		x = event.x_root
-		y = event.y_root
 		self.root.attributes("-alpha", self.scale_bar.get() / 100)
 
 	def get_time(self):
@@ -421,10 +495,8 @@ class my_app():
 				self.window_status[self.now_window_name] = 0
 				self.now_window_widget['bg'] = VIDEO_DEFAULT_COLOR
 				self.info.set('当前窗口为 {} ,空闲中'.format(self.now_window_name))
-
-		t = Thread(target=do)
-		t.setDaemon(True)
-		t.start()
+			self.refresh_video_states()
+		ThreadPoolExecutor(max_workers=1).submit(do)
 
 	def on_click_play_cam(self, event):
 		print('播放菜单选中cam')
@@ -458,9 +530,9 @@ class my_app():
 
 				if isinstance(value, int):
 					continue
-				if server in value and 'haikang:' in value[0] and channel in value:
-					showwarning(message='本cam已在 {} 中播放'.format(window_name))
-					return
+				# if server in value and 'haikang:' in value[0] and channel in value:
+				# 	showwarning(message='本cam已在 {} 中播放'.format(window_name))
+				# 	return
 
 			self.play_hk_cam(server_desc, server, channel, self.now_window_name, self.now_hwnd)
 
@@ -473,11 +545,12 @@ class my_app():
 
 				if isinstance(value, int):
 					continue
-				if server in value and 'dahua:' in value[0] and channel in value:
-					showwarning(message='本cam已在 {} 中播放'.format(window_name))
-					return
+				# if server in value and 'dahua:' in value[0] and channel in value:
+				# 	showwarning(message='本cam已在 {} 中播放'.format(window_name))
+				# 	return
 
 			self.play_dh_cam(server_desc, server, channel, self.now_window_name, self.now_hwnd)
+		self.refresh_video_states()
 
 	def play_dh_cam(self, server_desc, server, channel, window_name, hwnd):
 		channel = int(channel)
@@ -504,14 +577,24 @@ class my_app():
 		pass
 
 	def capture_cam(self, event):
-		window = self.now_window_name
-		print(self.window_status)
-		if window in self.window_status.keys():
-			if self.window_status[window] != 0:
-				server_desc, server, channel, lRealHandle = self.window_status[window]
-				filename = os.path.join(REC_PATH, server_desc + '-' + self.get_time() + '.bmp')
-				print(filename)
-				server.Capture_Cam(lRealHandle, filename)
+		# dahua:47.92.89.1:8101:admin', <my_dh_dvr.DAHUA_DVR object at 0x000000000BCBA340>, 0, 410118320)
+
+		info = self.window_status[self.now_window_name]
+
+		if len(info) == 0:
+			showwarning(message='当前窗口没有视频播放')
+			return
+
+		server_desc, server, channel, lUrseID = info
+
+		if 'haikang:' in server_desc:
+			print('调用海康截图')
+			#self.play_hk_cam(server_desc, server, channel, self.now_window_name, self.now_hwnd)
+
+		if 'dahua:' in server_desc:
+			print('调用大华截图')
+
+			#self._dh_cam(server_desc, server, channel, self.now_window_name, self.now_hwnd)
 
 	def on_click_full_screen_button(self,event):
 		if self.full_screen_button['text']=='全屏':
@@ -551,22 +634,37 @@ class my_app():
 		print('当前窗口的句柄,name,widget:', self.now_hwnd, self.now_window_name, self.now_window_widget)
 		print('当前窗口的状态为：', self.window_status[self.now_window_name])
 
-		state = self.window_status[self.now_window_name]
-
-		if state == 0:
-			self.info.set('当前窗口为 {} ,空闲中'.format(self.now_window_name))
+		win_desc=event.widget.winfo_class()
+		info=self.window_status[event.widget.winfo_class()]
+		print(info)
+		if info==0:
+			show_info='窗口：%s，No Singal'%win_desc
 		else:
-			type, dvr, channel, play_handle = state
-			self.info.set('窗口:,{},dvr类型:{},主机通道:{},主机播放句柄:{}'.format(self.now_window_name, type, channel, play_handle))
+			server_desc,ip,port,user=info[0].split(':')
+			channel=info[2]
+			if server_desc=='dahua':
+				server_desc='大华'
+			if server_desc=='haikang':
+				server_desc='海康'
+			show_info='窗口：%s，正在播放%s@%s:%s channel %s'%(win_desc,server_desc,ip,port,channel)
+		self.info.set(show_info)
+
+
+
 
 	def save_windows_states(self):
 		states = {}
+		v_num=self.v_num.get()
+		if v_num not in [1,4,9,16]:
+			v_num=9
+		states['v_num']=v_num
 		for win_name in self.window_status:
 			if self.window_status[win_name] == 0:
 				continue
 			else:
 				desc, dvr, channel, handle = self.window_status[win_name]
 				states[win_name] = [desc, channel]
+		print(states)
 		with open(os.path.join(DAT_PATH, 'state.dat'), 'wb') as f:
 			pickle.dump(states, f)
 
@@ -598,13 +696,31 @@ class my_app():
 					states = pickle.load(f)
 					print('加载的上次的配置', states)
 				except:
+					self.v_num.set(9)
+					self.show_window()
 					return
 
-		if states == {}:
+		print('load',states)
+
+		if states=={}:
+			self.v_num.set(9)
+			self.show_window()
+			return
+
+
+		v_num=states['v_num']
+		if v_num not in [1,4,9,16]:
+			v_num=9
+		self.v_num.set(v_num)
+		self.show_window()
+
+		if len(states)==1:
 			return
 
 		if askokcancel('提示', '是否载入上次的视频窗口') == True:
-			for window_name in states:
+			for window_name in states.keys():
+				if window_name=='v_num':
+					continue
 				server_desc, channel = states[window_name]
 				print(server_desc, window_name, channel)
 				hwnd = self.get_window_hwnd(window_name)
@@ -615,11 +731,13 @@ class my_app():
 				if server_desc in self.online_dahua_servers.keys():
 					server = self.online_dahua_servers[server_desc]['instance']
 				print(server_desc, server, channel, window_name, channel, hwnd)
-
 				if server == '':
 					continue
 				else:
 					self.play_hk_cam(server_desc, server, channel, window_name, hwnd)
+				self.refresh_video_states()
+
+
 
 	def get_father_widget(self, event):
 
@@ -627,8 +745,7 @@ class my_app():
 
 	def get_childen_widget(self, event):
 		child=event.widget.winfo_children()
-		if len(child)>0:
-			return event.widget.nametowidget(child[0])
+		return [event.widget.nametowidget(x) for x in child]
 
 	def show_nine_play(self):
 
@@ -737,7 +854,6 @@ class my_app():
 	def show_window(self):
 
 		#  print(self.v_num.get(),self.is_single_playing)
-
 		if self.v_num.get() == 9:
 			self.show_nine_play()
 
@@ -807,15 +923,12 @@ class my_app():
 				self.online_dahua_servers[server_desc] = server
 
 	def init_dvr(self):
-
+		pool=ThreadPoolExecutor(max_workers=2)
 		self.info.set('初始化视频服务器中......')
-		t1 = Thread(target=self.init_hk_dvr)
-		t2 = Thread(target=self.init_dahua_dvr)
-		t1.setDaemon(True)
-		t2.setDaemon(True)
-		t1.start()
-		t2.start()
-		while t1.is_alive() or t2.is_alive():
+		hk = pool.submit(self.init_hk_dvr)
+		dahua = pool.submit(self.init_dahua_dvr)
+
+		while (not hk.done()) or (not dahua.done()):
 			time.sleep(1)
 			continue
 		self.info.set('初始化视频服务器完毕')
@@ -824,27 +937,27 @@ class my_app():
 	def last_init(self, event):
 
 		def do():
-			self.refresh_button['state'] = tk.DISABLED
-			self.refresh_button.unbind("<ButtonPress-1>")
-			self.init_dvr()
 			if self.closing_flag == False:
-				# t = Thread(target=self.show_cam_tree)
-				# t.setDaemon(True)
-				# t.start()
+				self.refresh_button['state'] = tk.DISABLED
+				self.refresh_button.unbind("<ButtonPress-1>")
+				#刷新按钮禁用，防止在初始化过程中重复点击按钮刷新服务器
+				self.init_dvr()
+				#初始登录视频服务器，
 				self.show_cam_tree()
+				#根据登陆情况初始化服务器列表
 				self.refresh_button['state'] = tk.NORMAL
 				self.refresh_button.bind("<ButtonPress-1>", self.check_servers)
+				#允许点击刷新按钮
 				self.load_windows_states()
+				#加载上回的视频和窗口状态
 				self.auto_check_servers()
+				#启动定时刷新
 
 			if self.closing_flag == True:
 				print(self.refresh_button)
 				self.refresh_button['state'] = tk.NORMAL
 
-
-		t = Thread(target=do)
-		t.setDaemon(True)
-		t.start()
+		ThreadPoolExecutor(max_workers=1).submit(do)
 
 	def show_cam_tree(self):
 
@@ -908,50 +1021,48 @@ class my_app():
 
 
 	def auto_check_servers(self):
-
 		def do():
-
 			while self.closing_flag == False:
-				for i in range(REFRESH_TIME//10,0,-1):
-					self.info.set('计划在%s秒后自动刷新服务器...'%(i*10))
-					time.sleep(10)
+				for i in range(REFRESH_TIME,0,-1):
+					print(i,'后刷新服务器')
+					if REFRESH_TIME//60==0:  self.info.set('计划在%s秒后自动刷新服务器...'%(i))
+					#60刷新一次状态t标签
+					time.sleep(1)
 					if self.closing_flag==True:
 						exit()
+
 				print('自动刷新服务器')
 				if self.refresh_button['state'] == tk.DISABLED:
-					time.sleep(3)
+					time.sleep(1)
 					continue
+				#如果refresh__button不可用，说明在手动刷新或者正在初始化，暂时推迟刷新一个周期
 
 				self.refresh_button['state'] = tk.DISABLED
 				self.refresh_button.unbind("<ButtonPress-1>")
 				self.info.set('自动刷新服务器状态......')
-				check1 = Thread(target=self.check_dh_servers)
-				check2 = Thread(target=self.check_hk_servers)
+				check1 = pool.submit(self.check_dh_servers)
+				check2 = pool.submit(self.check_hk_servers)
 
-				check1.setDaemon(True)
-				check2.setDaemon(True)
+				while (not check2.done()) or (not check1.done()):
+					print(check1.done(), check2.done(), not (check1.done() and check2.done()))
+					time.sleep(1)
+					if self.closing_flag == True:
+						print('检测到关机')
+						self.refresh_button['state'] = tk.NORMAL
+						self.video_play_area.forget()
 
-				check1.start()
-				check2.start()
-
-				while check1.is_alive() or check2.is_alive():
-					time.sleep(2)
-					continue
-				if self.closing_flag == False:
-					show1 = Thread(target=self.show_cam_tree)
-					show1.setDaemon(True)
-					show1.start()
-					self.info.set('自动刷新服务器成功')
-					self.refresh_button['state'] = tk.NORMAL
-					self.refresh_button.bind("<ButtonPress-1>", self.check_servers)
-				if self.closing_flag == True:
-					print(self.refresh_button)
-					self.refresh_button['state'] = tk.NORMAL
-					break
-
-		t = Thread(target=do)
-		t.setDaemon(True)
-		t.start()
+						break
+					else:
+						continue
+					#检测服务器过程中若发现关机信号，则把刷新按钮状态更新为正常，结束刷新服务器的检测过程，同时把刷新按钮设为正常，作为刷新结束的标志
+				print('没有检测到关机')
+				self.pool.submit(self.show_cam_tree)
+				self.info.set('刷新服务器成功')
+				self.refresh_button['state'] = tk.NORMAL
+				self.refresh_button.bind("<ButtonPress-1>", self.check_servers)
+				print(check1.result(),check2.result())
+		pool=ThreadPoolExecutor(max_workers=3)
+		check=pool.submit(do)
 
 	def check_hk_servers(self):
 		new_online = []
@@ -977,6 +1088,8 @@ class my_app():
 
 		print(len(self.online_hk_servers), self.online_hk_servers)
 		print(len(self.offline_hk_servers), self.offline_hk_servers)
+		return new_online,new_offline
+
 
 	def check_dh_servers(self):
 		new_online = []
@@ -1002,42 +1115,32 @@ class my_app():
 
 		print(len(self.online_dahua_servers), self.online_dahua_servers)
 		print(len(self.offline_dahua_servers), self.offline_dahua_servers)
+		return new_online,new_offline
 
 	def check_servers(self, event):
-		self.refresh_button['state'] = tk.DISABLED
-		self.refresh_button.unbind("<ButtonPress-1>")
-
 		def do():
 			self.info.set('刷新服务器状态......')
-			check1 = Thread(target=self.check_dh_servers)
-			check2 = Thread(target=self.check_hk_servers)
-
-			check1.setDaemon(True)
-			check2.setDaemon(True)
-
-			check1.start()
-			check2.start()
-
-			while 1:
-				if check1.is_alive() or check2.is_alive():
-					time.sleep(1)
-					continue
-				if self.closing_flag == False:
-					show1 = Thread(target=self.show_cam_tree)
-					show1.setDaemon(True)
-					show1.start()
-					self.info.set('刷新服务器成功')
-					self.refresh_button['state'] = tk.NORMAL
-					self.refresh_button.bind("<ButtonPress-1>", self.check_servers)
-					break
+			self.refresh_button['state'] = tk.DISABLED
+			self.refresh_button.unbind("<ButtonPress-1>")
+			check1 = pool.submit(self.check_dh_servers)
+			check2 = pool.submit(self.check_hk_servers)
+			while (not check2.done()) or (not check1.done()) :
+				print(check1.done(), check2.done(), not(check1.done() and check2.done()))
+				time.sleep(1)
 				if self.closing_flag == True:
-					print(self.refresh_button)
 					self.refresh_button['state'] = tk.NORMAL
 					break
+			if self.closing_flag == False:
+				pool.submit(self.show_cam_tree)
+				self.info.set('刷新服务器成功')
+				self.refresh_button['state'] = tk.NORMAL
+				self.refresh_button.bind("<ButtonPress-1>", self.check_servers)
+			print(check1.result(), check2.result)
+		pool = ThreadPoolExecutor(max_workers=3)
+		pool.submit(do)
 
-		t = Thread(target=do)
-		t.setDaemon(True)
-		t.start()
+
+
 
 	def __del__(self):
 		print('程序退出,销毁')
@@ -1052,12 +1155,10 @@ class my_app():
 		for key in self.offline_dahua_servers:
 			self.offline_dahua_servers[key]['instance'].Close()
 
-		self.window_des = 0
-		self.v_num = 0
-		self.is_single_playing = 0
-		self.now_hwnd = 0
-		self.login_servers = 0
-		self.root.destroy()
+		self.float_window.quit()
+		self.root.quit()
+		print('destory')
+
 
 
 def start():
