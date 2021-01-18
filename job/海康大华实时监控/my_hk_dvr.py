@@ -243,21 +243,15 @@ class HK_DVR():
         print(info)
         return info
 
-    def Rec_Cam(self,lRealHandle,file):
-
-        file=bytes(file,'utf-8')
-
-        file=c_char_p(file)
-
-        self.CallCpp('NET_DVR_SaveRealData', c_long(lRealHandle),file)
-
+    def Rec_Cam(self,lRealHandle,file_path):
+        file=bytes(file_path,'utf-8')
+        self.CallCpp('NET_DVR_SaveRealData', c_long(lRealHandle),c_char_p(file))
         self.Get_Last_Error()
 
 
-    def Capture_Cam(self,lRealHandle,file):
-        file=bytes(file,'utf-8')
-        file=c_char_p(file)
-        self.CallCpp('NET_DVR_CapturePicture', c_long(lRealHandle),file)
+    def Capture_Cam(self,lRealHandle,file_path):
+        file=bytes(file_path,'utf-8')
+        self.CallCpp('NET_DVR_CapturePicture', c_long(lRealHandle),c_char_p(file))
         self.Get_Last_Error()
 
     def Stop_Rec_Cam(self,lRealHandle,):
@@ -277,7 +271,11 @@ class HK_DVR():
         dwCount=c_double(1)
         result=self.CallCpp('NET_DVR_RemoteControl',self.lUserID,20005,'','')
         if result==0:
-            return False
+            self.lUserID=self.NET_DVR_Login()
+            if self.lUserID==None:
+                return False
+            else:
+                return True
         if result==1:
             return True
 

@@ -943,10 +943,23 @@ class my_app():
 		return True
 
 	def check_playing_viedeo_status(self):
-		for key in self.window_status.keys():
-			print(self.window_status[key])
+		print('检查视频播放状态')
+		cams = {}
+		playbacks = {}
 
+		for win in self.window_status.keys():
+			info=self.window_status[win]
+			if info==0:
+				continue
+			win_desc,server, channel, handel=info
 
+			if handel=='rec':
+				print(win,'is playing rec')
+				cams[win]=info
+			if isinstance(handel,int):
+				print(win,'is palying cam')
+				playbacks[win]=info
+		return cams,playbacks
 
 	def last_init(self, event):
 
@@ -1038,7 +1051,7 @@ class my_app():
 		def do():
 			while self.closing_flag == False:
 				for i in range(REFRESH_TIME,0,-1):
-					if REFRESH_TIME%60==0:     print(i,'后刷新服务器')
+					print(i,'后刷新服务器')
 					if REFRESH_TIME%60==0:  self.info.set('计划在%s秒后自动刷新服务器...'%(i))
 					#60刷新一次状态t标签
 					time.sleep(1)
@@ -1057,6 +1070,7 @@ class my_app():
 				dh_check = pool.submit(self.check_dh_servers)
 				hk_check = pool.submit(self.check_hk_servers)
 
+
 				while (not dh_check.done()) or (not hk_check.done()):
 					print(dh_check.done(), hk_check.done(), not (dh_check.done() and hk_check.done()))
 					time.sleep(1)
@@ -1074,8 +1088,11 @@ class my_app():
 				self.info.set('刷新服务器成功')
 				self.refresh_button['state'] = tk.NORMAL
 				self.refresh_button.bind("<ButtonPress-1>", self.check_servers)
+
 				dh_new_online,dh_new_offline=dh_check.result()
 				hk_new_online,hk_new_offline=hk_check.result()
+
+				cams,playbacks=self.check_playing_viedeo_status()
 
 				print('dh_new_online',dh_new_online)
 				print('dh_new_offline',dh_new_offline)
@@ -1083,9 +1100,10 @@ class my_app():
 				print('hk_new_online',hk_new_online)
 				print('hk_new_offline',hk_new_online)
 
+				print(cams,playbacks)
 
-		pool=ThreadPoolExecutor(max_workers=3)
-		check=pool.submit(do)
+		pool=ThreadPoolExecutor(max_workers=4)
+		pool.submit(do)
 
 	def check_hk_servers(self):
 		new_online = []
