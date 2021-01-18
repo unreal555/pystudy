@@ -955,10 +955,10 @@ class my_app():
 
 			if handel=='rec':
 				print(win,'is playing rec')
-				cams[win]=info
+				playbacks[win]=info
 			if isinstance(handel,int):
 				print(win,'is palying cam')
-				playbacks[win]=info
+				cams[win]=info
 		return cams,playbacks
 
 	def last_init(self, event):
@@ -1099,6 +1099,17 @@ class my_app():
 				print('hk_new_online',hk_new_online)
 				print('hk_new_offline',hk_new_offline)
 				print(cams,playbacks)
+
+				for win in cams.keys():
+					print('检测掉线，并准备播放录像')
+					desc,server,channel,handle=cams[win]
+					if (desc in dh_new_offline) or (desc in hk_new_offline):
+						if self.window_status[self.now_window_name] != 0:
+							print(server)
+							server.Stop_Play_Cam(handle)
+							self.window_status[self.now_window_name] = [desc,server,channel,'rec']
+							self.now_window_widget['bg'] = VIDEO_DEFAULT_COLOR
+						self.refresh_video_states()
 
 
 
