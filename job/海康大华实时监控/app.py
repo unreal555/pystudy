@@ -29,7 +29,7 @@ DAT_PATH = './dat'
 DEFAULT_COLOR = '#bcbcbc'
 VIDEO_DEFAULT_COLOR = '#acbcbc'
 FONT_COLOR='black'
-REFRESH_TIME=5
+REFRESH_TIME=600
 
 class my_app():
 	if not os.path.exists(DAT_PATH):
