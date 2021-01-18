@@ -1070,7 +1070,6 @@ class my_app():
 				dh_check = pool.submit(self.check_dh_servers)
 				hk_check = pool.submit(self.check_hk_servers)
 
-
 				while (not dh_check.done()) or (not hk_check.done()):
 					print(dh_check.done(), hk_check.done(), not (dh_check.done() and hk_check.done()))
 					time.sleep(1)
@@ -1078,7 +1077,6 @@ class my_app():
 						print('检测到关机')
 						self.refresh_button['state'] = tk.NORMAL
 						self.video_play_area.forget()
-
 						break
 					else:
 						continue
@@ -1089,6 +1087,7 @@ class my_app():
 				self.refresh_button['state'] = tk.NORMAL
 				self.refresh_button.bind("<ButtonPress-1>", self.check_servers)
 
+
 				dh_new_online,dh_new_offline=dh_check.result()
 				hk_new_online,hk_new_offline=hk_check.result()
 
@@ -1098,64 +1097,83 @@ class my_app():
 				print('dh_new_offline',dh_new_offline)
 
 				print('hk_new_online',hk_new_online)
-				print('hk_new_offline',hk_new_online)
-
+				print('hk_new_offline',hk_new_offline)
 				print(cams,playbacks)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 		pool=ThreadPoolExecutor(max_workers=4)
 		pool.submit(do)
 
+
 	def check_hk_servers(self):
-		new_online = []
-		for key in self.offline_hk_servers:
-			server = self.offline_hk_servers[key]
+		print(self.online_hk_servers)
+		print(self.offline_hk_servers)
+		new_online = {}
+		new_offline={}
+		for desc in self.offline_hk_servers.keys():
+			server = self.offline_hk_servers[desc]
 			result = server['instance'].NET_DVR_Login()
+			print(desc)
 			if result == None:
 				continue
 			if result != None:
-				new_online.append([key, {key: server}])
-		for key, item in new_online:
-			self.online_hk_servers.update(item)
-			self.offline_hk_servers.pop(key)
-
-		new_offline = []
-		for key in self.online_hk_servers:
-			server = self.online_hk_servers[key]
+				new_online[desc]=server
+		for desc in new_online.keys():
+			self.online_hk_servers.update({desc:new_online[desc]})
+			self.offline_hk_servers.pop(desc)
+		print('hk2')
+		for desc in self.online_hk_servers.keys():
+			print(desc)
+			server = self.online_hk_servers[desc]
 			if server['instance'].check_device_online() == False:
-				new_offline.append([key, {key: server}])
-		for key, item in new_offline:
-			self.offline_hk_servers.update(item)
-			self.online_hk_servers.pop(key)
+				new_offline[desc]=server
+		for desc in new_offline.keys():
+			self.offline_hk_servers.update({desc:new_offline[desc]})
+			self.online_hk_servers.pop(desc)
 
-		print(len(self.online_hk_servers), self.online_hk_servers)
-		print(len(self.offline_hk_servers), self.offline_hk_servers)
 		return new_online,new_offline
 
 
 	def check_dh_servers(self):
-		new_online = []
-		for key in self.offline_dahua_servers:
-			server = self.offline_dahua_servers[key]
+		new_online = {}
+		new_offline = {}
+
+		print('dahua1')
+		for desc in self.offline_dahua_servers.keys():
+			server = self.offline_dahua_servers[desc]
 			result = server['instance'].NET_DVR_Login()
 			if result == None:
 				continue
 			if result != None:
-				new_online.append([key, {key: server}])
-		for key, item in new_online:
-			self.online_dahua_servers.update(item)
-			self.offline_dahua_servers.pop(key)
+				new_online[desc]=server
+		for desc in new_online.keys():
+			self.online_dahua_servers.update({desc:new_online[desc]})
+			self.offline_dahua_servers.pop(desc)
 
-		new_offline = []
-		for key in self.online_dahua_servers:
-			server = self.online_dahua_servers[key]
+		print('dahua 2')
+		for desc in self.online_dahua_servers.keys():
+			server = self.online_dahua_servers[desc]
 			if server['instance'].check_device_online() == False:
-				new_offline.append([key, {key: server}])
-		for key, item in new_offline:
-			self.offline_dahua_servers.update(item)
-			self.online_dahua_servers.pop(key)
+				new_offline[desc]=server
+		for desc in new_offline.keys():
+			self.offline_dahua_servers.update({desc:new_offline[desc]})
+			self.online_dahua_servers.pop(desc)
 
-		print(len(self.online_dahua_servers), self.online_dahua_servers)
-		print(len(self.offline_dahua_servers), self.offline_dahua_servers)
 		return new_online,new_offline
 
 	def check_servers(self, event):

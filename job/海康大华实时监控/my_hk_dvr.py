@@ -162,14 +162,14 @@ class HK_DVR():
                 lib = ctypes.cdll.LoadLibrary(HK_dll)
                 try:
                     value = eval("lib.%s" % func_name)(*args)
-                    print('命令为:', func_name, "    参数为:", str(args), " 调用的dll为:" + HK_dll, '  执行结果为:', value)
+                 #   print('命令为:', func_name, "    参数为:", str(args), " 调用的dll为:" + HK_dll, '  执行结果为:', value)
                     return value
                 except:
                     continue
             except:
-                print(HK_dll, '库文件载入失败')
+#                print(HK_dll, '库文件载入失败')
                 continue
-        print("没有找到接口！")
+ #       print("没有找到接口！")
         return False
 
     def NET_DVR_Init(self):
@@ -267,33 +267,35 @@ class HK_DVR():
         self.Get_Last_Error()
 
     def check_device_online(self):
-        dwCommand=c_double(20005)
-        dwCount=c_double(1)
-        result=self.CallCpp('NET_DVR_RemoteControl',self.lUserID,20005,'','')
+        print('开始检测海康在线')
+        result=self.CallCpp('NET_DVR_RemoteControl',self.lUserID,20005,',')
+        print('通过remotecontrol检测，状态为',result,type(result))
         if result==0:
             self.lUserID=self.NET_DVR_Login()
+            print('尝试登陆，返回值为',self.lUserID)
             if self.lUserID==None:
                 return False
             else:
                 return True
         if result==1:
+            print('返回真')
             return True
 
 if __name__ == '__main__':
-    import tkinter as tk
-    window = tk.Tk()  # 创建窗口
-    window.title("this is a test")  # 窗口标题
-    window.geometry('500x900')  # 窗口大小，小写字母x
-    video = tk.Frame(window, cursor='plus', bd=2, relief="sunken")
-    video.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)  # 固定
-    video1 = tk.Frame(window, cursor='plus', bd=2, relief="sunken")
-    video1.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)  # 固定
-    hwnd1 = video.winfo_id()
-    server1=HK_DVR( sDVRIP='47.92.89.1', sDVRPort=8001, sUserName='user1', sPassword='abcd1234')
-    print(server1.GetServerInfo())
-    print(server1.check_device_online())
-
-    window.mainloop()
+    # import tkinter as tk
+    # window = tk.Tk()  # 创建窗口
+    # window.title("this is a test")  # 窗口标题
+    # window.geometry('500x900')  # 窗口大小，小写字母x
+    # video = tk.Frame(window, cursor='plus', bd=2, relief="sunken")
+    # video.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)  # 固定
+    # video1 = tk.Frame(window, cursor='plus', bd=2, relief="sunken")
+    # video1.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)  # 固定
+    # hwnd1 = video.winfo_id()
+    server1=HK_DVR( sDVRIP='47.92.89.1', sDVRPort=8201, sUserName='admin', sPassword='abcd1234')
+    import time
+    while 1:
+        print(server1.check_device_online())
+        time.sleep(3)
 
 
 
