@@ -229,6 +229,9 @@ class my_app():
 		self.refresh_button = tk.Button(self.list_area, width=18, text='刷新服务器')
 		self.refresh_button.pack(side='bottom', fill=tk.BOTH, expand=tk.NO)
 		self.refresh_button.bind("<ButtonPress-1>", self.check_servers)
+		# refresh button 的disablede 状态在手动刷新时设置，使按钮不可用，防止连续点击重复刷新服务器状态，影响性能
+		# 同时作为自动刷新，关机时检测刷新服务器状态的标志，自动刷新前若检测到该状态为disabled，则推迟一个刷新周期
+		# 自动刷新中若检测到关闭信号，则中断刷新服务器，并将disabled状态设置为正常，作为on_closing方法关机是否等待还是继续关机的标志位
 
 		self.stop_button = tk.Button(self.video_control_area, text='停止')
 		self.stop_button.pack(side=tk.LEFT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
@@ -340,7 +343,9 @@ class my_app():
 
 
 	def on_click_esc(self,event):
-
+		'''
+		若检测到esc键被按下，则判断是全屏还是正常播放状态，若是全屏状态则退出全屏，若是正常播放则调用on_closing关闭
+		'''
 		print(event)
 		if self.full_screen_button['text']=='退出全屏':
 			self.root.attributes("-fullscreen", False)
@@ -352,6 +357,9 @@ class my_app():
 			return
 
 	def on_click_hide_cam_tree_area(self,event):
+		'''
+		隐藏\打开摄像头列表
+		'''
 		if self.hide_button['text']=='showing':
 			self.list_area.pack_forget()
 			self.hide_button['text'] = 'hidding'
