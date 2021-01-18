@@ -942,6 +942,12 @@ class my_app():
 		self.info.set('初始化视频服务器完毕')
 		return True
 
+	def check_playing_viedeo_status(self):
+		for key in self.window_status.keys():
+			print(self.window_status[key])
+
+
+
 	def last_init(self, event):
 
 		def do():

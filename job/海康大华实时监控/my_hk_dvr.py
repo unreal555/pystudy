@@ -294,6 +294,7 @@ if __name__ == '__main__':
     server1=HK_DVR( sDVRIP='47.92.89.1', sDVRPort=8001, sUserName='user1', sPassword='abcd1234')
     print(server1.GetServerInfo())
     print(server1.check_device_online())
+
     window.mainloop()
 
 
