@@ -29,7 +29,7 @@ DAT_PATH = './dat'
 DEFAULT_COLOR = '#bcbcbc'
 VIDEO_DEFAULT_COLOR = '#acbcbc'
 FONT_COLOR='black'
-REFRESH_TIME=600
+REFRESH_TIME=10
 
 class my_app():
 	if not os.path.exists(DAT_PATH):
@@ -585,24 +585,24 @@ class my_app():
 		pass
 
 	def capture_cam(self, event):
-		# dahua:47.92.89.1:8101:admin', <my_dh_dvr.DAHUA_DVR object at 0x000000000BCBA340>, 0, 410118320)
+		def do():
+			info = self.window_status[self.now_window_name]
 
-		info = self.window_status[self.now_window_name]
+			if info == 0:
+				showwarning(message='当前窗口没有视频播放')
+				return
 
-		if len(info) == 0:
-			showwarning(message='当前窗口没有视频播放')
-			return
+			server_desc, server, channel, lUrseID = info
 
-		server_desc, server, channel, lUrseID = info
+			if 'haikang:' in server_desc:
+				print('调用海康截图')
+				#self.play_hk_cam(server_desc, server, channel, self.now_window_name, self.now_hwnd)
 
-		if 'haikang:' in server_desc:
-			print('调用海康截图')
-			#self.play_hk_cam(server_desc, server, channel, self.now_window_name, self.now_hwnd)
+			if 'dahua:' in server_desc:
+				print('调用大华截图')
+				server.Capture_Cam(int(channel))
+		ThreadPoolExecutor().submit(do)
 
-		if 'dahua:' in server_desc:
-			print('调用大华截图')
-
-			#self._dh_cam(server_desc, server, channel, self.now_window_name, self.now_hwnd)
 
 	def on_click_full_screen_button(self,event):
 		if self.full_screen_button['text']=='全屏':
@@ -1032,8 +1032,8 @@ class my_app():
 		def do():
 			while self.closing_flag == False:
 				for i in range(REFRESH_TIME,0,-1):
-					print(i,'后刷新服务器')
-					if REFRESH_TIME//60==0:  self.info.set('计划在%s秒后自动刷新服务器...'%(i))
+					if REFRESH_TIME%60==0:     print(i,'后刷新服务器')
+					if REFRESH_TIME%60==0:  self.info.set('计划在%s秒后自动刷新服务器...'%(i))
 					#60刷新一次状态t标签
 					time.sleep(1)
 					if self.closing_flag==True:
@@ -1048,11 +1048,11 @@ class my_app():
 				self.refresh_button['state'] = tk.DISABLED
 				self.refresh_button.unbind("<ButtonPress-1>")
 				self.info.set('自动刷新服务器状态......')
-				check1 = pool.submit(self.check_dh_servers)
-				check2 = pool.submit(self.check_hk_servers)
+				dh_check = pool.submit(self.check_dh_servers)
+				hk_check = pool.submit(self.check_hk_servers)
 
-				while (not check2.done()) or (not check1.done()):
-					print(check1.done(), check2.done(), not (check1.done() and check2.done()))
+				while (not dh_check.done()) or (not hk_check.done()):
+					print(dh_check.done(), hk_check.done(), not (dh_check.done() and hk_check.done()))
 					time.sleep(1)
 					if self.closing_flag == True:
 						print('检测到关机')
@@ -1064,11 +1064,20 @@ class my_app():
 						continue
 					#检测服务器过程中若发现关机信号，则把刷新按钮状态更新为正常，结束刷新服务器的检测过程，同时把刷新按钮设为正常，作为刷新结束的标志
 				print('没有检测到关机')
-				self.pool.submit(self.show_cam_tree)
+				pool.submit(self.show_cam_tree)
 				self.info.set('刷新服务器成功')
 				self.refresh_button['state'] = tk.NORMAL
 				self.refresh_button.bind("<ButtonPress-1>", self.check_servers)
-				print(check1.result(),check2.result())
+				dh_new_online,dh_new_offline=dh_check.result()
+				hk_new_online,hk_new_offline=hk_check.result()
+
+				print('dh_new_online',dh_new_online)
+				print('dh_new_offline',dh_new_offline)
+
+				print('hk_new_online',hk_new_online)
+				print('hk_new_offline',hk_new_online)
+
+
 		pool=ThreadPoolExecutor(max_workers=3)
 		check=pool.submit(do)
 
@@ -1167,12 +1176,9 @@ class my_app():
 		self.root.quit()
 		print('destory')
 
-
-
 def start():
 	app = my_app()
 	app.root.mainloop()
-
 
 # login=tk_login(my_func=start)
 # login.main_window.mainloop()

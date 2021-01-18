@@ -6,11 +6,50 @@
 
 import os
 from ctypes import *
+import time
 from NetSDK.NetSDK import NetClient
-from NetSDK.SDK_Callback import fDisConnect, fHaveReConnect, fDecCBFun, fRealDataCallBackEx2
+from NetSDK.SDK_Struct import *
+from NetSDK.SDK_Callback import fDisConnect, fHaveReConnect, fDecCBFun, fRealDataCallBackEx2,CB_FUNCTYPE
 from NetSDK.SDK_Enum import SDK_RealPlayType, EM_LOGIN_SPAC_CAP_TYPE, EM_REALDATA_FLAG, EM_DEV_CFG_TYPE
 from NetSDK.SDK_Struct import C_LLONG, NET_TIME, sys_platform, NET_IN_LOGIN_WITH_HIGHLEVEL_SECURITY, \
 	NET_OUT_LOGIN_WITH_HIGHLEVEL_SECURITY, PLAY_FRAME_INFO
+
+
+@CB_FUNCTYPE(None, C_LLONG, POINTER(c_ubyte), c_uint, c_uint, C_DWORD, C_LDWORD)
+def CaptureCallBack(lLoginID, pBuf, RevLen, EncodeType, CmdSerial, dwUser):
+	if lLoginID == 0:
+		return
+	print('Enter CaptureCallBack')
+	pic_buf = cast(pBuf, POINTER(c_ubyte * RevLen)).contents
+	file_path = os.path.join('.', 'rec', get_time()+'.jpg')
+	print(file_path)
+	with open(file_path, 'wb+') as f:
+		f.write(pic_buf)
+
+# 拉流回调函数功能
+def RealDataCallBack(self, lRealHandle, dwDataType, pBuffer, dwBufSize, param, dwUser):
+	if lRealHandle == self.playID:
+		data_buffer = cast(pBuffer, POINTER(c_ubyte * dwBufSize)).contents
+		with open('./data.dav', 'ab+') as data_file:
+			data_file.write(data_buffer)
+		self.sdk.InputData(self.freePort, pBuffer, dwBufSize)
+
+
+# PLAYSDK解码回调函数功能
+def DecodingCallBack(self, nPort, pBuf, nSize, pFrameInfo, pUserData, nReserved2):
+	# here get YUV data, pBuf is YUV data IYUV/YUV420 ,size is nSize, pFrameInfo is frame info with height, width.
+	data = cast(pBuf, POINTER(c_ubyte * nSize)).contents
+	info = pFrameInfo.contents
+	# info.nType == 3 is YUV data,others ard audio data.
+	# you can parse YUV420 data to RGB
+	if info.nType == 3:
+		pass
+
+
+def get_time():
+	return time.strftime('%Y-%m-%d %H-%M-%S')
+
+
 
 
 class DAHUA_DVR():
@@ -55,29 +94,6 @@ class DAHUA_DVR():
 
 	def ReConnectCallBack(self):
 		pass
-
-	def CaptureCallBack(lLoginID, pBuf, RevLen, EncodeType, CmdSerial, dwUser):
-		if lLoginID == 0:
-			return
-		print('Enter CaptureCallBack')
-
-	# 拉流回调函数功能
-	def RealDataCallBack(self, lRealHandle, dwDataType, pBuffer, dwBufSize, param, dwUser):
-		if lRealHandle == self.playID:
-			data_buffer = cast(pBuffer, POINTER(c_ubyte * dwBufSize)).contents
-			with open('./data.dav', 'ab+') as data_file:
-				data_file.write(data_buffer)
-			self.sdk.InputData(self.freePort, pBuffer, dwBufSize)
-
-	# PLAYSDK解码回调函数功能
-	def DecodingCallBack(self, nPort, pBuf, nSize, pFrameInfo, pUserData, nReserved2):
-		# here get YUV data, pBuf is YUV data IYUV/YUV420 ,size is nSize, pFrameInfo is frame info with height, width.
-		data = cast(pBuf, POINTER(c_ubyte * nSize)).contents
-		info = pFrameInfo.contents
-		# info.nType == 3 is YUV data,others ard audio data.
-		# you can parse YUV420 data to RGB
-		if info.nType == 3:
-			pass
 
 	def NET_DVR_Login(self):
 
@@ -136,16 +152,17 @@ class DAHUA_DVR():
 
 		file = c_char_p(file)
 
-	def Capture_Cam(self, lUserID, channel):
+	def Capture_Cam(self,  channel,file_path=''):
 		dwUser = 0
-		self.sdk.SetSnapRevCallBack(self.CaptureCallBack, dwUser)
+		self.sdk.SetSnapRevCallBack(CaptureCallBack, dwUser)
 		channel = int(channel)
 		snap = SNAP_PARAMS()
 		snap.Channel = channel
 		snap.Quality = 1
 		snap.mode = 0
 		# 抓图
-		self.sdk.SnapPictureEx(lUserID, snap)
+		self.sdk.SnapPictureEx(self.lUserID, snap)
+
 
 	def Stop_Rec_Cam(self, lRealHandle, ):
 		pass
@@ -196,4 +213,5 @@ if __name__ == '__main__':
 	server1.GetServerInfo()
 	server1.check_device_online()
 	server1.Play_Cam(hwnd1, 0)
+	server1.Capture_Cam(0,file_path='')
 	window.mainloop()
