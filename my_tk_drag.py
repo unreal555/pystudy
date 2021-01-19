@@ -33,7 +33,7 @@ class drag_window():
 
 		self.float_window = tkinter.Toplevel()
 		self.float_window.geometry('1x1')
-		self.float_label=tkinter.Label(self.float_window,text='拖动文件到图标上松手执行\r左键三击或者右键退出')
+		self.float_label=tkinter.Label(self.float_window,text='拖动文件到图标\r右键退出')
 		self.float_window.attributes("-alpha", 0.8)  # 透明度(0.0~1.0)
 		self.float_window.overrideredirect(True)  # 去除窗口边框
 		self.float_window.attributes("-toolwindow", True)  # 置为工具窗口(没有最大最小按钮)
@@ -91,37 +91,15 @@ class drag_window():
 		self.root.destroy()
 
 	def on_mouse_enter_area_and_show_help(self,event):
-		def do():
-			time.sleep(5)
-
-		def wait():
-			t=Thread(target=do)
-			t.setDaemon(True)
-			t.start()
-			while t.is_alive():
-				continue
-				time.sleep(2)
-
-			self.float_label.pack()
-			self.float_window.geometry('%sx%s+%s+%s' % (150, 30, event.x_root + 5, event.y_root + 5))
-
-		t1=Thread(target=wait)
-		t1.setDaemon(True)
-		t1.start()
+		self.float_window.geometry('%sx%s+%s+%s' % (150, 30, event.x_root + 5, event.y_root + 5))
+		self.float_label.pack()
 
 	def on_mouse_leave_area_and_hide_help(self,event):
 		self.float_window.geometry('%sx%s+%s+%s' % (0, 0, 0, 0))
 		self.float_label.pack_forget()
 
-
-
 	def on_click_exit(self):
 		self.__del__()
-
-
-
-
-
 
 if __name__ == '__main__':
 	win=drag_window(size=50)
