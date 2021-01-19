@@ -335,7 +335,12 @@ class my_app():
 					server_desc='大华'
 				if server_desc=='haikang':
 					server_desc='海康'
-				show_info='窗口：%s，正在播放%s@%s:%s channel %s'%(win_desc,server_desc,ip,port,channel)
+				if info[3]=='playback':
+					state='回放'
+				else:
+					state='实时播放'
+				show_info = '%s %s %s@%s:%s channel %s' % (win_desc, state, server_desc, ip, port, channel)
+				#show_info='窗口：%s，正在播放%s@%s:%s channel %s %s'%(win_desc,server_desc,ip,port,channel,state)
 			label['text']=show_info
 			label.place(rely=0.9, relx=0.5,anchor=CENTER)
 			label['bg']=DEFAULT_COLOR
@@ -393,7 +398,11 @@ class my_app():
 				server_desc='大华'
 			if server_desc=='haikang':
 				server_desc='海康'
-			show_info='窗口：%s，正在播放%s@%s:%s channel %s'%(win_desc,server_desc,ip,port,channel)
+			if info[3] == 'playback':
+				state = '回放'
+			else:
+				state = '实时播放'
+			show_info = '%s %s %s@%s:%s channel %s' % (win_desc, state, server_desc, ip, port, channel)
 			size_x=8*len(show_info)
 			size_y=20
 
@@ -696,6 +705,26 @@ class my_app():
 		if name == 'window_9':
 			return self.video_play_9.winfo_id()
 
+	def get_window_wdiget(self, name):
+		if name == 'window_1':
+			return self.video_play_1
+		if name == 'window_2':
+			return self.video_play_2
+		if name == 'window_3':
+			return self.video_play_3
+		if name == 'window_4':
+			return self.video_play_4
+		if name == 'window_5':
+			return self.video_play_5
+		if name == 'window_6':
+			return self.video_play_6
+		if name == 'window_7':
+			return self.video_play_7
+		if name == 'window_8':
+			return self.video_play_8
+		if name == 'window_9':
+			return self.video_play_9
+
 	def load_windows_states(self):
 		states = {}
 		if os.path.exists(os.path.join(DAT_PATH, 'state.dat')) and os.path.isfile(os.path.join(DAT_PATH, 'state.dat')):
@@ -953,8 +982,8 @@ class my_app():
 				continue
 			win_desc,server, channel, handel=info
 
-			if handel=='rec':
-				print(win,'is playing rec')
+			if handel=='playback':
+				print(win,'is playback rec')
 				playbacks[win]=info
 			if isinstance(handel,int):
 				print(win,'is palying cam')
@@ -1101,16 +1130,24 @@ class my_app():
 				print(cams,playbacks)
 
 				for win in cams.keys():
-					print('检测掉线，并准备播放录像')
-					desc,server,channel,handle=cams[win]
+					desc,server,channel,handel=cams[win]
 					if (desc in dh_new_offline) or (desc in hk_new_offline):
-						if self.window_status[self.now_window_name] != 0:
-							print(server)
-							server.Stop_Play_Cam(handle)
-							self.window_status[self.now_window_name] = [desc,server,channel,'rec']
-							self.now_window_widget['bg'] = VIDEO_DEFAULT_COLOR
+						print('检测到服务器掉线，准备播放录像')
+						server.Stop_Play_Cam(handel)
+						self.window_status[win] = [desc,server,channel,'playback']
+						self.get_window_wdiget(win)['bg'] = VIDEO_DEFAULT_COLOR
 						self.refresh_video_states()
 
+				for win in playbacks.keys():
+					desc,server,channel,handel=playbacks[win]
+					if (desc in dh_new_online) or (desc in hk_new_online):
+						print('检测服务器上线，并准备播放实时摄像头')
+						if 'haikang' in desc:
+							self.play_hk_cam(desc, server, channel, win, self.get_window_hwnd(win))
+							self.refresh_video_states()
+						if 'dahua' in desc:
+							self.play_dh_cam(desc, server, channel, win, self.get_window_hwnd(win))
+							self.refresh_video_states()
 
 
 
