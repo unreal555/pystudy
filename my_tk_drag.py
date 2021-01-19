@@ -3,17 +3,17 @@
 # Author：zl
 # Date ：2021/1/15 0015 上午 10:03
 # Tool ：PyCharm
-
-
-import tkinter, os
-from tkinter.messagebox import askokcancel, showinfo
-
-import windnd
-from my_icon import set_icon
-
+import os
 import time
 
 from threading import Thread
+
+import windnd
+
+import tkinter
+from tkinter.messagebox import askokcancel, showinfo
+
+from my_icon import set_icon
 
 class drag_window():
 	color='gray'#'#bcbcbc'
@@ -39,7 +39,6 @@ class drag_window():
 		self.float_window.attributes("-toolwindow", True)  # 置为工具窗口(没有最大最小按钮)
 		self.float_window.attributes("-topmost", True)
 
-
 		self.max_x, self.max_y = self.root.maxsize()
 		self.root.geometry("%sx%s+%s+%s"%(self.size,self.size,self.max_x-self.size,int(self.max_y*0.7)))
 
@@ -55,7 +54,6 @@ class drag_window():
 		self.root.bind('<B1-Motion>',self.on_mouse_drag_window)
 		self.root.bind('<ButtonPress-1>', self.on_mouse_left_button_press)
 		self.root.bind('<Button-3>',self.on_mouse_right_button_press)
-		self.root.bind('<Triple-Button-2>', self.on_click_exit)
 		self.root.bind('<Enter>',self.on_mouse_enter_area_and_show_help)
 		self.root.bind('<Leave>', self.on_mouse_leave_area_and_hide_help)
 
@@ -95,13 +93,10 @@ class drag_window():
 		self.root.destroy()
 
 	def on_mouse_enter_area_and_show_help(self,event):
-
 		def do():
 			time.sleep(1)
 			self.float_label.pack()
-			self.float_window.geometry('%sx%s+%s+%s' % (150, 30, event.x_root,event.y_root))
-			return
-
+			self.float_window.geometry('%sx%s+%s+%s' % (150, 30, event.x_root+5,event.y_root+5))
 		t=Thread(target=do)
 		t.setDaemon(True)
 		t.start()
