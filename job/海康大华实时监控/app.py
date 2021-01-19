@@ -29,7 +29,7 @@ DAT_PATH = './dat'
 DEFAULT_COLOR = '#bcbcbc'
 VIDEO_DEFAULT_COLOR = '#acbcbc'
 FONT_COLOR='black'
-REFRESH_TIME=10
+REFRESH_TIME=600
 
 class my_app():
 	if not os.path.exists(DAT_PATH):
@@ -235,20 +235,21 @@ class my_app():
 
 		self.stop_button = tk.Button(self.video_control_area, text='停止')
 		self.stop_button.pack(side=tk.LEFT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
-		self.stop_button.bind("<ButtonPress-1>", self.stop_play_cam)
+		self.stop_button.bind("<ButtonPress-1>", self.on_click_stop_play_cam)
 
 		self.capture_button = tk.Button(self.video_control_area, text='截图')
 		self.capture_button.pack(side=tk.LEFT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 		self.capture_button.bind("<ButtonPress-1>", self.capture_cam)
 
-		self.play_button = tk.Button(self.video_control_area, text='播放')
-		self.play_button.pack(side=tk.LEFT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+		self.rec_button = tk.Button(self.video_control_area, text='录像/停止')
+		self.rec_button.pack(side=tk.LEFT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+		self.rec_button.bind('<Button-1>',self.on_click_rec_button)
 
-		self.speedup_button = tk.Button(self.video_control_area, text='加速')
-		self.speedup_button.pack(side=tk.LEFT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
-
-		self.pause_button = tk.Button(self.video_control_area, text='暂停')
-		self.pause_button.pack(side=tk.LEFT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+		# self.speedup_button = tk.Button(self.video_control_area, text='加速')
+		# self.speedup_button.pack(side=tk.LEFT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+		#
+		# self.pause_button = tk.Button(self.video_control_area, text='暂停')
+		# self.pause_button.pack(side=tk.LEFT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
 		self.image = tk.PhotoImage(file="./dat/fenge_line.png")
 		self.hide_button= tk.Button(self.hide_area,width=5,text='showing',bg='gray',image=self.image)
@@ -448,7 +449,7 @@ class my_app():
 		self.root.attributes("-alpha", self.scale_bar.get() / 100)
 
 	def get_time(self):
-		return time.strftime('%Y-%m-%d %H:%M:%S')
+		return time.strftime('%Y-%m-%d-%H-%M-%S')
 
 	def read_config(self, path=os.path.join('.', 'config.ini')):
 		'''
@@ -493,18 +494,15 @@ class my_app():
 		if len(item) > 2:
 			return item
 
-	def stop_play_cam(self, event):
+	def on_click_stop_play_cam(self, event):
 
 		def do():
-
 			if self.now_window_name == -1 or self.now_hwnd == -1 or self.now_window_widget == -1:
 				showwarning(message='请先选择一个播放窗口')
 				return
-
 			if self.window_status[self.now_window_name] == 0:
 				showwarning(message='窗口空闲，没有可停止的对象')
 				return
-
 			if self.window_status[self.now_window_name] != 0:
 				server_type, server, channel, cam_handle = self.window_status[self.now_window_name]
 				print(server)
@@ -587,13 +585,46 @@ class my_app():
 		if isinstance(lRealHandle, int):
 			self.window_status[window_name] = (server_desc, server, channel, lRealHandle)
 
-	def rec_cam(self):
-		pass
+	def on_click_rec_button(self,event):
+		def do():
+			info=self.window_status[self.now_window_name]
 
-	def stop_rec_cam(self):
-		pass
+			if info==0:
+				showinfo('','请先选中一个正在播放的窗口')
+				return
+
+			if info in self.rec_status:
+				print('停止录像')
+				ThreadPoolExecutor().submit(self.stop_rec_cam,info)
+			else:
+				print('开始录像')
+				ThreadPoolExecutor().submit(self.rec_cam,info)
+		ThreadPoolExecutor().submit(do)
+
+	def rec_cam(self,item):
+		desc,server,channel,handel=item
+		if 'dahua' in desc:
+			print('调用大华录像')
+		if 'haikang' in desc:
+			print('调用海康录像')
+			file_path = os.path.join(REC_PATH, desc.replace(':', '-') + '-' + self.get_time() + '.mp4')
+			server.Rec_Cam(handel,file_path)
+		self.rec_status.append(item)
+			
+	def stop_rec_cam(self,item):
+		desc, server, channel, handel = item
+		if 'dahua' in desc:
+			print('调用大华停止录像')
+		if 'haikang' in desc:
+			print('调用海康停止录像')
+			server.Stop_Rec_Cam(handel)
+		self.rec_status.remove(item)
 
 	def capture_cam(self, event):
+		'''
+		大华截图回调函数无法传入储存地址，只能使用时间作为文件名，参数是通道号，
+		海康截图可以直接传入文件地址，参数是是视频播放句柄号，和文件地址
+		'''
 		def do():
 			info = self.window_status[self.now_window_name]
 
@@ -601,11 +632,14 @@ class my_app():
 				showwarning(message='当前窗口没有视频播放')
 				return
 
-			server_desc, server, channel, lUrseID = info
+			server_desc, server, channel, handel = info
 
 			if 'haikang:' in server_desc:
+
+				file_path=os.path.join(REC_PATH,server_desc.replace(':','-')+'-'+self.get_time()+'.jpg')
 				print('调用海康截图')
-				#self.play_hk_cam(server_desc, server, channel, self.now_window_name, self.now_hwnd)
+				print(file_path)
+				server.Capture_Cam(int(handel),file_path)
 
 			if 'dahua:' in server_desc:
 				print('调用大华截图')
@@ -1080,8 +1114,8 @@ class my_app():
 		def do():
 			while self.closing_flag == False:
 				for i in range(REFRESH_TIME,0,-1):
-					print(i,'后刷新服务器')
-					if REFRESH_TIME%60==0:  self.info.set('计划在%s秒后自动刷新服务器...'%(i))
+					if i%60==0:   print(i,'后刷新服务器')
+					if i%60==0:  self.info.set('计划在%s秒后自动刷新服务器...'%(i))
 					#60刷新一次状态t标签
 					time.sleep(1)
 					if self.closing_flag==True:
@@ -1133,7 +1167,7 @@ class my_app():
 					desc,server,channel,handel=cams[win]
 					if (desc in dh_new_offline) or (desc in hk_new_offline):
 						print('检测到服务器掉线，准备播放录像')
-						server.Stop_Play_Cam(handel)
+						server.on_click_stop_play_cam(handel)
 						self.window_status[win] = [desc,server,channel,'playback']
 						self.get_window_wdiget(win)['bg'] = VIDEO_DEFAULT_COLOR
 						self.refresh_video_states()
@@ -1148,20 +1182,6 @@ class my_app():
 						if 'dahua' in desc:
 							self.play_dh_cam(desc, server, channel, win, self.get_window_hwnd(win))
 							self.refresh_video_states()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 		pool=ThreadPoolExecutor(max_workers=4)
