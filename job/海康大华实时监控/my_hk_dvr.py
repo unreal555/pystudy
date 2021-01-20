@@ -54,13 +54,13 @@ class NET_DVR_SADPINFO(ctypes.Structure):
         ("struDnsServer2IpAddr", NET_DVR_IPADDR),
          ("byDns",c_byte),
          ("byDhcp",c_byte),
-         ("szGB28181DevID",c_byte*32),
+         ("szGB28181DevID",c_byte*20),
          ("byActivated",c_byte),
-         ("byDeviceModel",c_byte*24),
+         ("byDeviceModel",c_byte),
          ("byRes",c_byte*101)]
 
 
-class LPNET_DVR_SADPINFO_LIST(ctypes.Structure):
+class NET_DVR_SADPINFO_LIST(ctypes.Structure):
     _fields_ = [
 	("dwSize",c_ulong),
         #结构大小 
@@ -298,14 +298,15 @@ class HK_DVR():
         return result
 
     def GetSadpInfoList(self):
-        info=LPNET_DVR_SADPINFO_LIST()
-        info_list=info.struSadpInfo
-        result=self.CallCpp('NET_DVR_GetSadpInfoList',self.lUserID,info_list)
 
-        print('结果',result)
 
-        for i in info_list:
-            print(i)
+        lpSadpInfoList=NET_DVR_SADPINFO_LIST()
+
+        result=self.CallCpp('NET_DVR_GetSadpInfoList',self.lUserID,lpSadpInfoList)
+        print('2333',result)
+
+        for i in lpSadpInfoList.struSadpInfo:
+              print(i.wEncCnt)
 
 
     def GetServerInfo(self):
