@@ -9,6 +9,68 @@ import os
 import ctypes
 from ctypes import *
 
+class NET_DVR_IPADDR(ctypes.Structure):
+    _fields=[
+        ("sIpV4",c_char*16)  ,
+        ("byIPv6", c_byte *128)]
+    #char    sIpV4[16];
+    #BYTE    byIPv6[128];
+
+
+# typedef struct tagNET_DVR_SADPINFO
+# {
+#     NET_DVR_IPADDR  struIP;     // 设备IP地址
+#     WORD            wPort;      // 设备端口号
+#     WORD            wFactoryType;   // 设备厂家类型
+#     char            chSoftwareVersion[24];
+#     char            chSerialNo[16]; // 序列号
+#     WORD            wEncCnt;       // 编码通道个数
+#     BYTE            byMACAddr[6];        // MAC 地址
+#     NET_DVR_IPADDR  struSubDVRIPMask;   // DVR IP地址掩码
+#     NET_DVR_IPADDR  struGatewayIpAddr;  // 网关
+#     NET_DVR_IPADDR    struDnsServer1IpAddr;            /* 域名服务器1的IP地址 */
+#     NET_DVR_IPADDR    struDnsServer2IpAddr;            /* 域名服务器2的IP地址 */
+#     BYTE            byDns;
+#     BYTE            byDhcp;
+#     BYTE            szGB28181DevID[DEV_ID_LEN];  //GB28181协议接入时的设备ID，用于IPC以GB28181协议接入
+#     BYTE            byActivated;//0-无效，1-已激活，2-未激活
+#     BYTE            byDeviceModel[NET_SDK_DEVICE_MODEL_LEN/*24*/];//设备型号
+#     BYTE            byRes[101];     // 保留字节
+# }NET_DVR_SADPINFO, *LPNET_DVR_SADPINFO;
+
+
+class NET_DVR_SADPINFO(ctypes.Structure):
+    _fields=[
+        ("struIP",NET_DVR_IPADDR),
+        ("wPort",c_uint16),
+        ("wFactoryType", c_uint16),
+        ("chSoftwareVersion", c_char*24),
+        ("chSerialNo", c_char*16),
+        ("wEncCnt", c_uint16),
+        ("byMACAddr", c_byte*6),
+        ("struSubDVRIPMask", NET_DVR_IPADDR),
+        ("struGatewayIpAddr", NET_DVR_IPADDR),
+        ("struDnsServer1IpAddr", NET_DVR_IPADDR),
+        ("struDnsServer2IpAddr", NET_DVR_IPADDR),
+         ("byDns",c_byte),
+         ("byDhcp",c_byte),
+         ("szGB28181DevID",c_byte*20),
+         ("byActivated",c_byte),
+         ("byDeviceModel",c_byte),
+         ("byRes",c_byte*101)]
+
+
+class NET_DVR_SADPINFO_LIST(ctypes.Structure):
+    _fields_ = [
+	("dwSize",c_ulong),
+        #结构大小 
+    ("byAlarmInPortNum", c_uint16),
+        #搜索到设备数目.
+	("byRes",c_byte*6),
+        #保留字节
+	("struSadpInfo",NET_DVR_SADPINFO*256)]
+
+
 class NET_DVR_PREVIEWINFO(ctypes.Structure):
     _fields_ = [
         # 通道号，目前设备模拟通道号从1开始，数字通道的起始通道号通过
@@ -199,6 +261,7 @@ class HK_DVR():
         sPassword = self.sPassword
         lUserID = self.CallCpp("NET_DVR_Login_V30", sDVRIP, sDVRPort, sUserName, sPassword, ctypes.byref(self.DeviceInfo))
 
+        
         if lUserID == -1:
             error_info = self.CallCpp("NET_DVR_GetLastError")
             print("登录错误信息：" + str(error_info))
@@ -233,6 +296,17 @@ class HK_DVR():
         result=self.CallCpp('NET_DVR_StopRealPlay',c_long(lRealHandle))
         print(result)
         return result
+
+    def GetSadpInfoList(self):
+
+
+        lpSadpInfoList=NET_DVR_SADPINFO_LIST()
+
+        result=self.CallCpp('NET_DVR_GetSadpInfoList',self.lUserID,lpSadpInfoList)
+        print('2333',result)
+
+        for i in lpSadpInfoList.struSadpInfo:
+              print(i.wEncCnt)
 
 
     def GetServerInfo(self):
@@ -282,21 +356,19 @@ class HK_DVR():
             return True
 
 if __name__ == '__main__':
-    # import tkinter as tk
-    # window = tk.Tk()  # 创建窗口
-    # window.title("this is a test")  # 窗口标题
-    # window.geometry('500x900')  # 窗口大小，小写字母x
-    # video = tk.Frame(window, cursor='plus', bd=2, relief="sunken")
-    # video.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)  # 固定
-    # video1 = tk.Frame(window, cursor='plus', bd=2, relief="sunken")
-    # video1.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)  # 固定
-    # hwnd1 = video.winfo_id()
+    import tkinter as tk
+    window = tk.Tk()  #创建窗口
+    window.title("this is a test")  #窗口标题
+    window.geometry('500x900')  #窗口大小，小写字母x
+    video = tk.Frame(window, cursor='plus', bd=2, relief="sunken")
+    video.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)  #固定
+    video1 = tk.Frame(window, cursor='plus', bd=2, relief="sunken")
+    video1.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)  #固定
+    hwnd1 = video.winfo_id()
     server1=HK_DVR( sDVRIP='47.92.89.1', sDVRPort=8201, sUserName='admin', sPassword='abcd1234')
-    import time
-    while 1:
-        print(server1.check_device_online())
-        time.sleep(3)
-
+    server1.GetSadpInfoList()
+    server1.Close()
+    #server1.Play_Cam(hwnd1,33)
 
 
 
