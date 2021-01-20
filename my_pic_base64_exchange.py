@@ -67,7 +67,7 @@ def pic_to_base64(path,has_head=True):
 if __name__ == '__main__':
 
     # 编码测试
-    print(pic_to_base64('my-icon.ico',has_head=False))
+    print(pic_to_base64('./pic/user.ico',has_head=False))
 
 
 
