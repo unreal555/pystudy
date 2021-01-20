@@ -54,9 +54,9 @@ class NET_DVR_SADPINFO(ctypes.Structure):
         ("struDnsServer2IpAddr", NET_DVR_IPADDR),
          ("byDns",c_byte),
          ("byDhcp",c_byte),
-         ("szGB28181DevID",c_byte*20),
+         ("szGB28181DevID",c_byte*32),
          ("byActivated",c_byte),
-         ("byDeviceModel",c_byte),
+         ("byDeviceModel",c_byte*24),
          ("byRes",c_byte*101)]
 
 
