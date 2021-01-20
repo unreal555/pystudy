@@ -9,35 +9,25 @@ import os
 import ctypes
 from ctypes import *
 
+
+#   DWORD    c_ulong
+
+
+class NET_DVR_DIGITAL_CHANNEL_STATE(ctypes.Structure):
+    _fields_=[
+        ("dwSize",c_ulong),
+        ("byDigitalAudioChanTalkState",c_byte*30),
+        ("byDigitalChanState",c_byte*30),
+        ("byDigitalAudioChanTalkStateEx",c_byte*30*3),
+        ("byDigitalChanStateEx",c_byte*30*3),
+        ("byRes",c_byte*64)]
+
 class NET_DVR_IPADDR(ctypes.Structure):
     _fields_=[
         ("sIpV4",c_char*16) ,
         ("byIPv6", c_byte *128)]
     #char    sIpV4[16];
     #BYTE    byIPv6[128];
-
-
-# typedef struct tagNET_DVR_SADPINFO
-# {
-#     NET_DVR_IPADDR  struIP;     // 设备IP地址
-#     WORD            wPort;      // 设备端口号
-#     WORD            wFactoryType;   // 设备厂家类型
-#     char            chSoftwareVersion[24];
-#     char            chSerialNo[16]; // 序列号
-#     WORD            wEncCnt;       // 编码通道个数
-#     BYTE            byMACAddr[6];        // MAC 地址
-#     NET_DVR_IPADDR  struSubDVRIPMask;   // DVR IP地址掩码
-#     NET_DVR_IPADDR  struGatewayIpAddr;  // 网关
-#     NET_DVR_IPADDR    struDnsServer1IpAddr;            /* 域名服务器1的IP地址 */
-#     NET_DVR_IPADDR    struDnsServer2IpAddr;            /* 域名服务器2的IP地址 */
-#     BYTE            byDns;
-#     BYTE            byDhcp;
-#     BYTE            szGB28181DevID[DEV_ID_LEN];  //GB28181协议接入时的设备ID，用于IPC以GB28181协议接入
-#     BYTE            byActivated;//0-无效，1-已激活，2-未激活
-#     BYTE            byDeviceModel[NET_SDK_DEVICE_MODEL_LEN/*24*/];//设备型号
-#     BYTE            byRes[101];     // 保留字节
-# }NET_DVR_SADPINFO, *LPNET_DVR_SADPINFO;
-
 
 class NET_DVR_SADPINFO(ctypes.Structure):
     _fields_=[
@@ -299,15 +289,21 @@ class HK_DVR():
         print(result)
         return result
 
-    def GetSadpInfoList(self):
+    def GetChannelState(self):
 
-        lpSadpInfoList=NET_DVR_SADPINFO_LIST()
+        state=NET_DVR_DIGITAL_CHANNEL_STATE()
+        return_size=c_ulong()
 
-        result=self.CallCpp('NET_DVR_GetSadpInfoList',self.lUserID,byref(lpSadpInfoList))
+        result=self.CallCpp('NET_DVR_GetDVRConfig',self.lUserID,6126,'',byref(state),c_ulong(2048),byref(return_size))
+        for i in state.byDigitalChanState:
+            print(i)
+        print(self.Get_Last_Error())
         print('2333',result)
+        print(state.byDigitalChanState)
+        print(return_size)
 
-        for i in lpSadpInfoList.struSadpInfo:
-              print(i.wEncCnt)
+
+
 
 
     def GetServerInfo(self):
@@ -367,8 +363,9 @@ if __name__ == '__main__':
     video1.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)  #固定
     hwnd1 = video.winfo_id()
     server1=HK_DVR( sDVRIP='47.92.89.1', sDVRPort=8201, sUserName='admin', sPassword='abcd1234')
-    server1.Close()
-    #server1.Play_Cam(hwnd1,33)
+    server1.GetChannelState()
+    server1.Play_Cam(hwnd1,33)
+    window.mainloop()
 
 
 
