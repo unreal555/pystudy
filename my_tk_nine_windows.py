@@ -10,7 +10,7 @@ from tkinter import *
 from tkinter import ttk
 from tkinter.messagebox import *
 
-default_color = '#bcbcbc'
+DEFAULT_COLOR = '#bcbcbc'
 VIDEO_DEFAULT_COLOR = '#acbcbc'
 
 from my_icon import set_icon
@@ -26,7 +26,7 @@ class my_app():
 
 		self.root.title('Player')
 		self.root['bd']=0
-		self.root['bg'] = default_color
+		self.root['bg'] = DEFAULT_COLOR
 		self.root.attributes("-alpha", 0.9)
 		#self.root.resizable(0, 0)  # 设置窗口大小不可变
 		self.root.overrideredirect(False)
@@ -318,15 +318,15 @@ class my_app():
 			return
 
 	def clear_video_window_select_color(self):
-		self.video_play_1['highlightbackground'] = '#bcbcbc'
-		self.video_play_2['highlightbackground'] = '#bcbcbc'
-		self.video_play_3['highlightbackground'] = '#bcbcbc'
-		self.video_play_4['highlightbackground'] = '#bcbcbc'
-		self.video_play_5['highlightbackground'] = '#bcbcbc'
-		self.video_play_6['highlightbackground'] = '#bcbcbc'
-		self.video_play_7['highlightbackground'] = '#bcbcbc'
-		self.video_play_8['highlightbackground'] = '#bcbcbc'
-		self.video_play_9['highlightbackground'] = '#bcbcbc'
+		self.video_play_1['highlightbackground'] = DEFAULT_COLOR
+		self.video_play_2['highlightbackground'] = DEFAULT_COLOR
+		self.video_play_3['highlightbackground'] = DEFAULT_COLOR
+		self.video_play_4['highlightbackground'] = DEFAULT_COLOR
+		self.video_play_5['highlightbackground'] = DEFAULT_COLOR
+		self.video_play_6['highlightbackground'] = DEFAULT_COLOR
+		self.video_play_7['highlightbackground'] = DEFAULT_COLOR
+		self.video_play_8['highlightbackground'] = DEFAULT_COLOR
+		self.video_play_9['highlightbackground'] = DEFAULT_COLOR
 
 	def set_select_window_info(self, event):
 
@@ -526,7 +526,7 @@ class my_app():
 		self.is_single_playing = 0
 		self.now_hwnd = 0
 		self.login_servers = 0
-		self.root.destroy()
+		self.root.quit()
 
 
 def start():

@@ -593,12 +593,15 @@ class my_app():
 				showinfo('','请先选中一个正在播放的窗口')
 				return
 
+			desc, server, channel, handel = info
 			if info in self.rec_status:
 				print('停止录像')
-				ThreadPoolExecutor().submit(self.stop_rec_cam,info)
+				if askokcancel(message='是否停止{} channel:{}录像'.format(desc,channel)):
+					ThreadPoolExecutor().submit(self.stop_rec_cam,info)
 			else:
 				print('开始录像')
-				ThreadPoolExecutor().submit(self.rec_cam,info)
+				if askokcancel(message='是否开始{} channel:{}录像'.format(desc, channel)):
+					ThreadPoolExecutor().submit(self.rec_cam,info)
 		ThreadPoolExecutor().submit(do)
 
 	def rec_cam(self,item):
