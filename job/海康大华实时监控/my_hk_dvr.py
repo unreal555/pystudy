@@ -10,8 +10,8 @@ import ctypes
 from ctypes import *
 
 class NET_DVR_IPADDR(ctypes.Structure):
-    _fields=[
-        ("sIpV4",c_char*16)  ,
+    _fields_=[
+        ("sIpV4",c_char*16) ,
         ("byIPv6", c_byte *128)]
     #char    sIpV4[16];
     #BYTE    byIPv6[128];
@@ -40,7 +40,7 @@ class NET_DVR_IPADDR(ctypes.Structure):
 
 
 class NET_DVR_SADPINFO(ctypes.Structure):
-    _fields=[
+    _fields_=[
         ("struIP",NET_DVR_IPADDR),
         ("wPort",c_uint16),
         ("wFactoryType", c_uint16),
@@ -261,7 +261,9 @@ class HK_DVR():
         sPassword = self.sPassword
         lUserID = self.CallCpp("NET_DVR_Login_V30", sDVRIP, sDVRPort, sUserName, sPassword, ctypes.byref(self.DeviceInfo))
 
-        
+        print('输出数字通道起始号码',self.DeviceInfo.byStartDChan)
+        print('数字通道个数：',self.DeviceInfo.byIPChanNum)
+        print('最大数字通道数',self.DeviceInfo.byIPChanNum+ self.DeviceInfo.byHighDChanNum*256)
         if lUserID == -1:
             error_info = self.CallCpp("NET_DVR_GetLastError")
             print("登录错误信息：" + str(error_info))
@@ -299,10 +301,9 @@ class HK_DVR():
 
     def GetSadpInfoList(self):
 
-
         lpSadpInfoList=NET_DVR_SADPINFO_LIST()
 
-        result=self.CallCpp('NET_DVR_GetSadpInfoList',self.lUserID,lpSadpInfoList)
+        result=self.CallCpp('NET_DVR_GetSadpInfoList',self.lUserID,byref(lpSadpInfoList))
         print('2333',result)
 
         for i in lpSadpInfoList.struSadpInfo:
@@ -366,7 +367,6 @@ if __name__ == '__main__':
     video1.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)  #固定
     hwnd1 = video.winfo_id()
     server1=HK_DVR( sDVRIP='47.92.89.1', sDVRPort=8201, sUserName='admin', sPassword='abcd1234')
-    server1.GetSadpInfoList()
     server1.Close()
     #server1.Play_Cam(hwnd1,33)
 
