@@ -29,7 +29,7 @@ DAT_PATH = './dat'
 DEFAULT_COLOR = '#bcbcbc'
 VIDEO_DEFAULT_COLOR = '#acbcbc'
 FONT_COLOR='black'
-REFRESH_TIME=600
+REFRESH_TIME=15
 
 class my_app():
 	if not os.path.exists(DAT_PATH):
@@ -494,7 +494,7 @@ class my_app():
 		if len(item) > 2:
 			return item
 
-	def on_click_stop_play_cam(self, event):
+	def on_click_stop_play_cam(self, ):
 
 		def do():
 			if self.now_window_name == -1 or self.now_hwnd == -1 or self.now_window_widget == -1:
@@ -1170,7 +1170,7 @@ class my_app():
 					desc,server,channel,handel=cams[win]
 					if (desc in dh_new_offline) or (desc in hk_new_offline):
 						print('检测到服务器掉线，准备播放录像')
-						server.on_click_stop_play_cam(handel)
+						server.Stop_Play_Cam(handel)
 						self.window_status[win] = [desc,server,channel,'playback']
 						self.get_window_wdiget(win)['bg'] = VIDEO_DEFAULT_COLOR
 						self.refresh_video_states()
