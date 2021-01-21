@@ -13,8 +13,7 @@ import windnd
 import tkinter
 from tkinter.messagebox import askokcancel, showinfo
 
-from my_icon import set_icon
-
+import my_icon
 class drag_window():
 	color='gray'#'#bcbcbc'
 	pic_path = './pic/my-icon.png'
@@ -29,7 +28,7 @@ class drag_window():
 		self.root.resizable(0, 0)  # 设置窗口大小不可变
 		self.root.overrideredirect(True)  #直接屏幕上绘图，不要按钮边框		self.float_window.attributes("-toolwindow", True)  # 置为工具窗口(没有最大最小按钮)
 		self.root.attributes("-topmost", True)
-		set_icon(self.root)
+		my_icon.set_icon(self.root,my_icon.MY_PERSON_ICON)
 
 		self.float_window = tkinter.Toplevel()
 		self.float_window.geometry('1x1')
@@ -88,7 +87,7 @@ class drag_window():
 
 
 	def __del__(self):
-		self.root.destroy()
+		self.root.quit()
 
 	def on_mouse_enter_area_and_show_help(self,event):
 		self.float_window.geometry('%sx%s+%s+%s' % (150, 30, event.x_root + 5, event.y_root + 5))
