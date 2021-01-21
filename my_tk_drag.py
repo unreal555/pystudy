@@ -106,7 +106,6 @@ if __name__ == '__main__':
 	win.root.mainloop()
 
 
-
 '''
 #<B1-Motion> 拖动左键触发事件
 #<B2-Motion> 拖动中键触发事件
