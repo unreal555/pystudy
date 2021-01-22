@@ -41,7 +41,7 @@ class my_app():
 	def __init__(self):
 		self.root = Tk()
 		my_icon.set_icon(self.root,my_icon.USER_ICON)
-		self.root.title('Player')
+		self.root.title('现场可视化管理平台')
 		self.root['bd']=0
 		self.root['bg'] = DEFAULT_COLOR
 		self.root.attributes("-alpha", 0.9)
@@ -226,8 +226,8 @@ class my_app():
 		self.cam_tree_scb_x.pack(side='bottom', fill=tk.BOTH, expand=tk.NO)
 		self.cam_tree.configure(xscrollcommand=self.cam_tree_scb_x.set)
 
-		self.refresh_button = tk.Button(self.list_area, width=18, text='刷新服务器')
-		self.refresh_button.pack(side='bottom', fill=tk.BOTH, expand=tk.NO)
+		self.refresh_button = tk.Button(self.list_area, width=40, text='刷新服务器')
+		self.refresh_button.pack(side='bottom', fill=tk.BOTH, expand=tk.YES)
 		self.refresh_button.bind("<ButtonPress-1>", self.check_servers)
 		# refresh button 的disablede 状态在手动刷新时设置，使按钮不可用，防止连续点击重复刷新服务器状态，影响性能
 		# 同时作为自动刷新，关机时检测刷新服务器状态的标志，自动刷新前若检测到该状态为disabled，则推迟一个刷新周期
