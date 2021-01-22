@@ -1,5 +1,5 @@
-﻿# coding：utf8
-# ﻿Team  JiaLiDun University
+﻿
+# ﻿ Team : JiaLiDun University
 # Author：zl
 # Date ：2020/9/30 0030 上午 9:39
 # Tool ：PyCharm
@@ -59,7 +59,7 @@ class my_app():
 		self.float_window.attributes("-topmost", True)
 
 
-		self.window_des = [('单窗口', 1), ('四窗口', 4), ('九窗口', 9),('老多窗口', 16)]
+		self.window_des = [('单窗口', 1), ('四窗口', 4), ('九窗口', 9)]
 
 		self.v_num = IntVar()
 
@@ -91,18 +91,7 @@ class my_app():
 			'window_7': 0,
 			'window_8': 0,
 			'window_9': 0,
-			'window_10': 0,
-			'window_11': 0,
-			'window_12': 0,
-			'window_13': 0,
-			'window_14': 0,
-			'window_15': 0,
-			'window_16': 0
 		}
-		self.win_all=['window_1','window_2','window_3','window_4',
-		              'window_5','window_6','window_7','window_8',
-		              'window_9','window_10','window_11','window_12',
-		              'window_13','window_14','window_15','window_16',]
 
 		self.rec_status = {}
 
@@ -114,26 +103,21 @@ class my_app():
 
 		self.video_area.pack(side=tk.RIGHT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
 
-		self.hide_area.pack(side=tk.RIGHT, anchor=tk.S, expand=tk.NO, fill=tk.Y)
+		self.hide_area.pack(side=tk.RIGHT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
-		self.list_area.pack(side=tk.RIGHT, anchor=tk.S, expand=tk.NO, fill=tk.Y)
+		self.list_area.pack(side=tk.RIGHT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
 		self.video_play_area = tk.Frame(self.video_area, bd=0, relief="sunken")
+
+		self.video_control_area = tk.Frame(self.video_area, bd=0, relief="sunken")
+
 		self.video_play_area.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
 
-		self.video_play_bottom_area = tk.Frame(self.video_area, bd=0, relief="sunken")
-		self.video_play_bottom_area.pack(side=tk.TOP, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
-
-		self.video_control_hide_area= tk.Frame(self.video_play_bottom_area, bd=0, relief="sunken",height=10)
-		self.video_control_hide_area.pack(side=tk.TOP, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
-
-		self.video_control_area = tk.Frame(self.video_play_bottom_area, bd=0, relief="sunken")
 		self.video_control_area.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
 		self.video_play_area_1 = tk.Frame(self.video_play_area, bd=0, relief="sunken")
 		self.video_play_area_2 = tk.Frame(self.video_play_area, bd=0, relief="sunken")
 		self.video_play_area_3 = tk.Frame(self.video_play_area, bd=0, relief="sunken")
-		self.video_play_area_4 = tk.Frame(self.video_play_area, bd=0, relief="sunken")
 
 		self.video_play_1 = tk.Frame(self.video_play_area_1, cursor='plus', bd=1, relief="sunken",
 		                             class_='window_1', highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
@@ -141,35 +125,18 @@ class my_app():
 		                             class_='window_2', highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
 		self.video_play_3 = tk.Frame(self.video_play_area_1, cursor='plus', bd=1, relief="sunken",
 		                             class_='window_3', highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
-		self.video_play_4 = tk.Frame(self.video_play_area_1, cursor='plus', bd=1, relief="sunken",
+		self.video_play_4 = tk.Frame(self.video_play_area_2, cursor='plus', bd=1, relief="sunken",
 		                             class_='window_4', highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
-
 		self.video_play_5 = tk.Frame(self.video_play_area_2, cursor='plus', bd=1, relief="sunken",
 		                             class_='window_5', highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
 		self.video_play_6 = tk.Frame(self.video_play_area_2, cursor='plus', bd=1, relief="sunken",
 		                             class_='window_6', highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
-		self.video_play_7 = tk.Frame(self.video_play_area_2, cursor='plus', bd=1, relief="sunken",
+		self.video_play_7 = tk.Frame(self.video_play_area_3, cursor='plus', bd=1, relief="sunken",
 		                             class_='window_7', highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
-		self.video_play_8 = tk.Frame(self.video_play_area_2, cursor='plus', bd=1, relief="sunken",
+		self.video_play_8 = tk.Frame(self.video_play_area_3, cursor='plus', bd=1, relief="sunken",
 		                             class_='window_8', highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
-
 		self.video_play_9 = tk.Frame(self.video_play_area_3, cursor='plus', bd=1, relief="sunken",
 		                             class_='window_9', highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
-		self.video_play_10 = tk.Frame(self.video_play_area_3, cursor='plus', bd=1, relief="sunken",
-		                             class_='window_10', highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
-		self.video_play_11 = tk.Frame(self.video_play_area_3, cursor='plus', bd=1, relief="sunken",
-		                             class_='window_11', highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
-		self.video_play_12 = tk.Frame(self.video_play_area_3, cursor='plus', bd=1, relief="sunken",
-		                             class_='window_12', highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
-
-		self.video_play_13 = tk.Frame(self.video_play_area_4, cursor='plus', bd=1, relief="sunken",
-		                             class_='window_13', highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
-		self.video_play_14 = tk.Frame(self.video_play_area_4, cursor='plus', bd=1, relief="sunken",
-		                             class_='window_14', highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
-		self.video_play_15 = tk.Frame(self.video_play_area_4, cursor='plus', bd=1, relief="sunken",
-		                             class_='window_15', highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
-		self.video_play_16 = tk.Frame(self.video_play_area_4, cursor='plus', bd=1, relief="sunken",
-		                             class_='window_16', highlightthickness=2, bg=VIDEO_DEFAULT_COLOR)
 
 		self.video_play_1_state=tk.Label(self.video_play_1,cursor='plus', bd=1,relief="sunken",
 		                              highlightthickness=0, bg=VIDEO_DEFAULT_COLOR)
@@ -198,41 +165,52 @@ class my_app():
 		self.video_play_9_state=tk.Label(self.video_play_9,cursor='plus', bd=1,relief="sunken",
 		                              highlightthickness=0, bg=VIDEO_DEFAULT_COLOR)
 
-		self.video_play_10_state=tk.Label(self.video_play_10,cursor='plus', bd=1,relief="sunken",
-		                              highlightthickness=0, bg=VIDEO_DEFAULT_COLOR)
 
-		self.video_play_11_state=tk.Label(self.video_play_11,cursor='plus', bd=1,relief="sunken",
-		                              highlightthickness=0, bg=VIDEO_DEFAULT_COLOR)
+		self.video_play_1.bind('<Motion>',self.on_mouse_move_in_video_play_area)
+		self.video_play_1.bind('<Leave>', self.on_mouse_move_out_video_play_area)
 
-		self.video_play_12_state=tk.Label(self.video_play_12,cursor='plus', bd=1,relief="sunken",
-		                              highlightthickness=0, bg=VIDEO_DEFAULT_COLOR)
+		self.video_play_2.bind('<Motion>',self.on_mouse_move_in_video_play_area)
+		self.video_play_2.bind('<Leave>', self.on_mouse_move_out_video_play_area)
 
-		self.video_play_13_state=tk.Label(self.video_play_13,cursor='plus', bd=1,relief="sunken",
-		                              highlightthickness=0, bg=VIDEO_DEFAULT_COLOR)
+		self.video_play_3.bind('<Motion>',self.on_mouse_move_in_video_play_area)
+		self.video_play_3.bind('<Leave>', self.on_mouse_move_out_video_play_area)
 
-		self.video_play_14_state=tk.Label(self.video_play_14,cursor='plus', bd=1,relief="sunken",
-		                              highlightthickness=0, bg=VIDEO_DEFAULT_COLOR)
+		self.video_play_4.bind('<Motion>',self.on_mouse_move_in_video_play_area)
+		self.video_play_4.bind('<Leave>', self.on_mouse_move_out_video_play_area)
 
-		self.video_play_15_state=tk.Label(self.video_play_15,cursor='plus', bd=1,relief="sunken",
-		                              highlightthickness=0, bg=VIDEO_DEFAULT_COLOR)
-		self.video_play_16_state=tk.Label(self.video_play_16,cursor='plus', bd=1,relief="sunken",
-		                              highlightthickness=0, bg=VIDEO_DEFAULT_COLOR)
+		self.video_play_5.bind('<Motion>',self.on_mouse_move_in_video_play_area)
+		self.video_play_5.bind('<Leave>', self.on_mouse_move_out_video_play_area)
 
-		self.video_play_states=[self.video_play_1_state,self.video_play_2_state,self.video_play_3_state,self.video_play_4_state,
-		                  self.video_play_5_state,self.video_play_6_state,self.video_play_7_state,self.video_play_8_state,
-		                  self.video_play_9_state,self.video_play_10_state,self.video_play_11_state,self.video_play_12_state,
-		                  self.video_play_13_state,self.video_play_14_state,self.video_play_15_state,self.video_play_16_state,]
+		self.video_play_6.bind('<Motion>',self.on_mouse_move_in_video_play_area)
+		self.video_play_6.bind('<Leave>', self.on_mouse_move_out_video_play_area)
 
-		self.video_plays=[self.video_play_1,self.video_play_2,self.video_play_3,self.video_play_4,
-		                  self.video_play_5,self.video_play_6,self.video_play_7,self.video_play_8,
-		                  self.video_play_9,self.video_play_10,self.video_play_11,self.video_play_12,
-		                  self.video_play_13,self.video_play_14,self.video_play_15,self.video_play_16,]
+		self.video_play_7.bind('<Motion>',self.on_mouse_move_in_video_play_area)
+		self.video_play_7.bind('<Leave>', self.on_mouse_move_out_video_play_area)
 
-		for v_play in self.video_plays:
-			v_play.bind('<Motion>',self.on_mouse_move_in_video_play_area)
-			v_play.bind('<Leave>', self.on_mouse_move_out_video_play_area)
-			v_play.bind("<ButtonPress-1>", self.set_select_window_info)
-			v_play.bind("<Double-Button-1>", self.change_window)
+		self.video_play_8.bind('<Motion>',self.on_mouse_move_in_video_play_area)
+		self.video_play_8.bind('<Leave>', self.on_mouse_move_out_video_play_area)
+
+		self.video_play_9.bind('<Motion>',self.on_mouse_move_in_video_play_area)
+		self.video_play_9.bind('<Leave>', self.on_mouse_move_out_video_play_area)
+
+		self.video_play_1.bind("<ButtonPress-1>", self.set_select_window_info)
+		self.video_play_2.bind("<ButtonPress-1>", self.set_select_window_info)
+		self.video_play_3.bind("<ButtonPress-1>", self.set_select_window_info)
+		self.video_play_4.bind("<ButtonPress-1>", self.set_select_window_info)
+		self.video_play_5.bind("<ButtonPress-1>", self.set_select_window_info)
+		self.video_play_6.bind("<ButtonPress-1>", self.set_select_window_info)
+		self.video_play_7.bind("<ButtonPress-1>", self.set_select_window_info)
+		self.video_play_8.bind("<ButtonPress-1>", self.set_select_window_info)
+		self.video_play_9.bind("<ButtonPress-1>", self.set_select_window_info)
+		self.video_play_1.bind("<Double-Button-1>", self.change_window)
+		self.video_play_2.bind("<Double-Button-1>", self.change_window)
+		self.video_play_3.bind("<Double-Button-1>", self.change_window)
+		self.video_play_4.bind("<Double-Button-1>", self.change_window)
+		self.video_play_5.bind("<Double-Button-1>", self.change_window)
+		self.video_play_6.bind("<Double-Button-1>", self.change_window)
+		self.video_play_7.bind("<Double-Button-1>", self.change_window)
+		self.video_play_8.bind("<Double-Button-1>", self.change_window)
+		self.video_play_9.bind("<Double-Button-1>", self.change_window)
 
 		style = ttk.Style()
 		# style_head.configure("Treeview.Heading", font=('', 65))
@@ -244,16 +222,16 @@ class my_app():
 		self.cam_tree.bind("<ButtonPress-1>", self.select_cam)
 		self.cam_tree.bind("<Double-Button-1>", self.on_click_play_cam)
 
-		self.cam_tree_scb_y = Scrollbar(self.cam_tree, orient='vertical',command=self.cam_tree.yview,width=10)
+		self.cam_tree_scb_y = Scrollbar(self.cam_tree, orient='vertical',command=self.cam_tree.yview,width=15)
 		self.cam_tree_scb_y.pack(side='right', fill=tk.BOTH, expand=tk.NO)
 		self.cam_tree.configure(yscrollcommand=self.cam_tree_scb_y.set)
 
-		self.cam_tree_scb_x = Scrollbar(self.cam_tree, orient='horizontal',command=self.cam_tree.xview,width=10)
+		self.cam_tree_scb_x = Scrollbar(self.cam_tree, orient='horizontal',command=self.cam_tree.xview,width=15)
 		self.cam_tree_scb_x.pack(side='bottom', fill=tk.BOTH, expand=tk.NO)
 		self.cam_tree.configure(xscrollcommand=self.cam_tree_scb_x.set)
 
-		self.refresh_button = tk.Button(self.list_area, text='刷新服务器',width=30)
-		self.refresh_button.pack(side='bottom', fill=tk.BOTH, expand=tk.NO)
+		self.refresh_button = tk.Button(self.list_area, width=40, text='刷新服务器')
+		self.refresh_button.pack(side='bottom', fill=tk.X, expand=tk.NO)
 		self.refresh_button.bind("<ButtonPress-1>", self.check_servers)
 		# refresh button 的disablede 状态在手动刷新时设置，使按钮不可用，防止连续点击重复刷新服务器状态，影响性能
 		# 同时作为自动刷新，关机时检测刷新服务器状态的标志，自动刷新前若检测到该状态为disabled，则推迟一个刷新周期
@@ -278,14 +256,11 @@ class my_app():
 		# self.pause_button.pack(side=tk.LEFT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
 		self.image = tk.PhotoImage(file="./dat/fenge_line.png")
-		self.left_hide_button= tk.Button(self.hide_area,width=5,text='showing',bg='gray',image=self.image)
-		self.left_hide_button.pack(side=tk.LEFT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
-		self.left_hide_button.bind("<ButtonPress-1>",self.on_click_hide_cam_tree_area)
-		self.left_hide_button.bind("<Enter>",self.on_mouse_enter_hidden_button)
-		self.left_hide_button.bind("<Leave>", self.on_mouse_leave_hidden_button)
-
-		self.video_play_bottom_area.bind('<Enter>',self.on_mouse_enter_control_area)
-		self.video_play_bottom_area.bind('<Leave>', self.mouse_move_leave_control_area)
+		self.hide_button= tk.Button(self.hide_area,width=5,text='showing',bg='gray',image=self.image)
+		self.hide_button.pack(side=tk.LEFT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+		self.hide_button.bind("<ButtonPress-1>",self.on_click_hide_cam_tree_area)
+		self.hide_button.bind("<Enter>",self.on_mouse_enter_hidden_button)
+		self.hide_button.bind("<Leave>", self.on_mouse_leave_hidden_button)
 
 		self.label_info = tk.Label(self.video_control_area, textvariable=self.info,width=60)  # anchor='w' ,justify='left',
 		self.label_info.pack(side=tk.LEFT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
@@ -337,18 +312,23 @@ class my_app():
 		# self.v_num.set(9)
 		# self.show_window()
 
+
 	def refresh_video_states(self):
 		self.on_click_show_win_info_checkbutton()
 
 	def on_click_show_win_info_checkbutton(self):
+		labels=[self.video_play_1_state, self.video_play_2_state, self.video_play_3_state, self.video_play_4_state,
+		 self.video_play_5_state, self.video_play_6_state, self.video_play_7_state, self.video_play_8_state, self.video_play_9_state]
+
+		win_descs=['window_1','window_2','window_3','window_4','window_5','window_6','window_7','window_8','window_9']
 
 		if self.show_win_info_checkbutton_flag.get()=='hide':
-			for label in self.video_play_states:
+			for label in labels:
 				label['text']=''
 				label.place_forget()
 			return
 
-		for win_desc,label in zip(self.win_all,self.video_play_states):
+		for win_desc,label in zip(win_descs,labels):
 			print(win_desc)
 			info=self.window_status[win_desc]
 			if info==0:
@@ -364,7 +344,7 @@ class my_app():
 					state='回放'
 				else:
 					state='实时播放'
-				show_info = '%s %s \r %s@%s:%s channel %s' % (win_desc, state,server_desc, ip, port, channel)
+				show_info = '%s %s %s@%s:%s channel %s' % (win_desc, state, server_desc, ip, port, channel)
 				#show_info='窗口：%s，正在播放%s@%s:%s channel %s %s'%(win_desc,server_desc,ip,port,channel,state)
 			label['text']=show_info
 			label.place(rely=0.9, relx=0.5,anchor=CENTER)
@@ -374,14 +354,24 @@ class my_app():
 		def do():
 			while self.closing_flag==False:
 				print('show rec')
-				for label in self.video_play_states:
+
+				labels=[self.video_play_1_state, self.video_play_2_state, self.video_play_3_state, self.video_play_4_state,
+				 self.video_play_5_state, self.video_play_6_state, self.video_play_7_state, self.video_play_8_state, self.video_play_9_state]
+
+				win_descs=['window_1','window_2','window_3','window_4','window_5','window_6','window_7','window_8','window_9']
+
+				for label in labels:
+
 						label['bg']=DEFAULT_COLOR
 				time.sleep(1)
-				for win,label in zip(self.win_all,self.video_play_states):
+
+				for win,label in zip(win_descs,labels):
 					if win in self.rec_status.keys():
 						label['bg']='green'
 				time.sleep(1)
+
 		ThreadPoolExecutor().submit(do)
+
 
 	def on_click_esc(self,event):
 		'''
@@ -401,29 +391,22 @@ class my_app():
 		'''
 		隐藏\打开摄像头列表
 		'''
-		if self.left_hide_button['text']=='showing':
+		if self.hide_button['text']=='showing':
 			self.list_area.pack_forget()
-			self.left_hide_button['text'] = 'hidding'
+			self.hide_button['text'] = 'hidding'
 			return
 
-		if self.left_hide_button['text']=='hidding':
+		if self.hide_button['text']=='hidding':
 			self.list_area.pack(side=tk.LEFT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
-			self.left_hide_button['text'] = 'showing'
+			self.hide_button['text'] = 'showing'
 			return
+
 
 	def on_mouse_enter_hidden_button(self,event):
-		self.left_hide_button['bg']='black'
+		self.hide_button['bg']='black'
 
 	def on_mouse_leave_hidden_button(self,event):
-		self.left_hide_button['bg'] = 'white'
-
-	def on_mouse_enter_control_area(self,event):
-		if self.full_screen_button['text']=='退出全屏':
-			self.video_control_area.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
-
-	def mouse_move_leave_control_area(self,event):
-		if self.full_screen_button['text'] == '退出全屏':
-			self.video_control_area.pack_forget()
+		self.hide_button['bg'] = 'white'
 
 	def on_mouse_move_in_video_play_area(self,event):
 		if self.show_win_info_checkbutton_flag.get()=='show':
@@ -445,9 +428,9 @@ class my_app():
 				state = '回放'
 			else:
 				state = '实时播放'
-			show_info = '%s %s\r%s@%s:%s channel %s' % (win_desc, state, server_desc, ip, port, channel)
-			size_x=8*(len(show_info)-18)
-			size_y=40
+			show_info = '%s %s %s@%s:%s channel %s' % (win_desc, state, server_desc, ip, port, channel)
+			size_x=8*len(show_info)
+			size_y=20
 
 		self.float_label['text']=show_info
 		self.float_label.pack(side=tk.RIGHT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
@@ -455,10 +438,15 @@ class my_app():
 		self.float_window.attributes("-topmost", True)
 		#self.float_label.after(10000,self.on_mouse_stop_move_three_second)
 
+
 	def on_mouse_move_out_video_play_area(self,event):
+
+
+
 		self.float_label['text']=0
 		self.float_label.pack_forget()
 		self.float_window.geometry('1x1')
+
 
 	def on_mouse_stop_move_three_second(self):
 		try:
@@ -468,6 +456,7 @@ class my_app():
 			self.float_label.after(10000, self.on_mouse_stop_move_three_second)
 		except Exception as e:
 			print(e)
+
 
 	def on_closing(self):
 		def do():
@@ -693,6 +682,7 @@ class my_app():
 				server.Capture_Cam(int(channel))
 		ThreadPoolExecutor().submit(do)
 
+
 	def on_click_full_screen_button(self,event):
 		if self.full_screen_button['text']=='全屏':
 			self.root.attributes("-fullscreen", True)
@@ -702,15 +692,22 @@ class my_app():
 		if self.full_screen_button['text']=='退出全屏':
 			self.root.attributes("-fullscreen", False)
 			self.root.attributes("-topmost", False)
-			self.video_control_area.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 			self.full_screen_button['text'] = '全屏'
 			return
 
 	def clear_video_window_select_color(self):
-		for player in self.video_plays:
-			player['highlightbackground'] = '#bcbcbc'
+		self.video_play_1['highlightbackground'] = '#bcbcbc'
+		self.video_play_2['highlightbackground'] = '#bcbcbc'
+		self.video_play_3['highlightbackground'] = '#bcbcbc'
+		self.video_play_4['highlightbackground'] = '#bcbcbc'
+		self.video_play_5['highlightbackground'] = '#bcbcbc'
+		self.video_play_6['highlightbackground'] = '#bcbcbc'
+		self.video_play_7['highlightbackground'] = '#bcbcbc'
+		self.video_play_8['highlightbackground'] = '#bcbcbc'
+		self.video_play_9['highlightbackground'] = '#bcbcbc'
 
 	def set_select_window_info(self, event):
+
 		# 清除所有视频窗口的颜色
 		self.clear_video_window_select_color()
 		# 设置选中视频窗格的颜色,刚初始化
@@ -738,6 +735,9 @@ class my_app():
 				server_desc='海康'
 			show_info='窗口：%s，正在播放%s@%s:%s channel %s'%(win_desc,server_desc,ip,port,channel)
 		self.info.set(show_info)
+
+
+
 
 	def save_windows_states(self):
 		states = {}
@@ -774,24 +774,6 @@ class my_app():
 			return self.video_play_8.winfo_id()
 		if name == 'window_9':
 			return self.video_play_9.winfo_id()
-		if name == 'window_10':
-			return self.video_play_10.winfo_id()
-		if name == 'window_11':
-			return self.video_play_11.winfo_id()
-		if name == 'window_12':
-			return self.video_play_12.winfo_id()
-		if name == 'window_13':
-			return self.video_play_13.winfo_id()
-		if name == 'window_14':
-			return self.video_play_14.winfo_id()
-		if name == 'window_15':
-			return self.video_play_15.winfo_id()
-		if name == 'window_16':
-			return self.video_play_16.winfo_id()
-		if name == 'window_17':
-			return self.video_play_17.winfo_id()
-		if name == 'window_18':
-			return self.video_play_18.winfo_id()
 
 	def get_window_wdiget(self, name):
 		if name == 'window_1':
@@ -812,20 +794,6 @@ class my_app():
 			return self.video_play_8
 		if name == 'window_9':
 			return self.video_play_9
-		if name == 'window_10':
-			return self.video_play_10
-		if name == 'window_11':
-			return self.video_play_11
-		if name == 'window_12':
-			return self.video_play_12
-		if name == 'window_13':
-			return self.video_play_13
-		if name == 'window_14':
-			return self.video_play_14
-		if name == 'window_15':
-			return self.video_play_15
-		if name == 'window_16':
-			return self.video_play_16
 
 	def load_windows_states(self):
 		states = {}
@@ -876,72 +844,101 @@ class my_app():
 					self.play_hk_cam(server_desc, server, channel, window_name, hwnd)
 				self.refresh_video_states()
 
+
+
 	def get_father_widget(self, event):
+
 		return event.widget.nametowidget(event.widget.winfo_parent())
 
 	def get_childen_widget(self, event):
 		child=event.widget.winfo_children()
 		return [event.widget.nametowidget(x) for x in child]
 
-	def show_sixteen_play(self):
-		for play in self.video_plays:
-			play['highlightthickness'] = 2
-			play.pack_forget()
-		self.video_play_area_1.pack_forget()
-		self.video_play_area_2.pack_forget()
-		self.video_play_area_3.pack_forget()
-		self.video_play_area_4.pack_forget()
-		self.video_play_area_1.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
-		self.video_play_area_2.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
-		self.video_play_area_3.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
-		self.video_play_area_4.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
-		for play in self.video_plays:
-			play.pack(side=tk.LEFT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
-		self.is_single_playing = False
-
 	def show_nine_play(self):
 
-		for play in self.video_plays:
-			play['highlightthickness'] = 2
-			play.pack_forget()
+		self.video_play_1['highlightthickness'] = 2
+		self.video_play_2['highlightthickness'] = 2
+		self.video_play_3['highlightthickness'] = 2
+		self.video_play_4['highlightthickness'] = 2
+		self.video_play_5['highlightthickness'] = 2
+		self.video_play_6['highlightthickness'] = 2
+		self.video_play_7['highlightthickness'] = 2
+		self.video_play_8['highlightthickness'] = 2
+		self.video_play_9['highlightthickness'] = 2
+		self.video_play_1.pack_forget()
+		self.video_play_2.pack_forget()
+		self.video_play_3.pack_forget()
+		self.video_play_4.pack_forget()
+		self.video_play_5.pack_forget()
+		self.video_play_6.pack_forget()
+		self.video_play_7.pack_forget()
+		self.video_play_8.pack_forget()
+		self.video_play_9.pack_forget()
 		self.video_play_area_1.pack_forget()
 		self.video_play_area_2.pack_forget()
 		self.video_play_area_3.pack_forget()
-		self.video_play_area_4.pack_forget()
 		self.video_play_area_1.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
 		self.video_play_area_2.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
 		self.video_play_area_3.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
-		for n in [0,1,2,4,5,6,8,9,10,13,14,15]:
-			self.video_plays[n].pack(side=tk.LEFT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
+		self.video_play_1.pack(side=tk.LEFT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
+		self.video_play_2.pack(side=tk.LEFT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
+		self.video_play_3.pack(side=tk.LEFT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
+		self.video_play_4.pack(side=tk.LEFT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
+		self.video_play_5.pack(side=tk.LEFT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
+		self.video_play_6.pack(side=tk.LEFT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
+		self.video_play_7.pack(side=tk.LEFT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
+		self.video_play_8.pack(side=tk.LEFT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
+		self.video_play_9.pack(side=tk.LEFT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
 		self.is_single_playing = False
 
 	def show_four_play(self):
-		for play in self.video_plays:
-			play['highlightthickness'] = 2
-			play.pack_forget()
+		self.video_play_1['highlightthickness'] = 2
+		self.video_play_2['highlightthickness'] = 2
+		self.video_play_3['highlightthickness'] = 2
+		self.video_play_4['highlightthickness'] = 2
+		self.video_play_5['highlightthickness'] = 2
+		self.video_play_6['highlightthickness'] = 2
+		self.video_play_7['highlightthickness'] = 2
+		self.video_play_8['highlightthickness'] = 2
+		self.video_play_9['highlightthickness'] = 2
+		self.video_play_1.pack_forget()
+		self.video_play_2.pack_forget()
+		self.video_play_3.pack_forget()
+		self.video_play_4.pack_forget()
+		self.video_play_5.pack_forget()
+		self.video_play_6.pack_forget()
+		self.video_play_7.pack_forget()
+		self.video_play_8.pack_forget()
+		self.video_play_9.pack_forget()
 		self.video_play_area_1.pack_forget()
 		self.video_play_area_2.pack_forget()
 		self.video_play_area_3.pack_forget()
-		self.video_play_area_4.pack_forget()
 		self.video_play_area_1.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
 		self.video_play_area_2.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
-		for n in [0,1,4,5]:
-			self.video_plays[n].pack(side=tk.LEFT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
+		self.video_play_1.pack(side=tk.LEFT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
+		self.video_play_2.pack(side=tk.LEFT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
+		self.video_play_4.pack(side=tk.LEFT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
+		self.video_play_5.pack(side=tk.LEFT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
 		self.is_single_playing = False
 
 	def show_single_play(self, event):
-		for play in self.video_plays:
-			play['highlightthickness'] = 2
-			play.pack_forget()
-
+		self.video_play_1.pack_forget()
+		self.video_play_2.pack_forget()
+		self.video_play_3.pack_forget()
+		self.video_play_4.pack_forget()
+		self.video_play_5.pack_forget()
+		self.video_play_6.pack_forget()
+		self.video_play_7.pack_forget()
+		self.video_play_8.pack_forget()
+		self.video_play_9.pack_forget()
 		self.video_play_area_1.pack_forget()
 		self.video_play_area_2.pack_forget()
 		self.video_play_area_3.pack_forget()
-		self.video_play_area_4.pack_forget()
 		if event == None:
 			self.video_play_area_1.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
 			self.video_play_1.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
 		else:
+
 			event.widget['highlightthickness'] = 0
 			father_frame = event.widget.nametowidget(event.widget.winfo_parent())
 			father_frame.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
@@ -952,38 +949,18 @@ class my_app():
 		print(event, self.v_num.get(), self.is_single_playing)
 		if self.v_num.get == 1:
 			pass
-
 		if self.is_single_playing == False and self.v_num.get() == 9:
 			self.show_single_play(event)
-			return
-
-		if self.is_single_playing== True and self.v_num.get() == 9:
+		elif self.is_single_playing == True and self.v_num.get() == 9:
 			self.show_nine_play()
-			return
-
-		if self.is_single_playing == False and self.v_num.get() == 4:
+		elif self.is_single_playing == False and self.v_num.get() == 4:
 			self.show_single_play(event)
-			return
-
-		if self.is_single_playing == True and self.v_num.get() == 4:
+		elif self.is_single_playing == True and self.v_num.get() == 4:
 			self.show_four_play()
-			return
-
-		if self.is_single_playing == False and self.v_num.get() == 16:
-			self.show_single_play(event)
-			return
-
-		if self.is_single_playing == True and self.v_num.get() == 16:
-			self.show_sixteen_play()
-			return
 
 	def show_window(self):
 
 		#  print(self.v_num.get(),self.is_single_playing)
-		if self.v_num.get() == 16:
-			self.show_sixteen_play()
-
-
 		if self.v_num.get() == 9:
 			self.show_nine_play()
 
@@ -1115,7 +1092,7 @@ class my_app():
 		self.clean_cam_tree(event='')
 
 		if len(self.online_hk_servers) != 0:
-			self.online_hk_tree = self.cam_tree.insert('', '0', text='海康在线', values='haikang:online', open=True,)
+			self.online_hk_tree = self.cam_tree.insert('', '0', text='海康在线', values='haikang:online', open=True)
 			for key in self.online_hk_servers:
 				server = self.online_hk_servers[key]
 				tree = self.cam_tree.insert(self.online_hk_tree, '1',
