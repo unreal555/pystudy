@@ -494,7 +494,7 @@ class my_app():
 		if len(item) > 2:
 			return item
 
-	def on_click_stop_play_cam(self, ):
+	def on_click_stop_play_cam(self, event):
 
 		def do():
 			if self.now_window_name == -1 or self.now_hwnd == -1 or self.now_window_widget == -1:

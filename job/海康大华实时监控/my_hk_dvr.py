@@ -10,7 +10,27 @@ import ctypes
 from ctypes import *
 
 
-#   DWORD    c_ulong
+class NET_DVR_IPADDR(ctypes.Structure):
+    _fields_=[
+        ("sIpV4",c_char*16) ,
+        ("byIPv6", c_byte *128)]
+
+
+class NET_DVR_ONE_LINK(ctypes.Structure):
+    _fields_ = [
+        ("struIP", NET_DVR_IPADDR),  # NET_DVR_IPADDR  struIP; // 客户端IP
+        ("lChannel", c_long),  # LONG   lChannel; // 通道号
+        ("byRes", c_byte * 32),  # BYTE    byRes[32]; // 保留字
+    ]
+
+
+class NET_DVR_LINK_STATUS(ctypes.Structure):
+    _fields_ = [
+        ("dwSize", c_ulong),  # DWORD        dwSize; // 结构体大小
+        ("wLinkNum", c_uint16),  # WORD        wLinkNum; // 连接的数目
+        ("byRes1", c_byte * 2),  # BYTE        byRes1[2]; // 保留字节
+        ("struOneLink", NET_DVR_ONE_LINK * 30),  # struOneLink[MAX_LINK_V30]; // 连接的客户端信息
+        ("byRes", c_byte * 32)]  # BYTE        byRes[32]; // 保留字节
 
 
 class NET_DVR_DIGITAL_CHANNEL_STATE(ctypes.Structure):
@@ -20,14 +40,10 @@ class NET_DVR_DIGITAL_CHANNEL_STATE(ctypes.Structure):
         ("byDigitalChanState",c_byte*30),
         ("byDigitalAudioChanTalkStateEx",c_byte*30*3),
         ("byDigitalChanStateEx",c_byte*30*3),
+        ("byAnalogChanState",c_byte),
         ("byRes",c_byte*64)]
 
-class NET_DVR_IPADDR(ctypes.Structure):
-    _fields_=[
-        ("sIpV4",c_char*16) ,
-        ("byIPv6", c_byte *128)]
-    #char    sIpV4[16];
-    #BYTE    byIPv6[128];
+
 
 class NET_DVR_SADPINFO(ctypes.Structure):
     _fields_=[
@@ -214,14 +230,14 @@ class HK_DVR():
                 lib = ctypes.cdll.LoadLibrary(HK_dll)
                 try:
                     value = eval("lib.%s" % func_name)(*args)
-                 #   print('命令为:', func_name, "    参数为:", str(args), " 调用的dll为:" + HK_dll, '  执行结果为:', value)
+                    print('命令为:', func_name, "    参数为:", str(args), " 调用的dll为:" + HK_dll, '  执行结果为:', value)
                     return value
                 except:
                     continue
             except:
-#                print(HK_dll, '库文件载入失败')
+                print(HK_dll, '库文件载入失败')
                 continue
- #       print("没有找到接口！")
+        print("没有找到接口！")
         return False
 
     def NET_DVR_Init(self):
@@ -291,20 +307,16 @@ class HK_DVR():
 
     def GetChannelState(self):
 
-        state=NET_DVR_DIGITAL_CHANNEL_STATE()
-        return_size=c_ulong()
 
-        result=self.CallCpp('NET_DVR_GetDVRConfig',self.lUserID,6126,'',byref(state),c_ulong(2048),byref(return_size))
-        for i in state.byDigitalChanState:
-            print(i)
-        print(self.Get_Last_Error())
+        lpOutBuffer=NET_DVR_LINK_STATUS()
+        lpBytesReturned=c_ulong()
+        result=self.CallCpp('NET_DVR_GetDVRConfig',self.lUserID,1256,c_long(0),byref(lpOutBuffer),c_ulong(1024),byref(lpBytesReturned))
+        print(lpOutBuffer)
+
         print('2333',result)
-        print(state.byDigitalChanState)
-        print(return_size)
-
-
-
-
+        print('返回值大小',lpBytesReturned)
+        print(lpOutBuffer)
+        print(result)
 
     def GetServerInfo(self):
         print(self.sDVRIP)
@@ -353,22 +365,30 @@ class HK_DVR():
             return True
 
 if __name__ == '__main__':
-    import tkinter as tk
-    window = tk.Tk()  #创建窗口
-    window.title("this is a test")  #窗口标题
-    window.geometry('500x900')  #窗口大小，小写字母x
-    video = tk.Frame(window, cursor='plus', bd=2, relief="sunken")
-    video.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)  #固定
-    video1 = tk.Frame(window, cursor='plus', bd=2, relief="sunken")
-    video1.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)  #固定
-    hwnd1 = video.winfo_id()
+    # import tkinter as tk
+    # window = tk.Tk()  #创建窗口
+    # window.title("this is a test")  #窗口标题
+    # window.geometry('500x900')  #窗口大小，小写字母x
+    # video = tk.Frame(window, cursor='plus', bd=2, relief="sunken")
+    # video.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)  #固定
+    # video1 = tk.Frame(window, cursor='plus', bd=2, relief="sunken")
+    # video1.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)  #固定
+    # hwnd1 = video.winfo_id()
     server1=HK_DVR( sDVRIP='47.92.89.1', sDVRPort=8201, sUserName='admin', sPassword='abcd1234')
     server1.GetChannelState()
-    server1.Play_Cam(hwnd1,33)
-    window.mainloop()
+    # server1.Play_Cam(hwnd1,33)
+    # window.mainloop()
+#
 
 
 
 
 
 
+# DWORD    c_ulong
+# WORD  c_uint16
+# BYTE  c_byte
+# char  c_char
+# bool  c_bool or c_int
+# long  c_long
+#
