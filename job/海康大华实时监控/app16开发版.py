@@ -357,7 +357,7 @@ class my_app():
 					state='回放'
 				else:
 					state='实时播放'
-				show_info = '%s %s %s@%s:%s channel %s' % (win_desc, state, server_desc, ip, port, channel)
+				show_info = '%s %s \r %s@%s:%s channel %s' % (win_desc, state,server_desc, ip, port, channel)
 				#show_info='窗口：%s，正在播放%s@%s:%s channel %s %s'%(win_desc,server_desc,ip,port,channel,state)
 			label['text']=show_info
 			label.place(rely=0.9, relx=0.5,anchor=CENTER)
@@ -430,9 +430,9 @@ class my_app():
 				state = '回放'
 			else:
 				state = '实时播放'
-			show_info = '%s %s %s@%s:%s channel %s' % (win_desc, state, server_desc, ip, port, channel)
+			show_info = '%s %s\r%s@%s:%s channel %s' % (win_desc, state, server_desc, ip, port, channel)
 			size_x=8*len(show_info)
-			size_y=20
+			size_y=40
 
 		self.float_label['text']=show_info
 		self.float_label.pack(side=tk.RIGHT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
