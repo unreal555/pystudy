@@ -145,6 +145,7 @@ class SeleniumTest(object):
                 print('-----已暂停程序并邮件提醒-----', time.strftime("%Y/%m/%d %H:%M:%S"))
                 input('人机验证完毕后,单击此处>>并按回车(Enter):')
                 print('继续启动程序...', time.strftime("%Y/%m/%d %H:%M:%S"))
+            self.submit_verify_failure()
 
         # 搜索结果和广告列表
         # info_list = elem.xpath('//div[@id="rso"]/div|//div[@id="tadsb"]/div')
@@ -223,6 +224,7 @@ class SeleniumTest(object):
                 print('-----已暂停程序并邮件提醒-----', time.strftime("%Y/%m/%d %H:%M:%S"))
                 input('人机验证完毕后,单击此处>>并按回车(Enter):')
                 print('继续启动程序...', time.strftime("%Y/%m/%d %H:%M:%S"))
+            self.submit_verify_failure()
 
         all = []
         all_text_list = elem.xpath(
@@ -368,6 +370,41 @@ class SeleniumTest(object):
             print('验证完毕!!!')
         else:
             print("没有获取到requestsId!!!")
+
+    def submit_verify_failure(self):
+        '''
+        出现人机验证时向网站提交信息
+        '''
+
+        conf = configparser.ConfigParser()
+        conf.read(r'config.ini', encoding="utf-8-sig")
+        #    读取配置文件
+
+        Link_code = conf.get('mysql_info', 'Link_code')
+        Link_code_title = conf.get('mysql_info', 'Link_code_title')
+        Link_code_content = conf.get('mysql_info', 'Link_code_content')
+        #    读取配置中的三个LINK参数
+
+        n = 0
+        #   设置失败重试计数
+        try:
+            url = (Link_code + Link_code_title + Link_code_content).replace(' ', '')
+            # 拼接URL
+            self.driver.get(url)
+            # 提交URL
+            select = self.driver.find_element_by_xpath('//*[@id="content"]/div[1]/div/div/div[6]/div/div/span')
+            # 定位提交按钮位置
+            time.sleep(1)
+            select.click()
+            # 点击提交按钮
+            return True
+        except Exception as e:
+            print('提交人际验证失败信息时错误，原因为{}'.format(e))
+            if n < 3:
+                n += 1
+            else:
+                return False
+
 
 def get_mac_address():
     node = uuid.getnode()

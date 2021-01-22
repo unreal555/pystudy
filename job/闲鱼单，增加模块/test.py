@@ -4,17 +4,7 @@ from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.wait import WebDriverWait
 import configparser
-from time import  sleep
-conf = configparser.ConfigParser()
-conf.read(r'config.ini', encoding="utf-8-sig")
-
-Link_code = conf.get('mysql_info', 'Link_code')
-Link_code_title=conf.get('mysql_info', 'Link_code_title')
-Link_code_content=conf.get('mysql_info', 'Link_code_content')
-
-url=Link_code+Link_code_title+Link_code_content.replace(' ','')
-
-print(Link_code+Link_code_title+Link_code_content.replace(' ',''))
+import time
 
 options = webdriver.ChromeOptions()
 options.add_argument('--dns-prefetch-disable')
@@ -26,15 +16,43 @@ options.add_argument('--window-size=1920,1080')
 options.add_argument('--no-sandbox')
 options.add_argument('--disable-gpu')
 options.add_argument('--disable-dev-shm-usage')
+driver=webdriver.Chrome(options=options)
 
-def submit_verify(driver):
+def submit_verify_failure(self):
+    '''
+    出现人机验证时向网站提交信息
+    '''
+
+    conf = configparser.ConfigParser()
+    conf.read(r'config.ini', encoding="utf-8-sig")
+    #    读取配置文件
+
+
     Link_code = conf.get('mysql_info', 'Link_code')
     Link_code_title = conf.get('mysql_info', 'Link_code_title')
     Link_code_content = conf.get('mysql_info', 'Link_code_content')
-    url = Link_code + Link_code_title + Link_code_content.replace(' ', '')
-    driver.get(url)
-    select=driver.find_element_by_xpath('//*[@id="content"]/div[1]/div/div/div[6]/div/div/span')
-    sleep(2)
-    select.click()
+    #    读取配置中的三个LINK参数
 
-submit_verify(driver)
+    n=0
+    #   设置失败重试计数
+    try:
+        url = (Link_code + Link_code_title + Link_code_content).replace(' ', '')
+        #拼接URL
+        self.driver.get(url)
+        #提交URL
+        select=self.driver.find_element_by_xpath('//*[@id="content"]/div[1]/div/div/div[6]/div/div/span')
+        #定位提交按钮位置
+        time.sleep(1)
+        select.click()
+        #点击提交按钮
+        return True
+    except Exception as e:
+        print('提交人际验证失败信息时错误，原因为{}'.format(e))
+        if n<3:
+            n+=1
+        else:
+            return False
+
+
+
+submit_verify_failure(driver)
