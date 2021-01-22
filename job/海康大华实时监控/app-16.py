@@ -29,7 +29,7 @@ DAT_PATH = './dat'
 DEFAULT_COLOR = '#bcbcbc'
 VIDEO_DEFAULT_COLOR = '#acbcbc'
 FONT_COLOR='black'
-REFRESH_TIME=15
+REFRESH_TIME=600
 
 class my_app():
 	if not os.path.exists(DAT_PATH):
@@ -93,7 +93,7 @@ class my_app():
 			'window_9': 0,
 		}
 
-		self.rec_status = []
+		self.rec_status = {}
 
 		self.list_area = tk.Frame(self.root, bd=0, relief="sunken")
 
@@ -346,6 +346,27 @@ class my_app():
 			label.place(rely=0.9, relx=0.5,anchor=CENTER)
 			label['bg']=DEFAULT_COLOR
 
+	def show_rec_state(self):
+		def do():
+			while self.closing_flag==False:
+				print('show rec')
+
+				labels=[self.video_play_1_state, self.video_play_2_state, self.video_play_3_state, self.video_play_4_state,
+				 self.video_play_5_state, self.video_play_6_state, self.video_play_7_state, self.video_play_8_state, self.video_play_9_state]
+
+				win_descs=['window_1','window_2','window_3','window_4','window_5','window_6','window_7','window_8','window_9']
+
+				for label in labels:
+
+						label['bg']=DEFAULT_COLOR
+				time.sleep(1)
+
+				for win,label in zip(win_descs,labels):
+					if win in self.rec_status.keys():
+						label['bg']='green'
+				time.sleep(1)
+
+		ThreadPoolExecutor().submit(do)
 
 
 	def on_click_esc(self,event):
@@ -508,6 +529,8 @@ class my_app():
 				print(server)
 				server.Stop_Play_Cam(cam_handle)
 				self.window_status[self.now_window_name] = 0
+				if self.now_window_name in self.rec_status.keys():
+					self.rec_status.pop(self.now_window_name)
 				self.now_window_widget['bg'] = VIDEO_DEFAULT_COLOR
 				self.info.set('当前窗口为 {} ,空闲中'.format(self.now_window_name))
 			self.refresh_video_states()
@@ -594,34 +617,40 @@ class my_app():
 				return
 
 			desc, server, channel, handel = info
-			if info in self.rec_status:
+			if self.now_window_name in self.rec_status.keys():
 				print('停止录像')
 				if askokcancel(message='是否停止{} channel:{}录像'.format(desc,channel)):
-					ThreadPoolExecutor().submit(self.stop_rec_cam,info)
+					ThreadPoolExecutor().submit(self.stop_rec_cam)
 			else:
 				print('开始录像')
 				if askokcancel(message='是否开始{} channel:{}录像'.format(desc, channel)):
-					ThreadPoolExecutor().submit(self.rec_cam,info)
+					ThreadPoolExecutor().submit(self.rec_cam)
 		ThreadPoolExecutor().submit(do)
 
-	def rec_cam(self,item):
-		desc,server,channel,handel=item
+	def rec_cam(self):
+		if self.window_status[self.now_window_name]==0:
+			return
+		desc,server,channel,handel=self.window_status[self.now_window_name]
 		if 'dahua' in desc:
 			print('调用大华录像')
 		if 'haikang' in desc:
 			print('调用海康录像')
 			file_path = os.path.join(REC_PATH, desc.replace(':', '-') + '-' + self.get_time() + '.mp4')
 			server.Rec_Cam(handel,file_path)
-		self.rec_status.append(item)
+		self.rec_status.update({self.now_window_name:self.window_status[self.now_window_name]})
+		print(self.rec_status)
 			
-	def stop_rec_cam(self,item):
-		desc, server, channel, handel = item
+	def stop_rec_cam(self):
+		if self.window_status[self.now_window_name]==0:
+			return
+		desc, server, channel, handel = self.window_status[self.now_window_name]
 		if 'dahua' in desc:
 			print('调用大华停止录像')
 		if 'haikang' in desc:
 			print('调用海康停止录像')
 			server.Stop_Rec_Cam(handel)
-		self.rec_status.remove(item)
+		self.rec_status.pop(self.now_window_name)
+		print(self.rec_status)
 
 	def capture_cam(self, event):
 		'''
@@ -1045,6 +1074,8 @@ class my_app():
 				#加载上回的视频和窗口状态
 				self.auto_check_servers()
 				#启动定时刷新
+				self.show_rec_state()
+				#开始正在录像的显示rec标志
 
 			if self.closing_flag == True:
 				print(self.refresh_button)
