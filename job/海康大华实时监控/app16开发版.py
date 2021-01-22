@@ -229,6 +229,10 @@ class my_app():
 			v_play.bind("<ButtonPress-1>", self.set_select_window_info)
 			v_play.bind("<Double-Button-1>", self.change_window)
 
+		style = ttk.Style()
+		# style_head.configure("Treeview.Heading", font=('', 65))
+		style.configure("Treeview", font=('', 15))
+
 		self.cam_tree = ttk.Treeview(self.list_area, selectmode='browse')
 		self.cam_tree.pack(side='top', fill=tk.BOTH, expand=tk.YES)
 
@@ -1095,7 +1099,7 @@ class my_app():
 		self.clean_cam_tree(event='')
 
 		if len(self.online_hk_servers) != 0:
-			self.online_hk_tree = self.cam_tree.insert('', '0', text='海康在线', values='haikang:online', open=True)
+			self.online_hk_tree = self.cam_tree.insert('', '0', text='海康在线', values='haikang:online', open=True,)
 			for key in self.online_hk_servers:
 				server = self.online_hk_servers[key]
 				tree = self.cam_tree.insert(self.online_hk_tree, '1',

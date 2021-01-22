@@ -3,7 +3,7 @@
 block_cipher = None
 
 
-a = Analysis(['app.py'],
+a = Analysis(['app16开发版.py'],
              pathex=['D:\\PyCharm2019.3.1\\pystudy\\job\\海康大华实时监控'],
              binaries=[],
              datas=[('NetSDK','NetSDK')],
