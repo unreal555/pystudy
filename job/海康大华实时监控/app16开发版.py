@@ -114,15 +114,20 @@ class my_app():
 
 		self.video_area.pack(side=tk.RIGHT, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
 
-		self.hide_area.pack(side=tk.RIGHT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+		self.hide_area.pack(side=tk.RIGHT, anchor=tk.S, expand=tk.NO, fill=tk.Y)
 
-		self.list_area.pack(side=tk.RIGHT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+		self.list_area.pack(side=tk.RIGHT, anchor=tk.S, expand=tk.NO, fill=tk.Y)
 
 		self.video_play_area = tk.Frame(self.video_area, bd=0, relief="sunken")
-
 		self.video_play_area.pack(side=tk.TOP, anchor=tk.S, expand=tk.YES, fill=tk.BOTH)
 
-		self.video_control_area = tk.Frame(self.video_area, bd=0, relief="sunken")
+		self.video_play_bottom_area = tk.Frame(self.video_area, bd=0, relief="sunken")
+		self.video_play_bottom_area.pack(side=tk.TOP, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+
+		self.video_control_hide_area= tk.Frame(self.video_play_bottom_area, bd=0, relief="sunken",height=10)
+		self.video_control_hide_area.pack(side=tk.TOP, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+
+		self.video_control_area = tk.Frame(self.video_play_bottom_area, bd=0, relief="sunken")
 		self.video_control_area.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
 		self.video_play_area_1 = tk.Frame(self.video_play_area, bd=0, relief="sunken")
@@ -247,7 +252,7 @@ class my_app():
 		self.cam_tree_scb_x.pack(side='bottom', fill=tk.BOTH, expand=tk.NO)
 		self.cam_tree.configure(xscrollcommand=self.cam_tree_scb_x.set)
 
-		self.refresh_button = tk.Button(self.list_area, width=40, text='刷新服务器')
+		self.refresh_button = tk.Button(self.list_area, text='刷新服务器',width=40)
 		self.refresh_button.pack(side='bottom', fill=tk.BOTH, expand=tk.NO)
 		self.refresh_button.bind("<ButtonPress-1>", self.check_servers)
 		# refresh button 的disablede 状态在手动刷新时设置，使按钮不可用，防止连续点击重复刷新服务器状态，影响性能
@@ -273,11 +278,14 @@ class my_app():
 		# self.pause_button.pack(side=tk.LEFT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 
 		self.image = tk.PhotoImage(file="./dat/fenge_line.png")
-		self.hide_button= tk.Button(self.hide_area,width=5,text='showing',bg='gray',image=self.image)
-		self.hide_button.pack(side=tk.LEFT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
-		self.hide_button.bind("<ButtonPress-1>",self.on_click_hide_cam_tree_area)
-		self.hide_button.bind("<Enter>",self.on_mouse_enter_hidden_button)
-		self.hide_button.bind("<Leave>", self.on_mouse_leave_hidden_button)
+		self.left_hide_button= tk.Button(self.hide_area,width=5,text='showing',bg='gray',image=self.image)
+		self.left_hide_button.pack(side=tk.LEFT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+		self.left_hide_button.bind("<ButtonPress-1>",self.on_click_hide_cam_tree_area)
+		self.left_hide_button.bind("<Enter>",self.on_mouse_enter_hidden_button)
+		self.left_hide_button.bind("<Leave>", self.on_mouse_leave_hidden_button)
+
+		self.video_play_bottom_area.bind('<Enter>',self.on_mouse_enter_control_area)
+		self.video_play_bottom_area.bind('<Leave>', self.mouse_move_leave_control_area)
 
 		self.label_info = tk.Label(self.video_control_area, textvariable=self.info,width=60)  # anchor='w' ,justify='left',
 		self.label_info.pack(side=tk.LEFT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
@@ -328,7 +336,6 @@ class my_app():
 		self.last_init(event='')
 		# self.v_num.set(9)
 		# self.show_window()
-
 
 	def refresh_video_states(self):
 		self.on_click_show_win_info_checkbutton()
@@ -394,21 +401,29 @@ class my_app():
 		'''
 		隐藏\打开摄像头列表
 		'''
-		if self.hide_button['text']=='showing':
+		if self.left_hide_button['text']=='showing':
 			self.list_area.pack_forget()
-			self.hide_button['text'] = 'hidding'
+			self.left_hide_button['text'] = 'hidding'
 			return
 
-		if self.hide_button['text']=='hidding':
+		if self.left_hide_button['text']=='hidding':
 			self.list_area.pack(side=tk.LEFT, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
-			self.hide_button['text'] = 'showing'
+			self.left_hide_button['text'] = 'showing'
 			return
 
 	def on_mouse_enter_hidden_button(self,event):
-		self.hide_button['bg']='black'
+		self.left_hide_button['bg']='black'
 
 	def on_mouse_leave_hidden_button(self,event):
-		self.hide_button['bg'] = 'white'
+		self.left_hide_button['bg'] = 'white'
+
+	def on_mouse_enter_control_area(self,event):
+		if self.full_screen_button['text']=='退出全屏':
+			self.video_control_area.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
+
+	def mouse_move_leave_control_area(self,event):
+		if self.full_screen_button['text'] == '退出全屏':
+			self.video_control_area.pack_forget()
 
 	def on_mouse_move_in_video_play_area(self,event):
 		if self.show_win_info_checkbutton_flag.get()=='show':
