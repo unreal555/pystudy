@@ -388,6 +388,7 @@ class my_app():
 		若检测到esc键被按下，则判断是全屏还是正常播放状态，若是全屏状态则退出全屏，若是正常播放则调用on_closing关闭
 		'''
 		print(event)
+		self.video_control_area.pack(side=tk.BOTTOM, anchor=tk.S, expand=tk.NO, fill=tk.BOTH)
 		if self.full_screen_button['text']=='退出全屏':
 			self.root.attributes("-fullscreen", False)
 			self.root.attributes("-topmost", False)

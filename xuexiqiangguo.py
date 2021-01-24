@@ -179,7 +179,7 @@ def login():
         Browser.refresh()
     Browser.get('https://www.xuexi.cn')
     sleep(3)
-    Browser.set_window_position(2000,20000)
+    #Browser.set_window_position(2000,20000)
     wait()
 
 
