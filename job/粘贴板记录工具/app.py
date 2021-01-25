@@ -11,6 +11,7 @@ import os
 import time
 import tkinter
 
+text_back_png='./source/little.png'
 
 def get_time():
     return time.strftime('%Y-%m-%d %H:%M:%S')
@@ -19,16 +20,15 @@ class clip_app(drag_window):
 
     def __init__(self,size,file='我的记录本.txt'):
         super().__init__(size)
-        with open(file,'a',encoding='gbk') as f:
-            f.write(get_time()+'\r\n')
+        self.little_img = tkinter.PhotoImage('little.png')
         self.file=file
-        self.limg = tkinter.PhotoImage('./little.png')
+        self.text_back=tkinter.PhotoImage(file=text_back_png)   #必须带file，否则无效
         self.read_clip_loop()
 
     def read_clip_loop(self):
         def do():
             count=0
-            str=''
+            str=readclip()
 
             while self.is_closing==False:
                 result=readclip()
@@ -38,14 +38,14 @@ class clip_app(drag_window):
                     with open(self.file, 'a', encoding='gbk') as f:
                         f.write(result+'\r\n')
                     print(count, result)
-                    self.info_label['image']=self.img
+                    self.info_label['image']=self.text_back
                     self.info_label['text'] = '%s' % count
                     time.sleep(1)
                 else:
                     time.sleep(1)
                     continue
 
-        img = tkinter.PhotoImage('little.png')
+
         ThreadPoolExecutor().submit(do)
 
 

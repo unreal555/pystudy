@@ -16,7 +16,7 @@ from tkinter.messagebox import askokcancel, showinfo
 import my_icon
 class drag_window():
 	color='gray'#'#bcbcbc'
-	pic_path = 'my-icon.png'
+	pic_path = 'source/my-icon.png'
 	print(os.path.abspath('.'))
 	def __init__(self,size=50):
 		self.is_closing=False
@@ -43,8 +43,8 @@ class drag_window():
 		self.root.geometry("%sx%s+%s+%s"%(self.size,self.size,self.max_x-self.size,int(self.max_y*0.7)))
 
 		self.img=tkinter.PhotoImage(file=self.pic_path)
-		self.info_label=tkinter.Label(self.root,image=self.img,width=self.size,height=self.size,compound='center',font=('微软雅黑',14)
-		                             ,fg='white')#
+		self.info_label=tkinter.Label(self.root,image=self.img,width=self.size,height=self.size,compound='center',font=('微软雅黑',16)
+		                             ,fg='white')
 		self.info_label.pack(side='bottom', fill=tkinter.BOTH, expand=tkinter.YES)
 
 		self.menu = tkinter.Menu(self.root, tearoff=0,relief="groove")#"flat","sunken"，"raised"，"groove" 或 "ridge"
@@ -55,8 +55,8 @@ class drag_window():
 		self.root.bind('<B1-Motion>',self.on_mouse_drag_window)
 		self.root.bind('<ButtonPress-1>', self.on_mouse_left_button_press)
 		self.root.bind('<Button-3>',self.on_mouse_right_button_press)
-		self.root.bind('<Enter>',self.on_mouse_enter_area_and_show_help)
-		self.root.bind('<Leave>', self.on_mouse_leave_area_and_hide_help)
+		#self.root.bind('<Enter>',self.on_mouse_enter_area_and_show_help)
+		#self.root.bind('<Leave>', self.on_mouse_leave_area_and_hide_help)
 
 	def drag_in_items(self,items):
 		files=[]
