@@ -50,13 +50,15 @@ def submit_verify_failure(self):
         time.sleep(1)
         select.click()
         time.sleep(1)
+        #点击提交按钮
 
         for h in self.driver.window_handles:
             if h!=handle:
                 self.driver.switch_to.window(h)
                 self.driver.close()
         self.driver.switch_to.window(handle)
-        #点击提交按钮
+        #清理无用页面
+
         return True
     except Exception as e:
         print('提交人际验证失败信息时错误，原因为{}'.format(e))
