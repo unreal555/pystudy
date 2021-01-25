@@ -22,13 +22,14 @@ class clip_app(drag_window):
         with open(file,'a',encoding='gbk') as f:
             f.write(get_time()+'\r\n')
         self.file=file
+        self.limg = tkinter.PhotoImage('./little.png')
         self.read_clip_loop()
 
     def read_clip_loop(self):
         def do():
             count=0
             str=''
-            self.limg=tkinter.PhotoImage('./little.png')
+
             while self.is_closing==False:
                 result=readclip()
                 if result!=False and result!=str:
@@ -37,14 +38,12 @@ class clip_app(drag_window):
                     with open(self.file, 'a', encoding='gbk') as f:
                         f.write(result+'\r\n')
                     print(count, result)
-                    # self.info_label['image']=self.limg
+                    self.info_label['image']=self.img
                     self.info_label['text'] = '%s' % count
                     time.sleep(1)
                 else:
                     time.sleep(1)
                     continue
-
-
 
         img = tkinter.PhotoImage('little.png')
         ThreadPoolExecutor().submit(do)
