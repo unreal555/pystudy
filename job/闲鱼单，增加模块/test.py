@@ -5,6 +5,9 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.wait import WebDriverWait
 import configparser
 import time
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
+
 
 options = webdriver.ChromeOptions()
 options.add_argument('--dns-prefetch-disable')
@@ -38,12 +41,16 @@ def submit_verify_failure(self):
     try:
         url = (Link_code + Link_code_title + Link_code_content).replace(' ', '')
         #拼接URL
-        self.driver.get(url)
+        handle=driver.get(url)
         #提交URL
-        select=self.driver.find_element_by_xpath('//*[@id="content"]/div[1]/div/div/div[6]/div/div/span')
+        print(handle)
+        select=driver.find_element_by_xpath('//*[@id="content"]/div[1]/div/div/div[6]/div/div/span')
         #定位提交按钮位置
         time.sleep(1)
         select.click()
+        time.sleep(1)
+
+        ActionChains(driver).key_down(Keys.CONTROL).send_keys("w").key_up(Keys.CONTROL).perform()
         #点击提交按钮
         return True
     except Exception as e:

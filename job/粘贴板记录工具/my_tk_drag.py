@@ -4,10 +4,6 @@
 # Date ：2021/1/15 0015 上午 10:03
 # Tool ：PyCharm
 import os
-import time
-
-from threading import Thread
-
 import windnd
 
 import tkinter
@@ -16,7 +12,7 @@ from tkinter.messagebox import askokcancel, showinfo
 import my_icon
 class drag_window():
 	color='gray'#'#bcbcbc'
-	pic_path = 'source/my-icon.png'
+	pic_path = './source/my-icon.png'
 	print(os.path.abspath('.'))
 	def __init__(self,size=50):
 		self.is_closing=False
