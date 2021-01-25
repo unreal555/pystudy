@@ -16,7 +16,7 @@ from tkinter.messagebox import askokcancel, showinfo
 import my_icon
 class drag_window():
 	color='gray'#'#bcbcbc'
-	pic_path = './pic/my-icon.png'
+	pic_path = 'my-icon.png'
 	print(os.path.abspath('.'))
 	def __init__(self,size=50):
 		self.is_closing=False
@@ -85,11 +85,12 @@ class drag_window():
 	def on_mouse_right_button_press(self,event):
 		self.menu.post(event.x_root,event.y_root)
 
+
 	def __del__(self):
 		self.root.quit()
 
 	def on_mouse_enter_area_and_show_help(self,event):
-		self.float_window.geometry('%sx%s+%s+%s' % (150, 30, event.x_root + 5, event.y_root + 5))
+		self.float_window.geometry('%sx%s+%s+%s' % (100, 30, event.x_root + 5, event.y_root + 5))
 		self.float_label.pack()
 
 	def on_mouse_leave_area_and_hide_help(self,event):
