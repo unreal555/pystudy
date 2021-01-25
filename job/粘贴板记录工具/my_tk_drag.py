@@ -43,7 +43,8 @@ class drag_window():
 		self.root.geometry("%sx%s+%s+%s"%(self.size,self.size,self.max_x-self.size,int(self.max_y*0.7)))
 
 		self.img=tkinter.PhotoImage(file=self.pic_path)
-		self.info_label=tkinter.Label(self.root,width=self.size,image=self.img,height=self.size)
+		self.info_label=tkinter.Label(self.root,image=self.img,width=self.size,height=self.size,compound='center',font=('微软雅黑',14)
+		                             ,fg='white')#
 		self.info_label.pack(side='bottom', fill=tkinter.BOTH, expand=tkinter.YES)
 
 		self.menu = tkinter.Menu(self.root, tearoff=0,relief="groove")#"flat","sunken"，"raised"，"groove" 或 "ridge"

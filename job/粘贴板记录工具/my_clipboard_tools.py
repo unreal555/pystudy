@@ -20,6 +20,7 @@ def readclip():
             count-=1
             if count==0:
                 print('剪切板读取错误，退出',e)
+                w.CloseClipboard()
                 return False
 
 def write_clip(str):
@@ -35,6 +36,7 @@ def write_clip(str):
             count -= 1
             if count == 0:
                 print('剪切板写入取错误，退出',e)
+                w.CloseClipboard()
                 return False
 
 
