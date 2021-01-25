@@ -39,18 +39,23 @@ def submit_verify_failure(self):
     n=0
     #   设置失败重试计数
     try:
+        handle=self.driver.current_window_handle
         url = (Link_code + Link_code_title + Link_code_content).replace(' ', '')
         #拼接URL
-        handle=driver.get(url)
-        #提交URL
-        print(handle)
-        select=driver.find_element_by_xpath('//*[@id="content"]/div[1]/div/div/div[6]/div/div/span')
+
+        self.driver.get(url)
+        select=self.driver.find_element_by_xpath('//*[@id="content"]/div[1]/div/div/div[6]/div/div/span')
         #定位提交按钮位置
+
         time.sleep(1)
         select.click()
         time.sleep(1)
 
-        ActionChains(driver).key_down(Keys.CONTROL).send_keys("w").key_up(Keys.CONTROL).perform()
+        for h in self.driver.window_handles:
+            if h!=handle:
+                self.driver.switch_to.window(h)
+                self.driver.close()
+        self.driver.switch_to.window(handle)
         #点击提交按钮
         return True
     except Exception as e:
