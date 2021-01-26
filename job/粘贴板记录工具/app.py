@@ -38,13 +38,18 @@ class clip_app(drag_window):
             count=0
             str=readclip()
             while self.is_closing==False:
-                print(1111)
                 result=readclip()
-                if result!=False and result!=str:
+                print(result)
+                print(result!=False )
+                print(result!=str)
+                if (result!=False) and (result!=str):
                     count+=1
                     str=result
-                    with open(self.file, 'a', encoding='gbk') as f:
-                        f.write(result+'\r\n')
+                    try:
+                        with open(self.file, 'a', encoding='utf-8') as f:
+                            f.write(result+'\r\n')
+                    except Exception as e:
+                        raise e
                     print(count, result)
                     self.info_label['image']=self.text_back
                     self.info_label['text'] = '%s' % count
@@ -52,7 +57,8 @@ class clip_app(drag_window):
                 else:
                     time.sleep(1)
                     continue
-        ThreadPoolExecutor().submit(do)
+        do()
+        # ThreadPoolExecutor().submit(do)
 
     def __del__(self):
         super().__del__()
