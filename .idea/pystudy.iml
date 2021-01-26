@@ -6,9 +6,10 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/job/海康大华实时监控" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/job/粘贴板记录工具" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.6 (enve)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.8 (venv)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PyDocumentationSettings">
