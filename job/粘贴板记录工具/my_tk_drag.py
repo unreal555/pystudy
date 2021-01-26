@@ -9,11 +9,17 @@ import windnd
 import tkinter
 from tkinter.messagebox import askokcancel, showinfo
 
+from my_img import my_icon_png
+
+import base64
+
 import my_icon
+
 class drag_window():
 	color='gray'#'#bcbcbc'
-	pic_path = './source/my-icon.png'
-	print(os.path.abspath('.'))
+	with open('my_icon.png','wb') as f:
+		f.write(base64.b64decode(my_icon_png))
+
 	def __init__(self,size=50):
 		self.is_closing=False
 		self.size=size
@@ -38,7 +44,7 @@ class drag_window():
 		self.max_x, self.max_y = self.root.maxsize()
 		self.root.geometry("%sx%s+%s+%s"%(self.size,self.size,self.max_x-self.size,int(self.max_y*0.7)))
 
-		self.img=tkinter.PhotoImage(file=self.pic_path)
+		self.img=tkinter.PhotoImage(file='my_icon.png')
 		self.info_label=tkinter.Label(self.root,image=self.img,width=self.size,height=self.size,compound='center',font=('微软雅黑',16)
 		                             ,fg='white')
 		self.info_label.pack(side='bottom', fill=tkinter.BOTH, expand=tkinter.YES)

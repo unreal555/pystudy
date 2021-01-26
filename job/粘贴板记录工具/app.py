@@ -10,8 +10,12 @@ from my_clipboard_tools import readclip
 import os
 import time
 import tkinter
+import base64
+from my_img import little_png
 
-text_back_png='./source/little.png'
+with open('little.png','wb') as f:
+    f.write(base64.b64decode(little_png))
+text_back_png='little.png'
 
 def get_time():
     return time.strftime('%Y-%m-%d %H:%M:%S')
@@ -29,8 +33,8 @@ class clip_app(drag_window):
         def do():
             count=0
             str=readclip()
-
             while self.is_closing==False:
+                print(1111)
                 result=readclip()
                 if result!=False and result!=str:
                     count+=1
@@ -44,9 +48,12 @@ class clip_app(drag_window):
                 else:
                     time.sleep(1)
                     continue
-
-
         ThreadPoolExecutor().submit(do)
+
+    def __del__(self):
+        super().__del__()
+        os.remove('little.png')
+        os.remove('my_icon.png')
 
 
 app=clip_app(size=50)
