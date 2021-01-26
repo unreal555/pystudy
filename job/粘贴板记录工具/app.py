@@ -57,8 +57,8 @@ class clip_app(drag_window):
                 else:
                     time.sleep(1)
                     continue
-        do()
-        # ThreadPoolExecutor().submit(do)
+
+        ThreadPoolExecutor().submit(do)
 
     def __del__(self):
         super().__del__()
