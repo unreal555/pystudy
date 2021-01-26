@@ -1,11 +1,11 @@
-﻿# -*- mode: python ; coding: utf-8 -*-
+# -*- mode: python ; coding: utf-8 -*-
 
 block_cipher = None
 
 
 a = Analysis(['app.py'],
              pathex=['D:\\PyCharm2019.3.1\\pystudy\\job\\粘贴板记录工具'],
-             binaries=[('source','source')],
+             binaries=[],
              datas=[],
              hiddenimports=[],
              hookspath=[],
@@ -30,4 +30,4 @@ exe = EXE(pyz,
           upx=True,
           upx_exclude=[],
           runtime_tmpdir=None,
-          console=True , icon='my-icon.ico')
+          console=False , icon='my-icon.ico')

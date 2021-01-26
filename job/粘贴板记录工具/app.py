@@ -13,9 +13,7 @@ import tkinter
 import base64
 from my_img import little_png
 
-with open('little.png','wb') as f:
-    f.write(base64.b64decode(little_png))
-text_back_png='little.png'
+
 
 def get_time():
     return time.strftime('%Y-%m-%d %H:%M:%S')
@@ -24,9 +22,15 @@ class clip_app(drag_window):
 
     def __init__(self,size,file='我的记录本.txt'):
         super().__init__(size)
+
+        self.text_back_png = os.path.join(self.temp_dir, 'little.png')
+
+        with open(self.text_back_png, 'wb') as f:
+            f.write(base64.b64decode(little_png))
+
         self.little_img = tkinter.PhotoImage('little.png')
         self.file=file
-        self.text_back=tkinter.PhotoImage(file=text_back_png)   #必须带file，否则无效
+        self.text_back=tkinter.PhotoImage(file=self.text_back_png)   #必须带file，否则无效
         self.read_clip_loop()
 
     def read_clip_loop(self):
@@ -52,8 +56,7 @@ class clip_app(drag_window):
 
     def __del__(self):
         super().__del__()
-        os.remove('little.png')
-        os.remove('my_icon.png')
+
 
 
 app=clip_app(size=50)
