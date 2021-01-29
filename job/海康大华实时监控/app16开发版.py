@@ -1188,7 +1188,11 @@ class my_app():
 
 					if self.refresh_button['state'] == tk.DISABLED:
 						break
-					#如果refresh__button不可用，说明在手动刷新或者正在初始化，推迟刷新一个周期
+					#等待周期中，如果refresh__button不可用，说明在手动刷新或者正在初始化，结束本次等待周期
+
+				if self.refresh_button['state'] == tk.DISABLED:
+					continue
+				# 等待周期中，如果refresh__button不可用，说明在手动刷新或者正在初始化，结束本次等待周期，进入下次等待
 
 				self.refresh_button['state'] = tk.DISABLED
 				self.refresh_button.unbind("<ButtonPress-1>")
