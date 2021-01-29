@@ -7,7 +7,6 @@
 import tkinter as tk
 import  tkinter.messagebox
 import  pickle
-import my_icon
 
 
 class tk_login():
@@ -23,7 +22,6 @@ class tk_login():
 
         window.title(title)
 
-        my_icon.set_icon(window,my_icon.USER_ICON)
 
         if resizable == False:
             window.resizable(False, False)
@@ -59,8 +57,6 @@ class tk_login():
         self.my_func=my_func
 
         self.main_window=self.create_window(title='主窗口',size=(400,300),resizable=False)
-        my_icon.set_icon(self.main_window,my_icon.USER_ICON)
-
 
         tk.Label(self.main_window, text='账户：').place(x=100, y=100)
         tk.Label(self.main_window, text='密码：').place(x=100, y=140)
