@@ -1181,14 +1181,14 @@ class my_app():
 					if i%60==0:  self.info.set('计划在%s秒后自动刷新服务器...'%(i))
 					#60刷新一次状态t标签
 					time.sleep(1)
+
 					if self.closing_flag==True:
 						exit()
+					#检测到程序关闭信号，直接退出自动检查循环
 
-				print('自动刷新服务器')
-				if self.refresh_button['state'] == tk.DISABLED:
-					time.sleep(1)
-					continue
-				#如果refresh__button不可用，说明在手动刷新或者正在初始化，暂时推迟刷新一个周期
+					if self.refresh_button['state'] == tk.DISABLED:
+						break
+					#如果refresh__button不可用，说明在手动刷新或者正在初始化，推迟刷新一个周期
 
 				self.refresh_button['state'] = tk.DISABLED
 				self.refresh_button.unbind("<ButtonPress-1>")
@@ -1312,10 +1312,10 @@ class my_app():
 			self.info.set('刷新服务器状态......')
 			self.refresh_button['state'] = tk.DISABLED
 			self.refresh_button.unbind("<ButtonPress-1>")
-			check1 = pool.submit(self.check_dh_servers)
-			check2 = pool.submit(self.check_hk_servers)
-			while (not check2.done()) or (not check1.done()) :
-				print(check1.done(), check2.done(), not(check1.done() and check2.done()))
+			dh_check = pool.submit(self.check_dh_servers)
+			hk_check = pool.submit(self.check_hk_servers)
+			while (not dh_check.done()) or (not hk_check.done()) :
+				print(dh_check.done(), hk_check.done(), not(dh_check.done() and hk_check.done()))
 				time.sleep(1)
 				if self.closing_flag == True:
 					self.refresh_button['state'] = tk.NORMAL
@@ -1325,7 +1325,39 @@ class my_app():
 				self.info.set('刷新服务器成功')
 				self.refresh_button['state'] = tk.NORMAL
 				self.refresh_button.bind("<ButtonPress-1>", self.check_servers)
-			print(check1.result(), check2.result)
+
+			dh_new_online, dh_new_offline = dh_check.result()
+			hk_new_online, hk_new_offline = hk_check.result()
+
+			cams, playbacks = self.check_playing_viedeo_status()
+
+			print('dh_new_online', dh_new_online)
+			print('dh_new_offline', dh_new_offline)
+
+			print('hk_new_online', hk_new_online)
+			print('hk_new_offline', hk_new_offline)
+			print(cams, playbacks)
+
+			for win in cams.keys():
+				desc, server, channel, handel = cams[win]
+				if (desc in dh_new_offline) or (desc in hk_new_offline):
+					print('检测到服务器掉线，准备播放录像')
+					server.Stop_Play_Cam(handel)
+					self.window_status[win] = [desc, server, channel, 'playback']
+					self.get_window_wdiget(win)['bg'] = VIDEO_DEFAULT_COLOR
+					self.refresh_video_states()
+
+			for win in playbacks.keys():
+				desc, server, channel, handel = playbacks[win]
+				if (desc in dh_new_online) or (desc in hk_new_online):
+					print('检测服务器上线，并准备播放实时摄像头')
+					if 'haikang' in desc:
+						self.play_hk_cam(desc, server, channel, win, self.get_window_hwnd(win))
+						self.refresh_video_states()
+					if 'dahua' in desc:
+						self.play_dh_cam(desc, server, channel, win, self.get_window_hwnd(win))
+						self.refresh_video_states()
+
 		pool = ThreadPoolExecutor(max_workers=3)
 		pool.submit(do)
 
