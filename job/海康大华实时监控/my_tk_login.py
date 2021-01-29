@@ -113,7 +113,7 @@ class tk_login():
                     pass
                 if callable(self.my_func):
                     self.my_func()
-
+                    exit()
                 return True
             else:
                 tk.messagebox.showerror(message='USERNAME or PASSWORD ERROR!')
@@ -255,6 +255,9 @@ class tk_login():
         print('1111')
         self.bt_login.focus_get()
         self.check()
+
+    def __del__(self):
+        self.main_window.quit()
 
 if __name__ == '__main__':
 

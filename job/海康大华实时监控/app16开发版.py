@@ -1365,9 +1365,6 @@ class my_app():
 		pool = ThreadPoolExecutor(max_workers=3)
 		pool.submit(do)
 
-
-
-
 	def __del__(self):
 		print('程序退出,销毁')
 
@@ -1381,9 +1378,11 @@ class my_app():
 		for key in self.offline_dahua_servers:
 			self.offline_dahua_servers[key]['instance'].Close()
 
+		print(login)
 		self.float_window.quit()
 		self.root.quit()
 		print('destory')
+
 
 def start():
 	app = my_app()
@@ -1392,8 +1391,6 @@ def start():
 login=tk_login(my_func=start)
 login.main_window.mainloop()
 
-
-# start()
 
 #
 # <ButtonPress-n>     <Button-n>      <n>                         鼠标按钮n被按下，n为1左键，2中键，3右键
