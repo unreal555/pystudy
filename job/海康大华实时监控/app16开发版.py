@@ -1385,7 +1385,7 @@ class my_app():
 			exit()
 		except:
 			pass
-        print('destory')
+		print('destory')
 
 
 def start():
