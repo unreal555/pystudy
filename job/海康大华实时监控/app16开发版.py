@@ -1382,11 +1382,10 @@ class my_app():
 		self.float_window.quit()
 		self.root.quit()
 		try:
-            exit()
-        except Exception as e
-            pass
-                
-		print('destory')
+			exit()
+		except:
+			pass
+        print('destory')
 
 
 def start():
