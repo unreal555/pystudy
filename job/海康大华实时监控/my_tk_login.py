@@ -58,9 +58,10 @@ class tk_login():
 
         self.my_func=my_func
 
-        self.main_window=self.create_window(title='主窗口',size=(400,300),resizable=False)
+        self.main_window=self.create_window(title='现场可视化管理平台',size=(400,300),resizable=False)
         my_icon.set_icon(self.main_window,my_icon.USER_ICON)
 
+        self.main_window.attributes("-alpha", 0.9)
 
         tk.Label(self.main_window, text='账户：').place(x=100, y=100)
         tk.Label(self.main_window, text='密码：').place(x=100, y=140)
@@ -106,9 +107,8 @@ class tk_login():
         if usr_name in usrs_info:
 
             if usr_pwd == usrs_info[usr_name]:
-                tk.messagebox.showinfo(title='Welcome', message='用户: '+usr_name+'   登陆成功')
+               # tk.messagebox.showinfo(title='Welcome', message='用户: '+usr_name+'   登陆成功')
                 self.usr_sign_quit()
-
                 if self.my_func==None:
                     pass
                 if callable(self.my_func):
