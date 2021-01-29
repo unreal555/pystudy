@@ -7,6 +7,7 @@
 import tkinter as tk
 import  tkinter.messagebox
 import  pickle
+import os
 import my_icon
 
 
@@ -86,6 +87,8 @@ class tk_login():
         self.bt_logquit = tk.Button(self.main_window, text='退出', command=self.usr_sign_quit)
         self.bt_logquit.place(x=260, y=230)
 
+        self.enter_usr_name.focus()
+
     def check(self):
         #输入框内容
         usr_name = self.var_usr_name.get()
@@ -112,19 +115,21 @@ class tk_login():
                 if self.my_func==None:
                     pass
                 if callable(self.my_func):
-                    self.my_func()
-                    try:
-                        exit()
-                    except:
-                        pass
-                    
+                   self.my_func()
+                   os._exit(1)
                 return True
             else:
                 tk.messagebox.showerror(message='USERNAME or PASSWORD ERROR!')
+                self.var_usr_name.set('')
+                self.var_usr_pwd.set('')
+                self.enter_usr_name.focus()
                 return False
 
         else:
             tk.messagebox.showerror(message='USERNAME or PASSWORD ERROR!')
+            self.var_usr_name.set('')
+            self.var_usr_pwd.set('')
+            self.enter_usr_name.focus()
             return False
 
     def usr_sign_quit(self):
@@ -256,9 +261,20 @@ class tk_login():
         bt_confirm = tk.Button(window_sign_up, text='确定', command=signtowcg).place(x=180, y=220)
 
     def on_press_enter(self,event):
-        print('1111')
-        self.bt_login.focus_get()
-        self.check()
+        print(self.var_usr_name.get()=='')
+        print(self.var_usr_pwd.get()=='')
+
+
+        if self.var_usr_name.get()=='':
+            self.enter_usr_name.focus()
+
+        if self.var_usr_pwd.get()=='':
+            self.enter_usr_pwd.focus()
+            return
+
+        if self.var_usr_name.get() and self.var_usr_pwd.get():
+            self.bt_login.focus()
+            self.check()
 
     def __del__(self):
         self.main_window.quit()

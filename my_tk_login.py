@@ -7,6 +7,8 @@
 import tkinter as tk
 import  tkinter.messagebox
 import  pickle
+import os
+import my_icon
 
 
 class tk_login():
@@ -22,6 +24,7 @@ class tk_login():
 
         window.title(title)
 
+        my_icon.set_icon(window,my_icon.USER_ICON)
 
         if resizable == False:
             window.resizable(False, False)
@@ -56,7 +59,10 @@ class tk_login():
 
         self.my_func=my_func
 
-        self.main_window=self.create_window(title='主窗口',size=(400,300),resizable=False)
+        self.main_window=self.create_window(title='现场可视化管理平台',size=(400,300),resizable=False)
+        my_icon.set_icon(self.main_window,my_icon.USER_ICON)
+
+        self.main_window.attributes("-alpha", 0.9)
 
         tk.Label(self.main_window, text='账户：').place(x=100, y=100)
         tk.Label(self.main_window, text='密码：').place(x=100, y=140)
@@ -81,6 +87,8 @@ class tk_login():
         self.bt_logquit = tk.Button(self.main_window, text='退出', command=self.usr_sign_quit)
         self.bt_logquit.place(x=260, y=230)
 
+        self.enter_usr_name.focus()
+
     def check(self):
         #输入框内容
         usr_name = self.var_usr_name.get()
@@ -102,21 +110,26 @@ class tk_login():
         if usr_name in usrs_info:
 
             if usr_pwd == usrs_info[usr_name]:
-                tk.messagebox.showinfo(title='Welcome', message='用户: '+usr_name+'   登陆成功')
+               # tk.messagebox.showinfo(title='Welcome', message='用户: '+usr_name+'   登陆成功')
                 self.usr_sign_quit()
-
                 if self.my_func==None:
                     pass
                 if callable(self.my_func):
-                    self.my_func()
-
+                   self.my_func()
+                   os._exit(1)
                 return True
             else:
                 tk.messagebox.showerror(message='USERNAME or PASSWORD ERROR!')
+                self.var_usr_name.set('')
+                self.var_usr_pwd.set('')
+                self.enter_usr_name.focus()
                 return False
 
         else:
             tk.messagebox.showerror(message='USERNAME or PASSWORD ERROR!')
+            self.var_usr_name.set('')
+            self.var_usr_pwd.set('')
+            self.enter_usr_name.focus()
             return False
 
     def usr_sign_quit(self):
@@ -248,9 +261,23 @@ class tk_login():
         bt_confirm = tk.Button(window_sign_up, text='确定', command=signtowcg).place(x=180, y=220)
 
     def on_press_enter(self,event):
-        print('1111')
-        self.bt_login.focus_get()
-        self.check()
+        print(self.var_usr_name.get()=='')
+        print(self.var_usr_pwd.get()=='')
+
+
+        if self.var_usr_name.get()=='':
+            self.enter_usr_name.focus()
+
+        if self.var_usr_pwd.get()=='':
+            self.enter_usr_pwd.focus()
+            return
+
+        if self.var_usr_name.get() and self.var_usr_pwd.get():
+            self.bt_login.focus()
+            self.check()
+
+    def __del__(self):
+        self.main_window.quit()
 
 if __name__ == '__main__':
 

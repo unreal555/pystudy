@@ -1381,10 +1381,7 @@ class my_app():
 		print(login)
 		self.float_window.quit()
 		self.root.quit()
-		try:
-			exit()
-		except:
-			pass
+		os._exit(1)
 		print('destory')
 
 
