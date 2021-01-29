@@ -11,7 +11,7 @@ import  pickle
 
 class tk_login():
 
-    user_data_file='.//usr_info.dat'
+    user_data_file='./dat/usr.dat'
 
     def create_window(self, toplevel=False,title='main', size=(400, 300), resizable=False):
 
@@ -71,6 +71,9 @@ class tk_login():
 
         self.bt_login = tk.Button(self.main_window, text='登录', command=self.check)
         self.bt_login.place(x=120, y=230)
+        self.main_window.bind('<Return>',self.on_press_enter)
+
+
 
         self.bt_modify = tk.Button(self.main_window, text='修改密码', command=self.usr_pwd_modify)
         self.bt_modify.place(x=180, y=230)
@@ -157,21 +160,22 @@ class tk_login():
                 tk.messagebox.showerror(message='原密码不对')
                 return False
 
-
-
             if exist_usr_info[Musername]==OldPwd:
                 exist_usr_info[Musername] = NewPwd
 
-            with open(self.user_data_file, 'wb') as usr_file:
-                pickle.dump(exist_usr_info, usr_file)
-            tk.messagebox.showinfo(title='成功',message='修改成功')
-            return True
+            try:
+                with open(self.user_data_file, 'wb') as usr_file:
+                    pickle.dump(exist_usr_info, usr_file)
+                tk.messagebox.showinfo(title='成功',message='修改成功')
+                on_exit()
+                return True
+            except Exception as e:
+                return False
 
         def on_exit():
             modidy_user_psw_window.destroy()
             self.main_window.update()
             self.main_window.deiconify()
-
 
 
         self.main_window.withdraw()
@@ -243,14 +247,19 @@ class tk_login():
         # 确认注册
         bt_confirm = tk.Button(window_sign_up, text='确定', command=signtowcg).place(x=180, y=220)
 
+    def on_press_enter(self,event):
+        print('1111')
+        self.bt_login.focus_get()
+        self.check()
+
 if __name__ == '__main__':
 
     def start():
          print(1)
-         app=tk_nine_windows()
-         app.root.mainloop()
 
-    from my_tk_nine_windows import tk_nine_windows
+         # app=app16开发版.my_app()
+         # app.root.mainloop()
+
     login=tk_login(my_func=start)
     login.main_window.mainloop()
 

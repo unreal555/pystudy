@@ -19,7 +19,7 @@ from my_hk_dvr import HK_DVR
 from my_dh_dvr import DAHUA_DVR
 import my_icon
 
-# from my_tk_login import tk_login
+from my_tk_login import tk_login
 
 
 HK_INI_PATH = './hk.ini'
@@ -1389,9 +1389,11 @@ def start():
 	app = my_app()
 	app.root.mainloop()
 
-# login=tk_login(my_func=start)
-# login.main_window.mainloop()
-start()
+login=tk_login(my_func=start)
+login.main_window.mainloop()
+
+
+# start()
 
 #
 # <ButtonPress-n>     <Button-n>      <n>                         鼠标按钮n被按下，n为1左键，2中键，3右键
