@@ -113,7 +113,11 @@ class tk_login():
                     pass
                 if callable(self.my_func):
                     self.my_func()
-                    exit()
+                    try:
+                        exit()
+                    except:
+                        pass
+                    
                 return True
             else:
                 tk.messagebox.showerror(message='USERNAME or PASSWORD ERROR!')

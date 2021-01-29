@@ -1,4 +1,4 @@
-# -*- mode: python ; coding: utf-8 -*-
+﻿# -*- mode: python ; coding: utf-8 -*-
 
 block_cipher = None
 
@@ -6,7 +6,7 @@ block_cipher = None
 a = Analysis(['app16开发版.py'],
              pathex=['D:\\PyCharm2019.3.1\\pystudy\\job\\海康大华实时监控'],
              binaries=[],
-             datas=[],
+             datas=[('NetSDK','NetSDK')],
              hiddenimports=[],
              hookspath=[],
              runtime_hooks=[],
@@ -23,11 +23,11 @@ exe = EXE(pyz,
           a.zipfiles,
           a.datas,
           [],
-          name='app16开发版',
+          name='app',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
           upx_exclude=[],
           runtime_tmpdir=None,
-          console=True )
+          console=False , icon='my-icon.ico')
