@@ -72,28 +72,26 @@ class tk_login():
         # self.area.create_text(120, 230, text='密码')
         self.area.pack()
 
-        tk.Label(self.main_window, text='账户：').place(x=100, y=180)
-        tk.Label(self.main_window, text='密码：').place(x=100, y=210)
+        tk.Label(self.main_window, text='账户：').place(x=100, y=170)
+        tk.Label(self.main_window, text='密码：').place(x=100, y=200)
 
         self.var_usr_name = tk.StringVar()
         self.enter_usr_name = tk.Entry(self.main_window, textvariable=self.var_usr_name)
-        self.enter_usr_name.place(x=160, y=180)
+        self.enter_usr_name.place(x=160, y=170)
 
         self.var_usr_pwd = tk.StringVar()
         self.enter_usr_pwd = tk.Entry(self.main_window, textvariable=self.var_usr_pwd, show='*')
-        self.enter_usr_pwd.place(x=160, y=210)
+        self.enter_usr_pwd.place(x=160, y=200)
 
         self.bt_login = tk.Button(self.main_window, text='登录', command=self.check)
-        self.bt_login.place(x=120, y=260)
+        self.bt_login.place(x=120, y=240)
         self.main_window.bind('<Return>',self.on_press_enter)
 
-
-
         self.bt_modify = tk.Button(self.main_window, text='修改密码', command=self.usr_pwd_modify)
-        self.bt_modify.place(x=170, y=260)
+        self.bt_modify.place(x=170, y=240)
 
         self.bt_logquit = tk.Button(self.main_window, text='退出', command=self.usr_sign_quit)
-        self.bt_logquit.place(x=250, y=260)
+        self.bt_logquit.place(x=250, y=240)
 
         self.enter_usr_name.focus()
 
