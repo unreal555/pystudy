@@ -64,16 +64,16 @@ class tk_login():
 
         self.main_window.attributes("-alpha", 0.9)
 
-        tk.Label(self.main_window, text='账户：').place(x=100, y=100)
-        tk.Label(self.main_window, text='密码：').place(x=100, y=140)
+        tk.Label(self.main_window, text='账户：').place(x=100, y=130)
+        tk.Label(self.main_window, text='密码：').place(x=100, y=170)
 
         self.var_usr_name = tk.StringVar()
         self.enter_usr_name = tk.Entry(self.main_window, textvariable=self.var_usr_name)
-        self.enter_usr_name.place(x=160, y=100)
+        self.enter_usr_name.place(x=160, y=130)
 
         self.var_usr_pwd = tk.StringVar()
         self.enter_usr_pwd = tk.Entry(self.main_window, textvariable=self.var_usr_pwd, show='*')
-        self.enter_usr_pwd.place(x=160, y=140)
+        self.enter_usr_pwd.place(x=160, y=170)
 
         self.bt_login = tk.Button(self.main_window, text='登录', command=self.check)
         self.bt_login.place(x=120, y=230)
