@@ -2,14 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b8d6269-a564-4802-8c0e-0538c714e289" name="Default Changelist" comment="clean">
-      <change afterPath="$PROJECT_DIR$/job/海康大华实时监控/dat/usr.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/1/1105de43b4cbeb18868232febc0fa0e0ba451d2f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/d/ed93b846df1fcf2ad3f9eaba46d862eea320d03b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/123asd.avi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/face_haarcascade/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/face_haarcascade/haarcascade_eye.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/face_haarcascade/haarcascade_eye_tree_eyeglasses.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/face_haarcascade/haarcascade_frontalcatface.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/face_haarcascade/haarcascade_frontalcatface_extended.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/face_haarcascade/haarcascade_frontalface_alt.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/face_haarcascade/haarcascade_frontalface_alt2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/face_haarcascade/haarcascade_frontalface_alt_tree.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/face_haarcascade/haarcascade_frontalface_default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/face_haarcascade/haarcascade_fullbody.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/face_haarcascade/haarcascade_lefteye_2splits.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/face_haarcascade/haarcascade_licence_plate_rus_16stages.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/face_haarcascade/haarcascade_lowerbody.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/face_haarcascade/haarcascade_profileface.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/face_haarcascade/haarcascade_righteye_2splits.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/face_haarcascade/haarcascade_russian_plate_number.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/face_haarcascade/haarcascade_smile.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/face_haarcascade/haarcascade_upperbody.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/haarcascade_frontalcatface.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_cv2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_winsound.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pystudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pystudy.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/海康大华实时监控/app16开发版.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/海康大华实时监控/app16开发版.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/海康大华实时监控/dat/state.dat" beforeDir="false" afterPath="$PROJECT_DIR$/job/海康大华实时监控/dat/state.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/海康大华实时监控/my_tk_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/海康大华实时监控/my_tk_login.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +60,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pic" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/face_haarcascade" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -58,39 +75,18 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PyCharm2019.3.1\pystudy\face_haarcascade" />
+      <recent name="D:\PyCharm2019.3.1\pystudy" />
+      <recent name="D:\PyCharm2019.3.1\pystudy\pic" />
+      <recent name="D:\PyCharm2019.3.1\pystudy\job\粘贴板记录工具\source" />
+      <recent name="D:\PyCharm2019.3.1\pystudy\job\海康大华实时监控" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\PyCharm2019.3.1\pystudy\job\粘贴板记录工具" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\PyCharm2019.3.1\pystudy\pic" />
-      <recent name="D:\PyCharm2019.3.1\pystudy\job\粘贴板记录工具\source" />
-      <recent name="D:\PyCharm2019.3.1\pystudy" />
-      <recent name="D:\PyCharm2019.3.1\pystudy\job\海康大华实时监控" />
-    </key>
   </component>
-  <component name="RunManager" selected="Python.app16开发版">
-    <configuration name="app (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="pystudy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/job/粘贴板记录工具" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/job/粘贴板记录工具/app.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.my_cv2">
     <configuration name="app16开发版" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -105,28 +101,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/job/海康大华实时监控/app16开发版.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="my_clipboard_tools" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="pystudy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/job/粘贴板记录工具" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/job/粘贴板记录工具/my_clipboard_tools.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -157,6 +131,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="my_cv2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pystudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\PyCharm2019.3.1\pystudy\enve\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my_cv2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="my_tk_login" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -171,6 +167,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/job/海康大华实时监控/my_tk_login.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="my_winsound" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pystudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my_winsound.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -203,19 +221,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.pystudy" />
-      <item itemvalue="Python.app (1)" />
-      <item itemvalue="Python.my_clipboard_tools" />
       <item itemvalue="Python.app16开发版" />
       <item itemvalue="Python.my_computer_info" />
       <item itemvalue="Python.my_tk_login" />
+      <item itemvalue="Python.my_cv2" />
+      <item itemvalue="Python.my_winsound" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.my_cv2" />
+        <item itemvalue="Python.my_winsound" />
         <item itemvalue="Python.app16开发版" />
         <item itemvalue="Python.my_tk_login" />
         <item itemvalue="Python.my_computer_info" />
-        <item itemvalue="Python.app (1)" />
-        <item itemvalue="Python.my_clipboard_tools" />
       </list>
     </recent_temporary>
   </component>
@@ -253,6 +271,8 @@
       <workItem from="1611712807348" duration="1670000" />
       <workItem from="1611804813603" duration="1368000" />
       <workItem from="1611881007829" duration="6233000" />
+      <workItem from="1612574276519" duration="424000" />
+      <workItem from="1612574924742" duration="21961000" />
     </task>
     <task id="LOCAL-00001" summary="clean">
       <created>1610422132117</created>
@@ -417,19 +437,24 @@
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="232" y="150" key="#Python/0.0.1280.980@0.0.1280.980" timestamp="1610503083116" />
-    <state x="94" y="147" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611623017741">
-      <screen x="0" y="0" width="1280" height="980" />
+    <state x="100" y="36" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1612574328389">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="94" y="147" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.980@0.0.1280.980" timestamp="1611623017741" />
+    <state x="100" y="36" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1612574328389" />
+    <state x="391" y="0" key="#my_cv2" timestamp="1612574341742">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="391" y="0" key="#my_cv2/0.0.1366.728@0.0.1366.728" timestamp="1612574341742" />
     <state x="391" y="0" key="#my_hk_dvr" timestamp="1611137744010">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="391" y="0" key="#my_hk_dvr/0.0.1366.728@0.0.1366.728" timestamp="1611137744010" />
-    <state x="0" y="86" key="CommitChangelistDialog2" timestamp="1611889513554">
-      <screen x="0" y="0" width="1280" height="980" />
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1612609140810">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="0" y="86" key="CommitChangelistDialog2/0.0.1280.980@0.0.1280.980" timestamp="1611889513554" />
-    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1611142078699" />
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1612609140810" />
     <state x="120" y="79" key="DiffContextDialog" timestamp="1611884834549">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
@@ -442,51 +467,55 @@
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="420" y="247" key="FileChooserDialogImpl/0.0.1280.980@0.0.1280.980" timestamp="1610423377973" />
-    <state width="1236" height="246" key="GridCell.Tab.0.bottom" timestamp="1611889991633">
-      <screen x="0" y="0" width="1280" height="980" />
+    <state width="1322" height="180" key="GridCell.Tab.0.bottom" timestamp="1612608762360">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1236" height="246" key="GridCell.Tab.0.bottom/0.0.1280.980@0.0.1280.980" timestamp="1611889991633" />
-    <state width="1322" height="183" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1611146145746" />
-    <state width="1236" height="246" key="GridCell.Tab.0.center" timestamp="1611889991633">
-      <screen x="0" y="0" width="1280" height="980" />
+    <state width="1322" height="180" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1612608762360" />
+    <state width="1322" height="180" key="GridCell.Tab.0.center" timestamp="1612608762360">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1236" height="246" key="GridCell.Tab.0.center/0.0.1280.980@0.0.1280.980" timestamp="1611889991633" />
-    <state width="1322" height="183" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1611146145745" />
-    <state width="1236" height="246" key="GridCell.Tab.0.left" timestamp="1611889991633">
-      <screen x="0" y="0" width="1280" height="980" />
+    <state width="1322" height="180" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1612608762360" />
+    <state width="1322" height="180" key="GridCell.Tab.0.left" timestamp="1612608762360">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1236" height="246" key="GridCell.Tab.0.left/0.0.1280.980@0.0.1280.980" timestamp="1611889991633" />
-    <state width="1322" height="183" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1611146145745" />
-    <state width="1236" height="246" key="GridCell.Tab.0.right" timestamp="1611889991633">
-      <screen x="0" y="0" width="1280" height="980" />
+    <state width="1322" height="180" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1612608762360" />
+    <state width="1322" height="180" key="GridCell.Tab.0.right" timestamp="1612608762360">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1236" height="246" key="GridCell.Tab.0.right/0.0.1280.980@0.0.1280.980" timestamp="1611889991633" />
-    <state width="1322" height="183" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1611146145746" />
-    <state width="1220" height="233" key="GridCell.Tab.1.bottom" timestamp="1611633681888">
-      <screen x="0" y="0" width="1280" height="980" />
+    <state width="1322" height="180" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1612608762360" />
+    <state width="1322" height="17" key="GridCell.Tab.1.bottom" timestamp="1612589020569">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1220" height="233" key="GridCell.Tab.1.bottom/0.0.1280.980@0.0.1280.980" timestamp="1611633681888" />
-    <state width="1220" height="233" key="GridCell.Tab.1.center" timestamp="1611633681888">
-      <screen x="0" y="0" width="1280" height="980" />
+    <state width="1322" height="17" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1612589020569" />
+    <state width="1322" height="17" key="GridCell.Tab.1.center" timestamp="1612589020569">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1220" height="233" key="GridCell.Tab.1.center/0.0.1280.980@0.0.1280.980" timestamp="1611633681888" />
-    <state width="1220" height="233" key="GridCell.Tab.1.left" timestamp="1611633681888">
-      <screen x="0" y="0" width="1280" height="980" />
+    <state width="1322" height="17" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1612589020569" />
+    <state width="1322" height="17" key="GridCell.Tab.1.left" timestamp="1612589020568">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1220" height="233" key="GridCell.Tab.1.left/0.0.1280.980@0.0.1280.980" timestamp="1611633681888" />
-    <state width="1220" height="233" key="GridCell.Tab.1.right" timestamp="1611633681888">
-      <screen x="0" y="0" width="1280" height="980" />
+    <state width="1322" height="17" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1612589020568" />
+    <state width="1322" height="17" key="GridCell.Tab.1.right" timestamp="1612589020569">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1220" height="233" key="GridCell.Tab.1.right/0.0.1280.980@0.0.1280.980" timestamp="1611633681888" />
+    <state width="1322" height="17" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1612589020569" />
     <state x="392" y="202" key="RollbackChangesDialog" timestamp="1611882818229">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="392" y="202" key="RollbackChangesDialog/0.0.1280.980@0.0.1280.980" timestamp="1611882818229" />
-    <state x="143" y="121" key="SettingsEditor" timestamp="1611622795477">
-      <screen x="0" y="0" width="1280" height="980" />
+    <state x="153" y="0" key="SettingsEditor" timestamp="1612581142812">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="143" y="121" key="SettingsEditor/0.0.1280.980@0.0.1280.980" timestamp="1611622795477" />
-    <state x="153" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1611138183924" />
+    <state x="153" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1612581142812" />
     <state x="144" y="144" key="Vcs.Push.Dialog.v2" timestamp="1611885936417">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
@@ -505,10 +534,10 @@
     </state>
     <state x="353" y="291" key="git4idea.merge.GitPullDialog/0.0.1280.980@0.0.1280.980" timestamp="1611622143815" />
     <state x="377" y="216" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1611137485429" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1611144477595">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1612600142953">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1611144477595" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1612600142953" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -530,9 +559,11 @@
     <SUITE FILE_PATH="coverage/pystudy$img2file.coverage" NAME="img2file Coverage Results" MODIFIED="1611623392151" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pic" />
     <SUITE FILE_PATH="coverage/pystudy$app.coverage" NAME="app Coverage Results" MODIFIED="1611624904338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康大华实时监控" />
     <SUITE FILE_PATH="coverage/pystudy$test.coverage" NAME="test Coverage Results" MODIFIED="1611567300054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/闲鱼单，增加模块" />
+    <SUITE FILE_PATH="coverage/pystudy$my_winsound.coverage" NAME="my_winsound Coverage Results" MODIFIED="1612605618558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$app__1_.coverage" NAME="app (1) Coverage Results" MODIFIED="1611710225643" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/粘贴板记录工具" />
     <SUITE FILE_PATH="coverage/pystudy$app_16.coverage" NAME="app-16开发版 Coverage Results" MODIFIED="1611287392109" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康大华实时监控" />
     <SUITE FILE_PATH="coverage/pystudy$my_clipboard_tools.coverage" NAME="my_clipboard_tools Coverage Results" MODIFIED="1611627013663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/粘贴板记录工具" />
+    <SUITE FILE_PATH="coverage/pystudy$my_cv2.coverage" NAME="my_cv2 Coverage Results" MODIFIED="1612608762351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$pyhanlp.coverage" NAME="分词，提取人名，学习pyhanlp Coverage Results" MODIFIED="1611200920108" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$app_9.coverage" NAME="app-9完成版 Coverage Results" MODIFIED="1611287469532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康大华实时监控/histroy" />
     <SUITE FILE_PATH="coverage/pystudy$app_9__1_.coverage" NAME="app-9完成版 (1) Coverage Results" MODIFIED="1611287740418" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康大华实时监控" />
