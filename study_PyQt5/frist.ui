@@ -116,9 +116,29 @@
     <bool>true</bool>
    </property>
   </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action_4"/>
+   <addaction name="actionexit"/>
+   <addaction name="action_5"/>
+  </widget>
   <action name="action_4">
    <property name="text">
-    <string>都被封装成相应的事件类</string>
+    <string>打开</string>
+   </property>
+   <property name="toolTip">
+    <string>打开文件</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
    </property>
   </action>
   <action name="action_5">

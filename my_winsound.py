@@ -25,35 +25,23 @@ h7=1976
 #
 def play(音符,t=节奏):
     winsound.Beep(音符,t)
-#
-# for 音符 in 一闪一闪亮晶晶:
-#     if 音符=='1':
-#         play(h1)
-#     if 音符=='2':
-#         play(h2)
-#     if 音符== '3':
-#         play(h3)
-#     if 音符== '4':
-#         play(h4)
-#     if 音符== '5':
-#         play(h5)
-#     if 音符== '6':
-#         play(h6)
-#     if 音符== '7':
-#         play(h7)
-#     if 音符=='-':
-#         time.sleep(节奏/1000)
+
+for 音符 in 一闪一闪亮晶晶:
+    if 音符=='1':
+        play(h1)
+    if 音符=='2':
+        play(h2)
+    if 音符== '3':
+        play(h3)
+    if 音符== '4':
+        play(h4)
+    if 音符== '5':
+        play(h5)
+    if 音符== '6':
+        play(h6)
+    if 音符== '7':
+        play(h7)
+    if 音符=='-':
+        time.sleep(节奏/1000)
 
 
-
-# play(h1)
-
-print(1)
-print(2)
-print('hello world')
-
-n=9
-print(n)
-while n>0:
-    print(n)
-    n=n-1
