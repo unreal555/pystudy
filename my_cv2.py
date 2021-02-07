@@ -3,16 +3,20 @@ import time
 
 try:
     cap = cv2.VideoCapture(0)
+    print(cap)
     cap.open(0, cv2.CAP_DSHOW)  #摄像机太老，必须修改打开方式，猜测是directshow的意思
     # face_model = cv2.CascadeClassifier('./face_haarcascade/haarcascade_frontalface_alt.xml')
     face_model = cv2.CascadeClassifier('./face_haarcascade/haarcascade_frontalface_alt.xml')
-except:
+    print(1)
+except Exception as e:
+    print(e)
     exit()
 n=1
 start=time.time()
 state=0
 while True:
     ret, frame = cap.read()
+    print(ret)
     frame=cv2.flip(frame, 180)
     frame=cv2.putText(frame,str(n),(10, 30), cv2.FONT_HERSHEY_DUPLEX, 0.8,(255,0,0), 1)
     # 图片进行灰度处理
