@@ -5,7 +5,8 @@
 # Tool ：PyCharm
 
 import sys
-from PyQt5.QtWidgets import QWidget,QApplication,QMainWindow,QPushButton,QVBoxLayout
+from PyQt5.QtWidgets import QWidget,QApplication,QMainWindow,QPushButton,QVBoxLayout,QGridLayout
+from PyQt5 import QtCore
 
 def on_click(window,app):
 
@@ -18,11 +19,16 @@ app=QApplication(sys.argv)
 window=QWidget()
 
 window.setGeometry(0,0,400,300)
+
 button=QPushButton('退出')
+bbutton=QPushButton('退出')
 
-layout=QVBoxLayout()
+layout=QGridLayout()
 
-layout.addWidget(button)
+layout.setGeometry(QtCore.QRect(0, 0, 400, 300))
+
+layout.addWidget(button,1,2)
+layout.addWidget(bbutton,4,3)
 
 window.setLayout(layout)
 
