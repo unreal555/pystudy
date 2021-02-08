@@ -17,15 +17,18 @@ app=QApplication(sys.argv)
 
 window=QWidget()
 
-label=QPushButton('退出')
+window.setGeometry(0,0,400,300)
+button=QPushButton('退出')
 
 layout=QVBoxLayout()
 
-layout.addWidget(label)
+layout.addWidget(button)
 
 window.setLayout(layout)
 
-label.clicked.connect(lambda :on_click(window,app))
+button.clicked.connect(lambda :on_click(window,app))
+
+button.setToolTip('测试')
 
 
 
