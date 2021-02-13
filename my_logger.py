@@ -12,9 +12,6 @@ import re
 
 class my_logger():
 
-
-
-
     @staticmethod
     def __get_time(self):
         return  time.strftime('%Y-%m-%d %H:%M:%S')
