@@ -30,7 +30,7 @@ class my_logger():
         with open(self.__file, 'r', encoding='utf-8') as f:
                  self.__log= f.readlines()
 
-    def __init__(self, path='.', name='log', debug=False):
+    def __init__(self, path='.', name='log.txt', debug=False):
 
         self.__huan_hang = '\r\n'
         self.__mark = ' # # # '
@@ -42,18 +42,9 @@ class my_logger():
 
         path=os.path.abspath(path)
 
-        # if ('.txt' in str.lower(path)  or '.log' in str.lower(path)) and os.path.exists(path) and os.path.isfile(path):
-        #     self.__file = path
-        #
-        # if not( '.txt'  in str.lower(name) or '.log' in str.lower(name)):
-        #     name = name + '.txt'
-        #
-        # if os.path.isdir(path):
         self.__file = os.path.join(path, name)
-        #
-        # if self.__debug: print('日志位置为',self.__file)
 
-        print(self.__file)
+        if self.__debug: print('日志位置为',self.__file)
 
         if os.path.isfile(self.__file):
             self.reload_log()
