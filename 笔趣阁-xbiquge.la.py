@@ -68,7 +68,7 @@ def get_book(url):
 
         logger.write(chapter)
 
-        s=random.randint(1,3)
+        s=random.randint(1,1)
 
         print("停止{}秒".format(s))
         time.sleep(s)
