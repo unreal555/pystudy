@@ -28,11 +28,9 @@ def get_book(url):
     author=re.findall(author_reg,page)
 
     path=os.path.abspath(os.path.join(".",title[0]+"_"+author[0]))
-    logger=my_logger.my_logger(dir=path)
+    logger=my_logger.my_logger(path=path)
 
     filename=title[0]+"_"+author[0]+".txt"
-
-
 
     print(title[0],author[0],chapter_list)
 
