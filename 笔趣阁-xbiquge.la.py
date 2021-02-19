@@ -28,11 +28,10 @@ def get_book(url):
     author=re.findall(author_reg,page)
 
     path=os.path.abspath(os.path.join(".",title[0]+"_"+author[0]))
-    logger=my_logger.logger(dir=path)
+    print(path)
+    logger=my_logger.my_logger(path=path,name='log.txt')
 
     filename=title[0]+"_"+author[0]+".txt"
-
-
 
     print(title[0],author[0],chapter_list)
 
@@ -69,7 +68,7 @@ def get_book(url):
 
         logger.write(chapter)
 
-        s=random.randint(1,3)
+        s=random.randint(1,1)
 
         print("停止{}秒".format(s))
         time.sleep(s)
