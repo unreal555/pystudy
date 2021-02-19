@@ -5,10 +5,10 @@
 # Tool ：PyCharm
 
 import sys
-from PyQt5.QtWidgets import QWidget,QApplication,QMainWindow,QPushButton,QVBoxLayout,QGridLayout,QLabel
+from PyQt5.QtWidgets import QWidget,QApplication,QMainWindow,QPushButton,QVBoxLayout,QGridLayout,QLabel,QLineEdit
 from PyQt5 import QtCore
-from PyQt5.QtGui import QPalette,QPixmap
-from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QPalette,QPixmap,QIntValidator,QDoubleValidator,QRegExpValidator
+from PyQt5.QtCore import Qt,QRegExp
 
 class my(QWidget):
 	def __init__(self):
@@ -41,12 +41,23 @@ class my(QWidget):
 		label2.linkHovered.connect(self.mouse_on)
 		label3.linkHovered.connect(self.mouse_on)
 
-		vbox=QVBoxLayout()
 
+		input1=QLineEdit()
+		input1.setPlaceholderText('text')
+		input1.setEchoMode(QLineEdit.PasswordEchoOnEdit)
+
+		reg=QRegExp('[-]{0,1}[a-zA-Z0-9]{1,3}')
+		validator = QRegExpValidator(reg)
+
+		input1.setValidator(validator)
+
+		vbox=QVBoxLayout()
 		vbox.addWidget(label1)
 
 		vbox.addWidget(label2)
 		vbox.addWidget(label3)
+
+		vbox.addWidget(input1)
 
 		self.setLayout(vbox)
 		self.setWindowTitle('text')
