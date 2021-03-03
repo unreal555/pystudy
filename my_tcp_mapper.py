@@ -43,7 +43,7 @@ class PortMapper():
                 (local_conn, local_addr) = local_server.accept()
             except (KeyboardInterrupt, Exception):
                 local_server.close()
-                send_log('Event: Something is wrong or break.  Stop mapping service...')
+                self.send_log('Event: Something is wrong or break.  Stop mapping service...')
                 break
 
             threading.Thread(target=self.tcp_mapping_request, args=(local_conn, remote_ip, remote_port)).start()
@@ -92,7 +92,7 @@ class PortMapper():
             remote_conn.connect((remote_ip, remote_port))
         except Exception:
             local_conn.close()
-            send_log('Error: Unable to connect to the remote server.')
+            self.send_log('Error: Unable to connect to the remote server.')
             return
 
         threading.Thread(target=self.tcp_mapping_worker, args=(local_conn, remote_conn)).start()
@@ -103,8 +103,9 @@ class PortMapper():
 
 # 主函数
 if __name__ == '__main__':
+    print('written by 张磊')
+    print('开始转发。。')
     PortMapper('192.168.1.251', 11223)
-    PortMapper('192.168.1.216', 11223, '0.0.0.0', 11223)
 
     # threading.Thread(target=PortMapper, args=('192.168.1.251', 11223)).start()
     # threading.Thread(target=PortMapper, args=('192.168.1.251', 808,'0.0.0.0',801)).start()
