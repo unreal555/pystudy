@@ -2,36 +2,70 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b8d6269-a564-4802-8c0e-0538c714e289" name="Default Changelist" comment="clean">
-      <change afterPath="$PROJECT_DIR$/123asd.avi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/face_haarcascade/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/face_haarcascade/haarcascade_eye.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/face_haarcascade/haarcascade_eye_tree_eyeglasses.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/face_haarcascade/haarcascade_frontalcatface.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/face_haarcascade/haarcascade_frontalcatface_extended.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/face_haarcascade/haarcascade_frontalface_alt.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/face_haarcascade/haarcascade_frontalface_alt2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/face_haarcascade/haarcascade_frontalface_alt_tree.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/face_haarcascade/haarcascade_frontalface_default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/face_haarcascade/haarcascade_fullbody.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/face_haarcascade/haarcascade_lefteye_2splits.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/face_haarcascade/haarcascade_licence_plate_rus_16stages.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/face_haarcascade/haarcascade_lowerbody.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/face_haarcascade/haarcascade_profileface.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/face_haarcascade/haarcascade_righteye_2splits.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/face_haarcascade/haarcascade_russian_plate_number.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/face_haarcascade/haarcascade_smile.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/face_haarcascade/haarcascade_upperbody.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/haarcascade_frontalcatface.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_cv2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_winsound.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/Qt3DAnimation.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/Qt3DCore.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/Qt3DExtras.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/Qt3DInput.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/Qt3DLogic.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/Qt3DRender.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtBluetooth.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtChart.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtCore.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtDBus.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtDataVisualization.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtDesigner.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtGui.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtHelp.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtLocation.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtMultimedia.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtMultimediaWidgets.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtNetwork.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtNetworkAuth.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtNfc.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtOpenGL.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtPositioning.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtPrintSupport.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtPurchasing.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtQml.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtQuick.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtQuickWidgets.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtRemoteObjects.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtSensors.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtSerialPort.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtSql.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtSvg.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtTest.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtWebChannel.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtWebEngine.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtWebEngineCore.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtWebEngineWidgets.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtWebKit.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtWebKitWidgets.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtWebSockets.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtWidgets.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtX11Extras.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtXml.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtXmlPatterns.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/__init__.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/sip.pyi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5_stubs-5.15.2.0.dist-info/INSTALLER" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5_stubs-5.15.2.0.dist-info/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5_stubs-5.15.2.0.dist-info/METADATA" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5_stubs-5.15.2.0.dist-info/RECORD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5_stubs-5.15.2.0.dist-info/WHEEL" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5_stubs-5.15.2.0.dist-info/top_level.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/pystudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pystudy.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/study_PyQt5/frist.py" beforeDir="false" afterPath="$PROJECT_DIR$/study_PyQt5/frist.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="pystudy" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -61,7 +95,8 @@
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/face_haarcascade" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
+    <property name="settings.editor.splitter.proportion" value="0.45910022" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -86,8 +121,8 @@
       <recent name="D:\PyCharm2019.3.1\pystudy\job\粘贴板记录工具" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.my_cv2">
-    <configuration name="app16开发版" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.my_pyqt5_test">
+    <configuration name="frist" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -95,34 +130,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/job/海康大华实时监控" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/study_PyQt5" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/job/海康大华实时监控/app16开发版.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="my_computer_info" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="pystudy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my_computer_info.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/study_PyQt5/frist.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -153,7 +166,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="my_tk_login" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="my_pyqt5_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -161,12 +174,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/job/海康大华实时监控" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/study_PyQt5" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/job/海康大华实时监控/my_tk_login.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/study_PyQt5/my_pyqt5_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -219,21 +232,43 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="study" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pystudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/study_PyQt5" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/study_PyQt5/study.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.pystudy" />
-      <item itemvalue="Python.app16开发版" />
-      <item itemvalue="Python.my_computer_info" />
-      <item itemvalue="Python.my_tk_login" />
       <item itemvalue="Python.my_cv2" />
       <item itemvalue="Python.my_winsound" />
+      <item itemvalue="Python.study" />
+      <item itemvalue="Python.frist" />
+      <item itemvalue="Python.my_pyqt5_test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.my_pyqt5_test" />
+        <item itemvalue="Python.frist" />
+        <item itemvalue="Python.study" />
         <item itemvalue="Python.my_cv2" />
         <item itemvalue="Python.my_winsound" />
-        <item itemvalue="Python.app16开发版" />
-        <item itemvalue="Python.my_tk_login" />
-        <item itemvalue="Python.my_computer_info" />
       </list>
     </recent_temporary>
   </component>
@@ -442,6 +477,14 @@
     </state>
     <state x="94" y="147" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.980@0.0.1280.980" timestamp="1611623017741" />
     <state x="100" y="36" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1612574328389" />
+    <state x="492" y="149" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1616243805306">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="492" y="149" key="#com.intellij.ide.macro.MacrosDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1616243805306" />
+    <state x="477" y="215" width="470" height="454" key="#com.intellij.tools.ToolEditorDialog" timestamp="1616243829967">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="477" y="215" width="470" height="454" key="#com.intellij.tools.ToolEditorDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1616243829967" />
     <state x="391" y="0" key="#my_cv2" timestamp="1612574341742">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -467,26 +510,30 @@
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="420" y="247" key="FileChooserDialogImpl/0.0.1280.980@0.0.1280.980" timestamp="1610423377973" />
-    <state width="1322" height="180" key="GridCell.Tab.0.bottom" timestamp="1612608762360">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="948" height="355" key="GridCell.Tab.0.bottom" timestamp="1616243860896">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1236" height="246" key="GridCell.Tab.0.bottom/0.0.1280.980@0.0.1280.980" timestamp="1611889991633" />
     <state width="1322" height="180" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1612608762360" />
-    <state width="1322" height="180" key="GridCell.Tab.0.center" timestamp="1612608762360">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="948" height="355" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1616243860896" />
+    <state width="948" height="355" key="GridCell.Tab.0.center" timestamp="1616243860896">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1236" height="246" key="GridCell.Tab.0.center/0.0.1280.980@0.0.1280.980" timestamp="1611889991633" />
     <state width="1322" height="180" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1612608762360" />
-    <state width="1322" height="180" key="GridCell.Tab.0.left" timestamp="1612608762360">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="948" height="355" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1616243860896" />
+    <state width="948" height="355" key="GridCell.Tab.0.left" timestamp="1616243860896">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1236" height="246" key="GridCell.Tab.0.left/0.0.1280.980@0.0.1280.980" timestamp="1611889991633" />
     <state width="1322" height="180" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1612608762360" />
-    <state width="1322" height="180" key="GridCell.Tab.0.right" timestamp="1612608762360">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="948" height="355" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1616243860896" />
+    <state width="948" height="355" key="GridCell.Tab.0.right" timestamp="1616243860896">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1236" height="246" key="GridCell.Tab.0.right/0.0.1280.980@0.0.1280.980" timestamp="1611889991633" />
     <state width="1322" height="180" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1612608762360" />
+    <state width="948" height="355" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1616243860896" />
     <state width="1322" height="17" key="GridCell.Tab.1.bottom" timestamp="1612589020569">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -507,15 +554,17 @@
     </state>
     <state width="1220" height="233" key="GridCell.Tab.1.right/0.0.1280.980@0.0.1280.980" timestamp="1611633681888" />
     <state width="1322" height="17" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1612589020569" />
-    <state x="392" y="202" key="RollbackChangesDialog" timestamp="1611882818229">
-      <screen x="0" y="0" width="1280" height="980" />
+    <state x="588" y="214" key="RollbackChangesDialog" timestamp="1616243900125">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="392" y="202" key="RollbackChangesDialog/0.0.1280.980@0.0.1280.980" timestamp="1611882818229" />
-    <state x="153" y="0" key="SettingsEditor" timestamp="1612581142812">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="588" y="214" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1616243900125" />
+    <state x="215" y="0" key="SettingsEditor" timestamp="1616243831566">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="143" y="121" key="SettingsEditor/0.0.1280.980@0.0.1280.980" timestamp="1611622795477" />
     <state x="153" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1612581142812" />
+    <state x="215" y="0" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1616243831566" />
     <state x="144" y="144" key="Vcs.Push.Dialog.v2" timestamp="1611885936417">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
@@ -529,11 +578,12 @@
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="429" y="291" key="git4idea.merge.GitMergeDialog/0.0.1280.980@0.0.1280.980" timestamp="1610932490948" />
-    <state x="353" y="291" key="git4idea.merge.GitPullDialog" timestamp="1611622143815">
-      <screen x="0" y="0" width="1280" height="980" />
+    <state x="530" y="309" key="git4idea.merge.GitPullDialog" timestamp="1616242492433">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="353" y="291" key="git4idea.merge.GitPullDialog/0.0.1280.980@0.0.1280.980" timestamp="1611622143815" />
     <state x="377" y="216" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1611137485429" />
+    <state x="530" y="309" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1616242492433" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1612600142953">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -552,25 +602,18 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/pystudy$my_pic_base64_exchange.coverage" NAME="my_pic_base64_exchange Coverage Results" MODIFIED="1610500291973" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$my_tk_login.coverage" NAME="my_tk_login Coverage Results" MODIFIED="1611889838159" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康大华实时监控" />
     <SUITE FILE_PATH="coverage/pystudy$icon.coverage" NAME="icon Coverage Results" MODIFIED="1610441772597" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$app16.coverage" NAME="app16开发版 Coverage Results" MODIFIED="1611889991621" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康大华实时监控" />
+    <SUITE FILE_PATH="coverage/pystudy$app16.coverage" NAME="app16开发版 Coverage Results" MODIFIED="1611999672121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康大华实时监控" />
     <SUITE FILE_PATH="coverage/pystudy$my_tk_drag__1_.coverage" NAME="my_tk_drag (1) Coverage Results" MODIFIED="1610695425309" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$img2file.coverage" NAME="img2file Coverage Results" MODIFIED="1611623392151" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pic" />
-    <SUITE FILE_PATH="coverage/pystudy$app.coverage" NAME="app Coverage Results" MODIFIED="1611624904338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康大华实时监控" />
-    <SUITE FILE_PATH="coverage/pystudy$test.coverage" NAME="test Coverage Results" MODIFIED="1611567300054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/闲鱼单，增加模块" />
-    <SUITE FILE_PATH="coverage/pystudy$my_winsound.coverage" NAME="my_winsound Coverage Results" MODIFIED="1612605618558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$app__1_.coverage" NAME="app (1) Coverage Results" MODIFIED="1611710225643" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/粘贴板记录工具" />
-    <SUITE FILE_PATH="coverage/pystudy$app_16.coverage" NAME="app-16开发版 Coverage Results" MODIFIED="1611287392109" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康大华实时监控" />
-    <SUITE FILE_PATH="coverage/pystudy$my_clipboard_tools.coverage" NAME="my_clipboard_tools Coverage Results" MODIFIED="1611627013663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/粘贴板记录工具" />
-    <SUITE FILE_PATH="coverage/pystudy$my_cv2.coverage" NAME="my_cv2 Coverage Results" MODIFIED="1612608762351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$pyhanlp.coverage" NAME="分词，提取人名，学习pyhanlp Coverage Results" MODIFIED="1611200920108" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$app_9.coverage" NAME="app-9完成版 Coverage Results" MODIFIED="1611287469532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康大华实时监控/histroy" />
-    <SUITE FILE_PATH="coverage/pystudy$app_9__1_.coverage" NAME="app-9完成版 (1) Coverage Results" MODIFIED="1611287740418" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康大华实时监控" />
-    <SUITE FILE_PATH="coverage/pystudy$my_computer_info.coverage" NAME="my_computer_info Coverage Results" MODIFIED="1611816480117" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$img2file__1_.coverage" NAME="img2file (1) Coverage Results" MODIFIED="1611623653414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/粘贴板记录工具/source" />
+    <SUITE FILE_PATH="coverage/pystudy$app.coverage" NAME="app Coverage Results" MODIFIED="1611451629157" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康大华实时监控" />
+    <SUITE FILE_PATH="coverage/pystudy$test.coverage" NAME="test Coverage Results" MODIFIED="1611575331647" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/闲鱼单，增加模块" />
+    <SUITE FILE_PATH="coverage/pystudy$frist.coverage" NAME="frist Coverage Results" MODIFIED="1616242804858" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study_PyQt5" />
+    <SUITE FILE_PATH="coverage/pystudy$study.coverage" NAME="study Coverage Results" MODIFIED="1616242566341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study_PyQt5" />
+    <SUITE FILE_PATH="coverage/pystudy$_xbiquge_la.coverage" NAME="笔趣阁-xbiquge.la Coverage Results" MODIFIED="1613227087108" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$xuexiqiangguo.coverage" NAME="xuexiqiangguo Coverage Results" MODIFIED="1611452266309" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$my_pyqt5_test.coverage" NAME="my_pyqt5_test Coverage Results" MODIFIED="1616242830580" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study_PyQt5" />
     <SUITE FILE_PATH="coverage/pystudy$my_dh_dvr.coverage" NAME="my_dh_dvr Coverage Results" MODIFIED="1610696463224" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康大华实时监控" />
-    <SUITE FILE_PATH="coverage/pystudy$my_hk_dvr.coverage" NAME="my_hk_dvr Coverage Results" MODIFIED="1611623020128" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康大华实时监控" />
-    <SUITE FILE_PATH="coverage/pystudy$my_tk_drag.coverage" NAME="my_tk_drag Coverage Results" MODIFIED="1611624899292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/粘贴板记录工具" />
+    <SUITE FILE_PATH="coverage/pystudy$my_hk_dvr.coverage" NAME="my_hk_dvr Coverage Results" MODIFIED="1610430048404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康大华实时监控" />
+    <SUITE FILE_PATH="coverage/pystudy$my_tk_drag.coverage" NAME="my_tk_drag Coverage Results" MODIFIED="1610774379001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
