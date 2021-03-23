@@ -37,7 +37,7 @@ def get_files_dirs_cache(path,debug=False):
 def find_empty_dirs(path='.',use_cache=True):
     cache_file_path = os.path.join(path, 'my_file_info.dat')
     if use_cache==False:
-        all_files,all_dirs,empty_dirs=get_files_dirs(path)
+        all_files,all_dirs,empty_dirs=get_files_dirs_cache(path)
         with open(cache_file_path,'wb') as f:
             pickle.dump([all_files,all_dirs,empty_dirs],f)
 
@@ -46,7 +46,7 @@ def find_empty_dirs(path='.',use_cache=True):
             with open(cache_file_path,'rb') as f:
                 all_files,all_dirs,empty_dirs=pickle.load(f)
         if not os.path.exists(cache_file_path):
-            all_files, all_dirs, empty_dirs = get_files_dirs(path)
+            all_files, all_dirs, empty_dirs = get_files_dirs_cache(path)
             with open(cache_file_path, 'wb') as f:
                 pickle.dump([all_files, all_dirs, empty_dirs],f)
 
@@ -66,7 +66,7 @@ def get_files(path, *ext, debug=False, filter_key='', filter_type='and', use_cac
     ext = [str.lower(x) for x in ext]
 
     if use_cache == False:
-        all_files, all_dirs, empty_dirs = get_files_dirs(path)
+        all_files, all_dirs, empty_dirs = get_files_dirs_cache(path)
         with open(cache_file_path, 'wb') as f:
             pickle.dump([all_files, all_dirs, empty_dirs], f)
 
@@ -146,7 +146,7 @@ def get_dirs(path,debug=False,filter_key='',filter_type='and',use_cache=True):
     result=''
 
     if use_cache==False:
-        all_files,all_dirs,empty_dirs=get_files_dirs(path)
+        all_files,all_dirs,empty_dirs=get_files_dirs_cache(path)
         with open(cache_file_path,'wb') as f:
             pickle.dump([all_files,all_dirs,empty_dirs],f)
 
@@ -211,7 +211,7 @@ def get_base_dir(dirs):
                     
 
     except Exception as e:
-        pritn(e)
+        print(e)
         get_base_dir(t)
 
     return list(set(t))
