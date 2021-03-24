@@ -32,25 +32,52 @@ def get_file_md5(file, block_size=64 * 1024):
         return retmd5
 
 def get_files(path='.'):
-    files=os.listdir()
+    files=os.listdir(path)
     try:
         files.remove(str.lower('md5.txt'))
     except ValueError:
         print('没有md5.txt文件')
+
     return files
 
-# def set_md5(path='.'):
-#     files=get_files(path)
-#     for file in files:
-#         with open()
+def check_dir_md5(path='.'):
+    keyFile=os.path.join('.','md5.txt')
+    if not os.path.exists(os.path.exists(keyFile)):
+        print('没有校验值文件 ，退出')
+        return False
 
+    file_md5={}
 
-# def check_md5(file):
+    with open(keyFile, 'r', encoding='gbk') as f:
+        while True:
+            item=f.readline()
+            if not item:
+                break
+            file,md5=item
+            file_md5[file]=md5
 
+    files=get_files(path)
+    for file in files:
+        value=get_file_md5(file)
+        for item in file_md5:
+            if file in item and value in item:
+                print(file,'is checked pass by ',value)
+
+def set_dir_md5(path='.'):
+    keyFile=os.path.join(path,'md5.txt')
+    result={}
+    for file in get_files(path):
+        result[file] = get_file_md5(os.path.join(path,file))
+    with open(keyFile,'w',encoding='gbk') as f:
+        for file in result:
+            print(keyFile,file + '\t' + result[file] + '\r')
+            f.write(file+'\t\t\t\t'+result[file]+'\r')
 
 if __name__ == '__main__':
-    with open('./pic/heart.jpg','rb') as f:
-        file=f.read()
-    get_md5(file)
-    a=get_file_md5(file='./pic/heart.jpg')
-    print(a)
+    # with open('d:\\福昕编辑器破解版.zip','rb') as f:
+    #     file=f.read()
+    # get_md5(file)
+    #
+    # a=get_file_md5(file='d:\\福昕编辑器破解版.zip')
+    # print(a)
+    set_dir_md5('./pic')
