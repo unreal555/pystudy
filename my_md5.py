@@ -30,15 +30,16 @@ def get_file_md5(file, block_size=64 * 1024):
             md5.update(data)
         retmd5 = md5.hexdigest()
         return retmd5
+    
 
 def get_files(path='.'):
-    files=os.listdir(path)
-    try:
-        files.remove(str.lower('md5.txt'))
-    except ValueError:
-        print('没有md5.txt文件')
-
+    files=[]
+    for i in os.listdir(path):
+        file=os.path.join(path,i)
+        if os.path.isfile(file) and os.access(file,os.R_OK):
+            files.append(i)
     return files
+
 
 def check_dir_md5(path='.'):
     keyFile=os.path.join('.','md5.txt')
@@ -67,11 +68,14 @@ def set_dir_md5(path='.'):
     keyFile=os.path.join(path,'md5.txt')
     result={}
     for file in get_files(path):
-        result[file] = get_file_md5(os.path.join(path,file))
+        try:    
+            result[file] = get_file_md5(os.path.join(path,file))
+        except:
+            result[file] = 'read error'
     with open(keyFile,'w',encoding='gbk') as f:
         for file in result:
-            print(keyFile,file + '\t' + result[file] + '\r')
-            f.write(file+'\t\t\t\t'+result[file]+'\r')
+            print('文件为:',file + '\tMD5值为：' + result[file] + '\r\n')
+            f.write(file+'\t'+result[file]+'\r\n')
 
 if __name__ == '__main__':
     # with open('d:\\福昕编辑器破解版.zip','rb') as f:
@@ -80,4 +84,4 @@ if __name__ == '__main__':
     #
     # a=get_file_md5(file='d:\\福昕编辑器破解版.zip')
     # print(a)
-    set_dir_md5('./pic')
+    set_dir_md5('.')
