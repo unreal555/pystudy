@@ -32,45 +32,77 @@ def get_file_md5(file, block_size=64 * 1024):
         return retmd5
     
 
-def get_files(path='.'):
+def get_files(path):
     files=[]
     for i in os.listdir(path):
+        if str.lower(i)=='md5.txt':
+            continue
         file=os.path.join(path,i)
         if os.path.isfile(file) and os.access(file,os.R_OK):
             files.append(i)
     return files
 
 
-def check_dir_md5(path='.'):
-    keyFile=os.path.join('.','md5.txt')
+def check_dir_md5(path):
+    keyFile=os.path.join(path,'md5.txt')
     if not os.path.exists(os.path.exists(keyFile)):
         print('没有校验值文件 ，退出')
         return False
 
     file_md5={}
 
+    print('读取md5.txt')
+
     with open(keyFile, 'r', encoding='gbk') as f:
         while True:
             item=f.readline()
+            if item in  ['\r','\n','\r\n']:
+                # print('跳过空行')
+                continue
             if not item:
+                # print('文件结束')
                 break
-            file,md5=item
-            file_md5[file]=md5
+            # print(item)
+            file,md5=item.replace('\r','').replace('\n','').split('\t')
+            file_md5[file]={'read':md5}
 
-    files=get_files(path)
-    for file in files:
-        value=get_file_md5(file)
-        for item in file_md5:
-            if file in item and value in item:
-                print(file,'is checked pass by ',value)
 
-def set_dir_md5(path='.'):
+    for file in get_files(path):
+        try:
+            print('计算',file,'md5')
+            file_md5[file]['calculate'] = get_file_md5(os.path.join(path,file))
+        except:
+            print(file, 'read error')
+            file_md5[file]['calculate'] = 'read error'
+
+    for file in file_md5.keys():
+
+        if len(file_md5[file].keys())==2:
+            if file_md5[file]['read']==file_md5[file]['calculate']:
+                print(file,'match')
+            else:
+                print(file,'not match')
+
+        if list(file_md5[file].keys()) == ['read']:
+            print('目录中不存在',file)
+
+        if list(file_md5[file].keys()) == ['calculate']:
+            print('MD5.txt中不存在文件',file,'但该文件存在于目录中,MD5为',file_md5[file]['calculate'])
+
+    for file in file_md5.keys():
+        print(file,file_md5[file])
+
+
+def create_dir_md5(path):
     keyFile=os.path.join(path,'md5.txt')
+    print(keyFile)
     result={}
     for file in get_files(path):
-        try:    
+        try:
             result[file] = get_file_md5(os.path.join(path,file))
+            print(file,'MD5 is ' ,result[file])
         except:
+            print(file, 'read error')
             result[file] = 'read error'
     with open(keyFile,'w',encoding='gbk') as f:
         for file in result:
@@ -84,4 +116,5 @@ if __name__ == '__main__':
     #
     # a=get_file_md5(file='d:\\福昕编辑器破解版.zip')
     # print(a)
-    set_dir_md5('.')
+    # create_dir_md5('D://')
+    check_dir_md5('D://')
