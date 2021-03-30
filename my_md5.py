@@ -45,7 +45,8 @@ def get_files(path):
 
 def check_dir_md5(path):
     keyFile=os.path.join(path,'md5.txt')
-    if not os.path.exists(os.path.exists(keyFile)):
+    print(keyFile)
+    if not os.path.exists(keyFile):
         print('没有校验值文件 ，退出')
         return False
 
@@ -116,5 +117,6 @@ if __name__ == '__main__':
     #
     # a=get_file_md5(file='d:\\福昕编辑器破解版.zip')
     # print(a)
-    # create_dir_md5('D://')
+    
+    create_dir_md5('D://')
     check_dir_md5('D://')
