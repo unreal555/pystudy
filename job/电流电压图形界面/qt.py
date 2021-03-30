@@ -24,13 +24,15 @@ dianliu = data['电流/A']
 dianzu = data['电阻/Ω']
 yali = data['压力/N']
 
+app = QApplication(sys.argv)
+window = QWidget()
+ui = Ui_Form()
+ui.setupUi(window)
+
 
 
 def run():
-    app = QApplication(sys.argv)
-    window = QWidget()
-    ui = Ui_Form()
-    ui.setupUi(window)
+
 
     fig, ax = plt.subplots()
 
