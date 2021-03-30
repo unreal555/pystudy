@@ -10,13 +10,18 @@ from PyQt5.QtWidgets import QApplication,QWidget,QMessageBox
 from PyQt5 import QtGui
 
 
-class Moniter(QWidget,Ui_Form):
+class App(QWidget,Ui_Form):
 
     def __init__(self):
-        super(Moniter, self).__init__()
+        super(App, self).__init__()
         self.setupUi(self)
+        self.setWindowTitle("原始模型")
+        self.setWindowIcon(QtGui.QIcon('ico.ico'))
 
-
+    @pyqtSlot()
+    def on_button_clicked(self):
+        a=self.v_view.size()
+        self.button.setText(str(a))
 
     def closeEvent(self, a0: QtGui.QCloseEvent) -> None:
         if QMessageBox.question(self,'关闭','是否退出程序',QMessageBox.Yes|QMessageBox.No,QMessageBox.Yes) ==QMessageBox.Yes:
@@ -26,6 +31,6 @@ class Moniter(QWidget,Ui_Form):
 
 
 app=QApplication(sys.argv)
-window=Moniter()
+window=App()
 window.show()
 sys.exit(app.exec_())
