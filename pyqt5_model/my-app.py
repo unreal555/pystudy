@@ -6,8 +6,8 @@
 
 
 import sys
-from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QApplication, QWidget
+from PyQt5 import QtGui
+from PyQt5.QtWidgets import QApplication, QWidget,QMainWindow,QMessageBox
 
 
 class App(QWidget):
@@ -15,22 +15,24 @@ class App(QWidget):
         super(App,self).__init__()
         self.initUI()
 
-
     def initUI(self):
-        self = QWidget()
         # self.setGeometry(300, 300, 300, 220)
         self.setWindowTitle('通用模型')
-        # self.setGeometry(800,600,800,600)
-        self.setWindowIcon(QIcon('ico.ico'))
+        self.setWindowIcon(QtGui.QIcon('ico.ico'))
+        self.resize(400,300)
 
-
+    def closeEvent(self, a0: QtGui.QCloseEvent) -> None:
+        if QMessageBox.question(self,'关闭','确定要退出吗',QMessageBox.Yes|QMessageBox.No,QMessageBox.No)==QMessageBox.Yes:
+            a0.accept()
+        else:
+            a0.ignore()
 
 
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    app = App()
-    app.show()
+    window = App()
+    window.show()
     sys.exit(app.exec_())
 
               

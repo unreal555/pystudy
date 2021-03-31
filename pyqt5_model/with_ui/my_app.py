@@ -24,7 +24,7 @@ class App(QWidget,Ui_Form):
         self.button.setText(str(a))
 
     def closeEvent(self, a0: QtGui.QCloseEvent) -> None:
-        if QMessageBox.question(self,'关闭','是否退出程序',QMessageBox.Yes|QMessageBox.No,QMessageBox.Yes) ==QMessageBox.Yes:
+        if QMessageBox.question(self,'关闭','是否退出程序',QMessageBox.Yes|QMessageBox.No,QMessageBox.No) ==QMessageBox.Yes:
             a0.accept()
         else:
             a0.ignore()
