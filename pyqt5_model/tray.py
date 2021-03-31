@@ -5,6 +5,7 @@
 # Tool ：PyCharm
 
 import sys
+import time
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
@@ -46,9 +47,9 @@ class TrayIcon(QSystemTrayIcon):
         "鼠标点击icon传递的信号会带有一个整形的值，1是表示单击右键，2是双击，3是单击左键，4是用鼠标中键点击"
         if reason == 2 or reason == 3:
 
-            pw = self.parent()
             self.setVisible(False)
-            pw.setVisible(True)
+            self.parent().setVisible(True)
+            self.parent().showNormal()
         print(reason)
 
     def mClied(self):
@@ -62,12 +63,11 @@ class TrayIcon(QSystemTrayIcon):
         "保险起见，为了完整的退出"
         self.setVisible(False)
         self.parent().exit()
-        qApp.quit()
         sys.exit()
 
-class window(QWidget):
+class Window(QWidget):
     def __init__(self, parent=None):
-        super(window, self).__init__(parent)
+        super(Window, self).__init__(parent)
         self.setWindowIcon(QIcon('ico.ico'))
         self.tray = TrayIcon(self)
 
@@ -75,11 +75,27 @@ class window(QWidget):
         self.setVisible(False)
         self.tray.setVisible(True)
 
+    def closeEvent(self, a0: QCloseEvent) -> None:
+        if QMessageBox.question(self,'关闭','Yes关闭，No最小化',QMessageBox.Yes|QMessageBox.No,QMessageBox.No)==QMessageBox.Yes:
+            a0.accept()
+        else:
+            a0.ignore()
+            self.hideEvent(QHideEvent)
+
+class RunThread(QThread):
+    def __init__(self):
+        super().__init__()
+
+    def run(self):
+        pass
+
+
+
 
 if __name__ == "__main__":
     import sys
     app = QApplication(sys.argv)
-    main = window()
-    main.show()
-
+    main = Window()
+    main.showNormal()
+    print(main)
     sys.exit(app.exec_())
