@@ -10,6 +10,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 
+
 class TrayIcon(QSystemTrayIcon):
     def __init__(self, parent=None):
         super(TrayIcon, self).__init__(parent)
@@ -70,6 +71,15 @@ class Window(QWidget):
         super(Window, self).__init__(parent)
         self.setWindowIcon(QIcon('ico.ico'))
         self.tray = TrayIcon(self)
+        self.setWindowOpacity(0.9)
+        self.setWindowFlags(Qt.FramelessWindowHint) #无边框
+        self.setWindowFlags(Qt.WindowStaysOnTopHint) #置顶
+        #self.setAttribute(Qt.WA_TranslucentBackground)  #彻底透明
+
+
+        palette1 = QPalette()
+        palette1.setColor(palette1.Background,QColor(0,0,0))
+        self.setPalette(palette1)
 
     def hideEvent(self, QHideEvent):
         self.setVisible(False)
