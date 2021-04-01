@@ -118,5 +118,5 @@ if __name__ == '__main__':
     # a=get_file_md5(file='d:\\福昕编辑器破解版.zip')
     # print(a)
     
-    create_dir_md5('D://')
+
     check_dir_md5('D://')
