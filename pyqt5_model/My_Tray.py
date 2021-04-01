@@ -9,7 +9,7 @@ import time
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
-
+from ui import Ui_Form
 
 class TrayIcon(QSystemTrayIcon):
     def __init__(self, parent=None):
@@ -66,18 +66,29 @@ class TrayIcon(QSystemTrayIcon):
         self.parent().exit()
         sys.exit()
 
-class Window(QWidget):
+class Window(QWidget,Ui_Form):
     def __init__(self, parent=None):
         super(Window,self).__init__(parent)
-
+        self.setupUi(self)
         self.setWindowIcon(QIcon('ico.ico'))
         self.tray = TrayIcon(self)
         self.setWindowOpacity(0.8)
         self.setWindowFlags(Qt.FramelessWindowHint) #无边框
         self.setWindowFlags(Qt.WindowStaysOnTopHint) #置顶
         #self.setAttribute(Qt.WA_TranslucentBackground)  #彻底透明
-        self.resizeEvent(QResizeEvent)
+        self.setWindowTitle('图形界面范例')
+        self.resize(1024,768)
 
+
+        self.horizontalScrollBar.setMaximum(100)
+        self.horizontalScrollBar.setMinimum(40)
+        self.horizontalScrollBar.setValue(80)
+
+        self.horizontalScrollBar.valueChanged.connect(self.changePactiy)
+
+    def changePactiy(self,value):
+
+        self.setWindowOpacity(value/100)
 
     def resizeEvent(self, a0: QResizeEvent) -> None:
         self.palette = QPalette()
