@@ -72,34 +72,25 @@ class Window(QWidget):
 
         self.setWindowIcon(QIcon('ico.ico'))
         self.tray = TrayIcon(self)
-        self.setWindowOpacity(0.9)
+        self.setWindowOpacity(0.8)
         self.setWindowFlags(Qt.FramelessWindowHint) #无边框
         self.setWindowFlags(Qt.WindowStaysOnTopHint) #置顶
         #self.setAttribute(Qt.WA_TranslucentBackground)  #彻底透明
+        self.resizeEvent(QResizeEvent)
 
-        palette1 = QPalette()
-        palette1.setColor(palette1.Background,QColor(0,0,0))
-        self.setPalette(palette1)
 
-        layout=QHBoxLayout()
-        self.setLayout(layout)
+    def resizeEvent(self, a0: QResizeEvent) -> None:
+        self.palette = QPalette()
+        self.pix = QPixmap("./resource/beauty.jpg")
+        self.palette.setBrush(QPalette.Background, QBrush(self.pix.scaled(self.width(),self.height())))
+        self.setPalette(self.palette)
 
-        sd = QSlider(self)
-        self.sd = sd
-        sd.setMaximum(200)
-        sd.setMinimum(100)
 
-        sd.setSingleStep(2)  # 设置步长
-        sd.setPageStep(5)  # 设置翻页步长，使用PageUp PageDown
-        sd.setTracking(True)
-        # sd.setValue(101)  # 设置数值
-        sd.setSliderPosition(199)  # 设置滑块位置
-        # sd.setInvertedAppearance(True)  # 反转外观
-        # sd.setInvertedControls(True)  # 反转操作，
-        sd.setOrientation(Qt.Horizontal)
-        self.sd.setTickPosition(QSlider.TicksBothSides)
-        self.sd.setTickInterval(5)
-        self.sd.setPageStep(5)  # 设置翻页步长，也会顺带调整刻度线密度
+    def paintEvent(self, event):  # set background_img
+        painter = QPainter(self)
+        painter.drawRect(self.rect())
+        pixmap = QPixmap("./img/1.jpg")  # 换成自己的图片的相对路径
+        painter.drawPixmap(self.rect(), pixmap)
 
 
     def hideEvent(self, QHideEvent):

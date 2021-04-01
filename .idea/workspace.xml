@@ -2,62 +2,60 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b8d6269-a564-4802-8c0e-0538c714e289" name="Default Changelist" comment="clean">
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/Qt3DAnimation.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/Qt3DCore.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/Qt3DExtras.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/Qt3DInput.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/Qt3DLogic.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/Qt3DRender.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtBluetooth.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtChart.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtCore.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtDBus.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtDataVisualization.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtDesigner.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtGui.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtHelp.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtLocation.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtMultimedia.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtMultimediaWidgets.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtNetwork.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtNetworkAuth.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtNfc.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtOpenGL.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtPositioning.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtPrintSupport.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtPurchasing.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtQml.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtQuick.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtQuickWidgets.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtRemoteObjects.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtSensors.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtSerialPort.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtSql.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtSvg.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtTest.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtWebChannel.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtWebEngine.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtWebEngineCore.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtWebEngineWidgets.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtWebKit.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtWebKitWidgets.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtWebSockets.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtWidgets.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtX11Extras.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtXml.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/QtXmlPatterns.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/__init__.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5-stubs/sip.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5_stubs-5.15.2.0.dist-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5_stubs-5.15.2.0.dist-info/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5_stubs-5.15.2.0.dist-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5_stubs-5.15.2.0.dist-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5_stubs-5.15.2.0.dist-info/WHEEL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv2/Lib/site-packages/PyQt5_stubs-5.15.2.0.dist-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/0/0071469abe39a7c66b94197d2855efc360646272" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/a/1ac40b3ecd27b2e974447a8139f95ea5ee5dc6e7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/5/25c0e5e73c5c95139a58f40221d90c30c26be6e9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/c/2cc1126bcf0d8a9621806422463ecfe82d586946" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/c/2ceb980b718c84b0bac2c12f9648f4a5d8e14e5a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/9/4951259a062e2dccbf714ddecbab0957c0c728cb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/b/4bdc95dcf298cac1375e3947f6c2e63531c5f484" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/7/57c13ff95c4e06858225eb493c02421ff8d4d0e7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/f/5f9c942f8ed23bce5fb2a4534517bdd7fca610ab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/1/616a32e593f5c798d456008906babbe8c05c07a8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/a/6af189c67fa17a75a98d05edabdecb02b708dd86" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/c/6c22214c8ee835a3e2b7fe24a5c4674b7d329463" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/c/6c77ebfad3dfaec71a7c6ac2a6883758a1f342a3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/d/6d596ed9888d5021e0eab74a021c56eec0848f7e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/d/6dcc6150900ad30f2ed17d132a1c31a4e44c3d22" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/4/74bb64a08b5115063c40b3128c09f0f6010c436f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/7/772eb110b85ecca8dbe1827e8ee21c755034eb82" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/1/818b3686e9a77c763c7e004a8d060c8dda942f3b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/2/82412ed096f40fedeffbb7e0ffd8c7326fe8bff7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/0/909eb3271c4b4acc49d6a5d99148b31ef79f147a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/1/91c3dab8721cf164d9c8527a4f0bfdd70756e543" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/9/99b51caef9bd3337a50215fa020c77e00f99c068" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/b/9bdf3c57fa5eaf5258aa90b2acdb7ef48432ce9b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/2/a2de23b086f56901879c5dac105d3c00cdf0026d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/4/a43822a564d50c0525e277209fdc0026d234cf5e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/4/a4f828f1cab308fa357605c4f1c94c48b0a65a64" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/b/ab6474e3e78295eb28141a952f3e23e94f6a20f7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/d/ade5160d5ee323b4556e2427c6f2065e3fa0bf64" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/3/b332150e49e8af787c249e94e3a0e892a6c91544" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/b/bb644462a5b4972b5ea9e830739b481df523261c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/f/bfd83764a26776af21e0e188c9475491b8c0db15" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/7/c7dee77d97d9216498bc515c43d44ea330bd08fa" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/a/ca93c93a2d83c64a1ac050ec3dfe1dbe2f51d310" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/e/ce0a37929c478183a0e7ed97ef266bed5700f4a7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/0/d01faaf419473c3aed0570f6abf4172399cf33c2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/1/d1d2973d58399fcda64e9688c05f5159385b2780" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/1/e1f533d2dc0530f8e1877092eeb1d1eed6b6aab4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/6/e69a228241d0dd0077e93a31ee5d87f395ec996e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/6/e6ca7ec9de76b8da68816eaa59f4bde66e6d0da9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/9/f9ccf74196e6f071745d030a9d917de16c278d9f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/a/fa8e65f4a9beb0b3499c654dffffc270bcce1f51" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/a/faaf82d971c16232e7d8aed1c0d2a66a914f9f94" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pyqt5_model/resource/beauty.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pyqt5_model/resource/demo.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/pystudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pystudy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/1/1105de43b4cbeb18868232febc0fa0e0ba451d2f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/3/4380776f30e477794e6164a7720f2939c32df567" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/3/4380776f30e477794e6164a7720f2939c32df567" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/d/ed93b846df1fcf2ad3f9eaba46d862eea320d03b" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/3/134b0c0ba50d24f455c274f3c62129582a8c178e" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/study_PyQt5/frist.py" beforeDir="false" afterPath="$PROJECT_DIR$/study_PyQt5/frist.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyqt5_model/My_Tray.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyqt5_model/My_Tray.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +75,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/unreal555/pystudy.git" />
+      </set>
+    </option>
+  </component>
   <component name="ProjectId" id="1mx4eC8DVnjWJsL9eq78mUJK6I9" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -94,13 +99,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/face_haarcascade" />
-    <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
-    <property name="settings.editor.splitter.proportion" value="0.45910022" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pyqt5_model/resource" />
+    <property name="settings.editor.selected.configurable" value="pyconsole" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings module-name="pystudy" is-module-sdk="true" working-directory="$PROJECT_DIR$">
+        <option name="useSoftWraps" value="true" />
         <option name="myUseModuleSdk" value="true" />
         <option name="myModuleName" value="pystudy" />
         <option name="myWorkingDirectory" value="$PROJECT_DIR$" />
@@ -108,21 +113,25 @@
         <option name="myAddSourceRoots" value="false" />
       </console-settings>
     </option>
+    <option name="myShowVariablesByDefault" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\PyCharm2019.3.1\pystudy\face_haarcascade" />
-      <recent name="D:\PyCharm2019.3.1\pystudy" />
-      <recent name="D:\PyCharm2019.3.1\pystudy\pic" />
-      <recent name="D:\PyCharm2019.3.1\pystudy\job\粘贴板记录工具\source" />
-      <recent name="D:\PyCharm2019.3.1\pystudy\job\海康大华实时监控" />
+      <recent name="D:\PyCharm2019.3.1\pystudy\pyqt5_model\resource" />
+      <recent name="D:\PyCharm2019.3.1\pystudy\pyqt5_model\with_ui" />
+      <recent name="D:\PyCharm2019.3.1\pystudy\pyqt5_model" />
+      <recent name="D:\PyCharm2019.3.1\pystudy\job\电流电压图形界面" />
+      <recent name="D:\PyCharm2019.3.1\pystudy\job" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\PyCharm2019.3.1\pystudy\pyqt5_model\with_ui" />
+      <recent name="D:\PyCharm2019.3.1\pystudy\job\电流电压图形界面" />
+      <recent name="D:\PyCharm2019.3.1\pystudy\pyqt5_model" />
       <recent name="D:\PyCharm2019.3.1\pystudy\job\粘贴板记录工具" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.my_pyqt5_test">
-    <configuration name="frist" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.My_Tray">
+    <configuration name="My_App" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -130,12 +139,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/study_PyQt5" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyqt5_model" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/study_PyQt5/frist.py" />
+      <option name="SCRIPT_NAME" value="D:\PyCharm2019.3.1\pystudy\pyqt5_model\My_App.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -144,20 +153,105 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="my_cv2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="My_Tray" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="D:\PyCharm2019.3.1\pystudy\enve\Scripts\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyqt5_model" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="D:\PyCharm2019.3.1\pystudy\pyqt5_model\My_Tray.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="My_Tray" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pystudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyqt5_model" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyqt5_model/My_Tray.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Tray" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pystudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyqt5_model" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyqt5_model/Tray.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="pystudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my_cv2.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="my_app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pystudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/job/电流电压图形界面" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="D:\PyCharm2019.3.1\pystudy\pyqt5_model\my_app.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -166,42 +260,17 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="my_pyqt5_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="my_app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/study_PyQt5" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyqt5_model" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/study_PyQt5/my_pyqt5_test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="my_winsound" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="pystudy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my_winsound.py" />
+      <option name="SCRIPT_NAME" value="D:\PyCharm2019.3.1\pystudy\pyqt5_model\with_ui\my_app.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -232,43 +301,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="study" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="pystudy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/study_PyQt5" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/study_PyQt5/study.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.pystudy" />
-      <item itemvalue="Python.my_cv2" />
-      <item itemvalue="Python.my_winsound" />
-      <item itemvalue="Python.study" />
-      <item itemvalue="Python.frist" />
-      <item itemvalue="Python.my_pyqt5_test" />
+      <item itemvalue="Python.my_app" />
+      <item itemvalue="Python.Tray" />
+      <item itemvalue="Python.My_Tray" />
+      <item itemvalue="Python.My_App" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.my_pyqt5_test" />
-        <item itemvalue="Python.frist" />
-        <item itemvalue="Python.study" />
-        <item itemvalue="Python.my_cv2" />
-        <item itemvalue="Python.my_winsound" />
+        <item itemvalue="Python.My_Tray" />
+        <item itemvalue="Python.My_Tray" />
+        <item itemvalue="Python.Tray" />
+        <item itemvalue="Python.My_App" />
+        <item itemvalue="Python.my_app" />
       </list>
     </recent_temporary>
   </component>
@@ -308,6 +354,30 @@
       <workItem from="1611881007829" duration="6233000" />
       <workItem from="1612574276519" duration="424000" />
       <workItem from="1612574924742" duration="21961000" />
+      <workItem from="1613697729704" duration="2227000" />
+      <workItem from="1613704580303" duration="4153000" />
+      <workItem from="1613782760671" duration="3874000" />
+      <workItem from="1613957789057" duration="1816000" />
+      <workItem from="1614044357739" duration="298000" />
+      <workItem from="1614064016866" duration="546000" />
+      <workItem from="1614234909697" duration="643000" />
+      <workItem from="1614301052969" duration="1134000" />
+      <workItem from="1614654153544" duration="1347000" />
+      <workItem from="1614732649463" duration="1978000" />
+      <workItem from="1614739216367" duration="1067000" />
+      <workItem from="1615253317330" duration="1092000" />
+      <workItem from="1615432263466" duration="521000" />
+      <workItem from="1615794670866" duration="291000" />
+      <workItem from="1616226213421" duration="887000" />
+      <workItem from="1616465780039" duration="7995000" />
+      <workItem from="1616547372986" duration="11769000" />
+      <workItem from="1616660275842" duration="577000" />
+      <workItem from="1616663383863" duration="448000" />
+      <workItem from="1616983498979" duration="4922000" />
+      <workItem from="1616988682015" duration="12340000" />
+      <workItem from="1617066122533" duration="14723000" />
+      <workItem from="1617152724644" duration="8121000" />
+      <workItem from="1617237204466" duration="4640000" />
     </task>
     <task id="LOCAL-00001" summary="clean">
       <created>1610422132117</created>
@@ -456,7 +526,112 @@
       <option name="project" value="LOCAL" />
       <updated>1611885931743</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="clean">
+      <created>1613726292586</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1613726292586</updated>
+    </task>
+    <task id="LOCAL-00023" summary="clean">
+      <created>1614241455761</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1614241455761</updated>
+    </task>
+    <task id="LOCAL-00024" summary="clean">
+      <created>1614733565407</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1614733565407</updated>
+    </task>
+    <task id="LOCAL-00025" summary="clean">
+      <created>1616466205616</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1616466205616</updated>
+    </task>
+    <task id="LOCAL-00026" summary="clean">
+      <created>1616571699166</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1616571699166</updated>
+    </task>
+    <task id="LOCAL-00027" summary="clean">
+      <created>1616574200255</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1616574200255</updated>
+    </task>
+    <task id="LOCAL-00028" summary="clean">
+      <created>1616663635982</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1616663635982</updated>
+    </task>
+    <task id="LOCAL-00029" summary="clean">
+      <created>1616989247344</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1616989247344</updated>
+    </task>
+    <task id="LOCAL-00030" summary="clean">
+      <created>1617007237821</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1617007237821</updated>
+    </task>
+    <task id="LOCAL-00031" summary="clean">
+      <created>1617072892930</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1617072892932</updated>
+    </task>
+    <task id="LOCAL-00032" summary="clean">
+      <created>1617092417287</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1617092417287</updated>
+    </task>
+    <task id="LOCAL-00033" summary="clean">
+      <created>1617093899671</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1617093899671</updated>
+    </task>
+    <task id="LOCAL-00034" summary="clean">
+      <created>1617160486705</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1617160486705</updated>
+    </task>
+    <task id="LOCAL-00035" summary="clean">
+      <created>1617238365441</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1617238365441</updated>
+    </task>
+    <task id="LOCAL-00036" summary="clean">
+      <created>1617240424288</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1617240424288</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -468,23 +643,19 @@
     <option name="LAST_COMMIT_MESSAGE" value="clean" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="232" y="150" key="#Notifications" timestamp="1614733777481">
+      <screen x="0" y="0" width="1280" height="980" />
+    </state>
+    <state x="232" y="150" key="#Notifications/0.0.1280.980@0.0.1280.980" timestamp="1614733777481" />
     <state x="232" y="150" key="#Python" timestamp="1610503083116">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="232" y="150" key="#Python/0.0.1280.980@0.0.1280.980" timestamp="1610503083116" />
-    <state x="100" y="36" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1612574328389">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="94" y="147" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1617240894777">
+      <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="94" y="147" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.980@0.0.1280.980" timestamp="1611623017741" />
+    <state x="94" y="147" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.980@0.0.1280.980" timestamp="1617240894777" />
     <state x="100" y="36" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1612574328389" />
-    <state x="492" y="149" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1616243805306">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="492" y="149" key="#com.intellij.ide.macro.MacrosDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1616243805306" />
-    <state x="477" y="215" width="470" height="454" key="#com.intellij.tools.ToolEditorDialog" timestamp="1616243829967">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="477" y="215" width="470" height="454" key="#com.intellij.tools.ToolEditorDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1616243829967" />
     <state x="391" y="0" key="#my_cv2" timestamp="1612574341742">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -493,97 +664,110 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="391" y="0" key="#my_hk_dvr/0.0.1366.728@0.0.1366.728" timestamp="1611137744010" />
-    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1612609140810">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="0" y="86" key="CommitChangelistDialog2/0.0.1280.980@0.0.1280.980" timestamp="1611889513554" />
-    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1612609140810" />
-    <state x="120" y="79" key="DiffContextDialog" timestamp="1611884834549">
+    <state x="355" y="125" key="#test2" timestamp="1613698420873">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="120" y="79" key="DiffContextDialog/0.0.1280.980@0.0.1280.980" timestamp="1611884834549" />
+    <state x="355" y="125" key="#test2/0.0.1280.980@0.0.1280.980" timestamp="1613698420873" />
+    <state x="0" y="86" key="CommitChangelistDialog2" timestamp="1617240421730">
+      <screen x="0" y="0" width="1280" height="980" />
+    </state>
+    <state x="0" y="86" key="CommitChangelistDialog2/0.0.1280.980@0.0.1280.980" timestamp="1617240421730" />
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1612609140810" />
+    <state x="120" y="79" width="1048" height="822" key="DiffContextDialog" timestamp="1617238358328">
+      <screen x="0" y="0" width="1280" height="980" />
+    </state>
+    <state x="120" y="79" width="1048" height="822" key="DiffContextDialog/0.0.1280.980@0.0.1280.980" timestamp="1617238358328" />
     <state x="374" y="253" key="EnvironmentVariablesDialog" timestamp="1610423417619">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="374" y="253" key="EnvironmentVariablesDialog/0.0.1280.980@0.0.1280.980" timestamp="1610423417619" />
-    <state x="420" y="247" key="FileChooserDialogImpl" timestamp="1610423377973">
+    <state x="420" y="247" key="FileChooserDialogImpl" timestamp="1617001793300">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="420" y="247" key="FileChooserDialogImpl/0.0.1280.980@0.0.1280.980" timestamp="1610423377973" />
-    <state width="948" height="355" key="GridCell.Tab.0.bottom" timestamp="1616243860896">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="420" y="247" key="FileChooserDialogImpl/0.0.1280.980@0.0.1280.980" timestamp="1617001793300" />
+    <state width="1236" height="147" key="GridCell.Tab.0.bottom" timestamp="1617242084044">
+      <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="246" key="GridCell.Tab.0.bottom/0.0.1280.980@0.0.1280.980" timestamp="1611889991633" />
+    <state width="1236" height="147" key="GridCell.Tab.0.bottom/0.0.1280.980@0.0.1280.980" timestamp="1617242084044" />
     <state width="1322" height="180" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1612608762360" />
-    <state width="948" height="355" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1616243860896" />
-    <state width="948" height="355" key="GridCell.Tab.0.center" timestamp="1616243860896">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1236" height="147" key="GridCell.Tab.0.center" timestamp="1617242084044">
+      <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="246" key="GridCell.Tab.0.center/0.0.1280.980@0.0.1280.980" timestamp="1611889991633" />
+    <state width="1236" height="147" key="GridCell.Tab.0.center/0.0.1280.980@0.0.1280.980" timestamp="1617242084044" />
     <state width="1322" height="180" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1612608762360" />
-    <state width="948" height="355" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1616243860896" />
-    <state width="948" height="355" key="GridCell.Tab.0.left" timestamp="1616243860896">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1236" height="147" key="GridCell.Tab.0.left" timestamp="1617242084044">
+      <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="246" key="GridCell.Tab.0.left/0.0.1280.980@0.0.1280.980" timestamp="1611889991633" />
+    <state width="1236" height="147" key="GridCell.Tab.0.left/0.0.1280.980@0.0.1280.980" timestamp="1617242084044" />
     <state width="1322" height="180" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1612608762360" />
-    <state width="948" height="355" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1616243860896" />
-    <state width="948" height="355" key="GridCell.Tab.0.right" timestamp="1616243860896">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1236" height="147" key="GridCell.Tab.0.right" timestamp="1617242084044">
+      <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="246" key="GridCell.Tab.0.right/0.0.1280.980@0.0.1280.980" timestamp="1611889991633" />
+    <state width="1236" height="147" key="GridCell.Tab.0.right/0.0.1280.980@0.0.1280.980" timestamp="1617242084044" />
     <state width="1322" height="180" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1612608762360" />
-    <state width="948" height="355" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1616243860896" />
-    <state width="1322" height="17" key="GridCell.Tab.1.bottom" timestamp="1612589020569">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1236" height="376" key="GridCell.Tab.1.bottom" timestamp="1617182853040">
+      <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1220" height="233" key="GridCell.Tab.1.bottom/0.0.1280.980@0.0.1280.980" timestamp="1611633681888" />
+    <state width="1236" height="376" key="GridCell.Tab.1.bottom/0.0.1280.980@0.0.1280.980" timestamp="1617182853040" />
     <state width="1322" height="17" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1612589020569" />
-    <state width="1322" height="17" key="GridCell.Tab.1.center" timestamp="1612589020569">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1236" height="376" key="GridCell.Tab.1.center" timestamp="1617182853040">
+      <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1220" height="233" key="GridCell.Tab.1.center/0.0.1280.980@0.0.1280.980" timestamp="1611633681888" />
+    <state width="1236" height="376" key="GridCell.Tab.1.center/0.0.1280.980@0.0.1280.980" timestamp="1617182853040" />
     <state width="1322" height="17" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1612589020569" />
-    <state width="1322" height="17" key="GridCell.Tab.1.left" timestamp="1612589020568">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1236" height="376" key="GridCell.Tab.1.left" timestamp="1617182853040">
+      <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1220" height="233" key="GridCell.Tab.1.left/0.0.1280.980@0.0.1280.980" timestamp="1611633681888" />
+    <state width="1236" height="376" key="GridCell.Tab.1.left/0.0.1280.980@0.0.1280.980" timestamp="1617182853040" />
     <state width="1322" height="17" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1612589020568" />
-    <state width="1322" height="17" key="GridCell.Tab.1.right" timestamp="1612589020569">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1236" height="376" key="GridCell.Tab.1.right" timestamp="1617182853040">
+      <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1220" height="233" key="GridCell.Tab.1.right/0.0.1280.980@0.0.1280.980" timestamp="1611633681888" />
+    <state width="1236" height="376" key="GridCell.Tab.1.right/0.0.1280.980@0.0.1280.980" timestamp="1617182853040" />
     <state width="1322" height="17" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1612589020569" />
-    <state x="588" y="214" key="RollbackChangesDialog" timestamp="1616243900125">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="349" y="205" key="MultipleFileMergeDialog" timestamp="1616477050519">
+      <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="392" y="202" key="RollbackChangesDialog/0.0.1280.980@0.0.1280.980" timestamp="1611882818229" />
-    <state x="588" y="214" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1616243900125" />
-    <state x="215" y="0" key="SettingsEditor" timestamp="1616243831566">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="349" y="205" key="MultipleFileMergeDialog/0.0.1280.980@0.0.1280.980" timestamp="1616477050519" />
+    <state x="361" y="202" key="RollbackChangesDialog" timestamp="1617237295427">
+      <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="143" y="121" key="SettingsEditor/0.0.1280.980@0.0.1280.980" timestamp="1611622795477" />
+    <state x="361" y="202" key="RollbackChangesDialog/0.0.1280.980@0.0.1280.980" timestamp="1617237295427" />
+    <state x="143" y="121" key="SettingsEditor" timestamp="1617089439634">
+      <screen x="0" y="0" width="1280" height="980" />
+    </state>
+    <state x="143" y="121" key="SettingsEditor/0.0.1280.980@0.0.1280.980" timestamp="1617089439634" />
     <state x="153" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1612581142812" />
-    <state x="215" y="0" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1616243831566" />
-    <state x="144" y="144" key="Vcs.Push.Dialog.v2" timestamp="1611885936417">
+    <state x="418" y="195" key="VCS.ChangeListViewerDialog" timestamp="1613698057268">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="144" y="144" key="Vcs.Push.Dialog.v2/0.0.1280.980@0.0.1280.980" timestamp="1611885936417" />
+    <state x="418" y="195" key="VCS.ChangeListViewerDialog/0.0.1280.980@0.0.1280.980" timestamp="1613698057268" />
+    <state x="144" y="144" key="Vcs.Push.Dialog.v2" timestamp="1617182642592">
+      <screen x="0" y="0" width="1280" height="980" />
+    </state>
+    <state x="144" y="144" key="Vcs.Push.Dialog.v2/0.0.1280.980@0.0.1280.980" timestamp="1617182642592" />
     <state x="154" y="107" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1611142086454" />
-    <state x="92" y="92" width="1096" height="796" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1610435652153">
+    <state x="92" y="92" width="1096" height="796" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1617092231155">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="92" y="92" width="1096" height="796" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1280.980@0.0.1280.980" timestamp="1610435652153" />
-    <state x="429" y="291" key="git4idea.merge.GitMergeDialog" timestamp="1610932490948">
+    <state x="92" y="92" width="1096" height="796" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1280.980@0.0.1280.980" timestamp="1617092231155" />
+    <state x="429" y="291" key="git4idea.merge.GitMergeDialog" timestamp="1613698010858">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="429" y="291" key="git4idea.merge.GitMergeDialog/0.0.1280.980@0.0.1280.980" timestamp="1610932490948" />
-    <state x="530" y="309" key="git4idea.merge.GitPullDialog" timestamp="1616242492433">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="429" y="291" key="git4idea.merge.GitMergeDialog/0.0.1280.980@0.0.1280.980" timestamp="1613698010858" />
+    <state x="353" y="291" key="git4idea.merge.GitPullDialog" timestamp="1617238316504">
+      <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="353" y="291" key="git4idea.merge.GitPullDialog/0.0.1280.980@0.0.1280.980" timestamp="1611622143815" />
+    <state x="353" y="291" key="git4idea.merge.GitPullDialog/0.0.1280.980@0.0.1280.980" timestamp="1617238316504" />
     <state x="377" y="216" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1611137485429" />
-    <state x="530" y="309" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1616242492433" />
+    <state x="465" y="397" key="git4idea.ui.GitStashDialog" timestamp="1613697997300">
+      <screen x="0" y="0" width="1280" height="980" />
+    </state>
+    <state x="465" y="397" key="git4idea.ui.GitStashDialog/0.0.1280.980@0.0.1280.980" timestamp="1613697997300" />
+    <state x="447" y="354" key="git4idea.ui.GitUnstashDialog" timestamp="1613698060575">
+      <screen x="0" y="0" width="1280" height="980" />
+    </state>
+    <state x="447" y="354" key="git4idea.ui.GitUnstashDialog/0.0.1280.980@0.0.1280.980" timestamp="1613698060575" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1612600142953">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -601,19 +785,34 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/pystudy$my_tk_login.coverage" NAME="my_tk_login Coverage Results" MODIFIED="1611889838159" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康大华实时监控" />
+    <SUITE FILE_PATH="coverage/pystudy$my_md5.coverage" NAME="my_md5 Coverage Results" MODIFIED="1616988554240" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$app__1_.coverage" NAME="app (1) Coverage Results" MODIFIED="1611710225643" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/粘贴板记录工具" />
+    <SUITE FILE_PATH="coverage/pystudy$app_16.coverage" NAME="app-16开发版 Coverage Results" MODIFIED="1611287392109" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康大华实时监控" />
+    <SUITE FILE_PATH="coverage/pystudy$my_clipboard_tools.coverage" NAME="my_clipboard_tools Coverage Results" MODIFIED="1611627013663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/粘贴板记录工具" />
+    <SUITE FILE_PATH="coverage/pystudy$my_cv2.coverage" NAME="my_cv2 Coverage Results" MODIFIED="1612608762351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$My_Tray.coverage" NAME="My_Tray Coverage Results" MODIFIED="1617242084028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyqt5_model" />
+    <SUITE FILE_PATH="coverage/pystudy$app_9.coverage" NAME="app-9完成版 Coverage Results" MODIFIED="1611287469532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康大华实时监控/histroy" />
+    <SUITE FILE_PATH="coverage/pystudy$qt.coverage" NAME="qt Coverage Results" MODIFIED="1617092103712" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/电流电压图形界面" />
+    <SUITE FILE_PATH="coverage/pystudy$Monitor_PY.coverage" NAME="Monitor.PY Coverage Results" MODIFIED="1617007126787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/电流电压图形界面" />
+    <SUITE FILE_PATH="coverage/pystudy$my_hk_dvr.coverage" NAME="my_hk_dvr Coverage Results" MODIFIED="1611623020128" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康大华实时监控" />
     <SUITE FILE_PATH="coverage/pystudy$my_pic_base64_exchange.coverage" NAME="my_pic_base64_exchange Coverage Results" MODIFIED="1610500291973" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$icon.coverage" NAME="icon Coverage Results" MODIFIED="1610441772597" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$app16.coverage" NAME="app16开发版 Coverage Results" MODIFIED="1611999672121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康大华实时监控" />
+    <SUITE FILE_PATH="coverage/pystudy$app16.coverage" NAME="app16开发版 Coverage Results" MODIFIED="1611889991621" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康大华实时监控" />
     <SUITE FILE_PATH="coverage/pystudy$my_tk_drag__1_.coverage" NAME="my_tk_drag (1) Coverage Results" MODIFIED="1610695425309" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$app.coverage" NAME="app Coverage Results" MODIFIED="1611451629157" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康大华实时监控" />
-    <SUITE FILE_PATH="coverage/pystudy$test.coverage" NAME="test Coverage Results" MODIFIED="1611575331647" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/闲鱼单，增加模块" />
-    <SUITE FILE_PATH="coverage/pystudy$frist.coverage" NAME="frist Coverage Results" MODIFIED="1616242804858" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study_PyQt5" />
-    <SUITE FILE_PATH="coverage/pystudy$study.coverage" NAME="study Coverage Results" MODIFIED="1616242566341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study_PyQt5" />
-    <SUITE FILE_PATH="coverage/pystudy$_xbiquge_la.coverage" NAME="笔趣阁-xbiquge.la Coverage Results" MODIFIED="1613227087108" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$xuexiqiangguo.coverage" NAME="xuexiqiangguo Coverage Results" MODIFIED="1611452266309" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$my_pyqt5_test.coverage" NAME="my_pyqt5_test Coverage Results" MODIFIED="1616242830580" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study_PyQt5" />
+    <SUITE FILE_PATH="coverage/pystudy$img2file.coverage" NAME="img2file Coverage Results" MODIFIED="1611623392151" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pic" />
+    <SUITE FILE_PATH="coverage/pystudy$app.coverage" NAME="app Coverage Results" MODIFIED="1611624904338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康大华实时监控" />
+    <SUITE FILE_PATH="coverage/pystudy$test.coverage" NAME="test Coverage Results" MODIFIED="1611567300054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/闲鱼单，增加模块" />
+    <SUITE FILE_PATH="coverage/pystudy$my_winsound.coverage" NAME="my_winsound Coverage Results" MODIFIED="1612605618558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$qt2.coverage" NAME="qt2 Coverage Results" MODIFIED="1617092086028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/电流电压图形界面" />
+    <SUITE FILE_PATH="coverage/pystudy$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1614670613743" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study_PyQt5" />
+    <SUITE FILE_PATH="coverage/pystudy$my_app.coverage" NAME="my-app Coverage Results" MODIFIED="1617154336124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyqt5_model" />
+    <SUITE FILE_PATH="coverage/pystudy$pyhanlp.coverage" NAME="分词，提取人名，学习pyhanlp Coverage Results" MODIFIED="1611200920108" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$tray.coverage" NAME="My_Tray Coverage Results" MODIFIED="1617239510562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyqt5_model" />
+    <SUITE FILE_PATH="coverage/pystudy$app_9__1_.coverage" NAME="app-9完成版 (1) Coverage Results" MODIFIED="1611287740418" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康大华实时监控" />
+    <SUITE FILE_PATH="coverage/pystudy$my_computer_info.coverage" NAME="my_computer_info Coverage Results" MODIFIED="1611816480117" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$img2file__1_.coverage" NAME="img2file (1) Coverage Results" MODIFIED="1611623653414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/粘贴板记录工具/source" />
     <SUITE FILE_PATH="coverage/pystudy$my_dh_dvr.coverage" NAME="my_dh_dvr Coverage Results" MODIFIED="1610696463224" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康大华实时监控" />
-    <SUITE FILE_PATH="coverage/pystudy$my_hk_dvr.coverage" NAME="my_hk_dvr Coverage Results" MODIFIED="1610430048404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康大华实时监控" />
-    <SUITE FILE_PATH="coverage/pystudy$my_tk_drag.coverage" NAME="my_tk_drag Coverage Results" MODIFIED="1610774379001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pystudy$my_tk_drag.coverage" NAME="my_tk_drag Coverage Results" MODIFIED="1611624899292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/粘贴板记录工具" />
   </component>
 </project>

@@ -1,0 +1,11 @@
+
+_python:S2208"GImport only needed names or import the module and then use its members.(ï€¢
+_python:S2208"GImport only needed names or import the module and then use its members.(†åÿ·
+_python:S2208"GImport only needed names or import the module and then use its members.(¢†ô
+dpython:S116"MRename this field "nPort" to match the regular expression ^[_a-z][_a-z0-9]*$.(‰Ï…ô
+6python:S125"Remove this commented out code.(ï–Ã
+mpython:S117"VRename this local variable "nPort" to match the regular expression ^[_a-z][a-z0-9_]*$.(µ‰Òî
+dpython:S100"MRename method "get_nPort" to match the regular expression ^[a-z_][a-z0-9_]*$.(„ÿÄ
+5python:S125\"Remove this commented out code.(¯ô¦(
+Ipython:S5806€"+Rename this variable; it shadows a builtin.(í­Á–ÿÿÿÿÿ
+7python:S125¥"Remove this commented out code.(âË€ç

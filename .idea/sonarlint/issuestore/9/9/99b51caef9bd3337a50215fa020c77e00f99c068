@@ -1,0 +1,26 @@
+
+@python:S1481ž"'Remove the unused local variable "e_2".(üƒŠÚ
+Epython:S1481¡"'Remove the unused local variable "e_5".(¢åèÒüÿÿÿÿ
+Epython:S1481£"'Remove the unused local variable "e_7".(­è‡£þÿÿÿÿ
+@python:S1481 "'Remove the unused local variable "e_4".(ãôÄž
+kpython:S3776"TRefactor this function to reduce its Cognitive Complexity from 40 to the 15 allowed.(œŸ²_
+Bpython:S1481º")Remove the unused local variable "btn_1".(ŒÇŸú
+`python:S1192“"HDefine a constant instead of duplicating this literal '.set(f[' 3 times.(Ú¬óz
+_python:S2208"GImport only needed names or import the module and then use its members.(ï€¢
+Cpython:S1481Í"%Remove the unused local variable "i".(Èâ™âþÿÿÿÿ
+Epython:S1481¤"'Remove the unused local variable "e_8".(ñý†˜úÿÿÿÿ
+Cpython:S5806ñ"+Rename this variable; it shadows a builtin.(¶Ÿ
+
+>python:S1481ƒ"%Remove the unused local variable "b".(ÏŸèô
+Cpython:S1481‚"%Remove the unused local variable "a".(êµ½›ùÿÿÿÿ
+@python:S1481Ÿ"'Remove the unused local variable "e_3".(ú¥„Ž
+ypython:S117¬"\Rename this local variable "button1_ALL" to match the regular expression ^[_a-z][a-z0-9_]*$.(‘‹©¤ûÿÿÿÿ
+Epython:S1481¥"'Remove the unused local variable "e_9".(ÿµ„¤úÿÿÿÿ
+<python:S2772Ø"Remove this unneeded "pass".(ã‘Û¾8¥‰¯†/
+tpython:S117¼"\Rename this local variable "button2_ALL" to match the regular expression ^[_a-z][a-z0-9_]*$.(Õ•ñ
+Epython:S1481"'Remove the unused local variable "e_1".(ÚâÇÇûÿÿÿÿ
+Jpython:S5806Ú"+Rename this variable; it shadows a builtin.(¶Ÿ
+8¥‰¯†/
+kpython:S1192¦"MDefine a constant instead of duplicating this literal "èŒƒå›´(<=15)" 9 times.(¯ÂàŒùÿÿÿÿ
+<python:S125"Remove this commented out code.(ŠÉ³›øÿÿÿÿ
+@python:S1481¢"'Remove the unused local variable "e_6".(®¾€†

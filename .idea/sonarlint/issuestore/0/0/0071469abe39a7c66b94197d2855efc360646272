@@ -1,0 +1,14 @@
+
+epython:S116"NRename this field "__List" to match the regular expression ^[_a-z][_a-z0-9]*$.(“Ë¦”
+dpython:S1763"GDelete this unreachable code or refactor the code to make it reachable.(²²ÒÐûÿÿÿÿ
+zpython:S5717"]Change this default value to "None" and initialize this parameter inside the function/method.(êó¶Éûÿÿÿÿ
+Tpython:S112">Replace this generic exception class with a more specific one.(þ×›
+hpython:S100 "LRename method "setDebug" to match the regular expression ^[a-z_][a-z0-9_]*$.(â›¿âÿÿÿÿÿ
+hpython:S100&"LRename method "execTime" to match the regular expression ^[a-z_][a-z0-9_]*$.(ðÓ´¬üÿÿÿÿ
+jpython:S1001"NRename method "insertSort" to match the regular expression ^[a-z_][a-z0-9_]*$.(ó§Ê¬þÿÿÿÿ
+kpython:S100F"ORename method "exchangList" to match the regular expression ^[a-z_][a-z0-9_]*$.(„Ãªšýÿÿÿÿ
+qpython:S117R"ZRename this local variable "totleFlag" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÕÇëã
+jpython:S100O"NRename method "maopaoSort" to match the regular expression ^[a-z_][a-z0-9_]*$.(‘ðæ—ûÿÿÿÿ
+jpython:S100e"NRename method "xuanzeSort" to match the regular expression ^[a-z_][a-z0-9_]*$.(Ùš‘¢ûÿÿÿÿ
+Hpython:S5806i"+Rename this variable; it shadows a builtin.(îÕ©Üúÿÿÿÿ
+ipython:S100x"MRename method "tongjiNum" to match the regular expression ^[a-z_][a-z0-9_]*$.(æ…íáùÿÿÿÿ
