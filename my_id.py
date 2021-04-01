@@ -12,4 +12,5 @@ def calc(s):
 def id15to18(s):
     pass
 
-def check_id(s)
+def check_id(s):
+    pass
