@@ -74,7 +74,9 @@ def check_dir_md5(path):
             file_md5[file]['calculate'] = get_file_md5(os.path.join(path,file))
         except:
             print(file, 'read error')
-            file_md5[file]['calculate'] = 'read error'
+            if file not in file_md5.keys():
+                file_md5[file]={'read':''}
+                file_md5[file]['calculate'] = 'read error'
 
     for file in file_md5.keys():
 
