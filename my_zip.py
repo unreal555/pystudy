@@ -25,7 +25,7 @@ def my_un_zip(path, extract_to='.', pwd=''):
         print(e)
         return False
 
-def my_zip(path,*files,pwd=''):
+def my_zip_files(path,*files,pwd=''):
     print(path,pwd,files)
     has_done=[]
     if os.path.exists(path):
@@ -48,6 +48,21 @@ def my_zip(path,*files,pwd=''):
         print(e)
         return False
 
+def my_zip_dir(dirpath,outFullName):
+    """
+    压缩指定文件夹
+    :param dirpath: 目标文件夹路径
+    :param outFullName: 压缩文件保存路径+xxxx.zip
+    :return: 无
+    """
+    zip = zipfile.ZipFile(outFullName,"w",zipfile.ZIP_DEFLATED)
+    for path,dirnames,filenames in os.walk(dirpath):
+        # 去掉目标跟路径，只对目标文件夹下边的文件及文件夹进行压缩
+        fpath = path.replace(dirpath,'')
+
+        for filename in filenames:
+            zip.write(os.path.join(path,filename),os.path.join(fpath,filename))
+    zip.close()
 
 
 my_zip('d:/test.zip','d:/图片文件差异比较.rar','d:/图片文件差异比较.rar','d:/黄猿养殖.txt',pwd='test')

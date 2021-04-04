@@ -9,21 +9,6 @@ import zipfile
 import re
 import shutil
 
-def clean_dir(filepath):
-    """
-    删除某一目录下的所有文件或文件夹
-    :param filepath: 路径
-    :return:
-    """
-    del_list = os.listdir(filepath)
-    for f in del_list:
-        file_path = os.path.join(filepath, f)
-        if os.path.isfile(file_path):
-            os.remove(file_path)
-        elif os.path.isdir(file_path):
-            shutil.rmtree(file_path)
-
-
 def my_un_zip(path, extract_to='.', pwd=''):
     try:
 
@@ -79,6 +64,20 @@ def zipDir(dirpath,outFullName):
             zip.write(os.path.join(path,filename),os.path.join(fpath,filename))
     zip.close()
 
+
+def clean_dir(filepath):
+    """
+    删除某一目录下的所有文件或文件夹
+    :param filepath: 路径
+    :return:
+    """
+    del_list = os.listdir(filepath)
+    for f in del_list:
+        file_path = os.path.join(filepath, f)
+        if os.path.isfile(file_path):
+            os.remove(file_path)
+        elif os.path.isdir(file_path):
+            shutil.rmtree(file_path)
 
 
 def do(dir='.'):

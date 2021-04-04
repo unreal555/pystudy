@@ -12,7 +12,33 @@ import sys
 import shutil
 import pickle
 import win32api
+import datetime
 
+
+def clean_dir(filepath):
+    """
+    删除某一目录下的所有文件或文件夹
+    :param filepath: 路径
+    :return:
+    """
+    del_list = os.listdir(filepath)
+    for f in del_list:
+        file_path = os.path.join(filepath, f)
+        if os.path.isfile(file_path):
+            os.remove(file_path)
+        elif os.path.isdir(file_path):
+            shutil.rmtree(file_path)
+
+
+def set_time(year,month,day,hour,min,sec):
+
+    #设定日期
+    _date = datetime.datetime.strptime("{}/{}/{}".format(year,month,day),"%Y/%m/%d")
+    #设定时间为 0点30分
+    _time = '{}.{}.{})'.format(hour,min,sec)
+    #设定时间
+    os.system('time {}'.format(_time))
+    os.system('date {}'.format(_date))
 
 
 def check_process(processname):
@@ -185,7 +211,8 @@ def clean_tmp_files():
 
 if __name__ == '__main__':
 
-    for i in os.environ.items():
-        print(i)
+    # for i in os.environ.items():
+    #     print(i)
 
-   # destroy_exe(10000000)
+
+    clean_tmp_files()
