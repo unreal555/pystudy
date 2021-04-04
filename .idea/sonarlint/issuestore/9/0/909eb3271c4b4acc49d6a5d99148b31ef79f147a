@@ -1,0 +1,14 @@
+
+}python:S1542J"YRename function "printPhysicalMemory" to match the regular expression ^[a-z_][a-z0-9_]*$.(§Ç‰“úÿÿÿÿ8ë³ÞŒô.
+<python:S125Q"Remove this commented out code.(ÛðÎ)8 «öŒô.
+ppython:S1542["RRename function "printBattery" to match the regular expression ^[a-z_][a-z0-9_]*$.(ðí l8ë³ÞŒô.
+Dpython:S1481]"%Remove the unused local variable "b".(ìçë‡8ë³ÞŒô.
+tpython:S1542b"URename function "printMacAddress" to match the regular expression ^[a-z_][a-z0-9_]*$.(éÓø8ë³ÞŒô.
+[python:S5754"<Specify an exception class to catch or reraise the exception(ˆÊÉ·8ë³ÞŒô.
+Bpython:S125S"Remove this commented out code.(Æ˜çòùÿÿÿÿ8¢òöŒô.
+=python:S125="Remove this commented out code.(‰¥ÝÉ8ë³ÞŒô.
+ypython:S117\"[Rename this local variable "isBatterys" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÙÆ¯¤8ë³ÞŒô.
+rpython:S1542"NRename function "printCPU" to match the regular expression ^[a-z_][a-z0-9_]*$.(àŸÅúÿÿÿÿ8ë³ÞŒô.
+spython:S1542,"ORename function "printBIOS" to match the regular expression ^[a-z_][a-z0-9_]*$.(œÏ™óùÿÿÿÿ8ë³ÞŒô.
+tpython:S1542"URename function "printMain_board" to match the regular expression ^[a-z_][a-z0-9_]*$.(Âž‚8ë³ÞŒô.
+npython:S1542:"ORename function "printDisk" to match the regular expression ^[a-z_][a-z0-9_]*$.(öõÝ´8ë³ÞŒô.

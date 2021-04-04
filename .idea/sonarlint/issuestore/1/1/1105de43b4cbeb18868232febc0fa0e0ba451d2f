@@ -1,36 +1,0 @@
-
-ypython:S3776Â"TRefactor this function to reduce its Cognitive Complexity from 24 to the 15 allowed.(‰ì©·ıÿÿÿÿ8Ğ€ßªğ.
-ypython:S3776³"TRefactor this function to reduce its Cognitive Complexity from 23 to the 15 allowed.(¿ºäêøÿÿÿÿ8Ğ€ßªğ.
->python:S125„"Remove this commented out code.(Ø–†Ô8éğÛğ.
-xpython:S1192Í"SDefine a constant instead of duplicating this literal "<Double-Button-1>" 10 times.(ŠÚ¸øÿÿÿÿ8éğÛğ.
-ypython:S3776ÿ"TRefactor this function to reduce its Cognitive Complexity from 26 to the 15 allowed.(«Öÿ¯ÿÿÿÿÿ8Ğ€ßªğ.
-fpython:S2208"GImport only needed names or import the module and then use its members.(ï€¢8éğÛğ.
-ipython:S1192Œ"IDefine a constant instead of duplicating this literal 'haikang:' 3 times.(¨à† 8Ğ€ßªğ.
-fpython:S2208"GImport only needed names or import the module and then use its members.(†åÿ·8éğÛğ.
->python:S125"Remove this commented out code.(—•êÑ8éğÛğ.
-?python:S3626¥"Remove this redundant continue.(À–¬ˆ8Ğ€ßªğ.
-opython:S1192œ"JDefine a constant instead of duplicating this literal 'state.dat' 4 times.(ùÎº¥úÿÿÿÿ8Ğ€ßªğ.
-Cpython:S125‘	"Remove this commented out code.(È°Ûşÿÿÿÿ8Ğ€ßªğ.
-~python:S1186À"YAdd a nested comment explaining why this method is empty, or complete the implementation.(ÙÏ¡Ãÿÿÿÿÿ8Ğ€ßªğ.
-ypython:S3776õ"TRefactor this function to reduce its Cognitive Complexity from 16 to the 15 allowed.(Ì ş¬ùÿÿÿÿ8Ğ€ßªğ.
-€python:S117¶"\Rename this local variable "lRealHandle" to match the regular expression ^[_a-z][a-z0-9_]*$.(†êÄÏÿÿÿÿÿ8Ğ€ßªğ.
-opython:S1192Ä"QDefine a constant instead of duplicating this literal "<ButtonPress-1>" 22 times.(Ô†8éğÛğ.
-Hpython:S108Ì")Either remove or fill this block of code.(ã‘Û¾8Ğ€ßªğ.
-\python:S5754º"<Specify an exception class to catch or reraise the exception(ˆÊÉ·8Ğ€ßªğ.
-Bpython:S125"Remove this commented out code.(ÑÑşƒÿÿÿÿÿ8éğÛğ.
-=python:S3626à"Remove this redundant return.(ÙãŞŸ8éğÛğ.
-fpython:S1192›"GDefine a constant instead of duplicating this literal 'dahua:' 3 times.(Â´õG8Ğ€ßªğ.
-=python:S3626ë"Remove this redundant return.(ÙãŞŸ8Ğ€ßªğ.
-€python:S117­"\Rename this local variable "lRealHandle" to match the regular expression ^[_a-z][a-z0-9_]*$.(†êÄÏÿÿÿÿÿ8Ğ€ßªğ.
-ypython:S1186½"YAdd a nested comment explaining why this method is empty, or complete the implementation.(¶ù¶8Ğ€ßªğ.
-python:S4144´"\Update this function so that its implementation is not identical to play_dh_cam on line 555.(Õ‰ıÂüÿÿÿÿ8Ğ€ßªğ.
-hpython:S1192ª"HDefine a constant instead of duplicating this literal '<Leave>' 9 times.(ÅìñŞ8ƒÏĞ˜ñ.
-}python:S1192Ç"XDefine a constant instead of duplicating this literal 'çª—å£ï¼š%sï¼ŒNo Singal' 3 times.(âóšøÿÿÿÿ8ƒÏĞ˜ñ.
-npython:S1192©"IDefine a constant instead of duplicating this literal '<Motion>' 9 times.(“”Î½ıÿÿÿÿ8ƒÏĞ˜ñ.
-python:S1192Ï"nDefine a constant instead of duplicating this literal 'çª—å£ï¼š%sï¼Œæ­£åœ¨æ’­æ”¾%s@%s:%s channel %s' 3 times.(’¡Ïñ8ƒÏĞ˜ñ.
-Cpython:S125°"Remove this commented out code.(ÃÉ€•ıÿÿÿÿ8ƒÏĞ˜ñ.
->python:S125•"Remove this commented out code.(Ùµ÷Î8ƒÏĞ˜ñ.
->python:S125¤"Remove this commented out code.(§ı˜—8ƒÏĞ˜ñ.
-|python:S117Ì"XRename this local variable "lUrseID" to match the regular expression ^[_a-z][a-z0-9_]*$.(¢ú¢Šøÿÿÿÿ8ƒÏĞ˜ñ.
-=python:S3626á"Remove this redundant return.(ÙãŞŸ8ƒÏĞ˜ñ.
-Npython:S1481©")Remove the unused local variable "check".(¤—°ùÿÿÿÿ8ƒÏĞ˜ñ.

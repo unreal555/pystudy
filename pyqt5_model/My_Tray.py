@@ -9,7 +9,7 @@ import time
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
-
+from ui import Ui_Form
 
 class TrayIcon(QSystemTrayIcon):
     def __init__(self, parent=None):
@@ -66,38 +66,66 @@ class TrayIcon(QSystemTrayIcon):
         self.parent().exit()
         sys.exit()
 
-class Window(QWidget):
+class Window(QWidget,Ui_Form):
     def __init__(self, parent=None):
-        super(Window, self).__init__(parent)
+        super(Window,self).__init__(parent)
+        self.setupUi(self)
         self.setWindowIcon(QIcon('ico.ico'))
         self.tray = TrayIcon(self)
-        self.setWindowOpacity(0.9)
+        self.setWindowOpacity(0.8)
         self.setWindowFlags(Qt.FramelessWindowHint) #无边框
         self.setWindowFlags(Qt.WindowStaysOnTopHint) #置顶
         #self.setAttribute(Qt.WA_TranslucentBackground)  #彻底透明
+        self.setWindowTitle('图形界面范例')
+        self.resize(1024,768)
 
 
-        palette1 = QPalette()
-        palette1.setColor(palette1.Background,QColor(0,0,0))
-        self.setPalette(palette1)
+        self.horizontalScrollBar.setMaximum(100)
+        self.horizontalScrollBar.setMinimum(40)
+        self.horizontalScrollBar.setValue(80)
+
+        self.horizontalScrollBar.valueChanged.connect(self.changePactiy)
+
+    def changePactiy(self,value):
+
+        self.setWindowOpacity(value/100)
+
+    def resizeEvent(self, a0: QResizeEvent) -> None:
+        self.palette = QPalette()
+        self.pix = QPixmap("./resource/beauty.jpg")
+        self.palette.setBrush(QPalette.Background, QBrush(self.pix.scaled(self.width(),self.height())))
+        self.setPalette(self.palette)
+
+
+    def paintEvent(self, event):  # set background_img
+        painter = QPainter(self)
+        painter.drawRect(self.rect())
+        pixmap = QPixmap("./img/1.jpg")  # 换成自己的图片的相对路径
+        painter.drawPixmap(self.rect(), pixmap)
+
 
     def hideEvent(self, QHideEvent):
         self.setVisible(False)
         self.tray.setVisible(True)
 
     def closeEvent(self, a0: QCloseEvent) -> None:
-        if QMessageBox.question(self,'关闭','Yes关闭，No最小化',QMessageBox.Yes|QMessageBox.No,QMessageBox.No)==QMessageBox.Yes:
+        if QMessageBox.warning(self,'关闭','Yes关闭，No最小化',QMessageBox.Yes|QMessageBox.No,QMessageBox.No)==QMessageBox.Yes:
             a0.accept()
+            self.children().exit()
         else:
             a0.ignore()
             self.hideEvent(QHideEvent)
+
+
 
 class RunThread(QThread):
     def __init__(self):
         super().__init__()
 
     def run(self):
-        pass
+        for i in range(1,1000):
+            time.sleep(1)
+            print(i,)
 
 
 

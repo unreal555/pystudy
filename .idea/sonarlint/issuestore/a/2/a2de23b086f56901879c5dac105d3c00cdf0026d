@@ -1,0 +1,13 @@
+
+upython:S116"RRename this field "gridLayout" to match the regular expression ^[_a-z][_a-z0-9]*$.(ïª£ùùÿÿÿÿ8˜ö †ø.
+qpython:S116"SRename this field "textBrowser" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÓÂø•8˜ö †ø.
+upython:S116("RRename this field "checkBox_2" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ú²²ºşÿÿÿÿ8˜ö †ø.
+npython:S100"KRename method "setupUi" to match the regular expression ^[a-z_][a-z0-9_]*$.(ÂéÇ´ÿÿÿÿÿ8©™¾¹ö.
+spython:S116"PRename this field "lineEdit" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÈäŠ§ùÿÿÿÿ8˜ö †ø.
+mpython:S116;"ORename this field "toolBar" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ó¬Ú©8˜ö †ø.
+vpython:S116"XRename this field "gridLayoutWidget" to match the regular expression ^[_a-z][_a-z0-9]*$.(™ß£ÿ8˜ö †ø.
+spython:S116#"PRename this field "checkBox" to match the regular expression ^[_a-z][_a-z0-9]*$.(»ƒ±åûÿÿÿÿ8˜ö †ø.
+ypython:S117T"VRename this parameter "MainWindow" to match the regular expression ^[_a-z][a-z0-9_]*$.(”«Àşÿÿÿÿ8˜ö †ø.
+tpython:S100T"QRename method "retranslateUi" to match the regular expression ^[a-z_][a-z0-9_]*$.(”«Àşÿÿÿÿ8˜ö †ø.
+Špython:S101"gRename class "Ui_MainWindow" to match the regular expression ^_?([A-Z_][a-zA-Z0-9]*|[a-z_][a-z0-9_]*)$.( Ìñıùÿÿÿÿ8©™¾¹ö.
+ypython:S117"VRename this parameter "MainWindow" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÂéÇ´ÿÿÿÿÿ8©™¾¹ö.
