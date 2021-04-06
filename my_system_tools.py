@@ -13,7 +13,9 @@ import shutil
 import pickle
 import win32api
 import datetime
-
+import random
+import collections
+import string
 
 def clean_dir(filepath):
     """
