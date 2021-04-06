@@ -8,6 +8,7 @@ import win32com.client as win32
 import os,shutil
 import set_xlsx_user
 
+
 # file=r'C:\Users\Administrator\Desktop\新建文件夹\demo.xls'
 #
 # excel = win32.gencache.EnsureDispatch('Excel.Application')
@@ -23,19 +24,24 @@ tempdir=os.path.join(basedir,'tempd')
 
 finisheddir=os.path.join(basedir,'finished')
 
+tododir=os.path.join(basedir,'tododir')
+
 if not os.path.exists(tempdir):
 	os.makedirs(tempdir)
 
 if not os.path.exists(finisheddir):
 	os.makedirs(finisheddir)
 
+if not os.path.exists(tododir):
+	os.makedirs(tododir)
 
+n=10000
 for infile in os.listdir(basedir):
 
 	if str.lower(os.path.splitext(infile)[1]) in ['.msg']:
 		print('开始处理',infile)
 		outlook = win32.Dispatch("Outlook.Application").GetNamespace("MAPI")
-		workfile=os.path.join(tempdir,'demo.msg')
+		workfile=os.path.join(tempdir,'demo{}.msg'.format(n))
 		shutil.copy(os.path.join(basedir,infile),workfile)
 		msg = outlook.OpenSharedItem(workfile)
 		print(msg.Attachments.Count)
@@ -58,11 +64,13 @@ for infile in os.listdir(basedir):
 
 		if flag>0:
 			msg.SaveAs(os.path.join(finisheddir, infile))
+			os.remove(fujian)
+		if flag==0:
+			shutil.copy(workfile,os.path.join(tododir,infile))
 		msg.Close(1)
 		del msg
 		del outlook
-		os.remove(fujian)
-		os.remove(workfile)
+		n+=1
 
 
 	print('\r\n')
