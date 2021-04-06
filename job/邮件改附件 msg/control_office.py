@@ -18,7 +18,9 @@ import set_xlsx_user
 # wb.Close()                               #FileFormat = 56 is for .xls extension
 # excel.Application.Quit()
 
-basedir=r'C:\Users\Administrator\Desktop\新建文件夹\source'
+basedir=r'.\source'
+
+basedir=os.path.abspath(basedir)
 
 tempdir=os.path.join(basedir,'tempd')
 
