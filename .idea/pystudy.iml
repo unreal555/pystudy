@@ -8,9 +8,10 @@
       <sourceFolder url="file://$MODULE_DIR$/job/海康大华实时监控" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/job/粘贴板记录工具" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/job/电流电压图形界面" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/job/邮件改附件 msg" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.8 (venv) (2)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.8 (venv2)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PyDocumentationSettings">
