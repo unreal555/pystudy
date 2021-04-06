@@ -21,6 +21,7 @@ sht = x.Worksheets('Sheet1')
 x.Author = "Jean Selva"
 print(x.BuiltinDocumentProperties("Last author").value)
 print(x.BuiltinDocumentProperties("Last save time").value)
+print(x.BuiltinDocumentProperties("Created time").value)
 
 x.Save()
 

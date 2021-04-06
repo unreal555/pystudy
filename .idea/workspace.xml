@@ -651,12 +651,12 @@
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="355" y="125" key="#test2/0.0.1280.980@0.0.1280.980" timestamp="1613698420873" />
-    <state x="0" y="91" key="CommitChangelistDialog2" timestamp="1617719499022">
+    <state x="0" y="91" key="CommitChangelistDialog2" timestamp="1617721217646">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="0" y="86" key="CommitChangelistDialog2/0.0.1280.980@0.0.1280.980" timestamp="1617240421730" />
     <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1612609140810" />
-    <state x="0" y="91" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1617719499022" />
+    <state x="0" y="91" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1617721217646" />
     <state x="120" y="79" width="1048" height="822" key="DiffContextDialog" timestamp="1617238358328">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
@@ -669,30 +669,30 @@
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="420" y="247" key="FileChooserDialogImpl/0.0.1280.980@0.0.1280.980" timestamp="1617001793300" />
-    <state width="1876" height="402" key="GridCell.Tab.0.bottom" timestamp="1617721201927">
+    <state width="1876" height="402" key="GridCell.Tab.0.bottom" timestamp="1617721288524">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1236" height="147" key="GridCell.Tab.0.bottom/0.0.1280.980@0.0.1280.980" timestamp="1617242084044" />
     <state width="1322" height="180" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1612608762360" />
-    <state width="1876" height="402" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1617721201927" />
-    <state width="1876" height="402" key="GridCell.Tab.0.center" timestamp="1617721201927">
+    <state width="1876" height="402" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1617721288524" />
+    <state width="1876" height="402" key="GridCell.Tab.0.center" timestamp="1617721288524">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1236" height="147" key="GridCell.Tab.0.center/0.0.1280.980@0.0.1280.980" timestamp="1617242084044" />
     <state width="1322" height="180" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1612608762360" />
-    <state width="1876" height="402" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1617721201927" />
-    <state width="1876" height="402" key="GridCell.Tab.0.left" timestamp="1617721201927">
+    <state width="1876" height="402" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1617721288524" />
+    <state width="1876" height="402" key="GridCell.Tab.0.left" timestamp="1617721288524">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1236" height="147" key="GridCell.Tab.0.left/0.0.1280.980@0.0.1280.980" timestamp="1617242084044" />
     <state width="1322" height="180" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1612608762360" />
-    <state width="1876" height="402" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1617721201927" />
-    <state width="1876" height="402" key="GridCell.Tab.0.right" timestamp="1617721201927">
+    <state width="1876" height="402" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1617721288524" />
+    <state width="1876" height="402" key="GridCell.Tab.0.right" timestamp="1617721288524">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1236" height="147" key="GridCell.Tab.0.right/0.0.1280.980@0.0.1280.980" timestamp="1617242084044" />
     <state width="1322" height="180" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1612608762360" />
-    <state width="1876" height="402" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1617721201927" />
+    <state width="1876" height="402" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1617721288524" />
     <state width="1236" height="376" key="GridCell.Tab.1.bottom" timestamp="1617182853040">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
@@ -731,12 +731,12 @@
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="418" y="195" key="VCS.ChangeListViewerDialog/0.0.1280.980@0.0.1280.980" timestamp="1613698057268" />
-    <state x="216" y="153" key="Vcs.Push.Dialog.v2" timestamp="1617719503983">
+    <state x="216" y="153" key="Vcs.Push.Dialog.v2" timestamp="1617721297635">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="144" y="144" key="Vcs.Push.Dialog.v2/0.0.1280.980@0.0.1280.980" timestamp="1617182642592" />
     <state x="154" y="107" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1611142086454" />
-    <state x="216" y="153" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1617719503983" />
+    <state x="216" y="153" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1617721297635" />
     <state x="92" y="92" width="1096" height="796" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1617092231155">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
@@ -782,7 +782,7 @@
     <SUITE FILE_PATH="coverage/pystudy$my_clipboard_tools.coverage" NAME="my_clipboard_tools Coverage Results" MODIFIED="1611627013663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/粘贴板记录工具" />
     <SUITE FILE_PATH="coverage/pystudy$my_cv2.coverage" NAME="my_cv2 Coverage Results" MODIFIED="1612608762351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$My_Tray.coverage" NAME="My_Tray Coverage Results" MODIFIED="1617242084028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyqt5_model" />
-    <SUITE FILE_PATH="coverage/pystudy$set_xls.coverage" NAME="set_xls Coverage Results" MODIFIED="1617721201912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/邮件改附件 msg" />
+    <SUITE FILE_PATH="coverage/pystudy$set_xls.coverage" NAME="set_xls Coverage Results" MODIFIED="1617721288509" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/邮件改附件 msg" />
     <SUITE FILE_PATH="coverage/pystudy$app_9.coverage" NAME="app-9完成版 Coverage Results" MODIFIED="1611287469532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康大华实时监控/histroy" />
     <SUITE FILE_PATH="coverage/pystudy$qt.coverage" NAME="qt Coverage Results" MODIFIED="1617092103712" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/电流电压图形界面" />
     <SUITE FILE_PATH="coverage/pystudy$Monitor_PY.coverage" NAME="Monitor.PY Coverage Results" MODIFIED="1617007126787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/电流电压图形界面" />
