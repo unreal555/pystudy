@@ -1,62 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b8d6269-a564-4802-8c0e-0538c714e289" name="Default Changelist" comment="clean">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/0/0071469abe39a7c66b94197d2855efc360646272" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/a/1ac40b3ecd27b2e974447a8139f95ea5ee5dc6e7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/5/25c0e5e73c5c95139a58f40221d90c30c26be6e9" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/c/2cc1126bcf0d8a9621806422463ecfe82d586946" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/c/2ceb980b718c84b0bac2c12f9648f4a5d8e14e5a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/9/4951259a062e2dccbf714ddecbab0957c0c728cb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/b/4bdc95dcf298cac1375e3947f6c2e63531c5f484" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/7/57c13ff95c4e06858225eb493c02421ff8d4d0e7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/f/5f9c942f8ed23bce5fb2a4534517bdd7fca610ab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/1/616a32e593f5c798d456008906babbe8c05c07a8" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/a/6af189c67fa17a75a98d05edabdecb02b708dd86" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/c/6c22214c8ee835a3e2b7fe24a5c4674b7d329463" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/c/6c77ebfad3dfaec71a7c6ac2a6883758a1f342a3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/d/6d596ed9888d5021e0eab74a021c56eec0848f7e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/d/6dcc6150900ad30f2ed17d132a1c31a4e44c3d22" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/4/74bb64a08b5115063c40b3128c09f0f6010c436f" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/7/772eb110b85ecca8dbe1827e8ee21c755034eb82" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/1/818b3686e9a77c763c7e004a8d060c8dda942f3b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/2/82412ed096f40fedeffbb7e0ffd8c7326fe8bff7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/0/909eb3271c4b4acc49d6a5d99148b31ef79f147a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/1/91c3dab8721cf164d9c8527a4f0bfdd70756e543" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/9/99b51caef9bd3337a50215fa020c77e00f99c068" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/b/9bdf3c57fa5eaf5258aa90b2acdb7ef48432ce9b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/2/a2de23b086f56901879c5dac105d3c00cdf0026d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/4/a43822a564d50c0525e277209fdc0026d234cf5e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/4/a4f828f1cab308fa357605c4f1c94c48b0a65a64" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/b/ab6474e3e78295eb28141a952f3e23e94f6a20f7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/d/ade5160d5ee323b4556e2427c6f2065e3fa0bf64" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/3/b332150e49e8af787c249e94e3a0e892a6c91544" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/b/bb644462a5b4972b5ea9e830739b481df523261c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/f/bfd83764a26776af21e0e188c9475491b8c0db15" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/7/c7dee77d97d9216498bc515c43d44ea330bd08fa" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/a/ca93c93a2d83c64a1ac050ec3dfe1dbe2f51d310" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/e/ce0a37929c478183a0e7ed97ef266bed5700f4a7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/0/d01faaf419473c3aed0570f6abf4172399cf33c2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/1/d1d2973d58399fcda64e9688c05f5159385b2780" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/1/e1f533d2dc0530f8e1877092eeb1d1eed6b6aab4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/6/e69a228241d0dd0077e93a31ee5d87f395ec996e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/6/e6ca7ec9de76b8da68816eaa59f4bde66e6d0da9" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/9/f9ccf74196e6f071745d030a9d917de16c278d9f" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/a/fa8e65f4a9beb0b3499c654dffffc270bcce1f51" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/a/faaf82d971c16232e7d8aed1c0d2a66a914f9f94" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pyqt5_model/resource/beauty.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pyqt5_model/resource/demo.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pystudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pystudy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/1/1105de43b4cbeb18868232febc0fa0e0ba451d2f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/3/4380776f30e477794e6164a7720f2939c32df567" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/3/4380776f30e477794e6164a7720f2939c32df567" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/d/ed93b846df1fcf2ad3f9eaba46d862eea320d03b" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/3/134b0c0ba50d24f455c274f3c62129582a8c178e" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyqt5_model/My_Tray.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyqt5_model/My_Tray.py" afterDir="false" />
-    </list>
+    <list default="true" id="9b8d6269-a564-4802-8c0e-0538c714e289" name="Default Changelist" comment="clean" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -755,10 +700,10 @@
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="429" y="291" key="git4idea.merge.GitMergeDialog/0.0.1280.980@0.0.1280.980" timestamp="1613698010858" />
-    <state x="353" y="291" key="git4idea.merge.GitPullDialog" timestamp="1617238316504">
+    <state x="353" y="291" key="git4idea.merge.GitPullDialog" timestamp="1617670614164">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="353" y="291" key="git4idea.merge.GitPullDialog/0.0.1280.980@0.0.1280.980" timestamp="1617238316504" />
+    <state x="353" y="291" key="git4idea.merge.GitPullDialog/0.0.1280.980@0.0.1280.980" timestamp="1617670614164" />
     <state x="377" y="216" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1611137485429" />
     <state x="465" y="397" key="git4idea.ui.GitStashDialog" timestamp="1613697997300">
       <screen x="0" y="0" width="1280" height="980" />
@@ -791,7 +736,7 @@
     <SUITE FILE_PATH="coverage/pystudy$app_16.coverage" NAME="app-16开发版 Coverage Results" MODIFIED="1611287392109" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康大华实时监控" />
     <SUITE FILE_PATH="coverage/pystudy$my_clipboard_tools.coverage" NAME="my_clipboard_tools Coverage Results" MODIFIED="1611627013663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/粘贴板记录工具" />
     <SUITE FILE_PATH="coverage/pystudy$my_cv2.coverage" NAME="my_cv2 Coverage Results" MODIFIED="1612608762351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pystudy$My_Tray.coverage" NAME="My_Tray Coverage Results" MODIFIED="1617242084028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyqt5_model" />
+    <SUITE FILE_PATH="coverage/pystudy$My_Tray.coverage" NAME="My_Tray Coverage Results" MODIFIED="1617355365361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyqt5_model" />
     <SUITE FILE_PATH="coverage/pystudy$app_9.coverage" NAME="app-9完成版 Coverage Results" MODIFIED="1611287469532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康大华实时监控/histroy" />
     <SUITE FILE_PATH="coverage/pystudy$qt.coverage" NAME="qt Coverage Results" MODIFIED="1617092103712" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/电流电压图形界面" />
     <SUITE FILE_PATH="coverage/pystudy$Monitor_PY.coverage" NAME="Monitor.PY Coverage Results" MODIFIED="1617007126787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/电流电压图形界面" />
