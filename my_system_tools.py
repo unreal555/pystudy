@@ -16,6 +16,7 @@ import datetime
 import random
 import collections
 import string
+import ntplib
 
 def clean_dir(filepath):
     """
@@ -32,15 +33,28 @@ def clean_dir(filepath):
             shutil.rmtree(file_path)
 
 
-def set_time(year,month,day,hour,min,sec):
-
-    #设定日期
-    _date = datetime.datetime.strptime("{}/{}/{}".format(year,month,day),"%Y/%m/%d")
-    #设定时间为 0点30分
-    _time = '{}.{}.{})'.format(hour,min,sec)
+def set_time(hour,min,sec):
     #设定时间
+    _time = '{}:{}:{}'.format(hour,min,sec)
+    print(_time)
     os.system('time {}'.format(_time))
+
+
+def set_date(year,month,day):
+    #设定日期
+    _date = "{}/{}/{}".format(year,month,day)
+    print(_date)
     os.system('date {}'.format(_date))
+
+def auto_set_date_time(ntp_server='pool.ntp.org'):
+    c = ntplib.NTPClient()
+    response = c.request(ntp_server)
+    ts = response.tx_time
+    print(ts)
+    _date = time.strftime('%Y-%m-%d',time.localtime(ts))
+    _time = time.strftime('%X',time.localtime(ts))
+    os.system('date {} && time {}'.format(_date,_time))
+
 
 
 def check_process(processname):
@@ -217,4 +231,4 @@ if __name__ == '__main__':
     #     print(i)
 
 
-    clean_tmp_files()
+   auto_set_date_time()

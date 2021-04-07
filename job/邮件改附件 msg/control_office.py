@@ -7,6 +7,7 @@
 import win32com.client as win32
 import os,shutil
 import set_xlsx_user
+import set_xls_user
 
 
 # file=r'C:\Users\Administrator\Desktop\新建文件夹\demo.xls'
@@ -18,39 +19,40 @@ import set_xlsx_user
 # wb.Close()                               #FileFormat = 56 is for .xls extension
 # excel.Application.Quit()
 
-basedir=r'.\source'
+basedir=r'C:\Users\Administrator\Desktop\新建文件夹\source'
 
 basedir=os.path.abspath(basedir)
 
 tempdir=os.path.join(basedir,'tempd')
 
-finisheddir=os.path.join(basedir,'finished')
+xlsxdir=os.path.join(basedir,'xlsxdir')
 
-tododir=os.path.join(basedir,'tododir')
+xlsdir=os.path.join(basedir,'xlsdir')
 
 if not os.path.exists(tempdir):
 	os.makedirs(tempdir)
 
-if not os.path.exists(finisheddir):
-	os.makedirs(finisheddir)
+if not os.path.exists(xlsxdir):
+	os.makedirs(xlsxdir)
 
-if not os.path.exists(tododir):
-	os.makedirs(tododir)
+if not os.path.exists(xlsdir):
+	os.makedirs(xlsdir)
+
+outlook = win32.Dispatch("Outlook.Application").GetNamespace("MAPI")
 
 n=10000
 for infile in os.listdir(basedir):
 
 	if str.lower(os.path.splitext(infile)[1]) in ['.msg']:
 		print('开始处理',infile)
-		outlook = win32.Dispatch("Outlook.Application").GetNamespace("MAPI")
 		workfile=os.path.join(tempdir,'demo{}.msg'.format(n))
 		shutil.copy(os.path.join(basedir,infile),workfile)
 		msg = outlook.OpenSharedItem(workfile)
 		print(msg.Attachments.Count)
 		flag=0
-
 		for att in msg.Attachments:
 			print(att.FileName,att.Index)
+			fujian=''
 
 			if str.lower(att.FileName[-5:])=='.xlsx':
 				fujian=os.path.join(tempdir,att.FileName)
@@ -62,20 +64,33 @@ for infile in os.listdir(basedir):
 				msg.Attachments.Add(fujian)
 				flag+=1
 
+			elif str.lower(att.FileName[-4:])=='.xls':
+				fujian=os.path.join(tempdir,att.FileName)
+				print(fujian)
+				att.SaveAsFile(fujian)
+				set_xls_user.do(fujian)
+				print('删除附件',att.Index,att.FileName)
+				msg.Attachments.Remove(att.Index)
+				msg.Attachments.Add(fujian)
 
+			if os.path.isfile(fujian):
+				os.remove(fujian)
 
 		if flag>0:
-			msg.SaveAs(os.path.join(finisheddir, infile))
-			os.remove(fujian)
+			msg.SaveAs(os.path.join(xlsxdir, infile))
+
 		if flag==0:
-			shutil.copy(workfile,os.path.join(tododir,infile))
+			msg.SaveAs(os.path.join(xlsdir, infile))
+
 		msg.Close(1)
+
 		del msg
-		del outlook
+
 		n+=1
+		print('\r\n')
+del outlook
 
 
-	print('\r\n')
 
 
 
