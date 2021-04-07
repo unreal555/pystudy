@@ -12,7 +12,6 @@ import sys
 import shutil
 import pickle
 import win32api
-import datetime
 import random
 import collections
 import string
@@ -46,15 +45,34 @@ def set_date(year,month,day):
     print(_date)
     os.system('date {}'.format(_date))
 
-def auto_set_date_time(ntp_server='pool.ntp.org'):
-    c = ntplib.NTPClient()
-    response = c.request(ntp_server)
-    ts = response.tx_time
-    print(ts)
-    _date = time.strftime('%Y-%m-%d',time.localtime(ts))
-    _time = time.strftime('%X',time.localtime(ts))
-    os.system('date {} && time {}'.format(_date,_time))
 
+def auto_set_date_time(ntp_server='pool.ntp.org'):
+    ntp_servers=['time.windows.com','time.nist.gov','time-a.nist.gov','time-b.nist.gov']
+    def get_ntp_time(ntp_server):
+        c = ntplib.NTPClient()
+        try:
+            response = c.request(ntp_server)
+            print(ntp_server,'获得时间成功',response.tx_time)
+            return response.tx_time
+        except:
+            print(ntp_server, '获得时间失败')
+            return False
+
+    ts = get_ntp_time(ntp_server=ntp_server)
+
+    while (not ts) :
+        for ntp_server in ntp_servers:
+            ts=get_ntp_time(ntp_server)
+        break
+
+    if ts:
+        _date = time.strftime('%Y-%m-%d',time.localtime(ts))
+        _time = time.strftime('%X',time.localtime(ts))
+        os.system('date {} && time {}'.format(_date,_time))
+        print('同步时间成功')
+    else:
+        print('同步时间失败')
+        return False
 
 
 def check_process(processname):
@@ -226,9 +244,5 @@ def clean_tmp_files():
 
 
 if __name__ == '__main__':
-
-    # for i in os.environ.items():
-    #     print(i)
-
 
    auto_set_date_time()
