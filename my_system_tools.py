@@ -17,6 +17,9 @@ import collections
 import string
 import ntplib
 
+
+
+
 def clean_dir(filepath):
     """
     删除某一目录下的所有文件或文件夹
@@ -37,6 +40,18 @@ def set_time(hour,min,sec):
     _time = '{}:{}:{}'.format(hour,min,sec)
     print(_time)
     os.system('time {}'.format(_time))
+
+def get_insatlled_package():
+    all={}
+    result=re.split('[\r\n]',os.popen('pip list').read())
+    for item in result[2:]:
+        if re.sub('\s+','',item)=='':
+            continue
+        name,ver=re.split('\s+',item)
+        all[name]=ver
+    # for key in all.keys():
+    #     print(key,all[key])
+    return all
 
 
 def set_date(year,month,day):
@@ -245,5 +260,4 @@ def clean_tmp_files():
 
 
 if __name__ == '__main__':
-
-   auto_set_date_time()
+    print(dir())
