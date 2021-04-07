@@ -70,6 +70,7 @@ def auto_set_date_time(ntp_server='pool.ntp.org'):
         _time = time.strftime('%X',time.localtime(ts))
         os.system('date {} && time {}'.format(_date,_time))
         print('同步时间成功')
+        return True
     else:
         print('同步时间失败')
         return False
