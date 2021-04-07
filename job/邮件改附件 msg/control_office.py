@@ -46,7 +46,7 @@ for infile in os.listdir(basedir):
 	if str.lower(os.path.splitext(infile)[1]) in ['.msg']:
 		print('开始处理',infile)
 		workfile=os.path.join(tempdir,'demo{}.msg'.format(n))
-		shutil.copy(os.path.join(basedir,infile),workfile)
+		shutil.move(os.path.join(basedir,infile),workfile)
 		msg = outlook.OpenSharedItem(workfile)
 		print(msg.Attachments.Count)
 		flag=0

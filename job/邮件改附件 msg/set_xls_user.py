@@ -27,7 +27,7 @@ def do(file):
 	print(last_save_date)
 
 	if not author=='':
-		x.BuiltinDocumentProperties("author").value='Administraotor'
+		x.BuiltinDocumentProperties("author").value='Administrator'
 
 	if not last_author=='':
 		x.BuiltinDocumentProperties("Last author").value = 'Administraotor'
