@@ -9,11 +9,13 @@ import os,shutil
 import set_xlsx_user
 import set_xls_user
 
-basedir=r'C:\Users\Administrator\Desktop\新建文件夹\source'
+basedir=r'C:\Users\Administrator\Desktop\source'
 
 basedir=os.path.abspath(basedir)
 
 tempdir=os.path.join(basedir,'tempd')
+
+bothdir=os.path.join(basedir,'bothdir')
 
 xlsxdir=os.path.join(basedir,'xlsxdir')
 
@@ -27,6 +29,9 @@ if not os.path.exists(xlsxdir):
 
 if not os.path.exists(xlsdir):
 	os.makedirs(xlsdir)
+
+if not os.path.exists(bothdir):
+	os.makedirs(bothdir)
 
 outlook = wc.Dispatch("Outlook.Application").GetNamespace("MAPI")
 
@@ -69,15 +74,16 @@ for infile in os.listdir(basedir):
 			if os.path.isfile(fujian):
 				os.remove(fujian)
 
-		if xlsx_count>0:
+		if xlsx_count>0 and xls_count>0:
+			msg.SaveAs(os.path.join(bothdir, infile))
+
+		elif xlsx_count>0:
 			msg.SaveAs(os.path.join(xlsxdir, infile))
-			continue
 
 		elif xls_count>0:
 			msg.SaveAs(os.path.join(xlsdir, infile))
-			continue
 
-		else:
+		elif xls_count==0 and xlsx_count==0:
 			msg.SaveAs(os.path.join(basedir, infile))
 
 		msg.Close(1)
@@ -86,6 +92,7 @@ for infile in os.listdir(basedir):
 
 		n+=1
 		print('\r\n')
+
 del outlook
 
 
