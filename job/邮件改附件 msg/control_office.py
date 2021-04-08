@@ -40,7 +40,8 @@ for infile in os.listdir(basedir):
 		shutil.move(os.path.join(basedir,infile),workfile)
 		msg = outlook.OpenSharedItem(workfile)
 		print(msg.Attachments.Count)
-		flag=0
+		xls_count=0
+		xlsx_count=0
 		for att in msg.Attachments:
 			print(att.FileName,att.Index)
 			fujian=''
@@ -53,7 +54,7 @@ for infile in os.listdir(basedir):
 				print('删除附件',att.Index,att.FileName)
 				msg.Attachments.Remove(att.Index)
 				msg.Attachments.Add(fujian)
-				flag+=1
+				xlsx_count+=1
 
 			elif str.lower(att.FileName[-4:])=='.xls':
 				fujian=os.path.join(tempdir,att.FileName)
@@ -63,15 +64,20 @@ for infile in os.listdir(basedir):
 				print('删除附件',att.Index,att.FileName)
 				msg.Attachments.Remove(att.Index)
 				msg.Attachments.Add(fujian)
+				xls_count += 1
 
 			if os.path.isfile(fujian):
 				os.remove(fujian)
 
-		if flag>0:
+		if xlsx_count>0:
 			msg.SaveAs(os.path.join(xlsxdir, infile))
+			continue
 
-		if flag==0:
+		if xls_count>0:
 			msg.SaveAs(os.path.join(xlsdir, infile))
+			continue
+
+		msg.SaveAs(os.path.join(basedir, infile))
 
 		msg.Close(1)
 
