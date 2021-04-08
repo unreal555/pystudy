@@ -50,7 +50,6 @@ for infile in os.listdir(basedir):
 		for att in msg.Attachments:
 			print(att.FileName,att.Index)
 			fujian=''
-
 			if str.lower(att.FileName[-5:])=='.xlsx':
 				fujian=os.path.join(tempdir,att.FileName)
 				print(fujian)
@@ -60,6 +59,9 @@ for infile in os.listdir(basedir):
 				msg.Attachments.Remove(att.Index)
 				msg.Attachments.Add(fujian)
 				xlsx_count+=1
+
+				if os.path.isfile(fujian):
+					os.remove(fujian)
 
 			elif str.lower(att.FileName[-4:])=='.xls':
 				fujian=os.path.join(tempdir,att.FileName)
@@ -71,8 +73,10 @@ for infile in os.listdir(basedir):
 				msg.Attachments.Add(fujian)
 				xls_count += 1
 
-			if os.path.isfile(fujian):
-				os.remove(fujian)
+				if os.path.isfile(fujian):
+					os.remove(fujian)
+
+			print('\r\n')
 
 		if xlsx_count>0 and xls_count>0:
 			msg.SaveAs(os.path.join(bothdir, infile))
