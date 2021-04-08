@@ -8,6 +8,7 @@ import win32com.client as win32
 import os
 
 class excelFile():
+
 	def __init__(self,filePath):
 		self.excel = win32.DispatchEx("Excel.Application")
 		self.excel.Visible = True
@@ -15,50 +16,75 @@ class excelFile():
 		self.filePath = os.path.abspath(filePath)
 		self.file=self.excel.Workbooks.Open(filePath)
 
+	def __del__(self):
+		self.file.Save()
+		self.file.Close()
+		self.excel.Quit()
+
 	def readCell(self,rowN,colN,sheet='sheet1'):
-		sheet=self.file.Worksheets(sheet)
-		data = sheet.Cells(rowN,colN).Value
+		sht=self.file.Worksheets(sheet)
+		data = sht.Cells(rowN,colN).Value
 		return data
 
-	def writeCell(self,rowN,colN,content,sheet='sheet1'):
-		sheet=self.file.Worksheets(sheet)
-		sheet.Cells(rowN,colN).Value=content
+	def writeCell(self,rowN,colN,text,sheet='sheet1'):
+		sht=self.file.Worksheets(sheet)
+		sht.Cells(rowN,colN).Value=text
 
 	def getAll(self,sheet='sheet1'):
-		sheet=self.file.Worksheets(sheet)
-		result=[row for row in sheet.UsedRange.Value]
+		sht=self.file.Worksheets(sheet)
+		result=[row for row in sht.UsedRange.Value]
 		return result
 
 	def getSheets(self):
 		return [sheet.Name for sheet in self.file.Worksheets]
 
 	def unlockSheet(self, sheet,password):
-		sheet = self.file.Worksheets(sheet)
-		sheet.Unprotect(password)
+		sht = self.file.Worksheets(sheet)
+		sht.Unprotect(password)
 
 	def lockSheet(self,sheet,password):
-		sheet = self.file.Worksheets(sheet)
-		sheet.Protect(password)
+		sht = self.file.Worksheets(sheet)
+		sht.Protect(password)
 
-	def copyCells(self, copy_cells, to_cells,sheet='sheet1'):
+	def copyCellsTo(self, copy_cells, to_cells,sheet='sheet1'):
 		# to_cells,如:"A2:B2"
-		sheet = self.file.Worksheets(sheet)
-		sheet.Range(copy_cells).Copy()
-		sheet.Range(to_cells).PasteSpecial()
+		sht = self.file.Worksheets(sheet)
+		sht.Range(copy_cells).Copy()
+		sht.Range(to_cells).PasteSpecial()
 
 	def readCells(self,cells,sheet='sheet1'):
-		sheet=self.file.Worksheets(sheet)
-		data=sheet.Range(cells).Value
+		sht=self.file.Worksheets(sheet)
+		data=sht.Range(cells).Value
 		return data
 
-	def writeCells(self,cells,content,sheet='sheet1'):
-		sheet=self.file.Worksheets(sheet)
-		sheet.Range(cells).Value=content
+	def writeCells(self,cells,text,sheet='sheet1'):
+		sht=self.file.Worksheets(sheet)
+		sht.Range(cells).Value=text
 
-	def __del__(self):
-		self.file.Save()
-		self.file.Close()
-		self.excel.Quit()
+	def haveComment(self, rowN,colN,sheet='sheet1'):
+		sht = self.file.Worksheets(sheet)
+		if sht.Cells(rowN,colN).Comment:
+			return sht.Cells(rowN,colN).Comment.Text()
+		else:
+			return False
+
+	def delComment(self, rowN,colN,sheet='sheet1'):
+		sht = self.file.Worksheets(sheet)
+		if s:=self.haveComment(rowN,colN,sheet):
+			print('{}{}'.format(rowN,colN),'已有批注，删除内容:',s)
+			sht.Cells(rowN, colN).Delete()
+			return s
+		else:
+			print('{}{}'.format(rowN,colN),'无批注')
+			return None
+
+	def addComment(self, rowN,colN,text,sheet='sheet1'):
+		if self.haveComment(rowN,colN,sheet):
+			self.delComment(rowN,colN,sheet)
+		sht = self.file.Worksheets(sheet)
+		sht.Cells(rowN,colN).AddComment(text)
+
+
 
 if __name__ == '__main__':
 	'''
@@ -73,4 +99,6 @@ if __name__ == '__main__':
 		f=excelFile(path)
 		f.unlockSheet(sheet='sheet1',password='1234')
 		f.writeCells('A1:a11','test')
+		f.delComment(rowN='6',colN='b')
+		f.copyCellsTo('b4','b6')
 
