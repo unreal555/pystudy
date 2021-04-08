@@ -87,7 +87,9 @@ class excelFile():
 	def addPicture(self, pictureName, Left, Top, Width, Height,sheet='sheet1'):
 
 		sht = self.file.Worksheets(sheet)
-		sht.Insert(pictureName)
+		sht.Pictures.Insert (pictureName)
+
+
 
 
 
