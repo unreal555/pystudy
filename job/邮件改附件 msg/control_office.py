@@ -4,20 +4,10 @@
 # Date ：2021/4/6 0006 上午 9:37
 # Tool ：PyCharm
 
-import win32com.client as win32
+import win32com.client as wc
 import os,shutil
 import set_xlsx_user
 import set_xls_user
-
-
-# file=r'C:\Users\Administrator\Desktop\新建文件夹\demo.xls'
-#
-# excel = win32.gencache.EnsureDispatch('Excel.Application')
-# wb = excel.Workbooks.Open(file)
-#
-# wb.SaveAs(file+"x", FileFormat = 51)    #FileFormat = 51 is for .xlsx extension
-# wb.Close()                               #FileFormat = 56 is for .xls extension
-# excel.Application.Quit()
 
 basedir=r'C:\Users\Administrator\Desktop\新建文件夹\source'
 
@@ -38,9 +28,10 @@ if not os.path.exists(xlsxdir):
 if not os.path.exists(xlsdir):
 	os.makedirs(xlsdir)
 
-outlook = win32.Dispatch("Outlook.Application").GetNamespace("MAPI")
+outlook = wc.Dispatch("Outlook.Application").GetNamespace("MAPI")
 
 n=10000
+
 for infile in os.listdir(basedir):
 
 	if str.lower(os.path.splitext(infile)[1]) in ['.msg']:

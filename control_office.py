@@ -5,38 +5,73 @@
 # Tool ：PyCharm
 
 import win32com.client as win32
+import os
 
-# file=r'C:\Users\Administrator\Desktop\新建文件夹\demo.xls'
-#
-# excel = win32.gencache.EnsureDispatch('Excel.Application')
-# wb = excel.Workbooks.Open(file)
-#
-# wb.SaveAs(file+"x", FileFormat = 51)    #FileFormat = 51 is for .xlsx extension
-# wb.Close()                               #FileFormat = 56 is for .xls extension
-# excel.Application.Quit()
+class excelFile():
+	def __init__(self,filePath):
+		self.excel = win32.DispatchEx("Excel.Application")
+		self.excel.Visible = True
+		self.excel.DisplayAlerts = False
+		self.filePath = os.path.abspath(filePath)
+		self.file=self.excel.Workbooks.Open(filePath)
 
-file=r'C:/Users/Administrator/Desktop/新建文件夹/demo.msg'
+	def readCell(self,rowN,colN,sheet='sheet1'):
+		sheet=self.file.Worksheets(sheet)
+		data = sheet.Cells(rowN,colN).Value
+		return data
 
-fujian=r'C:/Users/Administrator/Desktop/新建文件夹/demo.xlsx'
+	def writeCell(self,rowN,colN,content,sheet='sheet1'):
+		sheet=self.file.Worksheets(sheet)
+		sheet.Cells(rowN,colN).Value=content
 
-outlook = win32.Dispatch("Outlook.Application").GetNamespace("MAPI")
-msg = outlook.OpenSharedItem(file)
+	def getAll(self,sheet='sheet1'):
+		sheet=self.file.Worksheets(sheet)
+		result=[row for row in sheet.UsedRange.Value]
+		return result
 
-print(msg.Attachments.Count)
-for att in msg.Attachments:
-	print(att.FileName,att.Index)
-	if '.xlsx' in att.FileName:
-		print('删除附件',att.Index,att.FileName)
-		msg.Attachments.Remove(att.Index)
+	def getSheets(self):
+		return [sheet.Name for sheet in self.file.Worksheets]
 
-msg.Attachments.Add(fujian)
+	def unlockSheet(self, sheet,password):
+		sheet = self.file.Worksheets(sheet)
+		sheet.Unprotect(password)
 
-print(msg.Attachments.Count)
-for att in msg.Attachments:
-	print(att.FileName)
+	def lockSheet(self,sheet,password):
+		sheet = self.file.Worksheets(sheet)
+		sheet.Protect(password)
+
+	def copyCells(self, copy_cells, to_cells,sheet='sheet1'):
+		# to_cells,如:"A2:B2"
+		sheet = self.file.Worksheets(sheet)
+		sheet.Range(copy_cells).Copy()
+		sheet.Range(to_cells).PasteSpecial()
+
+	def readCells(self,cells,sheet='sheet1'):
+		sheet=self.file.Worksheets(sheet)
+		data=sheet.Range(cells).Value
+		return data
+
+	def writeCells(self,cells,content,sheet='sheet1'):
+		sheet=self.file.Worksheets(sheet)
+		sheet.Range(cells).Value=content
 
 
-msg.SaveAs(r'd:/test.msg')
-# print(msg.)
-# msg.close()
-# outlook.close()
+	def __del__(self):
+		self.file.Save()
+		self.file.Close()
+		self.excel.Quit()
+
+if __name__ == '__main__':
+	'''
+	cells,如:A1:B1
+	cells,如:rowN=6,colN=B
+	'''
+	sourcedir = os.path.abspath(r'C:\2018')
+
+	for  file in os.listdir(sourcedir):
+		path=os.path.join(sourcedir,file)
+		print(path)
+		f=excelFile(path)
+		f.unlockSheet(sheet='sheet1',password='1234')
+		f.writeCells('A1:a11','test')
+
