@@ -55,7 +55,6 @@ class excelFile():
 		sheet=self.file.Worksheets(sheet)
 		sheet.Range(cells).Value=content
 
-
 	def __del__(self):
 		self.file.Save()
 		self.file.Close()
