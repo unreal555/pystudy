@@ -3,8 +3,6 @@ Y
 )job/海康大华实时监控/my_hk_dvr.py,0\b\0b729087dc511508903d45188a16c3f4db6c3f98
 ^
 ..idea/inspectionProfiles/profiles_settings.xml,1\e\1e9075f5bf079c01ef2c910709e91a497d262080
-S
-#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
 Y
 )job/海康大华实时监控/my_dh_dvr.py,2\f\2f2236a79573f8e3cab9a4d99595c30d9a12e49d
 X
@@ -64,7 +62,13 @@ W
 'job/电流电压图形界面/Monitor.PY,9\c\9c668a9d61843dbdfc4942b4b027a8854fa3641f
 M
 pyqt5_model/with_ui/my_app.py,e\0\e01f644759010914261509f83d435c1b60881ef3
-E
-pyqt5_model/my-app.py,e\6\e65143bf5ac8582892c81aa39d7f0a22c425aaea
-C
-pyqt5_model/tray.py,2\6\261c58a5f49313458b223a4cd02ac77da40c99d1
+X
+(job/邮件改附件 msg/set_xlsx_user.py,4\5\45a8b3615eb6de43ae1d0ed9099976f505d51927
+N
+job/邮件改附件 msg/msg.py,4\6\4675edc152579e755def3b008e299ae58c270adb
+B
+my_system_tools.py,3\a\3a7173d07cc09119152f9061146d8bc591d2dc71
+Y
+)job/邮件改附件 msg/control_office.py,f\2\f29a92ebd65b7841a5f3a18f591c3b2efbde0137
+W
+'job/邮件改附件 msg/set_xls_user.py,3\0\3054069be7307c6729b4b8204a69dba74eab1b5c

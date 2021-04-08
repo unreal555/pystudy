@@ -73,11 +73,12 @@ for infile in os.listdir(basedir):
 			msg.SaveAs(os.path.join(xlsxdir, infile))
 			continue
 
-		if xls_count>0:
+		elif xls_count>0:
 			msg.SaveAs(os.path.join(xlsdir, infile))
 			continue
 
-		msg.SaveAs(os.path.join(basedir, infile))
+		else:
+			msg.SaveAs(os.path.join(basedir, infile))
 
 		msg.Close(1)
 
