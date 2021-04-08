@@ -44,37 +44,42 @@ for infile in os.listdir(basedir):
 		workfile=os.path.join(tempdir,'demo{}.msg'.format(n))
 		shutil.move(os.path.join(basedir,infile),workfile)
 		msg = outlook.OpenSharedItem(workfile)
-		print(msg.Attachments.Count)
+		print('共有',msg.Attachments.Count,'个附件')
 		xls_count=0
 		xlsx_count=0
+		count=0
+		all={}
 		for att in msg.Attachments:
-			print(att.FileName,att.Index)
-			fujian=''
-			if str.lower(att.FileName[-5:])=='.xlsx':
-				fujian=os.path.join(tempdir,att.FileName)
-				print(fujian)
-				att.SaveAsFile(fujian)
-				set_xlsx_user.do(fujian)
-				print('删除附件',att.Index,att.FileName)
-				msg.Attachments.Remove(att.Index)
-				msg.Attachments.Add(fujian)
+			fujian_dir = os.path.join(tempdir, str(att.Index))
+			fujian=os.path.join(fujian_dir, att.FileName)
+			if not os.path.exists(fujian_dir):
+				os.makedirs(fujian_dir)
+			print('储存', att.Index, att.FileName, fujian)
+			all[att.Index]=fujian
+			att.SaveAsFile(fujian)
+		print(all)
+
+		for index in range(msg.Attachments.Count,0,-1):
+			print('删除附件',index)
+			msg.Attachments.Remove(index)
+
+		for index in all.keys():
+			index=index
+			file=all[index]
+			if str.lower(file[-5:])=='.xlsx':
+				set_xlsx_user.do(file)
+				msg.Attachments.Add(file)
 				xlsx_count+=1
 
-				if os.path.isfile(fujian):
-					os.remove(fujian)
-
-			elif str.lower(att.FileName[-4:])=='.xls':
-				fujian=os.path.join(tempdir,att.FileName)
-				print(fujian)
-				att.SaveAsFile(fujian)
-				set_xls_user.do(fujian)
-				print('删除附件',att.Index,att.FileName)
-				msg.Attachments.Remove(att.Index)
-				msg.Attachments.Add(fujian)
+			elif str.lower(file[-4:])=='.xls':
+				set_xls_user.do(file)
+				msg.Attachments.Add(file)
 				xls_count += 1
+			else:
+				msg.Attachments.Add(file)
 
-				if os.path.isfile(fujian):
-					os.remove(fujian)
+
+			os.remove(file)
 
 			print('\r\n')
 
