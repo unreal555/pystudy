@@ -84,6 +84,11 @@ class excelFile():
 		sht = self.file.Worksheets(sheet)
 		sht.Cells(rowN,colN).AddComment(text)
 
+	def addPicture(self, pictureName, Left, Top, Width, Height,sheet='sheet1'):
+
+		sht = self.file.Worksheets(sheet)
+		sht.Insert(pictureName)
+
 
 
 if __name__ == '__main__':
@@ -101,4 +106,5 @@ if __name__ == '__main__':
 		f.writeCells('A1:a11','test')
 		f.delComment(rowN='6',colN='b')
 		f.copyCellsTo('b4','b6')
+		f.addPicture(pictureName=r'D:\PyCharm2019.3.1\pystudy\pic\2.jpg',Left=1,Top=1,Width=400,Height=40)
 
