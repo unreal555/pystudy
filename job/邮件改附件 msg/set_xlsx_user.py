@@ -21,11 +21,13 @@ def do(file):
             xlsx.properties.creator=''
         else:
             xlsx.properties.creator = 'Administrator'
+
         if xlsx.properties.lastModifiedBy=='':
             xlsx.properties.lastModifiedBy = ''
         else:
             xlsx.properties.lastModifiedBy='Administrator'
 
+        print(xlsx.properties.creator, xlsx.properties.lastModifiedBy)
         xlsx.save(file)
         xlsx.close()
 
