@@ -26,6 +26,13 @@ class excelFile():
 		data = sht.Cells(rowN,colN).Value
 		return data
 
+
+	def readCells(self,cells,sheet='sheet1'):
+		sht=self.file.Worksheets(sheet)
+		data=sht.Range(cells).Value
+		return data
+
+
 	def writeCell(self,rowN,colN,text,sheet='sheet1'):
 		sht=self.file.Worksheets(sheet)
 		sht.Cells(rowN,colN).Value=text
@@ -51,11 +58,6 @@ class excelFile():
 		sht = self.file.Worksheets(sheet)
 		sht.Range(copy_cells).Copy()
 		sht.Range(to_cells).PasteSpecial()
-
-	def readCells(self,cells,sheet='sheet1'):
-		sht=self.file.Worksheets(sheet)
-		data=sht.Range(cells).Value
-		return data
 
 	def writeCells(self,cells,text,sheet='sheet1'):
 		sht=self.file.Worksheets(sheet)
