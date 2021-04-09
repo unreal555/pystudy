@@ -8,6 +8,7 @@ import win32com.client as wc
 import os,shutil
 import set_xlsx_user
 import set_xls_user
+from stupid_set_xlsx_username import clean_dir
 
 basedir=r'C:\Users\Administrator\Desktop\source'
 
@@ -64,24 +65,24 @@ for infile in os.listdir(basedir):
 			msg.Attachments.Remove(index)
 
 		for index in all.keys():
-			index=index
 			file=all[index]
 			if str.lower(file[-5:])=='.xlsx':
 				set_xlsx_user.do(file)
 				msg.Attachments.Add(file)
 				xlsx_count+=1
+				print('添加修改完的附件',file)
 
 			elif str.lower(file[-4:])=='.xls':
 				set_xls_user.do(file)
 				msg.Attachments.Add(file)
 				xls_count += 1
+				print('添加修改完的附件', file)
 			else:
+				print('添加不需要处理的附件', file)
 				msg.Attachments.Add(file)
 
-
+			print('删除temp目录缓存的附件',file)
 			os.remove(file)
-
-			print('\r\n')
 
 		if xlsx_count>0 and xls_count>0:
 			msg.SaveAs(os.path.join(bothdir, infile))
@@ -100,10 +101,13 @@ for infile in os.listdir(basedir):
 		del msg
 
 		n+=1
-		print('\r\n')
+		print('处理完邮件',infile,'\r\n')
 
 del outlook
-
+try:
+	clean_dir((tempdir))
+except Exception as e:
+	print(e)
 
 
 
