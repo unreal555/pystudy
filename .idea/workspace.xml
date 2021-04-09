@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b8d6269-a564-4802-8c0e-0538c714e289" name="Default Changelist" comment="clean">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pystudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pystudy.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/邮件改附件 msg/control_office.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/邮件改附件 msg/control_office.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/control_office.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_control_office.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/邮件改附件 msg/control_office.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/邮件改附件 msg/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +80,7 @@
       <recent name="D:\PyCharm2019.3.1\pystudy\job\粘贴板记录工具" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.control_office">
+  <component name="RunManager" selected="Python.main">
     <configuration name="My_Tray" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -153,12 +152,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/job/邮件改附件 msg" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/job/邮件改附件 msg/control_office.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/control_office.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -167,17 +166,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="control_office" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/job/邮件改附件 msg" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/control_office.py" />
+      <option name="SCRIPT_NAME" value="D:\PyCharm2019.3.1\pystudy\job\邮件改附件 msg\main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -273,16 +275,17 @@
     </configuration>
     <list>
       <item itemvalue="Python.pystudy" />
-      <item itemvalue="Python.My_Tray" />
       <item itemvalue="Python.control_office" />
+      <item itemvalue="Python.My_Tray" />
       <item itemvalue="Python.my_system_tools" />
       <item itemvalue="Python.set_xls_user" />
+      <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.control_office" />
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.my_system_tools" />
-        <item itemvalue="Python.control_office" />
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.set_xls_user" />
         <item itemvalue="Python.set_xls_user" />
       </list>
@@ -352,6 +355,7 @@
       <workItem from="1617763893758" duration="6127000" />
       <workItem from="1617786860278" duration="159000" />
       <workItem from="1617842477357" duration="17546000" />
+      <workItem from="1617932185616" duration="828000" />
     </task>
     <task id="LOCAL-00001" summary="clean">
       <created>1610422132117</created>
@@ -724,10 +728,10 @@
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="355" y="125" key="#test2/0.0.1280.980@0.0.1280.980" timestamp="1613698420873" />
-    <state x="0" y="86" key="CommitChangelistDialog2" timestamp="1617874431426">
+    <state x="0" y="86" key="CommitChangelistDialog2" timestamp="1617933153711">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="0" y="86" key="CommitChangelistDialog2/0.0.1280.980@0.0.1280.980" timestamp="1617874431426" />
+    <state x="0" y="86" key="CommitChangelistDialog2/0.0.1280.980@0.0.1280.980" timestamp="1617933153711" />
     <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1612609140810" />
     <state x="0" y="91" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1617721217646" />
     <state x="120" y="79" width="1048" height="822" key="DiffContextDialog" timestamp="1617238358328">
@@ -742,28 +746,28 @@
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="420" y="247" key="FileChooserDialogImpl/0.0.1280.980@0.0.1280.980" timestamp="1617001793300" />
-    <state width="1236" height="219" key="GridCell.Tab.0.bottom" timestamp="1617873753236">
+    <state width="1236" height="459" key="GridCell.Tab.0.bottom" timestamp="1617933015244">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="219" key="GridCell.Tab.0.bottom/0.0.1280.980@0.0.1280.980" timestamp="1617873753236" />
+    <state width="1236" height="459" key="GridCell.Tab.0.bottom/0.0.1280.980@0.0.1280.980" timestamp="1617933015244" />
     <state width="1322" height="180" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1612608762360" />
     <state width="1876" height="402" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1617721288524" />
-    <state width="1236" height="219" key="GridCell.Tab.0.center" timestamp="1617873753236">
+    <state width="1236" height="459" key="GridCell.Tab.0.center" timestamp="1617933015244">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="219" key="GridCell.Tab.0.center/0.0.1280.980@0.0.1280.980" timestamp="1617873753236" />
+    <state width="1236" height="459" key="GridCell.Tab.0.center/0.0.1280.980@0.0.1280.980" timestamp="1617933015244" />
     <state width="1322" height="180" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1612608762360" />
     <state width="1876" height="402" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1617721288524" />
-    <state width="1236" height="219" key="GridCell.Tab.0.left" timestamp="1617873753236">
+    <state width="1236" height="459" key="GridCell.Tab.0.left" timestamp="1617933015244">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="219" key="GridCell.Tab.0.left/0.0.1280.980@0.0.1280.980" timestamp="1617873753236" />
+    <state width="1236" height="459" key="GridCell.Tab.0.left/0.0.1280.980@0.0.1280.980" timestamp="1617933015244" />
     <state width="1322" height="180" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1612608762360" />
     <state width="1876" height="402" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1617721288524" />
-    <state width="1236" height="219" key="GridCell.Tab.0.right" timestamp="1617873753236">
+    <state width="1236" height="459" key="GridCell.Tab.0.right" timestamp="1617933015244">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="219" key="GridCell.Tab.0.right/0.0.1280.980@0.0.1280.980" timestamp="1617873753236" />
+    <state width="1236" height="459" key="GridCell.Tab.0.right/0.0.1280.980@0.0.1280.980" timestamp="1617933015244" />
     <state width="1322" height="180" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1612608762360" />
     <state width="1876" height="402" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1617721288524" />
     <state width="1236" height="376" key="GridCell.Tab.1.bottom" timestamp="1617786703235">
@@ -804,10 +808,10 @@
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="418" y="195" key="VCS.ChangeListViewerDialog/0.0.1280.980@0.0.1280.980" timestamp="1613698057268" />
-    <state x="302" y="60" width="816" height="526" key="Vcs.Push.Dialog.v2" timestamp="1617874438774">
+    <state x="302" y="60" width="816" height="526" key="Vcs.Push.Dialog.v2" timestamp="1617933160481">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="302" y="60" width="816" height="526" key="Vcs.Push.Dialog.v2/0.0.1280.980@0.0.1280.980" timestamp="1617874438774" />
+    <state x="302" y="60" width="816" height="526" key="Vcs.Push.Dialog.v2/0.0.1280.980@0.0.1280.980" timestamp="1617933160481" />
     <state x="154" y="107" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1611142086454" />
     <state x="216" y="153" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1617721297635" />
     <state x="92" y="92" width="1096" height="796" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1617757006414">
@@ -822,19 +826,19 @@
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="429" y="291" key="git4idea.merge.GitMergeDialog/0.0.1280.980@0.0.1280.980" timestamp="1613698010858" />
-    <state x="353" y="291" key="git4idea.merge.GitPullDialog" timestamp="1617670614164">
+    <state x="353" y="291" key="git4idea.merge.GitPullDialog" timestamp="1617931359482">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="353" y="291" key="git4idea.merge.GitPullDialog/0.0.1280.980@0.0.1280.980" timestamp="1617670614164" />
+    <state x="353" y="291" key="git4idea.merge.GitPullDialog/0.0.1280.980@0.0.1280.980" timestamp="1617931359482" />
     <state x="377" y="216" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1611137485429" />
-    <state x="465" y="397" key="git4idea.ui.GitStashDialog" timestamp="1613697997300">
+    <state x="465" y="397" key="git4idea.ui.GitStashDialog" timestamp="1617931062980">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="465" y="397" key="git4idea.ui.GitStashDialog/0.0.1280.980@0.0.1280.980" timestamp="1613697997300" />
-    <state x="447" y="354" key="git4idea.ui.GitUnstashDialog" timestamp="1613698060575">
+    <state x="465" y="397" key="git4idea.ui.GitStashDialog/0.0.1280.980@0.0.1280.980" timestamp="1617931062980" />
+    <state x="447" y="354" key="git4idea.ui.GitUnstashDialog" timestamp="1617931383940">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="447" y="354" key="git4idea.ui.GitUnstashDialog/0.0.1280.980@0.0.1280.980" timestamp="1613698060575" />
+    <state x="447" y="354" key="git4idea.ui.GitUnstashDialog/0.0.1280.980@0.0.1280.980" timestamp="1617931383940" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1612600142953">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -887,5 +891,6 @@
     <SUITE FILE_PATH="coverage/pystudy$my_dh_dvr.coverage" NAME="my_dh_dvr Coverage Results" MODIFIED="1610696463224" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/海康大华实时监控" />
     <SUITE FILE_PATH="coverage/pystudy$set_xls_user.coverage" NAME="set_xls_user Coverage Results" MODIFIED="1617760828453" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/邮件改附件 msg" />
     <SUITE FILE_PATH="coverage/pystudy$my_tk_drag.coverage" NAME="my_tk_drag Coverage Results" MODIFIED="1611624899292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/粘贴板记录工具" />
+    <SUITE FILE_PATH="coverage/pystudy$main.coverage" NAME="main Coverage Results" MODIFIED="1617932888369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/邮件改附件 msg" />
   </component>
 </project>
