@@ -9,6 +9,7 @@ from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 import re,os,cv2
+import numpy as np
 
 class App(QWidget,Ui_Form):
     def __init__(self):
@@ -43,13 +44,16 @@ class App(QWidget,Ui_Form):
         if os.path.isfile(self.workfile):
             print('show')
             try:
-                img = cv2.imread(self.workfile)  # 读取图像
+                img = cv2.imdecode(np.fromfile(self.workfile, dtype=np.uint8), cv2.IMREAD_COLOR)
                 img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)  # 转换图像通道
                 img_width = img.shape[1]  # 获取图像大小
                 img_height = img.shape[0]
                 width = self.input_view.width()
                 height = self.input_view.height()
-                zoomscale = min(width / img_width, height / img_height)  # 图片放缩尺度
+                width_scale=width / img_width
+                height_scale=height / img_height
+                zoomscale = min(width_scale,height_scale )  # 图片放缩尺度
+                print(img_width,img_height,width,height,zoomscale)
                 frame = QImage(img, img_width, img_height, QImage.Format_RGB888)
                 pix = QPixmap.fromImage(frame)
                 self.item = QGraphicsPixmapItem(pix)  # 创建像素图元
