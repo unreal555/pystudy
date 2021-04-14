@@ -19,7 +19,8 @@ class App(QWidget,Ui_Form):
         self.setWindowIcon(QIcon('ico.ico'))
         self.input_view.setAcceptDrops(True)
         self.workfile=''
-
+        for i in range(1,1000):
+            self.toOutput('{}'.format('测试') *10)
 
 
     @pyqtSlot()
@@ -68,10 +69,12 @@ class App(QWidget,Ui_Form):
                 scene.addItem(self.item)
                 self.input_view.setScene(scene)
                 self.input_view.show()
-
-
             except Exception as e:
                 print(e)
+
+    def toOutput(self,content):
+        sss='''<html><font-size:10pt">{}</font></html>'''.format(content)
+        self.outPut.append(sss)
 
     def closeEvent(self, a0: QCloseEvent) -> None:
         if QMessageBox.question(self,'关闭','是否退出程序',QMessageBox.Yes|QMessageBox.No,QMessageBox.No) ==QMessageBox.Yes:
