@@ -20,7 +20,7 @@ class App(QWidget,Ui_Form):
         self.toOutput(content='程序初始化中...')
         self.input_view.setAcceptDrops(True)
         self.workfile=''
-        self.toOutput(content='初始化完成，请输入')
+        self.toOutput(content='初始化完成，请输入图像：')
 
 
     @pyqtSlot()
