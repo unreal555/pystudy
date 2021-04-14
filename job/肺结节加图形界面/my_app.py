@@ -49,6 +49,14 @@ class App(QWidget,Ui_Form):
         self.resizeEvent(QResizeEvent)
         self.toOutput(content='检测到文件输入:{},处理'.format(abspath))
 
+    @pyqtSlot()
+    def on_openButton_clicked(self):
+        file,type=QFileDialog.getOpenFileName(None,caption='打开',directory='.',filter='*.png *.jpg')
+        abspath=os.path.abspath(file)
+        self.workfile=abspath
+        self.resizeEvent(QResizeEvent)
+        self.toOutput(content='检测到文件输入:{},处理'.format(abspath))
+
     def resizeEvent(self, a0: QResizeEvent) -> None:
         if os.path.isfile(self.workfile):
             try:
