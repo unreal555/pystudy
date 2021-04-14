@@ -20,13 +20,21 @@ class App(QWidget,Ui_Form):
         self.input_view.setAcceptDrops(True)
         self.workfile=''
 
+
+
     @pyqtSlot()
     def on_button_clicked(self):
         a=self.v_view.size()
         self.button.setText(str(a))
 
-    def dragEnterEvent(self, e):
-        print(e.mimeData().hasText())
+    def name2Wegite(self,name):
+        if name:
+            return self.findChild(QWidget, name)
+        else:
+            print('name is empty')
+
+    def dragEnterEvent(self, e:QDragEnterEvent):
+
         if e.mimeData().hasText():
             e.accept()
         else:
@@ -36,13 +44,11 @@ class App(QWidget,Ui_Form):
         txt=e.mimeData().text()
         txt=re.sub('file:[/]+','',txt)
         abspath=os.path.abspath(txt)
-        print(abspath)
         self.workfile=abspath
         self.resizeEvent(QResizeEvent)
 
     def resizeEvent(self, a0: QResizeEvent) -> None:
         if os.path.isfile(self.workfile):
-            print('show')
             try:
                 img = cv2.imdecode(np.fromfile(self.workfile, dtype=np.uint8), cv2.IMREAD_COLOR)
                 img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)  # 转换图像通道
@@ -57,11 +63,12 @@ class App(QWidget,Ui_Form):
                 frame = QImage(img, img_width, img_height, QImage.Format_RGB888)
                 pix = QPixmap.fromImage(frame)
                 self.item = QGraphicsPixmapItem(pix)  # 创建像素图元
+                self.item.setScale(zoomscale)
                 scene = QGraphicsScene()  # 创建场景
                 scene.addItem(self.item)
                 self.input_view.setScene(scene)
                 self.input_view.show()
-                self.item.setScale(zoomscale)
+
 
             except Exception as e:
                 print(e)

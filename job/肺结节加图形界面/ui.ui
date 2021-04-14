@@ -28,6 +28,12 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
+     <property name="acceptDrops">
+      <bool>false</bool>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
     </widget>
    </item>
    <item row="0" column="0">
@@ -117,6 +123,9 @@
         <widget class="QGraphicsView" name="n_view">
          <property name="enabled">
           <bool>true</bool>
+         </property>
+         <property name="acceptDrops">
+          <bool>false</bool>
          </property>
         </widget>
        </item>
