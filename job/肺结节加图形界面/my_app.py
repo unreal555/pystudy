@@ -17,10 +17,10 @@ class App(QWidget,Ui_Form):
         self.setupUi(self)
         self.setWindowTitle("原始模型")
         self.setWindowIcon(QIcon('ico.ico'))
+        self.toOutput(content='程序初始化中...')
         self.input_view.setAcceptDrops(True)
         self.workfile=''
-        for i in range(1,1000):
-            self.toOutput('{}'.format('测试') *10)
+        self.toOutput(content='初始化完成，请输入')
 
 
     @pyqtSlot()
@@ -47,6 +47,7 @@ class App(QWidget,Ui_Form):
         abspath=os.path.abspath(txt)
         self.workfile=abspath
         self.resizeEvent(QResizeEvent)
+        self.toOutput(content='检测到文件输入:{},处理'.format(abspath))
 
     def resizeEvent(self, a0: QResizeEvent) -> None:
         if os.path.isfile(self.workfile):
