@@ -20,7 +20,31 @@ class App(QWidget,Ui_Form):
         self.toOutput(content='程序初始化中...')
         self.input_view.setAcceptDrops(True)
         self.workfile=''
-        self.toOutput(content='初始化完成，请输入图像：')
+
+        self.font=QFont()
+        self.font.setPixelSize(100)
+
+        self.ok_item=QGraphicsTextItem()
+        self.ok_item.setPlainText('PASSED')
+        self.ok_item.setDefaultTextColor(Qt.green)
+        self.ok_item.setFont(self.font)
+
+        self.warnning_item=QGraphicsTextItem()
+        self.warnning_item.setPlainText('WARNNING')
+        self.warnning_item.setDefaultTextColor(Qt.red)
+        self.warnning_item.setFont(self.font)
+
+        self.toOutput(content='初始化完成，请打开或直接拖入图像...')
+
+        # self.palette_ok=QPalette()
+        # self.palette_ok.setColor(QPalette.Base,Qt.green)
+        # self.palette_ok.setColor(QPalette.Text, Qt.green)
+        # self.palette_ok.setColor(QPalette.Highlight,Qt.green)
+        # self.palette_ok.setColor(QPalette.HighlightedText,Qt.green)
+        #
+        #
+        #
+        #
 
 
     @pyqtSlot()
@@ -72,18 +96,28 @@ class App(QWidget,Ui_Form):
                 print(img_width,img_height,width,height,zoomscale)
                 frame = QImage(img, img_width, img_height, QImage.Format_RGB888)
                 pix = QPixmap.fromImage(frame)
-                self.item = QGraphicsPixmapItem(pix)  # 创建像素图元
-                self.item.setScale(zoomscale)
-                scene = QGraphicsScene()  # 创建场景
-                scene.addItem(self.item)
-                self.input_view.setScene(scene)
+                self.source_pic_item = QGraphicsPixmapItem(pix)  # 创建像素图元
+                self.source_pic_item.setScale(zoomscale)
+
+                self.scene = QGraphicsScene()  # 创建场景
+
+                self.scene.addItem(self.source_pic_item)
+                self.scene.addItem(self.warnning_item)
+
+                self.input_view.setScene(self.scene)
                 self.input_view.show()
+
             except Exception as e:
                 print(e)
+
+
+
+
 
     def toOutput(self,content):
         sss='''<html><font-size:10pt">{}</font></html>'''.format(content)
         self.outPut.append(sss)
+        self.outPut.append('')
 
     def closeEvent(self, a0: QCloseEvent) -> None:
         if QMessageBox.question(self,'关闭','是否退出程序',QMessageBox.Yes|QMessageBox.No,QMessageBox.No) ==QMessageBox.Yes:
