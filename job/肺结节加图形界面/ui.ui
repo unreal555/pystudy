@@ -112,7 +112,7 @@ p, li { white-space: pre-wrap; }
           </layout>
          </item>
          <item>
-          <widget class="QGraphicsView" name="n_view">
+          <widget class="QGraphicsView" name="output_view">
            <property name="enabled">
             <bool>true</bool>
            </property>

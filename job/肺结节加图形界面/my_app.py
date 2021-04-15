@@ -10,6 +10,8 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 import re,os,cv2
 import numpy as np
+import time
+from concurrent.futures import ThreadPoolExecutor
 
 class App(QWidget,Ui_Form):
     def __init__(self):
@@ -24,15 +26,15 @@ class App(QWidget,Ui_Form):
         self.font=QFont()
         self.font.setPixelSize(100)
 
-        self.ok_item=QGraphicsTextItem()
-        self.ok_item.setPlainText('PASSED')
-        self.ok_item.setDefaultTextColor(Qt.green)
-        self.ok_item.setFont(self.font)
+        self.normal_item=QGraphicsTextItem()
+        self.normal_item.setPlainText('NORMAL')
+        self.normal_item.setDefaultTextColor(Qt.green)
+        self.normal_item.setFont(self.font)
 
-        self.warnning_item=QGraphicsTextItem()
-        self.warnning_item.setPlainText('WARNNING')
-        self.warnning_item.setDefaultTextColor(Qt.red)
-        self.warnning_item.setFont(self.font)
+        self.notice_item=QGraphicsTextItem()
+        self.notice_item.setPlainText('NOTICE')
+        self.notice_item.setDefaultTextColor(Qt.red)
+        self.notice_item.setFont(self.font)
 
         self.toOutput(content='初始化完成，请打开或直接拖入图像...')
 
@@ -78,10 +80,10 @@ class App(QWidget,Ui_Form):
         file,type=QFileDialog.getOpenFileName(None,caption='打开',directory='.',filter='*.png *.jpg')
         abspath=os.path.abspath(file)
         self.workfile=abspath
-        self.resizeEvent(QResizeEvent)
+        self.load_pic()
         self.toOutput(content='检测到文件输入:{},处理'.format(abspath))
 
-    def resizeEvent(self, a0: QResizeEvent) -> None:
+    def load_pic(self):
         if os.path.isfile(self.workfile):
             try:
                 img = cv2.imdecode(np.fromfile(self.workfile, dtype=np.uint8), cv2.IMREAD_COLOR)
@@ -93,30 +95,48 @@ class App(QWidget,Ui_Form):
                 width_scale=width / img_width
                 height_scale=height / img_height
                 zoomscale = min(width_scale,height_scale )  # 图片放缩尺度
-                print(img_width,img_height,width,height,zoomscale)
                 frame = QImage(img, img_width, img_height, QImage.Format_RGB888)
                 pix = QPixmap.fromImage(frame)
                 self.source_pic_item = QGraphicsPixmapItem(pix)  # 创建像素图元
                 self.source_pic_item.setScale(zoomscale)
-
-                self.scene = QGraphicsScene()  # 创建场景
-
-                self.scene.addItem(self.source_pic_item)
-                self.scene.addItem(self.warnning_item)
-
-                self.input_view.setScene(self.scene)
+                self.source_scene = QGraphicsScene()  # 创建场景
+                self.source_scene.addItem(self.source_pic_item)
+                self.input_view.setScene(self.source_scene)
                 self.input_view.show()
-
             except Exception as e:
                 print(e)
 
+    @pyqtSlot()
+    def on_doButton_clicked(self):
+
+        def run():
+             print(2)
+             self.setNormalResult()
+             time.sleep(3)
+             self.setNoticeResult()
+
+        ThreadPoolExecutor(max_workers=1).submit(run)
 
 
+    def setNormalResult(self):
 
+        self.normalScene=QGraphicsScene()
+        self.normalScene.addItem(self.normal_item)
+        self.output_view.setScene(self.normalScene)
+        self.output_view.show()
+
+    def setNoticeResult(self):
+
+        self.noticeScene = QGraphicsScene()
+        self.noticeScene.addItem(self.notice_item)
+        self.output_view.setScene(self.noticeScene)
+        self.output_view.show()
+
+    def resizeEvent(self, a0: QResizeEvent) -> None:
+        self.load_pic()
 
     def toOutput(self,content):
-        sss='''<html><font-size:10pt">{}</font></html>'''.format(content)
-        self.outPut.append(sss)
+        self.outPut.append('''<html><font-size:10pt">{}</font></html>'''.format(content))
         self.outPut.append('')
 
     def closeEvent(self, a0: QCloseEvent) -> None:
