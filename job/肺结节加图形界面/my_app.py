@@ -26,16 +26,6 @@ class App(QWidget,Ui_Form):
         self.font=QFont()
         self.font.setPixelSize(100)
 
-        self.normal_item=QGraphicsTextItem()
-        self.normal_item.setPlainText('NORMAL')
-        self.normal_item.setDefaultTextColor(Qt.green)
-        self.normal_item.setFont(self.font)
-
-        self.notice_item=QGraphicsTextItem()
-        self.notice_item.setPlainText('NOTICE')
-        self.notice_item.setDefaultTextColor(Qt.red)
-        self.notice_item.setFont(self.font)
-
         self.toOutput(content='初始化完成，请打开或直接拖入图像...')
 
         # self.palette_ok=QPalette()
@@ -106,19 +96,28 @@ class App(QWidget,Ui_Form):
             except Exception as e:
                 print(e)
 
+    def startWork(self):
+        print(2)
+        # self.setNormalResult()
+        # # time.sleep(3)
+        self.setNoticeResult()
+
+
     @pyqtSlot()
     def on_doButton_clicked(self):
-
-        def run():
-             print(2)
-             self.setNormalResult()
-             time.sleep(3)
-             self.setNoticeResult()
-
-        ThreadPoolExecutor(max_workers=1).submit(run)
-
+        try:
+            print(1)
+            # self.setNormalResult()
+            # self.startWork()
+            ThreadPoolExecutor(max_workers=10).submit(self.startWork)
+        except Exception as e:
+            print(e)
 
     def setNormalResult(self):
+        self.normal_item=QGraphicsTextItem()
+        self.normal_item.setPlainText('NORMAL')
+        self.normal_item.setDefaultTextColor(Qt.green)
+        self.normal_item.setFont(self.font)
 
         self.normalScene=QGraphicsScene()
         self.normalScene.addItem(self.normal_item)
@@ -126,6 +125,11 @@ class App(QWidget,Ui_Form):
         self.output_view.show()
 
     def setNoticeResult(self):
+
+        self.notice_item=QGraphicsTextItem()
+        self.notice_item.setPlainText('NOTICE')
+        self.notice_item.setDefaultTextColor(Qt.red)
+        self.notice_item.setFont(self.font)
 
         self.noticeScene = QGraphicsScene()
         self.noticeScene.addItem(self.notice_item)
