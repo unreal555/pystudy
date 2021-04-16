@@ -97,23 +97,20 @@ class App(QWidget,Ui_Form):
                 print(e)
 
     def startWork(self):
-        print(2)
-        # self.setNormalResult()
-        # # time.sleep(3)
+        self.setNormalResult()
+        time.sleep(3)
         self.setNoticeResult()
-
 
     @pyqtSlot()
     def on_doButton_clicked(self):
         try:
             print(1)
-            # self.setNormalResult()
-            # self.startWork()
-            ThreadPoolExecutor(max_workers=10).submit(self.startWork)
+            ThreadPoolExecutor(max_workers=10,).submit(self.startWork)
         except Exception as e:
             print(e)
 
     def setNormalResult(self):
+        print('set normal')
         self.normal_item=QGraphicsTextItem()
         self.normal_item.setPlainText('NORMAL')
         self.normal_item.setDefaultTextColor(Qt.green)
@@ -125,7 +122,7 @@ class App(QWidget,Ui_Form):
         self.output_view.show()
 
     def setNoticeResult(self):
-
+        print('set notice')
         self.notice_item=QGraphicsTextItem()
         self.notice_item.setPlainText('NOTICE')
         self.notice_item.setDefaultTextColor(Qt.red)
