@@ -11,7 +11,36 @@ from PyQt5.QtGui import *
 import re,os,cv2
 import numpy as np
 import time
+
 from concurrent.futures import ThreadPoolExecutor
+
+
+class Mythread(QThread):
+    # 定义信号,定义参数为str类型
+    finishSignal = pyqtSignal(int)
+    rightSignal = pyqtSignal(int)
+    wrongSignal = pyqtSignal(int)
+
+    def __init__(self, parent=None):
+
+        super(Mythread, self).__init__()
+
+    def run(self):
+        self.finishSignal=0
+        try:
+            for i in  range(1,100000):
+                if self.finishSignal == 1:
+                    break
+                if i%2==0:
+                    self.rightSignal.emit(1)
+                else:
+                    self.wrongSignal.emit(0)
+
+                time.sleep(2)
+
+        except Exception as e:
+            print(e)
+
 
 class App(QWidget,Ui_Form):
     def __init__(self):
@@ -22,21 +51,9 @@ class App(QWidget,Ui_Form):
         self.toOutput(content='程序初始化中...')
         self.input_view.setAcceptDrops(True)
         self.workfile=''
-
         self.font=QFont()
         self.font.setPixelSize(100)
-
         self.toOutput(content='初始化完成，请打开或直接拖入图像...')
-
-        # self.palette_ok=QPalette()
-        # self.palette_ok.setColor(QPalette.Base,Qt.green)
-        # self.palette_ok.setColor(QPalette.Text, Qt.green)
-        # self.palette_ok.setColor(QPalette.Highlight,Qt.green)
-        # self.palette_ok.setColor(QPalette.HighlightedText,Qt.green)
-        #
-        #
-        #
-        #
 
 
     @pyqtSlot()
@@ -96,21 +113,34 @@ class App(QWidget,Ui_Form):
             except Exception as e:
                 print(e)
 
-    def startWork(self):
-        self.setNormalResult()
-        time.sleep(3)
-        self.setNoticeResult()
+
 
     @pyqtSlot()
     def on_doButton_clicked(self):
-        # try:
-        #         #     print(1)
-        #     self.startWork()
-        ThreadPoolExecutor(max_workers=1,).submit(self.startWork)
-        # except Exception as e:
-        #     print(e)
+        try:
+            if self.doButton.text()=='START/STOP':
+                self.doButton.setText('STOP')
+                print(1)
+                self.thread=Mythread()
+                self.thread.rightSignal.connect(self.setNormalResult)
+                self.thread.wrongSignal.connect(self.setNoticeResult)
+                self.thread.start()
+                return
 
-    def setNormalResult(self):
+            if self.doButton.text()=='STOP':
+                if QMessageBox.question(self, '图片处理中。。。', '是否停止当前工作', QMessageBox.Yes | QMessageBox.No,
+                                        QMessageBox.No) == QMessageBox.Yes:
+                    self.thread.finishSignal=1
+                    self.doButton.setText('START/STOP')
+                    return
+
+
+
+
+        except Exception as e:
+            print(e)
+
+    def setNormalResult(self,a0):
         try:
             print('set normal')
             self.normal_item=QGraphicsTextItem()
@@ -127,7 +157,7 @@ class App(QWidget,Ui_Form):
             print(e)
 
 
-    def setNoticeResult(self):
+    def setNoticeResult(self,a0):
         try:
             print('set notice')
             self.notice_item=QGraphicsTextItem()
@@ -151,6 +181,11 @@ class App(QWidget,Ui_Form):
         self.outPut.append('')
 
     def closeEvent(self, a0: QCloseEvent) -> None:
+        if self.doButton.text()=='STOP':
+            QMessageBox.warning(self, '警告', '图像处理中，请先停止', QMessageBox.Ok)
+            a0.ignore()
+            return
+
         if QMessageBox.question(self,'关闭','是否退出程序',QMessageBox.Yes|QMessageBox.No,QMessageBox.No) ==QMessageBox.Yes:
             a0.accept()
         else:
