@@ -103,35 +103,45 @@ class App(QWidget,Ui_Form):
 
     @pyqtSlot()
     def on_doButton_clicked(self):
+        # try:
+        #         #     print(1)
+        #     self.startWork()
+        ThreadPoolExecutor(max_workers=1,).submit(self.startWork)
+        # except Exception as e:
+        #     print(e)
+
+    def setNormalResult(self):
         try:
-            print(1)
-            ThreadPoolExecutor(max_workers=10,).submit(self.startWork)
+            print('set normal')
+            self.normal_item=QGraphicsTextItem()
+            self.normal_item.setPlainText('NORMAL')
+            self.normal_item.setDefaultTextColor(Qt.green)
+            self.normal_item.setFont(self.font)
+
+            self.normalScene=QGraphicsScene()
+            self.normalScene.addItem(self.normal_item)
+            self.output_view.setScene(self.normalScene)
+            self.output_view.show()
+            self.toOutput('yes')
         except Exception as e:
             print(e)
 
-    def setNormalResult(self):
-        print('set normal')
-        self.normal_item=QGraphicsTextItem()
-        self.normal_item.setPlainText('NORMAL')
-        self.normal_item.setDefaultTextColor(Qt.green)
-        self.normal_item.setFont(self.font)
-
-        self.normalScene=QGraphicsScene()
-        self.normalScene.addItem(self.normal_item)
-        self.output_view.setScene(self.normalScene)
-        self.output_view.show()
 
     def setNoticeResult(self):
-        print('set notice')
-        self.notice_item=QGraphicsTextItem()
-        self.notice_item.setPlainText('NOTICE')
-        self.notice_item.setDefaultTextColor(Qt.red)
-        self.notice_item.setFont(self.font)
+        try:
+            print('set notice')
+            self.notice_item=QGraphicsTextItem()
+            self.notice_item.setPlainText('NOTICE')
+            self.notice_item.setDefaultTextColor(Qt.red)
+            self.notice_item.setFont(self.font)
 
-        self.noticeScene = QGraphicsScene()
-        self.noticeScene.addItem(self.notice_item)
-        self.output_view.setScene(self.noticeScene)
-        self.output_view.show()
+            self.noticeScene = QGraphicsScene()
+            self.noticeScene.addItem(self.notice_item)
+            self.output_view.setScene(self.noticeScene)
+            self.output_view.show()
+            self.toOutput('no')
+        except Exception as e:
+            print(e)
 
     def resizeEvent(self, a0: QResizeEvent) -> None:
         self.load_pic()
