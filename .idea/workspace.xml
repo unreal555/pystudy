@@ -4,8 +4,6 @@
     <list default="true" id="9b8d6269-a564-4802-8c0e-0538c714e289" name="Default Changelist" comment="clean">
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control_office.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_control_office.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/邮件改附件 msg/control_office.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/邮件改附件 msg/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +47,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/job/邮件改附件 msg" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pyqt5_model/带ui带并行" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -66,21 +64,22 @@
     <option name="myShowVariablesByDefault" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\PyCharm2019.3.1\pystudy\job\邮件改附件 msg" />
-      <recent name="D:\PyCharm2019.3.1\pystudy\pyqt5_model\resource" />
-      <recent name="D:\PyCharm2019.3.1\pystudy\pyqt5_model\with_ui" />
-      <recent name="D:\PyCharm2019.3.1\pystudy\pyqt5_model" />
-      <recent name="D:\PyCharm2019.3.1\pystudy\job\电流电压图形界面" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\PyCharm2019.3.1\pystudy\pyqt5_model\带ui带并行" />
       <recent name="D:\PyCharm2019.3.1\pystudy\pyqt5_model\with_ui" />
       <recent name="D:\PyCharm2019.3.1\pystudy\job\电流电压图形界面" />
       <recent name="D:\PyCharm2019.3.1\pystudy\pyqt5_model" />
       <recent name="D:\PyCharm2019.3.1\pystudy\job\粘贴板记录工具" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PyCharm2019.3.1\pystudy\pyqt5_model\带ui带并行" />
+      <recent name="D:\PyCharm2019.3.1\pystudy\job\邮件改附件 msg" />
+      <recent name="D:\PyCharm2019.3.1\pystudy\pyqt5_model\resource" />
+      <recent name="D:\PyCharm2019.3.1\pystudy\pyqt5_model\with_ui" />
+      <recent name="D:\PyCharm2019.3.1\pystudy\pyqt5_model" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.my_app">
     <configuration name="My_Tray" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -88,25 +87,6 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="D:\PyCharm2019.3.1\pystudy\venv2\Scripts\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyqt5_model" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyqt5_model/My_Tray.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="My_Tray" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="pystudy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyqt5_model" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -144,28 +124,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="control_office" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="pystudy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/control_office.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -182,6 +140,50 @@
       <option name="SCRIPT_NAME" value="D:\PyCharm2019.3.1\pystudy\job\邮件改附件 msg\main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="my_app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pystudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/job/肺结节加图形界面" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/job/肺结节加图形界面/my_app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="my_control_office" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pystudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my_control_office.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -275,19 +277,20 @@
     </configuration>
     <list>
       <item itemvalue="Python.pystudy" />
-      <item itemvalue="Python.control_office" />
       <item itemvalue="Python.My_Tray" />
       <item itemvalue="Python.my_system_tools" />
       <item itemvalue="Python.set_xls_user" />
       <item itemvalue="Python.main" />
+      <item itemvalue="Python.my_app" />
+      <item itemvalue="Python.my_control_office" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.my_app" />
+        <item itemvalue="Python.my_control_office" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.my_system_tools" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.set_xls_user" />
-        <item itemvalue="Python.set_xls_user" />
       </list>
     </recent_temporary>
   </component>
@@ -356,83 +359,11 @@
       <workItem from="1617786860278" duration="159000" />
       <workItem from="1617842477357" duration="17546000" />
       <workItem from="1617932185616" duration="828000" />
-    </task>
-    <task id="LOCAL-00001" summary="clean">
-      <created>1610422132117</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1610422132117</updated>
-    </task>
-    <task id="LOCAL-00002" summary="clean">
-      <created>1610422844644</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1610422844644</updated>
-    </task>
-    <task id="LOCAL-00003" summary="clean">
-      <created>1610423531024</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1610423531024</updated>
-    </task>
-    <task id="LOCAL-00004" summary="clean">
-      <created>1610426169997</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1610426169997</updated>
-    </task>
-    <task id="LOCAL-00005" summary="clean">
-      <created>1610426564115</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1610426564115</updated>
-    </task>
-    <task id="LOCAL-00006" summary="clean">
-      <created>1610432180167</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1610432180167</updated>
-    </task>
-    <task id="LOCAL-00007" summary="clean">
-      <created>1610438110257</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1610438110257</updated>
-    </task>
-    <task id="LOCAL-00008" summary="clean">
-      <created>1610440249590</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1610440249590</updated>
-    </task>
-    <task id="LOCAL-00009" summary="clean">
-      <created>1610440268930</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1610440268930</updated>
-    </task>
-    <task id="LOCAL-00010" summary="clean">
-      <created>1610440290637</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1610440290637</updated>
-    </task>
-    <task id="LOCAL-00011" summary="clean">
-      <created>1610442437410</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1610442437410</updated>
+      <workItem from="1618447157091" duration="5933000" />
+      <workItem from="1618468691276" duration="4715000" />
+      <workItem from="1618529998929" duration="3758000" />
+      <workItem from="1618795128401" duration="10773000" />
+      <workItem from="1618879095637" duration="5517000" />
     </task>
     <task id="LOCAL-00012" summary="clean">
       <created>1610507660335</created>
@@ -686,7 +617,98 @@
       <option name="project" value="LOCAL" />
       <updated>1617873901690</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="clean">
+      <created>1618368117690</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1618368117690</updated>
+    </task>
+    <task id="LOCAL-00049" summary="clean">
+      <created>1618370429871</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1618370429871</updated>
+    </task>
+    <task id="LOCAL-00050" summary="clean">
+      <created>1618382071597</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1618382071597</updated>
+    </task>
+    <task id="LOCAL-00051" summary="clean">
+      <created>1618383543724</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1618383543724</updated>
+    </task>
+    <task id="LOCAL-00052" summary="clean">
+      <created>1618391682283</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1618391682283</updated>
+    </task>
+    <task id="LOCAL-00053" summary="clean">
+      <created>1618468942429</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1618468942429</updated>
+    </task>
+    <task id="LOCAL-00054" summary="clean">
+      <created>1618477818181</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1618477818181</updated>
+    </task>
+    <task id="LOCAL-00055" summary="clean">
+      <created>1618564143237</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1618564143237</updated>
+    </task>
+    <task id="LOCAL-00056" summary="clean">
+      <created>1618564439659</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1618564439659</updated>
+    </task>
+    <task id="LOCAL-00057" summary="clean">
+      <created>1618795966055</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1618795966055</updated>
+    </task>
+    <task id="LOCAL-00058" summary="clean">
+      <created>1618815894658</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1618815894658</updated>
+    </task>
+    <task id="LOCAL-00059" summary="clean">
+      <created>1618880338465</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1618880338465</updated>
+    </task>
+    <task id="LOCAL-00060" summary="clean">
+      <created>1618893877391</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1618893877391</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -702,14 +724,14 @@
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="232" y="150" key="#Notifications/0.0.1280.980@0.0.1280.980" timestamp="1614733777481" />
-    <state x="232" y="150" key="#Python" timestamp="1610503083116">
+    <state x="232" y="150" key="#Python" timestamp="1618457149693">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="232" y="150" key="#Python/0.0.1280.980@0.0.1280.980" timestamp="1610503083116" />
-    <state x="94" y="147" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1617843451282">
+    <state x="232" y="150" key="#Python/0.0.1280.980@0.0.1280.980" timestamp="1618457149693" />
+    <state x="94" y="147" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1618361877130">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="94" y="147" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.980@0.0.1280.980" timestamp="1617843451282" />
+    <state x="94" y="147" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.980@0.0.1280.980" timestamp="1618361877130" />
     <state x="100" y="36" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1612574328389" />
     <state x="141" y="156" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1617719572086" />
     <state x="391" y="0" key="#my_cv2" timestamp="1612574341742">
@@ -728,16 +750,16 @@
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="355" y="125" key="#test2/0.0.1280.980@0.0.1280.980" timestamp="1613698420873" />
-    <state x="0" y="86" key="CommitChangelistDialog2" timestamp="1617933153711">
+    <state x="0" y="86" key="CommitChangelistDialog2" timestamp="1618893873569">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="0" y="86" key="CommitChangelistDialog2/0.0.1280.980@0.0.1280.980" timestamp="1617933153711" />
+    <state x="0" y="86" key="CommitChangelistDialog2/0.0.1280.980@0.0.1280.980" timestamp="1618893873569" />
     <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1612609140810" />
     <state x="0" y="91" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1617721217646" />
-    <state x="120" y="79" width="1048" height="822" key="DiffContextDialog" timestamp="1617238358328">
+    <state x="120" y="79" width="1048" height="822" key="DiffContextDialog" timestamp="1618880331851">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="120" y="79" width="1048" height="822" key="DiffContextDialog/0.0.1280.980@0.0.1280.980" timestamp="1617238358328" />
+    <state x="120" y="79" width="1048" height="822" key="DiffContextDialog/0.0.1280.980@0.0.1280.980" timestamp="1618880331851" />
     <state x="374" y="253" key="EnvironmentVariablesDialog" timestamp="1610423417619">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
@@ -746,28 +768,28 @@
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="420" y="247" key="FileChooserDialogImpl/0.0.1280.980@0.0.1280.980" timestamp="1617001793300" />
-    <state width="1236" height="459" key="GridCell.Tab.0.bottom" timestamp="1617933015244">
+    <state width="1075" height="2" key="GridCell.Tab.0.bottom" timestamp="1618902083159">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="459" key="GridCell.Tab.0.bottom/0.0.1280.980@0.0.1280.980" timestamp="1617933015244" />
+    <state width="1075" height="2" key="GridCell.Tab.0.bottom/0.0.1280.980@0.0.1280.980" timestamp="1618902083159" />
     <state width="1322" height="180" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1612608762360" />
     <state width="1876" height="402" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1617721288524" />
-    <state width="1236" height="459" key="GridCell.Tab.0.center" timestamp="1617933015244">
+    <state width="1075" height="2" key="GridCell.Tab.0.center" timestamp="1618902083159">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="459" key="GridCell.Tab.0.center/0.0.1280.980@0.0.1280.980" timestamp="1617933015244" />
+    <state width="1075" height="2" key="GridCell.Tab.0.center/0.0.1280.980@0.0.1280.980" timestamp="1618902083159" />
     <state width="1322" height="180" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1612608762360" />
     <state width="1876" height="402" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1617721288524" />
-    <state width="1236" height="459" key="GridCell.Tab.0.left" timestamp="1617933015244">
+    <state width="1075" height="2" key="GridCell.Tab.0.left" timestamp="1618902083159">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="459" key="GridCell.Tab.0.left/0.0.1280.980@0.0.1280.980" timestamp="1617933015244" />
+    <state width="1075" height="2" key="GridCell.Tab.0.left/0.0.1280.980@0.0.1280.980" timestamp="1618902083159" />
     <state width="1322" height="180" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1612608762360" />
     <state width="1876" height="402" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1617721288524" />
-    <state width="1236" height="459" key="GridCell.Tab.0.right" timestamp="1617933015244">
+    <state width="1075" height="2" key="GridCell.Tab.0.right" timestamp="1618902083159">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state width="1236" height="459" key="GridCell.Tab.0.right/0.0.1280.980@0.0.1280.980" timestamp="1617933015244" />
+    <state width="1075" height="2" key="GridCell.Tab.0.right/0.0.1280.980@0.0.1280.980" timestamp="1618902083159" />
     <state width="1322" height="180" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1612608762360" />
     <state width="1876" height="402" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1617721288524" />
     <state width="1236" height="376" key="GridCell.Tab.1.bottom" timestamp="1617786703235">
@@ -794,10 +816,10 @@
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="349" y="205" key="MultipleFileMergeDialog/0.0.1280.980@0.0.1280.980" timestamp="1616477050519" />
-    <state x="361" y="202" key="RollbackChangesDialog" timestamp="1617781707135">
+    <state x="361" y="202" key="RollbackChangesDialog" timestamp="1618479019436">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="361" y="202" key="RollbackChangesDialog/0.0.1280.980@0.0.1280.980" timestamp="1617781707135" />
+    <state x="361" y="202" key="RollbackChangesDialog/0.0.1280.980@0.0.1280.980" timestamp="1618479019436" />
     <state x="143" y="121" key="SettingsEditor" timestamp="1617756927384">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
@@ -808,10 +830,10 @@
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="418" y="195" key="VCS.ChangeListViewerDialog/0.0.1280.980@0.0.1280.980" timestamp="1613698057268" />
-    <state x="302" y="60" width="816" height="526" key="Vcs.Push.Dialog.v2" timestamp="1617933160481">
+    <state x="302" y="60" width="816" height="526" key="Vcs.Push.Dialog.v2" timestamp="1618880345641">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="302" y="60" width="816" height="526" key="Vcs.Push.Dialog.v2/0.0.1280.980@0.0.1280.980" timestamp="1617933160481" />
+    <state x="302" y="60" width="816" height="526" key="Vcs.Push.Dialog.v2/0.0.1280.980@0.0.1280.980" timestamp="1618880345641" />
     <state x="154" y="107" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1611142086454" />
     <state x="216" y="153" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1617721297635" />
     <state x="92" y="92" width="1096" height="796" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1617757006414">
@@ -826,10 +848,10 @@
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="429" y="291" key="git4idea.merge.GitMergeDialog/0.0.1280.980@0.0.1280.980" timestamp="1613698010858" />
-    <state x="353" y="291" key="git4idea.merge.GitPullDialog" timestamp="1617931359482">
+    <state x="353" y="291" key="git4idea.merge.GitPullDialog" timestamp="1618362016434">
       <screen x="0" y="0" width="1280" height="980" />
     </state>
-    <state x="353" y="291" key="git4idea.merge.GitPullDialog/0.0.1280.980@0.0.1280.980" timestamp="1617931359482" />
+    <state x="353" y="291" key="git4idea.merge.GitPullDialog/0.0.1280.980@0.0.1280.980" timestamp="1618362016434" />
     <state x="377" y="216" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1611137485429" />
     <state x="465" y="397" key="git4idea.ui.GitStashDialog" timestamp="1617931062980">
       <screen x="0" y="0" width="1280" height="980" />
@@ -880,7 +902,7 @@
     <SUITE FILE_PATH="coverage/pystudy$my_winsound.coverage" NAME="my_winsound Coverage Results" MODIFIED="1612605618558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$qt2.coverage" NAME="qt2 Coverage Results" MODIFIED="1617092086028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/电流电压图形界面" />
     <SUITE FILE_PATH="coverage/pystudy$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1614670613743" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study_PyQt5" />
-    <SUITE FILE_PATH="coverage/pystudy$my_app.coverage" NAME="my-app Coverage Results" MODIFIED="1617154336124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyqt5_model" />
+    <SUITE FILE_PATH="coverage/pystudy$my_app.coverage" NAME="my_app Coverage Results" MODIFIED="1618902083144" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/肺结节加图形界面" />
     <SUITE FILE_PATH="coverage/pystudy$pyhanlp.coverage" NAME="分词，提取人名，学习pyhanlp Coverage Results" MODIFIED="1611200920108" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pystudy$tray.coverage" NAME="My_Tray Coverage Results" MODIFIED="1617239510562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyqt5_model" />
     <SUITE FILE_PATH="coverage/pystudy$msg.coverage" NAME="msg Coverage Results" MODIFIED="1617677173138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job/邮件改附件 msg" />

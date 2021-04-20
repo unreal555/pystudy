@@ -68,7 +68,18 @@ N
 job/邮件改附件 msg/msg.py,4\6\4675edc152579e755def3b008e299ae58c270adb
 B
 my_system_tools.py,3\a\3a7173d07cc09119152f9061146d8bc591d2dc71
-Y
-)job/邮件改附件 msg/control_office.py,f\2\f29a92ebd65b7841a5f3a18f591c3b2efbde0137
 W
 'job/邮件改附件 msg/set_xls_user.py,3\0\3054069be7307c6729b4b8204a69dba74eab1b5c
+D
+my_control_office.py,f\5\f5a860f43aa562bca835bd5aa860d09a05bbfa48
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+R
+"job/肺结节加图形界面/ui.py,8\c\8c53291bec53068ed3065b8a1dae3c27f79ca729
+R
+"job/肺结节加图形界面/ui.ui,8\1\81d9802fc7398d387cd6d0866b8e1ad9136a9ab1
+V
+&job/肺结节加图形界面/my_app.py,8\e\8e92e39a717303b7e95d5202dfd328dc174278b9
+X
+(job/肺结节加图形界面/my_app.spec,4\b\4ba2176d27870a7c8e983bd6d8889f9db24848ee
