@@ -90,6 +90,16 @@ class App(QWidget,Ui_Form):
                 e.ignore()
         except Exception as e:
             print(e)
+
+    @pyqtSlot()
+    def on_startButton_clicked(self):
+        try:
+            if 'http://' in self.lineEdit.text() or 'https://' in self.lineEdit.text() or 'www' in self.lineEdit.text():
+                print('do')
+        except Exception as e:
+            print(e)
+
+
     def dropEvent(self, e):
         txt=e.mimeData().text()
         txt=re.sub('file:[/]+','',txt)
