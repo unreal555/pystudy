@@ -53,7 +53,9 @@ class App(QWidget,Ui_Form):
         self.workfile=''
         self.font=QFont()
         self.font.setPixelSize(100)
-        self.toOutput(content='初始化完成，请打开或直接拖入图像...')
+        self.fileType='*.png *.jpg'
+        self.toOutput(content='初始化完成，请打开或直接拖入图像...,目前只接受{}文件'.format(self.fileType))
+
 
 
     @pyqtSlot()
@@ -67,16 +69,30 @@ class App(QWidget,Ui_Form):
         else:
             print('name is empty')
 
-    def dragEnterEvent(self, e:QDragEnterEvent):
+    def isMatchFileType(self,s):
+        file,ext=os.path.splitext(s)
+        #print(file,ext,[str.lower(x) for x in re.split(        ' ', self.fileType)])
+        if ext=='' or ext==None:
+            return False
+        if str.lower(ext) in [str.lower(x.replace('*','')) for x in re.split(' ',self.fileType)]:
+            return True
+        else:
+            return False
 
+    def dragEnterEvent(self, e:QDragEnterEvent):
         if e.mimeData().hasText():
-            e.accept()
+            txt = e.mimeData().text()
+            if self.isMatchFileType(txt):
+                e.accept()
+            else:
+                e.ignore()
         else:
             e.ignore()
 
     def dropEvent(self, e):
         txt=e.mimeData().text()
         txt=re.sub('file:[/]+','',txt)
+
         abspath=os.path.abspath(txt)
         self.workfile=abspath
         self.resizeEvent(QResizeEvent)
