@@ -35,9 +35,7 @@ class Mythread(QThread):
                     self.rightSignal.emit(1)
                 else:
                     self.wrongSignal.emit(0)
-
                 time.sleep(2)
-
         except Exception as e:
             print(e)
 
@@ -79,17 +77,16 @@ class App(QWidget,Ui_Form):
             return False
 
     def dragEnterEvent(self, e:QDragEnterEvent):
-        try:
-            if e.mimeData().hasText():
-                txt = e.mimeData().text()
-                if self.isMatchFileType(txt):
-                    e.accept()
-                else:
-                    e.ignore()
+
+        if e.mimeData().hasText():
+            txt = e.mimeData().text()
+            if self.isMatchFileType(txt):
+                e.accept()
             else:
                 e.ignore()
-        except Exception as e:
-            print(e)
+        else:
+            e.ignore()
+
 
     @pyqtSlot()
     def on_startButton_clicked(self):
@@ -137,6 +134,10 @@ class App(QWidget,Ui_Form):
                 self.source_scene.addItem(self.source_pic_item)
                 self.input_view.setScene(self.source_scene)
                 self.input_view.show()
+                if self.lineEdit.text()=='':
+                    self.lineEdit.setText(self.workfile)
+                    self.lineEdit.setDisabled(True)
+                    self.startButton.setDisabled(True)
             except Exception as e:
                 print(e)
 
