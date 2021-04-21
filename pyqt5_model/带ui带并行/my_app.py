@@ -77,7 +77,7 @@ class App(QWidget,Ui_Form):
             return False
 
     def dragEnterEvent(self, e:QDragEnterEvent):
-
+        
         if e.mimeData().hasText():
             txt = e.mimeData().text()
             if self.isMatchFileType(txt):

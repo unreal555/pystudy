@@ -31,6 +31,7 @@ class Ui_Form(object):
         self.horizontalLayout_5 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
         self.lineEdit = QtWidgets.QLineEdit(Form)
+        self.lineEdit.setAcceptDrops(False)
         self.lineEdit.setObjectName("lineEdit")
         self.horizontalLayout_5.addWidget(self.lineEdit)
         self.startButton = QtWidgets.QPushButton(Form)
@@ -111,8 +112,4 @@ class Ui_Form(object):
         self.doButton.setText(_translate("Form", "START/STOP"))
         self.label_2.setText(_translate("Form", "输入"))
         self.label.setText(_translate("Form", "结果"))
-        self.outPut.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+  
