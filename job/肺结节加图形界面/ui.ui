@@ -23,7 +23,7 @@
    <string>肺结节预测</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(180, 180, 180);</string>
+   <string notr="true">background-color: rgb(234, 234, 239);</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_6">
    <property name="leftMargin">

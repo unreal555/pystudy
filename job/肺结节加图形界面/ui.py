@@ -17,7 +17,7 @@ class Ui_Form(object):
         Form.setEnabled(True)
         Form.resize(740, 612)
         Form.setAcceptDrops(True)
-        Form.setStyleSheet("background-color: rgb(180, 180, 180);")
+        Form.setStyleSheet("background-color: rgb(234, 234, 239);")
         self.gridLayout_6 = QtWidgets.QGridLayout(Form)
         self.gridLayout_6.setContentsMargins(0, 0, 0, 0)
         self.gridLayout_6.setSpacing(0)
