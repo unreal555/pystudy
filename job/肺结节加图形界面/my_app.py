@@ -1,4 +1,4 @@
-# coding: utf-8
+# cocoding: utf-8
 # Team : JiaLiDun University
 # Author：zl
 # Date ：2021/3/30 0030 下午 3:23
@@ -11,6 +11,7 @@ from PyQt5.QtGui import QIcon,QFont,QDragEnterEvent,QImage,QResizeEvent,QPixmap,
 import re,os,cv2
 import numpy as np
 import time
+import configparser
 
 from concurrent.futures import ThreadPoolExecutor
 
@@ -46,7 +47,7 @@ class App(QWidget,Ui_Form):
     def __init__(self):
         super(App, self).__init__()
         self.setupUi(self)
-        self.setWindowTitle("原始模型")
+        self.setWindowTitle("肺结节检测")
         self.setWindowIcon(QIcon('ico.ico'))
         self.toOutput(content='程序初始化中...')
         self.input_view.setAcceptDrops(True)
@@ -55,9 +56,107 @@ class App(QWidget,Ui_Form):
         self.font.setPixelSize(100)
         self.fileType='*.png *.jpg'
         self.toOutput(content='初始化完成，请打开或直接拖入图像...,目前只接受{}文件'.format(self.fileType))
+        self.colorThemes={
+            '杏仁黄': (250, 249, 222),
+            '秋叶褐': (255, 242, 226),
+            '极光灰':(234, 234, 239),
+            '青草绿':(227, 237, 205),
+            '海天蓝':(220, 226, 241),
+            '葛巾紫':(233, 235, 254),
+        }
+
+        self.OpacitySlider.valueChanged.connect(self.changePactiy)
+
+        for i in [self.radioButton_1, self.radioButton_2, self.radioButton_3,self.radioButton_4, self.radioButton_5, self.radioButton_6]:
+            i.clicked.connect(self.setColorTheme)
+        
+        self.loadConfig()
+        self.setColorTheme()
+
+    def changePactiy(self,value):
+        self.setWindowOpacity(value/100)
 
 
+    def loadConfig(self):
+    
+        path='./config.ini'
+        config = configparser.ConfigParser()
+    
+        if os.path.exists(path):
+            try:
+                config.read(path, encoding='gbk')
+        
+            except configparser.MissingSectionHeaderError as e:
+                self.toOutput(message='配置文件无任何section，请检查配置文件')
+                sys.exit(1)
+        
+            except Exception as e:
+                self.toOutput(message=str(e))
+                sys.exit(1)
+        else:
+            self.toOutput('未找到配置文件')
+            sys.exit(1)
 
+        
+        self.CHANNEL_COUNT = int(config.get('config','CHANNEL_COUNT'))
+        self._3DCNN_WEIGHTS = str(config.get('config','_3DCNN_WEIGHTS'))
+        self.UNET_WEIGHTS = str(config.get('config','UNET_WEIGHTS'))
+        self.THRESHOLD = int(config.get('config','THRESHOLD'))
+        self.BATCH_SIZE = int(config.get('config','BATCH_SIZE'))
+        self.temp_dir = str(config.get('config','temp_dir'))
+        
+        self.Opacity=int(config.get('config','Opacity'))
+        self.colorTheme=str(config.get('config','colorTheme'))
+        
+        self.temp_file1 = os.path.join(self.temp_dir, '1.png')
+        self.temp_file2 = os.path.join(self.temp_dir, '2.png')
+
+        self.cHANNEL_COUNTLineEdit.setText(str(self.CHANNEL_COUNT))
+        self._3DCNN_WEIGHTSLineEdit.setText(str(self._3DCNN_WEIGHTS))
+        self.uNET_WEIGHTSLineEdit.setText(str(self.UNET_WEIGHTS))
+        self.tHRESHOLDLineEdit.setText(str(self.THRESHOLD))
+        self.bATCH_SIZELineEdit.setText(str(self.BATCH_SIZE))
+        self.temp_dirLineEdit.setText(str(self.temp_dir))
+        print(self.colorTheme,self.colorThemes)
+        self.OpacitySlider.setValue(self.Opacity)
+        self.setWindowOpacity(self.Opacity / 100)
+        for i in [self.radioButton_1, self.radioButton_2, self.radioButton_3,self.radioButton_4, self.radioButton_5, self.radioButton_6]:
+            if i.text()==self.colorTheme:
+                i.setChecked(True)
+                
+        
+    def setColorTheme(self):
+        for i in [self.radioButton_1,self.radioButton_2 ,self.radioButton_3 ,
+                  self.radioButton_4 ,self.radioButton_5 ,self.radioButton_6  ]:
+            if i.isChecked():
+                print(i)
+                self.colorTheme=i.text()
+                print("background-color: rgb{};".format(str(self.colorThemes[self.colorTheme])))
+                self.setStyleSheet("background-color: rgb{};".format(str(self.colorThemes[self.colorTheme])))
+
+        
+    def saveConfig(self):
+        path = './config.ini'
+        config = configparser.ConfigParser()
+        config.add_section('config')
+        config.set('config','CHANNEL_COUNT',self.cHANNEL_COUNTLineEdit.text())
+        config.set('config','_3DCNN_WEIGHTS',self._3DCNN_WEIGHTSLineEdit.text())
+        config.set('config', 'UNET_WEIGHTS',self.uNET_WEIGHTSLineEdit.text())
+        config.set('config','THRESHOLD',self.tHRESHOLDLineEdit.text())
+        config.set('config','BATCH_SIZE',self.bATCH_SIZELineEdit.text())
+        config.set('config','temp_dir',self.temp_dirLineEdit.text())
+        config.set('config', 'Opacity', str(self.OpacitySlider.value()))
+        config.set('config', 'colorTheme', self.colorTheme)
+
+        with open(path, 'w+', encoding='gbk') as f:
+            config.write(f)
+
+    @pyqtSlot()
+    
+    def on_saveConfigButton_clicked(self):
+        self.saveConfig()
+        
+        
     @pyqtSlot()
     def on_button_clicked(self):
         a=self.v_view.size()
@@ -72,27 +171,29 @@ class App(QWidget,Ui_Form):
     def isMatchFileType(self,s):
         file,ext=os.path.splitext(s)
         #print(file,ext,[str.lower(x) for x in re.split(        ' ', self.fileType)])
-        if ext=='' or ext==None:
-            return False
         if str.lower(ext) in [str.lower(x.replace('*','')) for x in re.split(' ',self.fileType)]:
             return True
         else:
             return False
 
     def dragEnterEvent(self, e:QDragEnterEvent):
+        print('enter')
         if e.mimeData().hasText():
             txt = e.mimeData().text()
+            print(txt)
             if self.isMatchFileType(txt):
+                print('accept')
                 e.accept()
-            else:
-                e.ignore()
-        else:
-            e.ignore()
+        print('ww')
+        #     else:
+        #         e.ignore()
+        # else:
+        #     e.ignore()
 
     def dropEvent(self, e):
+        print('drop')
         txt=e.mimeData().text()
         txt=re.sub('file:[/]+','',txt)
-
         abspath=os.path.abspath(txt)
         self.workfile=abspath
         self.resizeEvent(QResizeEvent)

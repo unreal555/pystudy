@@ -58,7 +58,7 @@
         <enum>QTabWidget::Triangular</enum>
        </property>
        <property name="currentIndex">
-        <number>0</number>
+        <number>1</number>
        </property>
        <property name="elideMode">
         <enum>Qt::ElideLeft</enum>
@@ -136,10 +136,10 @@
                        <enum>QFrame::Raised</enum>
                       </property>
                       <property name="verticalScrollBarPolicy">
-                       <enum>Qt::ScrollBarAlwaysOff</enum>
+                       <enum>Qt::ScrollBarAsNeeded</enum>
                       </property>
                       <property name="horizontalScrollBarPolicy">
-                       <enum>Qt::ScrollBarAlwaysOff</enum>
+                       <enum>Qt::ScrollBarAsNeeded</enum>
                       </property>
                       <property name="sizeAdjustPolicy">
                        <enum>QAbstractScrollArea::AdjustToContents</enum>
@@ -239,8 +239,22 @@ border-color: rgb(25, 25, 25);</string>
              <layout class="QHBoxLayout" name="horizontalLayout_5">
               <item>
                <layout class="QGridLayout" name="gridLayout_2">
-                <item row="1" column="0">
-                 <widget class="QTextEdit" name="textEdit">
+                <item row="2" column="0">
+                 <widget class="QLabel" name="label_4">
+                  <property name="text">
+                   <string>肿瘤预测</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_3">
+                  <property name="text">
+                   <string>影像分析</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <widget class="QTextEdit" name="textEdit_2">
                   <property name="enabled">
                    <bool>false</bool>
                   </property>
@@ -262,35 +276,8 @@ font: 20pt &quot;仿宋&quot;;</string>
                   </property>
                  </widget>
                 </item>
-                <item row="0" column="0">
-                 <widget class="QLabel" name="label_3">
-                  <property name="text">
-                   <string>影像分析</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="0">
-                 <widget class="QLabel" name="label_4">
-                  <property name="text">
-                   <string>肿瘤预测</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="3" column="0">
-                 <widget class="QTextEdit" name="textEdit_2">
-                  <property name="enabled">
-                   <bool>false</bool>
-                  </property>
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">text-decoration: underline;
-font: 20pt &quot;仿宋&quot;;</string>
-                  </property>
+                <item row="1" column="0">
+                 <widget class="QGraphicsView" name="output_View">
                   <property name="frameShape">
                    <enum>QFrame::Box</enum>
                   </property>
@@ -394,6 +381,215 @@ font: 20pt &quot;仿宋&quot;;</string>
         <attribute name="title">
          <string>配置</string>
         </attribute>
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item>
+          <widget class="QGroupBox" name="groupBox">
+           <property name="title">
+            <string>参数设置</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_3">
+            <item row="0" column="0">
+             <layout class="QFormLayout" name="formLayout">
+              <item row="0" column="0">
+               <widget class="QLabel" name="cHANNEL_COUNTLabel">
+                <property name="text">
+                 <string>CHANNEL_COUNT</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLineEdit" name="cHANNEL_COUNTLineEdit"/>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="_3DCNN_WEIGHTSLabel">
+                <property name="text">
+                 <string>_3DCNN_WEIGHTS</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLineEdit" name="_3DCNN_WEIGHTSLineEdit"/>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="uNET_WEIGHTSLabel">
+                <property name="text">
+                 <string>UNET_WEIGHTS</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QLineEdit" name="uNET_WEIGHTSLineEdit"/>
+              </item>
+              <item row="3" column="0">
+               <widget class="QLabel" name="tHRESHOLDLabel">
+                <property name="text">
+                 <string>THRESHOLD</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QLineEdit" name="tHRESHOLDLineEdit"/>
+              </item>
+              <item row="4" column="0">
+               <widget class="QLabel" name="bATCH_SIZELabel">
+                <property name="text">
+                 <string>BATCH_SIZE</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="1">
+               <widget class="QLineEdit" name="bATCH_SIZELineEdit"/>
+              </item>
+              <item row="5" column="0">
+               <widget class="QLabel" name="temp_dirLabel">
+                <property name="text">
+                 <string>temp_dir</string>
+                </property>
+               </widget>
+              </item>
+              <item row="5" column="1">
+               <widget class="QLineEdit" name="temp_dirLineEdit"/>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="groupBox_2">
+           <property name="title">
+            <string>系统设置</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_6">
+            <item>
+             <widget class="QFrame" name="frame_5">
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_6">
+               <item>
+                <widget class="QLabel" name="label_7">
+                 <property name="text">
+                  <string>透明度：</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QSlider" name="OpacitySlider">
+                 <property name="minimum">
+                  <number>40</number>
+                 </property>
+                 <property name="maximum">
+                  <number>100</number>
+                 </property>
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="invertedAppearance">
+                  <bool>false</bool>
+                 </property>
+                 <property name="invertedControls">
+                  <bool>false</bool>
+                 </property>
+                 <property name="tickPosition">
+                  <enum>QSlider::TicksBothSides</enum>
+                 </property>
+                 <property name="tickInterval">
+                  <number>10</number>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QFrame" name="frame_6">
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_7">
+               <item>
+                <widget class="QLabel" name="label_6">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string>色彩主题</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QGridLayout" name="gridLayout_10">
+                 <item row="0" column="0">
+                  <widget class="QRadioButton" name="radioButton_2">
+                   <property name="text">
+                    <string>秋叶褐</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QRadioButton" name="radioButton_3">
+                   <property name="text">
+                    <string>极光灰</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="2">
+                  <widget class="QRadioButton" name="radioButton_1">
+                   <property name="text">
+                    <string>杏仁黄</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QRadioButton" name="radioButton_4">
+                   <property name="text">
+                    <string>青草绿</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QRadioButton" name="radioButton_5">
+                   <property name="text">
+                    <string>海天蓝</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="2">
+                  <widget class="QRadioButton" name="radioButton_6">
+                   <property name="text">
+                    <string>葛巾紫</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="saveConfigButton">
+           <property name="text">
+            <string>储存配置</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </widget>
      </item>
