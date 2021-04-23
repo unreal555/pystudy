@@ -12,36 +12,57 @@ import re,os,cv2
 import numpy as np
 import time
 import configparser
+import prediction
 
 from concurrent.futures import ThreadPoolExecutor
 
 
 class Mythread(QThread):
-    # 定义信号,定义参数为str类型
-    finishSignal = pyqtSignal(int)
-    rightSignal = pyqtSignal(int)
-    wrongSignal = pyqtSignal(int)
-
+    rightSignal = pyqtSignal(str)
+    wrongSignal = pyqtSignal(str)
+    
+    CHANNEL_COUNT = pyqtSignal(int)
+    _3DCNN_WEIGHTS = pyqtSignal(str)
+    UNET_WEIGHTS = pyqtSignal(str)
+    THRESHOLD = pyqtSignal(int)
+    BATCH_SIZE = pyqtSignal(int)
+    temp_dir = pyqtSignal(str)
+    temp_file1 = pyqtSignal(str)
+    temp_file2 = pyqtSignal(str)
+    source = pyqtSignal(str)
+    
     def __init__(self, parent=None):
-
         super(Mythread, self).__init__()
 
     def run(self):
-        self.finishSignal=0
-        try:
-            for i in  range(1,100000):
-                if self.finishSignal == 1:
-                    break
-                if i%2==0:
-                    self.rightSignal.emit(1)
-                else:
-                    self.wrongSignal.emit(0)
+        prediction.CHANNEL_COUNT = self.CHANNEL_COUNT
+        prediction._3DCNN_WEIGHTS = self._3DCNN_WEIGHTS
+        prediction.UNET_WEIGHTS = self.UNET_WEIGHTS
+        prediction.THRESHOLD =self.THRESHOLD
+        prediction.BATCH_SIZE = self.BATCH_SIZE
+        prediction.temp_dir = self.temp_dir
+        prediction.temp_file1 = self.temp_file1
+        prediction.temp_file2 = self.temp_file2
+        # # self.stopSignal=False
+        print(self.source)
+        prediction.unet_predict(self.source)
+        centers = prediction.unet_candidate_dicom(self.temp_file1)
+        print(66666)
+        print('y, x', centers)
+        if len(centers) > 0:
+            img=cv2.imdecode(np.fromfile(self.source, dtype=np.uint8), cv2.IMREAD_COLOR)
+            # cv2.IMREAD_COLOR：默认参数，读入一副彩色图片，忽略alpha通道
+            # cv2.IMREAD_GRAYSCALE：读入灰度图片
+            # cv2.IMREAD_UNCHANGED：顾名思义，读入完整图片，包括alpha通道
+            for pos in centers:
+                y, x = pos
+                cv2.circle(img, center=(x, y), radius=8, color=(0, 0, 255), thickness=2, lineType=cv2.LINE_AA)
+            cv2.imwrite(self.temp_file2, img)
+            self.wrongSignal.emit('异常')
 
-                time.sleep(2)
-
-        except Exception as e:
-            print(e)
-
+        
+        if len(centers) == 0:
+            self.rightSignal.emit('正常')
 
 class App(QWidget,Ui_Form):
     def __init__(self):
@@ -69,9 +90,11 @@ class App(QWidget,Ui_Form):
 
         for i in [self.radioButton_1, self.radioButton_2, self.radioButton_3,self.radioButton_4, self.radioButton_5, self.radioButton_6]:
             i.clicked.connect(self.setColorTheme)
+            
         
         self.loadConfig()
-        self.setColorTheme()
+        self.setStyleSheet("background-color: rgb{};".format(str(self.colorThemes[self.colorTheme])))
+        print(self.colorTheme,"background-color: rgb{};".format(str(self.colorThemes[self.colorTheme])))
 
     def changePactiy(self,value):
         self.setWindowOpacity(value/100)
@@ -81,15 +104,12 @@ class App(QWidget,Ui_Form):
     
         path='./config.ini'
         config = configparser.ConfigParser()
-    
         if os.path.exists(path):
             try:
                 config.read(path, encoding='gbk')
-        
             except configparser.MissingSectionHeaderError as e:
                 self.toOutput(message='配置文件无任何section，请检查配置文件')
                 sys.exit(1)
-        
             except Exception as e:
                 self.toOutput(message=str(e))
                 sys.exit(1)
@@ -97,7 +117,6 @@ class App(QWidget,Ui_Form):
             self.toOutput('未找到配置文件')
             sys.exit(1)
 
-        
         self.CHANNEL_COUNT = int(config.get('config','CHANNEL_COUNT'))
         self._3DCNN_WEIGHTS = str(config.get('config','_3DCNN_WEIGHTS'))
         self.UNET_WEIGHTS = str(config.get('config','UNET_WEIGHTS'))
@@ -117,7 +136,9 @@ class App(QWidget,Ui_Form):
         self.tHRESHOLDLineEdit.setText(str(self.THRESHOLD))
         self.bATCH_SIZELineEdit.setText(str(self.BATCH_SIZE))
         self.temp_dirLineEdit.setText(str(self.temp_dir))
+        
         print(self.colorTheme,self.colorThemes)
+        
         self.OpacitySlider.setValue(self.Opacity)
         self.setWindowOpacity(self.Opacity / 100)
         for i in [self.radioButton_1, self.radioButton_2, self.radioButton_3,self.radioButton_4, self.radioButton_5, self.radioButton_6]:
@@ -227,35 +248,28 @@ class App(QWidget,Ui_Form):
                 self.source_scene.addItem(self.source_pic_item)
                 self.input_view.setScene(self.source_scene)
                 self.input_view.show()
+                self.start()
             except Exception as e:
                 print(e)
 
+    def start(self):
+        
+            self.thread=Mythread()
+            self.thread.rightSignal.connect(self.setNormalResult)
+            self.thread.wrongSignal.connect(self.setNoticeResult)
+            
+            self.thread.CHANNEL_COUNT=int(self.CHANNEL_COUNT)
+            self.thread._3DCNN_WEIGHTS=self._3DCNN_WEIGHTS
+            self.thread.UNET_WEIGHTS=self.UNET_WEIGHTS
+            self.thread.THRESHOLD=int(self.THRESHOLD)
+            self.thread.BATCH_SIZE=int(self.BATCH_SIZE)
+            self.thread.temp_dir=self.temp_dir
+            self.thread.temp_file1=self.temp_file1
+            self.thread.temp_file2=self.temp_file2
+            self.thread.source=self.workfile
+            self.thread.run()
+            return
 
-
-    @pyqtSlot()
-    def on_doButton_clicked(self):
-        try:
-            if self.doButton.text()=='START/STOP':
-                self.doButton.setText('STOP')
-                print(1)
-                self.thread=Mythread()
-                self.thread.rightSignal.connect(self.setNormalResult)
-                self.thread.wrongSignal.connect(self.setNoticeResult)
-                self.thread.start()
-                return
-
-            if self.doButton.text()=='STOP':
-                if QMessageBox.question(self, '图片处理中。。。', '是否停止当前工作', QMessageBox.Yes | QMessageBox.No,
-                                        QMessageBox.No) == QMessageBox.Yes:
-                    self.thread.finishSignal=1
-                    self.doButton.setText('START/STOP')
-                    return
-
-
-
-
-        except Exception as e:
-            print(e)
 
     def setNormalResult(self,a0):
         try:
@@ -267,28 +281,40 @@ class App(QWidget,Ui_Form):
 
             self.normalScene=QGraphicsScene()
             self.normalScene.addItem(self.normal_item)
-            self.output_view.setScene(self.normalScene)
-            self.output_view.show()
+            self.outputView.setScene(self.normalScene)
+            self.outputView.show()
+            self.outputText.setText('未检查出结节')
             self.toOutput('yes')
         except Exception as e:
             print(e)
 
 
     def setNoticeResult(self,a0):
-        try:
-            print('set notice')
-            self.notice_item=QGraphicsTextItem()
-            self.notice_item.setPlainText('NOTICE')
-            self.notice_item.setDefaultTextColor(Qt.red)
-            self.notice_item.setFont(self.font)
+        
+        self.outputText.setText('')
+        img = cv2.imdecode(np.fromfile(self.temp_file2, dtype=np.uint8), cv2.IMREAD_COLOR)
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)  # 转换图像通道
+        img_width = img.shape[1]  # 获取图像大小
+        img_height = img.shape[0]
+        width = self.input_view.width()
+        height = self.input_view.height()
+        width_scale = width / img_width
+        height_scale = height / img_height
+        zoomscale = min(width_scale, height_scale)  # 图片放缩尺度
+        frame = QImage(img, img_width, img_height, QImage.Format_RGB888)
+        pix = QPixmap.fromImage(frame)
+        self.notice_item = QGraphicsPixmapItem(pix)  # 创建像素图元
+        self.notice_item.setScale(zoomscale)
+        self.notice_scene = QGraphicsScene()  # 创建场景
+        self.notice_scene.addItem(self.notice_item)
+        self.outputView.setScene(self.notice_scene)
+        self.outputView.show()
+        
+        
+        self.outputText.append('检查出结节')
+        self.outputText.append('推测为良性')
+        self.outputText.append('请人工复查')
 
-            self.noticeScene = QGraphicsScene()
-            self.noticeScene.addItem(self.notice_item)
-            self.output_view.setScene(self.noticeScene)
-            self.output_view.show()
-            self.toOutput('no')
-        except Exception as e:
-            print(e)
 
     def resizeEvent(self, a0: QResizeEvent) -> None:
         self.load_pic()

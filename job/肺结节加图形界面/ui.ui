@@ -23,7 +23,7 @@
    <string>肺结节预测</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(234, 234, 239);</string>
+   <string notr="true"/>
   </property>
   <layout class="QGridLayout" name="gridLayout_6">
    <property name="leftMargin">
@@ -58,7 +58,7 @@
         <enum>QTabWidget::Triangular</enum>
        </property>
        <property name="currentIndex">
-        <number>1</number>
+        <number>0</number>
        </property>
        <property name="elideMode">
         <enum>Qt::ElideLeft</enum>
@@ -254,7 +254,7 @@ border-color: rgb(25, 25, 25);</string>
                  </widget>
                 </item>
                 <item row="3" column="0">
-                 <widget class="QTextEdit" name="textEdit_2">
+                 <widget class="QTextEdit" name="outputText">
                   <property name="enabled">
                    <bool>false</bool>
                   </property>
@@ -277,7 +277,7 @@ font: 20pt &quot;仿宋&quot;;</string>
                  </widget>
                 </item>
                 <item row="1" column="0">
-                 <widget class="QGraphicsView" name="output_View">
+                 <widget class="QGraphicsView" name="outputView">
                   <property name="frameShape">
                    <enum>QFrame::Box</enum>
                   </property>

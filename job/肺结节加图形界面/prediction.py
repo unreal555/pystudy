@@ -65,9 +65,12 @@ def unet_predict(imagepath):
     model.load_weights(UNET_WEIGHTS)
     # read png and ready for predict
     images = []
-    img = cv2.imread(imagepath, cv2.IMREAD_GRAYSCALE)
+    img = cv2.imdecode(np.fromfile(imagepath, dtype=np.uint8), cv2.IMREAD_GRAYSCALE)
+    cv2.imshow('1',img)
+    cv2.waitKey(0)
     images.append(img)
     for index, img in enumerate(images):
+        print(img)
         img = prepare_image_for_net(img)
         images[index] = img
     images3d = np.vstack(images)
@@ -90,7 +93,7 @@ def _3dcnn_predict(imagepath):
     print('3dcnn result: ', result)
 
 if __name__ == "__main__":
-    source_file='./simple/y.png'
+    source_file='./simple/n1.png'
     unet_predict(source_file)
     centers = unet_candidate_dicom(temp_file1)
     print('y, x', centers)
