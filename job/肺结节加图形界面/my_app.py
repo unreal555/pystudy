@@ -253,11 +253,9 @@ class App(QWidget,Ui_Form):
                 print(e)
 
     def start(self):
-        
             self.thread=Mythread()
             self.thread.rightSignal.connect(self.setNormalResult)
             self.thread.wrongSignal.connect(self.setNoticeResult)
-            
             self.thread.CHANNEL_COUNT=int(self.CHANNEL_COUNT)
             self.thread._3DCNN_WEIGHTS=self._3DCNN_WEIGHTS
             self.thread.UNET_WEIGHTS=self.UNET_WEIGHTS
@@ -268,8 +266,6 @@ class App(QWidget,Ui_Form):
             self.thread.temp_file2=self.temp_file2
             self.thread.source=self.workfile
             self.thread.run()
-            return
-
 
     def setNormalResult(self,a0):
         try:
@@ -290,7 +286,6 @@ class App(QWidget,Ui_Form):
 
 
     def setNoticeResult(self,a0):
-        
         self.outputText.setText('')
         img = cv2.imdecode(np.fromfile(self.temp_file2, dtype=np.uint8), cv2.IMREAD_COLOR)
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)  # 转换图像通道
@@ -309,8 +304,6 @@ class App(QWidget,Ui_Form):
         self.notice_scene.addItem(self.notice_item)
         self.outputView.setScene(self.notice_scene)
         self.outputView.show()
-        
-        
         self.outputText.append('检查出结节')
         self.outputText.append('推测为良性')
         self.outputText.append('请人工复查')

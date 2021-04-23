@@ -66,8 +66,6 @@ def unet_predict(imagepath):
     # read png and ready for predict
     images = []
     img = cv2.imdecode(np.fromfile(imagepath, dtype=np.uint8), cv2.IMREAD_GRAYSCALE)
-    cv2.imshow('1',img)
-    cv2.waitKey(0)
     images.append(img)
     for index, img in enumerate(images):
         print(img)
