@@ -213,18 +213,17 @@ class App(QWidget,Ui_Form):
             return False
 
     def dragEnterEvent(self, e:QDragEnterEvent):
-        print('enter')
+        if self.Pages.currentIndex()!=0:
+            e.ignore()
+            return
+
         if e.mimeData().hasText():
             txt = e.mimeData().text()
             print(txt)
             if self.isMatchFileType(txt):
                 print('accept')
                 e.accept()
-        print('ww')
-        #     else:
-        #         e.ignore()
-        # else:
-        #     e.ignore()
+
 
     def dropEvent(self, e):
         print('drop')

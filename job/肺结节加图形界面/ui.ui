@@ -47,7 +47,7 @@
       <number>0</number>
      </property>
      <item>
-      <widget class="QTabWidget" name="batchPage">
+      <widget class="QTabWidget" name="Pages">
        <property name="styleSheet">
         <string notr="true">font: 12pt &quot;宋体&quot;;</string>
        </property>
