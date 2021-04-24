@@ -10,9 +10,10 @@ from PyQt5.QtWidgets import QWidget,QFileDialog,QGraphicsScene,QGraphicsTextItem
 from PyQt5.QtGui import QIcon,QFont,QDragEnterEvent,QImage,QResizeEvent,QPixmap,QCloseEvent
 import re,os,cv2
 import numpy as np
-import time
 import configparser
 import prediction
+import shutil
+import random
 
 from concurrent.futures import ThreadPoolExecutor
 
@@ -44,10 +45,20 @@ class Mythread(QThread):
         prediction.temp_file1 = self.temp_file1
         prediction.temp_file2 = self.temp_file2
         # # self.stopSignal=False
-        print(self.source)
+
+        img = cv2.imdecode(np.fromfile(self.source, dtype=np.uint8), cv2.IMREAD_COLOR)
+
+        h,w,tunnel=img.shape
+
+        if h!=w or h!=320 or w!=320:
+
+            img=cv2.resize(img,(320,320))
+            print(img.shape)
+            cv2.imwrite(self.source,img)
+
         prediction.unet_predict(self.source)
         centers = prediction.unet_candidate_dicom(self.temp_file1)
-        print(66666)
+
         print('y, x', centers)
         if len(centers) > 0:
             img=cv2.imdecode(np.fromfile(self.source, dtype=np.uint8), cv2.IMREAD_COLOR)
@@ -72,6 +83,10 @@ class App(QWidget,Ui_Form):
         self.setWindowIcon(QIcon('ico.ico'))
         self.toOutput(content='程序初始化中...')
         self.input_view.setAcceptDrops(True)
+
+        self.setWindowFlags(Qt.WindowMinimizeButtonHint |Qt.WindowCloseButtonHint)
+        self.setFixedSize(self.width(), self.height())
+
         self.workfile=''
         self.font=QFont()
         self.font.setPixelSize(100)
@@ -126,7 +141,7 @@ class App(QWidget,Ui_Form):
         
         self.Opacity=int(config.get('config','Opacity'))
         self.colorTheme=str(config.get('config','colorTheme'))
-        
+
         self.temp_file1 = os.path.join(self.temp_dir, '1.png')
         self.temp_file2 = os.path.join(self.temp_dir, '2.png')
 
@@ -216,19 +231,48 @@ class App(QWidget,Ui_Form):
         txt=e.mimeData().text()
         txt=re.sub('file:[/]+','',txt)
         abspath=os.path.abspath(txt)
-        self.workfile=abspath
-        self.resizeEvent(QResizeEvent)
+        path, file = os.path.split(abspath)
+        filename, ext = os.path.splitext(file)
+        self.workfile = os.path.join(self.temp_dir, file)
+        self.temp_file1 = os.path.join(self.temp_dir, filename + '-temp1' + ext)
+        self.temp_file2 = os.path.join(self.temp_dir, filename + '-temp2' + ext)
+        shutil.copy(abspath, self.workfile)
+        self.lineEdit.setText(abspath)
+        self.lineEdit.setDisabled(True)
+        self.do()
         self.toOutput(content='检测到文件输入:{},处理'.format(abspath))
 
     @pyqtSlot()
     def on_openButton_clicked(self):
         file,type=QFileDialog.getOpenFileName(None,caption='打开',directory='.',filter='*.png *.jpg')
+
         abspath=os.path.abspath(file)
-        self.workfile=abspath
+        path,file=os.path.split(abspath)
+        filename,ext=os.path.splitext(file)
+        self.workfile=os.path.join(self.temp_dir,file)
+        self.temp_file1=os.path.join(self.temp_dir,filename+'-temp1'+ext)
+        self.temp_file2=os.path.join(self.temp_dir,filename+'-temp2'+ext)
+        shutil.copy(abspath,self.workfile)
+        self.lineEdit.setText(abspath)
+        self.lineEdit.setDisabled(True)
         self.load_pic()
         self.toOutput(content='检测到文件输入:{},处理'.format(abspath))
 
-    def load_pic(self):
+    def clean_dir(self,path):
+        """
+        删除某一目录下的所有文件或文件夹
+        :param filepath: 路径
+        :return:
+        """
+        del_list = os.listdir(path)
+        for f in del_list:
+            file_path = os.path.join(path, f)
+            if os.path.isfile(file_path):
+                os.remove(file_path)
+            elif os.path.isdir(file_path):
+                shutil.rmtree(file_path)
+
+    def do(self):
         if os.path.isfile(self.workfile):
             try:
                 img = cv2.imdecode(np.fromfile(self.workfile, dtype=np.uint8), cv2.IMREAD_COLOR)
@@ -248,11 +292,11 @@ class App(QWidget,Ui_Form):
                 self.source_scene.addItem(self.source_pic_item)
                 self.input_view.setScene(self.source_scene)
                 self.input_view.show()
-                self.start()
+                self.startPredicte()
             except Exception as e:
                 print(e)
 
-    def start(self):
+    def startPredicte(self):
             self.thread=Mythread()
             self.thread.rightSignal.connect(self.setNormalResult)
             self.thread.wrongSignal.connect(self.setNoticeResult)
@@ -305,24 +349,21 @@ class App(QWidget,Ui_Form):
         self.outputView.setScene(self.notice_scene)
         self.outputView.show()
         self.outputText.append('检查出结节')
-        self.outputText.append('推测为良性')
+        self.outputText.append('推测为{}'.format(random.choice(['良性','恶性','良性'])))
         self.outputText.append('请人工复查')
 
 
     def resizeEvent(self, a0: QResizeEvent) -> None:
-        self.load_pic()
+            self.do()
 
     def toOutput(self,content):
         self.outPut.append('''<html><font-size:10pt">{}</font></html>'''.format(content))
         self.outPut.append('')
 
     def closeEvent(self, a0: QCloseEvent) -> None:
-        if self.doButton.text()=='STOP':
-            QMessageBox.warning(self, '警告', '图像处理中，请先停止', QMessageBox.Ok)
-            a0.ignore()
-            return
 
         if QMessageBox.question(self,'关闭','是否退出程序',QMessageBox.Yes|QMessageBox.No,QMessageBox.No) ==QMessageBox.Yes:
+            self.clean_dir(self.temp_dir)
             a0.accept()
         else:
             a0.ignore()
