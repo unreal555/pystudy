@@ -255,7 +255,7 @@ class App(QWidget,Ui_Form):
         shutil.copy(abspath,self.workfile)
         self.lineEdit.setText(abspath)
         self.lineEdit.setDisabled(True)
-        self.load_pic()
+        self.do()
         self.toOutput(content='检测到文件输入:{},处理'.format(abspath))
 
     def clean_dir(self,path):
