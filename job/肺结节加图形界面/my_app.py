@@ -159,7 +159,7 @@ class App(QWidget,Ui_Form):
         for i in [self.radioButton_1, self.radioButton_2, self.radioButton_3,self.radioButton_4, self.radioButton_5, self.radioButton_6]:
             if i.text()==self.colorTheme:
                 i.setChecked(True)
-                
+        self.toOutput('配置文件已加载')
         
     def setColorTheme(self):
         for i in [self.radioButton_1,self.radioButton_2 ,self.radioButton_3 ,
@@ -244,7 +244,7 @@ class App(QWidget,Ui_Form):
 
     @pyqtSlot()
     def on_openButton_clicked(self):
-        file,type=QFileDialog.getOpenFileName(None,caption='打开',directory='.',filter='*.png *.jpg')
+        file,type=QFileDialog.getOpenFileName(None,caption='打开',directory='.',filter=self.fileType)
 
         abspath=os.path.abspath(file)
         path,file=os.path.split(abspath)
@@ -273,6 +273,8 @@ class App(QWidget,Ui_Form):
                 shutil.rmtree(file_path)
 
     def do(self):
+        if not os.path.exists(self.temp_dir):
+            os.makedirs(self.temp_dir)
         if os.path.isfile(self.workfile):
             try:
                 img = cv2.imdecode(np.fromfile(self.workfile, dtype=np.uint8), cv2.IMREAD_COLOR)
