@@ -184,8 +184,9 @@ class App(QWidget,Ui_Form):
         config.set('config', 'Opacity', str(self.OpacitySlider.value()))
         config.set('config', 'colorTheme', self.colorTheme)
 
-        with open(path, 'w+', encoding='gbk') as f:
-            config.write(f)
+        if QMessageBox.question(self,'保存','是否保存配置',QMessageBox.Yes|QMessageBox.No,QMessageBox.No)==QMessageBox.Yes:
+            with open(path, 'w+', encoding='gbk') as f:
+                config.write(f)
 
     @pyqtSlot()
     
