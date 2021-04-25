@@ -23,6 +23,7 @@ filetype='*.png *.jpg'
 class MyBatchDoThread(QThread):
 	rightSignal = pyqtSignal(str)
 	wrongSignal = pyqtSignal(str)
+	workdir=pyqtSignal(str)
 	
 	CHANNEL_COUNT = pyqtSignal(int)
 	_3DCNN_WEIGHTS = pyqtSignal(str)
@@ -30,50 +31,57 @@ class MyBatchDoThread(QThread):
 	THRESHOLD = pyqtSignal(int)
 	BATCH_SIZE = pyqtSignal(int)
 	temp_dir = pyqtSignal(str)
-	temp_file1 = pyqtSignal(str)
-	temp_file2 = pyqtSignal(str)
-	source = pyqtSignal(str)
+
 	
 	def __init__(self,parent=None):
 		super(MyBatchDoThread,self).__init__()
+
+		
+	def run(self):
 		prediction.CHANNEL_COUNT = self.CHANNEL_COUNT
 		prediction._3DCNN_WEIGHTS = self._3DCNN_WEIGHTS
 		prediction.UNET_WEIGHTS = self.UNET_WEIGHTS
 		prediction.THRESHOLD = self.THRESHOLD
 		prediction.BATCH_SIZE = self.BATCH_SIZE
 		prediction.temp_dir = self.temp_dir
+		
 
 		
-	def run(self):
-		if os.path.isdir(self.workdirSignal):
-			for f   in os.listdir(self.workdirSignal):
-				file=os.path.join(self.workdirSignal,f)
+		if os.path.isdir(self.workdir):
+			for f in os.listdir(self.workdir):
+				filename,ext=os.path.splitext(f)
+				if ext not in filetype:
+					continue
+				file=os.path.join(self.workdir,f)
+				workfile=os.path.join(self.temp_dir,f)
+				prediction.temp_file1=os.path.join(self.temp_dir,filename+'-temp'+ext)
+				
 				img = cv2.imdecode(np.fromfile(file, dtype=np.uint8), cv2.IMREAD_COLOR)
-				
 				h, w, tunnel = img.shape
-				
 				if h != w or h != 320 or w != 320:
 					img = cv2.resize(img, (320, 320))
-					print(img.shape)
-					cv2.imwrite(self.source, img)
+					cv2.imwrite(workfile, img)
+				else:
+					shutil.copy(file,workfile)
 				
-				prediction.unet_predict(self.source)
-				centers = prediction.unet_candidate_dicom(self.temp_file1)
+				print(prediction.temp_file1)
+				
+				
+				prediction.unet_predict(workfile)
+				centers = prediction.unet_candidate_dicom(prediction.temp_file1)
 				
 				print('y, x', centers)
 				if len(centers) > 0:
-					img = cv2.imdecode(np.fromfile(self.source, dtype=np.uint8), cv2.IMREAD_COLOR)
-					# cv2.IMREAD_COLOR：默认参数，读入一副彩色图片，忽略alpha通道
-					# cv2.IMREAD_GRAYSCALE：读入灰度图片
-					# cv2.IMREAD_UNCHANGED：顾名思义，读入完整图片，包括alpha通道
-					for pos in centers:
-						y, x = pos
-						cv2.circle(img, center=(x, y), radius=8, color=(0, 0, 255), thickness=2, lineType=cv2.LINE_AA)
-					cv2.imwrite(self.temp_file2, img)
-					self.wrongSignal.emit('异常')
-				
+					# img = cv2.imdecode(np.fromfile(self.source, dtype=np.uint8), cv2.IMREAD_COLOR)
+					# # cv2.IMREAD_COLOR：默认参数，读入一副彩色图片，忽略alpha通道
+					# # cv2.IMREAD_GRAYSCALE：读入灰度图片
+					# # cv2.IMREAD_UNCHANGED：顾名思义，读入完整图片，包括alpha通道
+					# for pos in centers:
+					# 	y, x = pos
+					# 	cv2.circle(img, center=(x, y), radius=8, color=(0, 0, 255), thickness=2, lineType=cv2.LINE_AA)
+					self.wrongSignal.emit(file+'   has cancer')
 				if len(centers) == 0:
-					self.rightSignal.emit('正常')
+					self.rightSignal.emit(file+'   no cancer')
 
 
 class MySingleDoThread(QThread):
@@ -103,6 +111,7 @@ class MySingleDoThread(QThread):
 		prediction.temp_file1 = self.temp_file1
 		prediction.temp_file2 = self.temp_file2
 		# # self.stopSignal=False
+		
 		
 		img = cv2.imdecode(np.fromfile(self.source, dtype=np.uint8), cv2.IMREAD_COLOR)
 		
@@ -138,7 +147,7 @@ class App(QWidget, Ui_Form):
 		self.setupUi(self)
 		self.setWindowTitle("肺结节检测")
 		self.setWindowIcon(QIcon('ico.ico'))
-		self.toOutput(content='程序初始化中...')
+		self.toSingleOutput(content='程序初始化中...')
 		self.input_view.setAcceptDrops(True)
 		
 		self.setWindowFlags(Qt.WindowMinimizeButtonHint | Qt.WindowCloseButtonHint)
@@ -149,7 +158,7 @@ class App(QWidget, Ui_Form):
 		self.font = QFont()
 		self.font.setPixelSize(100)
 		self.fileType = filetype
-		self.toOutput(content='初始化完成，请打开或直接拖入图像...,目前只接受{}文件'.format(self.fileType))
+		self.toSingleOutput(content='初始化完成，请打开或直接拖入图像...,目前只接受{}文件'.format(self.fileType))
 		self.colorThemes = {
 			'杏仁黄': (250, 249, 222),
 			'秋叶褐': (255, 242, 226),
@@ -180,13 +189,13 @@ class App(QWidget, Ui_Form):
 			try:
 				config.read(path, encoding='gbk')
 			except configparser.MissingSectionHeaderError as e:
-				self.toOutput(message='配置文件无任何section，请检查配置文件')
+				self.toSingleOutput(message='配置文件无任何section，请检查配置文件')
 				sys.exit(1)
 			except Exception as e:
-				self.toOutput(message=str(e))
+				self.toSingleOutput(message=str(e))
 				sys.exit(1)
 		else:
-			self.toOutput('未找到配置文件')
+			self.toSingleOutput('未找到配置文件')
 			sys.exit(1)
 		
 		self.CHANNEL_COUNT = int(config.get('config', 'CHANNEL_COUNT'))
@@ -217,7 +226,7 @@ class App(QWidget, Ui_Form):
 		          self.radioButton_6]:
 			if i.text() == self.colorTheme:
 				i.setChecked(True)
-		self.toOutput('配置文件已加载')
+		self.toSingleOutput('配置文件已加载')
 	
 	def setColorTheme(self):
 		for i in [self.radioButton_1, self.radioButton_2, self.radioButton_3,
@@ -295,7 +304,7 @@ class App(QWidget, Ui_Form):
 		self.lineEdit.setText(abspath)
 		self.lineEdit.setDisabled(True)
 		self.do()
-		self.toOutput(content='检测到文件输入:{},处理'.format(abspath))
+		self.toSingleOutput(content='检测到文件输入:{},处理'.format(abspath))
 	
 	@pyqtSlot()
 	def on_openButton_clicked(self):
@@ -311,7 +320,7 @@ class App(QWidget, Ui_Form):
 		self.lineEdit.setText(abspath)
 		self.lineEdit.setDisabled(True)
 		self.do()
-		self.toOutput(content='检测到文件输入:{},处理'.format(abspath))
+		self.toSingleOutput(content='检测到文件输入:{},处理'.format(abspath))
 	
 	def clean_dir(self, path):
 		"""
@@ -356,7 +365,7 @@ class App(QWidget, Ui_Form):
 	@pyqtSlot()
 	def on_batchSelecthButton_clicked(self):
 		select=os.path.abspath(QFileDialog.getExistingDirectory(self,'选择批量处理目录','.'))
-		if select==os.path.abspath('.'):
+		if select in [os.path.abspath('.'),os.path.abspath(self.temp_dir)]:
 			QMessageBox.warning(self,'注意','不允许将程序目录作为批处理目录')
 		else:
 			self.batch_dir=select
@@ -364,15 +373,29 @@ class App(QWidget, Ui_Form):
 		
 	@pyqtSlot()
 	def on_batchDoButton_clicked(self):
+		print('bbbb',self.UNET_WEIGHTS)
+		
 		if os.path.isdir(self.batch_dir):
-			if QMessageBox.question(self,'注意','您选中的文件夹是:‘{}’\r\n是否处理该目录影像'.format(self.batch_dir),
-			                     QMessageBox.Yes|QMessageBox.No,QMessageBox.No)==QMessageBox.Yes:
-				self.batchThread=MyBatchDoThread()
-				self.batchThread.workdirSignal=self.batch_dir	#normalSignal,warnningSignal
-				self.batchThread.run()
+			# if QMessageBox.question(self,'注意','您选中的文件夹是:‘{}’\r\n是否处理该目录影像'.format(self.batch_dir),
+			#                      QMessageBox.Yes|QMessageBox.No,QMessageBox.No)==QMessageBox.Yes:
+			#
+			self.batchThread=MyBatchDoThread()
+			
+			self.batchThread.rightSignal.connect(lambda a:self.toBatchOutput(content=self.batchThread.rightSignal))
+			self.batchThread.wrongSignal.connect(lambda a: self.toBatchOutput(content=self.batchThread.wrongSignal))
+			
+			self.batchThread.CHANNEL_COUNT = int(self.CHANNEL_COUNT)
+			self.batchThread._3DCNN_WEIGHTS = self._3DCNN_WEIGHTS
+			self.batchThread.UNET_WEIGHTS = self.UNET_WEIGHTS
+			self.batchThread.THRESHOLD = int(self.THRESHOLD)
+			self.batchThread.BATCH_SIZE = int(self.BATCH_SIZE)
+			self.batchThread.temp_dir = self.temp_dir
+			
+			self.batchThread.workdir=self.batch_dir	#normalSignal,warnningSignal
+			self.batchThread.run()
 
-		else:
-			QMessageBox.warning(self,'注意','还未选择目录或者选择有误，请重新选择目录')
+		# else:
+		# 	QMessageBox.warning(self,'注意','还未选择目录或者选择有误，请重新选择目录')
 			
 	
 	
@@ -404,7 +427,7 @@ class App(QWidget, Ui_Form):
 			self.outputView.setScene(self.normalScene)
 			self.outputView.show()
 			self.outputText.setText('未检查出结节')
-			self.toOutput('yes')
+			self.toSingleOutput('yes')
 		except Exception as e:
 			print(e)
 	
@@ -434,9 +457,14 @@ class App(QWidget, Ui_Form):
 	def resizeEvent(self, a0: QResizeEvent) -> None:
 		self.do()
 	
-	def toOutput(self, content):
+	def toSingleOutput(self, content):
 		self.outPut.append('''<html><font-size:10pt">{}</font></html>'''.format(content))
 		self.outPut.append('')
+		
+	def toBatchOutput(self, content):
+		print('ssss')
+		self.batchOutPut.append('''<html><font-size:10pt">{}</font></html>'''.format(content))
+		self.batchOutPut.append('')
 	
 	def closeEvent(self, a0: QCloseEvent) -> None:
 		

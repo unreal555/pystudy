@@ -436,7 +436,7 @@ font: 20pt &quot;仿宋&quot;;</string>
               <item>
                <layout class="QGridLayout" name="gridLayout_15">
                 <item row="0" column="0">
-                 <widget class="QTextBrowser" name="textBrowser_3"/>
+                 <widget class="QTextBrowser" name="batchOutPut"/>
                 </item>
                </layout>
               </item>
