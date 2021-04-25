@@ -15,6 +15,7 @@ import configparser
 import prediction
 import shutil
 import random
+import time
 
 from concurrent.futures import ThreadPoolExecutor
 
@@ -48,7 +49,9 @@ class MyBatchDoThread(QThread):
 
 		
 		if os.path.isdir(self.workdir):
+		
 			for f in os.listdir(self.workdir):
+				time.sleep(1)
 				filename,ext=os.path.splitext(f)
 				if ext not in filetype:
 					continue
@@ -381,8 +384,8 @@ class App(QWidget, Ui_Form):
 			#
 			self.batchThread=MyBatchDoThread()
 			
-			self.batchThread.rightSignal.connect(lambda a:self.toBatchOutput(content=self.batchThread.rightSignal))
-			self.batchThread.wrongSignal.connect(lambda a: self.toBatchOutput(content=self.batchThread.wrongSignal))
+			self.batchThread.rightSignal.connect(self.toBatchOutput)
+			self.batchThread.wrongSignal.connect(self.toBatchOutput)
 			
 			self.batchThread.CHANNEL_COUNT = int(self.CHANNEL_COUNT)
 			self.batchThread._3DCNN_WEIGHTS = self._3DCNN_WEIGHTS
@@ -461,9 +464,9 @@ class App(QWidget, Ui_Form):
 		self.outPut.append('''<html><font-size:10pt">{}</font></html>'''.format(content))
 		self.outPut.append('')
 		
-	def toBatchOutput(self, content):
-		print('ssss')
-		self.batchOutPut.append('''<html><font-size:10pt">{}</font></html>'''.format(content))
+	def toBatchOutput(self, strings):
+		print('sss',strings)
+		self.batchOutPut.append('''<html><font-size:10pt">{}</font></html>'''.format(strings))
 		self.batchOutPut.append('')
 	
 	def closeEvent(self, a0: QCloseEvent) -> None:
