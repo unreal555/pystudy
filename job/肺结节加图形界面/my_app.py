@@ -24,6 +24,7 @@ filetype='*.png *.jpg'
 class MyBatchDoThread(QThread):
     rightSignal = pyqtSignal(str)
     wrongSignal = pyqtSignal(str)
+    infoSignal=pyqtSignal(str)
     workdir=pyqtSignal(str)
 
     CHANNEL_COUNT = pyqtSignal(int)
@@ -37,6 +38,12 @@ class MyBatchDoThread(QThread):
     def __init__(self,parent=None):
         super(MyBatchDoThread,self).__init__()
 
+    def __del__(self):
+        print('del')
+        try:
+            self.destroyed()
+        except Exception as e:
+            print(e)
 
     def run(self):
         prediction.CHANNEL_COUNT = self.CHANNEL_COUNT
@@ -46,7 +53,7 @@ class MyBatchDoThread(QThread):
         prediction.BATCH_SIZE = self.BATCH_SIZE
         prediction.temp_dir = self.temp_dir
 
-
+        self.infoSignal.emit('开始批处理，工作目录为：{}'.format(self.workdir))
 
         if os.path.isdir(self.workdir):
 
@@ -58,6 +65,7 @@ class MyBatchDoThread(QThread):
                 file=os.path.join(self.workdir,f)
                 workfile=os.path.join(self.temp_dir,f)
                 prediction.temp_file1=os.path.join(self.temp_dir,filename+'-temp'+ext)
+
 
                 img = cv2.imdecode(np.fromfile(file, dtype=np.uint8), cv2.IMREAD_COLOR)
                 h, w, tunnel = img.shape
@@ -82,10 +90,11 @@ class MyBatchDoThread(QThread):
                     # for pos in centers:
                     # 	y, x = pos
                     # 	cv2.circle(img, center=(x, y), radius=8, color=(0, 0, 255), thickness=2, lineType=cv2.LINE_AA)
+                    # cv2.imwrite(self.temp_file2, img)
                     self.wrongSignal.emit('wrong:'+file)
                 if len(centers) == 0:
                     self.rightSignal.emit('right:'+file)
-
+        self.infoSignal.emit('处理完成')
 
 class MySingleDoThread(QThread):
     rightSignal = pyqtSignal(str)
@@ -157,7 +166,10 @@ class App(QWidget, Ui_Form):
         self.setFixedSize(self.width(), self.height())
 
         self.workfile = ''
-        self.batch_dir=''
+        self.batch_dir=os.path.abspath('./batchdir')
+        if not os.path.exists(self.batch_dir):
+            os.makedirs(self.batch_dir)
+        self.batchDirLineEdit.setText(self.batch_dir)
         self.font = QFont()
         self.font.setPixelSize(100)
         self.fileType = filetype
@@ -367,7 +379,9 @@ class App(QWidget, Ui_Form):
 
     @pyqtSlot()
     def on_batchSelecthButton_clicked(self):
-        select=os.path.abspath(QFileDialog.getExistingDirectory(self,'选择批量处理目录','./simple'))
+        select=os.path.abspath(QFileDialog.getExistingDirectory(self,'选择批量处理目录',self.batch_dir,QFileDialog.ShowDirsOnly))
+        select=os.path.abspath(select)
+        print(select)
         if select in [os.path.abspath('.'),os.path.abspath(self.temp_dir)]:
             QMessageBox.warning(self,'注意','不允许将程序根目录或temp目录作为批处理目录')
         else:
@@ -377,10 +391,14 @@ class App(QWidget, Ui_Form):
     @pyqtSlot()
     def on_batchDoButton_clicked(self):
         if os.path.isdir(self.batch_dir):
+            print('1111111111111111')
             if QMessageBox.question(self,'注意','您选中的文件夹是:‘{}’\r\n是否处理该目录影像'.format(self.batch_dir),QMessageBox.Yes|QMessageBox.No,QMessageBox.No)==QMessageBox.Yes:
                 self.batchThread=MyBatchDoThread()
                 self.batchThread.rightSignal.connect(self.toBatchOutput)
                 self.batchThread.wrongSignal.connect(self.toBatchOutput)
+                self.batchThread.infoSignal.connect(self.toBatchOutput)
+                self.batchThread.finished.connect(self.batchThread.__del__)
+
 
                 self.batchThread.CHANNEL_COUNT = int(self.CHANNEL_COUNT)
                 self.batchThread._3DCNN_WEIGHTS = self._3DCNN_WEIGHTS
