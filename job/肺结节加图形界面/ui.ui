@@ -436,7 +436,17 @@ font: 20pt &quot;仿宋&quot;;</string>
               <item>
                <layout class="QGridLayout" name="gridLayout_15">
                 <item row="0" column="0">
-                 <widget class="QTextBrowser" name="batchOutPut"/>
+                 <widget class="QTextBrowser" name="batchOutPut">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="lineWrapMode">
+                   <enum>QTextEdit::NoWrap</enum>
+                  </property>
+                  <property name="readOnly">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
                 </item>
                </layout>
               </item>
@@ -452,7 +462,17 @@ font: 20pt &quot;仿宋&quot;;</string>
               <item>
                <layout class="QGridLayout" name="gridLayout_14">
                 <item row="0" column="0">
-                 <widget class="QTextBrowser" name="textBrowser_2"/>
+                 <widget class="QTextEdit" name="noticeTextEdit">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="lineWrapMode">
+                   <enum>QTextEdit::NoWrap</enum>
+                  </property>
+                  <property name="readOnly">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
                 </item>
                </layout>
               </item>
@@ -468,7 +488,17 @@ font: 20pt &quot;仿宋&quot;;</string>
               <item>
                <layout class="QGridLayout" name="gridLayout_13">
                 <item row="0" column="0">
-                 <widget class="QTextBrowser" name="textBrowser"/>
+                 <widget class="QTextEdit" name="normalTextEdit">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="lineWrapMode">
+                   <enum>QTextEdit::NoWrap</enum>
+                  </property>
+                  <property name="readOnly">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
                 </item>
                </layout>
               </item>
