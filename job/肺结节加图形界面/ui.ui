@@ -58,7 +58,7 @@
         <enum>QTabWidget::Triangular</enum>
        </property>
        <property name="currentIndex">
-        <number>0</number>
+        <number>1</number>
        </property>
        <property name="elideMode">
         <enum>Qt::ElideLeft</enum>
@@ -402,7 +402,11 @@ font: 20pt &quot;仿宋&quot;;</string>
               <item>
                <layout class="QGridLayout" name="gridLayout_11">
                 <item row="0" column="0">
-                 <widget class="QLineEdit" name="lineEdit_2"/>
+                 <widget class="QLineEdit" name="batchDirLineEdit">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                 </widget>
                 </item>
                 <item row="0" column="1">
                  <widget class="QPushButton" name="batchSelecthButton">
@@ -426,7 +430,7 @@ font: 20pt &quot;仿宋&quot;;</string>
            <item row="3" column="1" colspan="2">
             <widget class="QGroupBox" name="groupBox_6">
              <property name="title">
-              <string>GroupBox</string>
+              <string>运行日志</string>
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout_11">
               <item>
