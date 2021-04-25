@@ -18,16 +18,63 @@ import random
 
 from concurrent.futures import ThreadPoolExecutor
 
+filetype='*.png *.jpg'
+
 class MyBatchDoThread(QThread):
-	normalSignal=pyqtSlot(str)
-	warnningSignal=pyqtSlot(str)
-	workdirSignal=pyqtSignal(str)
+	rightSignal = pyqtSignal(str)
+	wrongSignal = pyqtSignal(str)
+	
+	CHANNEL_COUNT = pyqtSignal(int)
+	_3DCNN_WEIGHTS = pyqtSignal(str)
+	UNET_WEIGHTS = pyqtSignal(str)
+	THRESHOLD = pyqtSignal(int)
+	BATCH_SIZE = pyqtSignal(int)
+	temp_dir = pyqtSignal(str)
+	temp_file1 = pyqtSignal(str)
+	temp_file2 = pyqtSignal(str)
+	source = pyqtSignal(str)
 	
 	def __init__(self,parent=None):
 		super(MyBatchDoThread,self).__init__()
+		prediction.CHANNEL_COUNT = self.CHANNEL_COUNT
+		prediction._3DCNN_WEIGHTS = self._3DCNN_WEIGHTS
+		prediction.UNET_WEIGHTS = self.UNET_WEIGHTS
+		prediction.THRESHOLD = self.THRESHOLD
+		prediction.BATCH_SIZE = self.BATCH_SIZE
+		prediction.temp_dir = self.temp_dir
+
 		
 	def run(self):
-		pass
+		if os.path.isdir(self.workdirSignal):
+			for f   in os.listdir(self.workdirSignal):
+				file=os.path.join(self.workdirSignal,f)
+				img = cv2.imdecode(np.fromfile(file, dtype=np.uint8), cv2.IMREAD_COLOR)
+				
+				h, w, tunnel = img.shape
+				
+				if h != w or h != 320 or w != 320:
+					img = cv2.resize(img, (320, 320))
+					print(img.shape)
+					cv2.imwrite(self.source, img)
+				
+				prediction.unet_predict(self.source)
+				centers = prediction.unet_candidate_dicom(self.temp_file1)
+				
+				print('y, x', centers)
+				if len(centers) > 0:
+					img = cv2.imdecode(np.fromfile(self.source, dtype=np.uint8), cv2.IMREAD_COLOR)
+					# cv2.IMREAD_COLOR：默认参数，读入一副彩色图片，忽略alpha通道
+					# cv2.IMREAD_GRAYSCALE：读入灰度图片
+					# cv2.IMREAD_UNCHANGED：顾名思义，读入完整图片，包括alpha通道
+					for pos in centers:
+						y, x = pos
+						cv2.circle(img, center=(x, y), radius=8, color=(0, 0, 255), thickness=2, lineType=cv2.LINE_AA)
+					cv2.imwrite(self.temp_file2, img)
+					self.wrongSignal.emit('异常')
+				
+				if len(centers) == 0:
+					self.rightSignal.emit('正常')
+
 
 class MySingleDoThread(QThread):
 	rightSignal = pyqtSignal(str)
@@ -101,7 +148,7 @@ class App(QWidget, Ui_Form):
 		self.batch_dir=''
 		self.font = QFont()
 		self.font.setPixelSize(100)
-		self.fileType = '*.png *.jpg'
+		self.fileType = filetype
 		self.toOutput(content='初始化完成，请打开或直接拖入图像...,目前只接受{}文件'.format(self.fileType))
 		self.colorThemes = {
 			'杏仁黄': (250, 249, 222),
@@ -320,40 +367,14 @@ class App(QWidget, Ui_Form):
 		if os.path.isdir(self.batch_dir):
 			if QMessageBox.question(self,'注意','您选中的文件夹是:‘{}’\r\n是否处理该目录影像'.format(self.batch_dir),
 			                     QMessageBox.Yes|QMessageBox.No,QMessageBox.No)==QMessageBox.Yes:
-				print(1)
-				
+				self.batchThread=MyBatchDoThread()
+				self.batchThread.workdirSignal=self.batch_dir	#normalSignal,warnningSignal
+				self.batchThread.run()
 
 		else:
 			QMessageBox.warning(self,'注意','还未选择目录或者选择有误，请重新选择目录')
 			
-	def batchDo(self):
-		
-		img = cv2.imdecode(np.fromfile(self.source, dtype=np.uint8), cv2.IMREAD_COLOR)
-		
-		h, w, tunnel = img.shape
-		
-		if h != w or h != 320 or w != 320:
-			img = cv2.resize(img, (320, 320))
-			print(img.shape)
-			cv2.imwrite(self.source, img)
-		
-		prediction.unet_predict(self.source)
-		centers = prediction.unet_candidate_dicom(self.temp_file1)
-		
-		print('y, x', centers)
-		if len(centers) > 0:
-			img = cv2.imdecode(np.fromfile(self.source, dtype=np.uint8), cv2.IMREAD_COLOR)
-			# cv2.IMREAD_COLOR：默认参数，读入一副彩色图片，忽略alpha通道
-			# cv2.IMREAD_GRAYSCALE：读入灰度图片
-			# cv2.IMREAD_UNCHANGED：顾名思义，读入完整图片，包括alpha通道
-			for pos in centers:
-				y, x = pos
-				cv2.circle(img, center=(x, y), radius=8, color=(0, 0, 255), thickness=2, lineType=cv2.LINE_AA)
-			cv2.imwrite(self.temp_file2, img)
-			self.wrongSignal.emit('异常')
-		
-		if len(centers) == 0:
-			self.rightSignal.emit('正常')
+	
 	
 	def startPredicte(self):
 		self.thread = MySingleDoThread()
