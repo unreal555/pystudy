@@ -58,7 +58,7 @@
         <enum>QTabWidget::Triangular</enum>
        </property>
        <property name="currentIndex">
-        <number>1</number>
+        <number>2</number>
        </property>
        <property name="elideMode">
         <enum>Qt::ElideLeft</enum>
@@ -612,10 +612,13 @@ font: 20pt &quot;仿宋&quot;;</string>
                <item>
                 <widget class="QSlider" name="OpacitySlider">
                  <property name="minimum">
-                  <number>40</number>
+                  <number>60</number>
                  </property>
                  <property name="maximum">
                   <number>100</number>
+                 </property>
+                 <property name="value">
+                  <number>60</number>
                  </property>
                  <property name="orientation">
                   <enum>Qt::Horizontal</enum>

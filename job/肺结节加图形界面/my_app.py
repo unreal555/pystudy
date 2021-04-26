@@ -472,7 +472,7 @@ class App(QWidget, Ui_Form):
             self.outputView.setScene(self.normalScene)
             self.outputView.show()
             self.outputText.setText('未检查出结节')
-            self.toSingleOutput('yes')
+            self.toSingleOutput('未检查出结节')
         except Exception as e:
             print(e)
 
