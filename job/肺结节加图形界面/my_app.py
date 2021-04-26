@@ -17,9 +17,24 @@ import shutil
 import random
 import time
 
-from concurrent.futures import ThreadPoolExecutor
+
 
 filetype='*.png *.jpg'
+
+
+def clean_dir(path):
+    """
+    删除某一目录下的所有文件或文件夹
+    :param filepath: 路径
+    :return:
+    """
+    del_list = os.listdir(path)
+    for f in del_list:
+        file_path = os.path.join(path, f)
+        if os.path.isfile(file_path):
+            os.remove(file_path)
+        elif os.path.isdir(file_path):
+            shutil.rmtree(file_path)
 
 class MyBatchDoThread(QThread):
     rightSignal = pyqtSignal(str)
@@ -46,6 +61,7 @@ class MyBatchDoThread(QThread):
             print(e)
 
     def run(self):
+        
         prediction.CHANNEL_COUNT = self.CHANNEL_COUNT
         prediction._3DCNN_WEIGHTS = self._3DCNN_WEIGHTS
         prediction.UNET_WEIGHTS = self.UNET_WEIGHTS
@@ -53,20 +69,36 @@ class MyBatchDoThread(QThread):
         prediction.BATCH_SIZE = self.BATCH_SIZE
         prediction.temp_dir = self.temp_dir
 
+        self.normalDir = os.path.join(self.workdir, 'normal')
+        self.noticeDir = os.path.join(self.workdir, 'notice')
+
+        if not os.path.exists(self.normalDir):
+            os.makedirs(self.normalDir)
+        if not os.path.exists(self.noticeDir):
+            os.makedirs(self.noticeDir)
+
+        if not os.listdir(self.normalDir)==[]:
+            clean_dir(self.normalDir)
+
+        if not os.listdir(self.noticeDir)==[]:
+            clean_dir(self.noticeDir)
+
         self.infoSignal.emit('开始批处理，工作目录为：{}'.format(self.workdir))
 
         if os.path.isdir(self.workdir):
 
             for f in os.listdir(self.workdir):
-                time.sleep(1)
                 filename,ext=os.path.splitext(f)
+                if ext=='':
+                    continue
                 if ext not in filetype:
                     continue
+
                 file=os.path.join(self.workdir,f)
                 workfile=os.path.join(self.temp_dir,f)
-                prediction.temp_file1=os.path.join(self.temp_dir,filename+'-temp'+ext)
-
-
+                prediction.temp_file1=os.path.join(self.temp_dir,filename+'-temp2'+ext)
+                temp_file2=os.path.join(self.temp_dir,filename+'-temp2'+ext)
+        
                 img = cv2.imdecode(np.fromfile(file, dtype=np.uint8), cv2.IMREAD_COLOR)
                 h, w, tunnel = img.shape
                 if h != w or h != 320 or w != 320:
@@ -77,22 +109,28 @@ class MyBatchDoThread(QThread):
 
                 print(prediction.temp_file1)
 
-
+                print(os.path.abspath(prediction.UNET_WEIGHTS))
                 prediction.unet_predict(workfile)
                 centers = prediction.unet_candidate_dicom(prediction.temp_file1)
 
                 print('y, x', centers)
                 if len(centers) > 0:
-                    # img = cv2.imdecode(np.fromfile(self.source, dtype=np.uint8), cv2.IMREAD_COLOR)
-                    # # cv2.IMREAD_COLOR：默认参数，读入一副彩色图片，忽略alpha通道
-                    # # cv2.IMREAD_GRAYSCALE：读入灰度图片
-                    # # cv2.IMREAD_UNCHANGED：顾名思义，读入完整图片，包括alpha通道
-                    # for pos in centers:
-                    # 	y, x = pos
-                    # 	cv2.circle(img, center=(x, y), radius=8, color=(0, 0, 255), thickness=2, lineType=cv2.LINE_AA)
-                    # cv2.imwrite(self.temp_file2, img)
+                    imgSource = cv2.imdecode(np.fromfile(file, dtype=np.uint8), cv2.IMREAD_COLOR)
+                    # cv2.IMREAD_COLOR：默认参数，读入一副彩色图片，忽略alpha通道
+                    # cv2.IMREAD_GRAYSCALE：读入灰度图片
+                    # cv2.IMREAD_UNCHANGED：顾名思义，读入完整图片，包括alpha通道
+                    imgTarget=img.copy()
+                    for pos in centers:
+                        y, x = pos
+                        cv2.circle(imgTarget, center=(x, y), radius=8, color=(0, 0, 255), thickness=2, lineType=cv2.LINE_AA)
+            
+                    res = np.hstack([imgSource, imgTarget])
+                    cv2.imwrite(temp_file2, res)
+                    shutil.move(file,self.noticeDir)
+                    shutil.move(temp_file2,self.noticeDir)
                     self.wrongSignal.emit('wrong:'+file)
                 if len(centers) == 0:
+                    shutil.move(file,self.normalDir)
                     self.rightSignal.emit('right:'+file)
         self.infoSignal.emit('处理完成')
 
@@ -174,6 +212,10 @@ class App(QWidget, Ui_Form):
         self.font.setPixelSize(100)
         self.fileType = filetype
         self.toSingleOutput(content='初始化完成，请打开或直接拖入图像...,目前只接受{}文件'.format(self.fileType))
+        self.toBatchOutput(strings='初始化完成')
+        self.toBatchOutput(strings='选择文件夹，点击开始批量处理')
+        self.toBatchOutput(strings='请储存好原始影像文件，处理过程可能会造成影像文件被修改')
+        self.toBatchOutput(strings='注意请备份normal、notice下的所有文件，执行过程会清空原有文件')
         self.colorThemes = {
             '杏仁黄': (250, 249, 222),
             '秋叶褐': (255, 242, 226),
@@ -337,19 +379,7 @@ class App(QWidget, Ui_Form):
         self.do()
         self.toSingleOutput(content='检测到文件输入:{},处理'.format(abspath))
 
-    def clean_dir(self, path):
-        """
-        删除某一目录下的所有文件或文件夹
-        :param filepath: 路径
-        :return:
-        """
-        del_list = os.listdir(path)
-        for f in del_list:
-            file_path = os.path.join(path, f)
-            if os.path.isfile(file_path):
-                os.remove(file_path)
-            elif os.path.isdir(file_path):
-                shutil.rmtree(file_path)
+
 
     def do(self):
         if not os.path.exists(self.temp_dir):
@@ -391,7 +421,6 @@ class App(QWidget, Ui_Form):
     @pyqtSlot()
     def on_batchDoButton_clicked(self):
         if os.path.isdir(self.batch_dir):
-            print('1111111111111111')
             if QMessageBox.question(self,'注意','您选中的文件夹是:‘{}’\r\n是否处理该目录影像'.format(self.batch_dir),QMessageBox.Yes|QMessageBox.No,QMessageBox.No)==QMessageBox.Yes:
                 self.batchThread=MyBatchDoThread()
                 self.batchThread.rightSignal.connect(self.toBatchOutput)

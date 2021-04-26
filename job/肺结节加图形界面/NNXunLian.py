@@ -329,6 +329,7 @@ def image_generator(batch_files, batch_size, train_set):
 
 # 实现unet的网络结构，并加载预训练好的权重
 def get_unet(learn_rate=0.0001) -> Model:
+    K.clear_session()
     inputs = Input((SEGMENTER_IMG_SIZE, SEGMENTER_IMG_SIZE, CHANNEL_COUNT))
     filter_size = 32
     growth_step = 32
