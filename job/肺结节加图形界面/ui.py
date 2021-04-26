@@ -373,7 +373,7 @@ class Ui_Form(object):
         self.gridLayout_6.addLayout(self.horizontalLayout, 0, 0, 1, 1)
 
         self.retranslateUi(Form)
-        self.Pages.setCurrentIndex(2)
+        self.Pages.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
