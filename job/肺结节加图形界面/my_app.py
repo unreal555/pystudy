@@ -523,7 +523,7 @@ class App(QWidget, Ui_Form):
 
         if QMessageBox.question(self, '关闭', '是否退出程序', QMessageBox.Yes | QMessageBox.No,
                                 QMessageBox.No) == QMessageBox.Yes:
-            self.clean_dir(self.temp_dir)
+            clean_dir(self.temp_dir)
             a0.accept()
         else:
             a0.ignore()
