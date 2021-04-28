@@ -36,14 +36,14 @@ class DRAWPANEL():
         if self.action=='line':
             self.lastItem=self.drawLine(self.startX,self.startY,nowX,nowY)
 
-        
-
-
+    
     def cvMouseUp(self,event):
         x = event.x
         y = event.y
         print('release', x, y)
-
+        self.Items.append(self.lastItem)
+        self.lastItem=''
+        print(self.Items)
 
     def __init__(self):
         self.root = Tk()
@@ -64,6 +64,8 @@ class DRAWPANEL():
         self.finishY=0
         
         self.lastItem=''
+        
+        self.Items=[]
 
         self.colorPanelArea=tkinter.Frame(self.root, bd=2, relief="sunken",height=10)
         self.downArea=tkinter.Frame(self.root, bd=2, relief="sunken",height=10)
