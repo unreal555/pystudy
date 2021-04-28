@@ -55,6 +55,9 @@ class player():
         # self.root.attributes("-alpha", 0.9)
         self.root.geometry("1024x600")
 
+        self.color='black'
+        self.fillcolor='white'
+
         self.colorPanelArea=tkinter.Frame(self.root, bd=2, relief="sunken",height=10)
         self.downArea=tkinter.Frame(self.root, bd=2, relief="sunken",height=10)
         self.colorPanelArea.pack(side=tkinter.TOP, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
@@ -66,24 +69,29 @@ class player():
         self.toolsArea.pack(side=tkinter.LEFT,  expand=tkinter.NO, fill=tkinter.Y)
 
         self.redButton=tkinter.Button(self.colorPanelArea,text='红色',bg='red')
-        self.redButton.grid(row=0,column=1)
+        self.redButton.pack(side=tkinter.LEFT,  expand=tkinter.NO, fill=tkinter.X)
+        self.redButton.bind("<ButtonPress-1>",self.setLineColor)
         
         self.greenButton=tkinter.Button(self.colorPanelArea,text='绿色',bg='green')
-        self.redButton.grid(row=0,column=2)
+        self.greenButton.pack(side=tkinter.LEFT,  expand=tkinter.NO, fill=tkinter.X)
+        self.greenButton.bind("<ButtonPress-1>", self.setLineColor)
         
         self.drawLineButton=tkinter.Button(self.toolsArea,text='线',command=self.drawLine)
-        self.drawLineButton.pack()
+        self.drawLineButton.pack(side=tkinter.TOP,  expand=tkinter.NO, fill=tkinter.X)
         
         self.drawPeiQiButton=tkinter.Button(self.toolsArea,text='佩奇',command=self.drawPeiQi)
-        self.drawPeiQiButton.pack()
+        self.drawPeiQiButton.pack(side=tkinter.TOP,  expand=tkinter.NO, fill=tkinter.X)
     
         self.cv=tkinter.Canvas(self.drawArea)
         self.cv.pack(side=tkinter.LEFT,  expand=tkinter.YES, fill=tkinter.BOTH)
         
 
     def drawLine(self):
-        self.cv.create_line(1,1,220,120,fill='red')
+        self.cv.create_line(1,1,520,520,fill=self.fillcolor)
         
+    def setLineColor(self,event):
+        print(event.widget['bg'])
+        self.fillcolor=event.widget['bg']
     
     def drawPeiQi(self):
         cv=self.cv
