@@ -26,17 +26,20 @@ class DRAWPANEL():
         print('down',x,y)
         self.startX=event.x
         self.startY=event.y
-        
-        
 
     def cvMouseMove(self,event):
         nowX = event.x
         nowY = event.y
         self.cv.delete(self.lastItem)
-        if self.action=='line':
-            self.lastItem=self.drawLine(self.startX,self.startY,nowX,nowY)
+        for i in self.Items:
 
-    
+        if self.action=='line':
+            print('line',self.startX,self.startY,nowX,nowY)
+            self.lastItem=self.drawLine(self.startX,self.startY,nowX,nowY)
+        if self.action=='rectangle':
+            print('rectangle',self.startX,self.startY,nowX,nowY)
+            self.lastItem=self.drawRectangle(self.startX,self.startY,nowX,nowY)
+
     def cvMouseUp(self,event):
         x = event.x
         y = event.y
@@ -50,7 +53,7 @@ class DRAWPANEL():
         self.root.title('画图板')
         self.root['bg'] = '#bcbcbc'
         # self.root.attributes("-alpha", 0.9)
-        self.root.geometry("1024x600")
+        # self.root.geometry("1024x600")
 
         self.linecolor='Tan'
         self.fillcolor='tan'
@@ -92,15 +95,28 @@ class DRAWPANEL():
         self.drawPeiQiButton=tkinter.Button(self.toolsArea,text='佩奇',command=self.drawPeiQi)
         self.drawPeiQiButton.pack(side=tkinter.TOP,  expand=tkinter.NO, fill=tkinter.X)
 
+        self.drawRectangleButton=tkinter.Button(self.toolsArea,text='矩形')
+        self.drawRectangleButton.pack(side=tkinter.TOP,  expand=tkinter.NO, fill=tkinter.X)
+        self.drawRectangleButton.bind('<ButtonPress-1>',self.setAction)
+
         self.cleanCanvsButton=tkinter.Button(self.toolsArea,text='清空',command=(lambda x=ALL: self.cv.delete(x)))
         self.cleanCanvsButton.pack(side=tkinter.TOP, expand=tkinter.NO, fill=tkinter.X)
-  
-        self.cv=tkinter.Canvas(self.drawArea)
-        self.cv.pack(side=tkinter.LEFT,  expand=tkinter.YES, fill=tkinter.BOTH)
-        
+
+        self.cv=tkinter.Canvas(self.drawArea,width=800,height=600)
+        self.cv.pack(side=tkinter.LEFT,  expand=tkinter.YES, fill=tkinter.NONE)
+        print(self.cv.winfo_screenheight(),self.cv.winfo_screenmmwidth())
+        self.turtleCv = turtle.TurtleScreen(self.cv)
+        self.turtleCv.setworldcoordinates(0,-800,600,0)
+
         self.cv.bind('<ButtonPress-1>',self.cvMouseDown)
         self.cv.bind('<B1-Motion> ',self.cvMouseMove)
         self.cv.bind('<ButtonRelease-1>',self.cvMouseUp)
+
+
+    def drawRectangle(self,x,y,x1,y1):
+
+        self.cv.create_rectangle(x,y,x1,y1,fill='yellow')
+
 
     def drawLine(self,x,y,x1,y1):
         print(x,y,x1,y1)
@@ -110,25 +126,26 @@ class DRAWPANEL():
     def setAction(self,event):
         if event.widget['text']=='线':
             self.action='line'
-        
+        if event.widget['text']=='矩形':
+            self.action='rectangle'
+
+
     def setLineColor(self,event):
         print(event.widget['bg'])
         self.fillcolor=event.widget['bg']
 
     
     def drawPeiQi(self):
-        cv=self.cv
-        w= turtle.TurtleScreen(cv)
-        t = turtle.RawTurtle(w)
+        t = turtle.RawTurtle(self.turtleCv)
         t.pensize(4)
         t.hideturtle()
         t.color((1, 0.6, 0.75), "pink")
         # t.setup(840, 500)
-        t.speed(10)
+        t.speed(100)
 
         # 鼻子
         t.pu()
-        t.goto(100,-50)
+        t.goto(170,-250)
         t.pd()
         t.seth(-30)
         t.begin_fill()
@@ -186,7 +203,7 @@ class DRAWPANEL():
         t.seth(161)
         t.circle(-300, 15)
         t.pu()
-        t.goto(100, -50)
+        t.goto(170,-250)
         t.pd()
         t.seth(-30)
         a = 0.4
