@@ -82,6 +82,12 @@ class player():
         self.drawPeiQiButton=tkinter.Button(self.toolsArea,text='佩奇',command=self.drawPeiQi)
         self.drawPeiQiButton.pack(side=tkinter.TOP,  expand=tkinter.NO, fill=tkinter.X)
     
+
+    
+        self.cleanCanvsButton=tkinter.Button(self.toolsArea,text='清空',command=(lambda x=ALL: self.cv.delete(x)))
+        self.cleanCanvsButton.pack(side=tkinter.TOP, expand=tkinter.NO, fill=tkinter.X)
+  
+    
         self.cv=tkinter.Canvas(self.drawArea)
         self.cv.pack(side=tkinter.LEFT,  expand=tkinter.YES, fill=tkinter.BOTH)
         
@@ -92,6 +98,7 @@ class player():
     def setLineColor(self,event):
         print(event.widget['bg'])
         self.fillcolor=event.widget['bg']
+
     
     def drawPeiQi(self):
         cv=self.cv
