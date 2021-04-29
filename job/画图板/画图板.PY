@@ -2,6 +2,9 @@ from  tkinter import *
 import tkinter
 import os
 from tkinter.filedialog import askopenfilename
+from tkinter.colorchooser import *
+from concurrent.futures import ThreadPoolExecutor
+
 
 import turtle
 
@@ -31,14 +34,15 @@ class DRAWPANEL():
         nowX = event.x
         nowY = event.y
         self.cv.delete(self.lastItem)
-        for i in self.Items:
-
+      #  for i in self.Items:
+        
         if self.action=='line':
             print('line',self.startX,self.startY,nowX,nowY)
             self.lastItem=self.drawLine(self.startX,self.startY,nowX,nowY)
         if self.action=='rectangle':
             print('rectangle',self.startX,self.startY,nowX,nowY)
             self.lastItem=self.drawRectangle(self.startX,self.startY,nowX,nowY)
+            print(self.lastItem)
 
     def cvMouseUp(self,event):
         x = event.x
@@ -55,8 +59,8 @@ class DRAWPANEL():
         # self.root.attributes("-alpha", 0.9)
         # self.root.geometry("1024x600")
 
-        self.linecolor='Tan'
-        self.fillcolor='tan'
+        self.linecolor='red'
+        self.fillcolor='yellow'
         
         self.action='line'
         
@@ -80,13 +84,13 @@ class DRAWPANEL():
         self.drawArea.pack(side=tkinter.RIGHT,  expand=tkinter.YES, fill=tkinter.BOTH)
         self.toolsArea.pack(side=tkinter.LEFT,  expand=tkinter.NO, fill=tkinter.Y)
 
-        self.redButton=tkinter.Button(self.colorPanelArea,text='红色',bg='red')
-        self.redButton.pack(side=tkinter.LEFT,  expand=tkinter.NO, fill=tkinter.X)
-        self.redButton.bind("<ButtonPress-1>",self.setLineColor)
+        self.chooseLineColorButton=tkinter.Button(self.colorPanelArea,text='选择线条颜色',bg=self.linecolor)
+        self.chooseLineColorButton.pack(side=tkinter.LEFT,  expand=tkinter.NO, fill=tkinter.X)
+        self.chooseLineColorButton.bind("<ButtonPress-1>",self.setLineColor)
         
-        self.greenButton=tkinter.Button(self.colorPanelArea,text='绿色',bg='green')
-        self.greenButton.pack(side=tkinter.LEFT,  expand=tkinter.NO, fill=tkinter.X)
-        self.greenButton.bind("<ButtonPress-1>", self.setLineColor)
+        self.chooseFillColorButton=tkinter.Button(self.colorPanelArea,text='选择填充颜色',bg=self.fillcolor)
+        self.chooseFillColorButton.pack(side=tkinter.LEFT,  expand=tkinter.NO, fill=tkinter.X)
+        self.chooseFillColorButton.bind("<ButtonPress-1>", self.setFillColor)
         
         self.drawLineButton=tkinter.Button(self.toolsArea,text='线')
         self.drawLineButton.pack(side=tkinter.TOP,  expand=tkinter.NO, fill=tkinter.X)
@@ -115,12 +119,13 @@ class DRAWPANEL():
 
     def drawRectangle(self,x,y,x1,y1):
 
-        self.cv.create_rectangle(x,y,x1,y1,fill='yellow')
+        item=self.cv.create_rectangle(x,y,x1,y1,fill=self.fillcolor)
+        return item
 
 
     def drawLine(self,x,y,x1,y1):
         print(x,y,x1,y1)
-        item=self.cv.create_line(x,y,x1,y1,fill=self.fillcolor)
+        item=self.cv.create_line(x,y,x1,y1,fill=self.linecolor)
         return item
     
     def setAction(self,event):
@@ -131,9 +136,20 @@ class DRAWPANEL():
 
 
     def setLineColor(self,event):
-        print(event.widget['bg'])
-        self.fillcolor=event.widget['bg']
+        def do():
+            temp, self.linecolor = askcolor()
+            self.chooseLineColorButton['bg'] = self.linecolor
+    
+        pool = ThreadPoolExecutor(max_workers=1)
+        pool.submit(do)
 
+
+    def setFillColor(self,event):
+        def do():
+            temp,self.fillcolor=askcolor()
+            self.chooseFillColorButton['bg']=self.fillcolor
+        pool = ThreadPoolExecutor(max_workers=1)
+        pool.submit(do)
     
     def drawPeiQi(self):
         t = turtle.RawTurtle(self.turtleCv)
