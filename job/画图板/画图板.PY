@@ -5,9 +5,9 @@ from tkinter.filedialog import askopenfilename
 from tkinter.colorchooser import *
 from concurrent.futures import ThreadPoolExecutor
 from collections import deque
-
+import math as m
 import turtle
-
+import time
 
 
 class DRAWPANEL():
@@ -30,7 +30,6 @@ class DRAWPANEL():
         self.startX=event.x
         self.startY=event.y
         self.clickspos.append((x,y))
-        print(self.clickspos)
 
     def cvMouseMove(self,event):
         nowX = event.x
@@ -43,6 +42,15 @@ class DRAWPANEL():
             self.lastItem=self.drawRectangle(self.startX,self.startY,nowX,nowY)
         if self.action=='oval':
             self.lastItem=self.drawOval(self.startX,self.startY,nowX,nowY)
+        if self.action=='five':
+            points=self.calcFivePoints(self.startX,self.startY,nowX-self.startX)
+            self.lastItem = self.drawPolygon(points)
+        if self.action=='three':
+            points=self.calcThreePoints(self.startX,self.startY,nowX-self.startX)
+            print('three')
+            self.lastItem = self.drawPolygon(points)
+        
+            
             
     def cvMouseUp(self,event):
         x = event.x
@@ -50,7 +58,7 @@ class DRAWPANEL():
         print('release', x, y)
         self.Items.append(self.lastItem)
         self.lastItem=''
-        print(self.Items)
+
 
     def __init__(self):
         self.root = Tk()
@@ -61,6 +69,7 @@ class DRAWPANEL():
 
         self.linecolor='red'
         self.fillcolor='yellow'
+        self.backcolor = '#bcbcbc'
         
         self.action='line'
         
@@ -75,6 +84,8 @@ class DRAWPANEL():
         self.lastItem=''
         
         self.Items=[]
+        
+        self.busy=FALSE
 
         self.colorPanelArea=tkinter.Frame(self.root, bd=2, relief="sunken",height=10)
         self.downArea=tkinter.Frame(self.root, bd=2, relief="sunken",height=10)
@@ -94,40 +105,80 @@ class DRAWPANEL():
         self.chooseFillColorButton.pack(side=tkinter.LEFT,  expand=tkinter.NO, fill=tkinter.X)
         self.chooseFillColorButton.bind("<ButtonPress-1>", self.setFillColor)
         
+        self.chooseBackGroundColorButton=tkinter.Button(self.colorPanelArea,text='选择画布颜色',bg=self.backcolor)
+        self.chooseBackGroundColorButton.pack(side=tkinter.LEFT,  expand=tkinter.NO, fill=tkinter.X)
+        self.chooseBackGroundColorButton.bind("<ButtonPress-1>", self.setBackGroundColor)
+        
         self.drawLineButton=tkinter.Button(self.toolsArea,text='线')
         self.drawLineButton.pack(side=tkinter.TOP,  expand=tkinter.NO, fill=tkinter.X)
         self.drawLineButton.bind('<ButtonPress-1>',self.setAction)
+
+        self.drawThreeButton = tkinter.Button(self.toolsArea, text='三角形')
+        self.drawThreeButton.pack(side=tkinter.TOP, expand=tkinter.NO, fill=tkinter.X)
+        self.drawThreeButton.bind('<ButtonPress-1>', self.setAction)
         
         self.drawRectangleButton=tkinter.Button(self.toolsArea,text='矩形')
         self.drawRectangleButton.pack(side=tkinter.TOP,  expand=tkinter.NO, fill=tkinter.X)
         self.drawRectangleButton.bind('<ButtonPress-1>',self.setAction)
 
-
-
         self.drawOvalButton=tkinter.Button(self.toolsArea,text='圆形')
         self.drawOvalButton.pack(side=tkinter.TOP,  expand=tkinter.NO, fill=tkinter.X)
         self.drawOvalButton.bind('<ButtonPress-1>',self.setAction)
         
+        self.drawFiveButton=tkinter.Button(self.toolsArea,text='五角星')
+        self.drawFiveButton.pack(side=tkinter.TOP,  expand=tkinter.NO, fill=tkinter.X)
+        self.drawFiveButton.bind('<ButtonPress-1>',self.setAction)
+        
         self.drawPeiQiButton=tkinter.Button(self.toolsArea,text='佩奇',command=self.drawPeiQi)
         self.drawPeiQiButton.pack(side=tkinter.TOP,  expand=tkinter.NO, fill=tkinter.X)
+        
+        self.drawRoseButton=tkinter.Button(self.toolsArea,text='玫瑰',command=self.drawRose)
+        self.drawRoseButton.pack(side=tkinter.TOP,  expand=tkinter.NO, fill=tkinter.X)
+        
+        self.drawXiangRiKuiButton=tkinter.Button(self.toolsArea,text='向日葵',command=self.drawXiangRiKui)
+        self.drawXiangRiKuiButton.pack(side=tkinter.TOP,  expand=tkinter.NO, fill=tkinter.X)
 
         self.cleanCanvsButton=tkinter.Button(self.toolsArea,text='清空',command=(lambda x=ALL: self.cv.delete(x)))
         self.cleanCanvsButton.pack(side=tkinter.TOP, expand=tkinter.NO, fill=tkinter.X)
 
-        self.cv=tkinter.Canvas(self.drawArea,width=800,height=600)
+        self.cv=tkinter.Canvas(self.drawArea,width=800,height=600,background=self.backcolor)
         self.cv.pack(side=tkinter.LEFT,  expand=tkinter.YES, fill=tkinter.NONE)
         print(self.cv.winfo_screenheight(),self.cv.winfo_screenmmwidth())
         self.turtleCv = turtle.TurtleScreen(self.cv)
         self.turtleCv.setworldcoordinates(0,-800,600,0)
+        
 
         self.cv.bind('<ButtonPress-1>',self.cvMouseDown)
         self.cv.bind('<B1-Motion> ',self.cvMouseMove)
         self.cv.bind('<ButtonRelease-1>',self.cvMouseUp)
 
-
+    def calcFivePoints(self,center_x,center_y,r):
+        points = [
+            # 左上点
+            center_x - int(r * m.sin(2 * m.pi / 5)),
+            center_y - int(r * m.cos(2 * m.pi / 5)),
+            # 右上点
+            center_x + int(r * m.sin(2 * m.pi / 5)),
+            center_y - int(r * m.cos(2 * m.pi / 5)),
+            # 左下点
+            center_x - int(r * m.sin(m.pi / 5)),
+            center_y + int(r * m.cos(m.pi / 5)),
+            # 顶点
+            center_x,
+            center_y - r,
+            # 右下点
+            center_x + int(r * m.sin(m.pi / 5)),
+            center_y + int(r * m.cos(m.pi / 5))
+        ]
+        print(points)
+        return points
+    
+    def calcThreePoints(self,center_x,center_y,r):
+        return [10,10,180,600,240,360]
+    
     def drawRectangle(self,x,y,x1,y1):
 
-        item=self.cv.create_rectangle(x,y,x1,y1,fill=self.fillcolor)
+        item=self.cv.create_rectangle(x,y,x1,y1,outline=self.linecolor,fill=self.fillcolor)
         return item
 
     def drawLine(self,x,y,x1,y1):
@@ -136,7 +187,10 @@ class DRAWPANEL():
         return item
     
     def drawOval(self,x,y,x1,y1):
-        return self.cv.create_oval(x,y,x1,y1,fill=self.fillcolor)
+        return self.cv.create_oval(x,y,x1,y1,outline=self.linecolor,fill=self.fillcolor)
+    
+    def drawPolygon(self,points):
+        return self.cv.create_polygon(points,outline=self.linecolor,fill=self.fillcolor)
     
     def setAction(self,event):
         if event.widget['text']=='线':
@@ -145,7 +199,11 @@ class DRAWPANEL():
             self.action='rectangle'
         if event.widget['text']=='圆形':
             self.action='oval'
-
+        if event.widget['text']=='五角星':
+            self.action='five'
+        if event.widget['text']=='三角形':
+            self.action='three'
+        
 
     def setLineColor(self,event):
         def do():
@@ -155,21 +213,31 @@ class DRAWPANEL():
         pool = ThreadPoolExecutor(max_workers=1)
         pool.submit(do)
 
-
     def setFillColor(self,event):
         def do():
             temp,self.fillcolor=askcolor()
             self.chooseFillColorButton['bg']=self.fillcolor
         pool = ThreadPoolExecutor(max_workers=1)
         pool.submit(do)
+        
+    def setBackGroundColor(self,event):
+        def do():
+            temp,self.backcolor=askcolor()
+            self.cv['background']=self.backcolor
+            self.chooseBackGroundColorButton['bg']=self.backcolor
+        pool = ThreadPoolExecutor(max_workers=1)
+        pool.submit(do)
     
     def drawPeiQi(self):
+        if self.busy==TRUE:
+            return
+        self.busy=TRUE
         t = turtle.RawTurtle(self.turtleCv)
         t.pensize(4)
         t.hideturtle()
         t.color((1, 0.6, 0.75), "pink")
         # t.setup(840, 500)
-        t.speed(100)
+        t.speed(10)
 
         # 鼻子
         t.pu()
@@ -446,6 +514,219 @@ class DRAWPANEL():
         t.circle(70, 20)
         t.circle(10, 330)
         t.circle(70, 30)
+        self.busy=FALSE
+    def drawXiangRiKui(self):
+        if self.busy==TRUE:
+            return
+        self.busy=TRUE
+        t = turtle.RawTurtle(self.turtleCv)
+
+        t.speed(10)
+        t.hideturtle()
+        t.up()
+        t.goto(300,-600)
+        t.down()
+
+        t.color("green", "black")
+        t.left(90)
+        t.forward(300)
+        t.right(90)
+        t.color("black", "yellow")
+        t.begin_fill()
+        t.circle(30)
+        t.end_fill()
+        # t.circle(10)
+
+        for i in range(1, 24):
+            if t.color() == ("red", "black"):
+                t.color("orange", "black")
+            elif t.color() == ("red", "black"):
+                t.colot("yellow", "black")
+            else:
+                t.color("red", "black")
+            t.left(15)
+            t.forward(150)
+            t.left(157)
+            t.forward(150)
+        t.hideturtle()
+        self.busy = FALSE
+
+    def drawRose(self):
+        if self.busy==TRUE:
+            return
+        self.busy=TRUE
+        t = turtle.RawTurtle(self.turtleCv)
+        t.goto(0,0)
+        t.speed(10)
+        t.hideturtle()
+        t.up()
+        t.goto(300,-350)
+        t.down()
+
+        t.speed(5)
+    
+        # 设置初始位置
+    
+        t.penup()
+    
+        t.left(90)
+    
+        t.fd(200)
+    
+        t.pendown()
+    
+        t.right(90)
+        # 花蕊
+    
+        t.fillcolor("red")
+    
+        t.begin_fill()
+    
+        t.circle(10, 180)
+    
+        t.circle(25, 110)
+    
+        t.left(50)
+    
+        t.circle(60, 45)
+    
+        t.circle(20, 170)
+    
+        t.right(24)
+    
+        t.fd(30)
+    
+        t.left(10)
+    
+        t.circle(30, 110)
+    
+        t.fd(20)
+    
+        t.left(40)
+    
+        t.circle(90, 70)
+    
+        t.circle(30, 150)
+    
+        t.right(30)
+    
+        t.fd(15)
+    
+        t.circle(80, 90)
+    
+        t.left(15)
+    
+        t.fd(45)
+    
+        t.right(165)
+    
+        t.fd(20)
+    
+        t.left(155)
+    
+        t.circle(150, 80)
+    
+        t.left(50)
+    
+        t.circle(150, 90)
+    
+        t.end_fill()
+    
+        # 花瓣1
+    
+        t.left(150)
+    
+        t.circle(-90, 70)
+    
+        t.left(20)
+    
+        t.circle(75, 105)
+    
+        t.setheading(60)
+    
+        t.circle(80, 98)
+    
+        t.circle(-90, 40)
+    
+        # 花瓣2
+    
+        t.left(180)
+    
+        t.circle(90, 40)
+    
+        t.circle(-80, 98)
+    
+        t.setheading(-83)
+    
+        # 叶子1
+    
+        t.fd(30)
+    
+        t.left(90)
+    
+        t.fd(25)
+    
+        t.left(45)
+    
+        t.fillcolor("green")
+    
+        t.begin_fill()
+    
+        t.circle(-80, 90)
+    
+        t.right(90)
+    
+        t.circle(-80, 90)
+    
+        t.end_fill()
+    
+        t.right(135)
+    
+        t.fd(60)
+    
+        t.left(180)
+    
+        t.fd(85)
+    
+        t.left(90)
+    
+        t.fd(80)
+    
+        # 叶子2
+    
+        t.right(90)
+    
+        t.right(45)
+    
+        t.fillcolor("green")
+    
+        t.begin_fill()
+    
+        t.circle(80, 90)
+    
+        t.left(90)
+    
+        t.circle(80, 90)
+    
+        t.end_fill()
+    
+        t.left(135)
+    
+        t.fd(60)
+    
+        t.left(180)
+    
+        t.fd(60)
+    
+        t.right(90)
+    
+        t.circle(200, 60)
+        self.busy=FALSE
+
+
+
+
+
 
 app=DRAWPANEL()
 app.root.mainloop()
@@ -502,7 +783,8 @@ points = [
     center_y + int(r*m.cos(m.pi/5))
     ]
 
-w.create_polygon(points, outline='green', fill='black')'''
+w.create_polygon(points, outline='green', fill='black')
+'''
 
 colors = '''
 #FFB6C1 LightPink 浅粉红
