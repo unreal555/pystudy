@@ -190,7 +190,6 @@ class MySingleDoThread(QThread):
         if len(centers) == 0:
             self.rightSignal.emit('正常')
 
-
 class App(QWidget, Ui_Form):
     def __init__(self):
         super(App, self).__init__()

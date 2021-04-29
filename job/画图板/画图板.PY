@@ -8,6 +8,7 @@ from concurrent.futures import ThreadPoolExecutor
 from collections import deque
 import math as m
 import turtle
+import line
 
 
 
@@ -30,6 +31,8 @@ class DRAWPANEL():
         print('down',x,y)
         self.startX=event.x
         self.startY=event.y
+        self.preX=event.x
+        self.preY=event.y
         self.clickspos.append((x,y))
 
     def cvMouseMove(self,event):
@@ -48,11 +51,12 @@ class DRAWPANEL():
             self.lastItem = self.drawPolygon(points)
         if self.action=='three':
             points=self.calcThreePoints(self.startX,self.startY,nowX-self.startX)
-            print('three')
             self.lastItem = self.drawPolygon(points)
-        
-            
-            
+        if self.action == 'curve':
+            self.drawCurve(self.preX,self.preY,nowX,nowY)
+            self.preX=nowX
+            self.preY=nowY
+
     def cvMouseUp(self,event):
         x = event.x
         y = event.y
@@ -77,7 +81,10 @@ class DRAWPANEL():
         
         self.startX=0
         self.startY=0
-        
+
+        self.preX=0
+        self.preY=0
+
         self.finishX=0
         self.finishY=0
         
@@ -121,8 +128,23 @@ class DRAWPANEL():
         self.scale_bar.bind("<ButtonRelease-1>", self.scale_mouse_click)
         self.scale_bar.bind('<B1-Motion> ', self.scale_mouse_click)
         self.scale_bar.pack(side=tkinter.RIGHT, anchor=tkinter.N, expand=tkinter.YES, fill=tkinter.BOTH)
-        
-        
+
+        self.drawCurveButton=tkinter.Button(self.toolsArea,text='曲线')
+        self.drawCurveButton.pack(side=tkinter.TOP,  expand=tkinter.NO, fill=tkinter.X)
+        self.drawCurveButton.bind('<ButtonPress-1>',self.setAction)
+
+        self.menubar = tkinter.Menu(self.root)
+        self.menuline = tkinter.Menu(self.menubar)
+        for each, command in zip(['line_bresenham', 'line_DDA', 'line_mid'],
+                                 [self.select_line_bresenham, self.select_line_dda, self.select_line_mid]):
+            self.menuline.add_command(label=each, command=command)
+        self.menubar.add_cascade(label='直线', menu=self.menuline)
+
+        self.root['menu'] = self.menubar
+
+        for _ in range(0,5):
+            ttk.Separator(self.toolsArea,orient='horizontal').pack(side=tkinter.TOP,  expand=tkinter.NO, fill=tkinter.X)
+
         self.drawLineButton=tkinter.Button(self.toolsArea,text='线')
         self.drawLineButton.pack(side=tkinter.TOP,  expand=tkinter.NO, fill=tkinter.X)
         self.drawLineButton.bind('<ButtonPress-1>',self.setAction)
@@ -210,7 +232,9 @@ class DRAWPANEL():
         return self.cv.create_polygon(points,outline=self.linecolor,fill=self.fillcolor)
     
     def setAction(self,event):
-        if event.widget['text']=='线':
+        if event.widget['text']=='曲线':
+            self.action='curve'
+        if event.widget['text']=='直线':
             self.action='line'
         if event.widget['text']=='矩形':
             self.action='rectangle'
@@ -221,6 +245,10 @@ class DRAWPANEL():
         if event.widget['text']=='三角形':
             self.action='three'
 
+    def drawCurve(self,x,y,x1,y1):
+        self.cv.create_line(x, y, x1, y1, fill=self.linecolor)
+
+
     def scale_mouse_click(self, event):
         self.root.attributes("-alpha", self.scale_bar.get() / 100)
 
@@ -228,7 +256,7 @@ class DRAWPANEL():
         def do():
             temp, self.linecolor = askcolor()
             self.chooseLineColorButton['bg'] = self.linecolor
-    
+
         pool = ThreadPoolExecutor(max_workers=1)
         pool.submit(do)
 
@@ -569,7 +597,6 @@ class DRAWPANEL():
             t.forward(150)
         t.hideturtle()
         self.busy = FALSE
-
     def drawRose(self):
         if self.busy==TRUE:
             return
@@ -742,9 +769,12 @@ class DRAWPANEL():
         t.circle(200, 60)
         self.busy=FALSE
 
-
-
-
+    def select_line_bresenham(self):
+        pass
+    def select_line_dda(self):
+        pass
+    def select_line_mid(self):
+        pass
 
 
 app=DRAWPANEL()
