@@ -4,7 +4,7 @@ import os
 from tkinter.filedialog import askopenfilename
 from tkinter.colorchooser import *
 from concurrent.futures import ThreadPoolExecutor
-
+from collections import deque
 
 import turtle
 
@@ -29,21 +29,21 @@ class DRAWPANEL():
         print('down',x,y)
         self.startX=event.x
         self.startY=event.y
+        self.clickspos.append((x,y))
+        print(self.clickspos)
 
     def cvMouseMove(self,event):
         nowX = event.x
         nowY = event.y
         self.cv.delete(self.lastItem)
-      #  for i in self.Items:
         
         if self.action=='line':
-            print('line',self.startX,self.startY,nowX,nowY)
             self.lastItem=self.drawLine(self.startX,self.startY,nowX,nowY)
         if self.action=='rectangle':
-            print('rectangle',self.startX,self.startY,nowX,nowY)
             self.lastItem=self.drawRectangle(self.startX,self.startY,nowX,nowY)
-            print(self.lastItem)
-
+        if self.action=='oval':
+            self.lastItem=self.drawOval(self.startX,self.startY,nowX,nowY)
+            
     def cvMouseUp(self,event):
         x = event.x
         y = event.y
@@ -63,6 +63,8 @@ class DRAWPANEL():
         self.fillcolor='yellow'
         
         self.action='line'
+        
+        self.clickspos=deque(maxlen=20)
         
         self.startX=0
         self.startY=0
@@ -96,12 +98,18 @@ class DRAWPANEL():
         self.drawLineButton.pack(side=tkinter.TOP,  expand=tkinter.NO, fill=tkinter.X)
         self.drawLineButton.bind('<ButtonPress-1>',self.setAction)
         
-        self.drawPeiQiButton=tkinter.Button(self.toolsArea,text='佩奇',command=self.drawPeiQi)
-        self.drawPeiQiButton.pack(side=tkinter.TOP,  expand=tkinter.NO, fill=tkinter.X)
-
         self.drawRectangleButton=tkinter.Button(self.toolsArea,text='矩形')
         self.drawRectangleButton.pack(side=tkinter.TOP,  expand=tkinter.NO, fill=tkinter.X)
         self.drawRectangleButton.bind('<ButtonPress-1>',self.setAction)
+
+
+
+        self.drawOvalButton=tkinter.Button(self.toolsArea,text='圆形')
+        self.drawOvalButton.pack(side=tkinter.TOP,  expand=tkinter.NO, fill=tkinter.X)
+        self.drawOvalButton.bind('<ButtonPress-1>',self.setAction)
+        
+        self.drawPeiQiButton=tkinter.Button(self.toolsArea,text='佩奇',command=self.drawPeiQi)
+        self.drawPeiQiButton.pack(side=tkinter.TOP,  expand=tkinter.NO, fill=tkinter.X)
 
         self.cleanCanvsButton=tkinter.Button(self.toolsArea,text='清空',command=(lambda x=ALL: self.cv.delete(x)))
         self.cleanCanvsButton.pack(side=tkinter.TOP, expand=tkinter.NO, fill=tkinter.X)
@@ -122,17 +130,21 @@ class DRAWPANEL():
         item=self.cv.create_rectangle(x,y,x1,y1,fill=self.fillcolor)
         return item
 
-
     def drawLine(self,x,y,x1,y1):
         print(x,y,x1,y1)
         item=self.cv.create_line(x,y,x1,y1,fill=self.linecolor)
         return item
+    
+    def drawOval(self,x,y,x1,y1):
+        return self.cv.create_oval(x,y,x1,y1,fill=self.fillcolor)
     
     def setAction(self,event):
         if event.widget['text']=='线':
             self.action='line'
         if event.widget['text']=='矩形':
             self.action='rectangle'
+        if event.widget['text']=='圆形':
+            self.action='oval'
 
 
     def setLineColor(self,event):
@@ -459,6 +471,38 @@ app.root.mainloop()
 # <Triple-Button-1>   三击鼠标左键
 # <Triple-Button-3>   三击鼠标右键
 
+'''
+from tkinter import *
+import math as m
+
+root = Tk()
+
+w = Canvas(root, width=200, height=100, background='red')
+w.pack()
+
+center_x = 100
+center_y = 50
+r = 50
+
+points = [
+    #左上点
+    center_x - int(r*m.sin(2 * m.pi/5)),
+    center_y - int(r*m.cos(2 * m.pi/5)),
+    #右上点
+    center_x + int(r*m.sin(2 * m.pi/5)),
+    center_y - int(r*m.cos(2 * m.pi/5)),
+    #左下点
+    center_x - int(r*m.sin(m.pi/5)),
+    center_y + int(r*m.cos(m.pi/5)),
+    #顶点
+    center_x,
+    center_y - r,
+    #右下点
+    center_x + int(r*m.sin(m.pi/5)),
+    center_y + int(r*m.cos(m.pi/5))
+    ]
+
+w.create_polygon(points, outline='green', fill='black')'''
 
 colors = '''
 #FFB6C1 LightPink 浅粉红
