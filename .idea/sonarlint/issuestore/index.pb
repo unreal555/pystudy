@@ -83,3 +83,31 @@ V
 &job/肺结节加图形界面/my_app.py,8\e\8e92e39a717303b7e95d5202dfd328dc174278b9
 X
 (job/肺结节加图形界面/my_app.spec,4\b\4ba2176d27870a7c8e983bd6d8889f9db24848ee
+Z
+*job/肺结节加图形界面/prediction.py,3\e\3ed5dc81cd271f7233a2eaf40b79f503bf799511
+Y
+)job/肺结节加图形界面/NNXunLian.py,c\1\c1d5f7ffe8a8b3fce6cdd9e11ec17c92469d613b
+W
+'job/肺结节加图形界面/config.ini,2\b\2b4f29c395ba6cdb219dc4794acabafdb3d7f5c9
+F
+学习/31.找质数.py,7\8\7832b66b992238eac23c32a4809349f92a9b5e31
+B
+学习/6.模块.py,c\5\c53544299fe82f068c395fcd3c7d1928c3501aa1
+b
+2学习/5.高阶函数(map,reduce,filter,sorted).py,1\7\17cf0813317f3a3849143b9222b1d2a3a762efc3
+\
+,学习/30.找质数-挨个除，效率差.py,0\2\0273710f3ef35184d7b3c9edb6574a9974fa06fa
+F
+学习/chd刷积分.py,9\0\905ef4911d899c0bc230f1c9ff480a3741688522
+R
+"学习/27.目录选择待完善.py,2\e\2e10130187d1091003feae9e9ebbf095e3242ad0
+O
+学习/22.绘制双坐标轴.py,3\3\3363683519875a6d28eb5162a2fd50c81ceba213
+O
+学习/1.输出,编码学习.py,9\2\92e05b290d65bd3887ce404425759dbcb961363a
+F
+job/画图板/peiqi.py,9\e\9e0d2a2b839f039c18c874b8fc02d4e6255b111f
+E
+job/画图板/test.py,9\0\9048dcece246a6ecf8a2dc1cdc9a5fa70f1242ab
+J
+job/画图板/画图板.PY,a\4\a4881cf8aea87cc937853de98f0d4fc5e8f96737

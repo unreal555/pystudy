@@ -366,7 +366,9 @@ class App(QWidget, Ui_Form):
     @pyqtSlot()
     def on_openButton_clicked(self):
         file, type = QFileDialog.getOpenFileName(None, caption='打开', directory='.', filter=self.fileType)
-
+        if not os.path.isfile(file):
+            return
+        
         abspath = os.path.abspath(file)
         path, file = os.path.split(abspath)
         filename, ext = os.path.splitext(file)
