@@ -65,8 +65,7 @@ class DRAWPANEL():
         self.root = Tk()
         self.root.title('画图板')
         self.root['bg'] = '#bcbcbc'
-        # self.root.attributes("-alpha", 0.9)
-        # self.root.geometry("1024x600")
+        self.root.attributes("-alpha", 0.9)
 
         self.linecolor='red'
         self.fillcolor='yellow'
@@ -109,6 +108,20 @@ class DRAWPANEL():
         self.chooseBackGroundColorButton=tkinter.Button(self.colorPanelArea,text='选择画布颜色',bg=self.backcolor)
         self.chooseBackGroundColorButton.pack(side=tkinter.LEFT,  expand=tkinter.NO, fill=tkinter.X)
         self.chooseBackGroundColorButton.bind("<ButtonPress-1>", self.setBackGroundColor)
+
+        self.label_scale_name = tkinter.Label(self.colorPanelArea, text='透明度', anchor='e', justify='right')
+        self.label_scale_name.pack(side=tkinter.LEFT, anchor=tkinter.S, expand=tkinter.NO, fill=tkinter.BOTH)
+
+        self.scale_bar = Scale(self.colorPanelArea, from_=50, to=100, orient=tkinter.HORIZONTAL, showvalue=0,
+                                  borderwidth=0.01,
+                                  repeatinterval=1, repeatdelay=100, sliderlength=15,
+                                  resolution=0.1)  # tickinterval=5  刻度
+        self.scale_bar.set(90)
+        self.scale_bar.bind("<ButtonPress-1>", self.scale_mouse_click)
+        self.scale_bar.bind("<ButtonRelease-1>", self.scale_mouse_click)
+        self.scale_bar.bind('<B1-Motion> ', self.scale_mouse_click)
+        self.scale_bar.pack(side=tkinter.RIGHT, anchor=tkinter.N, expand=tkinter.YES, fill=tkinter.BOTH)
+        
         
         self.drawLineButton=tkinter.Button(self.toolsArea,text='线')
         self.drawLineButton.pack(side=tkinter.TOP,  expand=tkinter.NO, fill=tkinter.X)
@@ -143,7 +156,7 @@ class DRAWPANEL():
         self.drawXiangRiKuiButton.pack(side=tkinter.TOP,  expand=tkinter.NO, fill=tkinter.X)
 
         self.cleanCanvsButton=tkinter.Button(self.toolsArea,text='清空',command=(lambda x=ALL: self.cv.delete(x)))
-        self.cleanCanvsButton.pack(side=tkinter.TOP, expand=tkinter.NO, fill=tkinter.X)
+        self.cleanCanvsButton.pack(side=tkinter.BOTTOM, expand=tkinter.NO, fill=tkinter.X)
 
         self.cv=tkinter.Canvas(self.drawArea,width=800,height=600,background=self.backcolor)
         self.cv.pack(side=tkinter.LEFT,  expand=tkinter.YES, fill=tkinter.NONE)
@@ -207,7 +220,9 @@ class DRAWPANEL():
             self.action='five'
         if event.widget['text']=='三角形':
             self.action='three'
-        
+
+    def scale_mouse_click(self, event):
+        self.root.attributes("-alpha", self.scale_bar.get() / 100)
 
     def setLineColor(self,event):
         def do():
