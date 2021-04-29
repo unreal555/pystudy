@@ -1,5 +1,6 @@
 from  tkinter import *
 import tkinter
+from tkinter import ttk
 import os
 from tkinter.filedialog import askopenfilename
 from tkinter.colorchooser import *
@@ -7,7 +8,7 @@ from concurrent.futures import ThreadPoolExecutor
 from collections import deque
 import math as m
 import turtle
-import time
+
 
 
 class DRAWPANEL():
@@ -129,6 +130,9 @@ class DRAWPANEL():
         self.drawFiveButton.pack(side=tkinter.TOP,  expand=tkinter.NO, fill=tkinter.X)
         self.drawFiveButton.bind('<ButtonPress-1>',self.setAction)
         
+        for _ in range(0,5):
+            ttk.Separator(self.toolsArea,orient='horizontal').pack(side=tkinter.TOP,  expand=tkinter.NO, fill=tkinter.X)
+    
         self.drawPeiQiButton=tkinter.Button(self.toolsArea,text='佩奇',command=self.drawPeiQi)
         self.drawPeiQiButton.pack(side=tkinter.TOP,  expand=tkinter.NO, fill=tkinter.X)
         
