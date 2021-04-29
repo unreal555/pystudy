@@ -43,9 +43,9 @@ def create_point(points, fill="black", temp=False):
         for p in points:
             x, y = p.x, p.y
             if temp:
-                canvas.create_oval(x, y, x, y, fill=fill, tag='temp')
+                canvas.create_oval(x, y, x, y, fill='red', tag='temp')
             else:
-                canvas.create_oval(x, y, x, y, fill=fill)
+                canvas.create_oval(x, y, x, y, fill='red')
 
 
 # 鼠标左键单击，允许画图
