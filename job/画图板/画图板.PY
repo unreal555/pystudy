@@ -145,7 +145,7 @@ class DRAWPANEL():
         for _ in range(0,5):
             ttk.Separator(self.toolsArea,orient='horizontal').pack(side=tkinter.TOP,  expand=tkinter.NO, fill=tkinter.X)
 
-        self.drawLineButton=tkinter.Button(self.toolsArea,text='线')
+        self.drawLineButton=tkinter.Button(self.toolsArea,text='直线')
         self.drawLineButton.pack(side=tkinter.TOP,  expand=tkinter.NO, fill=tkinter.X)
         self.drawLineButton.bind('<ButtonPress-1>',self.setAction)
 
