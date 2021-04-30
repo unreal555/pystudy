@@ -5,20 +5,28 @@ from circle import *
 #from pig import *
 from tkinter import colorchooser
 from PIL import Image
+from collections import deque
+
+
+
 CURVE = 1
 LINE_BRESENHAM = 2
 LINE_DDA = 3
 LINE_MID = 4
-
 CIRCLE_MID = 5
 CIRCLE_BRESENHAM = 6
 ELLIPSE_BRESENHAM = 7
+POLYGON=8
 ERASE = 20
 
 app = tkinter.Tk()
 app.title('画板')
-app['width'] = 800
-app['height'] = 600
+
+clickpoints=deque(maxlen=1000)
+temppoints=deque(maxlen=100)
+
+
+
 # 控制是否允许画图的变量，1：允许，0：不允许
 is_draw = tkinter.IntVar(value=0)
 # 控制画图类型的变量，1：曲线，2：直线，3：矩形，4：文本，5：橡皮
@@ -46,6 +54,7 @@ def create_point(points, fill="black", temp=False):
                 canvas.create_oval(x, y, x, y, fill=fill, tag='temp')
             else:
                 canvas.create_oval(x, y, x, y, fill=fill)
+    
 
 
 # 鼠标左键单击，允许画图
@@ -63,6 +72,7 @@ lastDraw = 0
 def on_left_button_move(event):
     if is_draw.get() == 0:
         return
+
     if mode.get() == CURVE:
         # 使用当前选择的前景色绘制曲线
         canvas.create_line(point_start.x, point_start.y, event.x, event.y, fill=foreColor)
@@ -133,6 +143,36 @@ def on_left_button_move(event):
 canvas.bind('<B1-Motion>', on_left_button_move)
 
 
+
+def drawPolygon(event):
+
+    if mode.get()!=POLYGON:
+        return
+    for x,y in clickpoints:
+        if x in range(event.x-5,event.x+5) and y in range(event.y-5,event.y+5):
+            print('封闭')
+            for item in temppoints:
+                canvas.delete(item)
+
+            
+
+            canvas.create_polygon(*clickpoints,outline=foreColor,fill=backColor)
+
+            temppoints.clear()
+            clickpoints.clear()
+
+
+    clickpoints.append((event.x,event.y))
+    temppoints.append(canvas.create_oval(event.x-2,event.y-2,event.x+2,event.y+2,outline='#000000'))
+    
+
+
+canvas.bind('<Double-Button-1>',drawPolygon)
+canvas.bind('<Button-1>',drawPolygon)
+
+
+
+
 # 鼠标左键抬起，结束画图
 def on_left_button_up(event):
     if mode.get() == LINE_BRESENHAM:
@@ -193,6 +233,14 @@ def select_circle_mid():
 def select_circle_bresenham():
     mode.set(CIRCLE_BRESENHAM)
 
+def select_polygon():
+    print('set polygon')
+    mode.set(POLYGON)
+    
+
+
+
+
 
 def select_ellipse_bresenham():
     mode.set(ELLIPSE_BRESENHAM)
@@ -224,6 +272,10 @@ menu3 = tkinter.Menu(menubar)
 for each,command in zip(['forefround_color','background_color'],[chooseForeColor,chooseBackColor]):
     menu3.add_command(label=each,command=command)
 menubar.add_cascade(label='颜色',menu=menu3)
+
+#顶级菜单
+menubar.add_command(label='多边形', command=select_polygon)
+
 
 #顶级菜单
 menubar.add_command(label='橡皮擦', command=select_erase)
