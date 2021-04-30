@@ -158,8 +158,7 @@ def drawPolygon(event):
 
             canvas.create_polygon(*clickpoints,outline=foreColor,fill=backColor)
 
-            temppoints.clear()
-            clickpoints.clear()
+            clearPolygonState()
 
 
     clickpoints.append((event.x,event.y))
@@ -216,6 +215,12 @@ menubar = tkinter.Menu(app)
 
 
 # 添加菜单，清除
+
+
+def clearPolygonState():
+    temppoints.clear()
+    clickpoints.clear()
+
 def clear():
     for item in canvas.find_all():
         canvas.delete(item)
@@ -232,7 +237,6 @@ def select_circle_mid():
     mode.set(CIRCLE_MID)
 def select_circle_bresenham():
     mode.set(CIRCLE_BRESENHAM)
-
 def select_polygon():
     print('set polygon')
     mode.set(POLYGON)
