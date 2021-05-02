@@ -21,11 +21,12 @@ busy=False
 
 app = tkinter.Tk()
 app.title('画板')
+app.attributes("-alpha", 0.9) #设置窗体透明度0-1之间
 
+
+#绘制多边形时储存的状态，选择的点的位置，和生成的点的图像元素
 clickpoints=deque(maxlen=1000)
 temppoints=deque(maxlen=100)
-
-
 
 # 控制是否允许画图的变量，1：允许，0：不允许
 is_draw = tkinter.IntVar(value=0)
@@ -34,15 +35,16 @@ mode = tkinter.IntVar(value=1)
 # 记录鼠标位置的变量
 point_start = Point(tkinter.IntVar(value=0), tkinter.IntVar(value=0))
 # 前景色
-foreColor = '#000000'
-backColor = '#FFFFFF'
+lineColor = 'red'
+fillColor = 'green'
+backColor = '#bcbcbc'
 
-
-
-canvas = tkinter.Canvas(app, bg='white', width=800, height=600)
+canvas = tkinter.Canvas(app, width=800, height=600)
 canvas.pack(side=tkinter.LEFT,  expand=tkinter.YES, fill=tkinter.NONE)
 turtleCv = turtle.TurtleScreen(canvas)
 turtleCv.setworldcoordinates(0, -800, 600, 0)
+
+canvas['bg']=backColor
 
 canvas.create_text(400,300,       # 使用create_text方法在坐标（302，77）处绘制文字
     font="Times 100 italic bold",
@@ -51,7 +53,7 @@ canvas.create_text(400,300,       # 使用create_text方法在坐标（302，77�
 
 
 # 画传入的点集 temp为True时，在move中会删除
-def create_point(points, fill="black", temp=False):
+def create_point(points, fill=lineColor, temp=False):
     if points is not None:
         for p in points:
             x, y = p.x, p.y
@@ -61,12 +63,10 @@ def create_point(points, fill="black", temp=False):
                 canvas.create_oval(x, y, x, y, fill=fill)
     
 
-
 # 鼠标左键单击，允许画图
 def on_left_button_down(event):
     is_draw.set(1)
     point_start.set(event.x, event.y)
-
 
 canvas.bind('<Button-1>', on_left_button_down)
 # 记录最后绘制图形的id
@@ -80,7 +80,7 @@ def on_left_button_move(event):
 
     if mode.get() == CURVE:
         # 使用当前选择的前景色绘制曲线
-        canvas.create_line(point_start.x, point_start.y, event.x, event.y, fill=foreColor)
+        canvas.create_line(point_start.x, point_start.y, event.x, event.y, fill=lineColor)
         point_start.set(event.x, event.y)
     elif mode.get() == LINE_BRESENHAM:
         # 绘制直线，先删除刚刚画过的直线，再画一条新的直线
@@ -89,7 +89,7 @@ def on_left_button_move(event):
         except Exception as e:
             pass
         points = bresenham_line(point_start, Point(event.x, event.y))
-        create_point(points, fill=foreColor, temp=True)
+        create_point(points, fill=lineColor, temp=True)
 
     elif mode.get() == LINE_DDA:
         # 绘制直线，先删除刚刚画过的直线，再画一条新的直线
@@ -98,7 +98,7 @@ def on_left_button_move(event):
         except Exception as e:
             pass
         points = dda_line(point_start, Point(event.x, event.y))
-        create_point(points, fill=foreColor, temp=True)
+        create_point(points, fill=lineColor, temp=True)
 
     elif mode.get() == LINE_MID:
         # 绘制直线，先删除刚刚画过的直线，再画一条新的直线
@@ -107,7 +107,7 @@ def on_left_button_move(event):
         except Exception as e:
             pass
         points = mid_line(point_start, Point(event.x, event.y))
-        create_point(points, fill=foreColor, temp=True)
+        create_point(points, fill=lineColor, temp=True)
 
     elif mode.get() == CIRCLE_MID:
         # 绘制圆形，先删除刚刚画过的圆形，再画一个新的圆形
@@ -117,7 +117,7 @@ def on_left_button_move(event):
         except Exception as e:
             pass
         points = mid_circle(point_start, Point(event.x, event.y))
-        create_point(points, fill=foreColor, temp=True)
+        create_point(points, fill=lineColor, temp=True)
 
     elif mode.get() == CIRCLE_BRESENHAM:
         # 绘制圆形，先删除刚刚画过的圆形，再画一个新的圆形
@@ -127,7 +127,7 @@ def on_left_button_move(event):
         except Exception as e:
             pass
         points = bresenham_circle(point_start, Point(event.x, event.y))
-        create_point(points, fill=foreColor, temp=True)
+        create_point(points, fill=lineColor, temp=True)
 
     elif mode.get() == ELLIPSE_BRESENHAM:
         # 绘制圆形，先删除刚刚画过的圆形，再画一个新的圆形
@@ -137,7 +137,7 @@ def on_left_button_move(event):
         except Exception as e:
             pass
         points = bresenham_ellipse(point_start, Point(event.x, event.y))
-        create_point(points, fill=foreColor, temp=True)
+        create_point(points, fill=lineColor, temp=True)
 
     elif mode.get() == ERASE:
         # 橡皮，使用背景色填充10*10的矩形区域
@@ -153,22 +153,16 @@ def drawPolygon(event):
 
     if mode.get()!=POLYGON:
         return
-    
     for x,y in clickpoints:
-        if x in range(event.x-5,event.x+5) and y in range(event.y-5,event.y+5):
+        if x in range(event.x-8,event.x+8) and y in range(event.y-8,event.y+8):
             print('封闭')
             for item in temppoints:
                 canvas.delete(item)
-
-            
-
-            canvas.create_polygon(*clickpoints,outline=foreColor,fill=backColor)
-
+            canvas.create_polygon(*clickpoints,outline=lineColor,fill=fillColor)
             clearPolygonState()
 
-
     clickpoints.append((event.x,event.y))
-    temppoints.append(canvas.create_oval(event.x-2,event.y-2,event.x+2,event.y+2,outline='#000000'))
+    temppoints.append(canvas.create_oval(event.x-3,event.y-3,event.x+3,event.y+3,outline='red',fill='red'))
     
 
 
@@ -180,35 +174,35 @@ def on_left_button_up(event):
     if mode.get() == LINE_BRESENHAM:
         # 绘制直线
         points = bresenham_line(point_start, Point(event.x, event.y))
-        create_point(points, foreColor)
+        create_point(points, lineColor)
 
     elif mode.get() == LINE_DDA:
         points = dda_line(point_start, Point(event.x, event.y))
-        create_point(points, foreColor)
+        create_point(points, lineColor)
 
     elif mode.get() == LINE_MID:
         points = mid_line(point_start, Point(event.x, event.y))
-        create_point(points, foreColor)
+        create_point(points, lineColor)
 
     elif mode.get() == CIRCLE_MID:
         # 绘制圆形
         points = mid_circle(point_start, Point(event.x, event.y))
-        create_point(points, foreColor)
+        create_point(points, lineColor)
 
     elif mode.get() == CIRCLE_BRESENHAM:
         # 绘制圆形
         points = bresenham_circle(point_start, Point(event.x, event.y))
-        create_point(points, foreColor)
+        create_point(points, lineColor)
 
     elif mode.get() == ELLIPSE_BRESENHAM:
         # 绘制圆形
         points = bresenham_ellipse(point_start, Point(event.x, event.y))
-        create_point(points, foreColor)
+        create_point(points, lineColor)
 
     #elif mode.get() == select_pig:
 
         #points = bresenham_ellipse(point_start, Point(event.x, event.y))
-        #create_point(points, foreColor)
+        #create_point(points, lineColor)
     is_draw.set(0)
 
 
@@ -241,21 +235,22 @@ def select_polygon():
     print('set polygon')
     mode.set(POLYGON)
     
-
-
-
-
-
 def select_ellipse_bresenham():
     mode.set(ELLIPSE_BRESENHAM)
-# 选择前景色
-def chooseForeColor():
-    global foreColor
-    foreColor = colorchooser.askcolor()[1]
-# 选择背景色
+# 选择线条颜色
+def chooseLineColor():
+    global lineColor
+    lineColor = colorchooser.askcolor()[1]
+# 选择填充颜色
+def chooseFillColor():
+    global fillColor
+    backColor = colorchooser.askcolor()[1]
+#选择绘图板底色
 def chooseBackColor():
     global backColor
     backColor = colorchooser.askcolor()[1]
+    canvas['bg']=backColor
+
 # 橡皮
 def select_erase():
     mode.set(ERASE)
@@ -778,7 +773,7 @@ for each,command in zip(['circle_mid','circle_bresenham','elipse_bresenham'],[se
 menubar.add_cascade(label='圆',menu=menu2)
 #在顶级菜单实例下创建子菜单实例
 menu3 = tkinter.Menu(menubar)
-for each,command in zip(['forefround_color','background_color'],[chooseForeColor,chooseBackColor]):
+for each,command in zip(['绘图线条颜色','多边形填充颜色','画图板底色'],[chooseLineColor,chooseFillColor,chooseBackColor]):
     menu3.add_command(label=each,command=command)
 menubar.add_cascade(label='颜色',menu=menu3)
 

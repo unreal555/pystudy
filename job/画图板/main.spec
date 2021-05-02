@@ -3,7 +3,7 @@
 block_cipher = None
 
 
-a = Analysis(['画图板.PY'],
+a = Analysis(['main.py'],
              pathex=['D:\\PyCharm2019.3.1\\pystudy\\job\\画图板'],
              binaries=[],
              datas=[],
@@ -23,11 +23,11 @@ exe = EXE(pyz,
           a.zipfiles,
           a.datas,
           [],
-          name='画图板',
+          name='main',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
           upx_exclude=[],
           runtime_tmpdir=None,
-          console=False , icon='my-cicico.ico')
+          console=False , icon='my-icon.ico')
