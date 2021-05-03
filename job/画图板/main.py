@@ -244,7 +244,7 @@ def chooseLineColor():
 # 选择填充颜色
 def chooseFillColor():
     global fillColor
-    backColor = colorchooser.askcolor()[1]
+    fillColor = colorchooser.askcolor()[1]
 #选择绘图板底色
 def chooseBackColor():
     global backColor
