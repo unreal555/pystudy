@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b8d6269-a564-4802-8c0e-0538c714e289" name="Default Changelist" comment="clean">
-      <change afterPath="$PROJECT_DIR$/job/肺结节加图形界面/temp_dir/n1-temp1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/job/肺结节加图形界面/temp_dir/n1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/pystudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pystudy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/job/肺结节加图形界面/my_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/肺结节加图形界面/my_app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,29 +80,7 @@
       <recent name="D:\PyCharm2019.3.1\pystudy\pyqt5_model" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.my_app">
-    <configuration name="1.输出,编码学习" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="pystudy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/学习" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/学习/1.输出,编码学习.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.main">
     <configuration name="画图板.PY" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pystudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -142,6 +117,25 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pystudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/job/画图板" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/job/画图板/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -241,18 +235,18 @@
     <list>
       <item itemvalue="Python.pystudy" />
       <item itemvalue="Python.my_app" />
-      <item itemvalue="Python.1.输出,编码学习" />
       <item itemvalue="Python.test" />
       <item itemvalue="Python.画图板.PY" />
       <item itemvalue="Python.peiqi" />
+      <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.my_app" />
         <item itemvalue="Python.画图板.PY" />
         <item itemvalue="Python.peiqi" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.1.输出,编码学习" />
       </list>
     </recent_temporary>
   </component>
@@ -333,20 +327,8 @@
       <workItem from="1619566390507" duration="9678000" />
       <workItem from="1619601656264" duration="346000" />
       <workItem from="1619664130132" duration="14540000" />
-    </task>
-    <task id="LOCAL-00029" summary="clean">
-      <created>1616989247344</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1616989247344</updated>
-    </task>
-    <task id="LOCAL-00030" summary="clean">
-      <created>1617007237821</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1617007237821</updated>
+      <workItem from="1620010991961" duration="1245000" />
+      <workItem from="1620014550208" duration="300000" />
     </task>
     <task id="LOCAL-00031" summary="clean">
       <created>1617072892930</created>
@@ -677,7 +659,21 @@
       <option name="project" value="LOCAL" />
       <updated>1619682019848</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="clean">
+      <created>1620011339561</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1620011339561</updated>
+    </task>
+    <task id="LOCAL-00079" summary="clean">
+      <created>1620014695518</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1620014695518</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -708,10 +704,6 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="391" y="0" key="#my_cv2/0.0.1366.728@0.0.1366.728" timestamp="1612574341742" />
-    <state x="391" y="0" key="#my_hk_dvr" timestamp="1611137744010">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="391" y="0" key="#my_hk_dvr/0.0.1366.728@0.0.1366.728" timestamp="1611137744010" />
     <state x="675" y="155" key="#set_xls" timestamp="1617709053731">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -720,11 +712,11 @@
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="355" y="125" key="#test2/0.0.1280.980@0.0.1280.980" timestamp="1613698420873" />
-    <state x="0" y="86" key="CommitChangelistDialog2" timestamp="1619683312411">
-      <screen x="0" y="0" width="1280" height="980" />
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1620014879245">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="0" y="86" key="CommitChangelistDialog2/0.0.1280.980@0.0.1280.980" timestamp="1619683312411" />
-    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1612609140810" />
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1620014879245" />
     <state x="0" y="91" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1619231541342" />
     <state x="120" y="79" width="1048" height="822" key="DiffContextDialog" timestamp="1619669141697">
       <screen x="0" y="0" width="1280" height="980" />
@@ -797,11 +789,11 @@
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="418" y="195" key="VCS.ChangeListViewerDialog/0.0.1280.980@0.0.1280.980" timestamp="1613698057268" />
-    <state x="302" y="60" width="816" height="526" key="Vcs.Push.Dialog.v2" timestamp="1619683012313">
-      <screen x="0" y="0" width="1280" height="980" />
+    <state x="322" y="45" width="816" height="526" key="Vcs.Push.Dialog.v2" timestamp="1620014883535">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="302" y="60" width="816" height="526" key="Vcs.Push.Dialog.v2/0.0.1280.980@0.0.1280.980" timestamp="1619683012313" />
-    <state x="154" y="107" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1611142086454" />
+    <state x="322" y="45" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1620014883535" />
     <state x="216" y="153" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1619231485493" />
     <state x="92" y="92" width="1096" height="796" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1617757006414">
       <screen x="0" y="0" width="1280" height="980" />
@@ -819,7 +811,6 @@
       <screen x="0" y="0" width="1280" height="980" />
     </state>
     <state x="353" y="291" key="git4idea.merge.GitPullDialog/0.0.1280.980@0.0.1280.980" timestamp="1619664989484" />
-    <state x="377" y="216" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1611137485429" />
     <state x="530" y="309" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1619192905832" />
     <state x="465" y="397" key="git4idea.ui.GitStashDialog" timestamp="1617931062980">
       <screen x="0" y="0" width="1280" height="980" />
