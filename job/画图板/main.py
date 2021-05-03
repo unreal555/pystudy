@@ -247,9 +247,10 @@ def chooseFillColor():
     fillColor = colorchooser.askcolor()[1]
 #选择绘图板底色
 def chooseBackColor():
-    global backColor
-    backColor = colorchooser.askcolor()[1]
-    canvas['bg']=backColor
+    pass
+    #global backColor
+    #backColor = colorchooser.askcolor()[1]
+    #canvas['bg']=backColor
 
 # 橡皮
 def select_erase():
@@ -762,25 +763,25 @@ menubar = tkinter.Menu(app)
 #顶级菜单
 menubar.add_command(label='曲线', command=drawCurve)
 #在顶级菜单实例下创建子菜单实例
-menu1 = tkinter.Menu(menubar)
+menu1 = tkinter.Menu(menubar,tearoff=0)
 for each,command in zip(['line_bresenham','line_DDA','line_mid'],[select_line_bresenham,select_line_dda,select_line_mid]):
     menu1.add_command(label=each,command=command)
 menubar.add_cascade(label='直线',menu=menu1)
 #在顶级菜单实例下创建子菜单实例
-menu2 = tkinter.Menu(menubar)
+menu2 = tkinter.Menu(menubar,tearoff=0)
 for each,command in zip(['circle_mid','circle_bresenham','elipse_bresenham'],[select_circle_mid,select_circle_bresenham,select_ellipse_bresenham]):
     menu2.add_command(label=each,command=command)
 menubar.add_cascade(label='圆',menu=menu2)
 #在顶级菜单实例下创建子菜单实例
-menu3 = tkinter.Menu(menubar)
-for each,command in zip(['绘图线条颜色','多边形填充颜色','画图板底色'],[chooseLineColor,chooseFillColor,chooseBackColor]):
+menu3 = tkinter.Menu(menubar,tearoff=0)
+for each,command in zip(['绘图线条颜色','多边形填充颜色'],[chooseLineColor,chooseFillColor]):
     menu3.add_command(label=each,command=command)
 menubar.add_cascade(label='颜色',menu=menu3)
 
 #顶级菜单
 menubar.add_command(label='多边形', command=select_polygon)
 
-menu4=tkinter.Menu(menubar)
+menu4=tkinter.Menu(menubar,tearoff=0)
 menu4.add_command(label='佩奇猪',command=drawPeiQi)
 menu4.add_command(label='玫瑰',command=drawRose)
 menu4.add_command(label='向日葵',command=drawXiangRiKui)
