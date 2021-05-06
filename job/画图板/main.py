@@ -58,9 +58,9 @@ def create_point(points, fill=lineColor, temp=False):
         for p in points:
             x, y = p.x, p.y
             if temp:
-                canvas.create_oval(x, y, x, y, fill=fill, tag='temp')
+                canvas.create_oval(x, y, x, y, outline=fill,fill=fill, tag='temp')
             else:
-                canvas.create_oval(x, y, x, y, fill=fill)
+                canvas.create_oval(x, y, x, y, outline=fill,fill=fill)
     
 
 # 鼠标左键单击，允许画图
@@ -161,8 +161,11 @@ def drawPolygon(event):
                     canvas.delete(item)
                 canvas.create_polygon(*clickpoints,outline=lineColor,fill=fillColor)
                 clearPolygonState()
+                return
     except Exception as e:
         print(e)
+        clearPolygonState()
+        return
 
     clickpoints.append((event.x,event.y))
     temppoints.append(canvas.create_oval(event.x-3,event.y-3,event.x+3,event.y+3,outline='red',fill='red'))
