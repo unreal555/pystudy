@@ -153,13 +153,16 @@ def drawPolygon(event):
 
     if mode.get()!=POLYGON:
         return
-    for x,y in clickpoints:
-        if x in range(event.x-8,event.x+8) and y in range(event.y-8,event.y+8):
-            print('封闭')
-            for item in temppoints:
-                canvas.delete(item)
-            canvas.create_polygon(*clickpoints,outline=lineColor,fill=fillColor)
-            clearPolygonState()
+    try:
+        for x,y in clickpoints:
+            if x in range(event.x-8,event.x+8) and y in range(event.y-8,event.y+8):
+                print('封闭')
+                for item in temppoints:
+                    canvas.delete(item)
+                canvas.create_polygon(*clickpoints,outline=lineColor,fill=fillColor)
+                clearPolygonState()
+    except Exception as e:
+        print(e)
 
     clickpoints.append((event.x,event.y))
     temppoints.append(canvas.create_oval(event.x-3,event.y-3,event.x+3,event.y+3,outline='red',fill='red'))
