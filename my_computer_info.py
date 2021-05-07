@@ -33,7 +33,7 @@ def printCpu():
 def getDisksInfo():
     """
     查看磁盘属性信息
-    :return: 空闲空间字节数，磁盘使用率和剩余空间,类型为orderdict
+    :return: 空闲空间字节数，MB,磁盘使用率和剩余空间,类型为dict
     """
     print('读取分区信息 ')
     disks = {}

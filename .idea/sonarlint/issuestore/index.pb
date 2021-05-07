@@ -105,9 +105,13 @@ O
 学习/22.绘制双坐标轴.py,3\3\3363683519875a6d28eb5162a2fd50c81ceba213
 O
 学习/1.输出,编码学习.py,9\2\92e05b290d65bd3887ce404425759dbcb961363a
-F
-job/画图板/peiqi.py,9\e\9e0d2a2b839f039c18c874b8fc02d4e6255b111f
-E
-job/画图板/test.py,9\0\9048dcece246a6ecf8a2dc1cdc9a5fa70f1242ab
 J
 job/画图板/画图板.PY,a\4\a4881cf8aea87cc937853de98f0d4fc5e8f96737
+G
+job/画图板/circle.py,5\4\542291aa0bf6da518a1b516d8710890cf84c37d4
+F
+job/画图板/point.py,2\a\2a6b4e5843faddd890177017821e48df9e23af3b
+E
+job/画图板/main.py,a\3\a3c1dd63695e3defe5620d44897550db96cce8cd
+X
+(分词，提取人名，学习pyhanlp.py,1\a\1ac40b3ecd27b2e974447a8139f95ea5ee5dc6e7
