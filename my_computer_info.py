@@ -8,6 +8,8 @@
 # -*- coding: utf-8 -*-
 import os, sys
 import wmi
+import psutil
+
 c = wmi.WMI()
 #处理器
 def printCPU():
@@ -27,6 +29,30 @@ def printCPU():
     return  tmpdict
 
 #主板
+
+def get_disks_info():
+    """
+    查看磁盘属性信息
+    :return: 空闲空间字节数，磁盘使用率和剩余空间,类型为orderdict
+    """
+    print('读取分区信息 ')
+    disks = {}
+    for id in psutil.disk_partitions():
+
+        if 'cdrom' in id.opts or id.fstype == '':
+            continue
+
+        disk_name = id.device
+        disk_info = psutil.disk_usage(id.device)
+        disks[str.upper(disk_name.replace('\\','').replace(':',''))] = {'total':disk_info.total,
+                            'used':'{}'.format(disk_info.percent),
+                            'freeMbs':disk_info.free,
+                            'freeBytes':'{}'.format(disk_info.free // 1024 // 1024 ),
+                            'precent':disk_info.percent
+                            }
+    print(disks)
+    return disks
+
 def printMain_board():
     boards = []
     # print len(c.Win32_BaseBoard()):
@@ -119,6 +145,7 @@ def main():
     printPhysicalMemory()
     printMacAddress()
     printBattery()
+    get_disks_info()
 
 
 if __name__ == '__main__':
