@@ -8,9 +8,11 @@
 # -*- coding: utf-8 -*-
 import os, sys
 import wmi
+import psutil
+
 c = wmi.WMI()
 #处理器
-def printCPU():
+def printCpu():
     tmpdict = {}
     tmpdict["CpuCores"] = 0
     for cpu in c.Win32_Processor():
@@ -27,7 +29,28 @@ def printCPU():
     return  tmpdict
 
 #主板
-def printMain_board():
+
+def getDisksInfo():
+    """
+    查看磁盘属性信息
+    :return: 空闲空间字节数，MB,磁盘使用率和剩余空间,类型为dict
+    """
+    print('读取分区信息 ')
+    disks = {}
+    for id in psutil.disk_partitions():
+        if 'cdrom' in id.opts or id.fstype == '':
+            continue
+        disk_name = str.upper(id.device).replace('\\','').replace(':','')
+        disk_info = psutil.disk_usage(id.device)
+        disks[disk_name]= {'total':disk_info.total,
+                            'used':'{}'.format(disk_info.used),
+                            'freeBytes':disk_info.free,
+                            'freeMbs':'{}'.format(disk_info.free // 1024 // 1024 ),
+                            'precent':disk_info.percent
+                            }
+    return disks
+
+def printMainBoard():
     boards = []
     # print len(c.Win32_BaseBoard()):
     for board_id in c.Win32_BaseBoard():
@@ -41,7 +64,7 @@ def printMain_board():
     return boards
 
 #BIOS
-def printBIOS():
+def printBios():
     bioss = []
     for bios_id in c.Win32_BIOS():
         tmpmsg = {}
@@ -112,13 +135,14 @@ def printMacAddress():
 
 def main():
 
-    printCPU()
-    printMain_board()
-    printBIOS()
+    printCpu()
+    printMainBoard()
+    printBios()
     printDisk()
     printPhysicalMemory()
     printMacAddress()
     printBattery()
+    print(getDisksInfo())
 
 
 if __name__ == '__main__':
