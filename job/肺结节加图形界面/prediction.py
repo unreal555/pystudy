@@ -30,7 +30,7 @@ temp_file2=os.path.join(temp_dir,'2.png')
 # 获取unet预测结果的中心点坐标(x,y)
 def unet_candidate_dicom(unet_result_path):
     centers = []
-    image_t = cv2.imread(unet_result_path, cv2.IMREAD_GRAYSCALE)
+    image_t = cv2.imdecode(np.fromfile(unet_result_path, dtype=np.uint8), cv2.IMREAD_GRAYSCALE)
     # Thresholding(阈值化)
     image_t[image_t < THRESHOLD] = 0
     image_t[image_t > 0] = 1
@@ -78,7 +78,9 @@ def unet_predict(imagepath):
     for y in y_pred:
         y *= 255.
         y = y.reshape((y.shape[0], y.shape[1])).astype(np.uint8)
-        cv2.imwrite(temp_file1, y)
+        print('ssssss',temp_file1)
+        #cv2.imwrite(temp_file1, y)
+        cv2.imencode('.png', y)[1].tofile(temp_file1)
         count += 1
 
 
@@ -105,7 +107,8 @@ if __name__ == "__main__":
             y,x=pos
             cv2.circle(img,center=(x,y),radius=8, color=(0,0,255),thickness=2,lineType=cv2.LINE_AA)
 
-        cv2.imwrite(temp_file2,img)
+        #cv2.imwrite(temp_file2,img)
+        cv2.imencode('.png', img)[1].tofile(temp_file2)
     
     
     #_3dcnn_predict('./data/chapter6/true_positive_nodules_t.png')

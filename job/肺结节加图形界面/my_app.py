@@ -96,14 +96,15 @@ class MyBatchDoThread(QThread):
 
                 file=os.path.join(self.workdir,f)
                 workfile=os.path.join(self.temp_dir,f)
-                prediction.temp_file1=os.path.join(self.temp_dir,filename+'-temp2'+ext)
+                prediction.temp_file1=os.path.join(self.temp_dir,filename+'-temp1'+ext)
                 temp_file2=os.path.join(self.temp_dir,filename+'-temp2'+ext)
         
                 img = cv2.imdecode(np.fromfile(file, dtype=np.uint8), cv2.IMREAD_COLOR)
                 h, w, tunnel = img.shape
                 if h != w or h != 320 or w != 320:
                     img = cv2.resize(img, (320, 320))
-                    cv2.imwrite(workfile, img)
+                    #cv2.imwrite(workfile, img)
+                    cv2.imencode('.png', img)[1].tofile(workfile)
                 else:
                     shutil.copy(file,workfile)
 
@@ -125,7 +126,9 @@ class MyBatchDoThread(QThread):
                         cv2.circle(imgTarget, center=(x, y), radius=8, color=(0, 0, 255), thickness=2, lineType=cv2.LINE_AA)
             
                     res = np.hstack([imgSource, imgTarget])
-                    cv2.imwrite(temp_file2, res)
+                    #cv2.imwrite(temp_file2, res)
+                    cv2.imencode('.png', res)[1].tofile(temp_file2)
+
                     shutil.move(file,self.noticeDir)
                     shutil.move(temp_file2,self.noticeDir)
                     self.wrongSignal.emit('wrong:'+file)
@@ -170,7 +173,8 @@ class MySingleDoThread(QThread):
         if h != w or h != 320 or w != 320:
             img = cv2.resize(img, (320, 320))
             print(img.shape)
-            cv2.imwrite(self.source, img)
+            #cv2.imwrite(self.source, img)
+            cv2.imencode('.png', img)[1].tofile(self.source)
 
         prediction.unet_predict(self.source)
         centers = prediction.unet_candidate_dicom(self.temp_file1)
@@ -184,7 +188,8 @@ class MySingleDoThread(QThread):
             for pos in centers:
                 y, x = pos
                 cv2.circle(img, center=(x, y), radius=8, color=(0, 0, 255), thickness=2, lineType=cv2.LINE_AA)
-            cv2.imwrite(self.temp_file2, img)
+            #cv2.imwrite(self.temp_file2, img)
+            cv2.imencode('.png', img)[1].tofile(self.temp_file2)
             self.wrongSignal.emit('异常')
 
         if len(centers) == 0:
