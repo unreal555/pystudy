@@ -97,7 +97,7 @@ class MyBatchDoThread(QThread):
                 file=os.path.join(self.workdir,f)
                 workfile=os.path.join(self.temp_dir,f)
                 prediction.temp_file1=os.path.join(self.temp_dir,filename+'-temp1'+ext)
-                temp_file2=os.path.join(self.temp_dir,filename+'-temp2'+ext)
+                temp_file2=os.path.join(self.temp_dir,filename+'-result'+ext)
         
                 img = cv2.imdecode(np.fromfile(file, dtype=np.uint8), cv2.IMREAD_COLOR)
                 h, w, tunnel = img.shape
@@ -131,10 +131,10 @@ class MyBatchDoThread(QThread):
 
                     shutil.move(file,self.noticeDir)
                     shutil.move(temp_file2,self.noticeDir)
-                    self.wrongSignal.emit('wrong:'+file)
+                    self.wrongSignal.emit('注意:'+file)
                 if len(centers) == 0:
                     shutil.move(file,self.normalDir)
-                    self.rightSignal.emit('right:'+file)
+                    self.rightSignal.emit('正常:'+file)
         self.infoSignal.emit('处理完成')
 
 class MySingleDoThread(QThread):
@@ -420,6 +420,7 @@ class App(QWidget, Ui_Form):
         print(select)
         if select in [os.path.abspath('.'),os.path.abspath(self.temp_dir)]:
             QMessageBox.warning(self,'注意','不允许将程序根目录或temp目录作为批处理目录')
+            return
         else:
             self.batch_dir=select
             self.batchDirLineEdit.setText(self.batch_dir)
@@ -428,6 +429,7 @@ class App(QWidget, Ui_Form):
     def on_batchDoButton_clicked(self):
         if os.path.isdir(self.batch_dir):
             if QMessageBox.question(self,'注意','您选中的文件夹是:‘{}’\r\n是否处理该目录影像'.format(self.batch_dir),QMessageBox.Yes|QMessageBox.No,QMessageBox.No)==QMessageBox.Yes:
+                self.clearBatchResult()
                 self.batchThread=MyBatchDoThread()
                 self.batchThread.rightSignal.connect(self.toBatchOutput)
                 self.batchThread.wrongSignal.connect(self.toBatchOutput)
@@ -445,8 +447,6 @@ class App(QWidget, Ui_Form):
                 self.batchThread.workdir=self.batch_dir	#normalSignal,warnningSignal
                 self.batchThread.start()
 
-        else:
-            QMessageBox.warning(self,'注意','还未选择目录或者选择有误，请重新选择目录')
 
 
 
@@ -514,16 +514,20 @@ class App(QWidget, Ui_Form):
 
     def toBatchOutput(self, strings):
 
-        if 'right:' in strings:
-            self.normalTextEdit.append('''<html><font-size:10pt">{}</font></html>'''.format(os.path.split(strings.replace('right:',''))[1]))
+        if '正常:' in strings:
+            self.normalTextEdit.append('''<html><font-size:10pt">{}</font></html>'''.format(os.path.split(strings.replace('正常:',''))[1]))
             self.batchOutPut.append('')
 
-        if 'wrong' in strings:
-            self.noticeTextEdit.append('''<html><font-size:10pt">{}</font></html>'''.format(os.path.split(strings.replace('wrong:',''))[1]))
+        if '注意' in strings:
+            self.noticeTextEdit.append('''<html><font-size:10pt">{}</font></html>'''.format(os.path.split(strings.replace('注意:',''))[1]))
             self.batchOutPut.append('')
 
         self.batchOutPut.append('''<html><font-size:10pt">{}</font></html>'''.format(strings))
         self.batchOutPut.append('')
+
+    def clearBatchResult(self):
+        self.normalTextEdit.clear()
+        self.noticeTextEdit.clear()
 
     def closeEvent(self, a0: QCloseEvent) -> None:
 

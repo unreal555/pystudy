@@ -582,6 +582,42 @@ font: 20pt &quot;仿宋&quot;;</string>
               <item row="5" column="1">
                <widget class="QLineEdit" name="temp_dirLineEdit"/>
               </item>
+              <item row="6" column="0">
+               <widget class="QLabel" name="label_8">
+                <property name="text">
+                 <string>TextLabel</string>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="1">
+               <widget class="QComboBox" name="comboBox">
+                <item>
+                 <property name="text">
+                  <string>CNN卷积</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>循环网络</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>深度生成</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>K-means</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>SVM</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
              </layout>
             </item>
            </layout>
