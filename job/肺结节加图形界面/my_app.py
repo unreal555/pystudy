@@ -8,7 +8,7 @@ from ui import Ui_Form
 from PyQt5.QtCore import Qt, QThread, pyqtSlot, pyqtSignal
 from PyQt5.QtWidgets import QWidget,  QGraphicsScene, QGraphicsTextItem, QMessageBox, QGraphicsPixmapItem, \
     QApplication,QFileDialog,QDialog,QGraphicsView
-from PyQt5.QtGui import QIcon, QFont, QDragEnterEvent, QImage, QResizeEvent, QPixmap, QCloseEvent
+from PyQt5.QtGui import QIcon, QFont, QDragEnterEvent, QImage, QResizeEvent, QPixmap, QCloseEvent,QMouseEvent
 import re, os, cv2
 import numpy as np
 import configparser
@@ -192,15 +192,6 @@ class MySingleDoThread(QThread):
             self.rightSignal.emit('正常')
 
 
-class myQDialog(QDialog):
-    def __init__(self, parent=None):
-        super(QDialog, self).__init__(parent)
-    
-    def mousePressEvent(self, event):
-        print(1)
-        self.destroyed()
-
-
 class App(QWidget, Ui_Form):
     def __init__(self):
         super(App, self).__init__()
@@ -248,6 +239,12 @@ class App(QWidget, Ui_Form):
         self.setStyleSheet("background-color: rgb{};".format(str(self.colorThemes[self.colorTheme])))
         print(self.colorTheme, "background-color: rgb{};".format(str(self.colorThemes[self.colorTheme])))
 
+    def mousePressEvent(self, event) -> None:
+        try:
+            self.popWindow.destroy()
+            print(event)
+        except Exception as e:
+            print(e)
 
     def changePactiy(self, value):
         self.setWindowOpacity(value / 100)
@@ -540,29 +537,22 @@ class App(QWidget, Ui_Form):
     def checkItem(self,index):
         def closePopWindow():
             print(1)
-            popWindow.destroy()
+            self.popWindow.destroy()
         print(index.row(),index.data())
         filename,ext=os.path.splitext(index.data())
         normalfile=os.path.join(self.batch_dir,'normal',filename+ext)
         noticefile=os.path.join(self.batch_dir,'notice',filename+'-result'+ext)
         print(normalfile,os.path.exists(normalfile))
         print(normalfile,os.path.exists(noticefile))
-        
-        popWindow=myQDialog()
-        popWindow.resize(400,400)
-        popWindow.setWindowFlags(Qt.FramelessWindowHint | Qt.Tool)
-        popWindow.setStyleSheet("background-color: rgb{};".format(str(self.colorThemes[self.colorTheme])))
-        popWindow.setWindowOpacity(self.OpacitySlider.value() / 100)
-        
-        outPutView=QGraphicsView(popWindow)
+        self.popWindow=QDialog()
+        self.popWindow.resize(400,400)
+        self.popWindow.setWindowFlags(Qt.FramelessWindowHint| Qt.Tool)
+        self.popWindow.setStyleSheet("background-color: rgb{};".format(str(self.colorThemes[self.colorTheme])))
+        self.popWindow.setWindowOpacity(self.OpacitySlider.value() / 100)
+        outPutView=QGraphicsView(self.popWindow)
         outPutView.resize(400,400)
-
-        popWindow.exec()
         
-
-
-        # popWindow.open()
-        # popWindow.show()
+        self.popWindow.show()
         # img = cv2.imdecode(np.fromfile(self.workfile, dtype=np.uint8), cv2.IMREAD_COLOR)
         # img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)  # 转换图像通道
         # img_width = img.shape[1]  # 获取图像大小
