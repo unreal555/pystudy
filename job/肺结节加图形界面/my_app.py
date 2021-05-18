@@ -586,21 +586,24 @@ class App(QWidget, Ui_Form):
         else:
             return
 
+        zoomscale = 1.5  # min(width_scale, height_scale)  # 图片放缩尺度
+
         self.popWindow=MyDialog()
-        self.popWindow.resize(img_width,img_height)
+        self.popWindow.resize(int(zoomscale*img_width),int(zoomscale*img_height))
         self.popWindow.setStyleSheet("background-color: rgb{};".format(str(self.colorThemes[self.colorTheme])))
         self.popWindow.setWindowOpacity(self.OpacitySlider.value() / 100)
 
+
         outPutView=QGraphicsView(self.popWindow)
-        outPutView.resize(img_width,img_height)
+        outPutView.resize(int(zoomscale*img_width),int(zoomscale*img_height))
         outPutView.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
         outPutView.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
 
-        zoomscale = 0.99# min(width_scale, height_scale)  # 图片放缩尺度
+
         frame = QImage(img, img_width, img_height, QImage.Format_RGB888)
         pix = QPixmap.fromImage(frame)
         picItem = QGraphicsPixmapItem(pix)  # 创建像素图元
-        picItem.setScale(zoomscale)
+        picItem.setScale(zoomscale-0.1)
         picScene = QGraphicsScene()  # 创建场景
         picScene.addItem(picItem)
         outPutView.setScene(picScene)
