@@ -427,4 +427,5 @@ class Ui_Form(object):
         self.radioButton_6.setText(_translate("Form", "葛巾紫"))
         self.saveConfigButton.setText(_translate("Form", "储存配置"))
         self.Pages.setTabText(self.Pages.indexOf(self.configure), _translate("Form", "配置"))
-
+        
+        self.normalTextEdit.addItem('sss')

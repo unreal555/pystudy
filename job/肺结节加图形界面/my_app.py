@@ -7,7 +7,7 @@ import sys
 from ui import Ui_Form
 from PyQt5.QtCore import Qt, QThread, pyqtSlot, pyqtSignal
 from PyQt5.QtWidgets import QWidget, QFileDialog, QGraphicsScene, QGraphicsTextItem, QMessageBox, QGraphicsPixmapItem, \
-    QApplication,QFileDialog
+    QApplication,QFileDialog,QDialog
 from PyQt5.QtGui import QIcon, QFont, QDragEnterEvent, QImage, QResizeEvent, QPixmap, QCloseEvent
 import re, os, cv2
 import numpy as np
@@ -526,8 +526,35 @@ class App(QWidget, Ui_Form):
         self.noticeTextEdit.clear()
         
     def checkItem(self,index):
-        print(index.row())
-    
+        print(index.row(),index.data())
+        filename,ext=os.path.splitext(index.data())
+        normalfile=os.path.join(self.batch_dir,'normal',filename+ext)
+        noticefile=os.path.join(self.batch_dir,'notice',filename+'-result'+ext)
+        print(normalfile,os.path.exists(normalfile))
+        print(normalfile,os.path.exists(noticefile))
+        
+        popWindow=QDialog()
+        popWindow.open()
+        
+        # img = cv2.imdecode(np.fromfile(self.workfile, dtype=np.uint8), cv2.IMREAD_COLOR)
+        # img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)  # 转换图像通道
+        # img_width = img.shape[1]  # 获取图像大小
+        # img_height = img.shape[0]
+        # width = self.input_view.width()
+        # height = self.input_view.height()
+        # width_scale = width / img_width
+        # height_scale = height / img_height
+        # zoomscale = min(width_scale, height_scale)  # 图片放缩尺度
+        # frame = QImage(img, img_width, img_height, QImage.Format_RGB888)
+        # pix = QPixmap.fromImage(frame)
+        # self.source_pic_item = QGraphicsPixmapItem(pix)  # 创建像素图元
+        # self.source_pic_item.setScale(zoomscale)
+        # self.source_scene = QGraphicsScene()  # 创建场景
+        # self.source_scene.addItem(self.source_pic_item)
+        # self.input_view.setScene(self.source_scene)
+        # self.input_view.show()
+        #
+        #
 
     def closeEvent(self, a0: QCloseEvent) -> None:
 
