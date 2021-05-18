@@ -199,13 +199,19 @@ class MyDialog(QDialog):
         self.accept()
         
     def mouseDoubleClickEvent(self, a0: QMouseEvent) -> None:
-        print(a0)
+        print('destroy1')
+
+        self.destroy()
+        self.close()
         
     def mousePressEvent(self, a0: QMouseEvent) -> None:
-        print(a0)
+        print('destroy1')
+        self.destroy()
+        self.close()
+
         
     def releaseMouse(self) -> None:
-        print(111)
+        pass
 
 class App(QWidget, Ui_Form):
     def __init__(self):
@@ -550,47 +556,69 @@ class App(QWidget, Ui_Form):
         self.noticeTextEdit.clear()
         
     def checkItem(self,index):
-
         print(index.row(),index.data())
         filename,ext=os.path.splitext(index.data())
         normalfile=os.path.join(self.batch_dir,'normal',filename+ext)
         noticefile=os.path.join(self.batch_dir,'notice',filename+'-result'+ext)
         print(normalfile,os.path.exists(normalfile))
-        print(normalfile,os.path.exists(noticefile))
+        print(noticefile,os.path.exists(noticefile))
+
+        if os.path.exists(normalfile):
+            img = cv2.imdecode(np.fromfile(normalfile, dtype=np.uint8), cv2.IMREAD_COLOR)
+            img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)  # 转换图像通道
+            img_width = img.shape[1]  # 获取图像大小
+            img_height = img.shape[0]
+            width = self.input_view.width()
+            height = self.input_view.height()
+            width_scale = width / img_width
+            height_scale = height / img_height
+
+        elif os.path.exists(noticefile):
+            img = cv2.imdecode(np.fromfile(noticefile, dtype=np.uint8), cv2.IMREAD_COLOR)
+            img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)  # 转换图像通道
+            img_width = img.shape[1]  # 获取图像大小
+            img_height = img.shape[0]
+            width = self.input_view.width()
+            height = self.input_view.height()
+            width_scale = width / img_width
+            height_scale = height / img_height
+
+        else:
+            return
+
         self.popWindow=MyDialog()
-        self.popWindow.resize(400,400)
+        self.popWindow.resize(img_width,img_height)
         self.popWindow.setStyleSheet("background-color: rgb{};".format(str(self.colorThemes[self.colorTheme])))
         self.popWindow.setWindowOpacity(self.OpacitySlider.value() / 100)
+
         outPutView=QGraphicsView(self.popWindow)
-        outPutView.resize(400,400)
-        
-        self.popWindow.show()
-        # img = cv2.imdecode(np.fromfile(self.workfile, dtype=np.uint8), cv2.IMREAD_COLOR)
-        # img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)  # 转换图像通道
-        # img_width = img.shape[1]  # 获取图像大小
-        # img_height = img.shape[0]
-        # width = self.input_view.width()
-        # height = self.input_view.height()
-        # width_scale = width / img_width
-        # height_scale = height / img_height
-        # zoomscale = min(width_scale, height_scale)  # 图片放缩尺度
-        # frame = QImage(img, img_width, img_height, QImage.Format_RGB888)
-        # pix = QPixmap.fromImage(frame)
-        # self.source_pic_item = QGraphicsPixmapItem(pix)  # 创建像素图元
-        # self.source_pic_item.setScale(zoomscale)
-        # self.source_scene = QGraphicsScene()  # 创建场景
-        # self.source_scene.addItem(self.source_pic_item)
-        # self.input_view.setScene(self.source_scene)
-        # self.input_view.show()
-        #
-        #
+        outPutView.resize(img_width,img_height)
+        outPutView.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+        outPutView.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+
+        zoomscale = 0.99# min(width_scale, height_scale)  # 图片放缩尺度
+        frame = QImage(img, img_width, img_height, QImage.Format_RGB888)
+        pix = QPixmap.fromImage(frame)
+        picItem = QGraphicsPixmapItem(pix)  # 创建像素图元
+        picItem.setScale(zoomscale)
+        picScene = QGraphicsScene()  # 创建场景
+        picScene.addItem(picItem)
+        outPutView.setScene(picScene)
+        outPutView.show()
+        self.popWindow.open()
+
 
     def closeEvent(self, a0: QCloseEvent) -> None:
 
         if QMessageBox.question(self, '关闭', '是否退出程序', QMessageBox.Yes | QMessageBox.No,
                                 QMessageBox.No) == QMessageBox.Yes:
+
             clean_dir(self.temp_dir)
+            self.popWindow.destroy()
+            self.destroy()
             a0.accept()
+            sys.exit()
+
         else:
             a0.ignore()
 
