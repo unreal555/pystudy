@@ -191,6 +191,21 @@ class MySingleDoThread(QThread):
         if len(centers) == 0:
             self.rightSignal.emit('正常')
 
+class MyDialog(QDialog):
+    
+    def __init__(self):
+        super(QDialog,self).__init__()
+        self.setWindowFlags(Qt.FramelessWindowHint| Qt.Tool)
+        self.accept()
+        
+    def mouseDoubleClickEvent(self, a0: QMouseEvent) -> None:
+        print(a0)
+        
+    def mousePressEvent(self, a0: QMouseEvent) -> None:
+        print(a0)
+        
+    def releaseMouse(self) -> None:
+        print(111)
 
 class App(QWidget, Ui_Form):
     def __init__(self):
@@ -535,18 +550,15 @@ class App(QWidget, Ui_Form):
         self.noticeTextEdit.clear()
         
     def checkItem(self,index):
-        def closePopWindow():
-            print(1)
-            self.popWindow.destroy()
+
         print(index.row(),index.data())
         filename,ext=os.path.splitext(index.data())
         normalfile=os.path.join(self.batch_dir,'normal',filename+ext)
         noticefile=os.path.join(self.batch_dir,'notice',filename+'-result'+ext)
         print(normalfile,os.path.exists(normalfile))
         print(normalfile,os.path.exists(noticefile))
-        self.popWindow=QDialog()
+        self.popWindow=MyDialog()
         self.popWindow.resize(400,400)
-        self.popWindow.setWindowFlags(Qt.FramelessWindowHint| Qt.Tool)
         self.popWindow.setStyleSheet("background-color: rgb{};".format(str(self.colorThemes[self.colorTheme])))
         self.popWindow.setWindowOpacity(self.OpacitySlider.value() / 100)
         outPutView=QGraphicsView(self.popWindow)
