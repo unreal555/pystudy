@@ -429,3 +429,4 @@ class Ui_Form(object):
         self.Pages.setTabText(self.Pages.indexOf(self.configure), _translate("Form", "配置"))
         
         self.normalTextEdit.addItem('sss')
+        
