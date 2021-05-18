@@ -58,7 +58,7 @@
         <enum>QTabWidget::Triangular</enum>
        </property>
        <property name="currentIndex">
-        <number>0</number>
+        <number>1</number>
        </property>
        <property name="elideMode">
         <enum>Qt::ElideLeft</enum>
@@ -462,17 +462,7 @@ font: 20pt &quot;仿宋&quot;;</string>
               <item>
                <layout class="QGridLayout" name="gridLayout_14">
                 <item row="0" column="0">
-                 <widget class="QTextEdit" name="noticeTextEdit">
-                  <property name="enabled">
-                   <bool>true</bool>
-                  </property>
-                  <property name="lineWrapMode">
-                   <enum>QTextEdit::NoWrap</enum>
-                  </property>
-                  <property name="readOnly">
-                   <bool>true</bool>
-                  </property>
-                 </widget>
+                 <widget class="QListWidget" name="noticeTextEdit"/>
                 </item>
                </layout>
               </item>
@@ -488,17 +478,7 @@ font: 20pt &quot;仿宋&quot;;</string>
               <item>
                <layout class="QGridLayout" name="gridLayout_13">
                 <item row="0" column="0">
-                 <widget class="QTextEdit" name="normalTextEdit">
-                  <property name="enabled">
-                   <bool>true</bool>
-                  </property>
-                  <property name="lineWrapMode">
-                   <enum>QTextEdit::NoWrap</enum>
-                  </property>
-                  <property name="readOnly">
-                   <bool>true</bool>
-                  </property>
-                 </widget>
+                 <widget class="QListWidget" name="normalTextEdit"/>
                 </item>
                </layout>
               </item>

@@ -15,12 +15,8 @@ import configparser
 import prediction
 import shutil
 import random
-import time
-
-
 
 filetype='*.png *.jpg'
-
 
 def clean_dir(path):
     """
@@ -230,6 +226,8 @@ class App(QWidget, Ui_Form):
         }
 
         self.OpacitySlider.valueChanged.connect(self.changePactiy)
+        self.normalTextEdit.clicked.connect(self.checkItem)
+        self.noticeTextEdit.clicked.connect(self.checkItem)
 
         for i in [self.radioButton_1, self.radioButton_2, self.radioButton_3, self.radioButton_4, self.radioButton_5,
                   self.radioButton_6]:
@@ -515,19 +513,21 @@ class App(QWidget, Ui_Form):
     def toBatchOutput(self, strings):
 
         if '正常:' in strings:
-            self.normalTextEdit.append('''<html><font-size:10pt">{}</font></html>'''.format(os.path.split(strings.replace('正常:',''))[1]))
-            self.batchOutPut.append('')
+            self.normalTextEdit.addItem('{}'.format(os.path.split(strings.replace('正常:',''))[1]))
 
-        if '注意' in strings:
-            self.noticeTextEdit.append('''<html><font-size:10pt">{}</font></html>'''.format(os.path.split(strings.replace('注意:',''))[1]))
-            self.batchOutPut.append('')
-
+        if '注意:' in strings:
+            self.noticeTextEdit.addItem('{}'.format(os.path.split(strings.replace('注意:', ''))[1]))
+           
         self.batchOutPut.append('''<html><font-size:10pt">{}</font></html>'''.format(strings))
         self.batchOutPut.append('')
 
     def clearBatchResult(self):
         self.normalTextEdit.clear()
         self.noticeTextEdit.clear()
+        
+    def checkItem(self,index):
+        print(index.row())
+    
 
     def closeEvent(self, a0: QCloseEvent) -> None:
 

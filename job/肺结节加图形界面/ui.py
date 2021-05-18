@@ -16,7 +16,7 @@ class Ui_Form(object):
         Form.setObjectName("Form")
         Form.setWindowModality(QtCore.Qt.NonModal)
         Form.setEnabled(True)
-        Form.resize(1024, 768)
+        Form.resize(800, 500)
         Form.setAcceptDrops(True)
         Form.setStyleSheet("")
         self.gridLayout_6 = QtWidgets.QGridLayout(Form)
@@ -230,10 +230,7 @@ class Ui_Form(object):
         self.horizontalLayout_12.setObjectName("horizontalLayout_12")
         self.gridLayout_14 = QtWidgets.QGridLayout()
         self.gridLayout_14.setObjectName("gridLayout_14")
-        self.noticeTextEdit = QtWidgets.QTextEdit(self.groupBox_5)
-        self.noticeTextEdit.setEnabled(True)
-        self.noticeTextEdit.setLineWrapMode(QtWidgets.QTextEdit.NoWrap)
-        self.noticeTextEdit.setReadOnly(True)
+        self.noticeTextEdit = QtWidgets.QListWidget(self.groupBox_5)
         self.noticeTextEdit.setObjectName("noticeTextEdit")
         self.gridLayout_14.addWidget(self.noticeTextEdit, 0, 0, 1, 1)
         self.horizontalLayout_12.addLayout(self.gridLayout_14)
@@ -244,10 +241,7 @@ class Ui_Form(object):
         self.verticalLayout_10.setObjectName("verticalLayout_10")
         self.gridLayout_13 = QtWidgets.QGridLayout()
         self.gridLayout_13.setObjectName("gridLayout_13")
-        self.normalTextEdit = QtWidgets.QTextEdit(self.groupBox_4)
-        self.normalTextEdit.setEnabled(True)
-        self.normalTextEdit.setLineWrapMode(QtWidgets.QTextEdit.NoWrap)
-        self.normalTextEdit.setReadOnly(True)
+        self.normalTextEdit = QtWidgets.QListWidget(self.groupBox_4)
         self.normalTextEdit.setObjectName("normalTextEdit")
         self.gridLayout_13.addWidget(self.normalTextEdit, 0, 0, 1, 1)
         self.verticalLayout_10.addLayout(self.gridLayout_13)
@@ -384,7 +378,7 @@ class Ui_Form(object):
         self.gridLayout_6.addLayout(self.horizontalLayout, 0, 0, 1, 1)
 
         self.retranslateUi(Form)
-        self.Pages.setCurrentIndex(0)
+        self.Pages.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
@@ -433,3 +427,4 @@ class Ui_Form(object):
         self.radioButton_6.setText(_translate("Form", "葛巾紫"))
         self.saveConfigButton.setText(_translate("Form", "储存配置"))
         self.Pages.setTabText(self.Pages.indexOf(self.configure), _translate("Form", "配置"))
+
