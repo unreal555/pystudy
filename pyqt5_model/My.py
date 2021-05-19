@@ -66,9 +66,10 @@ class MyPicDialog(QDialog):
     def zoomWin(self):
         print(self.imageWidth*self.zoomscale, self.imageHeight*self.zoomscale)
         print(self.picScene.sceneRect())
-        self.picItem.setScale(self.zoomscale)
+        
         self.outputView.resize(self.imageWidth*self.zoomscale, self.imageHeight*self.zoomscale)
         self.resize(self.imageWidth*self.zoomscale, self.imageHeight*self.zoomscale)
+        self.picItem.setScale(self.zoomscale)
 
         
 
@@ -102,6 +103,6 @@ class MyPicDialog(QDialog):
 if __name__ == '__main__':
 
     app=QApplication(sys.argv)
-    dl=MyPicDialog(imgpath=r'D:\PyCharm2019.3.1\pystudy\pic\21.jpg')
+    dl=MyPicDialog(imgpath=r'D:\PyCharm2019.3.1\pystudy\pic\2.jpg')
     dl.exec()
     sys.exit(dl)
