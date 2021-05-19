@@ -31,7 +31,7 @@ class MyPicDialog(QDialog):
         self.outputView = QGraphicsView(self)
         self.outputView.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
         self.outputView.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.outputView.setFocus()
+        self.setFocus()
 
         if imgpath==None:
             print('None')
@@ -62,6 +62,7 @@ class MyPicDialog(QDialog):
 
     def zoomWin(self):
         print(self.imageWidth*self.zoomscale, self.imageHeight*self.zoomscale)
+        print(self.picScene.sceneRect())
         self.picItem.setScale(self.zoomscale)
         self.outputView.resize(self.imageWidth*self.zoomscale, self.imageHeight*self.zoomscale)
         self.resize(self.imageWidth*self.zoomscale, self.imageHeight*self.zoomscale)
