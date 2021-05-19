@@ -43,18 +43,21 @@ class MyPicDialog(QDialog):
                 self.img = cv2.cvtColor(self.img, cv2.COLOR_BGR2RGB)  # 转换图像通道
                 self.imageWidth = self.img.shape[1]  # 获取图像大小
                 self.imageHeight = self.img.shape[0]
+                self.frame = QImage(self.img, self.imageWidth, self.imageHeight, QImage.Format_RGB888)
+                self.pix = QPixmap.fromImage(self.frame)
+                self.picItem = QGraphicsPixmapItem(self.pix)  # 创建像素图元
+                self.picScene = QGraphicsScene()  # 创建场景
+                self.picScene.addItem(self.picItem)
+                self.outputView.setScene(self.picScene)
+                self.outputView.show()
+                self.setupUi()
+                self.zoomWin()
             except Exception as e:
+                print(111)
                 self.closeEvent(QCloseEvent)
-                
-        self.frame = QImage(self.img, self.imageWidth, self.imageHeight, QImage.Format_RGB888)
-        self.pix = QPixmap.fromImage(self.frame)
-        self.picItem = QGraphicsPixmapItem(self.pix)  # 创建像素图元
-        self.picScene = QGraphicsScene()  # 创建场景
-        self.picScene.addItem(self.picItem)
-        self.outputView.setScene(self.picScene)
-        self.outputView.show()
-        self.setupUi()
-        self.zoomWin()
+        else:
+            print(111)
+            self.closeEvent(QCloseEvent)
             
     def setupUi(self):
         self.setStyleSheet("background-color: rgb{};".format(self.background))
@@ -99,6 +102,6 @@ class MyPicDialog(QDialog):
 if __name__ == '__main__':
 
     app=QApplication(sys.argv)
-    dl=MyPicDialog(imgpath=r'C:\Users\Administrator\Desktop\样本\有1 (7).png')
+    dl=MyPicDialog(imgpath=r'D:\PyCharm2019.3.1\pystudy\pic\21.jpg')
     dl.exec()
     sys.exit(dl)
