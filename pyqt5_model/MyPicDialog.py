@@ -14,29 +14,41 @@ from PyQt5.QtGui import QMouseEvent,QCloseEvent,QImage,QPixmap,QWheelEvent
 
 class MyPicDialog(QDialog):
     
-    def __init__(self,imgpath=None):
+    def __init__(self,imgpath=None,zoomscale=1,opacity=0.8,background='#EAEAEF'):
         super(QDialog, self).__init__()
-        self.zoomscale=1
-        self.opacity=0.8
-        self.background='#EAEAEF'
+        self.zoomscale=zoomscale
+        self.opacity=opacity
+        self.background=background
         
-        self.imageWidth=-1
-        self.imageHeight=-1
+        self.imageWidth=None
+        self.imageHeight=None
         
-        self.lastMouseP=''
+        self.lastMouseP=None
+        self.img=None
+        self.imageWidth=None
+        self.imageHeigh=None
+        self.pix=None
+        self.picItem=None
+        self.picScene=None
         
-        self.setWindowFlags(Qt.FramelessWindowHint | Qt.Tool)
         self.grabMouse()
         
         self.outputView = QGraphicsView(self)
         self.outputView.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
         self.outputView.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.setFocus()
+        self.outputView.wheelEvent=self.wheelEvent
+        
 
         if imgpath==None:
             print('None')
-            self.closeEvent(QCloseEvent)
+            self.hide()
+        else:
+            self.showImage(imgpath=imgpath)
             
+        self.stayOnTop()
+        self.frameLessWindow()
+    
+    def showImage(self,imgpath):
         if os.path.isfile(imgpath):
             try:
                 self.img = cv2.imdecode(np.fromfile(imgpath, dtype=np.uint8), cv2.IMREAD_COLOR)
@@ -53,40 +65,43 @@ class MyPicDialog(QDialog):
                 self.setupUi()
                 self.zoomWin()
             except Exception as e:
-                print(111)
-                self.closeEvent(QCloseEvent)
+                self.hide()
         else:
-            print(111)
-            self.closeEvent(QCloseEvent)
+            self.hide()
             
-    def setupUi(self):
+    def setupUi(self,background=None,opacity=None):
+        if not background==None:
+            self.background=background
+        if not opacity==None:
+            self.opacity=opacity
         self.setStyleSheet("background-color: rgb{};".format(self.background))
         self.setWindowOpacity(self.opacity)
 
     def zoomWin(self):
-        print(self.imageWidth*self.zoomscale, self.imageHeight*self.zoomscale)
-        print(self.picScene.sceneRect())
-        
-        self.outputView.resize(self.imageWidth*self.zoomscale, self.imageHeight*self.zoomscale)
-        self.resize(self.imageWidth*self.zoomscale, self.imageHeight*self.zoomscale)
+        newSize=(self.imageWidth*self.zoomscale, self.imageHeight*self.zoomscale)
+        self.outputView.resize(*newSize)
+        self.resize(*newSize)
         self.picItem.setScale(self.zoomscale)
 
+    def stayOnTop(self,f=True):
+        self.setWindowFlag(Qt.WindowStaysOnTopHint,f)
         
+    def frameLessWindow(self,f=True):
+        self.setWindowFlag(Qt.FramelessWindowHint, f)
 
     def mouseDoubleClickEvent(self, a0: QMouseEvent) -> None:
-        self.closeEvent(QCloseEvent)
+        self.hide()
 
     def mousePressEvent(self, a0: QMouseEvent) -> None:
         self.lastMouseP=(a0.globalPos().x(),a0.globalPos().y())
-        print(self.lastMouseP)
     
     def wheelEvent(self, a0: QWheelEvent) -> None:
         value=float(a0.angleDelta().y()/1200)
-        self.zoomscale+=value
-        self.zoomWin()
+        if not (self.zoomscale<0.2 and value<0):
+            self.zoomscale+=value
+            self.zoomWin()
     
     def mouseMoveEvent(self, a0: QMouseEvent) -> None:
-        
         preX,preY=self.lastMouseP
         nowX,nowY=(a0.globalPos().x(),a0.globalPos().y())
         x,y=self.geometry().x(),self.geometry().y()
@@ -100,9 +115,16 @@ class MyPicDialog(QDialog):
         self.destroy()
         sys.exit(self)
         
+    # def __del__(self):
+    #     self.destroy()
+    #     sys.exit(self)
+        
+        
+        
 if __name__ == '__main__':
 
     app=QApplication(sys.argv)
     dl=MyPicDialog(imgpath=r'D:\PyCharm2019.3.1\pystudy\pic\2.jpg')
+    dl.stayOnTop()
     dl.exec()
     sys.exit(dl)
