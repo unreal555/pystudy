@@ -27,6 +27,11 @@ app.attributes("-alpha", 0.9) #设置窗体透明度0-1之间
 #绘制多边形时储存的状态，选择的点的位置，和生成的点的图像元素
 clickpoints=deque(maxlen=1000)
 temppoints=deque(maxlen=100)
+global now_item
+global pre_point
+now_item=None
+pre_point=None
+
 
 # 控制是否允许画图的变量，1：允许，0：不允许
 is_draw = tkinter.IntVar(value=0)
@@ -75,6 +80,8 @@ lastDraw = 0
 
 # 按住鼠标左键移动，画图
 def on_left_button_move(event):
+    global now_item
+    global pre_point
     if is_draw.get() == 0:
         return
 
@@ -144,13 +151,23 @@ def on_left_button_move(event):
         canvas.create_rectangle(event.x - 5, event.y - 5, event.x + 5, event.y + 5,
                                 outline=backColor, fill=backColor)
 
+    elif mode.get() == POLYGON:
+
+        now_item=canvas.find_closest(event.x,event.y)[0]
+        if  pre_point==None:
+            pre_point=[event.x,event.y]
+
+        if pre_point!=None:
+            canvas.move(now_item,event.x-pre_point[0],event.y-pre_point[-1])
+            pre_point = [event.x, event.y]
+
 
 canvas.bind('<B1-Motion>', on_left_button_move)
 
 
 
 def drawPolygon(event):
-
+    global now_item
     if mode.get()!=POLYGON:
         return
     try:
@@ -177,6 +194,8 @@ canvas.bind('<Double-Button-1>',drawPolygon)
 
 # 鼠标左键抬起，结束画图
 def on_left_button_up(event):
+    global now_item
+    global pre_point
     if mode.get() == LINE_BRESENHAM:
         # 绘制直线
         points = bresenham_line(point_start, Point(event.x, event.y))
@@ -209,13 +228,18 @@ def on_left_button_up(event):
 
         #points = bresenham_ellipse(point_start, Point(event.x, event.y))
         #create_point(points, lineColor)
+    elif mode.get() == POLYGON:
+
+        global pre_point
+        pre_point=None
+
+
+
     is_draw.set(0)
 
 
 canvas.bind('<ButtonRelease-1>', on_left_button_up)
 # 创建菜单
-
-
 
 def clearPolygonState():
     temppoints.clear()
