@@ -18,8 +18,11 @@ ELLIPSE_BRESENHAM = 7
 POLYGON = 8
 ERASE = 20
 global busy
+global now_item
+global pre_point
 busy = False
-
+now_item=None   #移动多边形时选中的图形元素对象id
+pre_point=None   #鼠标移动事件的上一个鼠标位置
 
 app = tkinter.Tk()
 app.title('画板')
@@ -28,10 +31,7 @@ app.attributes("-alpha", 0.9)  # 设置窗体透明度0-1之间
 # 绘制多边形时储存的状态，选择的点的位置，和生成的点的图像元素
 clickpoints = deque(maxlen=1000)
 temppoints = deque(maxlen=100)
-global now_item
-global pre_point
-now_item=None
-pre_point=None
+
 
 # 控制是否允许画图的变量，1：允许，0：不允许
 is_draw = tkinter.IntVar(value=0)
