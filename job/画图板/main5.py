@@ -166,37 +166,6 @@ def on_left_button_move(event):
 
 canvas.bind('<B1-Motion>', on_left_button_move)
 
-def grab(bbox=None, include_layered_windows=False):
-    if sys.platform == "darwin":
-        fh, filepath = tempfile.mkstemp(".png")
-        os.close(fh)
-        subprocess.call(["screencapture", "-x", filepath])
-        im = Image.open(filepath)
-        im.load()
-        os.unlink(filepath)
-    else:
-        size, data = grabber(include_layered_windows)
-        im = Image.frombytes(
-            "RGB",
-            size,
-            data,
-            # RGB, 32-bit line padding, origin lower left corner
-            "raw",
-            "BGR",
-            (size[0] * 3 + 3) & -4,
-            -1,
-        )
-    if bbox:
-        im = im.crop(bbox)
-    return im
-
-
-
-
-
-
-
-
 
 def init_bind(self):
         self.cv.bind('<Motion>', self.mouse_move)
