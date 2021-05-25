@@ -1,9 +1,0 @@
-
-jpython:S1192K"KDefine a constant instead of duplicating this literal 'read error' 4 times.(¦ ½„8óé˜ß‡/
-{python:S117a"XRename this local variable "keyFile" to match the regular expression ^[_a-z][a-z0-9_]*$.(„…§ıÿÿÿÿ8÷…ˆš†/
-xpython:S3776."TRefactor this function to reduce its Cognitive Complexity from 21 to the 15 allowed.(ÛË±©øÿÿÿÿ8åÃÅß‡/
-Bpython:S125q"Remove this commented out code.(Ï¹ù×ıÿÿÿÿ8¿®•š†/
-gpython:S1192&"HDefine a constant instead of duplicating this literal 'md5.txt' 3 times.(óùîã8úÆà‡/
-[python:S5754h"<Specify an exception class to catch or reraise the exception(ˆÊÉ·8ÿÌïİ‡/
-{python:S117/"XRename this local variable "keyFile" to match the regular expression ^[_a-z][a-z0-9_]*$.(„…§ıÿÿÿÿ8ÿÌïİ‡/
-[python:S5754J"<Specify an exception class to catch or reraise the exception(ˆÊÉ·8óé˜ß‡/

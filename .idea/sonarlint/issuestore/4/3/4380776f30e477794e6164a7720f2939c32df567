@@ -1,11 +1,0 @@
-
-Ipython:S5806î"+Rename this variable; it shadows a builtin.(Î­Š÷ıÿÿÿÿ
-7python:S125‹"Remove this commented out code.(ÊÇåÃ
-ipython:S1192W"QDefine a constant instead of duplicating this literal 'æ‰§è¡Œè¯­å¥ä¸º:' 3 times.(â¢ÜÊ
-|python:S101"`Rename class "My_sql" to match the regular expression ^_?([A-Z_][a-zA-Z0-9]*|[a-z_][a-z0-9_]*)$.(Ø×©ùşÿÿÿÿ
-Upython:S1121">Replace this generic exception class with a more specific one.(ëù¤ô
-ppython:S1192a"XDefine a constant instead of duplicating this literal 'å‘ç”Ÿå¼‚å¸¸,é”™è¯¯ä¸º:' 3 times.(¢˜ÏÒ
-<python:S125‰"Remove this commented out code.(†éÿ¦ûÿÿÿÿ
-Cpython:S1481¯"*Remove the unused local variable "result".(©¶¨ò
-7python:S125‡"Remove this commented out code.(„Ë ®
-Ipython:S5806³"+Rename this variable; it shadows a builtin.(Î­Š÷ıÿÿÿÿ

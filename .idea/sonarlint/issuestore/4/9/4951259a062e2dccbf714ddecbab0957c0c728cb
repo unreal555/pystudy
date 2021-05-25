@@ -1,19 +1,0 @@
-
-upython:S117å"XRename this local variable "Browser" to match the regular expression ^[_a-z][a-z0-9_]*$.(³µßäûÿÿÿÿ
-<python:S125ã"Remove this commented out code.(’‘ÿ¿ÿÿÿÿÿ
-6python:S3626™"Remove this redundant return.(ÙãÞŸ
-Ipython:S5806ô"+Rename this variable; it shadows a builtin.(ßˆ±™úÿÿÿÿ
-6python:S3626Ž"Remove this redundant return.(ÙãÞŸ
-Ipython:S5806÷"+Rename this variable; it shadows a builtin.(ßˆ±™úÿÿÿÿ
-Dpython:S5806"+Rename this variable; it shadows a builtin.(™—žß
-Upython:S5754¥"<Specify an exception class to catch or reraise the exception(ˆÊÉ·
-Ipython:S5806­"+Rename this variable; it shadows a builtin.(ßˆ±™úÿÿÿÿ
-Upython:S5754µ"<Specify an exception class to catch or reraise the exception(ˆÊÉ·
-Ipython:S5806É"+Rename this variable; it shadows a builtin.(ìì¿éþÿÿÿÿ
-Dpython:S5806Õ"+Rename this variable; it shadows a builtin.(™—žß
-Upython:S5754â"<Specify an exception class to catch or reraise the exception(ˆÊÉ·
-epython:S1763†"GDelete this unreachable code or refactor the code to make it reachable.(²²ÒÐûÿÿÿÿ
-Opython:S1751ý"1Refactor this loop to do more than one iteration.(ûÞˆÇþÿÿÿÿ
-Mpython:S1656ë"/Remove or correct this useless self-assignment.(÷Æ¸Æùÿÿÿÿ
-Ipython:S5806ì"+Rename this variable; it shadows a builtin.(æÆô‘ýÿÿÿÿ
-<python:S125Ù"Remove this commented out code.(ÇÂÔúÿÿÿÿ

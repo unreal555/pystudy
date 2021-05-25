@@ -1,54 +1,0 @@
-
-lpython:S117"URename this parameter "sPassword" to match the regular expression ^[_a-z][a-z0-9_]*$.(êÌáÚ
-mpython:S100z"QRename method "GetServerInfo" to match the regular expression ^[a-z_][a-z0-9_]*$.(ÄÀÔøÿÿÿÿ
-hpython:S100p"QRename method "Stop_Play_Cam" to match the regular expression ^[a-z_][a-z0-9_]*$.(ı€äÖ
-jpython:S116"NRename this field "sDVRIP" to match the regular expression ^[_a-z][_a-z0-9]*$.(èâÏıÿÿÿÿ
-kpython:S100C"TRename method "DecodingCallBack" to match the regular expression ^[a-z_][a-z0-9_]*$.(”ÔÂ
-vpython:S11864"YAdd a nested comment explaining why this method is empty, or complete the implementation.(£ŞËèúÿÿÿÿ
-opython:S117†"WRename this parameter "lRealHandle" to match the regular expression ^[_a-z][a-z0-9_]*$.(ë´Í‡
-wpython:S116"[Rename this field "m_ReConnectCallBack" to match the regular expression ^[_a-z][_a-z0-9]*$.(ı•ºŞûÿÿÿÿ
-<python:S3626"Remove this redundant continue.(À–¬ˆ8Ú×¾«ï.
-rpython:S1186†"YAdd a nested comment explaining why this method is empty, or complete the implementation.(ë´Í‡
-gpython:S100†"ORename method "Capture_Cam" to match the regular expression ^[a-z_][a-z0-9_]*$.(ë´Í‡
-qpython:S117;"URename this parameter "dwBufSize" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ñ††Ñùÿÿÿÿ
-python:S101"cRename class "DAHUA_DVR" to match the regular expression ^_?([A-Z_][a-zA-Z0-9]*|[a-z_][a-z0-9_]*)$.(Õçùèúÿÿÿÿ
-_python:S2208"GImport only needed names or import the module and then use its members.(¢†ô
-hpython:S116"QRename this field "sUserName" to match the regular expression ^[_a-z][_a-z0-9]*$.(”ÂÅÿ
-ipython:S117"RRename this parameter "sDVRIP" to match the regular expression ^[_a-z][a-z0-9_]*$.(êÌáÚ
-apython:S100"IRename method "Close" to match the regular expression ^[a-z_][a-z0-9_]*$.(½ê¥œ
-ppython:S100;"TRename method "RealDataCallBack" to match the regular expression ^[a-z_][a-z0-9_]*$.(Ñ††Ñùÿÿÿÿ
-npython:S117;"RRename this parameter "dwUser" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ñ††Ñùÿÿÿÿ
-opython:S117;"SRename this parameter "pBuffer" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ñ††Ñùÿÿÿÿ
-fpython:S116"ORename this field "lUserID" to match the regular expression ^[_a-z][_a-z0-9]*$.(¼÷³¥
-tpython:S117O"XRename this local variable "lUserID" to match the regular expression ^[_a-z][a-z0-9_]*$.(«ôÕİÿÿÿÿÿ
-lpython:S117"URename this parameter "sUserName" to match the regular expression ^[_a-z][a-z0-9_]*$.(êÌáÚ
-hpython:S117C"QRename this parameter "nPort" to match the regular expression ^[_a-z][a-z0-9_]*$.(”ÔÂ
-ipython:S100k"RRename method "Get_Last_Error" to match the regular expression ^[a-z_][a-z0-9_]*$.(³–‹
-<python:S125¦"Remove this commented out code.(Î¼ë‡øÿÿÿÿ
-npython:S116""RRename this field "stuInParam" to match the regular expression ^[_a-z][_a-z0-9]*$.(µÕ‰œÿÿÿÿÿ
-gpython:S1854`"PRemove this assignment to local variable 'stream_type'; the value is never used.(ã„Í
-@python:S108J")Either remove or fill this block of code.(ã‘Û¾
-rpython:S1186Š"YAdd a nested comment explaining why this method is empty, or complete the implementation.(âËöã
-kpython:S117"TRename this parameter "sDVRPort" to match the regular expression ^[_a-z][a-z0-9_]*$.(êÌáÚ
-opython:S116+"SRename this field "stuOutParam" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ó…€Âüÿÿÿÿ
-lpython:S1007"URename method "ReConnectCallBack" to match the regular expression ^[a-z_][a-z0-9_]*$.(Ç™×¹
-gpython:S117C"PRename this parameter "pBuf" to match the regular expression ^[_a-z][a-z0-9_]*$.(”ÔÂ
-hpython:S100^"LRename method "Play_Cam" to match the regular expression ^[a-z_][a-z0-9_]*$.(èãÉÓûÿÿÿÿ
-mpython:S117C"VRename this parameter "nReserved2" to match the regular expression ^[_a-z][a-z0-9_]*$.(”ÔÂ
-mpython:S117C"VRename this parameter "pFrameInfo" to match the regular expression ^[_a-z][a-z0-9_]*$.(”ÔÂ
-spython:S117;"WRename this parameter "lRealHandle" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ñ††Ñùÿÿÿÿ
-hpython:S100Š"PRename method "Stop_Rec_Cam" to match the regular expression ^[a-z_][a-z0-9_]*$.(âËöã
-xpython:S116"\Rename this field "m_DisConnectCallBack" to match the regular expression ^[_a-z][_a-z0-9]*$.(à¦ºÃÿÿÿÿÿ
-bpython:S100"KRename method "Rec_Cam" to match the regular expression ^[a-z_][a-z0-9_]*$.(Şë—ô
-lpython:S116b"URename this field "m_lRealHandle" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ÿı»
-@python:S1481E"(Remove the unused local variable "data".(íÆª¨
-opython:S117Š"WRename this parameter "lRealHandle" to match the regular expression ^[_a-z][a-z0-9_]*$.(âËöã
-npython:S117p"WRename this parameter "lRealHandle" to match the regular expression ^[_a-z][a-z0-9_]*$.(ı€äÖ
-npython:S117"WRename this parameter "lRealHandle" to match the regular expression ^[_a-z][a-z0-9_]*$.(Şë—ô
-rpython:S1004"VRename method "DisConnectCallBack" to match the regular expression ^[a-z_][a-z0-9_]*$.(£ŞËèúÿÿÿÿ
-mpython:S116"QRename this field "sPassword" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÀÜİüıÿÿÿÿ
-lpython:S116"PRename this field "sDVRPort" to match the regular expression ^[_a-z][_a-z0-9]*$.(¦õö·ùÿÿÿÿ
-hpython:S117C"QRename this parameter "nSize" to match the regular expression ^[_a-z][a-z0-9_]*$.(”ÔÂ
-mpython:S100L"QRename method "NET_DVR_Login" to match the regular expression ^[a-z_][a-z0-9_]*$.(Ş«±üÿÿÿÿ
-lpython:S117C"URename this parameter "pUserData" to match the regular expression ^[_a-z][a-z0-9_]*$.(”ÔÂ
-rpython:S117;"VRename this parameter "dwDataType" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ñ††Ñùÿÿÿÿ
