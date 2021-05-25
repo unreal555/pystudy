@@ -1,16 +1,0 @@
-
-tpython:S117"WRename this local variable "NewPwd" to match the regular expression ^[_a-z][a-z0-9_]*$.(˜Šíøÿÿÿÿ
-ppython:S117""YRename this local variable "curWidth" to match the regular expression ^[_a-z][a-z0-9_]*$.(ó–Š
-=python:S125Ÿ"Remove this commented out code.(€Á…I8¶Š‚áô.
-@python:S108t")Either remove or fill this block of code.(ã‘Û¾
-Tpython:S5754c"<Specify an exception class to catch or reraise the exception(ˆÊÉ·
-opython:S117"WRename this local variable "OldPwd" to match the regular expression ^[_a-z][a-z0-9_]*$.(¾†ô¹
-rpython:S117ß"ZRename this local variable "ConfirPwd" to match the regular expression ^[_a-z][a-z0-9_]*$.(ã¿Š»
-Gpython:S1481…".Remove the unused local variable "bt_confirm".(—‹Ù
-Gpython:S1481Ù".Remove the unused local variable "bt_confirm".(´Ìß¹
-ppython:S117""YRename this local variable "curHight" to match the regular expression ^[_a-z][a-z0-9_]*$.(ó–Š
-rpython:S3776Š"TRefactor this function to reduce its Cognitive Complexity from 19 to the 15 allowed.(–ÿ‹øÿÿÿÿ
-qpython:S117Œ"ZRename this local variable "Musername" to match the regular expression ^[_a-z][a-z0-9_]*$.(ó´µ
-Jpython:S1481¹"%Remove the unused local variable "e".(¼–¯¸ÿÿÿÿÿ8 ÙÎàô.
-tpython:S117Ş"WRename this local variable "NewPwd" to match the regular expression ^[_a-z][a-z0-9_]*$.(˜Šíøÿÿÿÿ
-rpython:S117"ZRename this local variable "ConfirPwd" to match the regular expression ^[_a-z][a-z0-9_]*$.(ã¿Š»
