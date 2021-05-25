@@ -112,9 +112,9 @@ class MyPicDialog(QDialog):
         self.destroy()
         sys.exit(self)
         
-    # def __del__(self):
-    #     self.destroy()
-    #     sys.exit(self)
+    def __del__(self):
+        self.destroy()
+        sys.exit(self)
         
         
         
