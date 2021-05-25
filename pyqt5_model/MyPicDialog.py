@@ -20,17 +20,15 @@ class MyPicDialog(QDialog):
         self.opacity=opacity
         self.background=background
         
-        self.imageWidth=None
-        self.imageHeight=None
-        
-        self.lastMouseP=None
         self.img=None
         self.imageWidth=None
-        self.imageHeigh=None
+        self.imageHeight=None
         self.pix=None
         self.picItem=None
         self.picScene=None
         
+        self.lastMouseP=None
+
         self.grabMouse()
         
         self.outputView = QGraphicsView(self)
@@ -38,10 +36,9 @@ class MyPicDialog(QDialog):
         self.outputView.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
         self.outputView.wheelEvent=self.wheelEvent
         
-
         if imgpath==None:
             print('None')
-            self.hide()
+            self.closeEvent(QCloseEvent)
         else:
             self.showImage(imgpath=imgpath)
             
@@ -125,6 +122,5 @@ if __name__ == '__main__':
 
     app=QApplication(sys.argv)
     dl=MyPicDialog(imgpath=r'D:\PyCharm2019.3.1\pystudy\pic\2.jpg')
-    dl.stayOnTop()
     dl.exec()
     sys.exit(dl)
