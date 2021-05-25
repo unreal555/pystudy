@@ -123,4 +123,4 @@ if __name__ == '__main__':
     app=QApplication(sys.argv)
     dl=MyPicDialog(imgpath=r'D:\PyCharm2019.3.1\pystudy\pic\2.jpg')
     dl.exec()
-    sys.exit(dl)
+    sys.exit(app.exec_())
