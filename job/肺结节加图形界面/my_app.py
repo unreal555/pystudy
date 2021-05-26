@@ -16,9 +16,10 @@ import prediction
 import shutil
 import random
 
-filetype='*.png *.jpg'
 
-def clean_dir(path):
+filetype='*.png *.jpg'      #定义接受的图片类型
+
+def clean_dir(path):        #清除path目录下的所有文件，用于清空临时目录
     """
     删除某一目录下的所有文件或文件夹
     :param filepath: 路径
@@ -30,9 +31,9 @@ def clean_dir(path):
         if os.path.isfile(file_path):
             os.remove(file_path)
         elif os.path.isdir(file_path):
-            shutil.rmtree(file_path)
+            shutil.rmtree(file_path)     #清除pa     #清除path目录下的
 
-class MyBatchDoThread(QThread):
+class MyBatchDoThread(QThread):         #继承qthread类，重写run方法，使用线程处理目录中的所有文件，防止界面卡死
     rightSignal = pyqtSignal(str)
     wrongSignal = pyqtSignal(str)
     infoSignal=pyqtSignal(str)
@@ -131,9 +132,10 @@ class MyBatchDoThread(QThread):
                 if len(centers) == 0:
                     shutil.move(file,self.normalDir)
                     self.rightSignal.emit('正常:'+file)
-        self.infoSignal.emit('处理完成')
+        self.infoSignal.emit('处理完成')     #
 
-class MySingleDoThread(QThread):
+class MySingleDoThread(QThread):     ##继承qthread类，重写run方法，使用线程处理单个文件，防止界面卡死
+
     rightSignal = pyqtSignal(str)
     wrongSignal = pyqtSignal(str)
 
@@ -191,20 +193,20 @@ class MySingleDoThread(QThread):
         if len(centers) == 0:
             self.rightSignal.emit('正常')
 
-class MyDialog(QDialog):
+class MyDialog(QDialog):   #定义子类，用于显示处理结果图片
     
     def __init__(self):
         super(QDialog,self).__init__()
-        self.setWindowFlags(Qt.FramelessWindowHint| Qt.Tool)
+        self.setWindowFlags(Qt.FramelessWindowHint| Qt.Tool)    #去除窗口边框，去除关闭，最大化扥按钮
         self.accept()
         
-    def mouseDoubleClickEvent(self, a0: QMouseEvent) -> None:
+    def mouseDoubleClickEvent(self, a0: QMouseEvent) -> None:   #重写双击事件，双击关闭本对话框
         print('destroy1')
 
         self.destroy()
         self.close()
         
-    def mousePressEvent(self, a0: QMouseEvent) -> None:
+    def mousePressEvent(self, a0: QMouseEvent) -> None:          #重写单击事件，单击关闭本对话框
         print('destroy1')
         self.destroy()
         self.close()
@@ -270,7 +272,7 @@ class App(QWidget, Ui_Form):
     def changePactiy(self, value):
         self.setWindowOpacity(value / 100)
 
-    def loadConfig(self):
+    def loadConfig(self):            #读取配置文件，根据配置文件中的配置设置透明度，颜色，程序各种参数
 
         path = './config.ini'
         config = configparser.ConfigParser()
@@ -317,7 +319,7 @@ class App(QWidget, Ui_Form):
                 i.setChecked(True)
         self.toSingleOutput('配置文件已加载')
 
-    def setColorTheme(self):
+    def setColorTheme(self):         #设置界面颜色
         for i in [self.radioButton_1, self.radioButton_2, self.radioButton_3,
                   self.radioButton_4, self.radioButton_5, self.radioButton_6]:
             if i.isChecked():
@@ -326,7 +328,7 @@ class App(QWidget, Ui_Form):
                 print("background-color: rgb{};".format(str(self.colorThemes[self.colorTheme])))
                 self.setStyleSheet("background-color: rgb{};".format(str(self.colorThemes[self.colorTheme])))
 
-    def saveConfig(self):
+    def saveConfig(self):            #储存配置
         path = './config.ini'
         config = configparser.ConfigParser()
         config.add_section('config')
@@ -344,7 +346,7 @@ class App(QWidget, Ui_Form):
             with open(path, 'w+', encoding='gbk') as f:
                 config.write(f)
 
-    @pyqtSlot()
+    @pyqtSlot()                  #将储存配置按钮和储存配置方法绑定
     def on_saveConfigButton_clicked(self):
         self.saveConfig()
 
@@ -353,13 +355,13 @@ class App(QWidget, Ui_Form):
         a = self.v_view.size()
         self.button.setText(str(a))
 
-    def name2Wegite(self, name):
+    def name2Wegite(self, name):        #根据控件名返回控件对象
         if name:
             return self.findChild(QWidget, name)
         else:
             print('name is empty')
 
-    def isMatchFileType(self, s):
+    def isMatchFileType(self, s):        #判断拖入窗体的文件是否为filetype定义的类型
         file, ext = os.path.splitext(s)
         # print(file,ext,[str.lower(x) for x in re.split(        ' ', self.fileType)])
         if str.lower(ext) in [str.lower(x.replace('*', '')) for x in re.split(' ', self.fileType)]:
@@ -367,7 +369,7 @@ class App(QWidget, Ui_Form):
         else:
             return False
 
-    def dragEnterEvent(self, e: QDragEnterEvent):
+    def dragEnterEvent(self, e: QDragEnterEvent):      #接受，或拒绝拖入窗体的文件
         if self.Pages.currentIndex() != 0:
             e.ignore()
             return
@@ -379,7 +381,7 @@ class App(QWidget, Ui_Form):
                 print('accept')
                 e.accept()
 
-    def dropEvent(self, e):
+    def dropEvent(self, e):       #处理拖入窗体的文件
         print('drop')
         txt = e.mimeData().text()
         txt = re.sub('file:[/]+', '', txt)
@@ -396,7 +398,7 @@ class App(QWidget, Ui_Form):
         self.toSingleOutput(content='检测到文件输入:{},处理'.format(abspath))
 
     @pyqtSlot()
-    def on_openButton_clicked(self):
+    def on_openButton_clicked(self):        #定义并绑定打开按钮的方法
         file, type = QFileDialog.getOpenFileName(None, caption='打开', directory='.', filter=self.fileType)
         if not os.path.isfile(file):
             return
@@ -415,7 +417,7 @@ class App(QWidget, Ui_Form):
 
 
 
-    def do(self):
+    def do(self):           #处理拖入的图片文件，显示在窗口input_view控件中，并调用startPredicte方法开始处理输入图片
         if not os.path.exists(self.temp_dir):
             os.makedirs(self.temp_dir)
         if os.path.isfile(self.workfile):
@@ -442,7 +444,8 @@ class App(QWidget, Ui_Form):
                 print(e)
 
     @pyqtSlot()
-    def on_batchSelecthButton_clicked(self):
+    def on_batchSelecthButton_clicked(self):            #定义并绑定批处理选择目录按钮的方法
+        #
         select=os.path.abspath(QFileDialog.getExistingDirectory(self,'选择批量处理目录',self.batch_dir,QFileDialog.ShowDirsOnly))
         select=os.path.abspath(select)
         print(select)
@@ -454,7 +457,7 @@ class App(QWidget, Ui_Form):
             self.batchDirLineEdit.setText(self.batch_dir)
 
     @pyqtSlot()
-    def on_batchDoButton_clicked(self):
+    def on_batchDoButton_clicked(self):          #定义并绑定批处理开始批量处理按钮的方法
         if os.path.isdir(self.batch_dir):
             if QMessageBox.question(self,'注意','您选中的文件夹是:‘{}’\r\n是否处理该目录影像'.format(self.batch_dir),QMessageBox.Yes|QMessageBox.No,QMessageBox.No)==QMessageBox.Yes:
                 self.clearBatchResult()
@@ -478,7 +481,7 @@ class App(QWidget, Ui_Form):
 
 
 
-    def startPredicte(self):
+    def startPredicte(self):    #单张图片预测
         self.thread = MySingleDoThread()
         self.thread.rightSignal.connect(self.setNormalResult)
         self.thread.wrongSignal.connect(self.setNoticeResult)
@@ -493,7 +496,7 @@ class App(QWidget, Ui_Form):
         self.thread.source = self.workfile
         self.thread.start()
 
-    def setNormalResult(self, a0):
+    def setNormalResult(self, a0):      #如果结果正常，设置右侧输出的信息
         try:
             print('set normal')
             self.normal_item = QGraphicsTextItem()
@@ -510,7 +513,7 @@ class App(QWidget, Ui_Form):
         except Exception as e:
             print(e)
 
-    def setNoticeResult(self, a0):
+    def setNoticeResult(self, a0):     #如果结果有异常，设置右侧输出的信息
         self.outputText.setText('')
         img = cv2.imdecode(np.fromfile(self.temp_file2, dtype=np.uint8), cv2.IMREAD_COLOR)
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)  # 转换图像通道
@@ -536,11 +539,11 @@ class App(QWidget, Ui_Form):
     def resizeEvent(self, a0: QResizeEvent) -> None:
         self.do()
 
-    def toSingleOutput(self, content):
+    def toSingleOutput(self, content):      #设置底部状态栏的结果输出信息
         self.outPut.append('''<html><font-size:10pt">{}</font></html>'''.format(content))
         self.outPut.append('')
-
-    def toBatchOutput(self, strings):
+ 
+    def toBatchOutput(self, strings):     #设置批量处理的结果输出信息
 
         if '正常:' in strings:
             self.normalTextEdit.addItem('{}'.format(os.path.split(strings.replace('正常:',''))[1]))
@@ -551,11 +554,11 @@ class App(QWidget, Ui_Form):
         self.batchOutPut.append('''<html><font-size:10pt">{}</font></html>'''.format(strings))
         self.batchOutPut.append('')
 
-    def clearBatchResult(self):
+    def clearBatchResult(self):                 #清空批量处理的结果信息
         self.normalTextEdit.clear()
         self.noticeTextEdit.clear()
         
-    def checkItem(self,index):
+    def checkItem(self,index):                  #点击批量处理结果时，弹出结果图片
         print(index.row(),index.data())
         filename,ext=os.path.splitext(index.data())
         normalfile=os.path.join(self.batch_dir,'normal',filename+ext)
@@ -611,7 +614,7 @@ class App(QWidget, Ui_Form):
         self.popWindow.open()
 
 
-    def closeEvent(self, a0: QCloseEvent) -> None:
+    def closeEvent(self, a0: QCloseEvent) -> None:    #定义关闭按钮的方法
 
         if QMessageBox.question(self, '关闭', '是否退出程序', QMessageBox.Yes | QMessageBox.No,
                                 QMessageBox.No) == QMessageBox.Yes:
