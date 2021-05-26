@@ -15,7 +15,7 @@ class Ui_Form(object):
         Form.setObjectName("Form")
         Form.setWindowModality(QtCore.Qt.NonModal)
         Form.setEnabled(True)
-        Form.resize(1024, 768)
+        Form.resize(800, 500)
         Form.setAcceptDrops(True)
         Form.setStyleSheet("")
         self.gridLayout_6 = QtWidgets.QGridLayout(Form)
