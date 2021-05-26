@@ -220,7 +220,7 @@ class App(QWidget, Ui_Form):
         super(App, self).__init__()
         self.setupUi(self)
         self.setWindowTitle("肺结节检测")
-        self.setWindowIcon(QIcon('ico.ico'))
+        self.setWindowIcon(QIcon('./model/ico.ico'))
         self.toSingleOutput(content='程序初始化中...')
         self.input_view.setAcceptDrops(True)
 
