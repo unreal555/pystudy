@@ -66,6 +66,9 @@ class window(QWidget,Ui_Form):
         super(window, self).__init__(parent)
         self.setupUi(self)
         self.setWindowIcon(QIcon('ico.ico'))
+        self.setWindowOpacity(0.8)
+        self.setWindowFlags(Qt.FramelessWindowHint) #无边框
+        self.setWindowFlags(Qt.WindowStaysOnTopHint) #置顶
         self.show()
         self.tray = TrayIcon(self)
 

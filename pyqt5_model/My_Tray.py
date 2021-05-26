@@ -63,8 +63,8 @@ class TrayIcon(QSystemTrayIcon):
     def quit(self):
         "保险起见，为了完整的退出"
         self.setVisible(False)
-        self.parent().exit()
-        sys.exit()
+        self.destroy()
+        self.parent().destroy()
 
 class Window(QWidget,Ui_Form):
     def __init__(self, parent=None):
