@@ -75,22 +75,80 @@ class window(QWidget,Ui_Form):
     
         self.PlayArea=QVideoWidget(self.PlayAreaGroupBox)
         self.horizontalLayout.addWidget(self.PlayArea)
+        self.PlayArea.enterEvent=self.showProcessSlider
+        self.PlayArea.mousePressEvent=self.showProcessSlider
 
         self.player=QMediaPlayer()
         self.player.setVideoOutput(self.PlayArea)
         self.moviePath=''
         self.movie=''
-        self.movieDuration=''
+        self.movieDuration=1
         self.vol=100
         self.mousePos=''
+        self.moviePosition=0
+
+        self.busy=False
+
+        self.VolSlider = QSlider(self)
+        self.VolSlider.resize(30,120)
+        self.VolSlider.hide()
+        self.VolSlider.leaveEvent = self.leaveVolPushButtonEvent
+        self.VolSlider.valueChanged.connect(self.setVol)
+
+
+        self.ProcessSlider = QSlider(self)
+        self.ProcessSlider.setOrientation(Qt.Horizontal)
+        self.ProcessSlider.hide()
+        self.ProcessSlider.leaveEvent=self.hideProcessSlider
+        self.ProcessSlider.valueChanged.connect(self.move2Position)
+
 
         self.OnTopCheckBox.toggled.connect(self.setStayOnTop)
         self.FrameLessCheckBox.toggled.connect(self.setFrameLess)
         self.player.durationChanged.connect(self.getDuration)
-        
+        self.player.positionChanged.connect(self.setPosition)
         self.show()
-    
-    
+
+    def move2Position(self):
+        if self.busy:
+            return
+        self.busy=True
+        positon=(int(self.ProcessSlider.value() * self.movieDuration / 100))
+        self.player.setPosition(positon)
+        self.busy=False
+
+    def setPosition(self):
+        if self.busy:
+            return
+        self.moviePosition = self.player.position()
+        if not self.ProcessSlider.isHidden():
+            self.ProcessSlider.setValue(self.moviePosition / self.movieDuration * 100)
+
+
+
+    def showProcessSlider(self,event):
+
+        print('enter PlayArea')
+        width=self.PlayArea.rect().width()
+        height=self.PlayArea.rect().height()
+        print(width,height,event.x(),event.y())
+        print(event.y()<=0.4*height and self.ProcessSlider.isHidden())
+        if event.y()>0.6*height and self.ProcessSlider.isHidden():
+            size=(width,20)
+            pos=QPoint(0,int(0.95*height))
+            self.ProcessSlider.resize(*size)
+            self.ProcessSlider.move(pos)
+            self.ProcessSlider.setMinimum(0)
+            self.ProcessSlider.setMaximum(100)
+            self.ProcessSlider.setValue(int(self.moviePosition/self.movieDuration*100))
+            self.ProcessSlider.show()
+        else:
+            self.ProcessSlider.hide()
+
+    def hideProcessSlider(self,event):
+        print('hide ProcessSlider')
+        self.ProcessSlider.hide()
+
     def setFrameLess(self):
         self.hide()
         if  self.FrameLessCheckBox.isChecked():
@@ -119,8 +177,8 @@ class window(QWidget,Ui_Form):
         ms = self.player.duration()
         ms, h, m, s = self.ms2HMS(ms=ms)
         print(ms, h, m, s)
-        return ms, h, m, s
-    
+        self.movieDuration=ms
+
     def isMatchFileType(self, s):        #判断拖入窗体的文件是否为filetype定义的类型
         file, ext = os.path.splitext(s)
         # print(file,ext,[str.lower(x) for x in re.split(        ' ', self.fileType)])
@@ -173,25 +231,31 @@ class window(QWidget,Ui_Form):
         self.mousePos=a0.screenPos()
         
     def on_VolPushButton_released(self):
-        
         x=self.VolPushButton.pos().x()
         y=self.VolPushButton.pos().y()
-        print(self.groupBox.geometry())
-        pos=QPoint(x+30,self.groupBox.geometry().y()+y-100+15)
+        pos=QPoint(x+30,self.groupBox.geometry().y()+y-120+30)
+        print(pos)
 
-        OpacitySlider = QSlider(self)
-        OpacitySlider.resize(20,100)
-        OpacitySlider.move(pos)
-        OpacitySlider.setMinimum(0)
-        OpacitySlider.setMaximum(100)
-        OpacitySlider.setProperty("value", self.vol)
-        OpacitySlider.setOrientation(Qt.Vertical)
-        OpacitySlider.setInvertedAppearance(False)
-        OpacitySlider.setInvertedControls(False)
-        OpacitySlider.setTickPosition(QSlider.TickPosition.TicksRight)
-        OpacitySlider.setTickInterval(10)
-        OpacitySlider.show()
-        
+        self.VolSlider.move(pos)
+        self.VolSlider.setMinimum(0)
+        self.VolSlider.setMaximum(100)
+        self.VolSlider.setProperty("value", self.vol)
+        self.VolSlider.setOrientation(Qt.Vertical)
+        self.VolSlider.setInvertedAppearance(False)
+        self.VolSlider.setInvertedControls(False)
+        self.VolSlider.setTickPosition(QSlider.TickPosition.TicksRight)
+        self.VolSlider.setTickInterval(10)
+        self.VolSlider.setValue(self.vol)
+        self.VolSlider.show()
+
+
+    def setVol(self):
+        print(self.VolSlider.value())
+        self.vol=self.VolSlider.value()
+        self.player.setVolume(self.vol)
+
+    def leaveVolPushButtonEvent(self,event:QEvent):
+        self.VolSlider.hide()
     
     def play(self,pos=0):
         self.player.setPosition(pos) # to start at the beginning of the video every time)
