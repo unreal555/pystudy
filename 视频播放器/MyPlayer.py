@@ -117,12 +117,13 @@ class window(QWidget, Ui_Form):
 		self.player.positionChanged.connect(self.setPosition)
 		
 		self.show()
-	
-	
+
 	def move2Position(self):
 		print(self.ProcessSlider.value())
 		self.player.setPosition(self.ProcessSlider.value())
-		if self.player.state()!=1:
+		if self.player.state()==2:
+			return
+		if self.player.state()==0:
 			self.player.play()
 	
 	def setPosition(self):
@@ -172,10 +173,7 @@ class window(QWidget, Ui_Form):
 		print('hide ProcessSlider')
 		self.ProcessSlider.hide()
 
-	
-	def loadFlie(self):
-		pass
-	
+
 	def ms2HMS(self, ms):
 		playtime = ms / 1000
 		h = int(playtime // 3600)
