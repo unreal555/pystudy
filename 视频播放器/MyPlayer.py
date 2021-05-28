@@ -71,7 +71,6 @@ class window(QWidget, Ui_Form):
 		super(window, self).__init__(parent)
 		self.setupUi(self)
 		self.setWindowIcon(QIcon('ico.ico'))
-		self.setWindowOpacity(0.8)
 		self.tray = TrayIcon(self)
 		self.resize(800,500)
 		self.op = QGraphicsOpacityEffect()
@@ -94,6 +93,8 @@ class window(QWidget, Ui_Form):
 		self.movieDuration = 1
 		self.vol = 100
 		self.mousePos = ''
+		self.opacity=80
+		self.setWindowOpacity(self.opacity/100)
 		
 		self.VolSlider = QSlider(self)
 		self.VolSlider.resize(20, 120)
@@ -116,6 +117,9 @@ class window(QWidget, Ui_Form):
 		self.player.durationChanged.connect(self.getDuration)
 		self.player.positionChanged.connect(self.setPosition)
 		
+		self.OpacitySpinBox.setValue(self.opacity)
+		self.OpacitySpinBox.valueChanged.connect(self.setOpacity)
+		
 		self.show()
 
 	def move2Position(self):
@@ -129,7 +133,10 @@ class window(QWidget, Ui_Form):
 	def setPosition(self):
 		if not self.ProcessSlider.isHidden():
 			self.ProcessSlider.setValue(self.player.position())
-			
+	
+	def setOpacity(self):
+		self.setWindowOpacity(self.OpacitySpinBox.value()/100)
+	
 	@pyqtSlot()
 	def on_StopPushButton_clicked(self):
 		self.player.stop()
