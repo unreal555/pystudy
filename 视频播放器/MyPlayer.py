@@ -11,7 +11,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtMultimedia import QMediaContent, QMediaPlayer
 from PyQt5.QtMultimediaWidgets import QVideoWidget
 from ui import Ui_Form
-import re
+import re,os
 
 
 class TrayIcon(QSystemTrayIcon):
@@ -65,7 +65,7 @@ class TrayIcon(QSystemTrayIcon):
 
 
 class window(QWidget, Ui_Form):
-	filetype = '*.mp4 *.avi'
+	fileType = '*.mp4 *.avi'
 	
 	def __init__(self, parent=None):
 		super(window, self).__init__(parent)
@@ -73,12 +73,19 @@ class window(QWidget, Ui_Form):
 		self.setWindowIcon(QIcon('ico.ico'))
 		self.setWindowOpacity(0.8)
 		self.tray = TrayIcon(self)
+		self.resize(800,500)
+		self.op = QGraphicsOpacityEffect()
+		self.op.setOpacity(0.5)
 		
 		self.PlayArea = QVideoWidget(self.PlayAreaGroupBox)
 		self.horizontalLayout.addWidget(self.PlayArea)
 		self.PlayArea.enterEvent = self.showProcessSlider
 		self.PlayArea.mousePressEvent = self.showProcessSlider
+		self.PlayArea.setAcceptDrops(True)
+		self.PlayArea.dragEnterEvent=self.dragEnterEvent
+		self.PlayArea.dropEvent=self.dropEvent
 		self.PlayArea.wheelEvent = self.mouseSetVol
+
 		
 		self.player = QMediaPlayer()
 		self.player.setVideoOutput(self.PlayArea)
@@ -93,25 +100,52 @@ class window(QWidget, Ui_Form):
 		self.VolSlider.hide()
 		self.VolSlider.leaveEvent = self.leaveVolPushButtonEvent
 		self.VolSlider.valueChanged.connect(self.setVol)
+		self.VolSlider.setGraphicsEffect(self.op)
+		self.VolSlider.setAutoFillBackground(True)
 		
 		self.ProcessSlider = QSlider(self)
 		self.ProcessSlider.setOrientation(Qt.Horizontal)
 		self.ProcessSlider.hide()
 		self.ProcessSlider.leaveEvent = self.hideProcessSlider
 		self.ProcessSlider.valueChanged.connect(self.move2Position)
+		self.ProcessSlider.setGraphicsEffect(self.op)
+		self.ProcessSlider.setAutoFillBackground(True)
 		
 		self.OnTopCheckBox.toggled.connect(self.setStayOnTop)
 		self.FrameLessCheckBox.toggled.connect(self.setFrameLess)
 		self.player.durationChanged.connect(self.getDuration)
 		self.player.positionChanged.connect(self.setPosition)
+		
 		self.show()
 	
+	
 	def move2Position(self):
+		print(self.ProcessSlider.value())
 		self.player.setPosition(self.ProcessSlider.value())
+		if self.player.state()!=1:
+			self.player.play()
 	
 	def setPosition(self):
 		if not self.ProcessSlider.isHidden():
 			self.ProcessSlider.setValue(self.player.position())
+			
+	@pyqtSlot()
+	def on_StopPushButton_clicked(self):
+		if self.player.state()!=1:
+			self.player.play()
+		else:
+			self.player.stop()
+	
+	@pyqtSlot()
+	def on_PausePushButton_clicked(self):
+		if self.player.state()==1 :
+			print('暂停')
+			self.player.pause()
+			return
+		if self.player.state()==2:
+			print('恢复播放')
+			self.player.play()
+			return
 	
 	def showProcessSlider(self, event):
 		print('enter PlayArea')
@@ -128,6 +162,8 @@ class window(QWidget, Ui_Form):
 			self.ProcessSlider.setMaximum(self.movieDuration)
 			self.ProcessSlider.setPageStep(self.movieDuration / 100)
 			self.ProcessSlider.setValue(self.player.position())
+			self.ProcessSlider.setGraphicsEffect(self.op)
+			self.ProcessSlider.setAutoFillBackground(True)
 			self.ProcessSlider.show()
 		else:
 			self.ProcessSlider.hide()
@@ -135,15 +171,7 @@ class window(QWidget, Ui_Form):
 	def hideProcessSlider(self, event):
 		print('hide ProcessSlider')
 		self.ProcessSlider.hide()
-	
-	def setFrameLess(self):
-		self.hide()
-		if self.FrameLessCheckBox.isChecked():
-			self.setWindowFlags(Qt.FramelessWindowHint)  # 无边框
-		else:
-			self.setWindowFlag(Qt.Window)
-		self.show()
-		# self.tray.hide()
+
 	
 	def loadFlie(self):
 		pass
@@ -175,9 +203,7 @@ class window(QWidget, Ui_Form):
 			return False
 	
 	def dragEnterEvent(self, e: QDragEnterEvent):  # 接受，或拒绝拖入窗体的文件
-		if self.Pages.currentIndex() != 0:
-			e.ignore()
-			return
+		print(111)
 		
 		if e.mimeData().hasText():
 			txt = e.mimeData().text()
@@ -191,16 +217,11 @@ class window(QWidget, Ui_Form):
 		txt = e.mimeData().text()
 		txt = re.sub('file:[/]+', '', txt)
 		abspath = os.path.abspath(txt)
-		path, file = os.path.split(abspath)
-		filename, ext = os.path.splitext(file)
-		self.workfile = os.path.join(self.temp_dir, file)
-		self.temp_file1 = os.path.join(self.temp_dir, filename + '-temp1' + ext)
-		self.temp_file2 = os.path.join(self.temp_dir, filename + '-temp2' + ext)
-		shutil.copy(abspath, self.workfile)
-		self.lineEdit.setText(abspath)
-		self.lineEdit.setDisabled(True)
-		self.do()
-		self.toSingleOutput(content='检测到文件输入:{},处理'.format(abspath))
+
+		self.moviePath = QUrl.fromLocalFile(abspath)
+		self.movie = QMediaContent(self.moviePath)
+		self.player.setMedia(self.movie)
+		self.play()
 	
 	@pyqtSlot()
 	def on_OpenPushButton_clicked(self):
@@ -212,10 +233,6 @@ class window(QWidget, Ui_Form):
 		self.play()
 	
 	def mousePressEvent(self, a0: QMouseEvent) -> None:
-		print('press')
-		print(a0.globalPos())
-		print(a0.pos())
-		print(a0.screenPos())
 		self.mousePos = a0.screenPos()
 	
 	def on_VolPushButton_released(self):
@@ -256,14 +273,29 @@ class window(QWidget, Ui_Form):
 		self.player.play()
 	
 	def setStayOnTop(self, f=True):
-		self.hide()
+
 		if self.OnTopCheckBox.isChecked():
 			print('置顶')
 			self.setWindowFlags(Qt.WindowStaysOnTopHint)  # 置顶
 		else:
 			print('取消置顶')
 			self.setWindowFlag(Qt.Widget)
-		self.show()
+
+		self.showNormal()
+		self.tray.hide()
+	
+	def setFrameLess(self):
+		if self.FrameLessCheckBox.isChecked():
+			self.setWindowFlags(Qt.FramelessWindowHint)  # 无边框
+		else:
+			self.setWindowFlags(Qt.WindowStaysOnTopHint)
+			self.setWindowFlag(Qt.Widget)
+		self.showNormal()
+		self.tray.hide()
+
+
+	
+	# self.tray.hide()
 	
 	def hideEvent(self, a0: QHideEvent):
 		print(a0)

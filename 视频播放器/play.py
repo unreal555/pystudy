@@ -44,10 +44,10 @@ class VideoPlayer:
 
 
     
-    def callback(self,pos=0):
-        # self.player.setPosition(10000) # to start at the beginning of the video every time
-        # self.video.show()
-        # self.player.play()
+    # def callback(self,pos=0):
+    #     # self.player.setPosition(10000) # to start at the beginning of the video every time
+    #     # self.video.show()
+    #     # self.player.play()
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
