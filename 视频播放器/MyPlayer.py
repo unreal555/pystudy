@@ -132,10 +132,7 @@ class window(QWidget, Ui_Form):
 			
 	@pyqtSlot()
 	def on_StopPushButton_clicked(self):
-		if self.player.state()!=1:
-			self.player.play()
-		else:
-			self.player.stop()
+		self.player.stop()
 	
 	@pyqtSlot()
 	def on_PausePushButton_clicked(self):
