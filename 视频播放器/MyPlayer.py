@@ -86,6 +86,7 @@ class window(QWidget, Ui_Form):
 		self.PlayArea.dropEvent=self.dropEvent
 		self.PlayArea.wheelEvent = self.mouseSetVol
 		self.PlayArea.mouseMoveEvent=self.moveWindow
+		self.PlayArea.mouseDoubleClickEvent=self.doubleClickPlayArea
 
 		
 		self.player = QMediaPlayer()
@@ -123,6 +124,16 @@ class window(QWidget, Ui_Form):
 		self.OpacitySpinBox.valueChanged.connect(self.setOpacity)
 		
 		self.show()
+		
+	def doubleClickPlayArea(self,event):
+		if self.player.state()==1:
+			self.player.pause()
+			return
+		if self.player.state()==2:
+			self.player.play()
+			return
+		
+		
 		
 	def moveWindow(self,event):
 
