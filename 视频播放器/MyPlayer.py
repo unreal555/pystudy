@@ -73,6 +73,7 @@ class window(QWidget, Ui_Form):
 		self.setWindowIcon(QIcon('ico.ico'))
 		self.tray = TrayIcon(self)
 		self.resize(800,500)
+		self.setWindowTitle('播放器')
 		self.op = QGraphicsOpacityEffect()
 		self.op.setOpacity(0.5)
 		
