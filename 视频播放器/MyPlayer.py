@@ -84,6 +84,7 @@ class window(QWidget, Ui_Form):
 		self.PlayArea.dragEnterEvent=self.dragEnterEvent
 		self.PlayArea.dropEvent=self.dropEvent
 		self.PlayArea.wheelEvent = self.mouseSetVol
+		self.PlayArea.mouseMoveEvent=self.moveWindow
 
 		
 		self.player = QMediaPlayer()
@@ -121,6 +122,11 @@ class window(QWidget, Ui_Form):
 		self.OpacitySpinBox.valueChanged.connect(self.setOpacity)
 		
 		self.show()
+		
+	def moveWindow(self,event):
+
+		self.move(self.pos().x()-(self.mousePos.x()-event.screenPos().x()),self.pos().y()-(self.mousePos.y()-event.screenPos().y()))
+		self.mousePos=event.screenPos()
 
 	def move2Position(self):
 		print(self.ProcessSlider.value())
@@ -158,10 +164,10 @@ class window(QWidget, Ui_Form):
 	
 	def showProcessSlider(self, event):
 		print('enter PlayArea')
+		self.mousePos = event.screenPos()
+		print(self.mousePos)
 		width = self.PlayArea.rect().width()
 		height = self.PlayArea.rect().height()
-		print(width, height, event.x(), event.y())
-		print(event.y() <= 0.4 * height and self.ProcessSlider.isHidden())
 		if event.y() > 0.6 * height and self.ProcessSlider.isHidden():
 			size = (width, 20)
 			pos = QPoint(0, int(0.95 * height))
@@ -238,8 +244,6 @@ class window(QWidget, Ui_Form):
 		self.player.setMedia(self.movie)
 		self.play()
 	
-	def mousePressEvent(self, a0: QMouseEvent) -> None:
-		self.mousePos = a0.screenPos()
 	
 	def on_VolPushButton_released(self):
 		x = self.VolPushButton.pos().x()
