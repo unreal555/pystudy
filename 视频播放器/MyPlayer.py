@@ -88,7 +88,7 @@ class window(QWidget, Ui_Form):
 		self.PlayArea.mouseMoveEvent=self.moveWindow
 		self.PlayArea.mouseDoubleClickEvent=self.doubleClickPlayArea
 
-		
+
 		self.player = QMediaPlayer()
 		self.player.setVideoOutput(self.PlayArea)
 		self.moviePath = ''
@@ -132,9 +132,15 @@ class window(QWidget, Ui_Form):
 		if self.player.state()==2:
 			self.player.play()
 			return
-		
-		
-		
+	
+	def contextMenuEvent(self, event):
+		if self.player.state()!=0:
+			self.menu = QMenu(self.PlayArea)
+			self.showAction1 = QAction("暂停", self, triggered=self.doubleClickPlayArea)
+			self.menu.addAction(self.showAction1)
+			self.menu.move(QCursor.pos())
+			self.menu.show()
+	
 	def moveWindow(self,event):
 
 		self.move(self.pos().x()-(self.mousePos.x()-event.screenPos().x()),self.pos().y()-(self.mousePos.y()-event.screenPos().y()))
