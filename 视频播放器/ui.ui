@@ -99,19 +99,6 @@
           <property name="verticalSpacing">
            <number>16</number>
           </property>
-          <item row="1" column="5">
-           <widget class="QLabel" name="label">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
           <item row="1" column="0">
            <widget class="QPushButton" name="OpenPushButton">
             <property name="enabled">
@@ -140,16 +127,16 @@
             </property>
            </widget>
           </item>
-          <item row="1" column="3">
-           <widget class="QPushButton" name="StopPushButton">
-            <property name="maximumSize">
-             <size>
-              <width>30</width>
-              <height>30</height>
-             </size>
+          <item row="1" column="10">
+           <widget class="QCheckBox" name="FrameLessCheckBox">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
             </property>
             <property name="text">
-             <string>停止</string>
+             <string>无边框</string>
             </property>
            </widget>
           </item>
@@ -163,6 +150,35 @@
             </property>
             <property name="text">
              <string>音量</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="11">
+           <widget class="QSpinBox" name="OpacitySpinBox">
+            <property name="minimum">
+             <number>30</number>
+            </property>
+            <property name="maximum">
+             <number>100</number>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QPushButton" name="PausePushButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>30</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>暂停</string>
             </property>
            </widget>
           </item>
@@ -191,7 +207,27 @@
             </property>
            </widget>
           </item>
-          <item row="1" column="6">
+          <item row="1" column="8">
+           <widget class="QCheckBox" name="FullScreenCheckBox">
+            <property name="text">
+             <string>全屏</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="5">
+           <widget class="QLabel" name="label">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="7">
            <widget class="QCheckBox" name="OnTopCheckBox">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -204,27 +240,8 @@
             </property>
            </widget>
           </item>
-          <item row="1" column="9">
-           <widget class="QCheckBox" name="FrameLessCheckBox">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>无边框</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="2">
-           <widget class="QPushButton" name="PausePushButton">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
+          <item row="1" column="3">
+           <widget class="QPushButton" name="StopPushButton">
             <property name="maximumSize">
              <size>
               <width>30</width>
@@ -232,21 +249,14 @@
              </size>
             </property>
             <property name="text">
-             <string>暂停</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="10">
-           <widget class="QSpinBox" name="OpacitySpinBox">
-            <property name="minimum">
-             <number>30</number>
-            </property>
-            <property name="maximum">
-             <number>100</number>
+             <string>停止</string>
             </property>
            </widget>
           </item>
          </layout>
+        </item>
+        <item>
+         <widget class="QComboBox" name="StyleComboBox"/>
         </item>
        </layout>
       </widget>

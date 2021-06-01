@@ -117,6 +117,7 @@ class window(QWidget, Ui_Form):
 		
 		self.OnTopCheckBox.toggled.connect(self.setStayOnTop)
 		self.FrameLessCheckBox.toggled.connect(self.setFrameLess)
+		self.FullScreenCheckBox.toggled.connect(self.setFullScreen)
 		self.player.durationChanged.connect(self.getDuration)
 		self.player.positionChanged.connect(self.setPosition)
 		
@@ -124,6 +125,12 @@ class window(QWidget, Ui_Form):
 		self.OpacitySpinBox.valueChanged.connect(self.setOpacity)
 		
 		self.show()
+
+	def setFullScreen(self):
+		if self.isFullScreen():
+			self.showNormal()
+		else:
+			self.showFullScreen()
 		
 	def doubleClickPlayArea(self,event):
 		if self.player.state()==1:
