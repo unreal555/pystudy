@@ -65,7 +65,7 @@ class TrayIcon(QSystemTrayIcon):
 
 
 class window(QWidget, Ui_Form):
-	fileType = '*.mp4 *.avi'
+	fileType = '*.mp4 *.avi *.mkv'
 	
 	def __init__(self, parent=None):
 		super(window, self).__init__(parent)
@@ -186,7 +186,7 @@ class window(QWidget, Ui_Form):
 		print(self.mousePos)
 		width = self.PlayArea.rect().width()
 		height = self.PlayArea.rect().height()
-		if event.y() > 0.6 * height and self.ProcessSlider.isHidden():
+		if event.y() > 0.6 * height and self.ProcessSlider.isHidden() and self.VolSlider.isHidden():
 			size = (width, 20)
 			pos = QPoint(0, int(0.95 * height))
 			self.ProcessSlider.resize(*size)
@@ -255,8 +255,8 @@ class window(QWidget, Ui_Form):
 	
 	@pyqtSlot()
 	def on_OpenPushButton_clicked(self):
-		# path,_=QFileDialog.getOpenFileName(None, caption='打开', directory='c:/', filter=self.filetype)
-		path = 'c://01.mp4'
+		path,_=QFileDialog.getOpenFileName(None, caption='打开', directory='c:/', filter=self.fileType)
+		# path = 'c://01.mp4'
 		self.moviePath = QUrl.fromLocalFile(path)
 		self.movie = QMediaContent(self.moviePath)
 		self.player.setMedia(self.movie)
