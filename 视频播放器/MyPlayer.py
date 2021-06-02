@@ -327,10 +327,11 @@ class window(QWidget, Ui_Form):
 			self.setWindowFlag(Qt.Widget)
 		self.showNormal()
 		self.tray.hide()
-
-
 	
-	# self.tray.hide()
+	
+	def keyPressEvent(self, a0: QKeyEvent) -> None:
+		if a0.key()==QKeySequence('ESC') and  self.isFullScreen():
+			self.showNormal()
 	
 	def hideEvent(self, a0: QHideEvent):
 		print(a0)
