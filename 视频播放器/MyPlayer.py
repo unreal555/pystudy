@@ -4,14 +4,13 @@
 # Date ：2021/3/31 0031 上午 9:46
 # Tool ：PyCharm
 
-import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtMultimedia import QMediaContent, QMediaPlayer
 from PyQt5.QtMultimediaWidgets import QVideoWidget
 from ui import Ui_Form
-import re,os
+import re,os,sys
 
 
 class TrayIcon(QSystemTrayIcon):
@@ -125,6 +124,13 @@ class window(QWidget, Ui_Form):
 		self.OpacitySpinBox.valueChanged.connect(self.setOpacity)
 		
 		self.show()
+		
+	def loadConfig(self):
+		if os.path.exists('config.ini'):
+			self.opacity=100
+			self.vol=10
+			self.moviePath=''
+			self.play(pos=1)
 
 	def setFullScreen(self):
 		if self.isFullScreen():
@@ -344,8 +350,7 @@ class window(QWidget, Ui_Form):
 
 
 if __name__ == "__main__":
-	import sys
-	
+
 	app = QApplication(sys.argv)
 	main = window()
 	
