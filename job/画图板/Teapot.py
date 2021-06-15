@@ -10,7 +10,7 @@ def init():
     # 材质反光性设置
     mat_specular = [1.0, 1.0, 1.0, 1.0]  # 镜面反射参数
     mat_shininess = [20.0]  # 高光指数
-    light_position = [800, 300.0, 0.0, 1.0]  # 光源位置
+    light_position = [1200, 800.0, 1800.0, 0.0]  # 光源位置
     white_light = [255.0, 1.0, 1.0, 1.0]  # 灯位置(1,1,1), 最后1-开关
     light_model_ambient = [0.2, 0.2, 0.2, 1.0]  # 环境光参数
 
@@ -29,7 +29,7 @@ def init():
 
     glEnable(GL_LIGHTING)  # 开关:使用光
     glEnable(GL_LIGHT0)  # 打开0#灯
-    # glEnable(GL_DEPTH_TEST)  # 打开深度测试
+    glEnable(GL_DEPTH_TEST)  # 打开深度测试
     
     glutDisplayFunc(display)
     glutReshapeFunc(reshape)
@@ -49,7 +49,7 @@ def display():
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
     glutWireTeapot(1)
     # glutSolidTeapot(1)  # 茶壶绘制
-    glRotatef(0.01, 0, 3, 0)  # (角度,x,y,z)
+    glRotatef(0.01, 0, 1, 0)  # (角度,x,y,z)
     glFlush()
 
 
