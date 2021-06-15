@@ -10,7 +10,7 @@ def init():
     # 材质反光性设置
     mat_specular = [1.0, 1.0, 1.0, 1.0]  # 镜面反射参数
     mat_shininess = [20.0]  # 高光指数
-    light_position = [800, 800.0, 300.0, 1.0]  # 光源位置
+    light_position = [800, 300.0, 0.0, 1.0]  # 光源位置
     white_light = [255.0, 1.0, 1.0, 1.0]  # 灯位置(1,1,1), 最后1-开关
     light_model_ambient = [0.2, 0.2, 0.2, 1.0]  # 环境光参数
 
@@ -77,8 +77,8 @@ def start():
     glutInit()
     glutInitDisplayMode(GLUT_SINGLE| GLUT_RGB | GLUT_DEPTH)
     glutInitWindowSize(800, 600)
-    glutInitWindowPosition(100, 100)
     glutCreateWindow("3D")
+
     init()
     glutSetOption(GLUT_ACTION_ON_WINDOW_CLOSE, GLUT_ACTION_GLUTMAINLOOP_RETURNS)
     glutMainLoop()
