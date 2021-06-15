@@ -4,13 +4,13 @@ from OpenGL.GLUT import *
 
 
 # 初始化OpenGL函数
-glutInit()
+
 
 def init():
     # 材质反光性设置
     mat_specular = [1.0, 1.0, 1.0, 1.0]  # 镜面反射参数
     mat_shininess = [50.0]  # 高光指数
-    light_position = [-400.0, -300.0, 200.0, 100.0]  # 光源位置
+    light_position = [200.0, 100.0, 10.0, 1.0]  # 光源位置
     white_light = [255.0, 1.0, 1.0, 1.0]  # 灯位置(1,1,1), 最后1-开关
     light_model_ambient = [0.2, 0.2, 0.2, 1.0]  # 环境光参数
 
@@ -40,21 +40,21 @@ def init():
 def mouseclick(button,state,x,y):
     print(button,state,x,y)
     if button==2:
-        glLightfv(GL_LIGHT0, GL_POSITION, [x-800, y-600, 0.0, 1.0])
+        glLightfv(GL_LIGHT0, GL_POSITION, [800-x, 600-y, 600.0, 1.0])
         
     
 
 def display():
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
-    glutWireTeapot(0.5)
-    # glutSolidTeapot(0.5)  # 茶壶绘制
-    glRotatef(0.1, 0, 5, 0)  # (角度,x,y,z)
+    glutWireTeapot(1)
+    # glutSolidTeapot(1)  # 茶壶绘制
+    glRotatef(0.01, 0, 3, 0)  # (角度,x,y,z)
     glFlush()
 
 
-def reshape(w, h):
-    glViewport(0, 0, w, h)
+def reshape(w=800, h=600):
+    # glViewport(0, 0, w, h)
     # 设置投影参数
     glMatrixMode(GL_PROJECTION)
     glLoadIdentity()
@@ -74,7 +74,7 @@ def close():
 
 
 def start():
-
+    glutInit()
     glutInitDisplayMode(GLUT_SINGLE| GLUT_RGB | GLUT_DEPTH)
     glutInitWindowSize(800, 600)
     glutInitWindowPosition(100, 100)
