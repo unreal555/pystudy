@@ -9,8 +9,8 @@ from OpenGL.GLUT import *
 def init():
     # 材质反光性设置
     mat_specular = [1.0, 1.0, 1.0, 1.0]  # 镜面反射参数
-    mat_shininess = [50.0]  # 高光指数
-    light_position = [200.0, 100.0, 10.0, 1.0]  # 光源位置
+    mat_shininess = [20.0]  # 高光指数
+    light_position = [800, 800.0, 300.0, 1.0]  # 光源位置
     white_light = [255.0, 1.0, 1.0, 1.0]  # 灯位置(1,1,1), 最后1-开关
     light_model_ambient = [0.2, 0.2, 0.2, 1.0]  # 环境光参数
 
