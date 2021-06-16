@@ -68,8 +68,10 @@ def reshape(w=800, h=600):
     glLoadIdentity()
 
 def close():
-    glutLeaveMainLoop()
+    glutHideWindow()
+
     glutDestroyWindow(glutGetWindow())
+    
     import main6
 
 
@@ -77,7 +79,7 @@ def start():
     glutInit()
     glutInitDisplayMode(GLUT_SINGLE| GLUT_RGB | GLUT_DEPTH)
     glutInitWindowSize(800, 600)
-    glutCreateWindow("3D")
+    print(glutCreateWindow("3D"))
 
     init()
     glutSetOption(GLUT_ACTION_ON_WINDOW_CLOSE, GLUT_ACTION_GLUTMAINLOOP_RETURNS)
