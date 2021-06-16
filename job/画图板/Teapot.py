@@ -42,8 +42,6 @@ def mouseclick(button,state,x,y):
     if button==2:
         glLightfv(GL_LIGHT0, GL_POSITION, [(x-400)*10, (300-y)*10, 600.0, 1.0])
         
-    
-
 def display():
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
@@ -69,11 +67,8 @@ def reshape(w=800, h=600):
 
 def close():
     glutHideWindow()
-
     glutDestroyWindow(glutGetWindow())
-    
     import main6
-
 
 def start():
     glutInit()
