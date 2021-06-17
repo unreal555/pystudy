@@ -6,11 +6,9 @@ from my_html_tools import qu_huan_hang_fu
 from my_html_tools import qu_te_shu_zi_fu
 from my_html_tools import random_wait
 from urllib import parse
-from my_logger import my_logger
 import re
-import time
 import os
-import random
+
 
 def get_novel_info(url):
     novel_index_page =  qu_huan_hang_fu(my_request(url)).replace('https%3A%2F%2F','https://').replace('%2F','/')
