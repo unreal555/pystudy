@@ -72,7 +72,7 @@ def get_novel(url):
             continue
 
         print('%s%s开始下载' % (chapter_name, chapter_url))
-        chapter_content=my_request(scheme+'://'+netloc+chapter_url)
+        chapter_content=my_request(scheme+'://'+netloc+chapter_url,wait_from=0.1,wait_to=0.5)
         content=find_useful(chapter_content,chapter_content_reg)
         with open(filename,'a',encoding='utf-8') as f:
             f.write(chapter_name+'(((###'+chapter_url+'###)))'+'\r\n')
