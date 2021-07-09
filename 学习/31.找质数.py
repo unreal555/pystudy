@@ -4,8 +4,7 @@
 #   -*-coding:utf-8-*-
 import math
 import time
-import prime
-
+import pickle
 
 
 class FindPrime():
@@ -36,9 +35,11 @@ class FindPrime():
 
 
     def __init__(self,x=2,y=100):
-
-        self.prime=prime.prime
-        self.values=prime.prime
+        with open('./prime.dat','rb') as f:
+            temp=pickle.load(f)
+            
+        self.prime=temp
+        self.values=temp
         minPrime=self.prime[0]
         maxPrime=self.prime[-1]
 
@@ -61,9 +62,9 @@ class FindPrime():
 
 
 start=time.time()
-p=FindPrime(1,43000000)
-with open('prime.py','w',encoding='utf8') as f:
-    f.write('prime='+str(p.values))
+p=FindPrime(1,39100000)
+with open('prime.dat','wb') as f:
+    pickle.dump(p.values,f)
 
 print(len(p.values))
 print(time.time()-start)
